@@ -31,7 +31,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const members = result.data.allMarkdownRemark.nodes;
 
   members.forEach((member) => {
-    console.log(member.id);
     createPage({
       path: member.fields.slug,
       component: path.resolve('./src/templates/member.js'),
