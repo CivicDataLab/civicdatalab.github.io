@@ -14,26 +14,30 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
-  // const { createPage } = actions;
-  // const result = await graphql(`
-  //   query {
-  //     allMarkdownRemark {
-  //       edges {
-  //         node {
-  //           id
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
+  const { createPage } = actions;
+  const result = await graphql(`
+    query {
+      allMarkdownRemark {
+        nodes {
+          id
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  `);
 
-  // result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-  //   createPage({
-  //     path: node.fields.slug,
-  //     component: path.resolve('./src/templates/post.js'),
-  //     context: {
-  //       slug: node.fields.slug
-  //     }
-  //   });
-  // });
+  const members = result.data.allMarkdownRemark.nodes;
+
+  members.forEach((member) => {
+    console.log(member.id);
+    createPage({
+      path: member.fields.slug,
+      component: path.resolve('./src/templates/member.js'),
+      context: {
+        id: member.id
+      }
+    });
+  });
 };
