@@ -17,7 +17,7 @@ const FooterContainer = styled.div`
 
   @media (min-width: 768px) {
     padding-bottom: 0px;
-    grid-template-columns: 2.5fr 1fr 1fr 3fr;
+    grid-template-columns: auto 1fr 1fr 3fr;
     grid-gap: 20px;
     grid-template-areas:
       'address navigate header empty'
@@ -25,6 +25,7 @@ const FooterContainer = styled.div`
   }
 
   @media (min-width: 1268px) {
+    grid-template-columns: 2.5fr 1fr 1fr 3fr;
     padding-left: 52px;
     padding-right: 52px;
   }
