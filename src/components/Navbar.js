@@ -50,8 +50,6 @@ const Navbar = () => {
     }
   `);
 
-  console.log(data);
-
   const logo = data?.logo?.childImageSharp?.fixed;
 
   return (
