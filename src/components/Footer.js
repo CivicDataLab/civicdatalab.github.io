@@ -79,7 +79,7 @@ const BottomContainer = styled.div`
     justify-content: space-between;
     align-items: baseline;
     position: relative;
-    top: -45%;
+    top: -30%;
     margin-top: 0;
   }
 `;
