@@ -105,7 +105,10 @@ const SocialLinksContainer = styled.div`
   width: 100%;
 
   a {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     background-color: white;
     width: 34px;
     height: 34px;
@@ -164,12 +167,20 @@ const Footer = () => {
         </NavLinksContainer>
       </NavigationContainer>
       <BottomContainer>
-        <Image fixed={cdlLogo} />
+        <Link to="/">
+          <Image fixed={cdlLogo} />
+        </Link>
         <ExternalLinksContainer>
           <SocialLinksContainer>
-            <a href="" target="_blank" rel="noreferrer noopener"></a>
-            <a href="" target="_blank" rel="noreferrer noopener"></a>
-            <a href="" target="_blank" rel="noreferrer noopener"></a>
+            <a href="https://twitter.com/civicdatalab" target="_blank" rel="noreferrer noopener">
+              T
+            </a>
+            <a href="https://in.linkedin.com/company/civicdatalab" target="_blank" rel="noreferrer noopener">
+              L
+            </a>
+            <a href="https://github.com/CivicDataLab" target="_blank" rel="noreferrer noopener">
+              G
+            </a>
           </SocialLinksContainer>
           <div>License | Site Map</div>
         </ExternalLinksContainer>

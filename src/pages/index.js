@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import BackgroundSection from '../components/BackgroundSection';
+import BackgroundWithImage from '../components/BackgroundWithImage';
 import Layout from '../components/Layout';
-import Grid from '../styles/Grid';
-import HeroText from '../styles/HeroText';
+import TypeWriter from '../components/TypeWriter';
 
 const Section = styled.section`
   padding: 0 72px;
@@ -17,24 +16,26 @@ const Section = styled.section`
 
 const HeroSection = styled(Section)`
   padding: 0 72px;
-  position: relative;
-  height: 88.5vh;
+  min-height: 500px;
 
   h1 {
     font-family: 'Bungee', cursive;
-    width: 50%;
-    font-size: 120px;
+    width: 70%;
+    font-size: 32px;
     text-align: left;
     text-transform: uppercase;
-    margin: 0;
-    position: absolute;
-    top: 20%;
+    margin-bottom: 0;
+  }
 
-    span {
-      display: inline-block;
-      width: 150px;
-      margin-left: 20px;
-      border-bottom: 10px solid black;
+  @media (min-width: 550px) {
+    h1 {
+      font-size: 96px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 120px;
     }
   }
 `;
@@ -43,11 +44,12 @@ const Index = () => {
   return (
     <Layout>
       <HeroSection>
-        <h1>
+        {/* <h1>
           We are a collaborative compa<span></span>
-        </h1>
+        </h1> */}
+        <TypeWriter messages={['free and open source solutions', 'open data platforms']} fixedText="We co-create" />
       </HeroSection>
-      <BackgroundSection title="we impact public finance" />
+      {/* <BackgroundSection title="we impact public finance" />
       <Section>
         <Grid>
           <div>
@@ -82,7 +84,7 @@ const Index = () => {
             <p>Some text here</p>
           </div>
         </Grid>
-      </Section>
+      </Section> */}
     </Layout>
   );
 };
