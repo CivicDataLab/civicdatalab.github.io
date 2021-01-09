@@ -1,5 +1,7 @@
 const path = require('path');
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const memberTemplate = path.resolve('./src/templates/member.js');
+const jobTemplate = path.resolve('./src/templates/job.js');
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === 'MarkdownRemark') {
@@ -15,27 +17,55 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const result = await graphql(`
+  const memberResults = await graphql(`
     query {
-      allMarkdownRemark {
-        nodes {
-          id
-          fields {
-            slug
+      allMarkdownRemark(filter: { frontmatter: { template: { eq: "member" } } }) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            id
           }
         }
       }
     }
   `);
 
-  const members = result.data.allMarkdownRemark.nodes;
+  const jobResults = await graphql(`
+    query {
+      allMarkdownRemark(filter: { frontmatter: { template: { eq: "job" } } }) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            id
+          }
+        }
+      }
+    }
+  `);
+
+  const members = memberResults.data.allMarkdownRemark.edges;
+  const jobs = jobResults.data.allMarkdownRemark.edges;
 
   members.forEach((member) => {
     createPage({
-      path: member.fields.slug,
-      component: path.resolve('./src/templates/member.js'),
+      path: member.node.fields.slug,
+      component: memberTemplate,
       context: {
-        id: member.id
+        id: member.node.id
+      }
+    });
+  });
+
+  jobs.forEach((job) => {
+    createPage({
+      path: job.node.fields.slug,
+      component: jobTemplate,
+      context: {
+        id: job.node.id
       }
     });
   });
