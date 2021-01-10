@@ -15,6 +15,12 @@ const StyledNav = styled.nav`
     min-width: 90px;
   }
 
+  .mobile-nav {
+    cursor: pointer;
+    color: black;
+    transform: scale(2);
+  }
+
   @media (min-width: 1024px) {
     padding: 0 72px 22px 72px;
 
@@ -37,8 +43,17 @@ const LinksContainer = styled.ul`
   flex-direction: column;
   background-color: black;
   color: white;
-  padding: 22px 0;
+  padding: 40px 0 22px 0;
   margin: 0;
+
+  img {
+    position: absolute;
+    cursor: pointer;
+    right: 14px;
+    top: 14px;
+    color: white;
+    transform: scale(1.5);
+  }
 
   li {
     list-style: none;
@@ -50,19 +65,20 @@ const LinksContainer = styled.ul`
   }
 
   @media (min-width: 1024px) {
+    font-size: 24px;
     position: static;
     width: auto;
     display: flex;
     flex-direction: row;
     height: 80px;
     margin: 0;
-    padding: 0 0 8px 0;
+    padding: 0 0 12px 0;
     border-bottom: 4px solid black;
     background-color: transparent;
 
     li {
       padding: 0;
-      margin: 0 32px;
+      margin: 0 16px;
       height: 100%;
     }
 
@@ -73,6 +89,14 @@ const LinksContainer = styled.ul`
     li:last-of-type {
       margin-right: 0;
     }
+
+    img {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 28px;
   }
 `;
 
@@ -86,6 +110,9 @@ const StyledLink = styled(Link)`
     text-transform: capitalize;
     display: flex;
     align-items: flex-end;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
 
     &.active-link {
       color: white;
@@ -116,10 +143,14 @@ const Navbar = () => {
       <Link to="/">
         <Image fluid={logo} />
       </Link>
-      <h5 style={{ cursor: 'pointer' }} onClick={() => setDisplayMobileNav(true)} className="mobile-nav">
-        Open Nav
-      </h5>
+      <img
+        src={require('../../assets/icons/menu.svg')}
+        onClick={() => setDisplayMobileNav(true)}
+        className="mobile-nav"
+        alt="menu"
+      />
       <LinksContainer displayMobile={displayMobileNav}>
+        <img src={require('../../assets/icons/close.svg')} onClick={() => setDisplayMobileNav(false)} alt="close" />
         <li>
           <StyledLink to="/" activeClassName="active-link">
             Home
@@ -131,7 +162,7 @@ const Navbar = () => {
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/team" activeClassName="active-link">
+          <StyledLink to="/team" activeClassName="active-link" partiallyActive>
             Team
           </StyledLink>
         </li>

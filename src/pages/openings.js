@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
@@ -36,7 +36,7 @@ const DescriptionContainer = styled.div`
   }
 
   p {
-    line-height: 20px;
+    line-height: 28px;
   }
 
   @media (min-width: 1024px) {

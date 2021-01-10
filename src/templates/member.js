@@ -91,7 +91,7 @@ const PictureContainer = styled.div`
     max-width: 275px;
     height: 410px;
     position: absolute;
-    bottom: 80px;
+    bottom: 70px;
     margin: auto;
   }
 
@@ -142,6 +142,16 @@ const PictureContainer = styled.div`
       position: absolute;
     }
   }
+
+  @media (min-width: 1440px) {
+    .gatsby-image-wrapper {
+      left: 40px;
+    }
+
+    p {
+      padding-bottom: 100px;
+    }
+  }
 `;
 
 const SocialLinksContainer = styled.div`
@@ -183,8 +193,12 @@ const BlogContainer = styled.div`
     border-top: 8px solid black;
   }
 
+  @media (min-width: 550px) {
+    margin-top: 80px;
+  }
+
   @media (min-width: 768px) {
-    margin-top: 96px;
+    margin-top: 140px;
   }
 
   @media (min-width: 1024px) {

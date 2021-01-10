@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import BackgroundWithImage from '../components/BackgroundWithImage';
+// import BackgroundWithImage from '../components/BackgroundWithImage';
 import Layout from '../components/Layout';
 import TypeWriter from '../components/TypeWriter';
 
@@ -29,11 +29,11 @@ const HeroSection = styled(Section)`
 
   @media (min-width: 550px) {
     h1 {
-      font-size: 96px;
+      font-size: 60px;
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     h1 {
       font-size: 120px;
     }
