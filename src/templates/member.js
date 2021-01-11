@@ -271,16 +271,20 @@ const MemberTemplate = ({ data }) => {
         <BlogContainer>
           <h2>Blogs</h2>
           <BlogPostGrid>
-            {blogPosts.map((post) => {
-              return (
-                <BlogCard
-                  key={post.guid}
-                  title={post.title}
-                  imageUrl={getCoverImageUrlFromMediumPost(post['content:encoded'])}
-                  postUrl={post.link}
-                />
-              );
-            })}
+            {blogPosts.length ? (
+              blogPosts.map((post) => {
+                return (
+                  <BlogCard
+                    key={post.guid}
+                    title={post.title}
+                    imageUrl={getCoverImageUrlFromMediumPost(post['content:encoded'])}
+                    postUrl={post.link}
+                  />
+                );
+              })
+            ) : (
+              <p style={{fontSize: 17}}>No blogs found for the member.</p>
+            )}
           </BlogPostGrid>
         </BlogContainer>
       </MemberContainer>
