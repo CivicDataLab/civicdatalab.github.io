@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
+import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import BlogCard from '../components/BlogCard';
 import { getCoverImageUrlFromMediumPost } from '../utils/helpers';
 import useMediumFeed from '../hooks/useMediumFeed';
@@ -25,11 +26,15 @@ const MemberContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-    grid-column-gap: 180px;
+    grid-column-gap: 100px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
       'picture bio bio'
       'picture blogs blogs';
+  }
+
+  @media (min-width: 1440px) {
+    grid-column-gap: 180px;
   }
 `;
 
@@ -60,6 +65,7 @@ export const Bio = styled.div`
 
   @media (min-width: 1024px) {
     padding: 0 20px;
+    width: 600px;
     p {
       font-size: 30px;
       line-height: 37px;
@@ -119,7 +125,7 @@ const PictureContainer = styled.div`
     }
 
     span:last-of-type {
-      transform: rotate(-180deg) translate(-40px, 10px);
+      transform: rotate(-180deg) translate(10px, -50px);
     }
   }
 
@@ -141,15 +147,30 @@ const PictureContainer = styled.div`
       height: 780px;
       position: absolute;
     }
+
+    p {
+      padding-bottom: 100px;
+
+      span:last-of-type {
+        transform: rotate(-180deg) translate(10px, 0px);
+      }
+    }
   }
 
   @media (min-width: 1440px) {
+    margin-bottom: 500px;
+
     .gatsby-image-wrapper {
       left: 40px;
     }
 
     p {
       padding-bottom: 100px;
+      width: 50%;
+
+      span:last-of-type {
+        transform: rotate(-180deg) translate(10px, -60px);
+      }
     }
   }
 `;
@@ -184,6 +205,7 @@ const BlogContainer = styled.div`
   box-sizing: border-box;
   max-width: 1020px;
   width: 100%;
+  margin-top: 120px;
 
   > h2 {
     display: inline-block;
@@ -198,7 +220,7 @@ const BlogContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    margin-top: 140px;
+    margin-top: 200px;
   }
 
   @media (min-width: 1024px) {
@@ -245,17 +267,21 @@ const MemberTemplate = ({ data }) => {
             })}
           </h5>
           <p>{member.frontmatter.description}</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
         </Bio>
         <PictureContainer>
           <SocialLinksContainer>
             <a href="https://twitter.com" target="_blank" rel="noreferrer noopener">
-              T
+              <FaTwitter />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer noopener">
-              I
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+              <FaLinkedinIn />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer noopener">
-              F
+            <a href="https://github.com" target="_blank" rel="noreferrer noopener">
+              <FaGithubAlt />
             </a>
           </SocialLinksContainer>
           <div style={{ backgroundColor: member.frontmatter.accentcolor }}>
@@ -283,7 +309,7 @@ const MemberTemplate = ({ data }) => {
                 );
               })
             ) : (
-              <p style={{fontSize: 17}}>No blogs found for the member.</p>
+              <p style={{ fontSize: 17 }}>No blogs found for the member.</p>
             )}
           </BlogPostGrid>
         </BlogContainer>
