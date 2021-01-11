@@ -44,6 +44,10 @@ const ImageBox = styled.a`
   @media(min-width: 1600px){
     width: 276px;
     height: 414px;
+    
+    .member-details{
+      padding: 21px 0 28px;
+    }
   }
 `;
 
