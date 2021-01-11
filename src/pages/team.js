@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
@@ -254,23 +254,7 @@ const CivicDaysSection = styled.div`
   }
 `;
 
-const Team = () => {
-  const data = useStaticQuery(graphql`
-    query TeamQuery {
-      allMarkdownRemark(filter: { frontmatter: { template: { eq: "member" } } }, sort: { fields: frontmatter___name }) {
-        nodes {
-          fields {
-            slug
-          }
-          frontmatter {
-            name
-            role
-          }
-        }
-      }
-    }
-  `);
-
+const Team = ({ data }) => {
   const members = data.allMarkdownRemark.nodes;
 
   return (
@@ -286,6 +270,7 @@ const Team = () => {
             <MemberCardsContainer>
               {members.map((member) => (
                 <MemberImageBox
+                  key={member.fields.slug}
                   link={member.fields.slug}
                   name={member.frontmatter.name}
                   role={member.frontmatter.role.split(',')[0]}
@@ -326,3 +311,19 @@ const Team = () => {
 };
 
 export default Team;
+
+export const pageQuery = graphql`
+  query TeamQuery {
+    allMarkdownRemark(filter: { frontmatter: { template: { eq: "member" } } }, sort: { fields: frontmatter___name }) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          name
+          role
+        }
+      }
+    }
+  }
+`;
