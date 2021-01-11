@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 // import BackgroundWithImage from '../components/BackgroundWithImage';
-import Layout from '../components/Layout';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, theme } from '../theme/theme';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 import TypeWriter from '../components/TypeWriter';
 
 const Section = styled.section`
@@ -15,78 +20,67 @@ const Section = styled.section`
 `;
 
 const HeroSection = styled(Section)`
-  padding: 0 72px;
-  min-height: 500px;
+  height: 30vh;
+  color: white;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: rgb(0, 0, 0, 0.5);
 
   h1 {
     font-family: 'Bungee', cursive;
-    width: 70%;
     font-size: 32px;
     text-align: left;
-    text-transform: uppercase;
-    margin-bottom: 0;
   }
 
   @media (min-width: 550px) {
+    height: 50vh;
     h1 {
       font-size: 60px;
     }
   }
 
   @media (min-width: 1024px) {
+    padding-top: 40px;
+    padding-left: 72px;
+    height: 80vh;
+
     h1 {
+      width: 80%;
       font-size: 120px;
     }
   }
 `;
 
-const Index = () => {
+const Index = ({ data }) => {
+  const image = data?.background?.childImageSharp?.fluid;
+
   return (
-    <Layout>
-      <HeroSection>
-        {/* <h1>
-          We are a collaborative compa<span></span>
-        </h1> */}
-        <TypeWriter messages={['free and open source solutions', 'open data platforms']} fixedText="We co-create" />
-      </HeroSection>
-      {/* <BackgroundSection title="we impact public finance" />
-      <Section>
-        <Grid>
-          <div>
-            <HeroText>The Team</HeroText>
-          </div>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur.
-            </p>
-          </div>
-        </Grid>
-      </Section>
-      <Section background="rgba(71, 122, 181, 0.27)">
-        <Grid>
-          <div>
-            <HeroText>Work with us!</HeroText>
-          </div>
-          <div>
-            <p>Some text here</p>
-          </div>
-        </Grid>
-      </Section>
-      <Section background="hello">
-        <Grid>
-          <div>
-            <HeroText>Come say hi!</HeroText>
-          </div>
-          <div>
-            <p>Some text here</p>
-          </div>
-        </Grid>
-      </Section> */}
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <main>
+        <BackgroundImage fluid={image}>
+          <Navbar dark />
+          <HeroSection>
+            <TypeWriter messages={['free and open source solutions', 'open data platforms']} fixedText="We co-create" />
+          </HeroSection>
+        </BackgroundImage>
+      </main>
+      <Footer />
+    </ThemeProvider>
   );
 };
 
 export default Index;
+
+export const pageQuery = graphql`
+  query BackgroundQuery {
+    background: file(relativePath: { eq: "landing-image.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+  }
+`;

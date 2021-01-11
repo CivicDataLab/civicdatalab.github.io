@@ -12,6 +12,8 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 22px;
+  background: ${(props) => (props.overlay ? 'rgb(0, 0, 0, 0.5)' : 'transparent')};
+  height: 140px;
 
   .gatsby-image-wrapper {
     min-width: 90px;
@@ -75,13 +77,17 @@ const LinksContainer = styled.ul`
     height: 80px;
     margin: 0;
     padding: 0 0 12px 0;
-    border-bottom: 4px solid black;
+    border-bottom: ${(props) => (props.dark ? '4px solid white' : '4px solid black')};;
     background-color: transparent;
 
     li {
       padding: 0;
       margin: 0 16px;
       height: 100%;
+
+      &:hover {
+        background: none;
+      }
     }
 
     li:first-of-type {
@@ -107,7 +113,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 
   @media (min-width: 1024px) {
-    color: black;
+    color: ${(props) => (props.dark ? 'white' : 'black')};
     height: 100%;
     text-transform: capitalize;
     display: flex;
@@ -117,13 +123,13 @@ const StyledLink = styled(Link)`
     padding-right: 16px;
 
     &.active-link {
-      color: white;
-      background-color: black;
+      color: ${(props) => (props.dark ? 'black' : 'white')};
+      background-color: ${(props) => (props.dark ? 'white' : 'black')};
     }
   }
 `;
 
-const Navbar = () => {
+const Navbar = ({ dark }) => {
   const [displayMobileNav, setDisplayMobileNav] = React.useState(false);
 
   const data = useStaticQuery(graphql`
@@ -141,40 +147,44 @@ const Navbar = () => {
   const logo = data?.logo?.childImageSharp?.fluid;
 
   return (
-    <StyledNav>
+    <StyledNav overlay={dark}>
       <Link to="/">
         <Image fluid={logo} />
       </Link>
       <MdMenu onClick={() => setDisplayMobileNav(true)} className="mobile-nav" />
-      <LinksContainer displayMobile={displayMobileNav}>
-        <MdClose onClick={() => setDisplayMobileNav(false)} className="close-icon" />
+      <LinksContainer dark={dark} displayMobile={displayMobileNav}>
+        <MdClose
+          style={{ display: displayMobileNav ? 'block' : 'none' }}
+          onClick={() => setDisplayMobileNav(false)}
+          className="close-icon"
+        />
         <li>
-          <StyledLink to="/" activeClassName="active-link">
+          <StyledLink dark={dark} to="/" activeClassName="active-link">
             Home
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/sectors" activeClassName="active-link">
+          <StyledLink dark={dark} to="/sectors" activeClassName="active-link">
             Sectors
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/team" activeClassName="active-link" partiallyActive>
+          <StyledLink dark={dark} to="/team" activeClassName="active-link" partiallyActive>
             Team
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/blogs" activeClassName="active-link">
+          <StyledLink dark={dark} to="/blogs" activeClassName="active-link">
             Blogs
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/playbook" activeClassName="active-link">
+          <StyledLink dark={dark} to="/playbook" activeClassName="active-link">
             Playbook
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/contact" activeClassName="active-link">
+          <StyledLink dark={dark} to="/contact" activeClassName="active-link">
             Contact
           </StyledLink>
         </li>
