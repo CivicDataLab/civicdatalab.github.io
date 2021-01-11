@@ -25,7 +25,7 @@ const ResponsiveGrid = styled.div`
 `;
 
 const Section = styled.section`
-  padding: 48px 30px 0;
+  padding: 48px 16px 0;
   .heading-border-bottom {
     width: 42px;
     margin-top: 12px;
@@ -54,6 +54,7 @@ const Section = styled.section`
   }
 
   @media (min-width: 1280px) {
+    padding: 48px 32px;
     .section-text {
       font-size: 20px;
     }
@@ -85,18 +86,18 @@ const Section = styled.section`
 
 const MemberCardsContainer = styled.div`
   display: grid;
-  grid-template-columns: 140px 140px;
-  column-gap: 30px;
-  row-gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 25px;
   justify-content: space-around;
 
   margin-bottom: 54px;
 
   @media (min-width: 500px) {
-    grid-template-columns: 140px 140px 140px;
+    grid-template-columns: repeat(3, 1fr);
   }
   @media (min-width: 1024px) {
     justify-content: space-between;
+    row-gap: 80px;
   }
 `;
 
