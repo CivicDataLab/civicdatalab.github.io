@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 
@@ -196,13 +197,13 @@ const Footer = () => {
         <ExternalLinksContainer>
           <SocialLinksContainer>
             <a href="https://twitter.com/civicdatalab" target="_blank" rel="noreferrer noopener">
-              T
+              <FaTwitter />
             </a>
             <a href="https://in.linkedin.com/company/civicdatalab" target="_blank" rel="noreferrer noopener">
-              L
+              <FaLinkedinIn />
             </a>
             <a href="https://github.com/CivicDataLab" target="_blank" rel="noreferrer noopener">
-              G
+              <FaGithubAlt />
             </a>
           </SocialLinksContainer>
           <div>License | Site Map</div>
