@@ -40,6 +40,21 @@ const AddressContainer = styled.div`
   @media (min-width: 768px) {
     max-width: 320px;
     width: 100%;
+    padding-right: 32px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 25px;
+    max-width: 450px;
+    width: 100%;
+
+    h3 {
+      margin-top: 10px;
+    }
+
+    p {
+      line-height: 35px;
+    }
   }
 `;
 
@@ -64,6 +79,14 @@ const NavLinksContainer = styled.ul`
       color: white;
       text-decoration: none;
       font-size: 17px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    li {
+      a {
+        font-size: 25px;
+      }
     }
   }
 `;
