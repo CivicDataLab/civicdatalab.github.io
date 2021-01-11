@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
@@ -122,6 +122,7 @@ const StickyBox = styled.div`
     padding: 10px 26px;
     border-radius: 20px;
     margin-top: 40px;
+    text-decoration: none;
   }
 
   @media (min-width: 1024px) {
@@ -298,7 +299,7 @@ const Team = () => {
         </ResponsiveGrid>
         <StickyBox>
           <h1>Current Job Openings</h1>
-          <a>browse jobs</a>
+          <Link to="/openings">browse jobs</Link>
         </StickyBox>
 
         <CivicDaysSection className="civic-days-section">
