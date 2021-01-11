@@ -9,16 +9,21 @@ const ImageBox = styled(Link)`
   background: #f2f2f2;
   position: relative;
 
-  .member-details {
-    position: absolute;
-    padding: 15px 0;
-    bottom: 0;
+  img{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #000000;
-    opacity: 0.76;
+    height: 100%;
+  }
+
+  .member-details{
+      position: absolute;
+      padding: 15px 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #000000;
+      opacity: 0.76;
   }
 
   .member-name {
@@ -55,6 +60,7 @@ const ImageBox = styled(Link)`
 const MemberImageBox = ({ link, name, role }) => {
   return (
     <ImageBox to={link}>
+      <img src="" alt="Member Image"/>
       <span className="member-details">
         <span className="member-name">{name}</span>
         <span className="member-desg">{role}</span>
