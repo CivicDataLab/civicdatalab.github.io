@@ -8,6 +8,11 @@ const ImageBox = styled.a`
   background: #f2f2f2;
   position: relative;
 
+  img{
+    width: 100%;
+    height: 100%;
+  }
+
   .member-details{
       position: absolute;
       padding: 15px 0;
@@ -53,6 +58,7 @@ const ImageBox = styled.a`
 
 const MemberImageBox = () => {
   return <ImageBox>
+            <img src="" alt="Member Image"/>
             <span className="member-details">
                 <span className="member-name">Shreya</span>
                 <span className="member-desg">Technologist</span>
