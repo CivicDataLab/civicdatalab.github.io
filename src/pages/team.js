@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
@@ -94,7 +95,7 @@ const MemberCardsContainer = styled.div`
   @media (min-width: 500px) {
     grid-template-columns: 140px 140px 140px;
   }
-  @media(min-width: 1024px){
+  @media (min-width: 1024px) {
     justify-content: space-between;
   }
 `;
@@ -121,6 +122,7 @@ const StickyBox = styled.div`
     padding: 10px 26px;
     border-radius: 20px;
     margin-top: 40px;
+    text-decoration: none;
   }
 
   @media (min-width: 1024px) {
@@ -252,7 +254,9 @@ const CivicDaysSection = styled.div`
   }
 `;
 
-const Team = () => {
+const Team = ({ data }) => {
+  const members = data.allMarkdownRemark.nodes;
+
   return (
     <Layout>
       <TeamPageContainer>
@@ -264,15 +268,23 @@ const Team = () => {
           </Section>
           <Section>
             <MemberCardsContainer>
-              {[1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((image) => {
+              {members.map((member) => (
+                <MemberImageBox
+                  key={member.fields.slug}
+                  link={member.fields.slug}
+                  name={member.frontmatter.name}
+                  role={member.frontmatter.role.split(',')[0]}
+                />
+              ))}
+              {/* {[1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((image) => {
                 return <MemberImageBox></MemberImageBox>;
-              })}
+              })} */}
             </MemberCardsContainer>
           </Section>
         </ResponsiveGrid>
         <StickyBox>
           <h1>Current Job Openings</h1>
-          <a>browse jobs</a>
+          <Link to="/openings">browse jobs</Link>
         </StickyBox>
 
         <CivicDaysSection className="civic-days-section">
@@ -299,3 +311,19 @@ const Team = () => {
 };
 
 export default Team;
+
+export const pageQuery = graphql`
+  query TeamQuery {
+    allMarkdownRemark(filter: { frontmatter: { template: { eq: "member" } } }, sort: { fields: frontmatter___name }) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          name
+          role
+        }
+      }
+    }
+  }
+`;

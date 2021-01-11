@@ -23,6 +23,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'icons',
+        path: path.join(__dirname, 'assets', 'icons')
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'content',
         path: path.join(__dirname, 'content')
       }
