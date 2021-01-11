@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { MdClose, MdMenu } from 'react-icons/md';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 
@@ -9,6 +10,7 @@ const StyledNav = styled.nav`
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 22px;
 
   .gatsby-image-wrapper {
@@ -23,6 +25,7 @@ const StyledNav = styled.nav`
 
   @media (min-width: 1024px) {
     padding: 0 72px 22px 72px;
+    align-items: start;
 
     .mobile-nav {
       display: none;
@@ -46,13 +49,12 @@ const LinksContainer = styled.ul`
   padding: 40px 0 22px 0;
   margin: 0;
 
-  img {
+  .close-icon {
     position: absolute;
     cursor: pointer;
     right: 14px;
-    top: 14px;
+    top: 12px;
     color: white;
-    transform: scale(1.5);
   }
 
   li {
@@ -90,7 +92,7 @@ const LinksContainer = styled.ul`
       margin-right: 0;
     }
 
-    img {
+    .mobile-nav {
       display: none;
     }
   }
@@ -143,14 +145,9 @@ const Navbar = () => {
       <Link to="/">
         <Image fluid={logo} />
       </Link>
-      <img
-        src={require('../../assets/icons/menu.svg')}
-        onClick={() => setDisplayMobileNav(true)}
-        className="mobile-nav"
-        alt="menu"
-      />
+      <MdMenu onClick={() => setDisplayMobileNav(true)} className="mobile-nav" />
       <LinksContainer displayMobile={displayMobileNav}>
-        <img src={require('../../assets/icons/close.svg')} onClick={() => setDisplayMobileNav(false)} alt="close" />
+        <MdClose onClick={() => setDisplayMobileNav(false)} className="close-icon" />
         <li>
           <StyledLink to="/" activeClassName="active-link">
             Home
