@@ -1,9 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import BackgroundSection from '../components/BackgroundSection';
-import Layout from '../components/Layout';
-import Grid from '../styles/Grid';
+import { graphql } from 'gatsby';
 import HeroText from '../styles/HeroText';
+import SectorsCard from '../components/SectorsCard';
+import TeamHomePage from '../components/TeamHomePage';
+import WorkHomePage from '../components/WorkHomePage';
+import Contact from '../components/Contact';
+import SliderHomePage from '../components/SliderHomePage';
+import BackgroundImage from 'gatsby-background-image';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, theme } from '../theme/theme';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import TypeWriter from '../components/TypeWriter';
 
 const Section = styled.section`
   padding: 0 72px;
@@ -16,75 +25,138 @@ const Section = styled.section`
 `;
 
 const HeroSection = styled(Section)`
-  padding: 0 72px;
-  position: relative;
-  height: 88.5vh;
+  height: 30vh;
+  color: white;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: rgb(0, 0, 0, 0.5);
 
   h1 {
     font-family: 'Bungee', cursive;
-    width: 50%;
-    font-size: 120px;
+    font-size: 32px;
     text-align: left;
-    text-transform: uppercase;
-    margin: 0;
-    position: absolute;
-    top: 20%;
+  }
 
-    span {
-      display: inline-block;
-      width: 150px;
-      margin-left: 20px;
-      border-bottom: 10px solid black;
+  @media (min-width: 550px) {
+    height: 50vh;
+    h1 {
+      font-size: 60px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 40px;
+    padding-left: 72px;
+    height: 80vh;
+
+    h1 {
+      width: 80%;
+      font-size: 120px;
     }
   }
 `;
 
-const Index = () => {
+const Sectors = styled.section`
+  margin-top: 24px;
+  .sectors-heading {
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  .container-sectors {
+    padding-left: 20px;
+    padding-right: 19px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  @media (min-width: 768px) {
+    .container-sectors {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 30px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .container-sectors {
+      display: flex;
+      // gap: 106px;
+    }
+    .sectors-heading {
+      font-size: 90px;
+      line-height: 120px;
+      padding-left: 73px;
+    }
+    .container-sectors {
+      margin-left: 53px;
+      margin-right: 55px;
+      margin-top: 38px;
+    }
+  }
+  @media (min-width: 1800px) {
+    .section-heading {
+      font-size: 120px;
+    }
+  }
+`;
+
+const Index = ({ data }) => {
+  const image = data?.background?.childImageSharp?.fluid;
+
   return (
-    <Layout>
-      <HeroSection>
-        <h1>
-          We are a collaborative compa<span></span>
-        </h1>
-      </HeroSection>
-      <BackgroundSection title="we impact public finance" />
-      <Section>
-        <Grid>
-          <div>
-            <HeroText>The Team</HeroText>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <main>
+        <BackgroundImage fluid={image}>
+          <Navbar dark />
+          <HeroSection>
+            <TypeWriter messages={['free and open source solutions', 'open data platforms']} fixedText="We co-create" />
+          </HeroSection>
+        </BackgroundImage>
+        <Sectors>
+          <HeroText className={'sectors-heading'}>Our Sectors</HeroText>
+          <div className={'container-sectors'}>
+            {/* <div className={'left'}> */}
+            <SectorsCard />
+            {/* </div> */}
+            {/* <div className={'center'}> */}
+            <SectorsCard />
+            {/* </div> */}
+            {/* <div className={'right'}> */}
+            <SectorsCard />
+            {/* </div> */}
           </div>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur.
-            </p>
-          </div>
-        </Grid>
-      </Section>
-      <Section background="rgba(71, 122, 181, 0.27)">
-        <Grid>
-          <div>
-            <HeroText>Work with us!</HeroText>
-          </div>
-          <div>
-            <p>Some text here</p>
-          </div>
-        </Grid>
-      </Section>
-      <Section background="hello">
-        <Grid>
-          <div>
-            <HeroText>Come say hi!</HeroText>
-          </div>
-          <div>
-            <p>Some text here</p>
-          </div>
-        </Grid>
-      </Section>
-    </Layout>
+        </Sectors>
+        <div
+          className={'slider-wrapper'}
+          style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '30px' }}
+        >
+          {[1, 1, 1, 1].map((element, index) => {
+            return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
+          })}
+        </div>
+        <TeamHomePage />
+        <WorkHomePage />
+        {/* <Contact /> */}
+      </main>
+      <Footer />
+    </ThemeProvider>
   );
 };
 
 export default Index;
+
+export const pageQuery = graphql`
+  query BackgroundQuery {
+    background: file(relativePath: { eq: "landing-image.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+  }
+`;
