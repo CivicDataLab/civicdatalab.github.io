@@ -53,9 +53,39 @@ const SectorsCard = styled.div`
     justify-content: flex-end;
     padding-right: 23px;
   }
+  @media (min-width: 768px){
+    min-width: 30%;
+    width: 45%;
+  }
+  @media (min-width: 1200px) {
+    width: 30%;
+    .container-sectors {
+      padding-left: 20px;
+      padding-right: 19px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .card{
+      padding-left: 29px;
+      padding-right: 29px;
+      padding-top:20px;
+    }
+    .read-more{
+      padding-right: 0px;
+    }
+
+    .container{
+      padding: 0px 0px 0px 0px;
+    }
+    p{
+      width: 23vw;
+      // padding-right: 26px;
+    }
+}
   @media (min-width: 1440px) {
+    width: 32%;
     h4 {
-      font-size: 40px;
+      font-size: 32px;
       line-height: 56px;
     }
     hr {
@@ -63,43 +93,30 @@ const SectorsCard = styled.div`
       
     }
     p {
-      font-size: 25px;
+      font-size: 18px;
       line-height: 30px;
      
     }
     .container {
-      padding: 29px 40px;
+      // padding: 29px 40px;
     }
     .read-more {
-      font-size: 28px;
+      font-size: 20px;
       line-height: 78px;
       marging-right: 30px;
       
     }
   }
-    @media (min-width: 1200px) {
-      .container-sectors {
-        padding-left: 20px;
-        padding-right: 19px;
-        display: flex;
-        justify-content: space-between;
-      }
-      .card{
-        padding-left: 29px;
-        padding-right: 29px;
-        padding-top:20px;
-      }
-      .read-more{
-        padding-right: 0px;
-      }
-
-      .container{
-        padding: 0px 0px 0px 0px;
-      }
-      p{
-        width: 23vw;
-        padding-right: 26px;
-      }
+  @media(min-width: 1700px){
+    h4{
+      font-size: 40px;
+    }
+    p{
+      font-size: 25px;
+    }
+    .read-more{
+      font-size: 28px;
+    }
   }
 `;
 

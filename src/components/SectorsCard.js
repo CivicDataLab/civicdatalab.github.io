@@ -17,16 +17,13 @@ const SectorsCard = (props) => {
               ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
               fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
               mollit anim id est laborum
-             
             </p>
-            
             
           </div>
           <div className={"read-more-wrapper"}>
-          <Link to="#" className={"read-more"}>Read more >></Link>
+          <Link to="#" className={"read-more"}>Read more &gt;&gt;</Link>
           </div>
         </div>
-        
       </SectorsCardStyle>
     </>
   );

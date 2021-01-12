@@ -4,7 +4,7 @@ import SliderHomePageStyle from '../styles/SliderHomePage';
 const SliderHomePage = (props) => {
   return (
     <>
-      <SliderHomePageStyle>
+      <SliderHomePageStyle dark={props.dark}>
         <div className={'circle-container'} >
           <div>
             <p className={'heading-scroll-section'}>HEADER COMES HERE </p>

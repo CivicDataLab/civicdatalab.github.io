@@ -101,7 +101,7 @@ const TeamHomePage = styled.div`
 
   @media (min-width: 700px) and (max-width: 1200px) {
     .container-team-section {
-      display: flex;
+      // display: flex;
     }
     .content {
       flex: 50%;
@@ -121,6 +121,12 @@ const TeamHomePage = styled.div`
     .meet-the-team {
       line-height: 65px;
       font-size: 30px;
+    }
+    @media (min-width: 900px){
+      .container-team-section{
+        display: flex;
+        padding-right: 0;
+      }
     }
   }
 `;

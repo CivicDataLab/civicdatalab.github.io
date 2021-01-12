@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SliderHomePage = styled.div`
-  background:${(props) => (props.theme=="true" ? 'black':'#eaf0f8')};
+  background:${(props) => (props.dark == true ? 'black':'#eaf0f8')};
   width: 281px;
   height: 125px;
   padding-left:21px;

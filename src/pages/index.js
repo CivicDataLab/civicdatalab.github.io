@@ -53,14 +53,27 @@ const Sectors = styled.section`
   .container-sectors{
     padding-left:20px;
     padding-right:19px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
   }
+  @media (min-width: 768px){
+    .container-sectors{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 30px;
+    }
+  }
+  
   @media (min-width: 1440px) {
     .container-sectors {
       display: flex;
-      gap: 106px;
+      // gap: 106px;
     }
     .sectors-heading {
-      font-size: 120px;
+      font-size: 90px;
       line-height: 120px;
       padding-left: 73px;
     }
@@ -70,6 +83,11 @@ const Sectors = styled.section`
       margin-top: 38px;
     }
   }
+  @media(min-width: 1800px){
+    .section-heading{
+      font-size: 120px;
+    } 
+  }
 `;
 
 const Index = () => {
@@ -78,25 +96,29 @@ const Index = () => {
       <Sectors>
         <HeroText className={'sectors-heading'}>Our Sectors</HeroText>
         <div className={'container-sectors'}>
-          <div className={'left'}>
+          {/* <div className={'left'}> */}
             <SectorsCard />
-          </div>
-          <div className={'center'}>
+          {/* </div> */}
+          {/* <div className={'center'}> */}
             <SectorsCard />
-          </div>
-          <div className={'right'}>
+          {/* </div> */}
+          {/* <div className={'right'}> */}
             <SectorsCard />
-          </div>
+          {/* </div> */}
         </div>
       </Sectors>
       <TeamHomePage />
       <WorkHomePage />
       <Contact />
       <div>
-      <SliderHomePage theme={"true"}/>
-      <SliderHomePage theme={"true"}/>
-      <SliderHomePage theme={"true"}/>
-      <SliderHomePage theme={"true"}/>
+        {
+          [1,1,1,1].map((element, index) => {
+            return(
+              <SliderHomePage key={index} dark={ index%2 !== 0 } theme="true" />
+            )
+          })
+        }
+     
       </div>
       {/* <HeroSection>
         <h1>
