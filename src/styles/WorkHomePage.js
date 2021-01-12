@@ -85,7 +85,6 @@ const WorkHomePage = styled.div`
     flex-direction: column;
     align-items: center;
     row-gap: 10px;
-    margin-left: 44px;
   }
 
   @media (min-width: 550px) {
@@ -93,9 +92,15 @@ const WorkHomePage = styled.div`
       flex-direction: row;
       justify-content: space-around;
     }
+
+    .content-circle {
+      margin-left: 44px;
+    }
   }
 
   @media (min-width: 900px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
     .container-work-section {
       display: flex;
     }
@@ -110,6 +115,8 @@ const WorkHomePage = styled.div`
   }
 
   @media (min-width: 1440px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
     .work-part {
       font-size: 120px;
       line-height: 120px;
@@ -125,8 +132,8 @@ const WorkHomePage = styled.div`
     }
 
     .circle {
-      width: 18vw;
-      height: 18vw;
+      width: 360px;
+      height: 360px;
       margin-bottom: 12px;
     }
 
