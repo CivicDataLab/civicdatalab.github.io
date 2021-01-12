@@ -4,7 +4,10 @@ import styled from 'styled-components';
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(50%, 100%), 1fr));
+  grid-template-columns: ${(props) =>
+    props.itemWidth
+      ? `repeat(auto-fill, minmax(min(${props.itemWidth}px, 100%), 1fr))`
+      : `repeat(auto-fill, minmax(min(360px, 100%), 1fr));`};
 `;
 
 export default Grid;

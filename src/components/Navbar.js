@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { MdClose, MdMenu } from 'react-icons/md';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 
@@ -9,74 +10,185 @@ const StyledNav = styled.nav`
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 0 72px;
+  align-items: center;
+  padding: 22px;
+  background: ${(props) => (props.overlay ? 'rgb(0, 0, 0, 0.5)' : 'transparent')};
+  height: 140px;
 
-  ul {
-    display: flex;
-    padding: 0;
-    border-bottom: 1px solid black;
+  .gatsby-image-wrapper {
+    min-width: 90px;
+  }
+
+  .mobile-nav {
+    cursor: pointer;
+    color: black;
+    transform: scale(2);
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 72px 22px 72px;
+    align-items: start;
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .gatsby-image-wrapper {
+      margin-top: 14px;
+    }
+  }
+`;
+
+const LinksContainer = styled.ul`
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 275px;
+  display: ${(props) => (props.displayMobile ? 'flex' : 'none')};
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  padding: 40px 0 22px 0;
+  margin: 0;
+
+  .close-icon {
+    position: absolute;
+    cursor: pointer;
+    right: 14px;
+    top: 12px;
+    color: white;
   }
 
   li {
     list-style: none;
-    margin: 0 32px;
+    padding: 0 22px;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
   }
 
-  li:first-of-type {
-    margin-left: 0;
+  @media (min-width: 1024px) {
+    font-size: 24px;
+    position: static;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    margin: 0;
+    padding: 0 0 12px 0;
+    border-bottom: ${(props) => (props.dark ? '4px solid white' : '4px solid black')};;
+    background-color: transparent;
+
+    li {
+      padding: 0;
+      margin: 0 16px;
+      height: 100%;
+
+      &:hover {
+        background: none;
+      }
+    }
+
+    li:first-of-type {
+      margin-left: 0;
+    }
+
+    li:last-of-type {
+      margin-right: 0;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
   }
 
-  li:last-of-type {
-    margin-right: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: black;
-    text-transform: lowercase;
+  @media (min-width: 1440px) {
+    font-size: 28px;
   }
 `;
 
-const Navbar = () => {
+const StyledLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+
+  @media (min-width: 1024px) {
+    color: ${(props) => (props.dark ? 'white' : 'black')};
+    height: 100%;
+    text-transform: capitalize;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    &.active-link {
+      color: ${(props) => (props.dark ? 'black' : 'white')};
+      background-color: ${(props) => (props.dark ? 'white' : 'black')};
+    }
+  }
+`;
+
+const Navbar = ({ dark }) => {
+  const [displayMobileNav, setDisplayMobileNav] = React.useState(false);
+
   const data = useStaticQuery(graphql`
     query LogoQuery {
       logo: file(relativePath: { eq: "cdl_logo.png" }) {
         childImageSharp {
-          fixed(width: 112) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 100, quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `);
 
-  console.log(data);
-
-  const logo = data?.logo?.childImageSharp?.fixed;
+  const logo = data?.logo?.childImageSharp?.fluid;
 
   return (
-    <StyledNav>
-      <Image fixed={logo} />
-      <ul>
+    <StyledNav overlay={dark}>
+      <Link to="/">
+        <Image fluid={logo} />
+      </Link>
+      <MdMenu onClick={() => setDisplayMobileNav(true)} className="mobile-nav" />
+      <LinksContainer dark={dark} displayMobile={displayMobileNav}>
+        <MdClose
+          style={{ display: displayMobileNav ? 'block' : 'none' }}
+          onClick={() => setDisplayMobileNav(false)}
+          className="close-icon"
+        />
         <li>
-          <Link to="/">Home</Link>
+          <StyledLink dark={dark} to="/" activeClassName="active-link">
+            Home
+          </StyledLink>
         </li>
         <li>
-          <Link to="/projects">Projects</Link>
+          <StyledLink dark={dark} to="/sectors" activeClassName="active-link">
+            Sectors
+          </StyledLink>
         </li>
         <li>
-          <Link to="/team">The Team</Link>
+          <StyledLink dark={dark} to="/team" activeClassName="active-link" partiallyActive>
+            Team
+          </StyledLink>
         </li>
         <li>
-          <Link to="/team">What we do</Link>
+          <StyledLink dark={dark} to="/blogs" activeClassName="active-link">
+            Blogs
+          </StyledLink>
         </li>
         <li>
-          <Link to="/">Blogs</Link>
+          <StyledLink dark={dark} to="/playbook" activeClassName="active-link">
+            Playbook
+          </StyledLink>
         </li>
         <li>
-          <Link to="/contact">Contact us</Link>
+          <StyledLink dark={dark} to="/contact" activeClassName="active-link">
+            Contact
+          </StyledLink>
         </li>
-      </ul>
+      </LinksContainer>
     </StyledNav>
   );
 };

@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  pathPrefix: '/website-2.0',
   siteMetadata: {
     title: `CivicDataLab`,
     summary: '',
@@ -17,7 +18,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: path.join(__dirname, 'assets', 'images')
+        path: path.join(__dirname, 'src', 'images')
       }
     },
     {
