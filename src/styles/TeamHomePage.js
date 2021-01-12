@@ -36,9 +36,7 @@ const TeamHomePage = styled.div`
     opacity: 1;
     text-decoration: none;
   }
-  .container-team-section {
-    padding-right: 41px;
-  }
+  
   @media (min-width: 1440px) {
     .container-team-section {
       display: flex;
@@ -71,31 +69,28 @@ const TeamHomePage = styled.div`
     .container-team-section {
       display: flex;
     }
+.content{
+  width: 50%;
+}
 
-    .content{
-      display: grid;
-    }
     .lower-content-section {
       flex: 50%;
     }
+
     .section-heading {
-      font-size: 50px;
-      line-height: 50px;
-    }
-    .section-heading {
-      font-size: 100px;
-      line-height: 100px;
+      font-size: 70px;
+      line-height: 67px;
 
       margin-top: 63px;
     }
     p {
-      font-size: 25px;
-      line-height: 37px;
+      font-size: 17px;
+      line-height: 25px;
       width: 62%;
     }
     .meet-the-team {
       line-height: 70px;
-      font-size: 30px;
+      font-size: 20px;
     }
 
   }
@@ -109,19 +104,19 @@ const TeamHomePage = styled.div`
     }
 
     .section-heading {
-      font-size: 71px;
-      line-height: 65px;
+      font-size: 50px;
+      line-height: 50px;
 
       margin-top: 63px;
     }
     p {
-      font-size: 23px;
-      line-height: 35px;
-      width: 62%;
+      font-size: 17px;
+      line-height: 27px;
+    
     }
     .meet-the-team {
-      line-height: 65px;
-      font-size: 30px;
+      
+      font-size: 16x;
     }
     @media (min-width: 900px){
       .container-team-section{

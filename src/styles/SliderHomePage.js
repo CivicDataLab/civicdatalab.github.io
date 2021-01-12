@@ -14,23 +14,30 @@ const SliderHomePage = styled.div`
     line-height: 12px;
     font-family: 'Helvetica', 'Neue';
     letter-spacing: 0px;
-    color: #707070;
+    
+    color:${(props) => (props.dark == true ? 'white':"#707070")};
     opacity: 1;
     display: flex;
   }
   .circle-scroll-section {
     height: 24px;
     width: 23px;
-    background-color: black;
+    background-color:${(props) => (props.dark == true ? 'white':"black")} ;
     border-radius: 50%;
-    margin-left: 145px;
+  
     display: flex;
+  }
+  .circle-container{
+    display: flex;
+    justify-content: space-between;
+}
   }
 
   .line-scroll-section {
     width: 32px;
     height: 0px;
-    border: 5px solid #707070;
+    border: 5px solid;
+    border-color:${(props) => (props.dark == true ? '#DDF521':"#707070")} ;
     opacity: 1;
     margin-left:0px;
    
@@ -42,7 +49,8 @@ const SliderHomePage = styled.div`
     line-height: 24px;
     font-family: 'Helvetica', 'Neue';
     letter-spacing: 0px;
-    color: #585050;
+    
+    color: ${(props) => (props.dark == true ? 'white':"#585050")} ;
     opacity: 1;
     margin-top: 10px;
     width: 225px;

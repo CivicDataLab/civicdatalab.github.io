@@ -93,7 +93,7 @@ const SectorsCard = styled.div`
       
     }
     p {
-      font-size: 18px;
+      font-size: 17px;
       line-height: 30px;
      
     }
