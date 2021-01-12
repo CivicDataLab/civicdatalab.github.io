@@ -130,14 +130,17 @@ const Index = ({ data }) => {
             {/* </div> */}
           </div>
         </Sectors>
-        <TeamHomePage />
-        <WorkHomePage />
-        <Contact />
-        <div>
+        <div
+          className={'slider-wrapper'}
+          style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '30px' }}
+        >
           {[1, 1, 1, 1].map((element, index) => {
             return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
           })}
         </div>
+        <TeamHomePage />
+        <WorkHomePage />
+        {/* <Contact /> */}
       </main>
       <Footer />
     </ThemeProvider>
