@@ -6,6 +6,7 @@ const TeamHomePage = styled.div`
   padding-left: 20px;
   padding-right: 30px;
   padding-top: 47px;
+  margin-bottom: 24px;
   hr {
     border: 8px solid #000000;
     opacity: 1;

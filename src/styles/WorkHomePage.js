@@ -20,7 +20,7 @@ const WorkHomePage = styled.div`
     padding: 40px 20px 50px;
   }
 
-  .content{
+  .content {
     margin-bottom: 20px;
   }
 
@@ -37,7 +37,7 @@ const WorkHomePage = styled.div`
     padding-left: 0px;
   }
 
-  .circle-wrapper{
+  .circle-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +65,8 @@ const WorkHomePage = styled.div`
     opacity: 1;
     // margin-left: 68px;
     // margin-right: 75px;
-    width: 181px;
+    width: 100%;
+    text-decoration: none;
   }
   p {
     padding-left: 22px;
@@ -84,25 +85,26 @@ const WorkHomePage = styled.div`
     flex-direction: column;
     align-items: center;
     row-gap: 10px;
+    margin-left: 44px;
   }
 
-  @media (min-width: 550px){
-    .circle-wrapper{
+  @media (min-width: 550px) {
+    .circle-wrapper {
       flex-direction: row;
       justify-content: space-around;
     }
   }
 
-  @media(min-width: 900px){
-    .container-work-section{
+  @media (min-width: 900px) {
+    .container-work-section {
       display: flex;
     }
-    .circle-wrapper{
+    .circle-wrapper {
       // column-gap: 30px;
       justify-content: space-between;
       width: 50%;
     }
-    .content{
+    .content {
       width: 50%;
     }
   }
@@ -125,7 +127,7 @@ const WorkHomePage = styled.div`
     .circle {
       width: 18vw;
       height: 18vw;
-      margin-left: 44px;
+      margin-bottom: 12px;
     }
 
     .first-text-block {
@@ -134,41 +136,36 @@ const WorkHomePage = styled.div`
       width: 615px;
       margin-left: 87px;
     }
-    .work-home-page{
+    .work-home-page {
       width: 94px;
       margin-left: 89px;
     }
-    .container-work-section{
+    .container-work-section {
       display: flex;
     }
-    .circle-wraper{
+    .circle-wraper {
       display: flex;
     }
   }
-    @media (min-width: 1200px) and (max-width: 1440px) {
-      .work-part {
-        font-size: 100px;
-        line-height: 100px;
-        
-      }
+  @media (min-width: 1200px) and (max-width: 1440px) {
+    .work-part {
+      font-size: 100px;
+      line-height: 100px;
+    }
 
-      .sub-text {
-        font-size: 100px;
-        line-height: 120px;
-        
-      }
-      .first-text-block {
-        font-size: 30px;
-        line-height: 37px;
-        width: 615px;
-      
-      }
+    .sub-text {
+      font-size: 100px;
+      line-height: 120px;
+    }
+    .first-text-block {
+      font-size: 30px;
+      line-height: 37px;
+      width: 615px;
+    }
 
-      .container-work-section{
-        display: flex;
-      }
-
-    
+    .container-work-section {
+      display: flex;
+    }
   }
 `;
 
