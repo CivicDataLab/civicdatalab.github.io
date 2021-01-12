@@ -4,6 +4,12 @@ import BackgroundSection from '../components/BackgroundSection';
 import Layout from '../components/Layout';
 import Grid from '../styles/Grid';
 import HeroText from '../styles/HeroText';
+import SectorsCard from '../components/SectorsCard';
+import TeamHomePage from '../components/TeamHomePage';
+import WorkHomePage from '../components/WorkHomePage';
+import Contact from "../components/Contact";
+import SliderHomePage from "../components/SliderHomePage";
+import { graphql } from 'gatsby';
 
 const Section = styled.section`
   padding: 0 72px;
@@ -39,10 +45,60 @@ const HeroSection = styled(Section)`
   }
 `;
 
+const Sectors = styled.section`
+  .sectors-heading{
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  .container-sectors{
+    padding-left:20px;
+    padding-right:19px;
+  }
+  @media (min-width: 1440px) {
+    .container-sectors {
+      display: flex;
+      gap: 106px;
+    }
+    .sectors-heading {
+      font-size: 120px;
+      line-height: 120px;
+      padding-left: 73px;
+    }
+    .container-sectors{
+      margin-left: 53px;
+      margin-right: 55px;
+      margin-top: 38px;
+    }
+  }
+`;
+
 const Index = () => {
   return (
-    <Layout>
-      <HeroSection>
+    <>
+      <Sectors>
+        <HeroText className={'sectors-heading'}>Our Sectors</HeroText>
+        <div className={'container-sectors'}>
+          <div className={'left'}>
+            <SectorsCard />
+          </div>
+          <div className={'center'}>
+            <SectorsCard />
+          </div>
+          <div className={'right'}>
+            <SectorsCard />
+          </div>
+        </div>
+      </Sectors>
+      <TeamHomePage />
+      <WorkHomePage />
+      <Contact />
+      <div>
+      <SliderHomePage theme={"true"}/>
+      <SliderHomePage theme={"true"}/>
+      <SliderHomePage theme={"true"}/>
+      <SliderHomePage theme={"true"}/>
+      </div>
+      {/* <HeroSection>
         <h1>
           We are a collaborative compa<span></span>
         </h1>
@@ -82,8 +138,8 @@ const Index = () => {
             <p>Some text here</p>
           </div>
         </Grid>
-      </Section>
-    </Layout>
+      </Section> */}
+    </>
   );
 };
 
