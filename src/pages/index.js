@@ -1,8 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import HeroText from '../styles/HeroText';
+import SectorsCard from '../components/SectorsCard';
+import TeamHomePage from '../components/TeamHomePage';
+import WorkHomePage from '../components/WorkHomePage';
+import Contact from "../components/Contact";
+import SliderHomePage from "../components/SliderHomePage";
 import BackgroundImage from 'gatsby-background-image';
-// import BackgroundWithImage from '../components/BackgroundWithImage';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
 import Footer from '../components/Footer';
@@ -52,6 +58,51 @@ const HeroSection = styled(Section)`
   }
 `;
 
+const Sectors = styled.section`
+  .sectors-heading{
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  .container-sectors{
+    padding-left:20px;
+    padding-right:19px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  @media (min-width: 768px){
+    .container-sectors{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 30px;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .container-sectors {
+      display: flex;
+      // gap: 106px;
+    }
+    .sectors-heading {
+      font-size: 90px;
+      line-height: 120px;
+      padding-left: 73px;
+    }
+    .container-sectors{
+      margin-left: 53px;
+      margin-right: 55px;
+      margin-top: 38px;
+    }
+  }
+  @media(min-width: 1800px){
+    .section-heading{
+      font-size: 120px;
+    } 
+  }
+`;
+
 const Index = ({ data }) => {
   const image = data?.background?.childImageSharp?.fluid;
 
@@ -65,6 +116,33 @@ const Index = ({ data }) => {
             <TypeWriter messages={['free and open source solutions', 'open data platforms']} fixedText="We co-create" />
           </HeroSection>
         </BackgroundImage>
+  <Sectors>
+        <HeroText className={'sectors-heading'}>Our Sectors</HeroText>
+        <div className={'container-sectors'}>
+          {/* <div className={'left'}> */}
+            <SectorsCard />
+          {/* </div> */}
+          {/* <div className={'center'}> */}
+            <SectorsCard />
+          {/* </div> */}
+          {/* <div className={'right'}> */}
+            <SectorsCard />
+          {/* </div> */}
+        </div>
+      </Sectors>
+      <TeamHomePage />
+      <WorkHomePage />
+      <Contact />
+      <div>
+        {
+          [1,1,1,1].map((element, index) => {
+            return(
+              <SliderHomePage key={index} dark={ index%2 !== 0 } theme="true" />
+            )
+          })
+        }
+     
+      </div>
       </main>
       <Footer />
     </ThemeProvider>
