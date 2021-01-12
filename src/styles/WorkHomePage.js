@@ -147,20 +147,24 @@ const WorkHomePage = styled.div`
   }
     @media (min-width: 1200px) and (max-width: 1440px) {
       .work-part {
-        font-size: 100px;
-        line-height: 100px;
+        font-size: 50px;
+        line-height: 50px;
         
+      }
+      .circle{
+        height: 200px;
+        width: 200px;
       }
 
       .sub-text {
-        font-size: 100px;
-        line-height: 120px;
+        font-size: 50px;
+        line-height: 50px;
         
       }
       .first-text-block {
-        font-size: 30px;
-        line-height: 37px;
-        width: 615px;
+        font-size: 17px;
+        line-height: 23px;
+       
       
       }
 
