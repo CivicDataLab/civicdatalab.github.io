@@ -9,28 +9,29 @@ const WorkHomePage = (props) => {
       <WorkHomePageStyle>
         <div className={'container-work-section'}>
           <div className={'content'}>
-            <HeroText className={"work-part"}>Work </HeroText>
+            <HeroText className={'work-part'}>Work </HeroText>
             <HeroText className={'sub-text'}> With Us!</HeroText>
-            <hr className={"work-home-page"}></hr>
+            <hr className={'work-home-page'}></hr>
             <p className={'first-text-block'}>
               Let’s co-create the next solution enabling sustainable social change in your area of work
             </p>
           </div>
-          <div className={"circle-wrapper"}>
-          <div className={'content-circle'} id="first-circle">
-            <div className={'circle'}></div>
-            <div className={"below-text"}>
+          <div className={'circle-wrapper'}>
+            <div className={'content-circle'} id="first-circle">
+              <div className={'circle'}></div>
+              <div className={'below-text'}>
                 <p>Partner With Us</p>
+              </div>
+            </div>
+            <div className={'content-circle'}>
+              <div className={'circle'}></div>
+              <Link to="/openings" className={'below-text'}>
+                <p>
+                  Join Us
+                </p>
+              </Link>
             </div>
           </div>
-          <div className={'content-circle'}>
-            <div className={'circle'}></div>
-            <div className={"below-text"}>
-                <p>Join Us</p>
-            </div>
-          </div>
-          </div>
-
         </div>
       </WorkHomePageStyle>
     </>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const CONSTANTS = {
   DELETING_SPEED: 200,
-  TYPING_SPEED: 100
+  TYPING_SPEED: 120
 };
 
 const TypeWriter = ({ messages, fixedText }) => {
