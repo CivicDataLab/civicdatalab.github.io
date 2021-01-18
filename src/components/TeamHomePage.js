@@ -7,7 +7,7 @@ const TeamHomePage = (props) => {
     <TeamHomePageStyle>
       <div className={'container-team-section'}>
         <div className={'content'}>
-          <HeroText className={"section-heading"}>the team</HeroText>
+          <HeroText className={'section-heading'}>the team</HeroText>
         </div>
         <div className={'content lower-content-section'}>
           <hr></hr>
@@ -17,8 +17,8 @@ const TeamHomePage = (props) => {
             civic engagement and advocacy in the country. Meet the individuals who work behind the scenes to make it all
             happen!
           </p>
-          <Link to="#" className={'meet-the-team'}>
-            Meet the team >>
+          <Link to="/team" className={'meet-the-team'}>
+            Meet the team {'>>'}
           </Link>
         </div>
       </div>
