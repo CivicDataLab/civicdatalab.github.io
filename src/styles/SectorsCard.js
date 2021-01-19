@@ -93,8 +93,8 @@ const SectorsCard = styled.div`
       
     }
     p {
-      font-size: 17px;
-      line-height: 30px;
+      font-size: 30px;
+      line-height: 37px;
      
     }
     .container {
@@ -106,6 +106,7 @@ const SectorsCard = styled.div`
       marging-right: 30px;
       
     }
+
   }
   @media(min-width: 1700px){
     h4{
