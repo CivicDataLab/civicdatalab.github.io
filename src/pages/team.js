@@ -275,6 +275,7 @@ const Team = ({ data }) => {
                   link={member.fields.slug}
                   name={member.frontmatter.name}
                   role={member.frontmatter.role.split(',')[0]}
+                  image={member.frontmatter.image.childImageSharp.fluid}
                 />
               ))}
               {/* {[1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((image) => {
@@ -323,6 +324,13 @@ export const pageQuery = graphql`
         frontmatter {
           name
           role
+          image {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
