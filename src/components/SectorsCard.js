@@ -16,6 +16,7 @@ const SectorsCard = (props) => {
               dolore magna aliqua.
             </p>
             
+            
           </div>
           <div className={"read-more-wrapper"}>
           <Link to="#" className={"read-more"}>Read more &gt;&gt;</Link>
