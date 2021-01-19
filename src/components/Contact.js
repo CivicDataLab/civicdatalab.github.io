@@ -5,24 +5,33 @@ import styled from 'styled-components';
 import { FaTwitter, FaInstagram, FaGithubAlt } from 'react-icons/fa';
 
 const SocialLinksContainer = styled.div`
-  display: none;
-  @media (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
 
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: black;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    color: white;
+    margin: 0 8px;
+  }
+
+  a > * {
+    width: 70%;
+    height: 70%;
+  }
+
+  @media (min-width: 768px) {
     a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      background-color: black;
-      width: 34px;
-      height: 34px;
-      border-radius: 100%;
-      color: white;
-      margin: 0 4px;
+      width: 45px;
+      height: 45px;
     }
   }
 `;
