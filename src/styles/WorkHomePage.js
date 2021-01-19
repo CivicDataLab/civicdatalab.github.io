@@ -120,20 +120,20 @@ const WorkHomePage = styled.div`
     .work-part {
       font-size: 120px;
       line-height: 120px;
-      padding-left: 73px;
+   
     }
     .sub-text {
       font-size: 120px;
       line-height: 120px;
-      padding-left: 73px;
+   
     }
     .container-team-section {
       display: flex;
     }
 
     .circle {
-      width: 360px;
-      height: 360px;
+      width: 300px;
+      height: 300px;
       margin-bottom: 12px;
     }
 
@@ -141,14 +141,15 @@ const WorkHomePage = styled.div`
       font-size: 30px;
       line-height: 37px;
       width: 615px;
-      margin-left: 87px;
+      
     }
     .work-home-page {
       width: 94px;
-      margin-left: 89px;
+     
     }
     .container-work-section {
       display: flex;
+      padding: 40px 73px 50px;
     }
     .circle-wraper {
       display: flex;
@@ -156,17 +157,17 @@ const WorkHomePage = styled.div`
   }
   @media (min-width: 1200px) and (max-width: 1440px) {
     .work-part {
-      font-size: 100px;
-      line-height: 100px;
+      font-size: 70px;
+      line-height: 70px;
     }
 
     .sub-text {
-      font-size: 100px;
-      line-height: 120px;
+      font-size: 70px;
+      line-height: 70px;
     }
     .first-text-block {
-      font-size: 30px;
-      line-height: 37px;
+      font-size: 17px;
+      line-height: 25px;
       width: 615px;
     }
 

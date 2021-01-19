@@ -67,6 +67,7 @@ const SliderHomePage = styled.div`
     height: 240px;
     .heading-scroll-section {
       font-size: 23px;
+      line-height:23px;
     }
   }
 }
