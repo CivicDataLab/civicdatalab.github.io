@@ -16,8 +16,8 @@ const Contact = styled.div`
   .container-contact-section {
     padding-left: 20px;
     padding-top: 40px;
+    margin-right: 30px;
   }
-
   .first-text-block {
     text-align: left;
     font-size: 17px;
@@ -48,7 +48,7 @@ const Contact = styled.div`
     opacity: 1;
     // width: 16vw;
     height: 32px;
-    min-width: 303px;
+    width: 100%;
     margin-bottom: 21px;
   }
 
@@ -83,24 +83,81 @@ const Contact = styled.div`
   .send-button-container {
     display: flex;
     justify-content: flex-end;
-    padding-right: 18px;
+    
+  }
+  
+  @media (min-width: 900px) {
+    .container-contact-section{
+      display: flex;
+    }
+    .content{
+      width: 50%;
+    }
+
+
+    .lower-content-section{
+      margin-top:141px;
+    }
+    .first-text-block{
+      margin-right: 175px;
+    }
+  }
+  @media (min-width: 1200px){
+    .main-part {
+      font-size: 70px;
+      line-height: 70px;
+    }
+
+    .sub-text {
+      font-size: 70px;
+      line-height: 70px;
+    }
   }
 
   @media (min-width: 1440px) {
     .main-part {
-     
-      font-size: 120px;
-      line-height: 120px;
-
-    }
-
-    .sub-text{
       font-size: 120px;
       line-height: 120px;
     }
-    .contact-page-line{
+
+    .sub-text {
+      font-size: 120px;
+      line-height: 120px;
+    }
+    .contact-page-line {
       width: 94px;
-      margin-left:0px;
+      margin-left: 0px;
+    }
+
+    .container-contact-section{
+      padding-left:73px; 
+      padding-right: 116px;
+      margin-right: 0px;
+    }
+
+    .first-text-block{
+      font-size: 30px;
+      line-height: 37px;
+    }
+
+    .mail-text-block{
+      font-size: 30px;
+      line-height: 37px;
+
+    }
+
+    .lower-content-section{
+      margin-top: 313px;
+    }
+    input{
+      padding-left: 30px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      font-size: 30px;
+    }
+
+    button{
+      height: 90px;
     }
   }
 `;

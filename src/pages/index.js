@@ -13,6 +13,8 @@ import { GlobalStyle, theme } from '../theme/theme';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import TypeWriter from '../components/TypeWriter';
+import OurPillars from '../components/OurPillars';
+import OurPartners from '../components/OurPartners';
 
 const Section = styled.section`
   padding: 0 72px;
@@ -80,13 +82,20 @@ const Sectors = styled.section`
     }
   }
 
+  @media (min-width: 900px){
+    .sectors-heading{
+      font-size: 70px;
+      line-height: 67px;
+    }
+  }
+
   @media (min-width: 1440px) {
     .container-sectors {
       display: flex;
       // gap: 106px;
     }
     .sectors-heading {
-      font-size: 90px;
+      font-size: 120px;
       line-height: 120px;
       padding-left: 73px;
     }
@@ -119,15 +128,11 @@ const Index = ({ data }) => {
         <Sectors>
           <HeroText className={'sectors-heading'}>Our Sectors</HeroText>
           <div className={'container-sectors'}>
-            {/* <div className={'left'}> */}
             <SectorsCard />
-            {/* </div> */}
-            {/* <div className={'center'}> */}
+
             <SectorsCard />
-            {/* </div> */}
-            {/* <div className={'right'}> */}
+
             <SectorsCard />
-            {/* </div> */}
           </div>
         </Sectors>
         <div
@@ -138,9 +143,12 @@ const Index = ({ data }) => {
             return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
           })}
         </div>
+        <OurPartners />
+        <OurPillars />
+
         <TeamHomePage />
         <WorkHomePage />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <Footer />
     </ThemeProvider>
