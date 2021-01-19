@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 const TeamHomePage = styled.div`
+.container-team-section{
   display: flex;
   flex-direction: row;
   padding-left: 20px;
   padding-right: 30px;
   padding-top: 47px;
   margin-bottom: 24px;
+}
   hr {
     border: 8px solid #000000;
     opacity: 1;
@@ -40,6 +42,8 @@ const TeamHomePage = styled.div`
   @media (min-width: 1440px) {
     .container-team-section {
       display: flex;
+      padding-left: 73px;
+      
     }
     .content {
       flex: 70%;
@@ -47,7 +51,7 @@ const TeamHomePage = styled.div`
     .section-heading {
       font-size: 120px;
       line-height: 120px;
-      padding-left: 73px;
+  
       margin-top: 161px;
     }
     .lower-content-section {
@@ -104,10 +108,10 @@ const TeamHomePage = styled.div`
     }
 
     .section-heading {
-      font-size: 50px;
-      line-height: 50px;
+      font-size: 32px;
+      line-height: 32px;
 
-      margin-top: 63px;
+     
     }
     p {
       font-size: 17px;
