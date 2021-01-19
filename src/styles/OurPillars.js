@@ -18,7 +18,7 @@ padding-left: 20px;
     margin-right: 50px;
 }
 
-p{
+h1 {
     height: 70px;
     display: flex;
     align-items: flex-end;
