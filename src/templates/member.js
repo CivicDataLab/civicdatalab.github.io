@@ -246,7 +246,7 @@ const MemberTemplate = ({ data }) => {
   const member = data.markdownRemark;
   const [blogPosts] = useMediumFeed(member.frontmatter.medium);
 
-  const image = data?.profilePicture?.childImageSharp?.fluid;
+  console.log(member.frontmatter.image);
 
   return (
     <Layout>
@@ -285,8 +285,8 @@ const MemberTemplate = ({ data }) => {
             </a>
           </SocialLinksContainer>
           <div style={{ backgroundColor: member.frontmatter.accentcolor }}>
-            <Image fluid={image} />
-            {/* <img src="/assets/images/SA.jpeg" alt="profile" /> */}
+            <Image fluid={member.frontmatter.image.childImageSharp.fluid} />
+            {/* <img src={require(`../images/${member.frontmatter.image}`)} className="profile-picture" alt="profile" /> */}
             <p>
               <span>“</span>
               {member.frontmatter.quote}
@@ -329,17 +329,15 @@ export const pageQuery = graphql`
         role
         description
         quote
-        image
+        image {
+          childImageSharp {
+            fluid(maxWidth: 800, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         medium
         accentcolor
-      }
-    }
-
-    profilePicture: file(relativePath: { eq: "SA.jpeg" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
       }
     }
   }
