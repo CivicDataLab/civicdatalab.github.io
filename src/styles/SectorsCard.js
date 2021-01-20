@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const SectorsCard = styled.div`
   .card {
+    padding: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
   }
@@ -9,8 +10,13 @@ const SectorsCard = styled.div`
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
 
+  .gatsby-image-wrapper {
+    height: 180px;
+  }
+
   .container {
-    padding: 17px 20px;
+    box-sizing: border-box;
+    padding: 18px 20px;
   }
   h4 {
     text-align: left;
@@ -32,7 +38,7 @@ const SectorsCard = styled.div`
   }
   p {
     text-align: left;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 20px;
     font-family: Montserrat;
     letter-spacing: 0px;
@@ -53,70 +59,40 @@ const SectorsCard = styled.div`
     justify-content: flex-end;
     padding-right: 23px;
   }
-  @media (min-width: 768px){
-    min-width: 30%;
-    width: 45%;
-  }
   @media (min-width: 1200px) {
-    width: 30%;
+    .gatsby-image-wrapper {
+      height: 300px;
+    }
     .container-sectors {
       padding-left: 20px;
       padding-right: 19px;
       display: flex;
       justify-content: space-between;
     }
-    .card{
+    .read-more-wrapper {
+      padding-right: 29px;
+    }
+    .container {
       padding-left: 29px;
       padding-right: 29px;
-      padding-top:20px;
     }
-    .read-more{
-      padding-right: 0px;
-    }
-
-    .container{
-      padding: 0px 0px 0px 0px;
-    }
-    p{
-      width: 23vw;
-      // padding-right: 26px;
-    }
-}
+  }
   @media (min-width: 1440px) {
-    width: 32%;
     h4 {
       font-size: 32px;
       line-height: 56px;
     }
     hr {
       width: 98px;
-      
     }
     p {
-      font-size: 30px;
-      line-height: 37px;
-     
-    }
-    .container {
-      // padding: 29px 40px;
+      font-size: 18px;
+      line-height: 27px;
     }
     .read-more {
       font-size: 20px;
       line-height: 78px;
-      marging-right: 30px;
-      
-    }
-
-  }
-  @media(min-width: 1700px){
-    h4{
-      font-size: 40px;
-    }
-    p{
-      font-size: 25px;
-    }
-    .read-more{
-      font-size: 28px;
+      marging-right: 18px;
     }
   }
 `;

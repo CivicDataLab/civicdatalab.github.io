@@ -10,17 +10,17 @@ const Contact = styled.div`
     opacity: 1;
     width: 58px;
     margin-left: 0px;
-    margin-top: 17px;
+    margin-top: 18px;
   }
 
   .container-contact-section {
     padding-left: 20px;
     padding-top: 40px;
-    margin-right: 30px;
+    margin-right: 18px;
   }
   .first-text-block {
     text-align: left;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 20px;
     font-family: Montserrat;
     letter-spacing: 0px;
@@ -59,7 +59,7 @@ const Contact = styled.div`
     /* WebKit browsers */
     padding-left: 11px;
     text-align: left;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 20px;
     font-family: Montserrat;
     letter-spacing: 0px;
@@ -116,13 +116,13 @@ const Contact = styled.div`
 
   @media (min-width: 1440px) {
     .main-part {
-      font-size: 120px;
-      line-height: 120px;
+      font-size: 60px;
+      line-height: 60px;
     }
 
     .sub-text {
-      font-size: 120px;
-      line-height: 120px;
+      font-size: 60px;
+      line-height: 60px;
     }
     .contact-page-line {
       width: 94px;
@@ -136,13 +136,13 @@ const Contact = styled.div`
     }
 
     .first-text-block{
-      font-size: 30px;
-      line-height: 37px;
+      font-size: 18px;
+      line-height: 27px;
     }
 
     .mail-text-block{
-      font-size: 30px;
-      line-height: 37px;
+      font-size: 18px;
+      line-height: 27px;
 
     }
 
@@ -150,10 +150,10 @@ const Contact = styled.div`
       margin-top: 313px;
     }
     input{
-      padding-left: 30px;
+      padding-left: 18px;
       padding-top: 25px;
       padding-bottom: 25px;
-      font-size: 30px;
+      font-size: 18px;
     }
 
     button{

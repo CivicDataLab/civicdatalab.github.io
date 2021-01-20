@@ -41,24 +41,21 @@ const MemberContainer = styled.div`
 export const Bio = styled.div`
   padding: 0 32px;
   box-sizing: border-box;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   h2 {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 1.6em;
     margin-top: 0;
     margin-bottom: 12px;
     width: 50%;
   }
 
   h5 {
-    font-size: 1.2em;
     font-weight: 700;
     margin: 3px 0;
   }
 
   p {
-    font-size: 1.6em;
     margin: 18px 0;
     line-height: 28px;
   }
@@ -67,8 +64,8 @@ export const Bio = styled.div`
     padding: 0 20px;
     width: 600px;
     p {
-      font-size: 30px;
-      line-height: 37px;
+      font-size: 18px;
+      line-height: 27px;
       margin: 44px 0;
     }
     h2 {
@@ -78,6 +75,10 @@ export const Bio = styled.div`
     h5 {
       font-size: 20px;
     }
+  }
+
+  @media (min-width: 1280px) {
+    width: 720px;
   }
 `;
 
@@ -102,7 +103,6 @@ const PictureContainer = styled.div`
   }
 
   p {
-    font-size: 1.6em;
     line-height: 28px;
     font-weight: 300;
     font-style: italic;
@@ -150,6 +150,11 @@ const PictureContainer = styled.div`
 
     p {
       padding-bottom: 100px;
+      padding-top: 40px;
+
+      span:first-of-type {
+        padding-top: 40px;
+      }
 
       span:last-of-type {
         transform: rotate(-180deg) translate(10px, 0px);
@@ -183,6 +188,7 @@ const SocialLinksContainer = styled.div`
     align-items: center;
     width: 100%;
     margin-bottom: 100px;
+    margin-left: 100px;
 
     a {
       display: flex;
@@ -190,11 +196,16 @@ const SocialLinksContainer = styled.div`
       align-items: center;
       text-decoration: none;
       background-color: black;
-      width: 34px;
-      height: 34px;
+      width: 45px;
+      height: 45px;
       border-radius: 100%;
       color: white;
       margin: 0 4px;
+    }
+
+    a > * {
+      width: 50%;
+      height: 50%;
     }
   }
 `;
@@ -205,7 +216,7 @@ const BlogContainer = styled.div`
   box-sizing: border-box;
   max-width: 1020px;
   width: 100%;
-  margin-top: 120px;
+  margin-top: 60px;
 
   > h2 {
     display: inline-block;
@@ -227,6 +238,10 @@ const BlogContainer = styled.div`
     > h2 {
       font-size: 40px;
     }
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: 100px;
   }
 `;
 

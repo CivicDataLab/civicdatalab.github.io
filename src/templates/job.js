@@ -32,7 +32,7 @@ const JobContainer = styled.div`
 const DescriptionContainer = styled.div`
   grid-area: description;
   background-color: #0000001a;
-  font-size: 17px;
+  font-size: 18px;
   padding: 48px 32px;
   line-height: 28px;
 
@@ -49,31 +49,22 @@ const DescriptionContainer = styled.div`
   a {
     color: #208da7;
     margin-right: 16px;
-    font-size: 20px;
+    font-size: inherit;
   }
 
   @media (min-width: 1440px) {
-    font-size: 30px;
     padding-right: 144px;
 
     h2 {
-      font-size: 30px;
+      font-size: 18px;
       margin-top: 48px;
-    }
-
-    p {
-      line-height: 40px;
-    }
-
-    a {
-      font-size: 30px;
     }
   }
 `;
 
 const AboutContainer = styled.div`
   grid-area: about;
-  font-size: 17px;
+  font-size: 18px;
   padding: 0 32px;
   line-height: 28px;
 
@@ -100,27 +91,22 @@ const AboutContainer = styled.div`
   }
 
   @media (min-width: 1440px) {
-    font-size: 30px;
+    font-size: 18px;
     padding-right: 72px;
 
     & > div {
-      margin: 120px 0;
+      margin: 60px 0;
     }
 
     h2 {
-      font-size: 30px;
-    }
-
-    p,
-    li {
-      line-height: 40px;
+      font-size: 18px;
     }
   }
 `;
 
 const RolesContainer = styled.div`
   grid-area: roles;
-  font-size: 17px;
+  font-size: 18px;
   padding: 0 32px;
 
   h2 {
@@ -133,20 +119,16 @@ const RolesContainer = styled.div`
 
   @media (min-width: 1440px) {
     padding: 0 72px;
-    font-size: 30px;
+    font-size: 18px;
 
     h2 {
-      font-size: 30px;
-    }
-
-    p {
-      line-height: 40px;
+      font-size: 18px;
     }
   }
 `;
 
 const Header = styled.div`
-  font-size: 17px;
+  font-size: 18px;
   padding: 0 32px;
 
   h1 {
@@ -164,7 +146,7 @@ const Header = styled.div`
 
   @media (min-width: 1024px) {
     h1 {
-      font-size: 120px;
+      font-size: 60px;
       border: none;
       padding: 0;
     }
@@ -198,6 +180,16 @@ const ApplicationProcessContainer = styled.div`
 
   @media (min-width: 1440px) {
     margin-top: 100px;
+  }
+`;
+
+const RecentWork = styled.ul`
+  li {
+    font-weight: 400;
+  }
+
+  a {
+    color: #208da7;
   }
 `;
 
@@ -318,6 +310,49 @@ const Job = ({ data }) => {
           </div>
           <div>
             <h2>Our most recent work</h2>
+            <RecentWork>
+              <li>
+                Developing{' '}
+                <a href="https://zombietracker.in" target="_blank" rel="noreferrer noopener">
+                  a case-law tracker
+                </a>{' '}
+                with{' '}
+                <a href="https://internetfreedom.in/" target="_blank" rel="noreferrer noopener">
+                  Internet Freedom Foundation
+                </a>{' '}
+                to track cases registered under the now unconstitutional section 66A of the Information Technology Act.
+              </li>
+              <li>
+                Tracking the implementation of the POCSO act by studying the case-laws from three different states.
+              </li>
+              <li>
+                Building the{' '}
+                <a href="https://justicehub.in/" target="_blank" rel="noreferrer noopener">
+                  JusticeHub
+                </a>{' '}
+                - To enable communities to discover, share, create and harness open data on justice.
+              </li>
+              <li>
+                Creating an OSS-Landscape report chronicling the journey of the Open Source Movement in India and
+                developing a strategic roadmap for its adoption in India.
+              </li>
+              <li>
+                We are co-creating{' '}
+                <a href="https://openbudgetsindia.org/" target="_blank" rel="noreferrer noopener">
+                  Open Budgets India Initiative
+                </a>
+                , to make India’s public budget and spending data more open, usable and easy to comprehend. It has some
+                key open-source data analytics tools like Union Budget Explorer, Assam Budget Explorer and more.
+              </li>
+              <li>
+                We have also worked on a crowdsourced disaster management platform{' '}
+                <a href="https://petabencana.id/" target="_blank" rel="noreferrer noopener">
+                  PetaBencana
+                </a>{' '}
+                and are currently re-building a city level open data platform OpenCity to enable more data led
+                conversations in cities.
+              </li>
+            </RecentWork>
           </div>
           <div>
             <h2>Application Process</h2>

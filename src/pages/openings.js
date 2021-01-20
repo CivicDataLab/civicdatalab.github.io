@@ -36,26 +36,23 @@ const DescriptionContainer = styled.div`
   }
 
   p {
+    font-size: 18px;
     line-height: 28px;
   }
 
   @media (min-width: 1024px) {
     width: 60%;
     h1 {
-      font-size: 6em;
+      font-size: 60px;
       display: block;
       padding: 0;
       border: none;
-    }
-    p {
-      font-size: 2em;
-      line-height: 36px;
     }
   }
 `;
 const OpeningListContainer = styled.div`
   grid-area: openings;
-  font-size: 16px;
+  font-size: 18px;
   margin: 32px 0;
 
   div:nth-of-type(odd) {
@@ -63,7 +60,6 @@ const OpeningListContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-    font-size: 28px;
     margin-right: 106px;
   }
 `;

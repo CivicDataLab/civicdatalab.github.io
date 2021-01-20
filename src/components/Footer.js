@@ -9,7 +9,7 @@ const FooterContainer = styled.div`
   background-color: #000000;
   color: white;
   padding: 40px 22px;
-  margin-top: 120px;
+  margin-top: 60px;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     'address address'
@@ -34,39 +34,41 @@ const FooterContainer = styled.div`
 
 const AddressContainer = styled.div`
   grid-area: address;
-  font-size: 17px;
+  font-size: 18px;
   max-width: 600px;
   width: 100%;
+  p {
+    line-height: 22px;
+  }
 
   @media (min-width: 768px) {
     max-width: 320px;
-    width: 100%;
     padding-right: 32px;
   }
 
   @media (min-width: 1024px) {
-    font-size: 25px;
     max-width: 450px;
-    width: 100%;
 
     h3 {
       margin-top: 10px;
-    }
-
-    p {
-      line-height: 35px;
     }
   }
 `;
 
 const NavigationContainer = styled.div`
+  margin-top: 30px;
   h2 {
     font-size: 22px;
     text-transform: uppercase;
     display: inline-block;
     padding-bottom: 10px;
     margin-bottom: 10px;
+    margin-top: 10px;
     border-bottom: 1px solid white;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 0;
   }
 `;
 
@@ -75,19 +77,11 @@ const NavLinksContainer = styled.ul`
   margin-top: 0;
   li {
     list-style: none;
-    margin: 2px 0;
+    margin: 4px 0;
     a {
       color: white;
       text-decoration: none;
-      font-size: 17px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    li {
-      a {
-        font-size: 25px;
-      }
+      font-size: 18px;
     }
   }
 `;
@@ -114,7 +108,7 @@ const ExternalLinksContainer = styled.div`
   align-items: center;
   margin-top: 40px;
   margin-bottom: 20px;
-  font-size: 17px;
+  font-size: 18px;
 
   @media (min-width: 768px) {
     width: 320px;
@@ -125,7 +119,7 @@ const SocialLinksContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 130px;
+  max-width: 118px;
   width: 100%;
 
   a {

@@ -13,7 +13,7 @@ const WorkHomePage = styled.div`
     opacity: 1;
     width: 58px;
     margin-left: 0px;
-    margin-top: 17px;
+    margin-top: 18px;
   }
 
   .container-work-section {
@@ -26,7 +26,7 @@ const WorkHomePage = styled.div`
 
   .first-text-block {
     text-align: left;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 20px;
     font-family: Montserrat;
     letter-spacing: 0px;
@@ -41,7 +41,7 @@ const WorkHomePage = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 30px;
+    row-gap: 18px;
   }
 
   .circle {
@@ -57,7 +57,7 @@ const WorkHomePage = styled.div`
     background-color: black;
     text-align: left;
     font: normal normal medium;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 31px;
     font-family: Montserrat;
     letter-spacing: 0px;
@@ -105,7 +105,7 @@ const WorkHomePage = styled.div`
       display: flex;
     }
     .circle-wrapper {
-      // column-gap: 30px;
+      // column-gap: 18px;
       justify-content: space-between;
       width: 50%;
     }
@@ -118,13 +118,13 @@ const WorkHomePage = styled.div`
     padding-top: 100px;
     padding-bottom: 100px;
     .work-part {
-      font-size: 120px;
-      line-height: 120px;
+      font-size: 60px;
+      line-height: 60px;
    
     }
     .sub-text {
-      font-size: 120px;
-      line-height: 120px;
+      font-size: 60px;
+      line-height: 60px;
    
     }
     .container-team-section {
@@ -138,8 +138,8 @@ const WorkHomePage = styled.div`
     }
 
     .first-text-block {
-      font-size: 30px;
-      line-height: 37px;
+      font-size: 18px;
+      line-height: 27px;
       width: 615px;
       
     }
@@ -166,7 +166,7 @@ const WorkHomePage = styled.div`
       line-height: 70px;
     }
     .first-text-block {
-      font-size: 17px;
+      font-size: 18px;
       line-height: 25px;
       width: 615px;
     }

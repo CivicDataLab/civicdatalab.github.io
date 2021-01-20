@@ -7,14 +7,14 @@ export const theme = {
     primaryBackground: '#477AB5'
   },
   typography: {
-    fontSize: '14px'
+    fontSize: '18px'
   }
 };
 
 export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     padding: 0;
     margin: 0;
   }
