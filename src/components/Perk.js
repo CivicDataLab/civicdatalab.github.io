@@ -24,18 +24,17 @@ const PerkItem = styled.div`
   }
 
   @media (min-width: 1440px) {
-    align-items: center;
-    text-align: center;
+    align-items: start;
     padding-right: 80px;
 
     h3 {
-      font-size: 30px;
-      line-height: 40px;
+      font-size: 18px;
+      line-height: 28px;
     }
 
     .perk-logo {
-      width: 284px;
-      height: 284px;
+      width: 250px;
+      height: 250px;
     }
   }
 `;

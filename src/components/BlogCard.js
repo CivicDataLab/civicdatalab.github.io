@@ -23,7 +23,7 @@ const BlogCard = ({ title, imageUrl, postUrl }) => {
       <Card>
         <img src={imageUrl} alt={title} />
       </Card>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
     </StyledLink>
   );
 };

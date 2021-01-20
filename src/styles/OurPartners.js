@@ -30,7 +30,7 @@ p{
 @media (min-width: 900px) {
     .partners-container{
         grid-template-columns: repeat(4,1fr);
-        margin-right: 30px;
+        margin-right: 18px;
        
     }
 
@@ -58,8 +58,8 @@ p{
     padding-left: 73px; 
 }
 .section-heading{
-    font-size:120px;
-    line-height: 120px;
+    font-size:60px;
+    line-height: 60px;
     
 }
 }

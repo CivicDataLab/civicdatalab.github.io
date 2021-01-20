@@ -1,30 +1,28 @@
 import React from 'react';
 import SectorsCardStyle from '../styles/SectorsCard';
-import { Link } from "gatsby";
+import { Link } from 'gatsby';
+import Image from 'gatsby-image';
 
-const SectorsCard = (props) => {
+const SectorCard = ({ name, description, link, color, image }) => {
   return (
-    <>
-      <SectorsCardStyle>
-        <div className={'card'}>
-          {/* <img src="img_avatar.png" alt="Avatar" style="width:100%"> */}
-          <div className={'container'}>
-            <h4 className={'sector-name'}>public finance</h4>
-            <hr></hr>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
-            </p>
-            
-            
-          </div>
-          <div className={"read-more-wrapper"}>
-          <Link to="#" className={"read-more"}>Read more &gt;&gt;</Link>
-          </div>
+    <SectorsCardStyle>
+      <div className={'card'}>
+        <Image fluid={image} />
+        <div className={'container'}>
+          <h4 style={{ color: color }} className={'sector-name'}>
+            {name}
+          </h4>
+          <hr></hr>
+          <p>{description}</p>
         </div>
-      </SectorsCardStyle>
-    </>
+        <div className={'read-more-wrapper'}>
+          <Link to={link} className={'read-more'}>
+            Read more &gt;&gt;
+          </Link>
+        </div>
+      </div>
+    </SectorsCardStyle>
   );
 };
 
-export default SectorsCard;
+export default SectorCard;

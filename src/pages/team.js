@@ -6,7 +6,7 @@ import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
 
 const TeamPageContainer = styled.div`
-  // padding: 48px 30px 0;
+  // padding: 48px 18px 0;
 `;
 
 const ResponsiveGrid = styled.div`
@@ -34,7 +34,7 @@ const Section = styled.section`
   }
 
   .section-text {
-    font-size: 17px;
+    font-size: 18px;
     color: #000000;
     margin: 0;
   }
@@ -76,7 +76,7 @@ const Section = styled.section`
       display: block;
     }
     .section-text {
-      font-size: 30px;
+      font-size: 18px;
     }
     .heading-border-top {
       display: block;
@@ -158,7 +158,7 @@ const FullWidthLink = styled.a`
   padding: 22px 12px;
   background: #000000;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 18px;
   font-family: 'Montserrat';
   font-weight: 600;
   outline: none;
@@ -166,7 +166,7 @@ const FullWidthLink = styled.a`
 
   @media (min-width: 768px) {
     width: 300px;
-    margin-left: 30px;
+    margin-left: 18px;
   }
   @media (min-width: 1024px) {
     margin-left: 22%;
@@ -182,7 +182,7 @@ const FullWidthLink = styled.a`
   }
 `;
 
-const HorizontalImageScrollContainer = styled.div`
+export const HorizontalImageScrollContainer = styled.div`
   display: flex;
   flex: auto;
   position: relative;
@@ -235,7 +235,7 @@ const CivicDaysSection = styled.div`
     column-gap: 100px;
   }
   .placeholder-container {
-    padding: 48px 30px 0;
+    padding: 48px 18px 0;
     display: none;
   }
 

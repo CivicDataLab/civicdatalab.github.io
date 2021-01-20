@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 
 const TeamHomePage = styled.div`
-.container-team-section{
-  display: flex;
-  flex-direction: row;
-  padding-left: 20px;
-  padding-right: 30px;
-  padding-top: 47px;
-  margin-bottom: 24px;
-}
+  .container-team-section {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-right: 18px;
+    padding-top: 47px;
+    margin-bottom: 24px;
+  }
   hr {
     border: 8px solid #000000;
     opacity: 1;
     width: 58px;
     margin-left: 0px;
-    margin-top: 17px;
+    margin-top: 18px;
   }
 
   p {
     text-align: left;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 20px;
     font-family: Montserrat;
     letter-spacing: 0px;
@@ -38,20 +38,19 @@ const TeamHomePage = styled.div`
     opacity: 1;
     text-decoration: none;
   }
-  
+
   @media (min-width: 1440px) {
     .container-team-section {
       display: flex;
       padding-left: 73px;
-      
     }
     .content {
       flex: 70%;
     }
     .section-heading {
-      font-size: 120px;
-      line-height: 120px;
-  
+      font-size: 60px;
+      line-height: 60px;
+
       margin-top: 161px;
     }
     .lower-content-section {
@@ -59,23 +58,23 @@ const TeamHomePage = styled.div`
     }
 
     p {
-      font-size: 30px;
-      line-height: 37px;
+      font-size: 18px;
+      line-height: 27px;
       width: 62%;
     }
 
     .meet-the-team {
       line-height: 78px;
-      font-size: 35px;
+      font-size: 22px;
     }
   }
   @media (min-width: 1200px) and (max-width: 1440px) {
     .container-team-section {
       display: flex;
     }
-.content{
-  width: 50%;
-}
+    .content {
+      width: 50%;
+    }
 
     .lower-content-section {
       flex: 50%;
@@ -88,7 +87,7 @@ const TeamHomePage = styled.div`
       margin-top: 63px;
     }
     p {
-      font-size: 17px;
+      font-size: 18px;
       line-height: 25px;
       width: 62%;
     }
@@ -96,7 +95,6 @@ const TeamHomePage = styled.div`
       line-height: 70px;
       font-size: 20px;
     }
-
   }
 
   @media (min-width: 700px) and (max-width: 1200px) {
@@ -110,20 +108,16 @@ const TeamHomePage = styled.div`
     .section-heading {
       font-size: 32px;
       line-height: 32px;
-
-     
     }
     p {
-      font-size: 17px;
+      font-size: 18px;
       line-height: 27px;
-    
     }
     .meet-the-team {
-      
       font-size: 16x;
     }
-    @media (min-width: 900px){
-      .container-team-section{
+    @media (min-width: 900px) {
+      .container-team-section {
         display: flex;
         padding-right: 0;
       }

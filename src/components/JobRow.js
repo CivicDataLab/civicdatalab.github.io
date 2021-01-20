@@ -9,11 +9,12 @@ const OpeningRow = styled.div`
   align-items: center;
 
   p {
-    text-transform: capitalize
+    text-transform: capitalize;
+    font-weight: 600;
   }
 
   @media (min-width: 1024px) {
-    padding: 37px 56px;
+    padding: 27px 56px;
   }
 `;
 
