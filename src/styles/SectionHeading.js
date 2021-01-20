@@ -13,7 +13,7 @@ const SectionHeading = styled.h1`
     width: auto;
   }
   @media (min-width: 1600px) {
-    font-size: 120px;
+    font-size: 60px;
   }
   ${(props) => props.addCSS}
 `;

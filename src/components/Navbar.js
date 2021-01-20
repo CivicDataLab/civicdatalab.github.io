@@ -69,7 +69,6 @@ const LinksContainer = styled.ul`
   }
 
   @media (min-width: 1024px) {
-    font-size: 24px;
     position: static;
     width: auto;
     display: flex;
@@ -77,12 +76,12 @@ const LinksContainer = styled.ul`
     height: 80px;
     margin: 0;
     padding: 0 0 12px 0;
-    border-bottom: ${(props) => (props.dark ? '4px solid white' : '4px solid black')};;
+    border-bottom: ${(props) => (props.dark ? '4px solid white' : '4px solid black')};
     background-color: transparent;
 
     li {
       padding: 0;
-      margin: 0 16px;
+      margin: 0 8px;
       height: 100%;
 
       &:hover {
@@ -102,15 +101,12 @@ const LinksContainer = styled.ul`
       display: none;
     }
   }
-
-  @media (min-width: 1440px) {
-    font-size: 28px;
-  }
 `;
 
 const StyledLink = styled(Link)`
   color: inherit;
   text-decoration: none;
+  font-size: 18px;
 
   @media (min-width: 1024px) {
     color: ${(props) => (props.dark ? 'white' : 'black')};
@@ -121,6 +117,11 @@ const StyledLink = styled(Link)`
     padding-bottom: 12px;
     padding-left: 16px;
     padding-right: 16px;
+
+    &:hover {
+      color: ${(props) => (props.dark ? 'black' : 'white')};
+      background-color: ${(props) => (props.dark ? 'white' : 'black')};
+    }
 
     &.active-link {
       color: ${(props) => (props.dark ? 'black' : 'white')};

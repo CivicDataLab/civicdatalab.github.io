@@ -2,10 +2,10 @@ import React from 'react';
 
 const CONSTANTS = {
   DELETING_SPEED: 200,
-  TYPING_SPEED: 120
+  TYPING_SPEED: 100
 };
 
-const TypeWriter = ({ messages, fixedText }) => {
+const TypeWriter = ({ messages }) => {
   const [state, setState] = React.useState({
     text: '',
     message: '',
@@ -62,7 +62,6 @@ const TypeWriter = ({ messages, fixedText }) => {
 
   return (
     <h1>
-      {fixedText}&nbsp;
       <br />
       <span>{state.text}</span>
       {/* <span id="cursor" /> */}
