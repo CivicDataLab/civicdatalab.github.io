@@ -28,7 +28,7 @@ h1 {
 @media (min-width: 900px) {
     .pillars-container{
         grid-template-columns: repeat(3,1fr);
-        margin-right: 30px;
+        margin-right: 18px;
        
     }
 

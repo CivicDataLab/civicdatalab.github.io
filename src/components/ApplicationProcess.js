@@ -21,11 +21,12 @@ const ProcessItem = styled.div`
   @media (min-width: 1440px) {
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    width: 90%;
 
     .perk-logo {
-      width: 284px;
-      height: 284px;
+      width: 250px;
+      height: 250px;
     }
 
     p {

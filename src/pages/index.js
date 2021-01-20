@@ -10,6 +10,7 @@ import SliderHomePage from '../components/SliderHomePage';
 import BackgroundImage from 'gatsby-background-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
+import { HorizontalImageScrollContainer } from './team';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import TypeWriter from '../components/TypeWriter';
@@ -27,7 +28,7 @@ const Section = styled.section`
 `;
 
 const HeroSection = styled(Section)`
-  height: 30vh;
+  height: 40vh;
   color: white;
   padding-top: 16px;
   padding-left: 16px;
@@ -43,7 +44,7 @@ const HeroSection = styled(Section)`
   @media (min-width: 550px) {
     height: 50vh;
     h1 {
-      font-size: 60px;
+      font-size: 40px;
     }
   }
 
@@ -54,7 +55,7 @@ const HeroSection = styled(Section)`
 
     h1 {
       width: 80%;
-      font-size: 120px;
+      font-size: 60px;
     }
   }
 `;
@@ -66,54 +67,38 @@ const Sectors = styled.section`
     margin-bottom: 20px;
   }
   .container-sectors {
-    padding-left: 20px;
-    padding-right: 19px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-  }
-  @media (min-width: 768px) {
-    .container-sectors {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      row-gap: 30px;
-    }
+    margin-left: 20px;
+    margin-right: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-gap: 18px;
   }
 
-  @media (min-width: 900px){
-    .sectors-heading{
+  @media (min-width: 900px) {
+    .sectors-heading {
       font-size: 70px;
       line-height: 67px;
     }
   }
 
   @media (min-width: 1440px) {
-    .container-sectors {
-      display: flex;
-      // gap: 106px;
-    }
     .sectors-heading {
-      font-size: 120px;
-      line-height: 120px;
+      font-size: 60px;
+      line-height: 60px;
       padding-left: 73px;
     }
     .container-sectors {
-      margin-left: 53px;
+      margin-left: 55px;
       margin-right: 55px;
       margin-top: 38px;
-    }
-  }
-  @media (min-width: 1800px) {
-    .section-heading {
-      font-size: 120px;
     }
   }
 `;
 
 const Index = ({ data }) => {
   const image = data?.background?.childImageSharp?.fluid;
+
+  const sectors = data.allMarkdownRemark.nodes;
 
   return (
     <ThemeProvider theme={theme}>
@@ -122,22 +107,32 @@ const Index = ({ data }) => {
         <BackgroundImage fluid={image}>
           <Navbar dark />
           <HeroSection>
-            <TypeWriter messages={['free and open source solutions', 'open data platforms']} fixedText="We co-create" />
+            <TypeWriter
+              messages={[
+                'We co-create free and open source solutions for social change.',
+                'We collaborate with the community on social innovation projects.',
+                'We empower civic participation through access to information.'
+              ]}
+            />
           </HeroSection>
         </BackgroundImage>
         <Sectors>
           <HeroText className={'sectors-heading'}>Our Sectors</HeroText>
           <div className={'container-sectors'}>
-            <SectorsCard />
-
-            <SectorsCard />
-
-            <SectorsCard />
+            {sectors.map((sector) => (
+              <SectorsCard
+                key={sector.fields.slug}
+                name={sector.frontmatter.name}
+                description={sector.frontmatter.description}
+                image={sector.frontmatter.image.childImageSharp.fluid}
+                color={sector.frontmatter.color}
+              />
+            ))}
           </div>
         </Sectors>
         <div
           className={'slider-wrapper'}
-          style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '30px' }}
+          style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px' }}
         >
           {[1, 1, 1, 1].map((element, index) => {
             return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
@@ -149,6 +144,11 @@ const Index = ({ data }) => {
         <TeamHomePage />
         <WorkHomePage />
         <Contact />
+        <HorizontalImageScrollContainer>
+          {[1, 1, 1, 11, 1, 1, 1].map((item) => {
+            return <div></div>;
+          })}
+        </HorizontalImageScrollContainer>
       </main>
       <Footer />
     </ThemeProvider>
@@ -158,11 +158,30 @@ const Index = ({ data }) => {
 export default Index;
 
 export const pageQuery = graphql`
-  query BackgroundQuery {
+  query HomepageQuery {
     background: file(relativePath: { eq: "landing-image.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    allMarkdownRemark(filter: { frontmatter: { template: { eq: "sector" } } }, sort: { fields: frontmatter___name }) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          name
+          description
+          image {
+            childImageSharp {
+              fluid(maxWidth: 300, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          color
         }
       }
     }
