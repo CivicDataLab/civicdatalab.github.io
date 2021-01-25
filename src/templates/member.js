@@ -163,7 +163,7 @@ const PictureContainer = styled.div`
   }
 
   @media (min-width: 1440px) {
-    margin-bottom: 500px;
+    margin-bottom: 600px;
 
     .gatsby-image-wrapper {
       left: 40px;
@@ -261,8 +261,6 @@ const MemberTemplate = ({ data }) => {
   const member = data.markdownRemark;
   const [blogPosts] = useMediumFeed(member.frontmatter.medium);
 
-  console.log(member.frontmatter.image);
-
   return (
     <Layout>
       <MemberContainer>
@@ -313,7 +311,7 @@ const MemberTemplate = ({ data }) => {
           <h2>Blogs</h2>
           <BlogPostGrid>
             {blogPosts.length ? (
-              blogPosts.map((post) => {
+              blogPosts.slice(0, 4).map((post) => {
                 return (
                   <BlogCard
                     key={post.guid}

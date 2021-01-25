@@ -67,7 +67,7 @@ const Contact = (props) => {
 
             <input type="email" id="email" name="email" placeholder="Email" />
             <br></br>
-            <input type="write" id="write" name="write" placeholder="Write" className={'write-input-type'} />
+            <textarea rows={8} id="write" name="write" placeholder="Write..." className={'write-input-type'}></textarea>
             <br></br>
             <div className={'send-button-container'}>
               <button type="submit" className="send-button">

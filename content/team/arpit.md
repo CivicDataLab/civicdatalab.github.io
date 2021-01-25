@@ -6,6 +6,6 @@ description: Arpit is a statistician by trade. He believes in building sustainab
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 twitter: https://twitter.com/TheDataAreClean
 linkedin: https://linkedin.com/in/thedataareclean/
-image: ./SA.jpeg
+image: ./arpit.png
 template: member
 ---

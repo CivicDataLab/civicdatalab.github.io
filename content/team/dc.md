@@ -6,6 +6,6 @@ description: Deepthi Chand aka DC is a data and tech evangelist. He has been ins
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 twitter: https://twitter.com/eopoxf
 linkedin: https://www.linkedin.com/in/deepthi-chand-alagandula-5415862b/
-image: ./SA.jpeg
+image: ./dc.jpg
 template: member
 ---
