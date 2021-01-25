@@ -6,6 +6,6 @@ description: Arun is an Economist, passionate about OpenData and its potential t
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 twitter: https://twitter.com/mrarunsudarsan
 linkedin: https://www.linkedin.com/in/arunsud/
-image: ./SA.jpeg
+image: ./arun.jpg
 template: member
 ---

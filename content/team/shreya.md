@@ -6,7 +6,7 @@ description: Shreya Agrawal is a data fanatic who loves to scrutanize data as we
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 twitter: https://twitter.com/mrarunsudarsan
 linkedin: https://www.linkedin.com/in/arunsud/
-image: ./SA.jpeg
+image: ./shreya.jpg
 accentcolor: '#1DCCCC'
 template: member
 ---

@@ -6,7 +6,7 @@ description: Preethi is a biologist. Having worked in the pharmaceutical industr
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 twitter: https://twitter.com/preethical
 linkedin: https://www.linkedin.com/in/preethi-g-95814b60/
-image: ./SA.jpeg
+image: ./preethi.jpg
 accentcolor: '#1DCCCC'
 template: member
 ---

@@ -26,6 +26,7 @@ const ResponsiveGrid = styled.div`
 
 const Section = styled.section`
   padding: 48px 16px 0;
+  max-width: 1140px;
   .heading-border-bottom {
     width: 42px;
     margin-top: 12px;

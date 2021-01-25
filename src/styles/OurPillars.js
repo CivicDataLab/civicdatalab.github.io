@@ -22,7 +22,11 @@ h1 {
     height: 70px;
     display: flex;
     align-items: flex-end;
-    justify-content: center;    
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    text-align: center;  
 }
 
 @media (min-width: 900px) {
