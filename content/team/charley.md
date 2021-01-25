@@ -6,6 +6,6 @@ description: Charley is a Design Researcher who is curious about inquiring into 
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 twitter: https://twitter.com
 linkedin: https://www.linkedin.com/in/charleyvincent/
-image: ./SA.jpeg
+image: ./charley.jpg
 template: member
 ---

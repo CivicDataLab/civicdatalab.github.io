@@ -72,6 +72,8 @@ const Sectors = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     grid-gap: 18px;
+    justify-items: center;
+    align-items: stretch;
   }
 
   @media (min-width: 900px) {
@@ -91,14 +93,16 @@ const Sectors = styled.section`
       margin-left: 55px;
       margin-right: 55px;
       margin-top: 38px;
+      grid-template-columns: repeat(4, minmax(320px, 1fr));
     }
   }
 `;
 
 const Index = ({ data }) => {
-  const image = data?.background?.childImageSharp?.fluid;
+  const image = data?.landingBackground?.childImageSharp?.fluid;
 
   const sectors = data.allMarkdownRemark.nodes;
+  const partners = data.partners.nodes;
 
   return (
     <ThemeProvider theme={theme}>
@@ -138,7 +142,7 @@ const Index = ({ data }) => {
             return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
           })}
         </div>
-        <OurPartners />
+        <OurPartners partners={partners} />
         <OurPillars />
 
         <TeamHomePage />
@@ -159,10 +163,24 @@ export default Index;
 
 export const pageQuery = graphql`
   query HomepageQuery {
-    background: file(relativePath: { eq: "landing-image.jpeg" }) {
+    landingBackground: file(relativePath: { eq: "landing-image.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    partners: allFile(
+      filter: { relativePath: { regex: "/partners/" }, extension: { in: ["jpg", "jpeg", "png"] } }
+      sort: { fields: name }
+    ) {
+      nodes {
+        id
+        name
+        childImageSharp {
+          fixed(width: 160) {
+            ...GatsbyImageSharpFixed
+          }
         }
       }
     }

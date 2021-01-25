@@ -6,7 +6,7 @@ description: Divya Rani is a Designer who loves observing human-human-society be
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 twitter: https://twitter.com/mrarunsudarsan
 linkedin: https://www.linkedin.com
-image: ./SA.jpeg
+image: ./divya.jpg
 accentcolor: '#1DCCCC'
 template: member
 ---
