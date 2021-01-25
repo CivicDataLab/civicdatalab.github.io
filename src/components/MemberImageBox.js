@@ -10,6 +10,13 @@ const ImageBox = styled(Link)`
   position: relative;
   text-decoration: none;
 
+  width: 150px;
+  height: 230px;
+
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
+
   .member-details {
     position: absolute;
     bottom: 0;
@@ -33,6 +40,11 @@ const ImageBox = styled(Link)`
     font-family: Montserrat;
     color: #ffffff;
     text-align: center;
+  }
+
+  @media (min-width: 1280px) {
+    width: 280px;
+    height: 400px;
   }
 
   @media (min-width: 1600px) {

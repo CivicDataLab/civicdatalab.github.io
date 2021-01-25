@@ -6,7 +6,7 @@ description: An engineer by training, Upasana has spent her professional life ex
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 twitter: https://twitter.com/watzernehm
 linkedin: https://www.linkedin.com/in/upasana-hembram/
-image: ./SA.jpeg
+image: ./upasana.jpg
 accentcolor: '#1DCCCC'
 template: member
 ---

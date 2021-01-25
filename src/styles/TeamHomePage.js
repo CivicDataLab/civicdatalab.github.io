@@ -42,7 +42,8 @@ const TeamHomePage = styled.div`
   @media (min-width: 1440px) {
     .container-team-section {
       display: flex;
-      padding-left: 73px;
+      padding-left: 72px;
+      padding-right: 72px;
     }
     .content {
       flex: 70%;

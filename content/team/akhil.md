@@ -6,6 +6,6 @@ description: Akhil is a self taught Front-end developer who loves open source so
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 twitter: https://twitter.com/mrarunsudarsan
 linkedin: https://www.linkedin.com/in/arunsud/
-image: ./SA.jpeg
+image: ./akhil.jpeg
 template: member
 ---
