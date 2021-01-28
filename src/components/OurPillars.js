@@ -1,9 +1,11 @@
 import React from 'react';
 import HeroText from '../styles/HeroText';
 import OurPillarsStyle from '../styles/OurPillars';
-const OurPillars = (props) => {
+
+const OurPillars = () => {
   return (
     <OurPillarsStyle>
+      <HeroText className={'sectors-heading'}>Our Pillars</HeroText>
       <div className={'pillars-container'}>
         <div className={'image-container'}>
           <HeroText>Data</HeroText>

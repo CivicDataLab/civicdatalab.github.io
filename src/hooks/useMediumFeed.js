@@ -43,7 +43,10 @@ const useMediumFeed = (mediumUserName) => {
     parser
       .parseURL(CORS_PROXY + `https://medium.com/feed/@${mediumUserName}`)
       .then((response) => {
-        dispatch({ type: 'FETCHING_POSTS_SUCCESS', payload: response.items });
+        dispatch({
+          type: 'FETCHING_POSTS_SUCCESS',
+          payload: response.items.filter((post) => post['content:encoded'].indexOf('CivicDataLab') > -1).slice(0, 4)
+        });
       })
       .catch((error) => {
         dispatch({ type: 'FETCHING_POSTS_FAILED', payload: error.message });

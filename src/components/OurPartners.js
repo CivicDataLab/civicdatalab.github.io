@@ -12,7 +12,9 @@ const OurPartners = ({ partners }) => {
         </div>
         <div className={'partners-container'}>
           {partners.map((partner) => (
-            <Image key={partner.id} fixed={partner.childImageSharp.fixed} />
+            <a key={partner.id} href={`https://${partner.name}`} target="_blank" rel="noreferrer noopener">
+              <Image fixed={partner.childImageSharp.fixed} />
+            </a>
           ))}
         </div>
       </div>

@@ -10,7 +10,7 @@ import SliderHomePage from '../components/SliderHomePage';
 import BackgroundImage from 'gatsby-background-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
-import { HorizontalImageScrollContainer } from './team';
+import { CivicDays } from './team';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import TypeWriter from '../components/TypeWriter';
@@ -130,6 +130,7 @@ const Index = ({ data }) => {
                 description={sector.frontmatter.description}
                 image={sector.frontmatter.image.childImageSharp.fluid}
                 color={sector.frontmatter.color}
+                link={sector.fields.slug}
               />
             ))}
           </div>
@@ -148,11 +149,7 @@ const Index = ({ data }) => {
         <TeamHomePage />
         <WorkHomePage />
         <Contact />
-        <HorizontalImageScrollContainer>
-          {[1, 1, 1, 11, 1, 1, 1].map((item) => {
-            return <div></div>;
-          })}
-        </HorizontalImageScrollContainer>
+        <CivicDays />
       </main>
       <Footer />
     </ThemeProvider>
@@ -194,7 +191,7 @@ export const pageQuery = graphql`
           description
           image {
             childImageSharp {
-              fluid(maxWidth: 300, quality: 100) {
+              fluid(maxWidth: 600, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
