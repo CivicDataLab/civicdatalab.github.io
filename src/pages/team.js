@@ -36,6 +36,7 @@ const Section = styled.section`
 
   .section-text {
     font-size: 18px;
+    line-height: 27px;
     color: #000000;
     margin: 0;
   }
@@ -50,15 +51,11 @@ const Section = styled.section`
   @media (min-width: 768px) {
     .section-text {
       max-width: 500px;
-      font-size: 18px;
     }
   }
 
   @media (min-width: 1280px) {
     padding: 48px 32px;
-    .section-text {
-      font-size: 20px;
-    }
     .heading-border-bottom {
       width: 78px;
       margin-top: 12px;
@@ -75,9 +72,6 @@ const Section = styled.section`
     }
     .civic-days-section .heading-border-top {
       display: block;
-    }
-    .section-text {
-      font-size: 18px;
     }
     .heading-border-top {
       display: block;
@@ -183,7 +177,7 @@ const FullWidthLink = styled.a`
   }
 `;
 
-export const HorizontalImageScrollContainer = styled.div`
+const HorizontalImageScrollContainer = styled.div`
   display: flex;
   flex: auto;
   position: relative;
@@ -256,6 +250,31 @@ const CivicDaysSection = styled.div`
   }
 `;
 
+export const CivicDays = () => {
+  return (
+    <>
+      <CivicDaysSection className="civic-days-section">
+        <div className="placeholder-container" />
+        <Section>
+          <div className="heading-border-top"></div>
+          <SectionHeading addCSS={fs44}>Civic Days</SectionHeading>
+          <div className="heading-border-bottom"></div>
+          <p className="section-text">
+            Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
+            style
+          </p>
+        </Section>
+      </CivicDaysSection>
+      <FullWidthLink>Check our unique Civic Days &gt;&gt; </FullWidthLink>
+      <HorizontalImageScrollContainer>
+        {[1, 1, 1, 11, 1, 1, 1].map((item, index) => {
+          return <div key={index}></div>;
+        })}
+      </HorizontalImageScrollContainer>
+    </>
+  );
+};
+
 const Team = ({ data }) => {
   const members = data.allMarkdownRemark.nodes;
 
@@ -289,25 +308,6 @@ const Team = ({ data }) => {
           <h1>Current Job Openings</h1>
           <Link to="/openings">browse jobs</Link>
         </StickyBox>
-
-        <CivicDaysSection className="civic-days-section">
-          <div className="placeholder-container" />
-          <Section>
-            <div className="heading-border-top"></div>
-            <SectionHeading addCSS={fs44}>Civic Days</SectionHeading>
-            <div className="heading-border-bottom"></div>
-            <p className="section-text">
-              Our bandhu come together for a week to co-live and co-work and co-create. Check out how we do this CDL
-              style
-            </p>
-          </Section>
-        </CivicDaysSection>
-        <FullWidthLink>Check our unique Civic Days &gt;&gt; </FullWidthLink>
-        <HorizontalImageScrollContainer>
-          {[1, 1, 1, 11, 1, 1, 1].map((item) => {
-            return <div></div>;
-          })}
-        </HorizontalImageScrollContainer>
       </TeamPageContainer>
     </Layout>
   );

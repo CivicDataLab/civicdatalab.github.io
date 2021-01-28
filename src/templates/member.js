@@ -235,6 +235,7 @@ const BlogContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
+    margin-top: 400px;
     > h2 {
       font-size: 40px;
     }
@@ -260,6 +261,8 @@ const BlogPostGrid = styled.div`
 const MemberTemplate = ({ data }) => {
   const member = data.markdownRemark;
   const [blogPosts] = useMediumFeed(member.frontmatter.medium);
+
+  console.log(blogPosts);
 
   return (
     <Layout>
@@ -311,7 +314,7 @@ const MemberTemplate = ({ data }) => {
           <h2>Blogs</h2>
           <BlogPostGrid>
             {blogPosts.length ? (
-              blogPosts.slice(0, 4).map((post) => {
+              blogPosts.map((post) => {
                 return (
                   <BlogCard
                     key={post.guid}
