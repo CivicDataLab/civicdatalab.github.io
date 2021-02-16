@@ -8,5 +8,4 @@ twitter: https://twitter.com/gggodhwani
 linkedin: https://www.linkedin.com/in/gggodhwani/
 image: ./gaurav.jpg
 accentcolor: '#1DCCCC'
-template: member
 ---

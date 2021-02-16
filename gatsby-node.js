@@ -19,13 +19,13 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const memberResults = await graphql(`
     query {
-      allMarkdownRemark(filter: { frontmatter: { template: { eq: "member" } } }) {
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/team/"}}) {
         edges {
           node {
+            id
             fields {
               slug
             }
-            id
           }
         }
       }
@@ -34,13 +34,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const jobResults = await graphql(`
     query {
-      allMarkdownRemark(filter: { frontmatter: { template: { eq: "job" } } }) {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/openings/" } }) {
         edges {
           node {
+            id
             fields {
               slug
             }
-            id
           }
         }
       }
