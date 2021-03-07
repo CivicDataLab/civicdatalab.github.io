@@ -3,11 +3,9 @@ import styled from 'styled-components';
 const TeamHomePage = styled.div`
   .container-team-section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding: 48px 20px;
     padding-left: 20px;
-    padding-right: 18px;
-    padding-top: 47px;
-    margin-bottom: 24px;
   }
   hr {
     border: 8px solid #000000;
@@ -39,48 +37,36 @@ const TeamHomePage = styled.div`
     text-decoration: none;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 900px) {
     .container-team-section {
-      display: flex;
-      padding-left: 72px;
-      padding-right: 72px;
+      flex-direction: row;
     }
     .content {
-      flex: 70%;
+      flex: 50%;
     }
-    .section-heading {
-      font-size: 60px;
-      line-height: 60px;
-
-      margin-top: 161px;
-    }
-    .lower-content-section {
-      margin-top: 89px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 27px;
-      width: 62%;
-    }
-
-    .meet-the-team {
-      line-height: 78px;
-      font-size: 22px;
-    }
-  }
-  @media (min-width: 1200px) and (max-width: 1440px) {
-    .container-team-section {
-      display: flex;
-    }
-    .content {
-      width: 50%;
-    }
-
     .lower-content-section {
       flex: 50%;
     }
+    .section-heading {
+      font-size: 32px;
+      line-height: 32px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 27px;
+    }
+    .meet-the-team {
+      font-size: 16x;
+    }
+    @media (min-width: 900px) {
+      .container-team-section {
+        display: flex;
+        padding-right: 0;
+      }
+    }
+  }
 
+  @media (min-width: 1200px) {
     .section-heading {
       font-size: 70px;
       line-height: 67px;
@@ -98,30 +84,33 @@ const TeamHomePage = styled.div`
     }
   }
 
-  @media (min-width: 700px) and (max-width: 1200px) {
+  @media (min-width: 1440px) {
     .container-team-section {
-      // display: flex;
+      display: flex;
+      padding-left: 72px;
+      padding-right: 72px;
     }
     .content {
-      flex: 50%;
+      flex: 70%;
+    }
+    .section-heading {
+      font-size: 60px;
+      line-height: 60px;
+      margin-top: 161px;
+    }
+    .lower-content-section {
+      margin-top: 89px;
     }
 
-    .section-heading {
-      font-size: 32px;
-      line-height: 32px;
-    }
     p {
       font-size: 18px;
       line-height: 27px;
+      width: 62%;
     }
+
     .meet-the-team {
-      font-size: 16x;
-    }
-    @media (min-width: 900px) {
-      .container-team-section {
-        display: flex;
-        padding-right: 0;
-      }
+      line-height: 78px;
+      font-size: 22px;
     }
   }
 `;
