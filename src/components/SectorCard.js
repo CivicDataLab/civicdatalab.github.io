@@ -3,7 +3,7 @@ import SectorsCardStyle from '../styles/SectorsCard';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 
-const SectorCard = ({ name, description, link, color, image }) => {
+const SectorCard = ({ name, description, link, color, image, about }) => {
   return (
     <SectorsCardStyle>
       <div className={'card'}>
@@ -17,7 +17,8 @@ const SectorCard = ({ name, description, link, color, image }) => {
         </div>
         <div className={'read-more-wrapper'}>
           <Link to={link} className={'read-more'}>
-            Read more &gt;&gt;
+            {about ? 'Find them here ' : 'Read more '}
+            &gt;&gt;
           </Link>
         </div>
       </div>

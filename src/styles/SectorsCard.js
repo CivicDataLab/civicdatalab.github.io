@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const SectorsCard = styled.div`
   .card {
     padding: 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.29);
     transition: 0.3s;
     height: 100%;
   }
@@ -32,9 +32,9 @@ const SectorsCard = styled.div`
   }
 
   hr {
-    border: 8px solid #000000;
+    border: 4px solid #000000;
     opacity: 1;
-    width: 59px;
+    width: 60px;
     margin-left: 0px;
   }
   p {
