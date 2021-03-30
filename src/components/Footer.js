@@ -140,7 +140,7 @@ const footerNavLinks = [
   { path: '/sectors', name: 'Sectors' },
   { path: '/team', name: 'Team' },
   { path: '/blogs', name: 'Blogs' },
-  { path: '/contact', name: 'Contact' }
+  { path: '/about', name: 'About' }
 ];
 
 const Footer = () => {

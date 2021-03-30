@@ -4,11 +4,6 @@ const OurPillars = styled.div`
 padding-left: 20px;
 margin: 60px auto;
 
-.image-placeholder {
-  height: 150px;
-  background-color: darkgray;
-}
-
 .pillars-container{
   display:grid;
   grid-template-columns: 50% 50%;
@@ -17,8 +12,8 @@ margin: 60px auto;
   margin-right: 50px;
 }
 
-.image-container {
-  h1 {
+  h3 {
+    font-size: 22px;
     height: 70px;
     display: flex;
     align-items: flex-end;
@@ -26,25 +21,29 @@ margin: 60px auto;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-    text-align: center;  
-}
-}
+    text-align: center;
+    font-family: Bungee;
+  }
 
-@media (min-width: 900px) {
-  .pillars-container{
-    grid-template-columns: repeat(3,1fr);
+@media (min-width: 768px) {
+  .pillars-container {
+    grid-template-columns: repeat(4,1fr);
     margin-right: 18px;   
   }
 
-@media (min-width: 1200px) {
-  > h1 {
-    font-size: 60px;
-    line-height: 60px;
+  h3 {
+    font-size: 28px;
+    max-width: 80px;
   }
-  .pillars-container{
-    grid-template-columns: repeat(4,1fr);
+}
+
+@media (min-width: 1280px) {
+  h3 {
+    font-size: 40px;
   }
-  @media (min-width: 1440px) {
+}
+
+@media (min-width: 1440px) {
     padding-left:73px;
   }
 }

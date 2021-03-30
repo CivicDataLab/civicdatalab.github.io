@@ -317,7 +317,7 @@ export default Team;
 
 export const pageQuery = graphql`
   query TeamQuery {
-    allMarkdownRemark(filter: { frontmatter: { template: { eq: "member" } } }, sort: { fields: frontmatter___name }) {
+    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/team/"}}, sort: {fields: frontmatter___name}) {
       nodes {
         fields {
           slug

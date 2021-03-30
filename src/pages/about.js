@@ -50,7 +50,8 @@ const ValuesSection = styled(AboutSection)`
 
 const AboutCardsSection = styled(AboutSection)`
   display: grid;
-  grid-template-columns: 100%;
+  box-sizing: border-box;
+  grid-template-columns: 1fr;
   row-gap: 45px;
   max-width: 1200px;
   width: 100%;
