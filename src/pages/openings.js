@@ -4,26 +4,10 @@ import Image from 'gatsby-image';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import JobRow from '../components/JobRow';
-
-const OpeningsContainer = styled.div`
-  padding-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    'description'
-    'openings'
-    'picture';
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-      'description picture picture'
-      'description openings openings';
-  }
-`;
+import MainGrid from '../styles/MainGrid';
 
 const DescriptionContainer = styled.div`
-  grid-area: description;
+  grid-area: left;
   padding: 0 32px;
   font-size: 16px;
 
@@ -51,7 +35,7 @@ const DescriptionContainer = styled.div`
   }
 `;
 const OpeningListContainer = styled.div`
-  grid-area: openings;
+  grid-area: bottom;
   font-size: 18px;
   margin: 32px 0;
 
@@ -65,7 +49,7 @@ const OpeningListContainer = styled.div`
 `;
 
 const PictureContainer = styled.div`
-  grid-area: picture;
+  grid-area: right;
   margin: 32px 0;
 `;
 
@@ -80,9 +64,10 @@ const Openings = () => {
         }
       }
 
-      allMarkdownRemark(filter: { frontmatter: { template: { eq: "job" } } }) {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/openings/" } }) {
         edges {
           node {
+            id
             fields {
               slug
             }
@@ -99,7 +84,7 @@ const Openings = () => {
 
   return (
     <Layout>
-      <OpeningsContainer>
+      <MainGrid>
         <DescriptionContainer>
           <h1>Join us</h1>
           <p>CivicDataLab works across sectors to increase access to information.</p>
@@ -116,7 +101,7 @@ const Openings = () => {
         <PictureContainer>
           <Image fluid={data.jobsPicture.childImageSharp.fluid} />
         </PictureContainer>
-      </OpeningsContainer>
+      </MainGrid>
     </Layout>
   );
 };
