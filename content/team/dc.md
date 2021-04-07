@@ -7,4 +7,5 @@ quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t
 twitter: https://twitter.com/eopoxf
 linkedin: https://www.linkedin.com/in/deepthi-chand-alagandula-5415862b/
 image: ./dc.jpg
+sectors: Education,Better Cities
 ---
