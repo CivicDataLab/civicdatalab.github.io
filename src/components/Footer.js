@@ -9,7 +9,7 @@ const FooterContainer = styled.div`
   background-color: #000000;
   color: white;
   padding: 40px 22px;
-  margin-top: 60px;
+  // margin-top: 60px;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     'address address'
@@ -77,7 +77,7 @@ const NavLinksContainer = styled.ul`
   margin-top: 0;
   li {
     list-style: none;
-    margin: 4px 0;
+    margin: 6px 0;
     a {
       color: white;
       text-decoration: none;

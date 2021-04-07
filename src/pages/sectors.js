@@ -6,34 +6,38 @@ import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
 import ImageItem from '../components/ImageItem';
 
-const TitleContainer = styled.div`
+export const TitleContainer = styled.div`
   grid-area: left;
-  padding: 0 32px;
+  padding: 0 16px;
   font-size: 16px;
 
   h1, h3 {
-    width: 100%;
-    text-align: center;
+    text-align: left;
     margin-bottom: 16px;
-  }
-
-  @media (min-width: 768px) {
-    h1 {
-      margin-top: 96px;
-    }
+    padding-bottom: 16px;
+    border-bottom: 10px solid black;
   }
 
   @media (min-width: 1024px) {
     width: 60%;
+
+    h1 {
+      border-bottom: none;
+      margin-top: 16px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    padding-left: 72px;
+    padding-right: 72px;
   }
 `;
 
-const ProjectsContent = styled.div`
+export const ProjectsContent = styled.div`
   grid-area: right;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr;
-  padding: 0 8px;
 
   @media(min-width: 1024px) {
     padding: 0 16px;
@@ -44,14 +48,17 @@ const ProjectsContent = styled.div`
   }
 `;
 
-const ProjectsContainer = styled.div`
+export const ProjectsContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 12px;
   margin-top: 16px;
+  padding: 0 16px;
 
   @media(min-width: 1024px) {
     grid-gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 56px;
   }
 `;
 
@@ -75,14 +82,14 @@ const Sectors = () => {
           </ProjectsContainer>
         </ProjectsContent>
       </MainGrid>
-      <MainGrid>
+      {/* <MainGrid>
         <TitleContainer>
           <h3>Partners</h3>
         </TitleContainer>
         <PartnersContainer>
 
         </PartnersContainer>
-      </MainGrid>
+      </MainGrid> */}
     </Layout>
   );
 };

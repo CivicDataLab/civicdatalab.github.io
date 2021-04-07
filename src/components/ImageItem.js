@@ -8,23 +8,22 @@ const ImageItemContainer = styled.div`
 
   div {
     width: 100%;
-    height: 90px;
+    height: 180px;
     background-color: #eee;
   }
 
   p {
-    font-size: 14px;
+    color: #585050;
   }
 
-  @media (min-width: 768px) {
+  @media(min-width: 1024px) {
     div {
-      height: 180px;
+      height: 270px;
     }
-  }
 
-  @media (min-width: 1024px) {
     p {
-      font-size: 18px;
+      font-size: 25px;
+      line-height: 30px;
     }
   }
 `;

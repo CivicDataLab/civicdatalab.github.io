@@ -10,7 +10,7 @@ const HeroText = styled.h1`
   text-align: left;
   width: min-content;
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     font-size: 60px;
     line-height: 60px;
   }

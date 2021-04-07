@@ -14,13 +14,20 @@ overflow-x: hidden;
   white-space: nowrap;
   margin-bottom: 40px;
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
   > * {
     margin-right: 40px;
     vertical-align: middle;
   }
 }
 
-p{
+p {
     height: 70px;
     display: flex;
     align-items: flex-end;
