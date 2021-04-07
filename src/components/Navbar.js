@@ -165,7 +165,7 @@ const Navbar = ({ dark }) => {
           </StyledLink>
         </li>
         <li>
-          <StyledLink dark={dark} to="/sectors" activeClassName="active-link">
+          <StyledLink dark={dark} to="/sectors/" partiallyActive={true} activeClassName="active-link">
             Sectors
           </StyledLink>
         </li>
