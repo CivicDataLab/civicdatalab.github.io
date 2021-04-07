@@ -7,4 +7,5 @@ quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t
 twitter: https://twitter.com/TheDataAreClean
 linkedin: https://linkedin.com/in/thedataareclean/
 image: ./arpit.png
+sectors: Public Finance,Education
 ---
