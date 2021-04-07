@@ -17,7 +17,7 @@ const Card = styled.div`
     bottom: 0;
     left: 0;
     width: 0;
-    height: 10px;
+    height: 5px;
     background-color: ${(props) => (props.color ? props.color : 'black')};
     transition: width .3s ease-in-out;
   }

@@ -6,16 +6,17 @@ const SectorNavItem = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  flex-shrink: 0;
   box-sizing: border-box;
-  padding: 8px 16px;
-  border: 1px solid black;
-  border-radius: 4px;
+  padding: 8px 40px;
+  border: 3px solid black;
   text-decoration: none;
   color: black;
   background-color: white;
   margin-right: 8px;
   margin-bottom: 8px;
+  border-radius: 45px;
+  font-weight: 500;
 
   &:hover {
     color: white;
@@ -23,23 +24,33 @@ const SectorNavItem = styled(Link)`
   }
 
   @media (min-width: 1024px) {
-    font-size: 18px;
+    font-size: 28px;
+    padding: 6px 24px;
   }
 
 `;
 
 const SectorNavContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  overflow-x: scroll;
+  align-items: center;
+  padding-left: 16px;
+  margin: 16px 0;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   .active-sector {
     color: white;
     background-color: black;
   }
 
-  @media (min-width: 1024px) {
-    justify-content: flex-start;
+  @media (min-width: 1600px) {
+    justify-content: space-between;
   }
 `;
 
@@ -66,7 +77,7 @@ const SectorNav = () => {
 
   return (
     <SectorNavContainer>
-      <SectorNavItem activeClassName="active-sector" to="/sectors">
+      <SectorNavItem activeClassName="active-sector" to="/sectors/">
         All
       </SectorNavItem>
       {sectorsData.map((sector) => (
