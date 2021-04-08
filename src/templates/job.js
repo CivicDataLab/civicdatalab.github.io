@@ -90,6 +90,12 @@ const AboutContainer = styled.div`
     margin-bottom: 12px;
   }
 
+  @media (min-width: 1024px) {
+    p {
+      max-width: 600px;
+    }
+  }
+
   @media (min-width: 1440px) {
     font-size: 18px;
     padding-right: 72px;

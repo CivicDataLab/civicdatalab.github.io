@@ -8,5 +8,5 @@ twitter: https://twitter.com/watzernehm
 linkedin: https://www.linkedin.com/in/upasana-hembram/
 image: ./upasana.jpg
 accentcolor: '#1DCCCC'
-template: member
+sectors: Public Finance,Education
 ---

@@ -7,5 +7,4 @@ quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t
 twitter: https://twitter.com
 linkedin: https://www.linkedin.com/in/shivamragnar
 image: ./shivam.jpg
-template: member
 ---
