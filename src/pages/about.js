@@ -94,71 +94,12 @@ const About = ({ data }) => {
   const values = data.allMarkdownRemark.edges;
 
   return (
-    // <Layout>
-    //   <StorySection>
-    //     <div>
-    //       <HeroText>Our Story</HeroText>
-    //       <p>
-    //         CivicDataLab works with the goal of harnessing data, tech, design and social science to strengthen the
-    //         course of civic engagements in India.
-    //       </p>
-    //       <p>
-    //         We believe in sowing seeds of change, trust and opportunities to enable citizens to engage better with
-    //         public reforms.
-    //       </p>
-    //     </div>
-    //     <div className="image story-image"></div>
-    //   </StorySection>
-    //   <ValuesSection>
-    //     <div>
-    //       <HeroText>Our Values</HeroText>
-    //     </div>
-    //     <div>
-    //       {values.map((value) => (
-    //         <Value
-    //           key={value.node.id}
-    //           number={value.node.frontmatter.number}
-    //           title={value.node.frontmatter.title}
-    //           bodyHTML={value.node.html}
-    //         />
-    //       ))}
-    //     </div>
-    //   </ValuesSection>
-    //   <TeamHomePage />
-    //   <WorkHomePage />
-    //   <AboutCardsSection>
-    //     <SectorCard
-    //       name="Brand Assets"
-    //       image={data.assetsCover.childImageSharp.fluid}
-    //       description="Looking for our logo and official colours?"
-    //       color="#000"
-    //       link=""
-    //       about
-    //     />
-    //     <SectorCard
-    //       name="Blogs"
-    //       image={data.blogsCover.childImageSharp.fluid}
-    //       description="Want to know of our experiences and insights on work and life?"
-    //       color="#000"
-    //       link=""
-    //       about
-    //     />
-    //   </AboutCardsSection>
-    // </Layout>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <main>
         <BackgroundImage fluid={data.landingImage.childImageSharp.fluid}>
           <Navbar dark />
-          <HeroSection>
-            {/* <TypeWriter
-            messages={[
-              'We co-create free and open source solutions for social change.',
-              'We collaborate with the community on social innovation projects.',
-              'We empower civic participation through access to information.'
-            ]}
-          /> */}
-          </HeroSection>
+          <HeroSection />
         </BackgroundImage>
         <StorySection>
           <div>
