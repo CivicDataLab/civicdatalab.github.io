@@ -34,6 +34,7 @@ const ValueContainer = styled.div`
 
     .content {
       padding: 0;
+      max-width: 480px;
     }
 
     div {
