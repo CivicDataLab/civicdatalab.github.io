@@ -14,13 +14,20 @@ overflow-x: hidden;
   white-space: nowrap;
   margin-bottom: 40px;
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
   > * {
     margin-right: 40px;
     vertical-align: middle;
   }
 }
 
-p{
+p {
     height: 70px;
     display: flex;
     align-items: flex-end;
@@ -45,7 +52,8 @@ p{
 @media (min-width: 1440px) {
 
 .partners-section-wraper{
-    padding-left: 73px; 
+    padding-left: 73px;
+    margin-top: 100px; 
 }
 .section-heading{
     font-size:60px;

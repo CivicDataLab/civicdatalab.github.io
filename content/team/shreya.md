@@ -8,5 +8,5 @@ twitter: https://twitter.com/mrarunsudarsan
 linkedin: https://www.linkedin.com/in/arunsud/
 image: ./shreya.jpg
 accentcolor: '#1DCCCC'
-template: member
+sectors: Public Finance,Education
 ---

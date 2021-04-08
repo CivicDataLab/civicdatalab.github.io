@@ -8,5 +8,4 @@ twitter: https://www.twitter.com/shashank_py
 linkedin: https://linkedin.com/in/shashank-developer
 image: ./shashank.jpg
 accentcolor: '#1DCCCC'
-template: member
 ---

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import HeroText from '../styles/HeroText';
-import SectorsCard from '../components/SectorsCard';
+import SectorsCard from '../components/SectorCard';
 import TeamHomePage from '../components/TeamHomePage';
 import WorkHomePage from '../components/WorkHomePage';
 import Contact from '../components/Contact';
@@ -10,14 +10,14 @@ import SliderHomePage from '../components/SliderHomePage';
 import BackgroundImage from 'gatsby-background-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
-import { HorizontalImageScrollContainer } from './team';
+import { CivicDays } from './team';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import TypeWriter from '../components/TypeWriter';
 import OurPillars from '../components/OurPillars';
 import OurPartners from '../components/OurPartners';
 
-const Section = styled.section`
+export const Section = styled.section`
   padding: 0 72px;
   background-color: ${(props) => (props.background ? props.background : 'white')};
 
@@ -28,7 +28,7 @@ const Section = styled.section`
 `;
 
 const HeroSection = styled(Section)`
-  height: 40vh;
+  height: 45vh;
   color: white;
   padding-top: 16px;
   padding-left: 16px;
@@ -39,6 +39,7 @@ const HeroSection = styled(Section)`
     font-family: 'Bungee', cursive;
     font-size: 32px;
     text-align: left;
+    margin-top: -20px;
   }
 
   @media (min-width: 550px) {
@@ -54,8 +55,9 @@ const HeroSection = styled(Section)`
     height: 80vh;
 
     h1 {
-      width: 80%;
+      width: 50%;
       font-size: 60px;
+      margin-top: 40px;
     }
   }
 `;
@@ -84,6 +86,7 @@ const Sectors = styled.section`
   }
 
   @media (min-width: 1440px) {
+    margin-top: 120px;
     .sectors-heading {
       font-size: 60px;
       line-height: 60px;
@@ -121,7 +124,7 @@ const Index = ({ data }) => {
           </HeroSection>
         </BackgroundImage>
         <Sectors>
-          <HeroText className={'sectors-heading'}>Our Sectors</HeroText>
+          <HeroText className={'sectors-heading'}>Our Work</HeroText>
           <div className={'container-sectors'}>
             {sectors.map((sector) => (
               <SectorsCard
@@ -130,6 +133,7 @@ const Index = ({ data }) => {
                 description={sector.frontmatter.description}
                 image={sector.frontmatter.image.childImageSharp.fluid}
                 color={sector.frontmatter.color}
+                link={sector.fields.slug}
               />
             ))}
           </div>
@@ -148,11 +152,7 @@ const Index = ({ data }) => {
         <TeamHomePage />
         <WorkHomePage />
         <Contact />
-        <HorizontalImageScrollContainer>
-          {[1, 1, 1, 11, 1, 1, 1].map((item) => {
-            return <div></div>;
-          })}
-        </HorizontalImageScrollContainer>
+        <CivicDays />
       </main>
       <Footer />
     </ThemeProvider>
@@ -194,7 +194,7 @@ export const pageQuery = graphql`
           description
           image {
             childImageSharp {
-              fluid(maxWidth: 300, quality: 100) {
+              fluid(maxWidth: 600, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

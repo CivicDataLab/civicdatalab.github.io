@@ -19,5 +19,4 @@ goodtohave:
 expectations:
   - Thorough knowledge of Python, Django and other related web frameworks.
     - Should have an understanding of handling and manipulating data and querying mechanisms (SQL and alike) as well as data cleaning and manipulation.
-template: job
 ---

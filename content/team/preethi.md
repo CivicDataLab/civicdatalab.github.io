@@ -8,5 +8,4 @@ twitter: https://twitter.com/preethical
 linkedin: https://www.linkedin.com/in/preethi-g-95814b60/
 image: ./preethi.jpg
 accentcolor: '#1DCCCC'
-template: member
 ---

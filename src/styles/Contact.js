@@ -74,19 +74,6 @@ const Contact = styled.div`
     letter-spacing: 0px;
     opacity: 1;
   }
-  .send-button {
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    line-height: 26px;
-    font-family: Montserrat;
-    letter-spacing: 0px;
-    color: #ffffff;
-    opacity: 1;
-    height: 32px;
-    width: 90px;
-    border-radius: 36px;
-  }
 
   .send-button-container {
     display: flex;
@@ -94,7 +81,16 @@ const Contact = styled.div`
   }
 
   .send-button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-family: Montserrat;
+    color: #ffffff;
     margin-top: 40px;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    padding: 8px 40px;
   }
 
   @media (min-width: 900px) {
@@ -111,11 +107,18 @@ const Contact = styled.div`
     .first-text-block {
       margin-right: 175px;
     }
+
+    .send-button {
+      padding: 15px 50px;
+    }
   }
   @media (min-width: 1200px) {
     .main-part {
       font-size: 70px;
       line-height: 70px;
+    }
+    .container-contact-section {
+      padding-top: 100px;
     }
 
     .sub-text {
@@ -168,10 +171,6 @@ const Contact = styled.div`
     .write-input-type {
       padding-left: 30px;
       padding-top: 25px;
-    }
-
-    button {
-      height: 90px;
     }
   }
 `;
