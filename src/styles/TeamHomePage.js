@@ -5,8 +5,8 @@ const TeamHomePage = styled.div`
     display: flex;
     flex-direction: column;
     padding: 48px 20px;
-    padding-left: 20px;
   }
+
   hr {
     border: 8px solid #000000;
     opacity: 1;
@@ -67,10 +67,14 @@ const TeamHomePage = styled.div`
   }
 
   @media (min-width: 1200px) {
+
+    .container-team-section {
+      padding-top: 0;
+    }
+
     .section-heading {
       font-size: 70px;
       line-height: 67px;
-
       margin-top: 63px;
     }
     p {
@@ -105,7 +109,7 @@ const TeamHomePage = styled.div`
     p {
       font-size: 18px;
       line-height: 27px;
-      width: 62%;
+      width: 50%;
     }
 
     .meet-the-team {

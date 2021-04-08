@@ -14,6 +14,7 @@ const DescriptionContainer = styled.div`
   h1 {
     font-family: Bungee;
     font-size: 2em;
+    width: 80px;
     display: inline-block;
     padding-bottom: 10px;
     border-bottom: 8px solid black;
@@ -26,11 +27,14 @@ const DescriptionContainer = styled.div`
 
   @media (min-width: 1024px) {
     width: 60%;
+    padding-left: 72px;
     h1 {
       font-size: 60px;
       display: block;
       padding: 0;
       border: none;
+      width: 200px;
+      margin-top: 20px;
     }
   }
 `;

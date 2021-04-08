@@ -42,7 +42,7 @@ const WorkHomePage = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 18px;
+    row-gap: 40px;
   }
 
   .circle {
@@ -50,6 +50,7 @@ const WorkHomePage = styled.div`
     width: 159px;
     background-color: #ffffff;
     border-radius: 50%;
+    margin-bottom: 30px;
 
     img {
       width: inherit;
@@ -128,6 +129,9 @@ const WorkHomePage = styled.div`
       line-height: 25px;
       width: 50%;
     }
+    .circle {
+      margin-bottom: 60px;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -144,13 +148,12 @@ const WorkHomePage = styled.div`
     .container-work-section {
       display: flex;
       justify-content: space-between;
-      padding: 40px 72px;
+      padding: 0 72px;
     }
 
     .circle {
       width: 200px;
       height: 200px;
-      margin-bottom: 12px;
     }
 
     .content-circle {

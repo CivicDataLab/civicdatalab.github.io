@@ -44,6 +44,8 @@ const Card = styled.div`
 const CardContent = styled.div`
   box-sizing: border-box;
   padding: 18px 20px;
+  position: relative;
+  min-height: 280px;
 
   h4 {
     text-align: left;
@@ -53,6 +55,7 @@ const CardContent = styled.div`
     color: #096c90;
     text-transform: uppercase;
     margin-bottom: 0px;
+    margin-top: 0px;
   }
 
   hr {
@@ -68,8 +71,8 @@ const CardContent = styled.div`
   }
 
   @media (min-width: 1200px) {
-    padding-left: 29px;
-    padding-right: 29px;
+    padding: 30px;
+    min-height: 360px;
   }
 
   @media (min-width: 1440px) {
@@ -86,12 +89,6 @@ const CardContent = styled.div`
   }
 `;
 
-const CardLinkContainer = styled.div`
-  @media (min-width: 1200px) {
-    padding-right: 29px;
-  }
-`;
-
 const CardLink = styled(Link)`
   text-align: left;
   font: normal normal medium;
@@ -105,11 +102,13 @@ const CardLink = styled(Link)`
   display: flex;
   justify-content: flex-end;
   padding-right: 23px;
+  position: absolute;
+  right: 18px;
+  bottom: 20px;
 
   @media (min-width: 1440px) {
     font-size: 20px;
     line-height: 78px;
-    marging-right: 18px;
   }
 `;
 
@@ -123,13 +122,11 @@ const SectorCard = ({ name, description, link, color, image, about }) => {
         </h4>
         <hr></hr>
         <p>{description}</p>
-      </CardContent>
-      <CardLinkContainer>
         <CardLink to={link}>
           {about ? 'Find them here ' : 'Read more '}
           &gt;&gt;
         </CardLink>
-      </CardLinkContainer>
+      </CardContent>
     </Card>
   );
 };

@@ -16,11 +16,13 @@ const ImageItemContainer = styled.div`
     color: #585050;
   }
 
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     div {
       height: 270px;
     }
+  }
 
+  @media (min-width: 1600px) {
     p {
       font-size: 25px;
       line-height: 30px;

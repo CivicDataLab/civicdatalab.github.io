@@ -17,7 +17,7 @@ import TypeWriter from '../components/TypeWriter';
 import OurPillars from '../components/OurPillars';
 import OurPartners from '../components/OurPartners';
 
-const Section = styled.section`
+export const Section = styled.section`
   padding: 0 72px;
   background-color: ${(props) => (props.background ? props.background : 'white')};
 
@@ -28,7 +28,7 @@ const Section = styled.section`
 `;
 
 const HeroSection = styled(Section)`
-  height: 40vh;
+  height: 45vh;
   color: white;
   padding-top: 16px;
   padding-left: 16px;
@@ -39,6 +39,7 @@ const HeroSection = styled(Section)`
     font-family: 'Bungee', cursive;
     font-size: 32px;
     text-align: left;
+    margin-top: -20px;
   }
 
   @media (min-width: 550px) {
@@ -54,8 +55,9 @@ const HeroSection = styled(Section)`
     height: 80vh;
 
     h1 {
-      width: 80%;
+      width: 50%;
       font-size: 60px;
+      margin-top: 40px;
     }
   }
 `;
@@ -84,6 +86,7 @@ const Sectors = styled.section`
   }
 
   @media (min-width: 1440px) {
+    margin-top: 120px;
     .sectors-heading {
       font-size: 60px;
       line-height: 60px;
@@ -121,7 +124,7 @@ const Index = ({ data }) => {
           </HeroSection>
         </BackgroundImage>
         <Sectors>
-          <HeroText className={'sectors-heading'}>Our Sectors</HeroText>
+          <HeroText className={'sectors-heading'}>Our Work</HeroText>
           <div className={'container-sectors'}>
             {sectors.map((sector) => (
               <SectorsCard

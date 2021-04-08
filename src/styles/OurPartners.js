@@ -52,7 +52,8 @@ p {
 @media (min-width: 1440px) {
 
 .partners-section-wraper{
-    padding-left: 73px; 
+    padding-left: 73px;
+    margin-top: 100px; 
 }
 .section-heading{
     font-size:60px;

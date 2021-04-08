@@ -41,7 +41,7 @@ const MemberContainer = styled.div`
 export const Bio = styled.div`
   padding: 0 32px;
   box-sizing: border-box;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   h2 {
     text-transform: uppercase;
     font-weight: 700;
@@ -92,6 +92,7 @@ const PictureContainer = styled.div`
   div:last-of-type {
     position: relative;
     background-color: #1dcccc;
+    padding-bottom: 20px;
   }
 
   .gatsby-image-wrapper {
@@ -140,6 +141,8 @@ const PictureContainer = styled.div`
       width: 589px;
       position: relative;
       background-color: #1dcccc;
+      padding-bottom: 0;
+      margin-bottom: -40px;
     }
 
     .gatsby-image-wrapper {
@@ -150,13 +153,14 @@ const PictureContainer = styled.div`
 
     p {
       padding-bottom: 100px;
-      padding-top: 40px;
+      padding-top: 60px;
 
       span:first-of-type {
-        padding-top: 40px;
+        padding-top: 60px;
       }
 
       span:last-of-type {
+        margin-top: 40px;
         transform: rotate(-180deg) translate(10px, 0px);
       }
     }
@@ -180,7 +184,7 @@ const PictureContainer = styled.div`
   }
 `;
 
-const SocialLinksContainer = styled.div`
+export const SocialLinksContainer = styled.div`
   display: none;
   @media (min-width: 768px) {
     display: flex;
@@ -216,7 +220,8 @@ const BlogContainer = styled.div`
   box-sizing: border-box;
   max-width: 1020px;
   width: 100%;
-  margin-top: 60px;
+  margin-top: 80px;
+  margin-bottom: 20px;
 
   > h2 {
     display: inline-block;
