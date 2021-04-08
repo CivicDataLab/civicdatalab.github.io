@@ -112,7 +112,7 @@ const Index = ({ data }) => {
       <GlobalStyle />
       <main>
         <BackgroundImage fluid={image}>
-          <Navbar dark />
+          <Navbar dark overlay />
           <HeroSection>
             <TypeWriter
               messages={[
