@@ -266,9 +266,7 @@ const BlogPostGrid = styled.div`
 const MemberTemplate = ({ data }) => {
   const member = data.markdownRemark;
   const [blogPosts] = useMediumFeed(member.frontmatter.medium);
-
-  console.log(blogPosts);
-
+  
   return (
     <Layout>
       <MemberContainer>

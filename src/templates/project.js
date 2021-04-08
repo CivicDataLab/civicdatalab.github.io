@@ -144,6 +144,7 @@ const JoinUsButton = styled(Link)`
   padding: 8px 20px;
   color: white;
   border-radius: 45px;
+  cursor: pointer;
 `;
 
 const ProjectTemplate = ({ data }) => {
