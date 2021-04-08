@@ -10,8 +10,8 @@ const ImageBox = styled(Link)`
   position: relative;
   text-decoration: none;
 
-  width: 150px;
-  height: 230px;
+  width: 125px;
+  height: 200px;
 
   .gatsby-image-wrapper {
     height: 100%;

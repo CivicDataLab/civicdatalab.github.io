@@ -18,7 +18,7 @@ const WorkHomePage = () => {
         <div className={'circle-wrapper'}>
           <div className={'content-circle'} id="first-circle">
             <div className={'circle'}>
-              <img src={require('../images/partner-icon.svg')} />
+              <img src={require('../images/join-icon.svg')} />
             </div>
             <div className={'below-text'}>
               <p>Partner With Us</p>
@@ -26,7 +26,7 @@ const WorkHomePage = () => {
           </div>
           <div className={'content-circle'}>
             <div className={'circle'}>
-              <img src={require('../images/join-icon.svg')} />
+              <img src={require('../images/partner-icon.svg')} />
             </div>
             <Link to="/openings" className={'below-text'}>
               <p>Join Us</p>
