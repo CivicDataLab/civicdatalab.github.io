@@ -134,7 +134,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Navbar = ({ dark }) => {
+const Navbar = ({ dark, overlay }) => {
   const [displayMobileNav, setDisplayMobileNav] = React.useState(false);
 
   const data = useStaticQuery(graphql`
@@ -152,7 +152,7 @@ const Navbar = ({ dark }) => {
   const logo = data?.logo?.childImageSharp?.fluid;
 
   return (
-    <StyledNav overlay={dark}>
+    <StyledNav overlay={overlay}>
       <Link to="/">
         <Image fluid={logo} />
       </Link>

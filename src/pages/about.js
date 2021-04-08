@@ -27,14 +27,14 @@ const HeroSection = styled(Section)`
   padding-top: 16px;
   padding-left: 16px;
   padding-right: 16px;
-  background-color: rgb(0, 0, 0, 0.5);
+  background-color: transparent;
 
   @media (min-width: 550px) {
     height: 50vh;
   }
 
   @media (min-width: 1024px) {
-    height: 80vh;
+    height: 60vh;
   }
 `;
 
