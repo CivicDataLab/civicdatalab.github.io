@@ -3,12 +3,10 @@ import styled from 'styled-components';
 const TeamHomePage = styled.div`
   .container-team-section {
     display: flex;
-    flex-direction: row;
-    padding-left: 20px;
-    padding-right: 18px;
-    padding-top: 47px;
-    margin-bottom: 24px;
+    flex-direction: column;
+    padding: 48px 20px;
   }
+
   hr {
     border: 8px solid #000000;
     opacity: 1;
@@ -39,73 +37,16 @@ const TeamHomePage = styled.div`
     text-decoration: none;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 900px) {
     .container-team-section {
-      display: flex;
-      padding-left: 72px;
-      padding-right: 72px;
-    }
-    .content {
-      flex: 70%;
-    }
-    .section-heading {
-      font-size: 60px;
-      line-height: 60px;
-
-      margin-top: 161px;
-    }
-    .lower-content-section {
-      margin-top: 89px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 27px;
-      width: 62%;
-    }
-
-    .meet-the-team {
-      line-height: 78px;
-      font-size: 22px;
-    }
-  }
-  @media (min-width: 1200px) and (max-width: 1440px) {
-    .container-team-section {
-      display: flex;
-    }
-    .content {
-      width: 50%;
-    }
-
-    .lower-content-section {
-      flex: 50%;
-    }
-
-    .section-heading {
-      font-size: 70px;
-      line-height: 67px;
-
-      margin-top: 63px;
-    }
-    p {
-      font-size: 18px;
-      line-height: 25px;
-      width: 62%;
-    }
-    .meet-the-team {
-      line-height: 70px;
-      font-size: 20px;
-    }
-  }
-
-  @media (min-width: 700px) and (max-width: 1200px) {
-    .container-team-section {
-      // display: flex;
+      flex-direction: row;
     }
     .content {
       flex: 50%;
     }
-
+    .lower-content-section {
+      flex: 50%;
+    }
     .section-heading {
       font-size: 32px;
       line-height: 32px;
@@ -122,6 +63,58 @@ const TeamHomePage = styled.div`
         display: flex;
         padding-right: 0;
       }
+    }
+  }
+
+  @media (min-width: 1200px) {
+
+    .container-team-section {
+      padding-top: 0;
+    }
+
+    .section-heading {
+      font-size: 70px;
+      line-height: 67px;
+      margin-top: 63px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 25px;
+      width: 62%;
+    }
+    .meet-the-team {
+      line-height: 70px;
+      font-size: 20px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .container-team-section {
+      display: flex;
+      padding-left: 72px;
+      padding-right: 72px;
+    }
+    .content {
+      flex: 70%;
+    }
+    .section-heading {
+      font-size: 60px;
+      line-height: 60px;
+      margin-top: 161px;
+    }
+    .lower-content-section {
+      margin-top: 89px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 27px;
+      width: 50%;
+    }
+
+    .meet-the-team {
+      line-height: 78px;
+      font-size: 22px;
     }
   }
 `;

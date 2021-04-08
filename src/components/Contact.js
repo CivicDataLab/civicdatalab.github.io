@@ -61,7 +61,7 @@ const Contact = (props) => {
           </SocialLinksContainer>
         </div>
         <div className={'content lower-content-section'}>
-          <form action="/action_page.php">
+          <form>
             <input type="name" id="name" name="name" placeholder="Name" />
             <br></br>
 
@@ -70,7 +70,7 @@ const Contact = (props) => {
             <textarea rows={8} id="write" name="write" placeholder="Write..." className={'write-input-type'}></textarea>
             <br></br>
             <div className={'send-button-container'}>
-              <button type="submit" className="send-button">
+              <button className="send-button">
                 Send
               </button>
             </div>

@@ -16,7 +16,7 @@ const StyledNav = styled.nav`
   height: 140px;
 
   .gatsby-image-wrapper {
-    min-width: 90px;
+    min-width: 80px;
   }
 
   .mobile-nav {
@@ -55,13 +55,15 @@ const LinksContainer = styled.ul`
     position: absolute;
     cursor: pointer;
     right: 14px;
-    top: 12px;
+    top: 8px;
     color: white;
   }
 
   li {
     list-style: none;
-    padding: 0 22px;
+    display: flex;
+    align-items: center;
+
     &:hover {
       background-color: white;
       color: black;
@@ -107,6 +109,8 @@ const StyledLink = styled(Link)`
   color: inherit;
   text-decoration: none;
   font-size: 18px;
+  padding: 10px 22px;
+  display: inline-block;
 
   @media (min-width: 1024px) {
     color: ${(props) => (props.dark ? 'white' : 'black')};
@@ -114,7 +118,7 @@ const StyledLink = styled(Link)`
     text-transform: capitalize;
     display: flex;
     align-items: flex-end;
-    padding-bottom: 12px;
+    padding-bottom: 16px;
     padding-left: 16px;
     padding-right: 16px;
 
@@ -165,7 +169,7 @@ const Navbar = ({ dark }) => {
           </StyledLink>
         </li>
         <li>
-          <StyledLink dark={dark} to="/sectors" activeClassName="active-link">
+          <StyledLink dark={dark} to="/sectors/" partiallyActive={true} activeClassName="active-link">
             Sectors
           </StyledLink>
         </li>

@@ -9,6 +9,11 @@ const HeroText = styled.h1`
   margin: 0;
   text-align: left;
   width: min-content;
+
+  @media (min-width: 1024px) {
+    font-size: 60px;
+    line-height: 60px;
+  }
 `;
 
 export default HeroText;

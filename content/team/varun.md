@@ -8,5 +8,4 @@ twitter: https://twitter.com
 linkedin: https://linkedin.com/in/varunpai/
 image: ./varun.png
 accentcolor: '#1DCCCC'
-template: member
 ---

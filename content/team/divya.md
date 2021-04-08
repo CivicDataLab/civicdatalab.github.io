@@ -8,5 +8,4 @@ twitter: https://twitter.com/mrarunsudarsan
 linkedin: https://www.linkedin.com
 image: ./divya.jpg
 accentcolor: '#1DCCCC'
-template: member
 ---

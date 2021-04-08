@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+
 const WorkHomePage = styled.div`
   background: rgba(178, 201, 229, 0.27);
   display: flex;
+  box-sizing: border-box;
 
   .sub-text {
     width: 100%;
-    opacity: 1;
   }
 
   hr {
@@ -33,7 +34,6 @@ const WorkHomePage = styled.div`
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
-    margin-right: 40px;
     margin-top: 16px;
     padding-left: 0px;
   }
@@ -42,7 +42,7 @@ const WorkHomePage = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 18px;
+    row-gap: 40px;
   }
 
   .circle {
@@ -50,8 +50,7 @@ const WorkHomePage = styled.div`
     width: 159px;
     background-color: #ffffff;
     border-radius: 50%;
-    // margin-left: 77px;
-    // margin-bottom: 25px;
+    margin-bottom: 30px;
 
     img {
       width: inherit;
@@ -69,9 +68,6 @@ const WorkHomePage = styled.div`
     font-family: Montserrat;
     letter-spacing: 0px;
     color: #ffffff;
-    opacity: 1;
-    // margin-left: 68px;
-    // margin-right: 75px;
     width: 100%;
     text-decoration: none;
   }
@@ -86,8 +82,6 @@ const WorkHomePage = styled.div`
   }
 
   .content-circle {
-    // margin-top: 25px;
-    // margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,16 +102,35 @@ const WorkHomePage = styled.div`
   @media (min-width: 900px) {
     padding-top: 40px;
     padding-bottom: 40px;
+    max-width: 100%;
     .container-work-section {
       display: flex;
     }
     .circle-wrapper {
-      // column-gap: 18px;
       justify-content: flex-start;
       width: 50%;
     }
     .content {
       width: 50%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .work-part {
+      font-size: 70px;
+      line-height: 70px;
+    }
+    .sub-text {
+      font-size: 70px;
+      line-height: 70px;
+    }
+    .first-text-block {
+      font-size: 18px;
+      line-height: 25px;
+      width: 50%;
+    }
+    .circle {
+      margin-bottom: 60px;
     }
   }
 
@@ -135,14 +148,12 @@ const WorkHomePage = styled.div`
     .container-work-section {
       display: flex;
       justify-content: space-between;
-      padding-left: 72px;
-      padding-right: 72px;
+      padding: 0 72px;
     }
 
     .circle {
-      width: 300px;
-      height: 300px;
-      margin-bottom: 12px;
+      width: 200px;
+      height: 200px;
     }
 
     .content-circle {
@@ -157,27 +168,15 @@ const WorkHomePage = styled.div`
     .work-home-page {
       width: 94px;
     }
-    .container-work-section {
-      padding: 40px 73px 50px;
-    }
     .circle-wraper {
-      display: flex;
+      width: 50%;
     }
   }
-  @media (min-width: 1200px) and (max-width: 1440px) {
-    .work-part {
-      font-size: 70px;
-      line-height: 70px;
-    }
 
-    .sub-text {
-      font-size: 70px;
-      line-height: 70px;
-    }
-    .first-text-block {
-      font-size: 18px;
-      line-height: 25px;
-      width: 615px;
+  @media (min-width: 1920px) {
+    .circle {
+      width: 300px;
+      height: 300px;
     }
   }
 `;
