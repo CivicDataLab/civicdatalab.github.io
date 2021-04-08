@@ -1,7 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import BackgroundImage from 'gatsby-background-image';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, theme } from '../theme/theme';
+import { Section } from './index';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 import TeamHomePage from '../components/TeamHomePage';
 import WorkHomePage from '../components/WorkHomePage';
 import HeroText from '../styles/HeroText';
@@ -13,6 +18,23 @@ const AboutSection = styled.div`
 
   @media (min-width: 1280px) {
     padding: 48px 86px;
+  }
+`;
+
+const HeroSection = styled(Section)`
+  height: 40vh;
+  color: white;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: rgb(0, 0, 0, 0.5);
+
+  @media (min-width: 550px) {
+    height: 50vh;
+  }
+
+  @media (min-width: 1024px) {
+    height: 80vh;
   }
 `;
 
@@ -72,57 +94,124 @@ const About = ({ data }) => {
   const values = data.allMarkdownRemark.edges;
 
   return (
-    <Layout>
-      <StorySection>
-        <div>
-          <HeroText>Our Story</HeroText>
-          <p>
-            CivicDataLab works with the goal of harnessing data, tech, design and social science to strengthen the
-            course of civic engagements in India.
-          </p>
-          <p>
-            We believe in sowing seeds of change, trust and opportunities to enable citizens to engage better with
-            public reforms.
-          </p>
-        </div>
-        <div className="image story-image"></div>
-      </StorySection>
-      <ValuesSection>
-        <div>
-          <HeroText>Our Values</HeroText>
-        </div>
-        <div>
-          {values.map((value) => (
-            <Value
-              key={value.node.id}
-              number={value.node.frontmatter.number}
-              title={value.node.frontmatter.title}
-              bodyHTML={value.node.html}
-            />
-          ))}
-        </div>
-      </ValuesSection>
-      <TeamHomePage />
-      <WorkHomePage />
-      <AboutCardsSection>
-        <SectorCard
-          name="Brand Assets"
-          image={data.assetsCover.childImageSharp.fluid}
-          description="Looking for our logo and official colours?"
-          color="#000"
-          link=""
-          about
-        />
-        <SectorCard
-          name="Blogs"
-          image={data.blogsCover.childImageSharp.fluid}
-          description="Want to know of our experiences and insights on work and life?"
-          color="#000"
-          link=""
-          about
-        />
-      </AboutCardsSection>
-    </Layout>
+    // <Layout>
+    //   <StorySection>
+    //     <div>
+    //       <HeroText>Our Story</HeroText>
+    //       <p>
+    //         CivicDataLab works with the goal of harnessing data, tech, design and social science to strengthen the
+    //         course of civic engagements in India.
+    //       </p>
+    //       <p>
+    //         We believe in sowing seeds of change, trust and opportunities to enable citizens to engage better with
+    //         public reforms.
+    //       </p>
+    //     </div>
+    //     <div className="image story-image"></div>
+    //   </StorySection>
+    //   <ValuesSection>
+    //     <div>
+    //       <HeroText>Our Values</HeroText>
+    //     </div>
+    //     <div>
+    //       {values.map((value) => (
+    //         <Value
+    //           key={value.node.id}
+    //           number={value.node.frontmatter.number}
+    //           title={value.node.frontmatter.title}
+    //           bodyHTML={value.node.html}
+    //         />
+    //       ))}
+    //     </div>
+    //   </ValuesSection>
+    //   <TeamHomePage />
+    //   <WorkHomePage />
+    //   <AboutCardsSection>
+    //     <SectorCard
+    //       name="Brand Assets"
+    //       image={data.assetsCover.childImageSharp.fluid}
+    //       description="Looking for our logo and official colours?"
+    //       color="#000"
+    //       link=""
+    //       about
+    //     />
+    //     <SectorCard
+    //       name="Blogs"
+    //       image={data.blogsCover.childImageSharp.fluid}
+    //       description="Want to know of our experiences and insights on work and life?"
+    //       color="#000"
+    //       link=""
+    //       about
+    //     />
+    //   </AboutCardsSection>
+    // </Layout>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <main>
+        <BackgroundImage fluid={data.landingImage.childImageSharp.fluid}>
+          <Navbar dark />
+          <HeroSection>
+            {/* <TypeWriter
+            messages={[
+              'We co-create free and open source solutions for social change.',
+              'We collaborate with the community on social innovation projects.',
+              'We empower civic participation through access to information.'
+            ]}
+          /> */}
+          </HeroSection>
+        </BackgroundImage>
+        <StorySection>
+          <div>
+            <HeroText>Our Story</HeroText>
+            <p>
+              CivicDataLab works with the goal of harnessing data, tech, design and social science to strengthen the
+              course of civic engagements in India.
+            </p>
+            <p>
+              We believe in sowing seeds of change, trust and opportunities to enable citizens to engage better with
+              public reforms.
+            </p>
+          </div>
+          <div className="image story-image"></div>
+        </StorySection>
+        <ValuesSection>
+          <div>
+            <HeroText>Our Values</HeroText>
+          </div>
+          <div>
+            {values.map((value) => (
+              <Value
+                key={value.node.id}
+                number={value.node.frontmatter.number}
+                title={value.node.frontmatter.title}
+                bodyHTML={value.node.html}
+              />
+            ))}
+          </div>
+        </ValuesSection>
+        <TeamHomePage />
+        <WorkHomePage />
+        <AboutCardsSection>
+          <SectorCard
+            name="Brand Assets"
+            image={data.assetsCover.childImageSharp.fluid}
+            description="Looking for our logo and official colours?"
+            color="#000"
+            link=""
+            about
+          />
+          <SectorCard
+            name="Blogs"
+            image={data.blogsCover.childImageSharp.fluid}
+            description="Want to know of our experiences and insights on work and life?"
+            color="#000"
+            link=""
+            about
+          />
+        </AboutCardsSection>
+      </main>
+      <Footer />
+    </ThemeProvider>
   );
 };
 
@@ -152,6 +241,13 @@ export const pageQuery = graphql`
     assetsCover: file(relativePath: { eq: "assets.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    landingImage: file(relativePath: { eq: "about.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1025, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }

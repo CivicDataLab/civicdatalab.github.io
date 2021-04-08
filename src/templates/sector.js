@@ -1,5 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import styled from 'styled-components';
 import Layout from '../components/Layout';
 import { TitleContainer, ProjectsContainer, ProjectsContent } from '../pages/sectors';
 import SectorNav from '../components/SectorNav';
@@ -9,6 +10,35 @@ import ImageItem from '../components/ImageItem';
 import WorkHomePage from '../components/WorkHomePage';
 import SliderHomePage from '../components/SliderHomePage';
 
+const SectorInfo = styled.div`
+  a {
+    display: inline-block;
+    color: #1eb0d3;
+    width: 200px;
+  }
+
+  @media (min-width: 1024px) {
+    a {
+      width: 200px;
+      font-size: 18px;
+      line-height: 27px;
+      margin-top: 20px;
+    }
+  }
+`;
+
+const SectorLabel = styled.div`
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+    background-color: #fa7fe7;
+    width: max-content;
+    padding: 15px 26px;
+    font-size: 25px;
+    font-weight: 500;
+  }
+`;
+
 const SectorTemplate = ({ data }) => {
   const teamMembers = data.allMarkdownRemark.edges;
 
@@ -17,6 +47,10 @@ const SectorTemplate = ({ data }) => {
       <MainGrid>
         <TitleContainer>
           <HeroText>Our Work</HeroText>
+          <SectorInfo>
+            <SectorLabel>{data.markdownRemark.frontmatter.name}</SectorLabel>
+            <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a>
+          </SectorInfo>
         </TitleContainer>
         <ProjectsContent>
           <SectorNav />

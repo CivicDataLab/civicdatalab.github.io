@@ -8,8 +8,9 @@ import ImageItem from '../components/ImageItem';
 
 export const TitleContainer = styled.div`
   grid-area: left;
-  padding: 0 16px;
+  padding: 0 32px;
   font-size: 16px;
+  margin-bottom: 10px;
 
   h1, h3 {
     text-align: left;
@@ -38,6 +39,7 @@ export const ProjectsContent = styled.div`
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr;
+  margin-bottom: 80px;
 
   @media(min-width: 1024px) {
     padding: 0 16px;

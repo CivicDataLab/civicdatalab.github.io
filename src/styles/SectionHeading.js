@@ -10,7 +10,7 @@ const SectionHeading = styled.h1`
 
   @media (min-width: 1280px) {
     font-size: 60px;
-    width: auto;
+    width: 150px;
   }
   @media (min-width: 1600px) {
     font-size: 60px;

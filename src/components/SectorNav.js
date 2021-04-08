@@ -8,7 +8,7 @@ const SectorNavItem = styled(Link)`
   align-items: center;
   flex-shrink: 0;
   box-sizing: border-box;
-  padding: 8px 40px;
+  padding: 8px 25px;
   border: 3px solid black;
   text-decoration: none;
   color: black;
@@ -23,7 +23,7 @@ const SectorNavItem = styled(Link)`
     background-color: black;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1600px) {
     font-size: 28px;
     padding: 6px 24px;
   }
@@ -36,6 +36,7 @@ const SectorNavContainer = styled.div`
   align-items: center;
   padding-left: 16px;
   margin: 16px 0;
+  max-width: 1200px;
 
   ::-webkit-scrollbar {
     display: none;

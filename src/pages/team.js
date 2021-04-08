@@ -4,25 +4,8 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
-
-const TeamPageContainer = styled.div`
-  // padding: 48px 18px 0;
-`;
-
-const ResponsiveGrid = styled.div`
-  display: grid;
-
-  @media (min-width: 768px) {
-    grid-template-columns: 20% 75%;
-  }
-  @media (min-width: 1024px) {
-    grid-template-columns: 20% 60%;
-  }
-  @media (min-width: 1600px) {
-    grid-template-columns: 22% 58%;
-    column-gap: 100px;
-  }
-`;
+import MainGrid from '../styles/MainGrid';
+import { TitleContainer } from './sectors';
 
 const Section = styled.section`
   padding: 48px 16px 0;
@@ -81,18 +64,28 @@ const Section = styled.section`
 
 const MemberCardsContainer = styled.div`
   display: grid;
+  grid-area: right;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 25px;
+  row-gap: 25px;
+  column-gap: 25px;
+  padding: 0 32px;
+  box-sizing: border-box;
   justify-content: space-around;
-
   margin-bottom: 54px;
+  max-width: 1080px;
 
   @media (min-width: 500px) {
     grid-template-columns: repeat(3, 1fr);
   }
+
   @media (min-width: 1024px) {
     justify-content: space-between;
-    row-gap: 80px;
+    row-gap: 50px;
+    padding: 0 16px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 0 32px;
   }
 `;
 
@@ -133,11 +126,7 @@ const StickyBox = styled.div`
     a {
       font-size: 18px;
     }
-  }
-
-  @media (min-width: 1280px) {
-    h1 {
-      font-size: 34px;
+  }    border-bottom: 10px solid black !important;
       width: 250px;
     }
     a {
@@ -149,7 +138,6 @@ const StickyBox = styled.div`
 const FullWidthLink = styled.a`
   display: inline-block;
   box-sizing: border-box;
-  width: 100%;
   padding: 22px 12px;
   background: #000000;
   color: #ffffff;
@@ -157,23 +145,11 @@ const FullWidthLink = styled.a`
   font-family: 'Montserrat';
   font-weight: 600;
   outline: none;
-  margin-top: 50px;
+  margin-top: 30px;
 
-  @media (min-width: 768px) {
-    width: 300px;
-    margin-left: 18px;
-  }
-  @media (min-width: 1024px) {
-    margin-left: 22%;
-  }
   @media (min-width: 1280px) {
-    width: auto;
     font-size: 20px;
     padding: 15px 20px;
-    margin-top: 32px;
-  }
-  @media (min-width: 1600px) {
-    margin-left: calc(24% + 100px);
   }
 `;
 
@@ -222,28 +198,30 @@ const fs44 = css`
 const CivicDaysSection = styled.div`
   display: grid;
 
-  @media (min-width: 1024px) {
-    grid-template-columns: 20% 60%;
-  }
-  @media (min-width: 1600px) {
-    grid-template-columns: 22% 58%;
-    column-gap: 100px;
-  }
   .placeholder-container {
     padding: 48px 18px 0;
     display: none;
   }
 
   @media (min-width: 1024px) {
+    grid-template-columns: 20% 60%;
+
     .placeholder-container {
       display: block;
     }
   }
-
   @media (min-width: 1600px) {
+    grid-template-columns: 22% 58%;
+    column-gap: 100px;
+
     .heading-border-bottom {
       display: none;
     }
+
+    .section-text {
+      margin-top: 20px;
+    }
+
     .civic-days-section .heading-border-top {
       display: block;
     }
@@ -263,9 +241,9 @@ export const CivicDays = () => {
             Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
             style
           </p>
+          <FullWidthLink>Check our unique Civic Days &gt;&gt; </FullWidthLink>
         </Section>
       </CivicDaysSection>
-      <FullWidthLink>Check our unique Civic Days &gt;&gt; </FullWidthLink>
       <HorizontalImageScrollContainer>
         {[1, 1, 1, 11, 1, 1, 1].map((item, index) => {
           return <div key={index}></div>;
@@ -280,35 +258,31 @@ const Team = ({ data }) => {
 
   return (
     <Layout>
-      <TeamPageContainer>
-        <ResponsiveGrid>
-          <Section>
-            <SectionHeading>The Team</SectionHeading>
-            <div className="heading-border-bottom"></div>
-            <p className="section-text">Meet our Bandhus</p>
-          </Section>
-          <Section>
-            <MemberCardsContainer>
-              {members.map((member) => (
-                <MemberImageBox
-                  key={member.fields.slug}
-                  link={member.fields.slug}
-                  name={member.frontmatter.name}
-                  role={member.frontmatter.role.split(',')[0]}
-                  image={member.frontmatter.image.childImageSharp.fluid}
-                />
-              ))}
-              {/* {[1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((image) => {
-                return <MemberImageBox></MemberImageBox>;
-              })} */}
-            </MemberCardsContainer>
-          </Section>
-        </ResponsiveGrid>
+      <MainGrid>
+        <TitleContainer>
+          <SectionHeading>The Team</SectionHeading>
+          <div className="heading-border-bottom"></div>
+          <p className="section-text">Meet our Bandhus</p>
+        </TitleContainer>
+        <MemberCardsContainer>
+          {members.map((member) => (
+            <MemberImageBox
+              key={member.fields.slug}
+              link={member.fields.slug}
+              name={member.frontmatter.name}
+              role={member.frontmatter.role.split(',')[0]}
+              image={member.frontmatter.image.childImageSharp.fluid}
+            />
+          ))}
+        </MemberCardsContainer>
+      </MainGrid>
+      <div style={{ position: 'relative' }}>
         <StickyBox>
           <h1>Current Job Openings</h1>
           <Link to="/openings">browse jobs</Link>
         </StickyBox>
-      </TeamPageContainer>
+      </div>
+      <CivicDays />
     </Layout>
   );
 };
@@ -317,7 +291,7 @@ export default Team;
 
 export const pageQuery = graphql`
   query TeamQuery {
-    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/team/"}}, sort: {fields: frontmatter___name}) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/team/" } }, sort: { fields: frontmatter___name }) {
       nodes {
         fields {
           slug
