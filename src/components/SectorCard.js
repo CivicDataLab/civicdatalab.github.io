@@ -72,7 +72,7 @@ const CardContent = styled.div`
 
   @media (min-width: 1200px) {
     padding: 30px;
-    min-height: 350px;
+    min-height: 375px;
   }
 
   @media (min-width: 1440px) {
