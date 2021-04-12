@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SectorNav from '../components/SectorNav';
 import MainGrid from '../styles/MainGrid';
@@ -12,7 +13,8 @@ export const TitleContainer = styled.div`
   font-size: 16px;
   margin-bottom: 10px;
 
-  h1, h3 {
+  h1,
+  h3 {
     text-align: left;
     margin-bottom: 16px;
     padding-bottom: 16px;
@@ -41,11 +43,11 @@ export const ProjectsContent = styled.div`
   grid-template-columns: 1fr;
   margin-bottom: 80px;
 
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     padding: 0 16px;
   }
 
-  @media(min-width: 1440px) {
+  @media (min-width: 1440px) {
     padding: 0 32px;
   }
 `;
@@ -57,18 +59,18 @@ export const ProjectsContainer = styled.div`
   margin-top: 16px;
   padding: 0 16px;
 
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     grid-gap: 24px;
     grid-template-columns: 1fr 1fr;
     margin-top: 56px;
   }
 `;
 
-const PartnersContainer = styled.div`
+const PartnersContainer = styled.div``;
 
-`
+const Sectors = ({ data }) => {
+  const projects = data.allMarkdownRemark.nodes;
 
-const Sectors = () => {
   return (
     <Layout>
       <MainGrid>
@@ -78,6 +80,14 @@ const Sectors = () => {
         <ProjectsContent>
           <SectorNav />
           <ProjectsContainer>
+            {projects.map((project) => (
+              <ImageItem
+                key={project.id}
+                url={project.fields.slug}
+                image={project.frontmatter.image.childImageSharp.fluid}
+                text={project.frontmatter.name}
+              />
+            ))}
             {Array.apply(null, Array(8)).map((item, index) => (
               <ImageItem key={index} image="" text="Hello this is a sample text for images" />
             ))}
@@ -97,3 +107,26 @@ const Sectors = () => {
 };
 
 export default Sectors;
+
+export const pageQuery = graphql`
+  query ProjectsQuery {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }, sort: { fields: frontmatter___name }) {
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          name
+          image {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

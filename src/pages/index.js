@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
+import Fade from 'react-reveal/Fade';
 import HeroText from '../styles/HeroText';
 import SectorsCard from '../components/SectorCard';
 import TeamHomePage from '../components/TeamHomePage';
@@ -72,8 +73,8 @@ const Sectors = styled.section`
     margin-left: 20px;
     margin-right: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    grid-gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    column-gap: 60px;
     justify-items: center;
     align-items: stretch;
   }
@@ -107,6 +108,10 @@ const Index = ({ data }) => {
   const sectors = data.allMarkdownRemark.nodes;
   const partners = data.partners.nodes;
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -123,36 +128,38 @@ const Index = ({ data }) => {
             />
           </HeroSection>
         </BackgroundImage>
-        <Sectors>
-          <HeroText className={'sectors-heading'}>Our Work</HeroText>
-          <div className={'container-sectors'}>
-            {sectors.map((sector) => (
-              <SectorsCard
-                key={sector.fields.slug}
-                name={sector.frontmatter.name}
-                description={sector.frontmatter.description}
-                image={sector.frontmatter.image.childImageSharp.fluid}
-                color={sector.frontmatter.color}
-                link={sector.fields.slug}
-              />
-            ))}
+        <Fade bottom>
+          <Sectors>
+            <HeroText className={'sectors-heading'}>Our Work</HeroText>
+            <div className={'container-sectors'}>
+              {sectors.map((sector) => (
+                <SectorsCard
+                  key={sector.fields.slug}
+                  name={sector.frontmatter.name}
+                  description={sector.frontmatter.description}
+                  image={sector.frontmatter.image.childImageSharp.fluid}
+                  color={sector.frontmatter.color}
+                  link={sector.fields.slug}
+                />
+              ))}
+            </div>
+          </Sectors>
+          <div
+            className={'slider-wrapper'}
+            style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px' }}
+          >
+            {[1, 1, 1, 1].map((element, index) => {
+              return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
+            })}
           </div>
-        </Sectors>
-        <div
-          className={'slider-wrapper'}
-          style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px' }}
-        >
-          {[1, 1, 1, 1].map((element, index) => {
-            return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
-          })}
-        </div>
-        <OurPartners partners={partners} />
-        <OurPillars />
+          <OurPartners partners={partners} />
+          <OurPillars />
 
-        <TeamHomePage />
-        <WorkHomePage />
-        <Contact />
-        <CivicDays />
+          <TeamHomePage />
+          <WorkHomePage />
+          <Contact />
+          <CivicDays />
+        </Fade>
       </main>
       <Footer />
     </ThemeProvider>
