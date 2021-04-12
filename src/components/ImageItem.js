@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from 'gatsby-image';
+import { Link } from 'gatsby';
 
-const ImageItemContainer = styled.div`
+const ImageItemContainer = styled(Link)`
   display: flex;
   flex-direction: column;
   min-height: 100px;
+  text-decoration: none;
 
   div {
     width: 100%;
@@ -30,10 +33,10 @@ const ImageItemContainer = styled.div`
   }
 `;
 
-const ImageItem = ({ image, text }) => {
+const ImageItem = ({ url, image, text }) => {
   return (
-    <ImageItemContainer>
-      <div /> <p>{text}</p>
+    <ImageItemContainer to={url || '/'}>
+      {image ? <Image fluid={image} /> : <div />} <p>{text}</p>
     </ImageItemContainer>
   );
 };

@@ -135,23 +135,23 @@ const StickyBox = styled.div`
   }
 `;
 
-const FullWidthLink = styled.a`
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 22px 12px;
-  background: #000000;
-  color: #ffffff;
-  font-size: 18px;
-  font-family: 'Montserrat';
-  font-weight: 600;
-  outline: none;
-  margin-top: 30px;
+// const FullWidthLink = styled.a`
+//   display: inline-block;
+//   box-sizing: border-box;
+//   padding: 22px 12px;
+//   background: #000000;
+//   color: #ffffff;
+//   font-size: 18px;
+//   font-family: 'Montserrat';
+//   font-weight: 600;
+//   outline: none;
+//   margin-top: 30px;
 
-  @media (min-width: 1280px) {
-    font-size: 20px;
-    padding: 15px 20px;
-  }
-`;
+//   @media (min-width: 1280px) {
+//     font-size: 20px;
+//     padding: 15px 20px;
+//   }
+// `;
 
 const HorizontalImageScrollContainer = styled.div`
   display: flex;
@@ -241,7 +241,7 @@ export const CivicDays = () => {
             Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
             style
           </p>
-          <FullWidthLink>Check our unique Civic Days &gt;&gt; </FullWidthLink>
+          {/* <FullWidthLink>Check our unique Civic Days &gt;&gt; </FullWidthLink> */}
         </Section>
       </CivicDaysSection>
       <HorizontalImageScrollContainer>
