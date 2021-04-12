@@ -9,6 +9,7 @@ import Layout from '../components/Layout';
 import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
 import { TitleContainer } from '../pages/sectors';
+import MiniTeamSection from '../components/MiniTeamSection';
 
 const ProjectContent = styled.div`
   grid-area: right;
@@ -186,6 +187,8 @@ const responsive = {
 const ProjectTemplate = ({ data }) => {
   const project = data.markdownRemark;
 
+  const members = data.allMarkdownRemark.nodes;
+
   return (
     <Layout>
       <MainGrid>
@@ -232,6 +235,7 @@ const ProjectTemplate = ({ data }) => {
               </a>
             </SocialLinksContainer>
           </ProjectText>
+          <MiniTeamSection members={members} />
           <ProjectJoinUs>
             <h3>Join Us</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
@@ -259,6 +263,28 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 1000, quality: 100) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/team/" } }
+      sort: { fields: frontmatter___name }
+      limit: 6
+    ) {
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          name
+          image {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }

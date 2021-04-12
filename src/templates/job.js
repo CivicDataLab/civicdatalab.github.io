@@ -256,8 +256,6 @@ const applicationProcess = [
 const Job = ({ data }) => {
   const job = data.markdownRemark;
 
-  console.log(job.frontmatter.expectations);
-
   return (
     <Layout>
       <Header>
