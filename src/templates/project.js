@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import Layout from '../components/Layout';
 import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
@@ -145,7 +147,41 @@ const JoinUsButton = styled(Link)`
   color: white;
   border-radius: 45px;
   cursor: pointer;
+  text-decoration: none;
 `;
+
+const StyledCarousel = styled(Carousel)`
+  li > div {
+    max-height: 300px;
+  }
+
+  @media (min-width: 1024px) {
+    li > div {
+      max-height: 600px;
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+  }
+`;
+
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 
 const ProjectTemplate = ({ data }) => {
   const project = data.markdownRemark;
@@ -169,6 +205,16 @@ const ProjectTemplate = ({ data }) => {
             <p>Our solution:</p>
             <p>{project.frontmatter.solution}</p>
           </ProjectText>
+        </ProjectContent>
+      </MainGrid>
+      <StyledCarousel responsive={responsive}>
+        <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
+        <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
+        <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
+        <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
+      </StyledCarousel>
+      <MainGrid>
+        <ProjectContent>
           <ProjectText>
             <p>Check us here:</p>
             <a target="_blank" href={`https://${project.frontmatter.url}`}>
@@ -189,7 +235,7 @@ const ProjectTemplate = ({ data }) => {
           <ProjectJoinUs>
             <h3>Join Us</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-            <JoinUsButton>read more</JoinUsButton>
+            <JoinUsButton to="/openings">read more</JoinUsButton>
           </ProjectJoinUs>
         </ProjectContent>
       </MainGrid>
