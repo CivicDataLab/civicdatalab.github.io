@@ -56,8 +56,13 @@ const SummaryText = styled.div`
   }
 
   @media (min-width: 1440px) {
-    font-size: 60px;
+    font-size: 48px;
     left: -90px;
+    padding: 45px;
+  }
+
+  @media (min-width: 1600px) {
+    font-size: 60px;
     padding: 90px;
   }
 `;
