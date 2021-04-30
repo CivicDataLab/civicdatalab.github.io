@@ -2,7 +2,7 @@ import React from 'react';
 import ContactStyle from '../styles/Contact';
 import HeroText from '../styles/HeroText';
 import styled from 'styled-components';
-import { FaTwitter, FaInstagram, FaGithubAlt } from 'react-icons/fa';
+import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 
 const SocialLinksContainer = styled.div`
   display: flex;
@@ -52,8 +52,8 @@ const Contact = (props) => {
             <a href="https://twitter.com" target="_blank" rel="noreferrer noopener">
               <FaTwitter />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer noopener">
-              <FaInstagram />
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+              <FaLinkedinIn />
             </a>
             <a href="https://github.com" target="_blank" rel="noreferrer noopener">
               <FaGithubAlt />
