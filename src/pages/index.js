@@ -193,7 +193,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: { frontmatter: { template: { eq: "sector" } } }, sort: { fields: frontmatter___name }) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/sectors/" } }, sort: { fields: frontmatter___name }) {
       nodes {
         fields {
           slug
