@@ -73,9 +73,16 @@ const SectorTemplate = ({ data }) => {
         className="slider-wrapper"
         style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px', marginBottom: '60px' }}
       >
-        {[1, 1, 1].map((element, index) => {
-          return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
-        })}
+        {data.markdownRemark.frontmatter.events.map((event, index) => (
+          <SliderHomePage
+            key={event.title}
+            dark={index % 2 !== 0}
+            theme="true"
+            project={event.project}
+            title={event.title}
+            link={event.url}
+          />
+        ))}
       </div>
       <WorkHomePage />
     </Layout>
@@ -92,7 +99,12 @@ export const pageQuery = graphql`
         name
         description
         color
-        projects
+        events {
+          url
+          title
+          type
+          project
+        }
       }
     }
     members: allMarkdownRemark(
