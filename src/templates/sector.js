@@ -73,7 +73,7 @@ const SectorTemplate = ({ data }) => {
         className="slider-wrapper"
         style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px', marginBottom: '60px' }}
       >
-        {data.markdownRemark.frontmatter.events.map((event, index) => (
+        {data.markdownRemark.frontmatter.events?.map((event, index) => (
           <SliderHomePage
             key={event.title}
             dark={index % 2 !== 0}
