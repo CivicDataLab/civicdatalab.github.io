@@ -8,11 +8,13 @@ overflow-x: hidden;
 }
 
 .partners-container{
-  display: inline-block;
+  display: flex;
+  align-items: center;
   width: 100%;
   overflow-x: scroll;
   white-space: nowrap;
   margin-bottom: 40px;
+  margin-top: 40px;
 
   ::-webkit-scrollbar {
     display: none;
@@ -40,9 +42,6 @@ p {
        
     }
 
-    
-
-
 @media (min-width: 1200px) {
     .section-heading{
         font-size: 70px;
@@ -57,8 +56,7 @@ p {
 }
 .section-heading{
     font-size:60px;
-    line-height: 60px;
-    
+    line-height: 60px;  
 }
 }
 `;
