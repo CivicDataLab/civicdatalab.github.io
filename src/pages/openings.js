@@ -63,7 +63,7 @@ const Openings = () => {
       jobsPicture: file(relativePath: { eq: "landing-image.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 1375, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
