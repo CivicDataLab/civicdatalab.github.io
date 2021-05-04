@@ -1,8 +1,8 @@
 import React from 'react';
 
 const CONSTANTS = {
-  DELETING_SPEED: 200,
-  TYPING_SPEED: 100
+  DELETING_SPEED: 100,
+  TYPING_SPEED: 50
 };
 
 const TypeWriter = ({ messages }) => {

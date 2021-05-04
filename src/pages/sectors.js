@@ -22,7 +22,7 @@ export const TitleContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: 60%;
+    max-width: 60%;
 
     h1 {
       border-bottom: none;
@@ -63,6 +63,7 @@ export const ProjectsContainer = styled.div`
     grid-gap: 24px;
     grid-template-columns: 1fr 1fr;
     margin-top: 56px;
+    margin-bottom: 150px;
   }
 `;
 
@@ -70,7 +71,7 @@ const PartnersContainer = styled.div``;
 
 const Sectors = ({ data }) => {
   const projects = data.allMarkdownRemark.nodes;
-
+  
   return (
     <Layout>
       <MainGrid>
@@ -87,9 +88,6 @@ const Sectors = ({ data }) => {
                 image={project.frontmatter.image.childImageSharp.fluid}
                 text={project.frontmatter.name}
               />
-            ))}
-            {Array.apply(null, Array(8)).map((item, index) => (
-              <ImageItem key={index} image="" text="Hello this is a sample text for images" />
             ))}
           </ProjectsContainer>
         </ProjectsContent>

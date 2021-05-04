@@ -27,7 +27,7 @@ const ImageItemContainer = styled(Link)`
 
   @media (min-width: 1600px) {
     p {
-      font-size: 25px;
+      font-size: 18px;
       line-height: 30px;
     }
   }

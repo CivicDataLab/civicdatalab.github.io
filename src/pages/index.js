@@ -75,6 +75,7 @@ const Sectors = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     column-gap: 60px;
+    row-gap: 18px;
     justify-items: center;
     align-items: stretch;
   }
@@ -97,6 +98,7 @@ const Sectors = styled.section`
       margin-left: 55px;
       margin-right: 55px;
       margin-top: 38px;
+      column-gap: 20px;
       grid-template-columns: repeat(4, minmax(320px, 1fr));
     }
   }
@@ -128,38 +130,38 @@ const Index = ({ data }) => {
             />
           </HeroSection>
         </BackgroundImage>
-        <Fade bottom>
-          <Sectors>
-            <HeroText className={'sectors-heading'}>Our Work</HeroText>
-            <div className={'container-sectors'}>
-              {sectors.map((sector) => (
-                <SectorsCard
-                  key={sector.fields.slug}
-                  name={sector.frontmatter.name}
-                  description={sector.frontmatter.description}
-                  image={sector.frontmatter.image.childImageSharp.fluid}
-                  color={sector.frontmatter.color}
-                  link={sector.fields.slug}
-                />
-              ))}
-            </div>
-          </Sectors>
-          <div
-            className={'slider-wrapper'}
-            style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px' }}
-          >
-            {[1, 1, 1, 1].map((element, index) => {
-              return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
-            })}
+        {/* <Fade bottom> */}
+        <Sectors>
+          <HeroText className={'sectors-heading'}>Our Work</HeroText>
+          <div className="container-sectors">
+            {sectors.map((sector) => (
+              <SectorsCard
+                key={sector.fields.slug}
+                name={sector.frontmatter.name}
+                description={sector.frontmatter.description}
+                image={sector.frontmatter.image.childImageSharp.fluid}
+                color={sector.frontmatter.color}
+                link={sector.fields.slug}
+              />
+            ))}
           </div>
-          <OurPartners partners={partners} />
-          <OurPillars />
+        </Sectors>
+        <div
+          className={'slider-wrapper'}
+          style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px' }}
+        >
+          {[1, 1, 1, 1].map((element, index) => {
+            return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
+          })}
+        </div>
+        <OurPartners partners={partners} />
+        <OurPillars />
 
-          <TeamHomePage />
-          <WorkHomePage />
-          <Contact />
-          <CivicDays />
-        </Fade>
+        <TeamHomePage />
+        <WorkHomePage />
+        <Contact />
+        <CivicDays />
+        {/* </Fade> */}
       </main>
       <Footer />
     </ThemeProvider>
@@ -191,7 +193,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: { frontmatter: { template: { eq: "sector" } } }, sort: { fields: frontmatter___name }) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/sectors/" } }, sort: { fields: frontmatter___name }) {
       nodes {
         fields {
           slug
