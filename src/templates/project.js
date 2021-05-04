@@ -119,7 +119,7 @@ const SocialLinksContainer = styled.div`
     margin-right: 12px;
   }
 
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     margin-bottom: 60px;
   }
 `;
@@ -212,6 +212,11 @@ const responsive = {
     items: 1
   }
 };
+
+const timelineItems = [
+  { title: 'September 2020', cardTitle: 'Find out more about our entry into the hackathon from this video, blog' },
+  { title: 'December 2020', cardTitle: 'Find the agenda for the conference here' }
+];
 
 const ProjectTemplate = ({ data }) => {
   const project = data.markdownRemark;
@@ -336,7 +341,7 @@ export const pageQuery = graphql`
       }
     }
     partners: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projectpartners/" }, frontmatter: { projects: { regex: $nameRegex } } }
+      filter: { fileAbsolutePath: { regex: "/projectpart/" }, frontmatter: { projects: { regex: $nameRegex } } }
       sort: { fields: frontmatter___name }
     ) {
       nodes {
