@@ -76,6 +76,9 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+            frontmatter {
+              name
+            }
           }
         }
       }
@@ -113,7 +116,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: sectorTemplate,
       context: {
         id: sector.node.id,
-        name: sector.node.frontmatter.name
+        nameRegex: `/${sector.node.frontmatter.name}/`
       }
     });
   });
@@ -123,7 +126,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: project.node.fields.slug,
       component: projectTemplate,
       context: {
-        id: project.node.id
+        id: project.node.id,
+        nameRegex: `/${project.node.frontmatter.name}/`
       }
     });
   });

@@ -266,7 +266,7 @@ const BlogPostGrid = styled.div`
 const MemberTemplate = ({ data }) => {
   const member = data.markdownRemark;
   const [blogPosts] = useMediumFeed(member.frontmatter.medium);
-  
+
   return (
     <Layout>
       <MemberContainer>
@@ -293,13 +293,13 @@ const MemberTemplate = ({ data }) => {
         </Bio>
         <PictureContainer>
           <SocialLinksContainer>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer noopener">
+            <a href={member.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
               <FaTwitter />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+            <a href={member.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
               <FaLinkedinIn />
             </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer noopener">
+            <a href={member.frontmatter.github} target="_blank" rel="noreferrer noopener">
               <FaGithubAlt />
             </a>
           </SocialLinksContainer>
@@ -356,6 +356,9 @@ export const pageQuery = graphql`
           }
         }
         medium
+        github
+        linkedin
+        twitter
         accentcolor
       }
     }

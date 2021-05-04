@@ -56,9 +56,14 @@ const SummaryText = styled.div`
   }
 
   @media (min-width: 1440px) {
-    font-size: 60px;
+    font-size: 45px;
+    line-height: 1.5em;
     left: -90px;
-    padding: 90px;
+    padding: 45px;
+  }
+
+  @media (min-width: 1600px) {
+    padding: 60px;
   }
 `;
 
@@ -73,6 +78,11 @@ const ProjectText = styled.div`
     margin-top: 4px;
   }
 
+  p {
+    line-height: 1.5em;
+    font-size: 20px;
+  }
+
   p:first-of-type {
     font-weight: 700;
     margin-bottom: 0;
@@ -84,7 +94,7 @@ const ProjectText = styled.div`
 
   @media (min-width: 1024px) {
     padding: 0;
-    font-size: 25px;
+    margin: 60px 0;
   }
 
   @media (min-width: 1440px) {
@@ -107,6 +117,21 @@ const SocialLinksContainer = styled.div`
     border-radius: 100%;
     color: white;
     margin-right: 12px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-bottom: 60px;
+  }
+`;
+
+const PartnersContainer = styled.div`
+  a {
+    display: block;
+    margin-top: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-bottom: 60px;
   }
 `;
 
@@ -132,7 +157,11 @@ const ProjectJoinUs = styled.div`
   @media (min-width: 1024px) {
     padding: 0;
     width: 50%;
-    font-size: 25px;
+
+    p {
+      font-size: 20px;
+      line-height: 1.5em;
+    }
 
     h3 {
       font-size: 44px;
@@ -184,10 +213,15 @@ const responsive = {
   }
 };
 
+const timelineItems = [
+  { title: 'September 2020', cardTitle: 'Find out more about our entry into the hackathon from this video, blog' },
+  { title: 'December 2020', cardTitle: 'Find the agenda for the conference here' }
+];
+
 const ProjectTemplate = ({ data }) => {
   const project = data.markdownRemark;
-
-  const members = data.allMarkdownRemark.nodes;
+  const members = data.members.nodes;
+  const partners = data.partners.nodes;
 
   return (
     <Layout>
@@ -204,10 +238,12 @@ const ProjectTemplate = ({ data }) => {
             <p>Context:</p>
             <p>{project.frontmatter.context}</p>
           </ProjectText>
-          <ProjectText>
-            <p>Our solution:</p>
-            <p>{project.frontmatter.solution}</p>
-          </ProjectText>
+          {project.frontmatter.solution && (
+            <ProjectText>
+              <p>Our solution:</p>
+              <p>{project.frontmatter.solution}</p>
+            </ProjectText>
+          )}
         </ProjectContent>
       </MainGrid>
       <StyledCarousel responsive={responsive}>
@@ -218,28 +254,40 @@ const ProjectTemplate = ({ data }) => {
       </StyledCarousel>
       <MainGrid>
         <ProjectContent>
+          <MiniTeamSection members={members} />
           <ProjectText>
             <p>Check us here:</p>
-            <a target="_blank" href={`https://${project.frontmatter.url}`}>
+            <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
               {project.frontmatter.url}
             </a>
             <SocialLinksContainer>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer noopener">
+              <a href={project.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
                 <FaTwitter />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+              <a href={project.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
                 <FaLinkedinIn />
               </a>
-              <a href="https://github.com" target="_blank" rel="noreferrer noopener">
+              <a href={project.frontmatter.github} target="_blank" rel="noreferrer noopener">
                 <FaGithubAlt />
               </a>
             </SocialLinksContainer>
           </ProjectText>
-          <MiniTeamSection members={members} />
+          {partners && (
+            <ProjectText>
+              <p>In partnership with:</p>
+              <PartnersContainer>
+                {partners.map((partner) => (
+                  <a key={partner.id} href={partner.frontmatter.website} target="_blank" rel="noreferrer noopener">
+                    <Image fixed={partner.frontmatter.logo.childImageSharp.fixed} />
+                  </a>
+                ))}
+              </PartnersContainer>
+            </ProjectText>
+          )}
           <ProjectJoinUs>
             <h3>Join Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-            <JoinUsButton to="/openings">read more</JoinUsButton>
+            <p>CivicDataLab works across sectors to increase access to information.</p>
+            <JoinUsButton to="/about">read more</JoinUsButton>
           </ProjectJoinUs>
         </ProjectContent>
       </MainGrid>
@@ -250,7 +298,7 @@ const ProjectTemplate = ({ data }) => {
 export default ProjectTemplate;
 
 export const pageQuery = graphql`
-  query ProjectQuery($id: String!) {
+  query ProjectQuery($id: String!, $nameRegex: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       frontmatter {
@@ -259,6 +307,9 @@ export const pageQuery = graphql`
         context
         solution
         url
+        github
+        twitter
+        linkedin
         image {
           childImageSharp {
             fluid(maxWidth: 1000, quality: 100) {
@@ -268,10 +319,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/team/" } }
+    members: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/team/" }, frontmatter: { projects: { regex: $nameRegex } } }
       sort: { fields: frontmatter___name }
-      limit: 6
     ) {
       nodes {
         id
@@ -284,6 +334,25 @@ export const pageQuery = graphql`
             childImageSharp {
               fluid(maxWidth: 800, quality: 100) {
                 ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+    partners: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/projectpart/" }, frontmatter: { projects: { regex: $nameRegex } } }
+      sort: { fields: frontmatter___name }
+    ) {
+      nodes {
+        id
+        frontmatter {
+          name
+          website
+          logo {
+            childImageSharp {
+              fixed(height: 100) {
+                ...GatsbyImageSharpFixed
               }
             }
           }

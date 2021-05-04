@@ -9,7 +9,6 @@ const Card = styled.div`
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.29);
   height: 100%;
   transition-duration: 0.5s;
-  }
 
   &:after {
     content: '';
@@ -17,7 +16,7 @@ const Card = styled.div`
     bottom: 0;
     left: 0;
     width: 0;
-    height: 5px;
+    height: 4px;
     background-color: ${(props) => (props.color ? props.color : 'black')};
     transition: width .3s ease-in-out;
   }
@@ -68,6 +67,7 @@ const CardContent = styled.div`
     text-align: left;
     line-height: 20px;
     color: #585050;
+    min-height: 200px;
   }
 
   @media (min-width: 1200px) {
@@ -76,6 +76,7 @@ const CardContent = styled.div`
   }
 
   @media (min-width: 1440px) {
+    height: 500px;
     h4 {
       font-size: 32px;
       line-height: 56px;
@@ -86,6 +87,10 @@ const CardContent = styled.div`
     p {
       line-height: 27px;
     }
+  }
+
+  @media (min-width: 1600px) {
+    height: 450px;
   }
 `;
 
@@ -109,6 +114,7 @@ const CardLink = styled(Link)`
   @media (min-width: 1440px) {
     font-size: 20px;
     line-height: 78px;
+    bottom: 0px;
   }
 `;
 

@@ -23,9 +23,18 @@ const SectorNavItem = styled(Link)`
     background-color: black;
   }
 
+  @media (min-width: 1200px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-right: 24px;
+  }
+
   @media (min-width: 1600px) {
-    font-size: 28px;
+    font-size: 20px;
     padding: 6px 24px;
+    margin-right: 24px;
   }
 
 `;
@@ -51,7 +60,7 @@ const SectorNavContainer = styled.div`
   }
 
   @media (min-width: 1600px) {
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 `;
 

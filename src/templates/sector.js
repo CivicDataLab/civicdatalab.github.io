@@ -9,6 +9,7 @@ import HeroText from '../styles/HeroText';
 import ImageItem from '../components/ImageItem';
 import WorkHomePage from '../components/WorkHomePage';
 import SliderHomePage from '../components/SliderHomePage';
+import MiniTeamSection from '../components/MiniTeamSection';
 
 const SectorInfo = styled.div`
   a {
@@ -40,7 +41,8 @@ const SectorLabel = styled.div`
 `;
 
 const SectorTemplate = ({ data }) => {
-  const teamMembers = data.allMarkdownRemark.edges;
+  const members = data.members.nodes;
+  const projects = data.projects.nodes;
 
   return (
     <Layout>
@@ -55,19 +57,32 @@ const SectorTemplate = ({ data }) => {
         <ProjectsContent>
           <SectorNav />
           <ProjectsContainer>
-            {Array.apply(null, Array(8)).map((item, index) => (
-              <ImageItem key={index} image="" text="Hello this is a sample text for images" />
+            {projects.map((project) => (
+              <ImageItem
+                key={project.id}
+                url={project.fields.slug}
+                image={project.frontmatter.image.childImageSharp.fluid}
+                text={project.frontmatter.name}
+              />
             ))}
           </ProjectsContainer>
+          <MiniTeamSection members={members} />
         </ProjectsContent>
       </MainGrid>
       <div
         className="slider-wrapper"
         style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px', marginBottom: '60px' }}
       >
-        {[1, 1, 1].map((element, index) => {
-          return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
-        })}
+        {data.markdownRemark.frontmatter.events.map((event, index) => (
+          <SliderHomePage
+            key={event.title}
+            dark={index % 2 !== 0}
+            theme="true"
+            project={event.project}
+            title={event.title}
+            link={event.url}
+          />
+        ))}
       </div>
       <WorkHomePage />
     </Layout>
@@ -77,27 +92,58 @@ const SectorTemplate = ({ data }) => {
 export default SectorTemplate;
 
 export const pageQuery = graphql`
-  query SectorQuery($id: String!) {
+  query SectorQuery($id: String!, $nameRegex: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       frontmatter {
         name
         description
         color
+        events {
+          url
+          title
+          type
+          project
+        }
       }
     }
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/team/" }, frontmatter: { sectors: { regex: "/Education/" } } }
+    members: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/team/" }, frontmatter: { sectors: { regex: $nameRegex } } }
+      sort: { fields: frontmatter___name }
     ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          name
+          image {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
-          frontmatter {
-            name
-            description
+        }
+      }
+    }
+    projects: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/projects/" }, frontmatter: { sector: { regex: $nameRegex } } }
+    ) {
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          name
+          image {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }
