@@ -142,7 +142,7 @@ const Navbar = ({ dark, overlay }) => {
       logo: file(relativePath: { eq: "cdl_logo.png" }) {
         childImageSharp {
           fluid(maxWidth: 100, quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }

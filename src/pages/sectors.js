@@ -65,6 +65,10 @@ export const ProjectsContainer = styled.div`
     margin-top: 56px;
     margin-bottom: 150px;
   }
+
+  @media (min-width: 2000px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
 
 const PartnersContainer = styled.div``;
@@ -119,7 +123,7 @@ export const pageQuery = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
           }
