@@ -175,21 +175,21 @@ export const pageQuery = graphql`
     blogsCover: file(relativePath: { eq: "blogs.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
     assetsCover: file(relativePath: { eq: "assets.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
     landingImage: file(relativePath: { eq: "about.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1025, quality: 100) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
