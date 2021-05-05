@@ -2,7 +2,7 @@ import { useReducer, useEffect } from 'react';
 import Parser from 'rss-parser';
 
 const parser = new Parser();
-const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
+const CORS_PROXY = 'https://cors0any.herokuapp.com/';
 
 const intialState = {
   blogPosts: [],
