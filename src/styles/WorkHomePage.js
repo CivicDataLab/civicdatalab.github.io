@@ -4,6 +4,7 @@ const WorkHomePage = styled.div`
   background: rgba(178, 201, 229, 0.27);
   display: flex;
   box-sizing: border-box;
+  padding: 0 20px;
 
   .sub-text {
     width: 100%;
@@ -18,7 +19,7 @@ const WorkHomePage = styled.div`
   }
 
   .container-work-section {
-    padding: 40px 20px 50px;
+    padding: 40px 0px;
     width: 100%;
   }
 
@@ -29,7 +30,7 @@ const WorkHomePage = styled.div`
   .first-text-block {
     text-align: left;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 1.4em;
     font-family: Montserrat;
     letter-spacing: 0px;
     color: #000000;
@@ -93,10 +94,6 @@ const WorkHomePage = styled.div`
       flex-direction: row;
       justify-content: space-around;
     }
-
-    .content-circle {
-      margin-right: 40px;
-    }
   }
 
   @media (min-width: 900px) {
@@ -107,7 +104,7 @@ const WorkHomePage = styled.div`
       display: flex;
     }
     .circle-wrapper {
-      justify-content: flex-start;
+      justify-content: space-between;
       width: 50%;
     }
     .content {
@@ -115,7 +112,8 @@ const WorkHomePage = styled.div`
     }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
+    padding: 40px 52px;
     .work-part {
       font-size: 70px;
       line-height: 70px;
@@ -131,12 +129,13 @@ const WorkHomePage = styled.div`
     }
     .circle {
       margin-bottom: 60px;
+      width: 250px;
+      height: 250px;
     }
   }
 
   @media (min-width: 1440px) {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 72px;
     .work-part {
       font-size: 60px;
       line-height: 60px;
@@ -148,22 +147,17 @@ const WorkHomePage = styled.div`
     .container-work-section {
       display: flex;
       justify-content: space-between;
-      padding: 0 72px;
     }
 
     .circle {
-      width: 200px;
-      height: 200px;
-    }
-
-    .content-circle {
-      margin-right: 120px;
+      width: 280px;
+      height: 280px;
     }
 
     .first-text-block {
       font-size: 18px;
       line-height: 27px;
-      width: 615px;
+      width: 75%;
     }
     .work-home-page {
       width: 94px;
@@ -175,8 +169,8 @@ const WorkHomePage = styled.div`
 
   @media (min-width: 1920px) {
     .circle {
-      width: 300px;
-      height: 300px;
+      width: 360px;
+      height: 360px;
     }
   }
 `;

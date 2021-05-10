@@ -6,10 +6,10 @@ import Image from 'gatsby-image';
 
 const FooterContainer = styled.div`
   display: grid;
+  font-size: 16px;
   background-color: #000000;
   color: white;
   padding: 40px 22px;
-  // margin-top: 60px;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     'address address'
@@ -19,24 +19,29 @@ const FooterContainer = styled.div`
   @media (min-width: 768px) {
     padding-bottom: 0px;
     grid-template-columns: auto 1fr 1fr 3fr;
-    grid-gap: 20px;
+    grid-gap: 30px;
     grid-template-areas:
       'address navigate header empty'
       'bottom bottom bottom bottom';
   }
 
-  @media (min-width: 1268px) {
+  @media (min-width: 1280px) {
     grid-template-columns: 2.5fr 1fr 1fr 3fr;
     padding-left: 52px;
     padding-right: 52px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 18px;
   }
 `;
 
 const AddressContainer = styled.div`
   grid-area: address;
-  font-size: 18px;
   max-width: 600px;
   width: 100%;
+
+
   p {
     line-height: 22px;
   }
@@ -81,7 +86,6 @@ const NavLinksContainer = styled.ul`
     a {
       color: white;
       text-decoration: none;
-      font-size: 18px;
     }
   }
 `;

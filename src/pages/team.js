@@ -203,6 +203,10 @@ const CivicDaysSection = styled.div`
     display: none;
   }
 
+  .section-text {
+    line-height: 1.4em;
+  }
+
   @media (min-width: 1024px) {
     grid-template-columns: 20% 60%;
 

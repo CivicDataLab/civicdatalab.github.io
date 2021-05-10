@@ -21,7 +21,7 @@ const Contact = styled.div`
   .first-text-block {
     text-align: left;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 1.4em;
     font-family: Montserrat;
     letter-spacing: 0px;
     color: #000000;
@@ -52,6 +52,7 @@ const Contact = styled.div`
     padding-bottom: 15px;
     padding-left: 15px;
     box-sizing: border-box;
+    font-size: 18px;
   }
 
   .write-input-type {
@@ -112,13 +113,16 @@ const Contact = styled.div`
       padding: 15px 50px;
     }
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     .main-part {
       font-size: 70px;
       line-height: 70px;
     }
     .container-contact-section {
+      margin-right: 0;
       padding-top: 100px;
+      padding-left: 52px;
+      padding-right: 52px;
     }
 
     .sub-text {
@@ -143,8 +147,8 @@ const Contact = styled.div`
     }
 
     .container-contact-section {
-      padding-left: 73px;
-      padding-right: 116px;
+      padding-left: 72px;
+      padding-right: 72px;
       margin-right: 0px;
     }
 
