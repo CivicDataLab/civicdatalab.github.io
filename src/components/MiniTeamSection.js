@@ -27,10 +27,14 @@ const TeamGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 200px);
-    column-gap: 90px;
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(3, 180px);
+    column-gap: 60px;
     row-gap: 60px;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
@@ -44,13 +48,13 @@ const MemberContainer = styled(Link)`
     color: black;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     p {
       font-size: 18px;
     }
 
     .gatsby-image-wrapper {
-      height: 300px;
+      height: 280px;
       width: 100%;
     }
   }
