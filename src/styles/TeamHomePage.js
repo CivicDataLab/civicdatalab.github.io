@@ -18,7 +18,7 @@ const TeamHomePage = styled.div`
   p {
     text-align: left;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 1.4em;
     font-family: Montserrat;
     letter-spacing: 0px;
     color: #000000;
@@ -66,10 +66,9 @@ const TeamHomePage = styled.div`
     }
   }
 
-  @media (min-width: 1200px) {
-
+  @media (min-width: 1280px) {
     .container-team-section {
-      padding-top: 0;
+      padding: 40px 52px;
     }
 
     .section-heading {

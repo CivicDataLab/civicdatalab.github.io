@@ -9,6 +9,7 @@ const Card = styled.div`
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.29);
   height: 100%;
   transition-duration: 0.5s;
+  border-radius: 12px;
 
   &:after {
     content: '';
@@ -18,7 +19,7 @@ const Card = styled.div`
     width: 0;
     height: 4px;
     background-color: ${(props) => (props.color ? props.color : 'black')};
-    transition: width .3s ease-in-out;
+    transition: width 0.3s ease-in-out;
   }
 
   &:hover {
@@ -31,6 +32,8 @@ const Card = styled.div`
 
   .gatsby-image-wrapper {
     height: 180px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }
 
   @media (min-width: 1200px) {
@@ -65,9 +68,9 @@ const CardContent = styled.div`
 
   p {
     text-align: left;
-    line-height: 20px;
+    line-height: 1.4em;
     color: #585050;
-    min-height: 200px;
+    min-height: 260px;
   }
 
   @media (min-width: 1200px) {
