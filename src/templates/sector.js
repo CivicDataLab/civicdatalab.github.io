@@ -130,6 +130,7 @@ export const pageQuery = graphql`
     }
     projects: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/projects/" }, frontmatter: { sector: { regex: $nameRegex } } }
+      sort: { fields: frontmatter___name }
     ) {
       nodes {
         id
