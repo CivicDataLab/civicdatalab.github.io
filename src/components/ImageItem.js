@@ -8,6 +8,7 @@ const ImageItemContainer = styled(Link)`
   flex-direction: column;
   min-height: 100px;
   text-decoration: none;
+  position: relative;
 
   div {
     width: 100%;
@@ -33,9 +34,25 @@ const ImageItemContainer = styled(Link)`
   }
 `;
 
-const ImageItem = ({ url, image, text }) => {
+const SectorLabel = styled.p`
+  padding: 4px 10px;
+  color: black !important;
+  background-color: #fa7fe7;
+  position: absolute;
+  z-index: 999;
+  top: 120px;
+  right: 0;
+  font-weight: 500;
+
+  @media(min-width: 1280px) {
+    top: 60%;
+  }
+`;
+
+const ImageItem = ({ url, image, text, sector }) => {
   return (
     <ImageItemContainer to={url || '/'}>
+      {sector ? <SectorLabel>{sector}</SectorLabel> : null}
       {image ? <Image fluid={image} /> : <div />} <p>{text}</p>
     </ImageItemContainer>
   );
