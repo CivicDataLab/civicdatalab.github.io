@@ -7,7 +7,7 @@ const StyledLink = styled.a`
 `;
 
 const Card = styled.div`
-  height: 360px;
+  height: 300px;
   box-shadow: 7px 3px 4px rgba(0, 0, 0, 0.29);
 
   img {
