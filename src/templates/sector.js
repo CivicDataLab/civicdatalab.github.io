@@ -51,7 +51,7 @@ const SectorTemplate = ({ data }) => {
           <HeroText>Our Work</HeroText>
           <SectorInfo>
             <SectorLabel>{data.markdownRemark.frontmatter.name}</SectorLabel>
-            <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a>
+            {/* <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a> */}
           </SectorInfo>
         </TitleContainer>
         <ProjectsContent>
