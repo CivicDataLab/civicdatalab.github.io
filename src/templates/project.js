@@ -10,6 +10,7 @@ import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
 import { TitleContainer } from '../pages/sectors';
 import MiniTeamSection from '../components/MiniTeamSection';
+import SliderHomePage from '../components/SliderHomePage';
 
 const ProjectContent = styled.div`
   grid-area: right;
@@ -80,7 +81,7 @@ const ProjectText = styled.div`
 
   p {
     line-height: 1.5em;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   p:first-of-type {
@@ -99,6 +100,10 @@ const ProjectText = styled.div`
 
   @media (min-width: 1440px) {
     width: 50%;
+
+    p {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -252,6 +257,21 @@ const ProjectTemplate = ({ data }) => {
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
       </StyledCarousel>
+      <div
+        className="slider-wrapper"
+        style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px', marginBottom: '60px' }}
+      >
+        {project.frontmatter.events?.map((event, index) => (
+          <SliderHomePage
+            key={event.title}
+            dark={index % 2 !== 0}
+            theme="true"
+            project={event.project}
+            title={event.title}
+            link={event.url}
+          />
+        ))}
+      </div>
       <MainGrid>
         <ProjectContent>
           <MiniTeamSection members={members} />
@@ -310,6 +330,12 @@ export const pageQuery = graphql`
         github
         twitter
         linkedin
+        events {
+          url
+          title
+          type
+          project
+        }
         image {
           childImageSharp {
             fluid(maxWidth: 1000, quality: 100) {
@@ -351,7 +377,7 @@ export const pageQuery = graphql`
           website
           logo {
             childImageSharp {
-              fixed(height: 100) {
+              fixed(width: 280) {
                 ...GatsbyImageSharpFixed_noBase64
               }
             }

@@ -41,6 +41,8 @@ const SliderHomePage = styled.div`
     border-color:${(props) => (props.dark === true ? '#DDF521' : '#707070')} ;
     opacity: 1;
     margin-left:0px;
+    margin-top: 0;
+    margin-bottom: 0;
    
   }
   .content-scroll-section {
@@ -57,7 +59,7 @@ const SliderHomePage = styled.div`
   }
 
   @media (min-width: 1024px) {
-    height: 240px;
+    min-height: 220px;
 
     .circle-container > div {
       width: 80%;
