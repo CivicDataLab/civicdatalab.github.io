@@ -39,7 +39,7 @@ const SectorLabel = styled.p`
   color: black !important;
   background-color: #fa7fe7;
   position: absolute;
-  z-index: 999;
+  z-index: 500;
   top: 120px;
   right: 0;
   font-weight: 500;
