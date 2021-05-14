@@ -45,11 +45,11 @@ const ImageSection = styled.div`
 const SummaryText = styled.div`
   background-color: #dded1b;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 20px;
   width: 75%;
   position: absolute;
   bottom: -100px;
-  padding: 50px 32px;
+  padding: 20px 32px;
   box-sizing: border-box;
 
   @media (min-width: 1024px) {
@@ -57,13 +57,14 @@ const SummaryText = styled.div`
   }
 
   @media (min-width: 1440px) {
-    font-size: 45px;
+    font-size: 40px;
     line-height: 1.5em;
     left: -90px;
     padding: 45px;
   }
 
   @media (min-width: 1600px) {
+    font-size: 45px;
     padding: 60px;
   }
 `;
