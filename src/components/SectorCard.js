@@ -79,7 +79,7 @@ const CardContent = styled.div`
   }
 
   @media (min-width: 1440px) {
-    height: 500px;
+    height: 520px;
     h4 {
       font-size: 32px;
       line-height: 56px;
