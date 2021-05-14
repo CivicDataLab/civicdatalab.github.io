@@ -43,8 +43,8 @@ const ImageBox = styled(Link)`
   }
 
   @media (min-width: 1280px) {
-    width: 250px;
-    height: 380px;
+    width: 220px;
+    height: 360px;
 
     .member-name {
       font-size: 20px;

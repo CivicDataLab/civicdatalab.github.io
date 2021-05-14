@@ -259,7 +259,7 @@ const ProjectTemplate = ({ data }) => {
       </StyledCarousel>
       <div
         className="slider-wrapper"
-        style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px', marginBottom: '60px' }}
+        style={{ width: '100%', display: 'flex', overflow: 'auto' }}
       >
         {project.frontmatter.events?.map((event, index) => (
           <SliderHomePage

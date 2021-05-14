@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const MainGrid = styled.div`
-  padding-top: 50px;
+  padding-top: 40px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:

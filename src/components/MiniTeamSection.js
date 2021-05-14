@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Image from 'gatsby-image';
 
 const MiniTeam = styled.div`
-  padding: 0 32px;
+  padding: 0 30px;
   h3 {
     font-family: Bungee;
     font-size: 32px;
@@ -15,6 +15,7 @@ const MiniTeam = styled.div`
   }
 
   @media (min-width: 1024px) {
+    padding: 0;
     margin-bottom: 50px;
     h3 {
       font-size: 44px;

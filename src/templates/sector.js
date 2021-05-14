@@ -69,10 +69,7 @@ const SectorTemplate = ({ data }) => {
           <MiniTeamSection members={members} />
         </ProjectsContent>
       </MainGrid>
-      <div
-        className="slider-wrapper"
-        style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px', marginBottom: '60px' }}
-      >
+      <div className="slider-wrapper" style={{ width: '100%', display: 'flex', overflow: 'auto' }}>
         {data.markdownRemark.frontmatter.events?.map((event, index) => (
           <SliderHomePage
             key={event.title}

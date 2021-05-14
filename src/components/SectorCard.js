@@ -93,7 +93,7 @@ const CardContent = styled.div`
   }
 
   @media (min-width: 1600px) {
-    height: 450px;
+    height: 400px;
   }
 `;
 
