@@ -10,6 +10,7 @@ import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
 import { TitleContainer } from '../pages/sectors';
 import MiniTeamSection from '../components/MiniTeamSection';
+import SliderHomePage from '../components/SliderHomePage';
 
 const ProjectContent = styled.div`
   grid-area: right;
@@ -44,11 +45,11 @@ const ImageSection = styled.div`
 const SummaryText = styled.div`
   background-color: #dded1b;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 20px;
   width: 75%;
   position: absolute;
   bottom: -100px;
-  padding: 50px 32px;
+  padding: 20px 32px;
   box-sizing: border-box;
 
   @media (min-width: 1024px) {
@@ -56,13 +57,14 @@ const SummaryText = styled.div`
   }
 
   @media (min-width: 1440px) {
-    font-size: 45px;
+    font-size: 40px;
     line-height: 1.5em;
     left: -90px;
     padding: 45px;
   }
 
   @media (min-width: 1600px) {
+    font-size: 45px;
     padding: 60px;
   }
 `;
@@ -80,7 +82,7 @@ const ProjectText = styled.div`
 
   p {
     line-height: 1.5em;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   p:first-of-type {
@@ -99,6 +101,10 @@ const ProjectText = styled.div`
 
   @media (min-width: 1440px) {
     width: 50%;
+
+    p {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -252,6 +258,21 @@ const ProjectTemplate = ({ data }) => {
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
       </StyledCarousel>
+      <div
+        className="slider-wrapper"
+        style={{ width: '100%', display: 'flex', overflow: 'auto' }}
+      >
+        {project.frontmatter.events?.map((event, index) => (
+          <SliderHomePage
+            key={event.title}
+            dark={index % 2 !== 0}
+            theme="true"
+            project={event.project}
+            title={event.title}
+            link={event.url}
+          />
+        ))}
+      </div>
       <MainGrid>
         <ProjectContent>
           <MiniTeamSection members={members} />
@@ -310,6 +331,12 @@ export const pageQuery = graphql`
         github
         twitter
         linkedin
+        events {
+          url
+          title
+          type
+          project
+        }
         image {
           childImageSharp {
             fluid(maxWidth: 1000, quality: 100) {
@@ -351,7 +378,7 @@ export const pageQuery = graphql`
           website
           logo {
             childImageSharp {
-              fixed(height: 100) {
+              fixed(width: 280) {
                 ...GatsbyImageSharpFixed_noBase64
               }
             }

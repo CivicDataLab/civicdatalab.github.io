@@ -51,7 +51,7 @@ const SectorTemplate = ({ data }) => {
           <HeroText>Our Work</HeroText>
           <SectorInfo>
             <SectorLabel>{data.markdownRemark.frontmatter.name}</SectorLabel>
-            <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a>
+            {/* <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a> */}
           </SectorInfo>
         </TitleContainer>
         <ProjectsContent>
@@ -69,10 +69,7 @@ const SectorTemplate = ({ data }) => {
           <MiniTeamSection members={members} />
         </ProjectsContent>
       </MainGrid>
-      <div
-        className="slider-wrapper"
-        style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px', marginBottom: '60px' }}
-      >
+      <div className="slider-wrapper" style={{ width: '100%', display: 'flex', overflow: 'auto' }}>
         {data.markdownRemark.frontmatter.events?.map((event, index) => (
           <SliderHomePage
             key={event.title}
@@ -130,6 +127,7 @@ export const pageQuery = graphql`
     }
     projects: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/projects/" }, frontmatter: { sector: { regex: $nameRegex } } }
+      sort: { fields: frontmatter___name }
     ) {
       nodes {
         id

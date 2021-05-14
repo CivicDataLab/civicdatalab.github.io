@@ -65,38 +65,44 @@ const HeroSection = styled(Section)`
 
 const Sectors = styled.section`
   margin-top: 24px;
+  padding: 0 20px;
   .sectors-heading {
-    padding-left: 20px;
     margin-bottom: 20px;
   }
   .container-sectors {
-    margin-left: 20px;
-    margin-right: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     column-gap: 60px;
-    row-gap: 18px;
+    row-gap: 24px;
     justify-items: center;
     align-items: stretch;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1280px) {
+    margin-top: 100px;
+    margin-bottom: 80px;
+
+    padding: 0 52px;
     .sectors-heading {
       font-size: 70px;
       line-height: 67px;
+    }
+
+    .container-sectors {
+      row-gap: 60px;
     }
   }
 
   @media (min-width: 1440px) {
     margin-top: 120px;
+    margin-bottom: 100px;
+
     .sectors-heading {
       font-size: 60px;
       line-height: 60px;
-      padding-left: 73px;
+      padding-left: 20px;
     }
     .container-sectors {
-      margin-left: 55px;
-      margin-right: 55px;
       margin-top: 38px;
       column-gap: 20px;
       grid-template-columns: repeat(4, minmax(320px, 1fr));
@@ -146,10 +152,7 @@ const Index = ({ data }) => {
             ))}
           </div>
         </Sectors>
-        <div
-          className={'slider-wrapper'}
-          style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px' }}
-        >
+        <div className={'slider-wrapper'} style={{ width: '100%', display: 'flex', overflow: 'auto' }}>
           {[1, 1, 1, 1].map((element, index) => {
             return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
           })}

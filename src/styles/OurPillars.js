@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const OurPillars = styled.div`
-padding-left: 20px;
-margin: 60px auto;
+padding: 0 20px;
+margin-top: 60px;
 
 .pillars-container{
   display:grid;
@@ -38,13 +38,15 @@ margin: 60px auto;
 }
 
 @media (min-width: 1280px) {
+  padding: 0 52px;
+  margin-top: 80px;
   h3 {
     font-size: 40px;
   }
 }
 
 @media (min-width: 1440px) {
-    padding-left:73px;
+    padding: 0 72px;
   }
 }
 `;

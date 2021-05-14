@@ -3,6 +3,8 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Perk from '../components/Perk';
+import { SiAngellist } from 'react-icons/si';
+import { GoMail } from 'react-icons/go';
 import ApplicationProcess from '../components/ApplicationProcess';
 
 const JobContainer = styled.div`
@@ -48,8 +50,14 @@ const DescriptionContainer = styled.div`
 
   a {
     color: #208da7;
-    margin-right: 16px;
+    margin-right: 24px;
     font-size: inherit;
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      margin-right: 2px;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -268,9 +276,12 @@ const Job = ({ data }) => {
           <h2>Apply</h2>
           <div>
             <a href={job.frontmatter.angellist} target="_blank" rel="noreferrer">
-              AngelList
+              <SiAngellist /> AngelList
             </a>
-            <a href="mailto:careers@civicdatalab.in">Email</a>
+            <a href="mailto:careers@civicdatalab.in">
+              <GoMail />
+              Email
+            </a>
           </div>
         </DescriptionContainer>
         <RolesContainer>
