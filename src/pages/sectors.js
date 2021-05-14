@@ -75,7 +75,7 @@ const PartnersContainer = styled.div``;
 
 const Sectors = ({ data }) => {
   const projects = data.allMarkdownRemark.nodes;
-  
+
   return (
     <Layout>
       <MainGrid>
@@ -91,6 +91,7 @@ const Sectors = ({ data }) => {
                 url={project.fields.slug}
                 image={project.frontmatter.image.childImageSharp.fluid}
                 text={project.frontmatter.name}
+                sector={project.frontmatter.sector}
               />
             ))}
           </ProjectsContainer>
@@ -120,6 +121,7 @@ export const pageQuery = graphql`
         }
         frontmatter {
           name
+          sector
           image {
             childImageSharp {
               fluid(maxWidth: 800, quality: 100) {

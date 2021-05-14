@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Image from 'gatsby-image';
 
 const MiniTeam = styled.div`
+  padding: 0 30px;
   h3 {
     font-family: Bungee;
     font-size: 32px;
@@ -14,6 +15,7 @@ const MiniTeam = styled.div`
   }
 
   @media (min-width: 1024px) {
+    padding: 0;
     margin-bottom: 50px;
     h3 {
       font-size: 44px;
@@ -25,17 +27,27 @@ const MiniTeam = styled.div`
 
 const TeamGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 140px);
+  grid-gap: 20px;
 
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 200px);
-    column-gap: 90px;
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(3, 180px);
+    column-gap: 60px;
     row-gap: 60px;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(4, 180px);
   }
 `;
 
 const MemberContainer = styled(Link)`
   text-decoration: none;
+
+  .gatsby-image-wrapper {
+    height: 200px;
+  }
+
   p {
     font-size: 16px;
     font-weight: 500;
@@ -44,11 +56,18 @@ const MemberContainer = styled(Link)`
     color: black;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     p {
       font-size: 18px;
     }
 
+    .gatsby-image-wrapper {
+      height: 240px;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1440px) {
     .gatsby-image-wrapper {
       height: 300px;
       width: 100%;

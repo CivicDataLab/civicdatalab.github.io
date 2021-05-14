@@ -63,6 +63,7 @@ export const Bio = styled.div`
   @media (min-width: 1024px) {
     padding: 0 20px;
     width: 600px;
+    min-height: 500px;
     p {
       font-size: 18px;
       line-height: 27px;
@@ -77,8 +78,9 @@ export const Bio = styled.div`
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     width: 720px;
+    min-height: 300px;
   }
 `;
 
@@ -138,7 +140,7 @@ const PictureContainer = styled.div`
 
   @media (min-width: 1024px) {
     div:last-of-type {
-      width: 589px;
+      width: 400px;
       position: relative;
       background-color: #1dcccc;
       padding-bottom: 0;
@@ -146,8 +148,8 @@ const PictureContainer = styled.div`
     }
 
     .gatsby-image-wrapper {
-      max-width: 500px;
-      height: 780px;
+      max-width: 330px;
+      height: 500px;
       position: absolute;
     }
 
@@ -161,7 +163,7 @@ const PictureContainer = styled.div`
 
       span:last-of-type {
         margin-top: 40px;
-        transform: rotate(-180deg) translate(10px, 0px);
+        transform: rotate(-180deg) translate(10px, -10px);
       }
     }
   }
@@ -192,7 +194,7 @@ export const SocialLinksContainer = styled.div`
     align-items: center;
     width: 100%;
     margin-bottom: 100px;
-    margin-left: 100px;
+    margin-left: 20px;
 
     a {
       display: flex;
@@ -212,14 +214,16 @@ export const SocialLinksContainer = styled.div`
       height: 50%;
     }
   }
+
+  @media (min-width: 1440px) {
+    margin-left: 100px;
+  }
 `;
 
 const BlogContainer = styled.div`
   grid-area: blogs;
   padding: 0 20px;
   box-sizing: border-box;
-  max-width: 1020px;
-  width: 100%;
   margin-top: 80px;
   margin-bottom: 20px;
 
@@ -248,6 +252,7 @@ const BlogContainer = styled.div`
 
   @media (min-width: 1280px) {
     margin-top: 100px;
+    width: 95%;
   }
 `;
 
@@ -305,7 +310,6 @@ const MemberTemplate = ({ data }) => {
           </SocialLinksContainer>
           <div style={{ backgroundColor: member.frontmatter.accentcolor }}>
             <Image fluid={member.frontmatter.image.childImageSharp.fluid} />
-            {/* <img src={require(`../images/${member.frontmatter.image}`)} className="profile-picture" alt="profile" /> */}
             <p>
               <span>“</span>
               {member.frontmatter.quote}

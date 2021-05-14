@@ -55,6 +55,10 @@ const OpeningListContainer = styled.div`
 const PictureContainer = styled.div`
   grid-area: right;
   margin: 32px 0;
+
+  .gatsby-image-wrapper {
+    max-height: 500px;
+  }
 `;
 
 const Openings = () => {
@@ -62,7 +66,7 @@ const Openings = () => {
     query {
       jobsPicture: file(relativePath: { eq: "landing-image.jpeg" }) {
         childImageSharp {
-          fluid(maxWidth: 1375, quality: 100) {
+          fluid(maxHeight: 1375, quality: 100) {
             ...GatsbyImageSharpFluid_noBase64
           }
         }

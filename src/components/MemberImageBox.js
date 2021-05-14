@@ -25,29 +25,38 @@ const ImageBox = styled(Link)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #ffffff;
     background: #000000;
     opacity: 0.76;
   }
 
   .member-name {
-    font-size: 20px;
+    font-size: 16px;
     font-family: Montserrat;
-    color: #ffffff;
   }
+
   .member-desg {
     font-style: italic;
-    font-size: 15px;
+    font-size: 12px;
     font-family: Montserrat;
-    color: #ffffff;
     text-align: center;
   }
 
   @media (min-width: 1280px) {
-    width: 280px;
-    height: 400px;
+    width: 220px;
+    height: 360px;
+
+    .member-name {
+      font-size: 20px;
+    }
+    .member-desg {
+      font-size: 14px;
+    }
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: 1440px) {
+    width: 280px;
+    height: 400px;
     .member-details {
       padding: 21px 0 28px;
     }
@@ -55,17 +64,13 @@ const ImageBox = styled(Link)`
 `;
 
 const MemberImageBox = ({ link, name, role, image }) => {
-  const [displayInfo, setDisplayInfo] = React.useState(false);
-
   return (
-    <ImageBox to={link} onMouseOver={() => setDisplayInfo(true)} onMouseLeave={() => setDisplayInfo(false)}>
+    <ImageBox to={link}>
       <Image fluid={image} />
-      {displayInfo ? (
-        <span className="member-details">
-          <span className="member-name">{name.split(' ')[0]}</span>
-          <span className="member-desg">{role}</span>
-        </span>
-      ) : null}
+      <span className="member-details">
+        <span className="member-name">{name.split(' ')[0]}</span>
+        <span className="member-desg">{role}</span>
+      </span>
     </ImageBox>
   );
 };

@@ -86,12 +86,14 @@ const MemberCardsContainer = styled.div`
 
   @media (min-width: 1440px) {
     padding: 0 32px;
+    row-gap: 60px;
   }
 `;
 
 const StickyBox = styled.div`
   padding: 32px 22px 34px 22px;
   background: #000000;
+  width: 100%;
 
   h1 {
     font-family: 'Bungee';
@@ -117,6 +119,7 @@ const StickyBox = styled.div`
   @media (min-width: 1024px) {
     position: absolute;
     right: 0;
+    width: 250px;
 
     h1 {
       font-size: 28px;
@@ -126,32 +129,8 @@ const StickyBox = styled.div`
     a {
       font-size: 18px;
     }
-  }    border-bottom: 10px solid black !important;
-      width: 250px;
-    }
-    a {
-      font-size: 20px;
-    }
   }
 `;
-
-// const FullWidthLink = styled.a`
-//   display: inline-block;
-//   box-sizing: border-box;
-//   padding: 22px 12px;
-//   background: #000000;
-//   color: #ffffff;
-//   font-size: 18px;
-//   font-family: 'Montserrat';
-//   font-weight: 600;
-//   outline: none;
-//   margin-top: 30px;
-
-//   @media (min-width: 1280px) {
-//     font-size: 20px;
-//     padding: 15px 20px;
-//   }
-// `;
 
 const HorizontalImageScrollContainer = styled.div`
   display: flex;
@@ -201,6 +180,10 @@ const CivicDaysSection = styled.div`
   .placeholder-container {
     padding: 48px 18px 0;
     display: none;
+  }
+
+  .section-text {
+    line-height: 1.4em;
   }
 
   @media (min-width: 1024px) {
