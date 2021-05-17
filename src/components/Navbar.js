@@ -174,7 +174,7 @@ const StyledExternalLink = styled.a`
 `;
 
 const navLinks = [
-  { path: '/home', name: 'Home' },
+  { path: '/', name: 'Home' },
   { path: '/work', name: 'Work' },
   { path: '/team', name: 'Team' },
   { path: 'https://medium.com/@CivicDataLab', name: 'Blogs', external: true },
@@ -218,7 +218,7 @@ const Navbar = ({ dark, overlay }) => {
                 {link.name}
               </StyledLink>
             ) : (
-              <StyledExternalLink href={link.path} target="_blank" rel="noreferrer noopener">
+              <StyledExternalLink dark={dark} href={link.path} target="_blank" rel="noreferrer noopener">
                 <span>{link.name}</span>
                 <RiShareBoxFill />
               </StyledExternalLink>
