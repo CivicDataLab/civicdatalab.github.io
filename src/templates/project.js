@@ -53,14 +53,24 @@ const SummaryText = styled.div`
   padding: 20px 32px;
   box-sizing: border-box;
 
+  @media (min-width: 834px) {
+    left: 0px;
+    font-size: 24px;
+    bottom: -50px;
+  }
+
   @media (min-width: 1024px) {
     left: -32px;
   }
 
+  @media (min-width: 1280px) {
+    font-size: 35px;
+  }
+
   @media (min-width: 1440px) {
-    font-size: 40px;
     line-height: 1.5em;
     left: -90px;
+    bottom: -100px;
     padding: 45px;
   }
 
@@ -349,7 +359,7 @@ export const pageQuery = graphql`
         }
         image {
           childImageSharp {
-            fluid(maxWidth: 1000, quality: 100) {
+            fluid(maxWidth: 1200, quality: 100) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
