@@ -51,7 +51,7 @@ const useMediumFeed = (mediumUserName) => {
       .catch((error) => {
         dispatch({ type: 'FETCHING_POSTS_FAILED', payload: error.message });
       });
-  }, []);
+  }, [mediumUserName]);
 
   return [state.blogPosts, state.error, state.loading];
 };
