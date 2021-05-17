@@ -11,6 +11,7 @@ import HeroText from '../styles/HeroText';
 import { TitleContainer } from '../pages/work';
 import MiniTeamSection from '../components/MiniTeamSection';
 import SliderHomePage from '../components/SliderHomePage';
+import Resources from '../components/Resources';
 
 const ProjectContent = styled.div`
   grid-area: right;
@@ -258,10 +259,7 @@ const ProjectTemplate = ({ data }) => {
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
       </StyledCarousel>
-      <div
-        className="slider-wrapper"
-        style={{ width: '100%', display: 'flex', overflow: 'auto' }}
-      >
+      <div className="slider-wrapper" style={{ width: '100%', display: 'flex', overflow: 'auto' }}>
         {project.frontmatter.events?.map((event, index) => (
           <SliderHomePage
             key={event.title}
@@ -305,6 +303,7 @@ const ProjectTemplate = ({ data }) => {
               </PartnersContainer>
             </ProjectText>
           )}
+          <Resources resources={project.frontmatter.resources} />
           <ProjectJoinUs>
             <h3>Join Us</h3>
             <p>CivicDataLab works across sectors to increase access to information.</p>
@@ -336,6 +335,17 @@ export const pageQuery = graphql`
           title
           type
           project
+        }
+        resources {
+          url
+          title
+          image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+            }
+          }
         }
         image {
           childImageSharp {
