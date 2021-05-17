@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
+import { RiShareBoxFill } from 'react-icons/ri';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 
@@ -142,9 +143,16 @@ const footerNavLinks = [
   { path: '/home', name: 'Home' },
   { path: '/work', name: 'Work' },
   { path: '/team', name: 'Team' },
-  { path: '/blogs', name: 'Blogs' },
+  { path: 'https://medium.com/@CivicDataLab', name: 'Blogs', external: true },
   { path: '/about', name: 'About' }
 ];
+
+const ExternalLink = ({ url, name }) => (
+  <a style={{ display: 'flex', alignItems: 'center' }} href={url} target="_blank" rel="noreferrer noopener">
+    <span style={{ display: 'inline-block', marginRight: 4 }}>{name}</span>
+    <RiShareBoxFill />
+  </a>
+);
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -172,7 +180,11 @@ const Footer = () => {
         <NavLinksContainer>
           {footerNavLinks.map((navLink) => (
             <li key={navLink.path}>
-              <Link to={navLink.path}>{navLink.name}</Link>
+              {!navLink.external ? (
+                <Link to={navLink.path}>{navLink.name}</Link>
+              ) : (
+                <ExternalLink url={navLink.path} name={navLink.name} />
+              )}
             </li>
           ))}
         </NavLinksContainer>
@@ -182,7 +194,11 @@ const Footer = () => {
         <NavLinksContainer>
           {footerNavLinks.map((navLink) => (
             <li key={navLink.path}>
-              <Link to={navLink.path}>{navLink.name}</Link>
+              {!navLink.external ? (
+                <Link to={navLink.path}>{navLink.name}</Link>
+              ) : (
+                <ExternalLink url={navLink.path} name={navLink.name} />
+              )}
             </li>
           ))}
         </NavLinksContainer>
