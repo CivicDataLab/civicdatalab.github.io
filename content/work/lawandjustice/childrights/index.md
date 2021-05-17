@@ -9,4 +9,5 @@ twitter:
 facebook: 
 instagram:
 sector: Law & Justice
+type: project
 ---

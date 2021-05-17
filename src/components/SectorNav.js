@@ -36,7 +36,6 @@ const SectorNavItem = styled(Link)`
     padding: 6px 24px;
     margin-right: 24px;
   }
-
 `;
 
 const SectorNavContainer = styled.div`
@@ -50,7 +49,7 @@ const SectorNavContainer = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
-  
+
   -ms-overflow-style: none;
   scrollbar-width: none;
 
@@ -67,7 +66,7 @@ const SectorNavContainer = styled.div`
 const SectorNav = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/sectors/" } }, sort: { fields: frontmatter___name }) {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "sector" } } }, sort: { fields: frontmatter___name }) {
         edges {
           node {
             id
@@ -87,7 +86,7 @@ const SectorNav = () => {
 
   return (
     <SectorNavContainer>
-      <SectorNavItem activeClassName="active-sector" to="/sectors/">
+      <SectorNavItem activeClassName="active-sector" to="/work/">
         All
       </SectorNavItem>
       {sectorsData.map((sector) => (

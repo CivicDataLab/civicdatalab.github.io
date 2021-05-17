@@ -9,6 +9,7 @@ twitter: https://twitter.com/JusticeHubIndia
 linkedin:
 github: https://github.com/justicehub-in
 sector: Law & Justice
+type: project
 events:
   - {
       url: 'https://medium.com/civicdatalab/the-state-of-data-in-the-judicial-sector-9a178a143e',

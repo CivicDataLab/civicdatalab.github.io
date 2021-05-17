@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
 import MainGrid from '../styles/MainGrid';
-import { TitleContainer } from './sectors';
+import { TitleContainer } from './work';
 
 const Section = styled.section`
   padding: 48px 16px 0;

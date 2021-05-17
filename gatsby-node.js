@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const sectorResults = await graphql(`
     query {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/sectors/" } }) {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "sector" } } }) {
         edges {
           node {
             id
@@ -69,7 +69,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const projectResults = await graphql(`
     query {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }) {
         edges {
           node {
             id
