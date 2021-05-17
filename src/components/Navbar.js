@@ -169,7 +169,7 @@ const Navbar = ({ dark, overlay }) => {
           </StyledLink>
         </li>
         <li>
-          <StyledLink dark={dark} to="/sectors/" partiallyActive={true} activeClassName="active-link">
+          <StyledLink dark={dark} to="/work/" partiallyActive={true} activeClassName="active-link">
             Work
           </StyledLink>
         </li>

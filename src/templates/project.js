@@ -8,7 +8,7 @@ import 'react-multi-carousel/lib/styles.css';
 import Layout from '../components/Layout';
 import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
-import { TitleContainer } from '../pages/sectors';
+import { TitleContainer } from '../pages/work';
 import MiniTeamSection from '../components/MiniTeamSection';
 import SliderHomePage from '../components/SliderHomePage';
 

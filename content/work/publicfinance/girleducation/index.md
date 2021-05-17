@@ -9,4 +9,5 @@ twitter:
 facebook: 
 github:
 sector: Public Finance
+type: project
 ---

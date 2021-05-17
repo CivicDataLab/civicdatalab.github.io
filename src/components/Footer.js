@@ -41,7 +41,6 @@ const AddressContainer = styled.div`
   max-width: 600px;
   width: 100%;
 
-
   p {
     line-height: 22px;
   }
@@ -141,7 +140,7 @@ const SocialLinksContainer = styled.div`
 
 const footerNavLinks = [
   { path: '/home', name: 'Home' },
-  { path: '/sectors', name: 'Sectors' },
+  { path: '/work', name: 'Work' },
   { path: '/team', name: 'Team' },
   { path: '/blogs', name: 'Blogs' },
   { path: '/about', name: 'About' }
