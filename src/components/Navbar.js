@@ -140,14 +140,11 @@ const StyledExternalLink = styled.a`
   text-decoration: none;
   font-size: 18px;
   padding: 10px 22px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 
   span {
     margin-right: 4px;
-  }
-
-  svg {
-    margin-bottom: 2px;
   }
 
   @media (min-width: 1024px) {
@@ -159,6 +156,10 @@ const StyledExternalLink = styled.a`
     padding-bottom: 16px;
     padding-left: 16px;
     padding-right: 16px;
+
+    svg {
+      margin-bottom: 2px;
+    }
 
     &:hover {
       color: ${(props) => (props.dark ? 'black' : 'white')};
