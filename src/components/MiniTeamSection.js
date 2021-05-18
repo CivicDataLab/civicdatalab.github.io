@@ -30,10 +30,18 @@ const TeamGrid = styled.div`
   grid-template-columns: repeat(2, 140px);
   grid-gap: 20px;
 
-  @media (min-width: 1280px) {
-    grid-template-columns: repeat(3, 180px);
+  @media (min-width: 834px) {
+    grid-template-columns: repeat(4, 150px);
     column-gap: 60px;
     row-gap: 60px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 150px);
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(3, 180px);
   }
 
   @media (min-width: 1440px) {

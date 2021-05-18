@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { MdClose, MdMenu } from 'react-icons/md';
+import { RiShareBoxFill } from 'react-icons/ri';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 
@@ -134,6 +135,53 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const StyledExternalLink = styled.a`
+  color: inherit;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 22px;
+  display: inline-flex;
+  align-items: center;
+
+  span {
+    margin-right: 4px;
+  }
+
+  @media (min-width: 1024px) {
+    color: ${(props) => (props.dark ? 'white' : 'black')};
+    height: 100%;
+    text-transform: capitalize;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    svg {
+      margin-bottom: 2px;
+    }
+
+    &:hover {
+      color: ${(props) => (props.dark ? 'black' : 'white')};
+      background-color: ${(props) => (props.dark ? 'white' : 'black')};
+    }
+
+    &.active-link {
+      color: ${(props) => (props.dark ? 'black' : 'white')};
+      background-color: ${(props) => (props.dark ? 'white' : 'black')};
+    }
+  }
+`;
+
+const navLinks = [
+  { path: '/', name: 'Home' },
+  { path: '/work', name: 'Work' },
+  { path: '/team', name: 'Team' },
+  { path: 'https://medium.com/@CivicDataLab', name: 'Blogs', external: true },
+  { path: '/about', name: 'About' },
+  { path: '/contact', name: 'Contact' }
+];
+
 const Navbar = ({ dark, overlay }) => {
   const [displayMobileNav, setDisplayMobileNav] = React.useState(false);
 
@@ -163,36 +211,20 @@ const Navbar = ({ dark, overlay }) => {
           onClick={() => setDisplayMobileNav(false)}
           className="close-icon"
         />
-        <li>
-          <StyledLink dark={dark} to="/" activeClassName="active-link">
-            Home
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink dark={dark} to="/sectors/" partiallyActive={true} activeClassName="active-link">
-            Work
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink dark={dark} to="/team" activeClassName="active-link" partiallyActive>
-            Team
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink dark={dark} to="/blogs" activeClassName="active-link">
-            Blogs
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink dark={dark} to="/about" activeClassName="active-link">
-            About
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink dark={dark} to="/contact" activeClassName="active-link">
-            Contact
-          </StyledLink>
-        </li>
+        {navLinks.map((link) => (
+          <li key={link.path}>
+            {!link.external ? (
+              <StyledLink dark={dark} activeClassName="active-link" to={link.path}>
+                {link.name}
+              </StyledLink>
+            ) : (
+              <StyledExternalLink dark={dark} href={link.path} target="_blank" rel="noreferrer noopener">
+                <span>{link.name}</span>
+                <RiShareBoxFill />
+              </StyledExternalLink>
+            )}
+          </li>
+        ))}
       </LinksContainer>
     </StyledNav>
   );

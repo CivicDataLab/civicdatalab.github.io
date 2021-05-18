@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-import { TitleContainer, ProjectsContainer, ProjectsContent } from '../pages/sectors';
+import { TitleContainer, ProjectsContainer, ProjectsContent } from '../pages/work';
 import SectorNav from '../components/SectorNav';
 import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
@@ -63,6 +63,7 @@ const SectorTemplate = ({ data }) => {
                 url={project.fields.slug}
                 image={project.frontmatter.image.childImageSharp.fluid}
                 text={project.frontmatter.name}
+                boldText
               />
             ))}
           </ProjectsContainer>
@@ -126,7 +127,7 @@ export const pageQuery = graphql`
       }
     }
     projects: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projects/" }, frontmatter: { sector: { regex: $nameRegex } } }
+      filter: { frontmatter: { type: { eq: "project" }, sector: { regex: $nameRegex } } }
       sort: { fields: frontmatter___name }
     ) {
       nodes {
