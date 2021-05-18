@@ -92,6 +92,7 @@ const Sectors = ({ data }) => {
                 image={project.frontmatter.image.childImageSharp.fluid}
                 text={project.frontmatter.name}
                 sector={project.frontmatter.sector}
+                boldText
               />
             ))}
           </ProjectsContainer>
