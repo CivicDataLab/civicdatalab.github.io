@@ -313,7 +313,7 @@ const ProjectTemplate = ({ data }) => {
               </PartnersContainer>
             </ProjectText>
           )}
-          <Resources resources={project.frontmatter.resources} />
+          {project.frontmatter.resources && <Resources resources={project.frontmatter.resources} />}
           <ProjectJoinUs>
             <h3>Join Us</h3>
             <p>CivicDataLab works across sectors to increase access to information.</p>
