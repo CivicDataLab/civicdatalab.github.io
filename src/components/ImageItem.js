@@ -43,7 +43,7 @@ const SectorLabel = styled.p`
   z-index: 500;
   top: 120px;
   right: 0;
-  font-weight: 500;
+  font-weight: 500 !important;
 
   @media (min-width: 1280px) {
     top: 60%;
