@@ -196,7 +196,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/sectors/" } }, sort: { fields: frontmatter___name }) {
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "sector" } } }, sort: { fields: frontmatter___name }) {
       nodes {
         fields {
           slug

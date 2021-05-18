@@ -63,6 +63,7 @@ const SectorTemplate = ({ data }) => {
                 url={project.fields.slug}
                 image={project.frontmatter.image.childImageSharp.fluid}
                 text={project.frontmatter.name}
+                boldText
               />
             ))}
           </ProjectsContainer>
