@@ -8,9 +8,10 @@ import 'react-multi-carousel/lib/styles.css';
 import Layout from '../components/Layout';
 import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
-import { TitleContainer } from '../pages/sectors';
+import { TitleContainer } from '../pages/work';
 import MiniTeamSection from '../components/MiniTeamSection';
 import SliderHomePage from '../components/SliderHomePage';
+import Resources from '../components/Resources';
 
 const ProjectContent = styled.div`
   grid-area: right;
@@ -52,14 +53,24 @@ const SummaryText = styled.div`
   padding: 20px 32px;
   box-sizing: border-box;
 
+  @media (min-width: 834px) {
+    left: 0px;
+    font-size: 24px;
+    bottom: -50px;
+  }
+
   @media (min-width: 1024px) {
     left: -32px;
   }
 
+  @media (min-width: 1280px) {
+    font-size: 35px;
+  }
+
   @media (min-width: 1440px) {
-    font-size: 40px;
     line-height: 1.5em;
     left: -90px;
+    bottom: -100px;
     padding: 45px;
   }
 
@@ -258,10 +269,7 @@ const ProjectTemplate = ({ data }) => {
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
       </StyledCarousel>
-      <div
-        className="slider-wrapper"
-        style={{ width: '100%', display: 'flex', overflow: 'auto' }}
-      >
+      <div className="slider-wrapper" style={{ width: '100%', display: 'flex', overflow: 'auto' }}>
         {project.frontmatter.events?.map((event, index) => (
           <SliderHomePage
             key={event.title}
@@ -305,6 +313,7 @@ const ProjectTemplate = ({ data }) => {
               </PartnersContainer>
             </ProjectText>
           )}
+          {project.frontmatter.resources && <Resources resources={project.frontmatter.resources} />}
           <ProjectJoinUs>
             <h3>Join Us</h3>
             <p>CivicDataLab works across sectors to increase access to information.</p>
@@ -337,9 +346,20 @@ export const pageQuery = graphql`
           type
           project
         }
+        resources {
+          url
+          title
+          image {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+            }
+          }
+        }
         image {
           childImageSharp {
-            fluid(maxWidth: 1000, quality: 100) {
+            fluid(maxWidth: 1200, quality: 100) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }

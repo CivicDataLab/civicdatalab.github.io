@@ -9,4 +9,5 @@ twitter:
 facebook: 
 instagram:
 sector: Education
+type: project
 ---

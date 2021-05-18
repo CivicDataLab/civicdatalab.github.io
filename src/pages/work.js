@@ -92,6 +92,7 @@ const Sectors = ({ data }) => {
                 image={project.frontmatter.image.childImageSharp.fluid}
                 text={project.frontmatter.name}
                 sector={project.frontmatter.sector}
+                boldText
               />
             ))}
           </ProjectsContainer>
@@ -113,7 +114,7 @@ export default Sectors;
 
 export const pageQuery = graphql`
   query ProjectsQuery {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }, sort: { fields: frontmatter___name }) {
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }, sort: { fields: frontmatter___name }) {
       nodes {
         id
         fields {

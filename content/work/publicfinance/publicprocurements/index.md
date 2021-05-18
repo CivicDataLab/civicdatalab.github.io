@@ -9,4 +9,5 @@ twitter: www.twitter.com
 facebook: www.facebook.com
 instagram: www.instagram.com
 sector: Public Finance
+type: project
 ---
