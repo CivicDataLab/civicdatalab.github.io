@@ -5,13 +5,14 @@ import BackgroundImage from 'gatsby-background-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
 import { Section } from './index';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Footer from '../components/Layout/Footer';
+import Navbar from '../components/Layout/Navbar';
 import TeamHomePage from '../components/TeamHomePage';
 import WorkHomePage from '../components/WorkHomePage';
 import HeroText from '../styles/HeroText';
 import Value from '../components/Value';
 import SectorCard from '../components/SectorCard';
+import Seo from '../components/Seo/Seo';
 
 const AboutSection = styled.div`
   padding: 48px 20px;
@@ -96,6 +97,7 @@ const About = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Seo title="About" />
       <main>
         <BackgroundImage fluid={data.landingImage.childImageSharp.fluid}>
           <Navbar dark />

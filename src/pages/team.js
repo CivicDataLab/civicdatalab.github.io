@@ -1,11 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
 import MainGrid from '../styles/MainGrid';
 import { TitleContainer } from './work';
+import Seo from '../components/Seo/Seo';
 
 const Section = styled.section`
   padding: 48px 16px 0;
@@ -155,7 +156,6 @@ const HorizontalImageScrollContainer = styled.div`
     min-width: 216px;
     height: 170px;
     background: #f2f2f2;
-    // border: 1px solid red;
   }
 
   @media (min-width: 1280px) {
@@ -241,6 +241,7 @@ const Team = ({ data }) => {
 
   return (
     <Layout>
+      <Seo title="Team" />
       <MainGrid>
         <TitleContainer>
           <SectionHeading>The Team</SectionHeading>

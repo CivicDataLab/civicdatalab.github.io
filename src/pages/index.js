@@ -12,11 +12,12 @@ import BackgroundImage from 'gatsby-background-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
 import { CivicDays } from './team';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Footer from '../components/Layout/Footer';
+import Navbar from '../components/Layout/Navbar';
 import TypeWriter from '../components/TypeWriter';
 import OurPillars from '../components/OurPillars';
 import OurPartners from '../components/OurPartners';
+import Seo from '../components/Seo/Seo';
 
 export const Section = styled.section`
   padding: 0 72px;
@@ -123,6 +124,7 @@ const Index = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Seo title="Home" />
       <main>
         <BackgroundImage fluid={image}>
           <Navbar dark overlay />

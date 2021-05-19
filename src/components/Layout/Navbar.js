@@ -214,7 +214,12 @@ const Navbar = ({ dark, overlay }) => {
         {navLinks.map((link) => (
           <li key={link.path}>
             {!link.external ? (
-              <StyledLink dark={dark} activeClassName="active-link" to={link.path}>
+              <StyledLink
+                dark={dark}
+                activeClassName="active-link"
+                partiallyActive={link.name === 'Work'}
+                to={link.path}
+              >
                 {link.name}
               </StyledLink>
             ) : (

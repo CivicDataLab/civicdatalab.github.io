@@ -4,7 +4,7 @@ import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import { RiShareBoxFill } from 'react-icons/ri';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
-import { navLinks } from '../components/Navbar';
+import { navLinks } from './Navbar';
 
 const FooterContainer = styled.div`
   display: grid;

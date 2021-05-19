@@ -5,13 +5,14 @@ import Image from 'gatsby-image';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
 import { TitleContainer } from '../pages/work';
 import MiniTeamSection from '../components/MiniTeamSection';
 import SliderHomePage from '../components/SliderHomePage';
 import Resources from '../components/Resources';
+import Seo from '../components/Seo/Seo';
 
 const ProjectContent = styled.div`
   grid-area: right;
@@ -242,6 +243,7 @@ const ProjectTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <Seo title={project.frontmatter.name} />
       <MainGrid>
         <TitleContainer>
           <HeroText>{project.frontmatter.name}</HeroText>
