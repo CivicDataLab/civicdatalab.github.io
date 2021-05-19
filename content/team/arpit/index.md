@@ -1,5 +1,5 @@
 ---
-name: Arpit Aurora
+name: Arpit Arora
 role: Statistician,Researcher
 medium: TheDataAreClean
 description: Arpit is a statistician by trade. He believes in building sustainable and intersectional solutions for the society. Avid cyclist and reader. Passionate about Open Education.
