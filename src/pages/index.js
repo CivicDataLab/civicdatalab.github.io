@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 import HeroText from '../styles/HeroText';
 import SectorsCard from '../components/SectorCard';
 import TeamHomePage from '../components/TeamHomePage';
