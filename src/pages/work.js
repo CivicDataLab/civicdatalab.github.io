@@ -72,7 +72,7 @@ export const ProjectsContainer = styled.div`
   }
 `;
 
-const PartnersContainer = styled.div``;
+// const PartnersContainer = styled.div``;
 
 const Sectors = ({ data }) => {
   const projects = data.allMarkdownRemark.nodes;

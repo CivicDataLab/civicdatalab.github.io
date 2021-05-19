@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import Carousel from 'react-multi-carousel';
@@ -11,7 +11,7 @@ import HeroText from '../styles/HeroText';
 import { TitleContainer } from '../pages/work';
 import MiniTeamSection from '../components/MiniTeamSection';
 import SliderHomePage from '../components/SliderHomePage';
-import Resources from '../components/Resources';
+// import Resources from '../components/Resources';
 import Seo from '../components/Seo/Seo';
 
 const ProjectContent = styled.div`
@@ -108,7 +108,7 @@ const ProjectText = styled.div`
 
   @media (min-width: 1024px) {
     padding: 0;
-    margin: 60px 0;
+    margin: 40px 0;
   }
 
   @media (min-width: 1440px) {
@@ -120,9 +120,49 @@ const ProjectText = styled.div`
   }
 `;
 
+const LeftText = styled.div`
+  margin: 30px 0;
+  padding: ${(props) => (props.mobile ? '0 32px' : '0')};
+  display: ${(props) => (props.mobile ? 'block' : 'none')};
+  text-align: ${(props) => (props.mobile ? 'center' : 'left')};
+  a {
+    display: inline-block;
+    color: #05b7be;
+    text-decoration: none;
+    margin-top: 4px;
+  }
+
+  p {
+    line-height: 1.5em;
+    font-size: 18px;
+  }
+
+  p:first-of-type {
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  p:last-of-type {
+    margin-top: 8px;
+  }
+
+  @media (min-width: 1024px) {
+    display: ${(props) => (props.mobile ? 'none' : 'block')};
+    padding: 0;
+    margin: 40px 0;
+  }
+
+  @media (min-width: 1440px) {
+    p {
+      font-size: 20px;
+    }
+  }
+`;
+
 const SocialLinksContainer = styled.div`
   display: flex;
   margin-top: 20px;
+  justify-content: ${(props) => (props.mobile ? 'center' : 'start')};
 
   a {
     display: flex;
@@ -153,50 +193,50 @@ const PartnersContainer = styled.div`
   }
 `;
 
-const ProjectJoinUs = styled.div`
-  padding: 0 32px;
-  margin: 40px 0 80px;
+// const ProjectJoinUs = styled.div`
+//   padding: 0 32px;
+//   margin: 40px 0 80px;
 
-  p {
-    margin-top: 0;
-  }
+//   p {
+//     margin-top: 0;
+//   }
 
-  h3 {
-    font-family: Bungee;
-    font-size: 32px;
-    width: 60px;
-    display: inline-block;
-    text-align: left;
-    margin-bottom: 16px;
-    padding-top: 16px;
-    border-top: 10px solid black;
-  }
+//   h3 {
+//     font-family: Bungee;
+//     font-size: 32px;
+//     width: 60px;
+//     display: inline-block;
+//     text-align: left;
+//     margin-bottom: 16px;
+//     padding-top: 16px;
+//     border-top: 10px solid black;
+//   }
 
-  @media (min-width: 1024px) {
-    padding: 0;
-    width: 50%;
+//   @media (min-width: 1024px) {
+//     padding: 0;
+//     width: 50%;
 
-    p {
-      font-size: 20px;
-      line-height: 1.5em;
-    }
+//     p {
+//       font-size: 20px;
+//       line-height: 1.5em;
+//     }
 
-    h3 {
-      font-size: 44px;
-      width: max-content;
-    }
-  }
-`;
+//     h3 {
+//       font-size: 44px;
+//       width: max-content;
+//     }
+//   }
+// `;
 
-const JoinUsButton = styled(Link)`
-  display: inline-block;
-  background-color: #080808;
-  padding: 8px 20px;
-  color: white;
-  border-radius: 45px;
-  cursor: pointer;
-  text-decoration: none;
-`;
+// const JoinUsButton = styled(Link)`
+//   display: inline-block;
+//   background-color: #080808;
+//   padding: 8px 20px;
+//   color: white;
+//   border-radius: 45px;
+//   cursor: pointer;
+//   text-decoration: none;
+// `;
 
 const StyledCarousel = styled(Carousel)`
   li > div {
@@ -231,10 +271,10 @@ const responsive = {
   }
 };
 
-const timelineItems = [
-  { title: 'September 2020', cardTitle: 'Find out more about our entry into the hackathon from this video, blog' },
-  { title: 'December 2020', cardTitle: 'Find the agenda for the conference here' }
-];
+// const timelineItems = [
+//   { title: 'September 2020', cardTitle: 'Find out more about our entry into the hackathon from this video, blog' },
+//   { title: 'December 2020', cardTitle: 'Find the agenda for the conference here' }
+// ];
 
 const ProjectTemplate = ({ data }) => {
   const project = data.markdownRemark;
@@ -247,6 +287,37 @@ const ProjectTemplate = ({ data }) => {
       <MainGrid>
         <TitleContainer>
           <HeroText>{project.frontmatter.name}</HeroText>
+
+          <LeftText>
+            <p>Check us here:</p>
+            <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
+              {project.frontmatter.url}
+            </a>
+            <SocialLinksContainer>
+              <a href={project.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
+                <FaTwitter />
+              </a>
+              <a href={project.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
+                <FaLinkedinIn />
+              </a>
+              <a href={project.frontmatter.github} target="_blank" rel="noreferrer noopener">
+                <FaGithubAlt />
+              </a>
+            </SocialLinksContainer>
+          </LeftText>
+
+          {partners && (
+            <LeftText>
+              <p>In partnership with:</p>
+              <PartnersContainer>
+                {partners.map((partner) => (
+                  <a key={partner.id} href={partner.frontmatter.website} target="_blank" rel="noreferrer noopener">
+                    <Image fixed={partner.frontmatter.logo.childImageSharp.fixed} />
+                  </a>
+                ))}
+              </PartnersContainer>
+            </LeftText>
+          )}
         </TitleContainer>
         <ProjectContent>
           <ImageSection>
@@ -262,6 +333,35 @@ const ProjectTemplate = ({ data }) => {
               <p>Our solution:</p>
               <p>{project.frontmatter.solution}</p>
             </ProjectText>
+          )}
+          <LeftText mobile>
+            <p>Check us here:</p>
+            <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
+              {project.frontmatter.url}
+            </a>
+            <SocialLinksContainer mobile>
+              <a href={project.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
+                <FaTwitter />
+              </a>
+              <a href={project.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
+                <FaLinkedinIn />
+              </a>
+              <a href={project.frontmatter.github} target="_blank" rel="noreferrer noopener">
+                <FaGithubAlt />
+              </a>
+            </SocialLinksContainer>
+          </LeftText>
+          {partners && (
+            <LeftText mobile>
+              <p>In partnership with:</p>
+              <PartnersContainer>
+                {partners.map((partner) => (
+                  <a key={partner.id} href={partner.frontmatter.website} target="_blank" rel="noreferrer noopener">
+                    <Image fixed={partner.frontmatter.logo.childImageSharp.fixed} />
+                  </a>
+                ))}
+              </PartnersContainer>
+            </LeftText>
           )}
         </ProjectContent>
       </MainGrid>
@@ -286,41 +386,12 @@ const ProjectTemplate = ({ data }) => {
       <MainGrid>
         <ProjectContent>
           <MiniTeamSection members={members} />
-          <ProjectText>
-            <p>Check us here:</p>
-            <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
-              {project.frontmatter.url}
-            </a>
-            <SocialLinksContainer>
-              <a href={project.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
-                <FaTwitter />
-              </a>
-              <a href={project.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
-                <FaLinkedinIn />
-              </a>
-              <a href={project.frontmatter.github} target="_blank" rel="noreferrer noopener">
-                <FaGithubAlt />
-              </a>
-            </SocialLinksContainer>
-          </ProjectText>
-          {partners && (
-            <ProjectText>
-              <p>In partnership with:</p>
-              <PartnersContainer>
-                {partners.map((partner) => (
-                  <a key={partner.id} href={partner.frontmatter.website} target="_blank" rel="noreferrer noopener">
-                    <Image fixed={partner.frontmatter.logo.childImageSharp.fixed} />
-                  </a>
-                ))}
-              </PartnersContainer>
-            </ProjectText>
-          )}
-          {project.frontmatter.resources && <Resources resources={project.frontmatter.resources} />}
-          <ProjectJoinUs>
+          {/* {project.frontmatter.resources && <Resources resources={project.frontmatter.resources} />} */}
+          {/* <ProjectJoinUs>
             <h3>Join Us</h3>
             <p>CivicDataLab works across sectors to increase access to information.</p>
             <JoinUsButton to="/about">read more</JoinUsButton>
-          </ProjectJoinUs>
+          </ProjectJoinUs> */}
         </ProjectContent>
       </MainGrid>
     </Layout>

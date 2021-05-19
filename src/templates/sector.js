@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout/Layout';
 import { TitleContainer, ProjectsContainer, ProjectsContent } from '../pages/work';
@@ -72,7 +72,7 @@ const SectorTemplate = ({ data }) => {
           <MiniTeamSection members={members} />
         </ProjectsContent>
       </MainGrid>
-      <div className="slider-wrapper" style={{ width: '100%', display: 'flex', overflow: 'auto' }}>
+      <div className="slider-wrapper" style={{ marginBottom: 150, width: '100%', display: 'flex', overflow: 'auto' }}>
         {data.markdownRemark.frontmatter.events?.map((event, index) => (
           <SliderHomePage
             key={event.title}
