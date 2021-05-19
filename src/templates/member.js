@@ -275,7 +275,7 @@ const MemberTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title={member.frontmatter.title} />
+      <Seo title={member.frontmatter.name} />
       <MemberContainer>
         <Bio>
           <h2>{member.frontmatter.name}</h2>
