@@ -173,11 +173,11 @@ const StyledExternalLink = styled.a`
   }
 `;
 
-const navLinks = [
+export const navLinks = [
   { path: '/', name: 'Home' },
   { path: '/work', name: 'Work' },
   { path: '/team', name: 'Team' },
-  { path: 'https://medium.com/@CivicDataLab', name: 'Blogs', external: true },
+  { path: 'https://medium.com/civicdatalab', name: 'Blogs', external: true },
   { path: '/about', name: 'About' },
   { path: '/contact', name: 'Contact' }
 ];
