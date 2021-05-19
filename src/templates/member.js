@@ -1,12 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import BlogCard from '../components/BlogCard';
 import { getCoverImageUrlFromMediumPost } from '../utils/helpers';
 import useMediumFeed from '../hooks/useMediumFeed';
+import Seo from '../components/Seo/Seo';
 // import MemberImage from '../components/MemberImage';
 
 const MemberContainer = styled.div`
@@ -274,6 +275,7 @@ const MemberTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <Seo title={member.frontmatter.title} />
       <MemberContainer>
         <Bio>
           <h2>{member.frontmatter.name}</h2>

@@ -1,11 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import Perk from '../components/Perk';
 import { SiAngellist } from 'react-icons/si';
 import { GoMail } from 'react-icons/go';
 import ApplicationProcess from '../components/ApplicationProcess';
+import Seo from '../components/Seo/Seo';
 
 const JobContainer = styled.div`
   padding-top: 50px;
@@ -266,6 +267,7 @@ const Job = ({ data }) => {
 
   return (
     <Layout>
+      <Seo title={job.frontmatter.title} />
       <Header>
         <h1>{job.frontmatter.title}</h1>
         <p>CivicDataLab works across sectors to increase access to information.</p>
