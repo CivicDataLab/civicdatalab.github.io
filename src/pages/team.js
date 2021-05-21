@@ -92,14 +92,18 @@ const MemberCardsContainer = styled.div`
 `;
 
 const StickyBox = styled.div`
-  padding: 32px 22px 34px 22px;
+  padding: 32px 22px;
   background: #000000;
   width: 100%;
+  border-radius: 12px;
+  display: ${(props) => (props.mobile ? 'block' : 'none')};
+  min-height: 230px;
+  box-sizing: border-box;
 
   h1 {
     font-family: 'Bungee';
     font-size: 34px;
-    width: 255px;
+    width: 100%;
     color: #ffffff;
     text-transform: uppercase;
     margin: 0;
@@ -117,9 +121,11 @@ const StickyBox = styled.div`
     text-decoration: none;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
+    display: ${(props) => (props.mobile ? 'none' : 'block')};
     position: absolute;
-    right: 0;
+    left: 0px;
+    top: 5%;
     width: 250px;
 
     h1 {
@@ -130,6 +136,10 @@ const StickyBox = styled.div`
     a {
       font-size: 18px;
     }
+  }
+
+  @media (min-width: 1440px) {
+    top: 10%;
   }
 `;
 
@@ -224,7 +234,6 @@ export const CivicDays = () => {
             Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
             style
           </p>
-          {/* <FullWidthLink>Check our unique Civic Days &gt;&gt; </FullWidthLink> */}
         </Section>
       </CivicDaysSection>
       <HorizontalImageScrollContainer>
@@ -239,6 +248,31 @@ export const CivicDays = () => {
 const Team = ({ data }) => {
   const members = data.allMarkdownRemark.nodes;
 
+  const membersContainerRef = React.useRef(null);
+  const stickyBoxRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const scrollHandler = () => {
+      if (window.innerWidth >= 1280) {
+        if (membersContainerRef && window.scrollY > membersContainerRef.current.scrollHeight / 2 + 200) {
+          console.log('You have reached the end of members container');
+          stickyBoxRef.current.style.top = '90%';
+          stickyBoxRef.current.style.bottom = '0px';
+          stickyBoxRef.current.style.left = '0px';
+        } else {
+          stickyBoxRef.current.style.top = `calc(10%)`;
+          stickyBoxRef.current.style.bottom = '80%';
+        }
+      }
+    };
+
+    window.addEventListener('scroll', scrollHandler);
+
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+  }, []);
+
   return (
     <Layout>
       <Seo title="Team" />
@@ -247,8 +281,14 @@ const Team = ({ data }) => {
           <SectionHeading>The Team</SectionHeading>
           <div className="heading-border-bottom"></div>
           <p className="section-text">Meet our Bandhus</p>
+          <div style={{ position: 'relative', height: '80%' }}>
+            <StickyBox ref={stickyBoxRef}>
+              <h1>Current Job Openings</h1>
+              <Link to="/openings">browse jobs</Link>
+            </StickyBox>
+          </div>
         </TitleContainer>
-        <MemberCardsContainer>
+        <MemberCardsContainer ref={membersContainerRef}>
           {members.map((member) => (
             <MemberImageBox
               key={member.fields.slug}
@@ -261,7 +301,7 @@ const Team = ({ data }) => {
         </MemberCardsContainer>
       </MainGrid>
       <div style={{ position: 'relative' }}>
-        <StickyBox>
+        <StickyBox mobile>
           <h1>Current Job Openings</h1>
           <Link to="/openings">browse jobs</Link>
         </StickyBox>
