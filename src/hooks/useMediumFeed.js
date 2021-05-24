@@ -41,7 +41,7 @@ const useMediumFeed = (mediumUserName) => {
   useEffect(() => {
     dispatch({ type: 'FETCHING_POSTS' });
     parser
-      .parseURL(CORS_PROXY + `https://medium.com/feed/@${mediumUserName}`)
+      .parseURL(CORS_PROXY + `https://medium.com/feed/${mediumUserName}`)
       .then((response) => {
         dispatch({
           type: 'FETCHING_POSTS_SUCCESS',
