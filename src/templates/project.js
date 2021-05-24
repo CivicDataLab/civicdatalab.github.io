@@ -13,6 +13,7 @@ import MiniTeamSection from '../components/MiniTeamSection';
 import SliderHomePage from '../components/SliderHomePage';
 // import Resources from '../components/Resources';
 import Seo from '../components/Seo/Seo';
+import Timeline from '../components/Timeline';
 
 const ProjectContent = styled.div`
   grid-area: right;
@@ -25,7 +26,7 @@ const ProjectContent = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding: 0 32px;
+    padding: 0 30px;
   }
 `;
 
@@ -271,11 +272,6 @@ const responsive = {
   }
 };
 
-// const timelineItems = [
-//   { title: 'September 2020', cardTitle: 'Find out more about our entry into the hackathon from this video, blog' },
-//   { title: 'December 2020', cardTitle: 'Find the agenda for the conference here' }
-// ];
-
 const ProjectTemplate = ({ data }) => {
   const project = data.markdownRemark;
   const members = data.members.nodes;
@@ -365,6 +361,7 @@ const ProjectTemplate = ({ data }) => {
           )}
         </ProjectContent>
       </MainGrid>
+      {project.frontmatter.timeline && <Timeline timelineItems={project.frontmatter.timeline} />}
       <StyledCarousel responsive={responsive}>
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
@@ -418,6 +415,10 @@ export const pageQuery = graphql`
           title
           type
           project
+        }
+        timeline {
+          date
+          title
         }
         resources {
           url
