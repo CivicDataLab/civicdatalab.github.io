@@ -7,7 +7,6 @@ import SectorsCard from '../components/SectorCard';
 import TeamHomePage from '../components/TeamHomePage';
 import WorkHomePage from '../components/WorkHomePage';
 import Contact from '../components/Contact';
-import SliderHomePage from '../components/SliderHomePage';
 import BackgroundImage from 'gatsby-background-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
@@ -18,6 +17,7 @@ import TypeWriter from '../components/TypeWriter';
 import OurPillars from '../components/OurPillars';
 import OurPartners from '../components/OurPartners';
 import Seo from '../components/Seo/Seo';
+import BlogStrip from '../components/BlogStrip';
 
 export const Section = styled.section`
   padding: 0 72px;
@@ -154,11 +154,7 @@ const Index = ({ data }) => {
             ))}
           </div>
         </Sectors>
-        <div className={'slider-wrapper'} style={{ width: '100%', display: 'flex', overflow: 'auto' }}>
-          {[1, 1, 1, 1].map((element, index) => {
-            return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
-          })}
-        </div>
+        <BlogStrip />
         <OurPartners partners={partners} />
         <OurPillars />
 
