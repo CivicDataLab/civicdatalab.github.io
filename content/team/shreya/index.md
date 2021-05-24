@@ -1,7 +1,7 @@
 ---
 name: Shreya Agarwal
 role: Civic Technologist
-medium: shreyaagrawal0809
+medium: '@shreyaagrawal0809'
 description: Shreya Agrawal is a data fanatic who loves to scrutanize data as well as answering unanswered questions using visualizations. She also enjoy developing softwares.
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 github: https://github.com/shreyaagrawal0809

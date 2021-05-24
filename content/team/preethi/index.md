@@ -1,7 +1,7 @@
 ---
 name: Preethi G.
 role: Researcher
-medium: preethig
+medium: '@preethig'
 description: Preethi is an erstwhile genomic scientist. She sold her soul to the pharmaceutical industry for over five years. Since then she has been living a peregrine ife between a cabin in the woods near the Atlantic Ocean and the mountains in India. Right now she is puttering with datascience at CivicDataLab and finding new ways to use open government data toward bettering public health. She is particularly interested in starting life from scratch and the effort and resources it takes to set up a house.
 quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 github: https://github.com/preethical
