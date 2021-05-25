@@ -8,6 +8,8 @@ twitter:
 linkedin: 
 image: ./divya.jpg
 accentcolor: '#1DCCCC'
+projects: OpenCity, The State of FOSS in India Report
+sector: Urban Planning, FOSS
 ---
 
 

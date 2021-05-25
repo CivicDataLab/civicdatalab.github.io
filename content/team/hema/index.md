@@ -7,7 +7,7 @@ quote: Code is for humans.
 github: https://github.com/lhema
 twitter: 
 linkedin: http://www.linkedin.com/in/lhema
-image: ./divya.jpg
+image: 
 sectors: Public Finance
 projects: Open Budgets India Platform - 2.0, Public Procurements
 ---
