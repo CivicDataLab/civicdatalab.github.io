@@ -8,7 +8,7 @@ const SectorNavItem = styled(Link)`
   align-items: center;
   flex-shrink: 0;
   box-sizing: border-box;
-  padding: 8px 25px;
+  padding: 8px 20px;
   border: 3px solid black;
   text-decoration: none;
   color: black;
@@ -25,10 +25,12 @@ const SectorNavItem = styled(Link)`
 
   @media (min-width: 1200px) {
     font-size: 16px;
+    padding: 8px 16px;
   }
 
   @media (min-width: 1440px) {
-    margin-right: 24px;
+    margin-right: 12px;
+    padding: 8px 20px;
   }
 
   @media (min-width: 1600px) {
