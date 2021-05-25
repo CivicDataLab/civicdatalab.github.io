@@ -2,8 +2,8 @@
 name: Arun Sudarsan
 role: Economist
 medium: '@aruncdl'
-description: Arun is an Economist, passionate about OpenData and its potential to increase state transparency and accountability. He believes in empowering state agencies to make policy decisions based on the best available evidence. Loves teaching. Previously worked at NITI Aayog.
-quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+description:
+quote: No manmade system is immune to human deceit.
 github: https://github.com/aruncdl
 twitter: https://twitter.com/mrarunsudarsan
 linkedin: https://www.linkedin.com/in/arunsud
@@ -11,3 +11,5 @@ image: ./arun.jpg
 sectors: Public Finance
 projects: Open Budgets India Platform - 2.0, OpenCity
 ---
+
+Arun is an Economist & Policy Researcher. An eternal optimist and a perennial pessimist, he has seen the highs and lows of governance in India at his previous stint at NITI Aayog as a Young Professional. At CivicDataLab, Arun works to increase availability of public finance data in the open as part of the Open Budgets India initiative, an essential building block to ensure transparency and accountability.
