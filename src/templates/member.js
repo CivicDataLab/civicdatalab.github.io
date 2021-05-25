@@ -1,12 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import BlogCard from '../components/BlogCard';
 import { getCoverImageUrlFromMediumPost } from '../utils/helpers';
 import useMediumFeed from '../hooks/useMediumFeed';
+import Seo from '../components/Seo/Seo';
 // import MemberImage from '../components/MemberImage';
 
 const MemberContainer = styled.div`
@@ -57,6 +58,14 @@ export const Bio = styled.div`
 
   p {
     margin: 18px 0;
+    line-height: 28px;
+  }
+
+  a {
+    color: #168cd6;
+  }
+
+  li {
     line-height: 28px;
   }
 
@@ -274,6 +283,7 @@ const MemberTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <Seo title={member.frontmatter.name} />
       <MemberContainer>
         <Bio>
           <h2>{member.frontmatter.name}</h2>
@@ -290,11 +300,10 @@ const MemberTemplate = ({ data }) => {
               );
             })}
           </h5>
-          <p>{member.frontmatter.description}</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-          </p>
+          {member.frontmatter.description?.split(';').map((d) => (
+            <p key={d}>{d}</p>
+          ))}
+          {member.html && <div dangerouslySetInnerHTML={{ __html: member.html }}></div>}
         </Bio>
         <PictureContainer>
           <SocialLinksContainer>
@@ -309,7 +318,7 @@ const MemberTemplate = ({ data }) => {
             </a>
           </SocialLinksContainer>
           <div style={{ backgroundColor: member.frontmatter.accentcolor }}>
-            <Image fluid={member.frontmatter.image.childImageSharp.fluid} />
+            <Image fluid={member.frontmatter.image?.childImageSharp.fluid} />
             <p>
               <span>“</span>
               {member.frontmatter.quote}
@@ -347,6 +356,7 @@ export const pageQuery = graphql`
   query TeamMemberQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
+      html
       frontmatter {
         name
         role

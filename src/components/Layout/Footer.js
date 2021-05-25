@@ -4,6 +4,7 @@ import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import { RiShareBoxFill } from 'react-icons/ri';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
+import { navLinks } from './Navbar';
 
 const FooterContainer = styled.div`
   display: grid;
@@ -139,14 +140,6 @@ const SocialLinksContainer = styled.div`
   }
 `;
 
-const footerNavLinks = [
-  { path: '/home', name: 'Home' },
-  { path: '/work', name: 'Work' },
-  { path: '/team', name: 'Team' },
-  { path: 'https://medium.com/@CivicDataLab', name: 'Blogs', external: true },
-  { path: '/about', name: 'About' }
-];
-
 const ExternalLink = ({ url, name }) => (
   <a style={{ display: 'flex', alignItems: 'center' }} href={url} target="_blank" rel="noreferrer noopener">
     <span style={{ display: 'inline-block', marginRight: 4 }}>{name}</span>
@@ -178,7 +171,7 @@ const Footer = () => {
       <NavigationContainer>
         <h2>Navigate</h2>
         <NavLinksContainer>
-          {footerNavLinks.map((navLink) => (
+          {navLinks.map((navLink) => (
             <li key={navLink.path}>
               {!navLink.external ? (
                 <Link to={navLink.path}>{navLink.name}</Link>
@@ -192,7 +185,7 @@ const Footer = () => {
       <NavigationContainer>
         <h2>Header</h2>
         <NavLinksContainer>
-          {footerNavLinks.map((navLink) => (
+          {navLinks.map((navLink) => (
             <li key={navLink.path}>
               {!navLink.external ? (
                 <Link to={navLink.path}>{navLink.name}</Link>

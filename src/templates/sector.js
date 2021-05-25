@@ -1,7 +1,7 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import { TitleContainer, ProjectsContainer, ProjectsContent } from '../pages/work';
 import SectorNav from '../components/SectorNav';
 import MainGrid from '../styles/MainGrid';
@@ -10,6 +10,7 @@ import ImageItem from '../components/ImageItem';
 import WorkHomePage from '../components/WorkHomePage';
 import SliderHomePage from '../components/SliderHomePage';
 import MiniTeamSection from '../components/MiniTeamSection';
+import Seo from '../components/Seo/Seo';
 
 const SectorInfo = styled.div`
   a {
@@ -46,6 +47,7 @@ const SectorTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <Seo title={data.markdownRemark.frontmatter.name} />
       <MainGrid>
         <TitleContainer>
           <HeroText>Our Work</HeroText>
@@ -70,7 +72,7 @@ const SectorTemplate = ({ data }) => {
           <MiniTeamSection members={members} />
         </ProjectsContent>
       </MainGrid>
-      <div className="slider-wrapper" style={{ width: '100%', display: 'flex', overflow: 'auto' }}>
+      <div className="slider-wrapper" style={{ marginBottom: 150, width: '100%', display: 'flex', overflow: 'auto' }}>
         {data.markdownRemark.frontmatter.events?.map((event, index) => (
           <SliderHomePage
             key={event.title}

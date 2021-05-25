@@ -1,22 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 import HeroText from '../styles/HeroText';
 import SectorsCard from '../components/SectorCard';
 import TeamHomePage from '../components/TeamHomePage';
 import WorkHomePage from '../components/WorkHomePage';
 import Contact from '../components/Contact';
-import SliderHomePage from '../components/SliderHomePage';
 import BackgroundImage from 'gatsby-background-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
 import { CivicDays } from './team';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Footer from '../components/Layout/Footer';
+import Navbar from '../components/Layout/Navbar';
 import TypeWriter from '../components/TypeWriter';
 import OurPillars from '../components/OurPillars';
 import OurPartners from '../components/OurPartners';
+import Seo from '../components/Seo/Seo';
+import BlogStrip from '../components/BlogStrip';
 
 export const Section = styled.section`
   padding: 0 72px;
@@ -123,6 +124,7 @@ const Index = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Seo title="Home" />
       <main>
         <BackgroundImage fluid={image}>
           <Navbar dark overlay />
@@ -152,11 +154,7 @@ const Index = ({ data }) => {
             ))}
           </div>
         </Sectors>
-        <div className={'slider-wrapper'} style={{ width: '100%', display: 'flex', overflow: 'auto' }}>
-          {[1, 1, 1, 1].map((element, index) => {
-            return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
-          })}
-        </div>
+        <BlogStrip />
         <OurPartners partners={partners} />
         <OurPillars />
 

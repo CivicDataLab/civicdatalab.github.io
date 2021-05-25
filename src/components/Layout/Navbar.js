@@ -173,11 +173,11 @@ const StyledExternalLink = styled.a`
   }
 `;
 
-const navLinks = [
+export const navLinks = [
   { path: '/', name: 'Home' },
   { path: '/work', name: 'Work' },
   { path: '/team', name: 'Team' },
-  { path: 'https://medium.com/@CivicDataLab', name: 'Blogs', external: true },
+  { path: 'https://medium.com/civicdatalab', name: 'Blogs', external: true },
   { path: '/about', name: 'About' },
   { path: '/contact', name: 'Contact' }
 ];
@@ -214,7 +214,12 @@ const Navbar = ({ dark, overlay }) => {
         {navLinks.map((link) => (
           <li key={link.path}>
             {!link.external ? (
-              <StyledLink dark={dark} activeClassName="active-link" to={link.path}>
+              <StyledLink
+                dark={dark}
+                activeClassName="active-link"
+                partiallyActive={link.name === 'Work' || link.name === 'Team'}
+                to={link.path}
+              >
                 {link.name}
               </StyledLink>
             ) : (

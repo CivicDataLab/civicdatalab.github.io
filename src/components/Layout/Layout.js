@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyle, theme } from '../theme/theme';
+import { GlobalStyle, theme } from '../../theme/theme';
 import Footer from './Footer';
 import Navbar from './Navbar';
 

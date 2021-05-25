@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import SectorNav from '../components/SectorNav';
 import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
 import ImageItem from '../components/ImageItem';
+import Seo from '../components/Seo/Seo';
 
 export const TitleContainer = styled.div`
   grid-area: left;
@@ -71,13 +72,14 @@ export const ProjectsContainer = styled.div`
   }
 `;
 
-const PartnersContainer = styled.div``;
+// const PartnersContainer = styled.div``;
 
 const Sectors = ({ data }) => {
   const projects = data.allMarkdownRemark.nodes;
 
   return (
     <Layout>
+      <Seo title="Our Work" />
       <MainGrid>
         <TitleContainer>
           <HeroText>Our Work</HeroText>
