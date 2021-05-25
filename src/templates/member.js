@@ -61,6 +61,10 @@ export const Bio = styled.div`
     line-height: 28px;
   }
 
+  a {
+    color: #168cd6;
+  }
+
   li {
     line-height: 28px;
   }
