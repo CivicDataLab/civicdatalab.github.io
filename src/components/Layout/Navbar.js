@@ -217,7 +217,7 @@ const Navbar = ({ dark, overlay }) => {
               <StyledLink
                 dark={dark}
                 activeClassName="active-link"
-                partiallyActive={link.name === 'Work'}
+                partiallyActive={link.name === 'Work' || link.name === 'Team'}
                 to={link.path}
               >
                 {link.name}
