@@ -8,7 +8,7 @@ twitter: https://www.twitter.com/shashank_py
 linkedin: https://linkedin.com/in/shashank-developer
 image: ./shashank.jpg
 sectors: Law & Justice
-projects: Justice Hub
+projects: Justice Hub, The State of FOSS in India Report
 accentcolor: '#1DCCCC'
 ---
 
