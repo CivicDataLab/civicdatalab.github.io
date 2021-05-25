@@ -8,7 +8,7 @@ github: https://github.com/shreyaagrawal0809
 twitter: https://twitter.com/shreya_0809
 linkedin: https://www.linkedin.com/in/shreya-agrawal-080302
 image: ./shreya.jpg
-accentcolor: '#1DCCCC'
+accentcolor: '#008B8B'
 sectors: Public Finance, Education
 projects: Public Procurements, Open Budgets India Platform - 2.0, Girl Education and Spending Tracker, The State of FOSS in India Report
 ---
