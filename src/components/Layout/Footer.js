@@ -140,6 +140,14 @@ const SocialLinksContainer = styled.div`
   }
 `;
 
+const workLinks = [
+  { path: '/education', name: 'Education' },
+  { path: '/foss', name: 'FOSS' },
+  { path: '/lawandjustice', name: 'Law & Justice' },
+  { path: '/publicfinance', name: 'Public Finance' },
+  { path: '/urbanplanning', name: 'Urban Planning' }
+];
+
 const ExternalLink = ({ url, name }) => (
   <a style={{ display: 'flex', alignItems: 'center' }} href={url} target="_blank" rel="noreferrer noopener">
     <span style={{ display: 'inline-block', marginRight: 4 }}>{name}</span>
@@ -183,9 +191,9 @@ const Footer = () => {
         </NavLinksContainer>
       </NavigationContainer>
       <NavigationContainer>
-        <h2>Header</h2>
+        <h2>Work</h2>
         <NavLinksContainer>
-          {navLinks.map((navLink) => (
+          {workLinks.map((navLink) => (
             <li key={navLink.path}>
               {!navLink.external ? (
                 <Link to={navLink.path}>{navLink.name}</Link>

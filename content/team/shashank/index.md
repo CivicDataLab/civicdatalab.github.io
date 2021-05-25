@@ -9,7 +9,7 @@ linkedin: https://linkedin.com/in/shashank-developer
 image: ./shashank.jpg
 sectors: Law & Justice
 projects: Justice Hub, The State of FOSS in India Report
-accentcolor: '#1DCCCC'
+accentcolor: '#69995D'
 ---
 
 I work as a Backend Engineer and interested more in exploring the data ecosystem in the technical world. I have experience working with web technologies and recently worked with data quality and data governance and want to explore more new technologies in this field. I like reading open-source code and on top of it contributing it. I admire open source community and have been a part of it from local Indore communities to DjangoGirls Indore.

@@ -9,6 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/apoorvanand
 image: ./apoorv.png
 sectors: Law & Justice, Public Finance, FOSS
+accentcolor: '#153243'
 projects: Justice Hub, Child Rights Laws Implementation Tracker, Zombie Tracker
 ---
 
