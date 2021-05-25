@@ -318,7 +318,7 @@ const MemberTemplate = ({ data }) => {
             </a>
           </SocialLinksContainer>
           <div style={{ backgroundColor: member.frontmatter.accentcolor }}>
-            <Image fluid={member.frontmatter.image.childImageSharp.fluid} />
+            <Image fluid={member.frontmatter.image?.childImageSharp.fluid} />
             <p>
               <span>“</span>
               {member.frontmatter.quote}
