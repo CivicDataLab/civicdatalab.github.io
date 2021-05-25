@@ -8,6 +8,7 @@ github: https://github.com/aruncdl
 twitter: https://twitter.com/mrarunsudarsan
 linkedin: https://www.linkedin.com/in/arunsud
 image: ./arun.jpg
+accentcolor: '#66cc99'
 sectors: Public Finance
 projects: Open Budgets India Platform - 2.0, OpenCity
 ---
