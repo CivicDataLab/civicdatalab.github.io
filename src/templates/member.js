@@ -61,6 +61,10 @@ export const Bio = styled.div`
     line-height: 28px;
   }
 
+  li {
+    line-height: 28px;
+  }
+
   @media (min-width: 1024px) {
     padding: 0 20px;
     width: 600px;
@@ -292,11 +296,10 @@ const MemberTemplate = ({ data }) => {
               );
             })}
           </h5>
-          <p>{member.frontmatter.description}</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-          </p>
+          {member.frontmatter.description?.split(';').map((d) => (
+            <p key={d}>{d}</p>
+          ))}
+          {member.html && <div dangerouslySetInnerHTML={{ __html: member.html }}></div>}
         </Bio>
         <PictureContainer>
           <SocialLinksContainer>
@@ -349,6 +352,7 @@ export const pageQuery = graphql`
   query TeamMemberQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
+      html
       frontmatter {
         name
         role

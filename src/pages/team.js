@@ -255,7 +255,6 @@ const Team = ({ data }) => {
     const scrollHandler = () => {
       if (window.innerWidth >= 1280) {
         if (membersContainerRef && window.scrollY > membersContainerRef.current.scrollHeight / 2 + 200) {
-          console.log('You have reached the end of members container');
           stickyBoxRef.current.style.top = '90%';
           stickyBoxRef.current.style.bottom = '0px';
           stickyBoxRef.current.style.left = '0px';
