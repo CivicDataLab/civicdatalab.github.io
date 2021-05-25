@@ -10,6 +10,9 @@ linkedin:
 github: https://github.com/justicehub-in
 sector: Law & Justice
 type: project
+timeline:
+  - { date: '2020-09-01', title: 'Entry into hackathon' }
+  - { date: '2020-12-01', title: 'Conference' }
 resources:
   - { url: 'https://docs.justicehub.in', image: './image.jpg', title: 'Justice Hub resources website' }
 events:

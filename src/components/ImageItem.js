@@ -18,7 +18,7 @@ const ImageItemContainer = styled(Link)`
 
   p {
     color: #585050;
-    font-weight: ${(props) => (props.boldText ? '700' : 'normal')};
+    font-weight: ${(props) => (props.boldtext ? '700' : 'normal')};
   }
 
   @media (min-width: 1024px) {
@@ -52,7 +52,7 @@ const SectorLabel = styled.p`
 
 const ImageItem = ({ url, image, text, sector, boldText }) => {
   return (
-    <ImageItemContainer boldText={boldText} to={url || '/'}>
+    <ImageItemContainer boldtext={boldText} to={url || '/'}>
       {sector ? <SectorLabel>{sector}</SectorLabel> : null}
       {image ? <Image fluid={image} /> : <div />} <p>{text}</p>
     </ImageItemContainer>

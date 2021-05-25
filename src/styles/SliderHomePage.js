@@ -14,13 +14,13 @@ const SliderHomePage = styled.div`
     text-align: left;
     font-size: 10px;
     line-height: 12px;
-    font-family: 'Helvetica', 'Neue';
     letter-spacing: 0px;
-    
     color:${(props) => (props.dark === true ? 'white' : '#707070')};
     opacity: 1;
     display: flex;
+    text-transform: uppercase;
   }
+  
   .circle-scroll-section {
     height: 24px;
     width: 23px;
@@ -28,6 +28,7 @@ const SliderHomePage = styled.div`
     border-radius: 50%;
     display: flex;
   }
+
   .circle-container{
     display: flex;
     justify-content: space-between;
@@ -50,7 +51,6 @@ const SliderHomePage = styled.div`
     text-align: left;
     font-size: 20px;
     line-height: 24px;
-    font-family: 'Helvetica', 'Neue';
     letter-spacing: 0px;
     color: ${(props) => (props.dark === true ? 'white' : '#585050')} ;
     opacity: 1;
@@ -66,13 +66,14 @@ const SliderHomePage = styled.div`
     }
 
     .heading-scroll-section {
-      font-size: 23px;
+      font-size: 24px;
       line-height:23px;
     }
 
     .content-scroll-section {
       margin-top: 36px;
       width: 80%;
+      font-size: 20px;
     }
   }
 }

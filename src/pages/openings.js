@@ -2,9 +2,10 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import JobRow from '../components/JobRow';
 import MainGrid from '../styles/MainGrid';
+import Seo from '../components/Seo/Seo';
 
 const DescriptionContainer = styled.div`
   grid-area: left;
@@ -92,6 +93,7 @@ const Openings = () => {
 
   return (
     <Layout>
+      <Seo title="Join Us" />
       <MainGrid>
         <DescriptionContainer>
           <h1>Join us</h1>

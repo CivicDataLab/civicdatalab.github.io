@@ -101,7 +101,7 @@ const MiniTeamSection = ({ members }) => {
           <Member
             key={member.id}
             link={member.fields.slug}
-            image={member.frontmatter.image.childImageSharp.fluid}
+            image={member.frontmatter.image?.childImageSharp.fluid}
             name={member.frontmatter.name}
           />
         ))}
