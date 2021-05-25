@@ -294,7 +294,7 @@ const Team = ({ data }) => {
               link={member.fields.slug}
               name={member.frontmatter.name}
               role={member.frontmatter.role.split(',')[0]}
-              image={member.frontmatter.image.childImageSharp.fluid}
+              image={member.frontmatter.image?.childImageSharp.fluid}
             />
           ))}
         </MemberCardsContainer>
