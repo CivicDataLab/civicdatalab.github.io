@@ -32,7 +32,7 @@ export const Section = styled.section`
 const HeroSection = styled(Section)`
   height: 45vh;
   color: white;
-  padding-top: 16px;
+  padding-top: 100px;
   padding-left: 16px;
   padding-right: 16px;
   background-color: rgb(0, 0, 0, 0.5);
@@ -45,14 +45,13 @@ const HeroSection = styled(Section)`
   }
 
   @media (min-width: 550px) {
-    height: 50vh;
     h1 {
       font-size: 40px;
     }
   }
 
   @media (min-width: 1024px) {
-    padding-top: 40px;
+    padding-top: 120px;
     padding-left: 72px;
     height: 80vh;
 
@@ -67,6 +66,8 @@ const HeroSection = styled(Section)`
 const Sectors = styled.section`
   margin-top: 24px;
   padding: 0 20px;
+  z-index: 1;
+
   .sectors-heading {
     margin-bottom: 20px;
   }
@@ -76,7 +77,6 @@ const Sectors = styled.section`
     column-gap: 60px;
     row-gap: 24px;
     justify-items: center;
-    align-items: stretch;
   }
 
   @media (min-width: 1280px) {
@@ -127,7 +127,7 @@ const Index = ({ data }) => {
       <Seo title="Home" />
       <main>
         <BackgroundImage fluid={image}>
-          <Navbar dark overlay />
+          <Navbar dark />
           <HeroSection>
             <TypeWriter
               messages={[
