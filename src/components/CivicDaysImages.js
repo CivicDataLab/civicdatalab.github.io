@@ -61,7 +61,7 @@ const CivicDaysImages = () => {
         if (scrollWidth > scrollContainer.current.scrollWidth) {
           scrollWidth = 0;
         } else {
-          scrollWidth = scrollWidth + 2;
+          scrollWidth = scrollWidth + 1;
           scrollContainer.current.scrollTo(scrollWidth, 0);
         }
       }, 20);
