@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
-import ScrollContainer from 'react-indiana-drag-scroll';
-import Image from 'gatsby-image';
-import BackgroundImage from 'gatsby-background-image';
 import Layout from '../components/Layout/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
 import MainGrid from '../styles/MainGrid';
 import { TitleContainer } from './work';
 import Seo from '../components/Seo/Seo';
+import CivicDaysImages from '../components/CivicDaysImages';
 
 const Section = styled.section`
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
   padding-bottom: 20px;
   max-width: 1140px;
   .heading-border-bottom {
@@ -146,8 +144,8 @@ const CivicDaysSection = styled.div`
     line-height: 1.4em;
   }
 
-  .heading {
-    padding: 0 16px;
+  h1 {
+    padding: 0 32px;
     font-family: Bungee;
     width: 50%;
   }
@@ -195,52 +193,29 @@ const Unique = styled.div`
   }
 `;
 
-const StyledScrollContainer = styled(ScrollContainer)`
-  display: flex;
-  align-items: center;
-  overflow-x: scroll;
-  white-space: nowrap;
-  height: 340px;
-
-  > * {
-    height: 260px;
-    width: 100%;
-    margin-right: 20px;
-  }
-
-  @media (min-width: 1280px) {
-    margin-bottom: 90px;
-  }
-`;
-
-export const CivicDays = ({ images, background }) => {
+export const CivicDays = ({ home }) => {
   return (
     <>
-      <CivicDaysSection>
-        <SectionHeading class="heading">Civic Days</SectionHeading>
-        <Section>
-          <div className="heading-border-top"></div>
-          <p>
-            Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
-            style
-          </p>
-        </Section>
-      </CivicDaysSection>
+      {home || (
+        <CivicDaysSection>
+          <SectionHeading>Civic Days</SectionHeading>
+          <Section>
+            <div className="heading-border-top"></div>
+            <p>
+              Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
+              style
+            </p>
+          </Section>
+        </CivicDaysSection>
+      )}
       <Unique>Check our unique Civic Days</Unique>
-      <BackgroundImage fluid={background}>
-        <StyledScrollContainer vertical={false}>
-          {images?.map((image) => {
-            return <Image key={image.id} fluid={image.childImageSharp.fluid} />;
-          })}
-        </StyledScrollContainer>
-      </BackgroundImage>
+      <CivicDaysImages />
     </>
   );
 };
 
 const Team = ({ data }) => {
   const members = data.allMarkdownRemark.nodes;
-  const civicDayImages = data.civicdayimages.nodes;
 
   const membersContainerRef = React.useRef(null);
   const teamTitleContainerRef = React.useRef(null);
@@ -297,7 +272,7 @@ const Team = ({ data }) => {
           <Link to="/openings">browse jobs</Link>
         </StickyBox>
       </div>
-      <CivicDays images={civicDayImages} background={data.file.childImageSharp.fluid} />
+      <CivicDays />
     </Layout>
   );
 };
@@ -320,27 +295,6 @@ export const pageQuery = graphql`
                 ...GatsbyImageSharpFluid_noBase64
               }
             }
-          }
-        }
-      }
-    }
-    file(relativePath: { eq: "reel.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    civicdayimages: allFile(
-      filter: { relativePath: { regex: "/civicdays/" }, extension: { in: ["jpg", "jpeg", "png"] } }
-      sort: { fields: name }
-    ) {
-      nodes {
-        id
-        name
-        childImageSharp {
-          fluid(maxWidth: 1500, quality: 100) {
-            ...GatsbyImageSharpFluid
           }
         }
       }

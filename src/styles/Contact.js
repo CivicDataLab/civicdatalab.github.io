@@ -125,6 +125,7 @@ const Contact = styled.div`
   }
 
   @media (min-width: 1440px) {
+    margin-bottom: 120px;
     .main-part {
       font-size: 60px;
       line-height: 60px;
