@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Image from 'gatsby-image';
@@ -28,13 +28,6 @@ const Section = styled.section`
     margin: 0;
   }
 
-  .heading-border-top {
-    display: none;
-    width: 78px;
-    border: 10px solid #000000;
-    margin-bottom: 18px;
-  }
-
   @media (min-width: 768px) {
     .section-text {
       max-width: 500px;
@@ -42,26 +35,12 @@ const Section = styled.section`
   }
 
   @media (min-width: 1280px) {
-    padding: 48px 32px;
+    padding: 0px 32px;
     .heading-border-bottom {
       width: 78px;
       margin-top: 12px;
       margin-bottom: 18px;
       border: 8px solid #000000;
-    }
-  }
-  @media (min-width: 1600px) {
-    .heading-border-bottom {
-      border: 10px solid #000000;
-    }
-    .civic-days-section .heading-border-bottom {
-      display: none;
-    }
-    .civic-days-section .heading-border-top {
-      display: block;
-    }
-    .heading-border-top {
-      display: block;
     }
   }
 `;
@@ -146,47 +125,6 @@ const StickyBox = styled.div`
   }
 `;
 
-// const HorizontalImageScrollContainer = styled.div`
-//   display: flex;
-//   flex: auto;
-//   position: relative;
-//   justify-content: space-between;
-//   flex-wrap: nowrap;
-//   border-top: 8px solid #000000;
-//   border-bottom: 8px solid #000000;
-//   background: #ffffff;
-//   overflow-x: auto;
-//   margin-top: 14px;
-//   margin-bottom: 34px;
-
-//   ::-webkit-scrollbar {
-//     display: none;
-//   }
-//   -ms-overflow-style: none; /* IE and Edge */
-//   scrollbar-width: none; /* Firefox */
-
-//   div {
-//     min-width: 216px;
-//     height: 170px;
-//     background: #f2f2f2;
-//   }
-
-//   @media (min-width: 1280px) {
-//     margin-top: 38px;
-//     div {
-//       min-width: 280px;
-//       height: 280px;
-//       margin-right: 20px;
-//     }
-//   }
-// `;
-
-const fs44 = css`
-  @media (min-width: 1600px) {
-    font-size: 44px;
-  }
-`;
-
 const CivicDaysSection = styled.div`
   display: grid;
 
@@ -199,28 +137,35 @@ const CivicDaysSection = styled.div`
     line-height: 1.4em;
   }
 
-  @media (min-width: 1024px) {
-    grid-template-columns: 20% 60%;
+  @media (min-width: 1440px) {
+    padding: 0 72px;
+    margin: 80px auto;
+    grid-template-columns: 1fr 3fr;
 
-    .placeholder-container {
-      display: block;
+    .heading-border-top {
+      width: 94px;
+      border: 8px solid #000000;
+      margin-bottom: 45px;
+    }
+
+    p {
+      width: 45%;
+      font-size: 20px;
+      line-height: 1.5em;
     }
   }
-  @media (min-width: 1600px) {
-    grid-template-columns: 22% 58%;
-    column-gap: 100px;
+`;
 
-    .heading-border-bottom {
-      display: none;
-    }
+const Unique = styled.div`
+  background-color: black;
+  padding: 14px 18px;
+  color: white;
+  width: max-content;
+  font-weight: 500;
+  margin: 20px 0;
 
-    .section-text {
-      margin-top: 20px;
-    }
-
-    .civic-days-section .heading-border-top {
-      display: block;
-    }
+  @media (min-width: 1440px) {
+    font-size: 20px;
   }
 `;
 
@@ -245,18 +190,17 @@ const StyledScrollContainer = styled(ScrollContainer)`
 export const CivicDays = ({ images, background }) => {
   return (
     <>
-      <CivicDaysSection className="civic-days-section">
-        <div className="placeholder-container" />
+      <CivicDaysSection>
+        <SectionHeading style={{ padding: '40px 0' }}>Civic Days</SectionHeading>
         <Section>
           <div className="heading-border-top"></div>
-          <SectionHeading addCSS={fs44}>Civic Days</SectionHeading>
-          <div className="heading-border-bottom"></div>
-          <p className="section-text">
+          <p>
             Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
             style
           </p>
         </Section>
       </CivicDaysSection>
+      <Unique>Check our unique Civic Days</Unique>
       <BackgroundImage fluid={background}>
         <StyledScrollContainer vertical={false}>
           {images?.map((image) => {
@@ -359,7 +303,7 @@ export const pageQuery = graphql`
     file(relativePath: { eq: "reel.png" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
