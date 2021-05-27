@@ -9,7 +9,6 @@ const WorkHomePage = () => {
     graphql`
       query {
         file(relativePath: { eq: "pattern.png" }) {
-          id
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
@@ -19,8 +18,6 @@ const WorkHomePage = () => {
       }
     `
   );
-
-  console.log(data);
 
   return (
     <BackgroundImage fluid={data.file.childImageSharp.fluid}>
