@@ -12,7 +12,9 @@ import { TitleContainer } from './work';
 import Seo from '../components/Seo/Seo';
 
 const Section = styled.section`
-  padding: 48px 16px 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 20px;
   max-width: 1140px;
   .heading-border-bottom {
     width: 42px;
@@ -42,6 +44,12 @@ const Section = styled.section`
       margin-bottom: 18px;
       border: 8px solid #000000;
     }
+  }
+`;
+
+const TeamTitleContainer = styled(TitleContainer)`
+  @media (min-width: 1280px) {
+    position: fixed;
   }
 `;
 
@@ -107,7 +115,7 @@ const StickyBox = styled.div`
     display: ${(props) => (props.mobile ? 'none' : 'block')};
     position: absolute;
     left: 0px;
-    top: 5%;
+    margin-top: 240px;
     width: 250px;
 
     h1 {
@@ -127,6 +135,7 @@ const StickyBox = styled.div`
 
 const CivicDaysSection = styled.div`
   display: grid;
+  margin: 30px 0;
 
   .placeholder-container {
     padding: 48px 18px 0;
@@ -137,7 +146,13 @@ const CivicDaysSection = styled.div`
     line-height: 1.4em;
   }
 
-  @media (min-width: 1440px) {
+  .heading {
+    padding: 0 16px;
+    font-family: Bungee;
+    width: 50%;
+  }
+
+  @media (min-width: 1280px) {
     padding: 0 72px;
     margin: 80px auto;
     grid-template-columns: 1fr 3fr;
@@ -147,6 +162,17 @@ const CivicDaysSection = styled.div`
       border: 8px solid #000000;
       margin-bottom: 45px;
     }
+
+    p {
+      width: 60%;
+      font-size: 20px;
+      line-height: 1.5em;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    padding: 0 72px;
+    margin: 80px auto;
 
     p {
       width: 45%;
@@ -174,10 +200,10 @@ const StyledScrollContainer = styled(ScrollContainer)`
   align-items: center;
   overflow-x: scroll;
   white-space: nowrap;
-  height: 320px;
+  height: 340px;
 
   > * {
-    height: 240px;
+    height: 260px;
     width: 100%;
     margin-right: 20px;
   }
@@ -191,7 +217,7 @@ export const CivicDays = ({ images, background }) => {
   return (
     <>
       <CivicDaysSection>
-        <SectionHeading style={{ padding: '40px 0' }}>Civic Days</SectionHeading>
+        <SectionHeading class="heading">Civic Days</SectionHeading>
         <Section>
           <div className="heading-border-top"></div>
           <p>
@@ -217,18 +243,16 @@ const Team = ({ data }) => {
   const civicDayImages = data.civicdayimages.nodes;
 
   const membersContainerRef = React.useRef(null);
+  const teamTitleContainerRef = React.useRef(null);
   const stickyBoxRef = React.useRef(null);
 
   React.useEffect(() => {
     const scrollHandler = () => {
       if (window.innerWidth >= 1280) {
-        if (membersContainerRef && window.scrollY > membersContainerRef.current.scrollHeight / 2 + 200) {
-          stickyBoxRef.current.style.top = '90%';
-          stickyBoxRef.current.style.bottom = '0px';
-          stickyBoxRef.current.style.left = '0px';
+        if (membersContainerRef && window.scrollY > membersContainerRef.current.scrollHeight / 2 + 620) {
+          teamTitleContainerRef.current.style.position = 'static';
         } else {
-          stickyBoxRef.current.style.top = `calc(10%)`;
-          stickyBoxRef.current.style.bottom = '80%';
+          teamTitleContainerRef.current.style.position = 'fixed';
         }
       }
     };
@@ -244,7 +268,7 @@ const Team = ({ data }) => {
     <Layout>
       <Seo title="Team" />
       <MainGrid>
-        <TitleContainer>
+        <TeamTitleContainer ref={teamTitleContainerRef}>
           <SectionHeading>The Team</SectionHeading>
           <div className="heading-border-bottom"></div>
           <p className="section-text">Meet our Bandhus</p>
@@ -254,7 +278,7 @@ const Team = ({ data }) => {
               <Link to="/openings">browse jobs</Link>
             </StickyBox>
           </div>
-        </TitleContainer>
+        </TeamTitleContainer>
         <MemberCardsContainer ref={membersContainerRef}>
           {members.map((member) => (
             <MemberImageBox
