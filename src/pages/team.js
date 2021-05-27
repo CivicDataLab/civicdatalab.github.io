@@ -1,6 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { graphql, Link } from 'gatsby';
+import ScrollContainer from 'react-indiana-drag-scroll';
+import Image from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
 import Layout from '../components/Layout/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
@@ -143,40 +146,40 @@ const StickyBox = styled.div`
   }
 `;
 
-const HorizontalImageScrollContainer = styled.div`
-  display: flex;
-  flex: auto;
-  position: relative;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  border-top: 8px solid #000000;
-  border-bottom: 8px solid #000000;
-  background: #ffffff;
-  overflow-x: auto;
-  margin-top: 14px;
-  margin-bottom: 34px;
+// const HorizontalImageScrollContainer = styled.div`
+//   display: flex;
+//   flex: auto;
+//   position: relative;
+//   justify-content: space-between;
+//   flex-wrap: nowrap;
+//   border-top: 8px solid #000000;
+//   border-bottom: 8px solid #000000;
+//   background: #ffffff;
+//   overflow-x: auto;
+//   margin-top: 14px;
+//   margin-bottom: 34px;
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+//   ::-webkit-scrollbar {
+//     display: none;
+//   }
+//   -ms-overflow-style: none; /* IE and Edge */
+//   scrollbar-width: none; /* Firefox */
 
-  div {
-    min-width: 216px;
-    height: 170px;
-    background: #f2f2f2;
-  }
+//   div {
+//     min-width: 216px;
+//     height: 170px;
+//     background: #f2f2f2;
+//   }
 
-  @media (min-width: 1280px) {
-    margin-top: 38px;
-    div {
-      min-width: 280px;
-      height: 280px;
-      margin-right: 20px;
-    }
-  }
-`;
+//   @media (min-width: 1280px) {
+//     margin-top: 38px;
+//     div {
+//       min-width: 280px;
+//       height: 280px;
+//       margin-right: 20px;
+//     }
+//   }
+// `;
 
 const fs44 = css`
   @media (min-width: 1600px) {
@@ -221,7 +224,25 @@ const CivicDaysSection = styled.div`
   }
 `;
 
-export const CivicDays = () => {
+const StyledScrollContainer = styled(ScrollContainer)`
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  white-space: nowrap;
+  height: 320px;
+
+  > * {
+    height: 240px;
+    width: 100%;
+    margin-right: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 90px;
+  }
+`;
+
+export const CivicDays = ({ images, background }) => {
   return (
     <>
       <CivicDaysSection className="civic-days-section">
@@ -236,17 +257,20 @@ export const CivicDays = () => {
           </p>
         </Section>
       </CivicDaysSection>
-      <HorizontalImageScrollContainer>
-        {[1, 1, 1, 11, 1, 1, 1].map((item, index) => {
-          return <div key={index}></div>;
-        })}
-      </HorizontalImageScrollContainer>
+      <BackgroundImage fluid={background}>
+        <StyledScrollContainer vertical={false}>
+          {images?.map((image) => {
+            return <Image key={image.id} fluid={image.childImageSharp.fluid} />;
+          })}
+        </StyledScrollContainer>
+      </BackgroundImage>
     </>
   );
 };
 
 const Team = ({ data }) => {
   const members = data.allMarkdownRemark.nodes;
+  const civicDayImages = data.civicdayimages.nodes;
 
   const membersContainerRef = React.useRef(null);
   const stickyBoxRef = React.useRef(null);
@@ -305,7 +329,7 @@ const Team = ({ data }) => {
           <Link to="/openings">browse jobs</Link>
         </StickyBox>
       </div>
-      <CivicDays />
+      <CivicDays images={civicDayImages} background={data.file.childImageSharp.fluid} />
     </Layout>
   );
 };
@@ -328,6 +352,27 @@ export const pageQuery = graphql`
                 ...GatsbyImageSharpFluid_noBase64
               }
             }
+          }
+        }
+      }
+    }
+    file(relativePath: { eq: "reel.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    civicdayimages: allFile(
+      filter: { relativePath: { regex: "/civicdays/" }, extension: { in: ["jpg", "jpeg", "png"] } }
+      sort: { fields: name }
+    ) {
+      nodes {
+        id
+        name
+        childImageSharp {
+          fluid(maxWidth: 1500, quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
