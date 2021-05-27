@@ -124,7 +124,7 @@ const SectorCard = ({ name, description, link, color, image, about }) => {
           &gt;&gt;
         </CardLink>
       </CardContent>
-      <div class="animated-strip" />
+      <div className="animated-strip" />
     </Card>
   );
 };
