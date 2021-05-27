@@ -8,9 +8,10 @@ const OurPartners = ({ partners }) => {
   const scrollContainer = React.useRef(null);
 
   React.useEffect(() => {
+    let scrollInterval;
     if (scrollContainer.current) {
       let scrollWidth = 0;
-      setInterval(() => {
+      scrollInterval = setInterval(() => {
         if (scrollWidth > scrollContainer.current.scrollWidth + 1000) {
           scrollWidth = 0;
         } else {
@@ -19,6 +20,10 @@ const OurPartners = ({ partners }) => {
         }
       }, 20);
     }
+
+    return () => {
+      clearInterval(scrollInterval);
+    };
   }, []);
 
   return (
