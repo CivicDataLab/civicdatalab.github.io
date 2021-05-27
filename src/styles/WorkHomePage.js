@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const WorkHomePage = styled.div`
-  background-color: black;
   color: white;
   display: flex;
   box-sizing: border-box;
@@ -114,18 +113,12 @@ const WorkHomePage = styled.div`
       justify-items: start;
       width: 50%;
     }
-    .content {
-      width: 50%;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    padding: 40px 52px;
-    .sub-text {
-      font-size: 70px;
-      line-height: 70px;
-    }
-    .first-text-block {
+    .content {ase64
+      tracedSVG
+      srcWebp
+      srcSetWebp
+      originalImg
+      originalName
       font-size: 18px;
       line-height: 25px;
       width: 50%;
