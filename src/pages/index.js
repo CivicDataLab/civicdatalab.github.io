@@ -106,7 +106,15 @@ const Sectors = styled.section`
     .container-sectors {
       margin-top: 38px;
       column-gap: 20px;
-      grid-template-columns: repeat(4, minmax(320px, 1fr));
+      grid-template-columns: repeat(3, minmax(320px, 1fr));
+    }
+  }
+
+  @media (min-width: 1600px) {
+    padding: 0 140px;
+
+    .container-sectors {
+      column-gap: 35px;
     }
   }
 `;

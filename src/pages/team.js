@@ -1,6 +1,9 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
+import ScrollContainer from 'react-indiana-drag-scroll';
+import Image from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
 import Layout from '../components/Layout/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
@@ -9,7 +12,9 @@ import { TitleContainer } from './work';
 import Seo from '../components/Seo/Seo';
 
 const Section = styled.section`
-  padding: 48px 16px 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 20px;
   max-width: 1140px;
   .heading-border-bottom {
     width: 42px;
@@ -25,13 +30,6 @@ const Section = styled.section`
     margin: 0;
   }
 
-  .heading-border-top {
-    display: none;
-    width: 78px;
-    border: 10px solid #000000;
-    margin-bottom: 18px;
-  }
-
   @media (min-width: 768px) {
     .section-text {
       max-width: 500px;
@@ -39,7 +37,7 @@ const Section = styled.section`
   }
 
   @media (min-width: 1280px) {
-    padding: 48px 32px;
+    padding: 0px 32px;
     .heading-border-bottom {
       width: 78px;
       margin-top: 12px;
@@ -47,19 +45,11 @@ const Section = styled.section`
       border: 8px solid #000000;
     }
   }
-  @media (min-width: 1600px) {
-    .heading-border-bottom {
-      border: 10px solid #000000;
-    }
-    .civic-days-section .heading-border-bottom {
-      display: none;
-    }
-    .civic-days-section .heading-border-top {
-      display: block;
-    }
-    .heading-border-top {
-      display: block;
-    }
+`;
+
+const TeamTitleContainer = styled(TitleContainer)`
+  @media (min-width: 1280px) {
+    position: fixed;
   }
 `;
 
@@ -125,7 +115,7 @@ const StickyBox = styled.div`
     display: ${(props) => (props.mobile ? 'none' : 'block')};
     position: absolute;
     left: 0px;
-    top: 5%;
+    margin-top: 240px;
     width: 250px;
 
     h1 {
@@ -143,49 +133,9 @@ const StickyBox = styled.div`
   }
 `;
 
-const HorizontalImageScrollContainer = styled.div`
-  display: flex;
-  flex: auto;
-  position: relative;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  border-top: 8px solid #000000;
-  border-bottom: 8px solid #000000;
-  background: #ffffff;
-  overflow-x: auto;
-  margin-top: 14px;
-  margin-bottom: 34px;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-
-  div {
-    min-width: 216px;
-    height: 170px;
-    background: #f2f2f2;
-  }
-
-  @media (min-width: 1280px) {
-    margin-top: 38px;
-    div {
-      min-width: 280px;
-      height: 280px;
-      margin-right: 20px;
-    }
-  }
-`;
-
-const fs44 = css`
-  @media (min-width: 1600px) {
-    font-size: 44px;
-  }
-`;
-
 const CivicDaysSection = styled.div`
   display: grid;
+  margin: 30px 0;
 
   .placeholder-container {
     padding: 48px 18px 0;
@@ -196,71 +146,113 @@ const CivicDaysSection = styled.div`
     line-height: 1.4em;
   }
 
-  @media (min-width: 1024px) {
-    grid-template-columns: 20% 60%;
+  .heading {
+    padding: 0 16px;
+    font-family: Bungee;
+    width: 50%;
+  }
 
-    .placeholder-container {
-      display: block;
+  @media (min-width: 1280px) {
+    padding: 0 72px;
+    margin: 80px auto;
+    grid-template-columns: 1fr 3fr;
+
+    .heading-border-top {
+      width: 94px;
+      border: 8px solid #000000;
+      margin-bottom: 45px;
+    }
+
+    p {
+      width: 60%;
+      font-size: 20px;
+      line-height: 1.5em;
     }
   }
-  @media (min-width: 1600px) {
-    grid-template-columns: 22% 58%;
-    column-gap: 100px;
 
-    .heading-border-bottom {
-      display: none;
-    }
+  @media (min-width: 1440px) {
+    padding: 0 72px;
+    margin: 80px auto;
 
-    .section-text {
-      margin-top: 20px;
-    }
-
-    .civic-days-section .heading-border-top {
-      display: block;
+    p {
+      width: 45%;
+      font-size: 20px;
+      line-height: 1.5em;
     }
   }
 `;
 
-export const CivicDays = () => {
+const Unique = styled.div`
+  background-color: black;
+  padding: 14px 18px;
+  color: white;
+  width: max-content;
+  font-weight: 500;
+  margin: 20px 0;
+
+  @media (min-width: 1440px) {
+    font-size: 20px;
+  }
+`;
+
+const StyledScrollContainer = styled(ScrollContainer)`
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  white-space: nowrap;
+  height: 340px;
+
+  > * {
+    height: 260px;
+    width: 100%;
+    margin-right: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 90px;
+  }
+`;
+
+export const CivicDays = ({ images, background }) => {
   return (
     <>
-      <CivicDaysSection className="civic-days-section">
-        <div className="placeholder-container" />
+      <CivicDaysSection>
+        <SectionHeading class="heading">Civic Days</SectionHeading>
         <Section>
           <div className="heading-border-top"></div>
-          <SectionHeading addCSS={fs44}>Civic Days</SectionHeading>
-          <div className="heading-border-bottom"></div>
-          <p className="section-text">
+          <p>
             Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
             style
           </p>
         </Section>
       </CivicDaysSection>
-      <HorizontalImageScrollContainer>
-        {[1, 1, 1, 11, 1, 1, 1].map((item, index) => {
-          return <div key={index}></div>;
-        })}
-      </HorizontalImageScrollContainer>
+      <Unique>Check our unique Civic Days</Unique>
+      <BackgroundImage fluid={background}>
+        <StyledScrollContainer vertical={false}>
+          {images?.map((image) => {
+            return <Image key={image.id} fluid={image.childImageSharp.fluid} />;
+          })}
+        </StyledScrollContainer>
+      </BackgroundImage>
     </>
   );
 };
 
 const Team = ({ data }) => {
   const members = data.allMarkdownRemark.nodes;
+  const civicDayImages = data.civicdayimages.nodes;
 
   const membersContainerRef = React.useRef(null);
+  const teamTitleContainerRef = React.useRef(null);
   const stickyBoxRef = React.useRef(null);
 
   React.useEffect(() => {
     const scrollHandler = () => {
       if (window.innerWidth >= 1280) {
-        if (membersContainerRef && window.scrollY > membersContainerRef.current.scrollHeight / 2 + 200) {
-          stickyBoxRef.current.style.top = '90%';
-          stickyBoxRef.current.style.bottom = '0px';
-          stickyBoxRef.current.style.left = '0px';
+        if (membersContainerRef && window.scrollY > membersContainerRef.current.scrollHeight / 2 + 620) {
+          teamTitleContainerRef.current.style.position = 'static';
         } else {
-          stickyBoxRef.current.style.top = `calc(10%)`;
-          stickyBoxRef.current.style.bottom = '80%';
+          teamTitleContainerRef.current.style.position = 'fixed';
         }
       }
     };
@@ -276,7 +268,7 @@ const Team = ({ data }) => {
     <Layout>
       <Seo title="Team" />
       <MainGrid>
-        <TitleContainer>
+        <TeamTitleContainer ref={teamTitleContainerRef}>
           <SectionHeading>The Team</SectionHeading>
           <div className="heading-border-bottom"></div>
           <p className="section-text">Meet our Bandhus</p>
@@ -286,7 +278,7 @@ const Team = ({ data }) => {
               <Link to="/openings">browse jobs</Link>
             </StickyBox>
           </div>
-        </TitleContainer>
+        </TeamTitleContainer>
         <MemberCardsContainer ref={membersContainerRef}>
           {members.map((member) => (
             <MemberImageBox
@@ -305,7 +297,7 @@ const Team = ({ data }) => {
           <Link to="/openings">browse jobs</Link>
         </StickyBox>
       </div>
-      <CivicDays />
+      <CivicDays images={civicDayImages} background={data.file.childImageSharp.fluid} />
     </Layout>
   );
 };
@@ -328,6 +320,27 @@ export const pageQuery = graphql`
                 ...GatsbyImageSharpFluid_noBase64
               }
             }
+          }
+        }
+      }
+    }
+    file(relativePath: { eq: "reel.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    civicdayimages: allFile(
+      filter: { relativePath: { regex: "/civicdays/" }, extension: { in: ["jpg", "jpeg", "png"] } }
+      sort: { fields: name }
+    ) {
+      nodes {
+        id
+        name
+        childImageSharp {
+          fluid(maxWidth: 1500, quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }

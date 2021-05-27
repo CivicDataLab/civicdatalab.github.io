@@ -6,39 +6,45 @@ import Image from 'gatsby-image';
 const Card = styled.div`
   position: relative;
   padding: 0;
-  box-shadow: 0px 10px 20px #0000001A;
+  box-shadow: 0px 10px 20px #0000001a;
   height: 100%;
   transition-duration: 0.5s;
-  border-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 
-  &:after {
+  .animated-strip {
     content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 0.5px;
+    position: relative;
     width: 0;
-    height: 4px;
+    height: 5px;
+    margin: auto;
     background-color: ${(props) => (props.color ? props.color : 'black')};
     transition: width 0.3s ease-in-out;
+    border-radius: 20px;
   }
 
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 
-    &:after {
-      width: 100%;
+    .animated-strip {
+      width: 96%;
     }
   }
 
   .gatsby-image-wrapper {
     height: 180px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     .gatsby-image-wrapper {
-      height: 300px;
+      height: 220px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .gatsby-image-wrapper {
+      height: 290px;
     }
   }
 `;
@@ -47,7 +53,7 @@ const CardContent = styled.div`
   box-sizing: border-box;
   padding: 18px 20px;
   position: relative;
-  min-height: 280px;
+  height: 260px;
 
   h4 {
     text-align: left;
@@ -64,16 +70,15 @@ const CardContent = styled.div`
     text-align: left;
     line-height: 1.4em;
     color: #585050;
-    min-height: 260px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     padding: 30px;
-    min-height: 375px;
+    height: 280px;
   }
 
   @media (min-width: 1440px) {
-    height: 520px;
+    height: 340px;
     h4 {
       font-size: 32px;
       line-height: 56px;
@@ -82,32 +87,25 @@ const CardContent = styled.div`
       line-height: 27px;
     }
   }
-
-  @media (min-width: 1600px) {
-    height: 400px;
-  }
 `;
 
 const CardLink = styled(Link)`
-  text-align: left;
-  font: normal normal medium;
   font-size: 16px;
   line-height: 45px;
   font-weight: 500;
-  letter-spacing: 0px;
   color: #168cd6;
-  opacity: 1;
   text-decoration: none;
   display: flex;
   justify-content: flex-end;
   padding-right: 23px;
   position: absolute;
-  right: 18px;
+  left: 20px;
   bottom: 20px;
 
   @media (min-width: 1440px) {
     font-size: 20px;
     line-height: 78px;
+    right: 18px;
     bottom: 0px;
   }
 `;
@@ -120,12 +118,13 @@ const SectorCard = ({ name, description, link, color, image, about }) => {
         <h4 style={{ color: color }} className={'sector-name'}>
           {name}
         </h4>
-        <p>{description}</p>
+        <p>{description.substring(0, 100)}...</p>
         <CardLink to={link}>
           {about ? 'Find them here ' : 'Read more '}
           &gt;&gt;
         </CardLink>
       </CardContent>
+      <div className="animated-strip" />
     </Card>
   );
 };
