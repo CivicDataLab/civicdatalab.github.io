@@ -169,7 +169,7 @@ const Index = ({ data }) => {
         <TeamHomePage />
         <WorkHomePage />
         <Contact />
-        <CivicDays />
+        <CivicDays home />
         {/* </Fade> */}
       </main>
       <Footer />
