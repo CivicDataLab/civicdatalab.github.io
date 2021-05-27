@@ -141,6 +141,7 @@ const WorkHomePage = styled.div`
 
   @media (min-width: 1440px) {
     padding: 120px 72px;
+    margin-bottom: 80px;
     .sub-text {
       font-size: 60px;
       line-height: 60px;
