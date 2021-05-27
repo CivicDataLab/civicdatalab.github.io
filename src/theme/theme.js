@@ -18,4 +18,29 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+
+  .fixed {
+    background-color: white !important;
+    z-index: 999;
+
+    @media (min-width: 1024px) {
+      ul {
+        border-bottom: 4px solid black;
+  
+        a {
+          color: black;
+  
+          &:hover {
+            color: white;
+            background-color: black;
+          }
+      
+          &.active-link {
+            color: white;
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
 `;

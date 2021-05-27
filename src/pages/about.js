@@ -25,7 +25,7 @@ const AboutSection = styled.div`
 const HeroSection = styled(Section)`
   height: 40vh;
   color: white;
-  padding-top: 16px;
+  padding-top: 100px;
   padding-left: 16px;
   padding-right: 16px;
   background-color: transparent;
@@ -35,6 +35,7 @@ const HeroSection = styled(Section)`
   }
 
   @media (min-width: 1024px) {
+    padding-top: 140px;
     height: 60vh;
   }
 `;
@@ -134,7 +135,7 @@ const About = ({ data }) => {
         </ValuesSection>
         <TeamHomePage />
         <WorkHomePage />
-        <AboutCardsSection>
+        {/* <AboutCardsSection>
           <SectorCard
             name="Brand Assets"
             image={data.assetsCover.childImageSharp.fluid}
@@ -151,7 +152,7 @@ const About = ({ data }) => {
             link=""
             about
           />
-        </AboutCardsSection>
+        </AboutCardsSection> */}
       </main>
       <Footer />
     </ThemeProvider>
