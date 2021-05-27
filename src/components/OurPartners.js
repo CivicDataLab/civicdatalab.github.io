@@ -12,7 +12,6 @@ const OurPartners = ({ partners }) => {
       let scrollWidth = 0;
       setInterval(() => {
         if (scrollWidth > scrollContainer.current.scrollWidth + 1000) {
-          console.log('reached the end');
           scrollWidth = 0;
         } else {
           scrollWidth = scrollWidth + 2;

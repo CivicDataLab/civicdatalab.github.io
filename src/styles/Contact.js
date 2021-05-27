@@ -3,6 +3,7 @@ const Contact = styled.div`
   .sub-text {
     width: 100%;
     opacity: 1;
+    color: black;
   }
 
   hr {
@@ -22,10 +23,6 @@ const Contact = styled.div`
     text-align: left;
     font-size: 18px;
     line-height: 1.4em;
-    font-family: Montserrat;
-    letter-spacing: 0px;
-    color: #000000;
-    opacity: 1;
     margin-right: 40px;
     margin-top: 40px;
     padding-left: 0px;
@@ -36,16 +33,12 @@ const Contact = styled.div`
     font-weight: 600;
     font-size: 22px;
     line-height: 27px;
-    font-family: Montserrat;
-    letter-spacing: 0px;
-    color: #000000;
-    opacity: 1;
   }
 
   input {
+    font-family: Montserrat;
     background: #ffffff padding-box;
     border: 1px solid #707070;
-    opacity: 1;
     width: 100%;
     margin-bottom: 21px;
     padding-top: 15px;
@@ -61,7 +54,7 @@ const Contact = styled.div`
     padding-bottom: 15px;
     padding-left: 15px;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     font-size: 18px;
     border: 1px solid rgb(112, 112, 112);
   }

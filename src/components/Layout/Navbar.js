@@ -198,7 +198,6 @@ const Navbar = ({ dark, overlay }) => {
 
   React.useEffect(() => {
     const addFixedClass = () => {
-      console.log(window.scrollY);
       if (window.scrollY > 50) {
         navbarRef.current.classList.add('fixed');
       } else {

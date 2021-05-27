@@ -66,7 +66,7 @@ const ImageBox = styled(Link)`
 const MemberImageBox = ({ link, name, role, image }) => {
   return (
     <ImageBox to={link}>
-      <Image fluid={image} />
+      {image && <Image fluid={image} />}
       <span className="member-details">
         <span className="member-name">{name.split(' ')[0]}</span>
         <span className="member-desg">{role}</span>
