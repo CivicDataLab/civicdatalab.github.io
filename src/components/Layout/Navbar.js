@@ -13,25 +13,35 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 22px;
-  background: ${(props) => (props.overlay ? 'rgb(0, 0, 0, 0.5)' : 'transparent')};
-  height: 140px;
+  background-color: white;
+  height: 100px;
+  position: fixed;
+  top: 0;
 
   .gatsby-image-wrapper {
-    min-width: 80px;
+    width: 60px;
   }
 
   .mobile-nav {
     cursor: pointer;
-    color: black;
-    transform: scale(2);
+    color: white;
+    padding: 8px;
+    background-color: black;
+    border-radius: 50%;
   }
 
   @media (min-width: 1024px) {
     padding: 0 72px 22px 72px;
     align-items: start;
+    height: 120px;
+    background: ${(props) => (props.overlay ? 'rgb(0, 0, 0, 0.5)' : 'transparent')};
 
     .mobile-nav {
       display: none;
+    }
+
+    .gatsby-image-wrapper {
+      min-width: 70px;
     }
 
     .gatsby-image-wrapper {
@@ -184,6 +194,24 @@ export const navLinks = [
 
 const Navbar = ({ dark, overlay }) => {
   const [displayMobileNav, setDisplayMobileNav] = React.useState(false);
+  const navbarRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const addFixedClass = () => {
+      console.log(window.scrollY);
+      if (window.scrollY > 50) {
+        navbarRef.current.classList.add('fixed');
+      } else {
+        navbarRef.current.classList.remove('fixed');
+      }
+    };
+
+    window.addEventListener('scroll', addFixedClass);
+
+    return () => {
+      window.removeEventListener('scroll', addFixedClass);
+    };
+  }, []);
 
   const data = useStaticQuery(graphql`
     query LogoQuery {
@@ -200,7 +228,7 @@ const Navbar = ({ dark, overlay }) => {
   const logo = data?.logo?.childImageSharp?.fluid;
 
   return (
-    <StyledNav overlay={overlay}>
+    <StyledNav ref={navbarRef} overlay={overlay}>
       <Link to="/">
         <Image fluid={logo} />
       </Link>

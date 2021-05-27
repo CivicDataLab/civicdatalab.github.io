@@ -6,10 +6,10 @@ import Image from 'gatsby-image';
 const Card = styled.div`
   position: relative;
   padding: 0;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.29);
+  box-shadow: 0px 10px 20px #0000001A;
   height: 100%;
   transition-duration: 0.5s;
-  border-radius: 12px;
+  border-radius: 20px;
 
   &:after {
     content: '';
@@ -60,12 +60,6 @@ const CardContent = styled.div`
     margin-top: 0px;
   }
 
-  hr {
-    border: 4px solid #000000;
-    width: 60px;
-    margin-left: 0px;
-  }
-
   p {
     text-align: left;
     line-height: 1.4em;
@@ -84,9 +78,6 @@ const CardContent = styled.div`
       font-size: 32px;
       line-height: 56px;
     }
-    hr {
-      width: 98px;
-    }
     p {
       line-height: 27px;
     }
@@ -102,7 +93,7 @@ const CardLink = styled(Link)`
   font: normal normal medium;
   font-size: 16px;
   line-height: 45px;
-  font-family: Montserrat;
+  font-weight: 500;
   letter-spacing: 0px;
   color: #168cd6;
   opacity: 1;
@@ -129,7 +120,6 @@ const SectorCard = ({ name, description, link, color, image, about }) => {
         <h4 style={{ color: color }} className={'sector-name'}>
           {name}
         </h4>
-        <hr></hr>
         <p>{description}</p>
         <CardLink to={link}>
           {about ? 'Find them here ' : 'Read more '}
