@@ -11,9 +11,9 @@ import HeroText from '../styles/HeroText';
 import { TitleContainer } from '../pages/work';
 import MiniTeamSection from '../components/MiniTeamSection';
 import SliderHomePage from '../components/SliderHomePage';
-// import Resources from '../components/Resources';
 import Seo from '../components/Seo/Seo';
 import Timeline from '../components/Timeline';
+import useFixedScroll from '../hooks/useFixedScroll';
 
 const ProjectContent = styled.div`
   grid-area: right;
@@ -194,51 +194,6 @@ const PartnersContainer = styled.div`
   }
 `;
 
-// const ProjectJoinUs = styled.div`
-//   padding: 0 32px;
-//   margin: 40px 0 80px;
-
-//   p {
-//     margin-top: 0;
-//   }
-
-//   h3 {
-//     font-family: Bungee;
-//     font-size: 32px;
-//     width: 60px;
-//     display: inline-block;
-//     text-align: left;
-//     margin-bottom: 16px;
-//     padding-top: 16px;
-//     border-top: 10px solid black;
-//   }
-
-//   @media (min-width: 1024px) {
-//     padding: 0;
-//     width: 50%;
-
-//     p {
-//       font-size: 20px;
-//       line-height: 1.5em;
-//     }
-
-//     h3 {
-//       font-size: 44px;
-//       width: max-content;
-//     }
-//   }
-// `;
-
-// const JoinUsButton = styled(Link)`
-//   display: inline-block;
-//   background-color: #080808;
-//   padding: 8px 20px;
-//   color: white;
-//   border-radius: 45px;
-//   cursor: pointer;
-//   text-decoration: none;
-// `;
-
 const StyledCarousel = styled(Carousel)`
   li > div {
     max-height: 300px;
@@ -277,11 +232,16 @@ const ProjectTemplate = ({ data }) => {
   const members = data.members.nodes;
   const partners = data.partners.nodes;
 
+  const leftContainerRef = React.useRef(null);
+  const rightContainerRef = React.useRef(null);
+
+  useFixedScroll(leftContainerRef, rightContainerRef);
+
   return (
     <Layout>
       <Seo title={project.frontmatter.name} />
       <MainGrid>
-        <TitleContainer>
+        <TitleContainer ref={leftContainerRef}>
           <HeroText>{project.frontmatter.name}</HeroText>
 
           <LeftText>
@@ -315,7 +275,7 @@ const ProjectTemplate = ({ data }) => {
             </LeftText>
           )}
         </TitleContainer>
-        <ProjectContent>
+        <ProjectContent ref={rightContainerRef}>
           <ImageSection>
             <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
             <SummaryText>{project.frontmatter.summary}</SummaryText>
@@ -361,7 +321,7 @@ const ProjectTemplate = ({ data }) => {
           )}
         </ProjectContent>
       </MainGrid>
-      {project.frontmatter.timeline && <Timeline timelineItems={project.frontmatter.timeline} />}
+      {/* {project.frontmatter.timeline && <Timeline timelineItems={project.frontmatter.timeline} />} */}
       <StyledCarousel responsive={responsive}>
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
@@ -383,12 +343,6 @@ const ProjectTemplate = ({ data }) => {
       <MainGrid>
         <ProjectContent>
           <MiniTeamSection members={members} />
-          {/* {project.frontmatter.resources && <Resources resources={project.frontmatter.resources} />} */}
-          {/* <ProjectJoinUs>
-            <h3>Join Us</h3>
-            <p>CivicDataLab works across sectors to increase access to information.</p>
-            <JoinUsButton to="/about">read more</JoinUsButton>
-          </ProjectJoinUs> */}
         </ProjectContent>
       </MainGrid>
     </Layout>
