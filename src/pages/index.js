@@ -132,7 +132,7 @@ const Index = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Seo title="Home" />
+      <Seo title="CivicDataLab" />
       <main>
         <BackgroundImage fluid={image}>
           <Navbar dark />
