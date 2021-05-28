@@ -25,7 +25,7 @@ const Seo = ({ description, meta, title, lang = 'en' }) => {
     <Helmet
       htmlAttributes={{ lang }}
       title={title}
-      titleTemplate={title === 'CivicDataLab' ? `%s | Date, Tech, Design, Social Science` : `%s | ${defaultTitle}`}
+      titleTemplate={title === 'CivicDataLab' ? `%s | Data, Tech, Design, Social Science` : `%s | ${defaultTitle}`}
       meta={[
         { name: 'description', content: metaDescription },
         {
