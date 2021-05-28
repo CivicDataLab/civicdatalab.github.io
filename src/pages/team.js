@@ -5,9 +5,10 @@ import Layout from '../components/Layout/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
 import MainGrid from '../styles/MainGrid';
-import { TitleContainer } from './work';
+import { FixedTitleContainer } from './work';
 import Seo from '../components/Seo/Seo';
 import CivicDaysImages from '../components/CivicDaysImages';
+import useFixedScroll from '../hooks/useFixedScroll';
 
 const Section = styled.section`
   padding-left: 32px;
@@ -42,12 +43,6 @@ const Section = styled.section`
       margin-bottom: 18px;
       border: 8px solid #000000;
     }
-  }
-`;
-
-const TeamTitleContainer = styled(TitleContainer)`
-  @media (min-width: 1280px) {
-    position: fixed;
   }
 `;
 
@@ -219,41 +214,24 @@ const Team = ({ data }) => {
 
   const membersContainerRef = React.useRef(null);
   const teamTitleContainerRef = React.useRef(null);
-  const stickyBoxRef = React.useRef(null);
 
-  React.useEffect(() => {
-    const scrollHandler = () => {
-      if (window.innerWidth >= 1280) {
-        if (membersContainerRef && window.scrollY > membersContainerRef.current.scrollHeight / 2 + 620) {
-          teamTitleContainerRef.current.style.position = 'static';
-        } else {
-          teamTitleContainerRef.current.style.position = 'fixed';
-        }
-      }
-    };
-
-    window.addEventListener('scroll', scrollHandler);
-
-    return () => {
-      window.removeEventListener('scroll', scrollHandler);
-    };
-  }, []);
+  useFixedScroll(teamTitleContainerRef, membersContainerRef);
 
   return (
     <Layout>
       <Seo title="Team" />
       <MainGrid>
-        <TeamTitleContainer ref={teamTitleContainerRef}>
+        <FixedTitleContainer ref={teamTitleContainerRef}>
           <SectionHeading>The Team</SectionHeading>
           <div className="heading-border-bottom"></div>
           <p className="section-text">Meet our Bandhus</p>
           <div style={{ position: 'relative', height: '80%' }}>
-            <StickyBox ref={stickyBoxRef}>
+            <StickyBox>
               <h1>Current Job Openings</h1>
               <Link to="/openings">browse jobs</Link>
             </StickyBox>
           </div>
-        </TeamTitleContainer>
+        </FixedTitleContainer>
         <MemberCardsContainer ref={membersContainerRef}>
           {members.map((member) => (
             <MemberImageBox

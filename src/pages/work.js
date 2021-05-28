@@ -7,6 +7,7 @@ import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
 import ImageItem from '../components/ImageItem';
 import Seo from '../components/Seo/Seo';
+import useFixedScroll from '../hooks/useFixedScroll';
 
 export const TitleContainer = styled.div`
   grid-area: left;
@@ -34,6 +35,12 @@ export const TitleContainer = styled.div`
   @media (min-width: 1280px) {
     padding-left: 72px;
     padding-right: 72px;
+  }
+`;
+
+export const FixedTitleContainer = styled(TitleContainer)`
+  @media (min-width: 1280px) {
+    position: fixed;
   }
 `;
 
@@ -77,14 +84,19 @@ export const ProjectsContainer = styled.div`
 const Sectors = ({ data }) => {
   const projects = data.allMarkdownRemark.nodes;
 
+  const leftContainerRef = React.useRef(null);
+  const rightContainerRef = React.useRef(null);
+
+  useFixedScroll(leftContainerRef, rightContainerRef);
+
   return (
     <Layout>
       <Seo title="Our Work" />
       <MainGrid>
-        <TitleContainer>
+        <FixedTitleContainer ref={leftContainerRef}>
           <HeroText>Our Work</HeroText>
-        </TitleContainer>
-        <ProjectsContent>
+        </FixedTitleContainer>
+        <ProjectsContent ref={rightContainerRef}>
           <SectorNav />
           <ProjectsContainer>
             {projects.map((project) => (
