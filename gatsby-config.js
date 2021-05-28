@@ -7,7 +7,8 @@ module.exports = {
     summary: '',
     description:
       'A research lab working on the intersection use data, tech, design and social science to strengthen the course of civic engagements in India.',
-    siteUrl: 'https://civicdatalab.in',
+    siteUrl: 'https://civicdatalab.in/website-new',
+    image: '/cdl_logo.png',
     social: {
       twitter: '',
       github: '',
