@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import logo from '../../images/cdl_logo.png';
 
 const Seo = ({ description, meta, title, lang = 'en' }) => {
   const { site } = useStaticQuery(
@@ -12,6 +11,7 @@ const Seo = ({ description, meta, title, lang = 'en' }) => {
             title
             description
             siteUrl
+            image
           }
         }
       }
@@ -38,7 +38,7 @@ const Seo = ({ description, meta, title, lang = 'en' }) => {
         { property: 'og:description', content: metaDescription },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: site.siteMetadata.siteUrl },
-        { property: 'og:image', content: logo },
+        { property: 'og:image', content: `${site.siteMetadata.siteUrl}${site.siteMetadata.image}` },
         { property: 'twitter:card', content: 'summary_large_image' },
         { property: 'twitter:url', content: site.siteMetadata.siteUrl },
         { name: 'twitter:description', content: metaDescription },
@@ -49,7 +49,7 @@ const Seo = ({ description, meta, title, lang = 'en' }) => {
               ? 'CivicDataLab | Data, Tech, Design, Social Science'
               : `${title} | ${defaultTitle}`
         },
-        { property: 'twitter:image', content: logo }
+        { property: 'twitter:image', content: `${site.siteMetadata.siteUrl}${site.siteMetadata.image}` }
       ].concat(meta ? meta : {})}
     />
   );
