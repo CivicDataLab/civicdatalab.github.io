@@ -17,6 +17,7 @@ const StyledNav = styled.nav`
   height: 100px;
   position: fixed;
   top: 0;
+  z-index: 999;
 
   .gatsby-image-wrapper {
     width: 60px;

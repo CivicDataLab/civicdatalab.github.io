@@ -4,12 +4,16 @@ const OurPillars = styled.div`
 padding: 0 20px;
 margin-top: 60px;
 
-.pillars-container{
+.pillars-container {
   display:grid;
   grid-template-columns: 50% 50%;
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   margin-right: 50px;
+
+  .image-container {
+    z-index: -1;
+  }
 }
 
   h3 {
@@ -38,15 +42,16 @@ margin-top: 60px;
 }
 
 @media (min-width: 1280px) {
-  padding: 0 52px;
+  padding: 0;
   margin-top: 80px;
+  
   h3 {
     font-size: 40px;
   }
 }
 
 @media (min-width: 1440px) {
-    padding: 0 72px;
+    padding: 0;
   }
 }
 `;

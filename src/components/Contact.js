@@ -3,6 +3,7 @@ import ContactStyle from '../styles/Contact';
 import HeroText from '../styles/HeroText';
 import styled from 'styled-components';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
+import MainContainer from '../styles/MainContainer';
 
 const SocialLinksContainer = styled.div`
   display: flex;
@@ -38,8 +39,8 @@ const SocialLinksContainer = styled.div`
 
 const Contact = (props) => {
   return (
-    <ContactStyle>
-      <div className={'container-contact-section'}>
+    <MainContainer>
+      <ContactStyle>
         <div className={'content'}>
           <HeroText className={'main-part'}>Come </HeroText>
           <HeroText className={'sub-text'}> Say Hi!</HeroText>
@@ -69,15 +70,13 @@ const Contact = (props) => {
             <br></br>
             <textarea rows={8} id="write" name="write" placeholder="Write..." className={'write-input-type'}></textarea>
             <br></br>
-            <div className={'send-button-container'}>
-              <button className="send-button">
-                Send
-              </button>
+            <div className="send-button-container">
+              <button className="send-button">Submit</button>
             </div>
           </form>
         </div>
-      </div>
-    </ContactStyle>
+      </ContactStyle>
+    </MainContainer>
   );
 };
 

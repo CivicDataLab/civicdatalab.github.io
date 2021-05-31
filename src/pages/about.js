@@ -11,7 +11,6 @@ import TeamHomePage from '../components/TeamHomePage';
 import WorkHomePage from '../components/WorkHomePage';
 import HeroText from '../styles/HeroText';
 import Value from '../components/Value';
-import SectorCard from '../components/SectorCard';
 import Seo from '../components/Seo/Seo';
 
 const AboutSection = styled.div`
@@ -72,26 +71,6 @@ const ValuesSection = styled(AboutSection)`
   flex-direction: column;
 `;
 
-const AboutCardsSection = styled(AboutSection)`
-  display: grid;
-  box-sizing: border-box;
-  grid-template-columns: 1fr;
-  row-gap: 45px;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 24px;
-  }
-
-  @media (min-width: 1280px) {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 85px;
-  }
-`;
-
 const About = ({ data }) => {
   const values = data.allMarkdownRemark.edges;
 
@@ -100,7 +79,7 @@ const About = ({ data }) => {
       <GlobalStyle />
       <Seo title="About" />
       <main>
-        <BackgroundImage fluid={data.landingImage.childImageSharp.fluid}>
+        <BackgroundImage style={{ zIndex: 999 }} fluid={data.landingImage.childImageSharp.fluid}>
           <Navbar dark />
           <HeroSection />
         </BackgroundImage>
