@@ -19,9 +19,10 @@ import OurPillars from '../components/OurPillars';
 import OurPartners from '../components/OurPartners';
 import Seo from '../components/Seo/Seo';
 import BlogStrip from '../components/BlogStrip';
+import StandardGrid from '../styles/StandardGrid';
 
 export const Section = styled.section`
-  padding: 0 72px;
+  padding: 0;
   background-color: ${(props) => (props.background ? props.background : 'white')};
 
   p {
@@ -34,15 +35,13 @@ const HeroSection = styled(Section)`
   height: 45vh;
   color: white;
   padding-top: 100px;
-  padding-left: 16px;
-  padding-right: 16px;
   background-color: rgb(0, 0, 0, 0.5);
 
   h1 {
     font-family: 'Bungee', cursive;
     font-size: 32px;
     text-align: left;
-    margin-top: -20px;
+    margin-top: 0px;
   }
 
   @media (min-width: 550px) {
@@ -53,20 +52,24 @@ const HeroSection = styled(Section)`
 
   @media (min-width: 1024px) {
     padding-top: 120px;
-    padding-left: 72px;
-    height: 80vh;
+    height: 75vh;
 
     h1 {
       width: 50%;
       font-size: 60px;
-      margin-top: 40px;
+      margin-top: 50px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    h1 {
+      margin-top: 140px;
     }
   }
 `;
 
 const Sectors = styled.section`
   margin-top: 24px;
-  padding: 0 20px;
   z-index: 1;
 
   .sectors-heading {
@@ -138,20 +141,22 @@ const Index = ({ data }) => {
         <BackgroundImage style={{ zIndex: 999 }} fluid={image}>
           <Navbar dark />
           <HeroSection>
-            <TypeWriter
-              messages={[
-                'We co-create free and open source solutions for social change.',
-                'We collaborate with the community on social innovation projects.',
-                'We empower civic participation through access to information.'
-              ]}
-            />
+            <MainContainer>
+              <TypeWriter
+                messages={[
+                  'We co-create free and open source solutions for social change.',
+                  'We collaborate with the community on social innovation projects.',
+                  'We empower civic participation through access to information.'
+                ]}
+              />
+            </MainContainer>
           </HeroSection>
         </BackgroundImage>
         {/* <Fade bottom> */}
         <Sectors>
           <MainContainer>
             <HeroText className="sectors-heading">Our Work</HeroText>
-            <div className="container-sectors">
+            <StandardGrid>
               {sectors.map((sector) => (
                 <SectorsCard
                   key={sector.fields.slug}
@@ -162,7 +167,19 @@ const Index = ({ data }) => {
                   link={sector.fields.slug}
                 />
               ))}
-            </div>
+            </StandardGrid>
+            {/* <div className="container-sectors">
+              {sectors.map((sector) => (
+                <SectorsCard
+                  key={sector.fields.slug}
+                  name={sector.frontmatter.name}
+                  description={sector.frontmatter.description}
+                  image={sector.frontmatter.image.childImageSharp.fluid}
+                  color={sector.frontmatter.color}
+                  link={sector.fields.slug}
+                />
+              ))}
+            </div> */}
           </MainContainer>
         </Sectors>
         <BlogStrip />

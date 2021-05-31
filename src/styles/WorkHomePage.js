@@ -5,7 +5,7 @@ const WorkHomePage = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 40px 20px;
+  padding: 40px 0;
 
   .sub-text {
     width: 100%;

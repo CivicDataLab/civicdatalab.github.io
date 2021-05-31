@@ -44,7 +44,7 @@ const SectorNavContainer = styled.div`
   display: flex;
   overflow-x: scroll;
   align-items: center;
-  padding-left: 16px;
+  padding-left: 0;
   margin: 16px 0;
   max-width: 1200px;
 
@@ -58,6 +58,10 @@ const SectorNavContainer = styled.div`
   .active-sector {
     color: white;
     background-color: black;
+  }
+
+  @media (min-width: 1280px) {
+    padding-left: 0;
   }
 
   @media (min-width: 1600px) {

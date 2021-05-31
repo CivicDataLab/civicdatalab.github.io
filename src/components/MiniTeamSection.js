@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Image from 'gatsby-image';
 
 const MiniTeam = styled.div`
-  padding: 0 30px;
+  padding: 0;
   h3 {
     font-family: Bungee;
     font-size: 32px;
@@ -27,7 +27,7 @@ const MiniTeam = styled.div`
 
 const TeamGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 140px);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
 
   @media (min-width: 834px) {

@@ -3,18 +3,18 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import SectorNav from '../components/SectorNav';
-import MainGrid from '../styles/MainGrid';
 import MainContainer from '../styles/MainContainer';
 import HeroText from '../styles/HeroText';
 import ImageItem from '../components/ImageItem';
 import Seo from '../components/Seo/Seo';
 import useFixedScroll from '../hooks/useFixedScroll';
+import StandardGrid from '../styles/StandardGrid';
 
 export const TitleContainer = styled.div`
-  grid-area: left;
-  padding: 0 32px;
+  padding: 0;
   font-size: 16px;
   margin-bottom: 10px;
+  margin-top: 48px;
 
   h1,
   h3 {
@@ -34,6 +34,7 @@ export const TitleContainer = styled.div`
   }
 
   @media (min-width: 1280px) {
+    grid-column: 1/4;
     padding-left: 0;
     padding-right: 0;
   }
@@ -46,18 +47,16 @@ export const FixedTitleContainer = styled(TitleContainer)`
 `;
 
 export const ProjectsContent = styled.div`
-  grid-area: right;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr;
-  margin-bottom: 80px;
 
   @media (min-width: 1024px) {
-    padding: 0 16px;
+    padding: 0;
   }
 
   @media (min-width: 1280px) {
-    padding: 0;
+    grid-column: 4/13;
   }
 `;
 
@@ -66,12 +65,12 @@ export const ProjectsContainer = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 12px;
   margin-top: 16px;
-  padding: 0 16px;
+  padding: 0;
 
   @media (min-width: 1024px) {
     grid-gap: 24px;
     grid-template-columns: 1fr 1fr;
-    margin-top: 56px;
+    margin-top: 20px;
     margin-bottom: 150px;
   }
 
@@ -94,7 +93,7 @@ const Sectors = ({ data }) => {
     <Layout>
       <Seo title="Our Work" />
       <MainContainer>
-        <MainGrid>
+        <StandardGrid>
           <FixedTitleContainer ref={leftContainerRef}>
             <HeroText>Our Work</HeroText>
           </FixedTitleContainer>
@@ -113,7 +112,7 @@ const Sectors = ({ data }) => {
               ))}
             </ProjectsContainer>
           </ProjectsContent>
-        </MainGrid>
+        </StandardGrid>
       </MainContainer>
     </Layout>
   );

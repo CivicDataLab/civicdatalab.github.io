@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Layout from '../components/Layout/Layout';
 import { FixedTitleContainer, ProjectsContainer, ProjectsContent } from '../pages/work';
 import SectorNav from '../components/SectorNav';
-import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
 import ImageItem from '../components/ImageItem';
 import WorkHomePage from '../components/WorkHomePage';
@@ -13,6 +12,7 @@ import MiniTeamSection from '../components/MiniTeamSection';
 import Seo from '../components/Seo/Seo';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
+import StandardGrid from '../styles/StandardGrid';
 
 const SectorInfo = styled.div`
   a {
@@ -56,7 +56,7 @@ const SectorTemplate = ({ data }) => {
     <Layout>
       <Seo title={data.markdownRemark.frontmatter.name} />
       <MainContainer>
-        <MainGrid>
+        <StandardGrid>
           <FixedTitleContainer ref={leftContainerRef}>
             <HeroText>Our Work</HeroText>
             <SectorInfo>
@@ -79,7 +79,7 @@ const SectorTemplate = ({ data }) => {
             </ProjectsContainer>
             <MiniTeamSection members={members} />
           </ProjectsContent>
-        </MainGrid>
+        </StandardGrid>
       </MainContainer>
       <div className="slider-wrapper" style={{ marginBottom: 150, width: '100%', display: 'flex', overflow: 'auto' }}>
         {data.markdownRemark.frontmatter.events?.map((event, index) => (
