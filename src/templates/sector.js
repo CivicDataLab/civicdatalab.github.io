@@ -12,6 +12,7 @@ import SliderHomePage from '../components/SliderHomePage';
 import MiniTeamSection from '../components/MiniTeamSection';
 import Seo from '../components/Seo/Seo';
 import useFixedScroll from '../hooks/useFixedScroll';
+import MainContainer from '../styles/MainContainer';
 
 const SectorInfo = styled.div`
   a {
@@ -54,30 +55,32 @@ const SectorTemplate = ({ data }) => {
   return (
     <Layout>
       <Seo title={data.markdownRemark.frontmatter.name} />
-      <MainGrid>
-        <FixedTitleContainer ref={leftContainerRef}>
-          <HeroText>Our Work</HeroText>
-          <SectorInfo>
-            <SectorLabel>{data.markdownRemark.frontmatter.name}</SectorLabel>
-            {/* <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a> */}
-          </SectorInfo>
-        </FixedTitleContainer>
-        <ProjectsContent ref={rightContainerRef}>
-          <SectorNav />
-          <ProjectsContainer>
-            {projects.map((project) => (
-              <ImageItem
-                key={project.id}
-                url={project.fields.slug}
-                image={project.frontmatter.image.childImageSharp.fluid}
-                text={project.frontmatter.name}
-                boldText
-              />
-            ))}
-          </ProjectsContainer>
-          <MiniTeamSection members={members} />
-        </ProjectsContent>
-      </MainGrid>
+      <MainContainer>
+        <MainGrid>
+          <FixedTitleContainer ref={leftContainerRef}>
+            <HeroText>Our Work</HeroText>
+            <SectorInfo>
+              <SectorLabel>{data.markdownRemark.frontmatter.name}</SectorLabel>
+              {/* <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a> */}
+            </SectorInfo>
+          </FixedTitleContainer>
+          <ProjectsContent ref={rightContainerRef}>
+            <SectorNav />
+            <ProjectsContainer>
+              {projects.map((project) => (
+                <ImageItem
+                  key={project.id}
+                  url={project.fields.slug}
+                  image={project.frontmatter.image.childImageSharp.fluid}
+                  text={project.frontmatter.name}
+                  boldText
+                />
+              ))}
+            </ProjectsContainer>
+            <MiniTeamSection members={members} />
+          </ProjectsContent>
+        </MainGrid>
+      </MainContainer>
       <div className="slider-wrapper" style={{ marginBottom: 150, width: '100%', display: 'flex', overflow: 'auto' }}>
         {data.markdownRemark.frontmatter.events?.map((event, index) => (
           <SliderHomePage

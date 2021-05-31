@@ -9,7 +9,7 @@ const StyledScrollContainer = styled(ScrollContainer)`
   display: flex;
   align-items: center;
   overflow-x: auto;
-  height: 340px;
+  height: 380px;
   margin-bottom: 60px;
 
   > * {

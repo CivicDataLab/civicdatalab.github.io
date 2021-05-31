@@ -148,7 +148,7 @@ const WorkHomePage = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding: 180px 0px;
+    padding: 150px 0px;
     margin-bottom: 80px;
 
     .sub-text {

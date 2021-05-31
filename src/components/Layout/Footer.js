@@ -5,13 +5,14 @@ import { RiShareBoxFill } from 'react-icons/ri';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 import { navLinks } from './Navbar';
+import MainContainer from '../../styles/MainContainer';
 
-const FooterContainer = styled.div`
+const FooterContainer = styled(MainContainer)`
   display: grid;
   font-size: 16px;
   background-color: #000000;
   color: white;
-  padding: 40px 22px;
+  padding: 40px 0;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     'address address'
@@ -29,8 +30,8 @@ const FooterContainer = styled.div`
 
   @media (min-width: 1280px) {
     grid-template-columns: 2.5fr 1fr 1fr 3fr;
-    padding-left: 52px;
-    padding-right: 52px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   @media (min-width: 1440px) {
@@ -171,59 +172,63 @@ const Footer = () => {
   const cdlLogo = data?.logo?.childImageSharp?.fixed;
 
   return (
-    <FooterContainer>
-      <AddressContainer>
-        <h3>We are remote, but if you want to write to us:</h3>
-        <p>CivicDataLab Pvt Ltd, 301-A, 296/2 Lord Shiva Residency, Bholaram Ustad Marg Indore, MP - 452001, India.</p>
-      </AddressContainer>
-      <NavigationContainer>
-        <h2>Navigate</h2>
-        <NavLinksContainer>
-          {navLinks.map((navLink) => (
-            <li key={navLink.path}>
-              {!navLink.external ? (
-                <Link to={navLink.path}>{navLink.name}</Link>
-              ) : (
-                <ExternalLink url={navLink.path} name={navLink.name} />
-              )}
-            </li>
-          ))}
-        </NavLinksContainer>
-      </NavigationContainer>
-      <NavigationContainer>
-        <h2>Work</h2>
-        <NavLinksContainer>
-          {workLinks.map((navLink) => (
-            <li key={navLink.path}>
-              {!navLink.external ? (
-                <Link to={navLink.path}>{navLink.name}</Link>
-              ) : (
-                <ExternalLink url={navLink.path} name={navLink.name} />
-              )}
-            </li>
-          ))}
-        </NavLinksContainer>
-      </NavigationContainer>
-      <BottomContainer>
-        <Link to="/">
-          <Image fixed={cdlLogo} />
-        </Link>
-        <ExternalLinksContainer>
-          <SocialLinksContainer>
-            <a href="https://twitter.com/civicdatalab" target="_blank" rel="noreferrer noopener">
-              <FaTwitter />
-            </a>
-            <a href="https://in.linkedin.com/company/civicdatalab" target="_blank" rel="noreferrer noopener">
-              <FaLinkedinIn />
-            </a>
-            <a href="https://github.com/CivicDataLab" target="_blank" rel="noreferrer noopener">
-              <FaGithubAlt />
-            </a>
-          </SocialLinksContainer>
-          <div>License | Site Map</div>
-        </ExternalLinksContainer>
-      </BottomContainer>
-    </FooterContainer>
+    <div style={{ width: '100%', backgroundColor: '#000' }}>
+      <FooterContainer>
+        <AddressContainer>
+          <h3>We are remote, but if you want to write to us:</h3>
+          <p>
+            CivicDataLab Pvt Ltd, 301-A, 296/2 Lord Shiva Residency, Bholaram Ustad Marg Indore, MP - 452001, India.
+          </p>
+        </AddressContainer>
+        <NavigationContainer>
+          <h2>Navigate</h2>
+          <NavLinksContainer>
+            {navLinks.map((navLink) => (
+              <li key={navLink.path}>
+                {!navLink.external ? (
+                  <Link to={navLink.path}>{navLink.name}</Link>
+                ) : (
+                  <ExternalLink url={navLink.path} name={navLink.name} />
+                )}
+              </li>
+            ))}
+          </NavLinksContainer>
+        </NavigationContainer>
+        <NavigationContainer>
+          <h2>Work</h2>
+          <NavLinksContainer>
+            {workLinks.map((navLink) => (
+              <li key={navLink.path}>
+                {!navLink.external ? (
+                  <Link to={navLink.path}>{navLink.name}</Link>
+                ) : (
+                  <ExternalLink url={navLink.path} name={navLink.name} />
+                )}
+              </li>
+            ))}
+          </NavLinksContainer>
+        </NavigationContainer>
+        <BottomContainer>
+          <Link to="/">
+            <Image fixed={cdlLogo} />
+          </Link>
+          <ExternalLinksContainer>
+            <SocialLinksContainer>
+              <a href="https://twitter.com/civicdatalab" target="_blank" rel="noreferrer noopener">
+                <FaTwitter />
+              </a>
+              <a href="https://in.linkedin.com/company/civicdatalab" target="_blank" rel="noreferrer noopener">
+                <FaLinkedinIn />
+              </a>
+              <a href="https://github.com/CivicDataLab" target="_blank" rel="noreferrer noopener">
+                <FaGithubAlt />
+              </a>
+            </SocialLinksContainer>
+            <div>License | Site Map</div>
+          </ExternalLinksContainer>
+        </BottomContainer>
+      </FooterContainer>
+    </div>
   );
 };
 
