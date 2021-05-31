@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 const TeamHomePage = styled.div`
-  .container-team-section {
-    display: flex;
-    flex-direction: column;
-    padding: 48px 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  padding: 48px 20px;
+  // .container-team-section {
+  //   display: flex;
+  //   flex-direction: column;
+  //   padding: 48px 20px;
+  // }
 
   hr {
     border: 8px solid #000000;
@@ -38,9 +41,8 @@ const TeamHomePage = styled.div`
   }
 
   @media (min-width: 900px) {
-    .container-team-section {
-      flex-direction: row;
-    }
+    flex-direction: row;
+
     .content {
       flex: 50%;
     }
@@ -67,9 +69,7 @@ const TeamHomePage = styled.div`
   }
 
   @media (min-width: 1280px) {
-    .container-team-section {
-      padding: 40px 52px;
-    }
+    padding: 40px 0px;
 
     .section-heading {
       font-size: 70px;
@@ -88,11 +88,7 @@ const TeamHomePage = styled.div`
   }
 
   @media (min-width: 1440px) {
-    .container-team-section {
-      display: flex;
-      padding-left: 72px;
-      padding-right: 72px;
-    }
+
     .content {
       flex: 70%;
     }

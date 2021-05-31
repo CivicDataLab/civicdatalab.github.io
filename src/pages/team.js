@@ -158,7 +158,6 @@ const CivicDaysSection = styled.div`
 
     p {
       width: 60%;
-      font-size: 20px;
       line-height: 1.5em;
     }
   }
