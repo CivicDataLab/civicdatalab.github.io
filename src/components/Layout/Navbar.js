@@ -243,7 +243,7 @@ const Navbar = ({ dark, overlay }) => {
           <li key={link.path}>
             {!link.external ? (
               <StyledLink
-                dark={dark}
+                dark={dark?.toString()}
                 activeClassName="active-link"
                 partiallyActive={link.name === 'Work' || link.name === 'Team'}
                 to={link.path}
@@ -251,7 +251,7 @@ const Navbar = ({ dark, overlay }) => {
                 {link.name}
               </StyledLink>
             ) : (
-              <StyledExternalLink dark={dark} href={link.path} target="_blank" rel="noreferrer noopener">
+              <StyledExternalLink dark={dark?.toString()} href={link.path} target="_blank" rel="noreferrer noopener">
                 <span>{link.name}</span>
                 <RiShareBoxFill />
               </StyledExternalLink>
