@@ -52,7 +52,7 @@ const SectorLabel = styled.p`
 
 const ImageItem = ({ url, image, text, sector, boldText }) => {
   return (
-    <ImageItemContainer boldtext={boldText} to={url || '/'}>
+    <ImageItemContainer boldtext={boldText.toString()} to={url || '/'}>
       {sector ? <SectorLabel>{sector}</SectorLabel> : null}
       {image ? <Image fluid={image} /> : <div />} <p>{text}</p>
     </ImageItemContainer>
