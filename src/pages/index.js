@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 // import Fade from 'react-reveal/Fade';
 import HeroText from '../styles/HeroText';
+import MainContainer from '../styles/MainContainer';
 import SectorsCard from '../components/SectorCard';
 import TeamHomePage from '../components/TeamHomePage';
 import WorkHomePage from '../components/WorkHomePage';
 import Contact from '../components/Contact';
-import BackgroundImage from 'gatsby-background-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
 import { CivicDays } from './team';
@@ -83,7 +84,8 @@ const Sectors = styled.section`
     margin-top: 100px;
     margin-bottom: 80px;
 
-    padding: 0 52px;
+    padding: 0;
+
     .sectors-heading {
       font-size: 70px;
       line-height: 67px;
@@ -101,7 +103,6 @@ const Sectors = styled.section`
     .sectors-heading {
       font-size: 60px;
       line-height: 60px;
-      padding-left: 20px;
     }
     .container-sectors {
       margin-top: 38px;
@@ -111,7 +112,7 @@ const Sectors = styled.section`
   }
 
   @media (min-width: 1600px) {
-    padding: 0 140px;
+    padding: 0;
 
     .container-sectors {
       column-gap: 35px;
@@ -134,7 +135,7 @@ const Index = ({ data }) => {
       <GlobalStyle />
       <Seo title="CivicDataLab" />
       <main>
-        <BackgroundImage fluid={image}>
+        <BackgroundImage style={{ zIndex: 999 }} fluid={image}>
           <Navbar dark />
           <HeroSection>
             <TypeWriter
@@ -148,19 +149,21 @@ const Index = ({ data }) => {
         </BackgroundImage>
         {/* <Fade bottom> */}
         <Sectors>
-          <HeroText className={'sectors-heading'}>Our Work</HeroText>
-          <div className="container-sectors">
-            {sectors.map((sector) => (
-              <SectorsCard
-                key={sector.fields.slug}
-                name={sector.frontmatter.name}
-                description={sector.frontmatter.description}
-                image={sector.frontmatter.image.childImageSharp.fluid}
-                color={sector.frontmatter.color}
-                link={sector.fields.slug}
-              />
-            ))}
-          </div>
+          <MainContainer>
+            <HeroText className="sectors-heading">Our Work</HeroText>
+            <div className="container-sectors">
+              {sectors.map((sector) => (
+                <SectorsCard
+                  key={sector.fields.slug}
+                  name={sector.frontmatter.name}
+                  description={sector.frontmatter.description}
+                  image={sector.frontmatter.image.childImageSharp.fluid}
+                  color={sector.frontmatter.color}
+                  link={sector.fields.slug}
+                />
+              ))}
+            </div>
+          </MainContainer>
         </Sectors>
         <BlogStrip />
         <OurPartners partners={partners} />
