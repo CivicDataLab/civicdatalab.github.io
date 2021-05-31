@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import HeroText from '../styles/HeroText';
 import OurPillarsStyle from '../styles/OurPillars';
+import MainContainer from '../styles/MainContainer';
 
 const OurPillars = () => {
   const imageData = useStaticQuery(graphql`
@@ -39,27 +40,29 @@ const OurPillars = () => {
   `);
 
   return (
-    <OurPillarsStyle>
-      <HeroText className={'sectors-heading'}>Our Pillars</HeroText>
-      <div className={'pillars-container'}>
-        <div className={'image-container'}>
-          <h3>Data</h3>
-          <Image fluid={imageData.dataPillar.childImageSharp.fluid} />
+    <MainContainer>
+      <OurPillarsStyle>
+        <HeroText className={'sectors-heading'}>Our Pillars</HeroText>
+        <div className={'pillars-container'}>
+          <div className={'image-container'}>
+            <h3>Data</h3>
+            <Image fluid={imageData.dataPillar.childImageSharp.fluid} />
+          </div>
+          <div className={'image-container'}>
+            <h3>Tech</h3>
+            <Image fluid={imageData.technologyPillar.childImageSharp.fluid} />
+          </div>
+          <div className={'image-container'}>
+            <h3>Design</h3>
+            <Image fluid={imageData.designPillar.childImageSharp.fluid} />
+          </div>
+          <div className={'image-container'}>
+            <h3>Social Science</h3>
+            <Image fluid={imageData.socialPillar.childImageSharp.fluid} />
+          </div>
         </div>
-        <div className={'image-container'}>
-          <h3>Tech</h3>
-          <Image fluid={imageData.technologyPillar.childImageSharp.fluid} />
-        </div>
-        <div className={'image-container'}>
-          <h3>Design</h3>
-          <Image fluid={imageData.designPillar.childImageSharp.fluid} />
-        </div>
-        <div className={'image-container'}>
-          <h3>Social Science</h3>
-          <Image fluid={imageData.socialPillar.childImageSharp.fluid} />
-        </div>
-      </div>
-    </OurPillarsStyle>
+      </OurPillarsStyle>
+    </MainContainer>
   );
 };
 

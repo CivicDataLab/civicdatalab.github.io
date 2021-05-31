@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 const OurPartners = styled.div`
   overflow-x: hidden;
-  padding-left:20px;
-  margin-top:69px;
+  padding-left: 20px;
+  margin-top: 69px;
 
- .partners-container {
+  .partners-container {
     display: flex;
     align-items: center;
     width: 100%;
@@ -12,13 +12,6 @@ const OurPartners = styled.div`
     white-space: nowrap;
     margin-bottom: 40px;
     margin-top: 40px;
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
-    
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 
     > * {
       margin-right: 40px;
@@ -30,7 +23,7 @@ const OurPartners = styled.div`
     height: 70px;
     display: flex;
     align-items: flex-end;
-    justify-content: center;    
+    justify-content: center;
   }
 
   @media (min-width: 900px) {
@@ -40,8 +33,9 @@ const OurPartners = styled.div`
   }
 
   @media (min-width: 1280px) {
-    padding-left: 52px;
     margin-top: 100px;
+    padding-left: 0;
+
     .section-heading {
       font-size: 70px;
       line-height: 67px;
@@ -49,11 +43,9 @@ const OurPartners = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding-left: 72px;
-    
     .section-heading {
-      font-size:60px;
-      line-height: 60px;  
+      font-size: 60px;
+      line-height: 60px;
     }
   }
 `;

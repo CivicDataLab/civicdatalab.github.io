@@ -3,6 +3,7 @@ import WorkHomePageStyle from '../styles/WorkHomePage';
 import { Link, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import HeroText from '../styles/HeroText';
+import MainContainer from '../styles/MainContainer';
 
 const WorkHomePage = () => {
   const data = useStaticQuery(
@@ -10,7 +11,7 @@ const WorkHomePage = () => {
       query {
         file(relativePath: { eq: "pattern.png" }) {
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 2000, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -21,8 +22,8 @@ const WorkHomePage = () => {
 
   return (
     <BackgroundImage fluid={data.file.childImageSharp.fluid}>
-      <WorkHomePageStyle>
-        <div className={'container-work-section'}>
+      <MainContainer>
+        <WorkHomePageStyle>
           <div className={'content'}>
             <HeroText light className={'work-part'}>
               Work{' '}
@@ -54,8 +55,8 @@ const WorkHomePage = () => {
               </div>
             </Link>
           </div>
-        </div>
-      </WorkHomePageStyle>
+        </WorkHomePageStyle>
+      </MainContainer>
     </BackgroundImage>
   );
 };
