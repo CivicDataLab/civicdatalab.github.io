@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout/Layout';
-import { TitleContainer, ProjectsContainer, ProjectsContent } from '../pages/work';
+import { FixedTitleContainer, ProjectsContainer, ProjectsContent } from '../pages/work';
 import SectorNav from '../components/SectorNav';
 import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
@@ -11,6 +11,7 @@ import WorkHomePage from '../components/WorkHomePage';
 import SliderHomePage from '../components/SliderHomePage';
 import MiniTeamSection from '../components/MiniTeamSection';
 import Seo from '../components/Seo/Seo';
+import useFixedScroll from '../hooks/useFixedScroll';
 
 const SectorInfo = styled.div`
   a {
@@ -45,18 +46,23 @@ const SectorTemplate = ({ data }) => {
   const members = data.members.nodes;
   const projects = data.projects.nodes;
 
+  const leftContainerRef = React.useRef(null);
+  const rightContainerRef = React.useRef(null);
+
+  useFixedScroll(leftContainerRef, rightContainerRef);
+
   return (
     <Layout>
       <Seo title={data.markdownRemark.frontmatter.name} />
       <MainGrid>
-        <TitleContainer>
+        <FixedTitleContainer ref={leftContainerRef}>
           <HeroText>Our Work</HeroText>
           <SectorInfo>
             <SectorLabel>{data.markdownRemark.frontmatter.name}</SectorLabel>
             {/* <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a> */}
           </SectorInfo>
-        </TitleContainer>
-        <ProjectsContent>
+        </FixedTitleContainer>
+        <ProjectsContent ref={rightContainerRef}>
           <SectorNav />
           <ProjectsContainer>
             {projects.map((project) => (

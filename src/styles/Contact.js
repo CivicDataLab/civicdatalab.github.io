@@ -1,24 +1,21 @@
 import styled from 'styled-components';
 const Contact = styled.div`
+  padding-left: 20px;
+  padding-top: 40px;
+  margin-right: 18px;
+
   .sub-text {
     width: 100%;
-    opacity: 1;
     color: black;
   }
 
   hr {
     border: 8px solid #000000;
-    opacity: 1;
     width: 58px;
     margin-left: 0px;
     margin-top: 18px;
   }
 
-  .container-contact-section {
-    padding-left: 20px;
-    padding-top: 40px;
-    margin-right: 18px;
-  }
   .first-text-block {
     text-align: left;
     font-size: 18px;
@@ -46,6 +43,7 @@ const Contact = styled.div`
     padding-left: 15px;
     box-sizing: border-box;
     font-size: 18px;
+    border-radius: 12px;
   }
 
   .write-input-type {
@@ -57,6 +55,7 @@ const Contact = styled.div`
     font-family: Montserrat;
     font-size: 18px;
     border: 1px solid rgb(112, 112, 112);
+    border-radius: 12px;
   }
 
   input::-webkit-input-placeholder {
@@ -66,7 +65,6 @@ const Contact = styled.div`
     line-height: 20px;
     font-family: Montserrat;
     letter-spacing: 0px;
-    opacity: 1;
   }
 
   .send-button-container {
@@ -79,18 +77,17 @@ const Contact = styled.div`
     color: white;
     font-size: 20px;
     font-family: Montserrat;
-    color: #ffffff;
     margin-top: 40px;
     cursor: pointer;
     border: none;
     font-weight: 500;
     padding: 8px 40px;
+    border-radius: 28px;
   }
 
   @media (min-width: 900px) {
-    .container-contact-section {
-      display: flex;
-    }
+    display: flex;
+
     .content {
       width: 50%;
     }
@@ -107,15 +104,12 @@ const Contact = styled.div`
     }
   }
   @media (min-width: 1280px) {
+    margin-right: 0;
+    padding: 100px 0;
+
     .main-part {
       font-size: 70px;
       line-height: 70px;
-    }
-    .container-contact-section {
-      margin-right: 0;
-      padding-top: 100px;
-      padding-left: 52px;
-      padding-right: 52px;
     }
 
     .sub-text {
@@ -126,6 +120,8 @@ const Contact = styled.div`
 
   @media (min-width: 1440px) {
     margin-bottom: 120px;
+    margin-right: 0px;
+
     .main-part {
       font-size: 60px;
       line-height: 60px;
@@ -138,12 +134,6 @@ const Contact = styled.div`
     .contact-page-line {
       width: 94px;
       margin-left: 0px;
-    }
-
-    .container-contact-section {
-      padding-left: 72px;
-      padding-right: 72px;
-      margin-right: 0px;
     }
 
     .first-text-block {

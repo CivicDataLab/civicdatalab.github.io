@@ -1,13 +1,15 @@
 import React from 'react';
-import TeamHomePageStyle from '../styles/TeamHomePage';
-import HeroText from '../styles/HeroText';
 import { Link } from 'gatsby';
+import TeamHomePageStyle from '../styles/TeamHomePage';
+import MainContainer from '../styles/MainContainer';
+import HeroText from '../styles/HeroText';
+
 const TeamHomePage = (props) => {
   return (
-    <TeamHomePageStyle>
-      <div className={'container-team-section'}>
+    <MainContainer>
+      <TeamHomePageStyle>
         <div className={'content'}>
-          <HeroText className={'section-heading'}>the team</HeroText>
+          <HeroText className={'section-heading'}>our team</HeroText>
         </div>
         <div className={'content lower-content-section'}>
           <hr></hr>
@@ -20,8 +22,8 @@ const TeamHomePage = (props) => {
             Meet the team {'>>'}
           </Link>
         </div>
-      </div>
-    </TeamHomePageStyle>
+      </TeamHomePageStyle>
+    </MainContainer>
   );
 };
 export default TeamHomePage;
