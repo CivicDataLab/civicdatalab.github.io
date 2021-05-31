@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import SectorNav from '../components/SectorNav';
 import MainGrid from '../styles/MainGrid';
+import MainContainer from '../styles/MainContainer';
 import HeroText from '../styles/HeroText';
 import ImageItem from '../components/ImageItem';
 import Seo from '../components/Seo/Seo';
@@ -33,8 +34,8 @@ export const TitleContainer = styled.div`
   }
 
   @media (min-width: 1280px) {
-    padding-left: 72px;
-    padding-right: 72px;
+    padding-left: 0;
+    padding-right: 0;
   }
 `;
 
@@ -55,8 +56,8 @@ export const ProjectsContent = styled.div`
     padding: 0 16px;
   }
 
-  @media (min-width: 1440px) {
-    padding: 0 32px;
+  @media (min-width: 1280px) {
+    padding: 0;
   }
 `;
 
@@ -92,34 +93,28 @@ const Sectors = ({ data }) => {
   return (
     <Layout>
       <Seo title="Our Work" />
-      <MainGrid>
-        <FixedTitleContainer ref={leftContainerRef}>
-          <HeroText>Our Work</HeroText>
-        </FixedTitleContainer>
-        <ProjectsContent ref={rightContainerRef}>
-          <SectorNav />
-          <ProjectsContainer>
-            {projects.map((project) => (
-              <ImageItem
-                key={project.id}
-                url={project.fields.slug}
-                image={project.frontmatter.image.childImageSharp.fluid}
-                text={project.frontmatter.name}
-                sector={project.frontmatter.sector}
-                boldText
-              />
-            ))}
-          </ProjectsContainer>
-        </ProjectsContent>
-      </MainGrid>
-      {/* <MainGrid>
-        <TitleContainer>
-          <h3>Partners</h3>
-        </TitleContainer>
-        <PartnersContainer>
-
-        </PartnersContainer>
-      </MainGrid> */}
+      <MainContainer>
+        <MainGrid>
+          <FixedTitleContainer ref={leftContainerRef}>
+            <HeroText>Our Work</HeroText>
+          </FixedTitleContainer>
+          <ProjectsContent ref={rightContainerRef}>
+            <SectorNav />
+            <ProjectsContainer>
+              {projects.map((project) => (
+                <ImageItem
+                  key={project.id}
+                  url={project.fields.slug}
+                  image={project.frontmatter.image.childImageSharp.fluid}
+                  text={project.frontmatter.name}
+                  sector={project.frontmatter.sector}
+                  boldText
+                />
+              ))}
+            </ProjectsContainer>
+          </ProjectsContent>
+        </MainGrid>
+      </MainContainer>
     </Layout>
   );
 };

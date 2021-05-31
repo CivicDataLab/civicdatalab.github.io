@@ -14,6 +14,7 @@ import SliderHomePage from '../components/SliderHomePage';
 import Seo from '../components/Seo/Seo';
 import Timeline from '../components/Timeline';
 import useFixedScroll from '../hooks/useFixedScroll';
+import MainContainer from '../styles/MainContainer';
 
 const ProjectContent = styled.div`
   grid-area: right;
@@ -240,87 +241,89 @@ const ProjectTemplate = ({ data }) => {
   return (
     <Layout>
       <Seo title={project.frontmatter.name} />
-      <MainGrid>
-        <TitleContainer ref={leftContainerRef}>
-          <HeroText>{project.frontmatter.name}</HeroText>
+      <MainContainer>
+        <MainGrid>
+          <TitleContainer ref={leftContainerRef}>
+            <HeroText>{project.frontmatter.name}</HeroText>
 
-          <LeftText>
-            <p>Check us here:</p>
-            <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
-              {project.frontmatter.url}
-            </a>
-            <SocialLinksContainer>
-              <a href={project.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
-                <FaTwitter />
-              </a>
-              <a href={project.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
-                <FaLinkedinIn />
-              </a>
-              <a href={project.frontmatter.github} target="_blank" rel="noreferrer noopener">
-                <FaGithubAlt />
-              </a>
-            </SocialLinksContainer>
-          </LeftText>
-
-          {partners && (
             <LeftText>
-              <p>In partnership with:</p>
-              <PartnersContainer>
-                {partners.map((partner) => (
-                  <a key={partner.id} href={partner.frontmatter.website} target="_blank" rel="noreferrer noopener">
-                    <Image fixed={partner.frontmatter.logo.childImageSharp.fixed} />
-                  </a>
-                ))}
-              </PartnersContainer>
+              <p>Check us here:</p>
+              <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
+                {project.frontmatter.url}
+              </a>
+              <SocialLinksContainer>
+                <a href={project.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
+                  <FaTwitter />
+                </a>
+                <a href={project.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
+                  <FaLinkedinIn />
+                </a>
+                <a href={project.frontmatter.github} target="_blank" rel="noreferrer noopener">
+                  <FaGithubAlt />
+                </a>
+              </SocialLinksContainer>
             </LeftText>
-          )}
-        </TitleContainer>
-        <ProjectContent ref={rightContainerRef}>
-          <ImageSection>
-            <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
-            <SummaryText>{project.frontmatter.summary}</SummaryText>
-          </ImageSection>
-          <ProjectText>
-            <p>Context:</p>
-            <p>{project.frontmatter.context}</p>
-          </ProjectText>
-          {project.frontmatter.solution && (
+
+            {partners && (
+              <LeftText>
+                <p>In partnership with:</p>
+                <PartnersContainer>
+                  {partners.map((partner) => (
+                    <a key={partner.id} href={partner.frontmatter.website} target="_blank" rel="noreferrer noopener">
+                      <Image fixed={partner.frontmatter.logo.childImageSharp.fixed} />
+                    </a>
+                  ))}
+                </PartnersContainer>
+              </LeftText>
+            )}
+          </TitleContainer>
+          <ProjectContent ref={rightContainerRef}>
+            <ImageSection>
+              <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
+              <SummaryText>{project.frontmatter.summary}</SummaryText>
+            </ImageSection>
             <ProjectText>
-              <p>Our solution:</p>
-              <p>{project.frontmatter.solution}</p>
+              <p>Context:</p>
+              <p>{project.frontmatter.context}</p>
             </ProjectText>
-          )}
-          <LeftText mobile>
-            <p>Check us here:</p>
-            <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
-              {project.frontmatter.url}
-            </a>
-            <SocialLinksContainer mobile>
-              <a href={project.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
-                <FaTwitter />
-              </a>
-              <a href={project.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
-                <FaLinkedinIn />
-              </a>
-              <a href={project.frontmatter.github} target="_blank" rel="noreferrer noopener">
-                <FaGithubAlt />
-              </a>
-            </SocialLinksContainer>
-          </LeftText>
-          {partners && (
+            {project.frontmatter.solution && (
+              <ProjectText>
+                <p>Our solution:</p>
+                <p>{project.frontmatter.solution}</p>
+              </ProjectText>
+            )}
             <LeftText mobile>
-              <p>In partnership with:</p>
-              <PartnersContainer>
-                {partners.map((partner) => (
-                  <a key={partner.id} href={partner.frontmatter.website} target="_blank" rel="noreferrer noopener">
-                    <Image fixed={partner.frontmatter.logo.childImageSharp.fixed} />
-                  </a>
-                ))}
-              </PartnersContainer>
+              <p>Check us here:</p>
+              <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
+                {project.frontmatter.url}
+              </a>
+              <SocialLinksContainer mobile>
+                <a href={project.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
+                  <FaTwitter />
+                </a>
+                <a href={project.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
+                  <FaLinkedinIn />
+                </a>
+                <a href={project.frontmatter.github} target="_blank" rel="noreferrer noopener">
+                  <FaGithubAlt />
+                </a>
+              </SocialLinksContainer>
             </LeftText>
-          )}
-        </ProjectContent>
-      </MainGrid>
+            {partners && (
+              <LeftText mobile>
+                <p>In partnership with:</p>
+                <PartnersContainer>
+                  {partners.map((partner) => (
+                    <a key={partner.id} href={partner.frontmatter.website} target="_blank" rel="noreferrer noopener">
+                      <Image fixed={partner.frontmatter.logo.childImageSharp.fixed} />
+                    </a>
+                  ))}
+                </PartnersContainer>
+              </LeftText>
+            )}
+          </ProjectContent>
+        </MainGrid>
+      </MainContainer>
       {/* {project.frontmatter.timeline && <Timeline timelineItems={project.frontmatter.timeline} />} */}
       <StyledCarousel responsive={responsive}>
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />

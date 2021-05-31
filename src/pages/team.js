@@ -9,6 +9,7 @@ import { FixedTitleContainer } from './work';
 import Seo from '../components/Seo/Seo';
 import CivicDaysImages from '../components/CivicDaysImages';
 import useFixedScroll from '../hooks/useFixedScroll';
+import MainContainer from '../styles/MainContainer';
 
 const Section = styled.section`
   padding-left: 32px;
@@ -146,7 +147,7 @@ const CivicDaysSection = styled.div`
   }
 
   @media (min-width: 1280px) {
-    padding: 0 72px;
+    padding: 0;
     margin: 80px auto;
     grid-template-columns: 1fr 3fr;
 
@@ -163,7 +164,6 @@ const CivicDaysSection = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding: 0 72px;
     margin: 80px auto;
 
     p {
@@ -191,16 +191,18 @@ export const CivicDays = ({ home }) => {
   return (
     <>
       {home || (
-        <CivicDaysSection>
-          <SectionHeading>Civic Days</SectionHeading>
-          <Section>
-            <div className="heading-border-top"></div>
-            <p>
-              Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
-              style
-            </p>
-          </Section>
-        </CivicDaysSection>
+        <MainContainer>
+          <CivicDaysSection>
+            <SectionHeading>Civic Days</SectionHeading>
+            <Section>
+              <div className="heading-border-top"></div>
+              <p>
+                Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
+                style
+              </p>
+            </Section>
+          </CivicDaysSection>
+        </MainContainer>
       )}
       <Unique>Check our unique Civic Days</Unique>
       <CivicDaysImages />
@@ -219,30 +221,32 @@ const Team = ({ data }) => {
   return (
     <Layout>
       <Seo title="Team" />
-      <MainGrid>
-        <FixedTitleContainer ref={teamTitleContainerRef}>
-          <SectionHeading>The Team</SectionHeading>
-          <div className="heading-border-bottom"></div>
-          <p className="section-text">Meet our Bandhus</p>
-          <div style={{ position: 'relative', height: '80%' }}>
-            <StickyBox>
-              <h1>Current Job Openings</h1>
-              <Link to="/openings">browse jobs</Link>
-            </StickyBox>
-          </div>
-        </FixedTitleContainer>
-        <MemberCardsContainer ref={membersContainerRef}>
-          {members.map((member) => (
-            <MemberImageBox
-              key={member.fields.slug}
-              link={member.fields.slug}
-              name={member.frontmatter.name}
-              role={member.frontmatter.role.split(',')[0]}
-              image={member.frontmatter.image?.childImageSharp.fluid}
-            />
-          ))}
-        </MemberCardsContainer>
-      </MainGrid>
+      <MainContainer>
+        <MainGrid>
+          <FixedTitleContainer ref={teamTitleContainerRef}>
+            <SectionHeading>The Team</SectionHeading>
+            <div className="heading-border-bottom"></div>
+            <p className="section-text">Meet our Bandhus</p>
+            <div style={{ position: 'relative', height: '80%' }}>
+              <StickyBox>
+                <h1>Current Job Openings</h1>
+                <Link to="/openings">browse jobs</Link>
+              </StickyBox>
+            </div>
+          </FixedTitleContainer>
+          <MemberCardsContainer ref={membersContainerRef}>
+            {members.map((member) => (
+              <MemberImageBox
+                key={member.fields.slug}
+                link={member.fields.slug}
+                name={member.frontmatter.name}
+                role={member.frontmatter.role.split(',')[0]}
+                image={member.frontmatter.image?.childImageSharp.fluid}
+              />
+            ))}
+          </MemberCardsContainer>
+        </MainGrid>
+      </MainContainer>
       <div style={{ position: 'relative' }}>
         <StickyBox mobile>
           <h1>Current Job Openings</h1>

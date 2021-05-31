@@ -8,7 +8,7 @@ const MainContainer = styled.div`
   box-sizing: border-box;
 
   @media (min-width: 1280px) {
-    padding: 0 52px;
+    padding: 0 46px;
   }
 
   @media (min-width: 1440px) {
