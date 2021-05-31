@@ -37,6 +37,7 @@ const Card = styled.div`
   }
 
   @media (min-width: 1280px) {
+    grid-column: span 4;
     .gatsby-image-wrapper {
       height: 220px;
     }
@@ -78,7 +79,7 @@ const CardContent = styled.div`
   }
 
   @media (min-width: 1440px) {
-    height: 340px;
+    height: 320px;
     h4 {
       font-size: 32px;
       line-height: 56px;
@@ -120,7 +121,7 @@ const SectorCard = ({ name, description, link, color, image, about }) => {
         </h4>
         <p>{description.substring(0, 100)}...</p>
         <CardLink to={link}>
-          {about ? 'Find them here ' : 'Read more '}
+          {about ? 'Find them here ' : 'Learn more '}
           &gt;&gt;
         </CardLink>
       </CardContent>

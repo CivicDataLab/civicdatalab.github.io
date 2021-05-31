@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const OurPillars = styled.div`
-padding: 0 20px;
 margin-top: 60px;
 
 .pillars-container {

@@ -6,7 +6,6 @@ import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Layout from '../components/Layout/Layout';
-import MainGrid from '../styles/MainGrid';
 import HeroText from '../styles/HeroText';
 import { TitleContainer } from '../pages/work';
 import MiniTeamSection from '../components/MiniTeamSection';
@@ -15,9 +14,9 @@ import Seo from '../components/Seo/Seo';
 import Timeline from '../components/Timeline';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
+import StandardGrid from '../styles/StandardGrid';
 
 const ProjectContent = styled.div`
-  grid-area: right;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr;
@@ -26,8 +25,12 @@ const ProjectContent = styled.div`
     padding: 0 16px;
   }
 
+  @media (min-width: 1280px) {
+    grid-column: 4/13;
+  }
+
   @media (min-width: 1440px) {
-    padding: 0 30px;
+    padding: 0;
   }
 `;
 
@@ -72,7 +75,7 @@ const SummaryText = styled.div`
 
   @media (min-width: 1440px) {
     line-height: 1.5em;
-    left: -90px;
+    left: -50px;
     bottom: -100px;
     padding: 45px;
   }
@@ -242,7 +245,7 @@ const ProjectTemplate = ({ data }) => {
     <Layout>
       <Seo title={project.frontmatter.name} />
       <MainContainer>
-        <MainGrid>
+        <StandardGrid>
           <TitleContainer ref={leftContainerRef}>
             <HeroText>{project.frontmatter.name}</HeroText>
 
@@ -322,7 +325,7 @@ const ProjectTemplate = ({ data }) => {
               </LeftText>
             )}
           </ProjectContent>
-        </MainGrid>
+        </StandardGrid>
       </MainContainer>
       {/* {project.frontmatter.timeline && <Timeline timelineItems={project.frontmatter.timeline} />} */}
       <StyledCarousel responsive={responsive}>
@@ -343,11 +346,13 @@ const ProjectTemplate = ({ data }) => {
           />
         ))}
       </div>
-      <MainGrid>
-        <ProjectContent>
-          <MiniTeamSection members={members} />
-        </ProjectContent>
-      </MainGrid>
+      <MainContainer>
+        <StandardGrid>
+          <ProjectContent>
+            <MiniTeamSection members={members} />
+          </ProjectContent>
+        </StandardGrid>
+      </MainContainer>
     </Layout>
   );
 };

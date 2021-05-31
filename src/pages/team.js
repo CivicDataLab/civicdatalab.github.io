@@ -10,10 +10,11 @@ import Seo from '../components/Seo/Seo';
 import CivicDaysImages from '../components/CivicDaysImages';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
+import StandardGrid from '../styles/StandardGrid';
 
 const Section = styled.section`
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 20px;
   max-width: 1140px;
   .heading-border-bottom {
@@ -37,7 +38,7 @@ const Section = styled.section`
   }
 
   @media (min-width: 1280px) {
-    padding: 0px 32px;
+    padding: 0px 10px;
     .heading-border-bottom {
       width: 78px;
       margin-top: 12px;
@@ -49,29 +50,31 @@ const Section = styled.section`
 
 const MemberCardsContainer = styled.div`
   display: grid;
-  grid-area: right;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   row-gap: 25px;
   column-gap: 25px;
-  padding: 0 32px;
+  padding: 0;
   box-sizing: border-box;
-  justify-content: space-around;
   margin-bottom: 54px;
-  max-width: 1080px;
-
-  @media (min-width: 500px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
   @media (min-width: 1024px) {
-    justify-content: space-between;
     row-gap: 50px;
     padding: 0 16px;
   }
 
+  @media (min-width: 1280px) {
+    padding: 0;
+    grid-template-columns: repeat(9, 1fr);
+    grid-column: 4/13;
+  }
+
   @media (min-width: 1440px) {
-    padding: 0 32px;
+    column-gap: 30px;
     row-gap: 60px;
+  }
+
+  @media (min-width: 1920px) {
+    column-gap: 45px;
   }
 `;
 
@@ -141,9 +144,13 @@ const CivicDaysSection = styled.div`
   }
 
   h1 {
-    padding: 0 32px;
+    padding: 0;
     font-family: Bungee;
     width: 50%;
+  }
+
+  p {
+    line-height: 1.4em;
   }
 
   @media (min-width: 1280px) {
@@ -154,6 +161,7 @@ const CivicDaysSection = styled.div`
     .heading-border-top {
       width: 94px;
       border: 8px solid #000000;
+      border-radius: 12px;
       margin-bottom: 45px;
     }
 
@@ -197,8 +205,8 @@ export const CivicDays = ({ home }) => {
             <Section>
               <div className="heading-border-top"></div>
               <p>
-                Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
-                style
+                We are a remote first organisation and meet every quarter for a retreat where we catch-up with our
+                bandhus, reflect on our past few months and take key decisions around our future.
               </p>
             </Section>
           </CivicDaysSection>
@@ -222,7 +230,7 @@ const Team = ({ data }) => {
     <Layout>
       <Seo title="Team" />
       <MainContainer>
-        <MainGrid>
+        <StandardGrid>
           <FixedTitleContainer ref={teamTitleContainerRef}>
             <SectionHeading>The Team</SectionHeading>
             <div className="heading-border-bottom"></div>
@@ -245,7 +253,7 @@ const Team = ({ data }) => {
               />
             ))}
           </MemberCardsContainer>
-        </MainGrid>
+        </StandardGrid>
       </MainContainer>
       <div style={{ position: 'relative' }}>
         <StickyBox mobile>
