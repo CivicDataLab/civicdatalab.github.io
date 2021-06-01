@@ -4,7 +4,7 @@ const MainContainer = styled.div`
   max-width: 1640px;
   width: 100%;
   margin: auto;
-  padding: 0 16px;
+  padding: 0 20px;
   box-sizing: border-box;
 
   @media (min-width: 1280px) {

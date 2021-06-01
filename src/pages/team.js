@@ -4,7 +4,6 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
-import MainGrid from '../styles/MainGrid';
 import { FixedTitleContainer } from './work';
 import Seo from '../components/Seo/Seo';
 import CivicDaysImages from '../components/CivicDaysImages';
@@ -45,6 +44,14 @@ const Section = styled.section`
       margin-bottom: 18px;
       border: 8px solid #000000;
     }
+  }
+`;
+
+const TeamContainer = styled(MainContainer)`
+  margin-top: 20px;
+
+  @media (min-width: 1280px) {
+    margin-top: 60px;
   }
 `;
 
@@ -112,7 +119,7 @@ const StickyBox = styled.div`
     display: ${(props) => (props.mobile ? 'none' : 'block')};
     position: absolute;
     left: 0px;
-    margin-top: 240px;
+    margin-top: 80px;
     width: 250px;
 
     h1 {
@@ -126,7 +133,7 @@ const StickyBox = styled.div`
   }
 
   @media (min-width: 1440px) {
-    top: 10%;
+    margin-top: 180px;
   }
 `;
 
@@ -229,7 +236,7 @@ const Team = ({ data }) => {
   return (
     <Layout>
       <Seo title="Team" />
-      <MainContainer>
+      <TeamContainer>
         <StandardGrid>
           <FixedTitleContainer ref={teamTitleContainerRef}>
             <SectionHeading>The Team</SectionHeading>
@@ -254,7 +261,7 @@ const Team = ({ data }) => {
             ))}
           </MemberCardsContainer>
         </StandardGrid>
-      </MainContainer>
+      </TeamContainer>
       <div style={{ position: 'relative' }}>
         <StickyBox mobile>
           <h1>Current Job Openings</h1>

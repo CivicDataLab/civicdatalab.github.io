@@ -3,7 +3,7 @@ name: Abhinav Kumar
 role: Tech Lead
 medium:
 description:
-quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
 github: https://github.com/Abhi2102
 twitter:
 linkedin:
