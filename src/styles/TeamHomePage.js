@@ -3,16 +3,11 @@ import styled from 'styled-components';
 const TeamHomePage = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 48px 20px;
-  // .container-team-section {
-  //   display: flex;
-  //   flex-direction: column;
-  //   padding: 48px 20px;
-  // }
+  padding: 48px 0;
 
   hr {
     border: 8px solid #000000;
-    opacity: 1;
+    border-radius: 12px;
     width: 58px;
     margin-left: 0px;
     margin-top: 18px;
@@ -23,9 +18,7 @@ const TeamHomePage = styled.div`
     font-size: 18px;
     line-height: 1.4em;
     font-family: Montserrat;
-    letter-spacing: 0px;
     color: #000000;
-    opacity: 1;
     margin-top: 25px;
   }
 
@@ -34,9 +27,8 @@ const TeamHomePage = styled.div`
     font-size: 15px;
     line-height: 33px;
     font-family: Montserrat;
-    letter-spacing: 0px;
+    font-weight: 500;
     color: #0da3b7;
-    opacity: 1;
     text-decoration: none;
   }
 
@@ -79,16 +71,23 @@ const TeamHomePage = styled.div`
     p {
       font-size: 18px;
       line-height: 25px;
-      width: 62%;
+      width: 80%;
     }
     .meet-the-team {
       line-height: 70px;
       font-size: 20px;
     }
+
+    .upper-content-section {
+      grid-column: 1/4;
+    }
+
+    .lower-content-section {
+      grid-column: 4/12;
+    }
   }
 
   @media (min-width: 1440px) {
-
     .content {
       flex: 70%;
     }
@@ -97,6 +96,10 @@ const TeamHomePage = styled.div`
       line-height: 60px;
       margin-top: 161px;
     }
+    hr {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
     .lower-content-section {
       margin-top: 89px;
     }
@@ -104,12 +107,10 @@ const TeamHomePage = styled.div`
     p {
       font-size: 18px;
       line-height: 27px;
-      width: 50%;
     }
 
     .meet-the-team {
       line-height: 78px;
-      font-size: 22px;
     }
   }
 `;

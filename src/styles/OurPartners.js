@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 const OurPartners = styled.div`
   overflow-x: hidden;
-  padding-left: 20px;
+  padding-left: 0;
   margin-top: 69px;
 
   .partners-container {

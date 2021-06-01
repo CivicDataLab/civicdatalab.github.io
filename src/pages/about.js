@@ -10,14 +10,15 @@ import Navbar from '../components/Layout/Navbar';
 import TeamHomePage from '../components/TeamHomePage';
 import WorkHomePage from '../components/WorkHomePage';
 import HeroText from '../styles/HeroText';
+import MainContainer from '../styles/MainContainer';
 import Value from '../components/Value';
 import Seo from '../components/Seo/Seo';
 
 const AboutSection = styled.div`
-  padding: 48px 20px;
+  padding: 48px 0;
 
   @media (min-width: 1280px) {
-    padding: 48px 86px;
+    padding: 48px 0;
   }
 `;
 
@@ -41,19 +42,17 @@ const HeroSection = styled(Section)`
 
 const StorySection = styled(AboutSection)`
   background-color: rgba(178, 201, 220, 0.27);
-  padding: 48px 20px;
-
-  div:first-of-type {
-    max-width: 480px;
-  }
+  padding: 48px 0;
 
   .image {
     display: none;
   }
 
   @media (min-width: 900px) {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    > div {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
 
     .image {
       width: 500px;
@@ -62,7 +61,7 @@ const StorySection = styled(AboutSection)`
   }
 
   @media (min-width: 1280px) {
-    padding: 48px 86px;
+    padding: 48px 0;
   }
 `;
 
@@ -84,34 +83,38 @@ const About = ({ data }) => {
           <HeroSection />
         </BackgroundImage>
         <StorySection>
-          <div>
-            <HeroText>Our Story</HeroText>
-            <p>
-              CivicDataLab works with the goal of harnessing data, tech, design and social science to strengthen the
-              course of civic engagements in India.
-            </p>
-            <p>
-              We believe in sowing seeds of change, trust and opportunities to enable citizens to engage better with
-              public reforms.
-            </p>
-          </div>
-          <div className="image story-image"></div>
+          <MainContainer>
+            <div>
+              <HeroText>Our Story</HeroText>
+              <p>
+                CivicDataLab works with the goal of harnessing data, tech, design and social science to strengthen the
+                course of civic engagements in India.
+              </p>
+              <p>
+                We believe in sowing seeds of change, trust and opportunities to enable citizens to engage better with
+                public reforms.
+              </p>
+            </div>
+            <div className="image story-image"></div>
+          </MainContainer>
         </StorySection>
-        <ValuesSection>
-          <div>
-            <HeroText>Our Values</HeroText>
-          </div>
-          <div>
-            {values.map((value) => (
-              <Value
-                key={value.node.id}
-                number={value.node.frontmatter.number}
-                title={value.node.frontmatter.title}
-                bodyHTML={value.node.html}
-              />
-            ))}
-          </div>
-        </ValuesSection>
+        <MainContainer>
+          <ValuesSection>
+            <div>
+              <HeroText>Our Values</HeroText>
+            </div>
+            <div>
+              {values.map((value) => (
+                <Value
+                  key={value.node.id}
+                  number={value.node.frontmatter.number}
+                  title={value.node.frontmatter.title}
+                  bodyHTML={value.node.html}
+                />
+              ))}
+            </div>
+          </ValuesSection>
+        </MainContainer>
         <TeamHomePage />
         <WorkHomePage />
         {/* <AboutCardsSection>

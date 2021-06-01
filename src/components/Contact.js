@@ -35,13 +35,17 @@ const SocialLinksContainer = styled.div`
       height: 45px;
     }
   }
+
+  @media (min-width: 1280px) {
+    margin-top: 110px;
+  }
 `;
 
 const Contact = (props) => {
   return (
     <MainContainer>
       <ContactStyle>
-        <div className={'content'}>
+        <div className={'content upper-content-section'}>
           <HeroText className={'main-part'}>Come </HeroText>
           <HeroText className={'sub-text'}> Say Hi!</HeroText>
           <hr className={'contact-page-line'}></hr>

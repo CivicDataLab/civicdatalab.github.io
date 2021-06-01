@@ -5,7 +5,7 @@ const WorkHomePage = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 40px 20px;
+  padding: 40px 0;
 
   .sub-text {
     width: 100%;
@@ -148,7 +148,7 @@ const WorkHomePage = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding: 180px 0px;
+    padding: 150px 0px;
     margin-bottom: 80px;
 
     .sub-text {

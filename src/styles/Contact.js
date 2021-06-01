@@ -1,8 +1,11 @@
 import styled from 'styled-components';
-const Contact = styled.div`
-  padding-left: 20px;
+import StandardGrid from './StandardGrid';
+
+
+const Contact = styled(StandardGrid)`
   padding-top: 40px;
   margin-right: 18px;
+  margin-bottom: 60px;
 
   .sub-text {
     width: 100%;
@@ -11,6 +14,7 @@ const Contact = styled.div`
 
   hr {
     border: 8px solid #000000;
+    border-radius: 12px;
     width: 58px;
     margin-left: 0px;
     margin-top: 18px;
@@ -86,18 +90,6 @@ const Contact = styled.div`
   }
 
   @media (min-width: 900px) {
-    display: flex;
-
-    .content {
-      width: 50%;
-    }
-
-    .lower-content-section {
-      margin-top: 141px;
-    }
-    .first-text-block {
-      margin-right: 175px;
-    }
 
     .send-button {
       padding: 15px 50px;
@@ -105,7 +97,7 @@ const Contact = styled.div`
   }
   @media (min-width: 1280px) {
     margin-right: 0;
-    padding: 100px 0;
+    padding: 80px 0;
 
     .main-part {
       font-size: 70px;
@@ -116,6 +108,14 @@ const Contact = styled.div`
       font-size: 70px;
       line-height: 70px;
     }
+
+    .upper-content-section {
+      grid-column: 1/4;
+    }
+
+    .lower-content-section {
+      grid-column: 4/10;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -125,6 +125,11 @@ const Contact = styled.div`
     .main-part {
       font-size: 60px;
       line-height: 60px;
+    }
+
+    hr {
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
 
     .sub-text {
@@ -146,9 +151,6 @@ const Contact = styled.div`
       line-height: 27px;
     }
 
-    .lower-content-section {
-      margin-top: 200px;
-    }
     input {
       padding-left: 30px;
       padding-top: 25px;
