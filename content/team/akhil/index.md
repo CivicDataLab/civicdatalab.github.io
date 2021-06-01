@@ -14,4 +14,4 @@ projects: Justice Hub, Zombie Tracker, OpenCity
 
 Akhil is a self taught Front-end developer who loves open source software. He is also a proponent of minimalism and a frequent headbanger.
 
-At CivicDataLab, Akhil contributes mostly to the Law and Justice space and is now focused on building modern frontends for CKAN based platforms.
+At CivicDataLab, Akhil contributes mostly to the Law and Justice sector and is now focused on building modern frontends for CKAN based platforms.
