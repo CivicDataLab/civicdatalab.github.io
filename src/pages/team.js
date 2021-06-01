@@ -9,10 +9,12 @@ import { FixedTitleContainer } from './work';
 import Seo from '../components/Seo/Seo';
 import CivicDaysImages from '../components/CivicDaysImages';
 import useFixedScroll from '../hooks/useFixedScroll';
+import MainContainer from '../styles/MainContainer';
+import StandardGrid from '../styles/StandardGrid';
 
 const Section = styled.section`
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 20px;
   max-width: 1140px;
   .heading-border-bottom {
@@ -36,7 +38,7 @@ const Section = styled.section`
   }
 
   @media (min-width: 1280px) {
-    padding: 0px 32px;
+    padding: 0px 10px;
     .heading-border-bottom {
       width: 78px;
       margin-top: 12px;
@@ -48,29 +50,31 @@ const Section = styled.section`
 
 const MemberCardsContainer = styled.div`
   display: grid;
-  grid-area: right;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   row-gap: 25px;
   column-gap: 25px;
-  padding: 0 32px;
+  padding: 0;
   box-sizing: border-box;
-  justify-content: space-around;
   margin-bottom: 54px;
-  max-width: 1080px;
-
-  @media (min-width: 500px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
   @media (min-width: 1024px) {
-    justify-content: space-between;
     row-gap: 50px;
     padding: 0 16px;
   }
 
+  @media (min-width: 1280px) {
+    padding: 0;
+    grid-template-columns: repeat(9, 1fr);
+    grid-column: 4/13;
+  }
+
   @media (min-width: 1440px) {
-    padding: 0 32px;
+    column-gap: 30px;
     row-gap: 60px;
+  }
+
+  @media (min-width: 1920px) {
+    column-gap: 45px;
   }
 `;
 
@@ -140,19 +144,24 @@ const CivicDaysSection = styled.div`
   }
 
   h1 {
-    padding: 0 32px;
+    padding: 0;
     font-family: Bungee;
     width: 50%;
   }
 
+  p {
+    line-height: 1.4em;
+  }
+
   @media (min-width: 1280px) {
-    padding: 0 72px;
+    padding: 0;
     margin: 80px auto;
     grid-template-columns: 1fr 3fr;
 
     .heading-border-top {
       width: 94px;
       border: 8px solid #000000;
+      border-radius: 12px;
       margin-bottom: 45px;
     }
 
@@ -163,7 +172,6 @@ const CivicDaysSection = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding: 0 72px;
     margin: 80px auto;
 
     p {
@@ -191,16 +199,18 @@ export const CivicDays = ({ home }) => {
   return (
     <>
       {home || (
-        <CivicDaysSection>
-          <SectionHeading>Civic Days</SectionHeading>
-          <Section>
-            <div className="heading-border-top"></div>
-            <p>
-              Our bandhus come together for a week to co-live and co-work and co-create. Check out how we do this CDL
-              style
-            </p>
-          </Section>
-        </CivicDaysSection>
+        <MainContainer>
+          <CivicDaysSection>
+            <SectionHeading>Civic Days</SectionHeading>
+            <Section>
+              <div className="heading-border-top"></div>
+              <p>
+                We are a remote first organisation and meet every quarter for a retreat where we catch-up with our
+                bandhus, reflect on our past few months and take key decisions around our future.
+              </p>
+            </Section>
+          </CivicDaysSection>
+        </MainContainer>
       )}
       <Unique>Check our unique Civic Days</Unique>
       <CivicDaysImages />
@@ -219,30 +229,32 @@ const Team = ({ data }) => {
   return (
     <Layout>
       <Seo title="Team" />
-      <MainGrid>
-        <FixedTitleContainer ref={teamTitleContainerRef}>
-          <SectionHeading>The Team</SectionHeading>
-          <div className="heading-border-bottom"></div>
-          <p className="section-text">Meet our Bandhus</p>
-          <div style={{ position: 'relative', height: '80%' }}>
-            <StickyBox>
-              <h1>Current Job Openings</h1>
-              <Link to="/openings">browse jobs</Link>
-            </StickyBox>
-          </div>
-        </FixedTitleContainer>
-        <MemberCardsContainer ref={membersContainerRef}>
-          {members.map((member) => (
-            <MemberImageBox
-              key={member.fields.slug}
-              link={member.fields.slug}
-              name={member.frontmatter.name}
-              role={member.frontmatter.role.split(',')[0]}
-              image={member.frontmatter.image?.childImageSharp.fluid}
-            />
-          ))}
-        </MemberCardsContainer>
-      </MainGrid>
+      <MainContainer>
+        <StandardGrid>
+          <FixedTitleContainer ref={teamTitleContainerRef}>
+            <SectionHeading>The Team</SectionHeading>
+            <div className="heading-border-bottom"></div>
+            <p className="section-text">Meet our Bandhus</p>
+            <div style={{ position: 'relative', height: '80%' }}>
+              <StickyBox>
+                <h1>Current Job Openings</h1>
+                <Link to="/openings">browse jobs</Link>
+              </StickyBox>
+            </div>
+          </FixedTitleContainer>
+          <MemberCardsContainer ref={membersContainerRef}>
+            {members.map((member) => (
+              <MemberImageBox
+                key={member.fields.slug}
+                link={member.fields.slug}
+                name={member.frontmatter.name}
+                role={member.frontmatter.role.split(',')[0]}
+                image={member.frontmatter.image?.childImageSharp.fluid}
+              />
+            ))}
+          </MemberCardsContainer>
+        </StandardGrid>
+      </MainContainer>
       <div style={{ position: 'relative' }}>
         <StickyBox mobile>
           <h1>Current Job Openings</h1>

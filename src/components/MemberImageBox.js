@@ -9,9 +9,7 @@ const ImageBox = styled(Link)`
   background: #f2f2f2;
   position: relative;
   text-decoration: none;
-
-  width: 125px;
-  height: 200px;
+  height: 220px;
 
   .gatsby-image-wrapper {
     height: 100%;
@@ -43,8 +41,9 @@ const ImageBox = styled(Link)`
   }
 
   @media (min-width: 1280px) {
-    width: 220px;
-    height: 360px;
+    width: 100%;
+    height: 400px;
+    grid-column: span 3;
 
     .member-name {
       font-size: 20px;
@@ -55,8 +54,6 @@ const ImageBox = styled(Link)`
   }
 
   @media (min-width: 1440px) {
-    width: 280px;
-    height: 400px;
     .member-details {
       padding: 21px 0 28px;
     }

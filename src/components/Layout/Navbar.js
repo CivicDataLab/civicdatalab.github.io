@@ -87,7 +87,7 @@ const LinksContainer = styled.ul`
     width: auto;
     display: flex;
     flex-direction: row;
-    height: 80px;
+    height: 75px;
     margin: 0;
     padding: 0 0 12px 0;
     border-bottom: ${(props) => (props.dark ? '4px solid white' : '4px solid black')};
@@ -143,6 +143,11 @@ const StyledLink = styled(Link)`
       color: ${(props) => (props.dark ? 'black' : 'white')};
       background-color: ${(props) => (props.dark ? 'white' : 'black')};
     }
+  }
+
+  @media (min-width: 1440px) {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 `;
 
