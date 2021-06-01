@@ -3,13 +3,14 @@ name: Apoorv Anand
 role: Data Strategist and Partnerships
 medium: '@APo_ORV'
 description:
-quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
 github: https://github.com/apoorv74
 twitter:
 linkedin: https://www.linkedin.com/in/apoorvanand
 image: ./apoorv.png
 sectors: Law & Justice, Public Finance, FOSS
 accentcolor: '#153243'
+text: light
 projects: Justice Hub, Child Rights Laws Implementation Tracker, Zombie Tracker
 ---
 

@@ -11,4 +11,5 @@ image: ./preethi.jpg
 sectors: Public Finance, FOSS
 projects: Public Procurements, The State of FOSS in India Report
 accentcolor: '#9E0877'
+text: light
 ---
