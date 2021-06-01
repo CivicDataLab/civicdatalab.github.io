@@ -11,6 +11,7 @@ image: ./gaurav.jpg
 sectors: Public Finance, Law & Justice, FOSS, Education
 projects: Public Procurements, Open Budgets India Platform - 2.0, The State of FOSS in India Report, Justice Hub, Girl Education and Spending Tracker, Zombie Tracker, The State of FOSS in India
 accentcolor: '#00008B'
+text: light
 ---
 
 Gaurav is a technologist turned social entreprenuer working to strengthen data-for-good ecosystem in India. At CivicDataLab, he works closely with Public Finance and Law & Justice verticals to improve access to information and enable civic-engagements using Open Data and Open-Source practices. He has been instrumental in starting initiatives like DataKind Bangalore & Open Budgets India. He is passionate about Open Data, Open Source Tech, Education and Human Rights. When he is away from the keyboard, he enjoys spending his time travelling, teaching and doing photography.
