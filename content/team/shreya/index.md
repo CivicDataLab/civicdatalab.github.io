@@ -3,7 +3,7 @@ name: Shreya Agarwal
 role: Civic Technologist
 medium: '@shreyaagrawal0809'
 description:
-quote: It always feel impossible untill its done.
+quote: It always feel impossible until it is done.
 github: https://github.com/shreyaagrawal0809
 twitter: https://twitter.com/shreya_0809
 linkedin: https://www.linkedin.com/in/shreya-agrawal-080302
