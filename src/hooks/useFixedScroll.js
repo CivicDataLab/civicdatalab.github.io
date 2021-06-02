@@ -17,5 +17,5 @@ export default function useFixedScroll(leftRef, rightRef, additionNumber = 50) {
     return () => {
       window.removeEventListener('scroll', scrollHandler);
     };
-  }, [leftRef, rightRef]);
+  }, [leftRef, rightRef, additionNumber]);
 }
