@@ -62,7 +62,6 @@ const TypeWriter = ({ messages }) => {
 
   return (
     <h1>
-      <br />
       <span>{state.text}</span>
       {/* <span id="cursor" /> */}
     </h1>
