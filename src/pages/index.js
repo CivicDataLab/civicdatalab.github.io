@@ -37,10 +37,11 @@ const HeroSection = styled(Section)`
   background-color: rgb(0, 0, 0, 0.5);
 
   h1 {
-    font-family: 'Bungee', cursive;
+    font-family: 'Bungee';
     font-size: 32px;
     text-align: left;
     margin-top: 0px;
+    color: white;
   }
 
   @media (min-width: 550px) {
@@ -171,6 +172,7 @@ const Index = ({ data }) => {
         </Sectors>
         <BlogStrip />
         <OurPartners partners={partners} />
+
         <TeamHomePage />
         <WorkHomePage />
         <Contact />

@@ -141,6 +141,7 @@ const WorkHomePage = styled.div`
   @media(min-width: 1280px) {
     flex-direction: row;
     padding: 100px 0px;
+    margin-bottom: 60px;
 
     .first-text-block {
       width: 60%;

@@ -14,7 +14,7 @@ export const TitleContainer = styled.div`
   padding: 0;
   font-size: 16px;
   margin-bottom: 10px;
-  margin-top: 48px;
+  margin-top: 40px;
 
   h1,
   h3 {
