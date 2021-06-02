@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import MemberImageBox from '../components/MemberImageBox';
-import SectionHeading from '../styles/SectionHeading';
 import { TitleContainer } from './work';
 import Seo from '../components/Seo/Seo';
 import CivicDaysImages from '../components/CivicDaysImages';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
 import StandardGrid from '../styles/StandardGrid';
+import HeroText from '../styles/HeroText';
 
 const Section = styled.section`
   padding-left: 0;
@@ -30,12 +30,6 @@ const Section = styled.section`
     margin: 0;
   }
 
-  @media (min-width: 768px) {
-    .section-text {
-      max-width: 500px;
-    }
-  }
-
   @media (min-width: 1280px) {
     padding: 0px 10px;
     .heading-border-bottom {
@@ -44,15 +38,15 @@ const Section = styled.section`
       margin-bottom: 18px;
       border: 8px solid #000000;
     }
+
+    .section-text {
+      max-width: 250px;
+    }
   }
 `;
 
 const TeamContainer = styled(MainContainer)`
   margin-top: 20px;
-
-  @media (min-width: 1280px) {
-    margin-top: 60px;
-  }
 `;
 
 const MemberCardsContainer = styled.div`
@@ -119,7 +113,7 @@ const StickyBox = styled.div`
     display: ${(props) => (props.mobile ? 'none' : 'block')};
     position: absolute;
     left: 0px;
-    margin-top: 80px;
+    margin-top: 40px;
     width: 250px;
 
     h1 {
@@ -130,10 +124,6 @@ const StickyBox = styled.div`
     a {
       font-size: 18px;
     }
-  }
-
-  @media (min-width: 1440px) {
-    margin-top: 180px;
   }
 `;
 
@@ -208,7 +198,7 @@ export const CivicDays = ({ home }) => {
       {home || (
         <MainContainer>
           <CivicDaysSection>
-            <SectionHeading>Civic Days</SectionHeading>
+            <HeroText>Civic Days</HeroText>
             <Section>
               <div className="heading-border-top"></div>
               <p>
@@ -239,9 +229,13 @@ const Team = ({ data }) => {
       <TeamContainer>
         <StandardGrid>
           <TitleContainer ref={teamTitleContainerRef}>
-            <SectionHeading>The Team</SectionHeading>
-            <div className="heading-border-bottom"></div>
-            <p className="section-text">Meet our Bandhus</p>
+            <HeroText>The Team</HeroText>
+            <Section>
+              <p className="section-text">
+                CivicDataLab works across sectors to increase access to information. We use free and open source tools
+                to collaborate and co-create with social change makers.
+              </p>
+            </Section>
             <div style={{ position: 'relative', height: '80%' }}>
               <StickyBox>
                 <h1>Current Job Openings</h1>
@@ -268,7 +262,7 @@ const Team = ({ data }) => {
           <Link to="/openings">browse jobs</Link>
         </StickyBox>
       </div>
-      <CivicDays />
+      <CivicDays home />
     </Layout>
   );
 };

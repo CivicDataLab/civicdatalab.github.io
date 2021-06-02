@@ -7,7 +7,7 @@ quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t
 github: https://github.com/apoorv74
 twitter:
 linkedin: https://www.linkedin.com/in/apoorvanand
-image: ./apoorv.png
+image: ./apoorv.jpg
 sectors: Law & Justice, Public Finance, FOSS
 accentcolor: '#153243'
 text: light

@@ -259,8 +259,8 @@ const ProjectTemplate = ({ data }) => {
 
             <LeftText>
               <p>Check us here:</p>
-              <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
-                {project.frontmatter.url}
+              <a target="_blank" rel="noreferrer noopener" href={`https://${url}`}>
+                {url}
               </a>
               <SocialLinksContainer>
                 {twitter && (
@@ -323,17 +323,17 @@ const ProjectTemplate = ({ data }) => {
 
             <LeftText mobile>
               <p>Check us here:</p>
-              <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
-                {project.frontmatter.url}
+              <a target="_blank" rel="noreferrer noopener" href={`https://${url}`}>
+                {url}
               </a>
               <SocialLinksContainer mobile>
-                <a href={project.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
+                <a href={twitter} target="_blank" rel="noreferrer noopener">
                   <FaTwitter />
                 </a>
-                <a href={project.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
+                <a href={linkedin} target="_blank" rel="noreferrer noopener">
                   <FaLinkedinIn />
                 </a>
-                <a href={project.frontmatter.github} target="_blank" rel="noreferrer noopener">
+                <a href={github} target="_blank" rel="noreferrer noopener">
                   <FaGithubAlt />
                 </a>
               </SocialLinksContainer>
