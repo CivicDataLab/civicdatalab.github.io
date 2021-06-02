@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import SectionHeading from '../styles/SectionHeading';
-import { FixedTitleContainer } from './work';
+import { TitleContainer } from './work';
 import Seo from '../components/Seo/Seo';
 import CivicDaysImages from '../components/CivicDaysImages';
 import useFixedScroll from '../hooks/useFixedScroll';
@@ -238,7 +238,7 @@ const Team = ({ data }) => {
       <Seo title="Team" />
       <TeamContainer>
         <StandardGrid>
-          <FixedTitleContainer ref={teamTitleContainerRef}>
+          <TitleContainer ref={teamTitleContainerRef}>
             <SectionHeading>The Team</SectionHeading>
             <div className="heading-border-bottom"></div>
             <p className="section-text">Meet our Bandhus</p>
@@ -248,7 +248,7 @@ const Team = ({ data }) => {
                 <Link to="/openings">browse jobs</Link>
               </StickyBox>
             </div>
-          </FixedTitleContainer>
+          </TitleContainer>
           <MemberCardsContainer ref={membersContainerRef}>
             {members.map((member) => (
               <MemberImageBox

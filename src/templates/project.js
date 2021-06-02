@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
+import { FaTwitter, FaLinkedinIn, FaGithubAlt, FaFacebook } from 'react-icons/fa';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Layout from '../components/Layout/Layout';
@@ -11,7 +11,7 @@ import { TitleContainer } from '../pages/work';
 import MiniTeamSection from '../components/MiniTeamSection';
 import SliderHomePage from '../components/SliderHomePage';
 import Seo from '../components/Seo/Seo';
-import Timeline from '../components/Timeline';
+// import Timeline from '../components/Timeline';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
 import StandardGrid from '../styles/StandardGrid';
@@ -75,7 +75,7 @@ const SummaryText = styled.div`
 
   @media (min-width: 1440px) {
     line-height: 1.5em;
-    left: -50px;
+    left: -30px;
     bottom: -100px;
     padding: 45px;
   }
@@ -130,6 +130,7 @@ const LeftText = styled.div`
   padding: ${(props) => (props.mobile ? '0 32px' : '0')};
   display: ${(props) => (props.mobile ? 'block' : 'none')};
   text-align: ${(props) => (props.mobile ? 'center' : 'left')};
+
   a {
     display: inline-block;
     color: #05b7be;
@@ -155,6 +156,11 @@ const LeftText = styled.div`
     display: ${(props) => (props.mobile ? 'none' : 'block')};
     padding: 0;
     margin: 40px 0;
+
+    a {
+      max-width: 250px;
+      word-wrap: break-word;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -183,7 +189,7 @@ const SocialLinksContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -236,10 +242,12 @@ const ProjectTemplate = ({ data }) => {
   const members = data.members.nodes;
   const partners = data.partners.nodes;
 
+  const { twitter, linkedin, github, facebook, url, solution, aim } = project.frontmatter;
+
   const leftContainerRef = React.useRef(null);
   const rightContainerRef = React.useRef(null);
 
-  useFixedScroll(leftContainerRef, rightContainerRef);
+  useFixedScroll(leftContainerRef, rightContainerRef, -100);
 
   return (
     <Layout>
@@ -247,7 +255,7 @@ const ProjectTemplate = ({ data }) => {
       <MainContainer>
         <StandardGrid>
           <TitleContainer ref={leftContainerRef}>
-            <HeroText>{project.frontmatter.name}</HeroText>
+            <HeroText style={{ wordWrap: 'break-word', maxWidth: '310px' }}>{project.frontmatter.name}</HeroText>
 
             <LeftText>
               <p>Check us here:</p>
@@ -255,15 +263,26 @@ const ProjectTemplate = ({ data }) => {
                 {project.frontmatter.url}
               </a>
               <SocialLinksContainer>
-                <a href={project.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
-                  <FaTwitter />
-                </a>
-                <a href={project.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
-                  <FaLinkedinIn />
-                </a>
-                <a href={project.frontmatter.github} target="_blank" rel="noreferrer noopener">
-                  <FaGithubAlt />
-                </a>
+                {twitter && (
+                  <a href={twitter} target="_blank" rel="noreferrer noopener">
+                    <FaTwitter />
+                  </a>
+                )}
+                {linkedin && (
+                  <a href={linkedin} target="_blank" rel="noreferrer noopener">
+                    <FaLinkedinIn />
+                  </a>
+                )}
+                {facebook && (
+                  <a href={facebook} target="_blank" rel="noreferrer noopener">
+                    <FaFacebook />
+                  </a>
+                )}
+                {github && (
+                  <a href={github} target="_blank" rel="noreferrer noopener">
+                    <FaGithubAlt />
+                  </a>
+                )}
               </SocialLinksContainer>
             </LeftText>
 
@@ -289,12 +308,19 @@ const ProjectTemplate = ({ data }) => {
               <p>Context:</p>
               <p>{project.frontmatter.context}</p>
             </ProjectText>
-            {project.frontmatter.solution && (
+            {aim && (
               <ProjectText>
-                <p>Our solution:</p>
-                <p>{project.frontmatter.solution}</p>
+                <p>Aim:</p>
+                <p>{aim}</p>
               </ProjectText>
             )}
+            {solution && (
+              <ProjectText>
+                <p>Our solution:</p>
+                <p>{solution}</p>
+              </ProjectText>
+            )}
+
             <LeftText mobile>
               <p>Check us here:</p>
               <a target="_blank" rel="noreferrer noopener" href={`https://${project.frontmatter.url}`}>
@@ -367,11 +393,13 @@ export const pageQuery = graphql`
         name
         summary
         context
+        aim
         solution
         url
         github
         twitter
         linkedin
+        facebook
         events {
           url
           title
@@ -434,7 +462,7 @@ export const pageQuery = graphql`
           website
           logo {
             childImageSharp {
-              fixed(width: 280) {
+              fixed(width: 180) {
                 ...GatsbyImageSharpFixed_noBase64
               }
             }

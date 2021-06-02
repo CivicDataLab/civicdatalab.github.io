@@ -9,7 +9,7 @@ twitter: https://twitter.com/gggodhwani
 linkedin: https://www.linkedin.com/in/gggodhwani
 image: ./gaurav.jpg
 sectors: Public Finance, Law & Justice, FOSS, Education
-projects: Public Procurements, Open Budgets India Platform - 2.0, The State of FOSS in India Report, Justice Hub, Girl Education and Spending Tracker, Zombie Tracker, The State of FOSS in India
+projects: Public Procurements, Open Budgets India Platform - 2.0, The State of FOSS in India Report, Justice Hub, Girl Education and Spending Tracker, Zombie Tracker, The State of FOSS in India, Akshara Foundation
 accentcolor: '#00008B'
 text: light
 ---

@@ -9,7 +9,7 @@ twitter: https://twitter.com/eopoxf
 linkedin: https://www.linkedin.com/in/deepthi-chand-alagandula-5415862b/
 image: ./dc.jpg
 sectors: Education,Urban Planning,Law & Justice
-projects: PetaBencana, JusticeHub, HAQ-POCSO implementation tracker, OpenCity, NORAL, PetaBencana, STiR Education, Pratham Books, Child Rights Laws Implementation Tracker
+projects: PetaBencana, JusticeHub, HAQ-POCSO implementation tracker, OpenCity, NORAL, PetaBencana, STiR Education, Pratham Books, Child Rights Laws Implementation Tracker, Akshara Foundation
 ---
 
 Deepthi Chand aka DC is data and tech evangelist motivated towards understanding the role technology plays in making the civic engagements better in the country.
