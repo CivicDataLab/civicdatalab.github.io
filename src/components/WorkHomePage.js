@@ -1,6 +1,6 @@
 import React from 'react';
 import WorkHomePageStyle from '../styles/WorkHomePage';
-import { Link, useStaticQuery } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import HeroText from '../styles/HeroText';
 import MainContainer from '../styles/MainContainer';
