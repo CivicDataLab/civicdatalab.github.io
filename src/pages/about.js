@@ -44,12 +44,17 @@ const StorySection = styled.div`
     line-height: 1.5em;
   }
 
-  .image {
-    display: none;
+  .description-text {
+    margin-top: 40px;
   }
 
   @media (min-width: 1280px) {
     padding: 80px 0;
+
+    .description-text {
+      margin-top: 60px;
+      width: 60%;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -135,7 +140,7 @@ const About = ({ data }) => {
           <MainContainer>
             <div>
               <HeroText>Open by default</HeroText>
-              <p>
+              <p class="description-text">
                 One of our key beliefs is to ensure all our work is open and free for everyone to use, build on and
                 share.
               </p>
