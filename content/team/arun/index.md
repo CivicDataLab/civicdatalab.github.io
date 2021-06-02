@@ -1,7 +1,7 @@
 ---
 name: Arun Sudarsan
 role: Economist
-medium: '@aruncdl'
+medium: '@arunsud'
 description:
 quote: No manmade system is immune to human deceit.
 github: https://github.com/aruncdl
