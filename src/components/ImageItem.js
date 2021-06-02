@@ -38,7 +38,7 @@ const ImageItemContainer = styled(Link)`
 const SectorLabel = styled.p`
   padding: 4px 10px;
   color: black !important;
-  background-color: #fa7fe7;
+  background-color: ${(props) => (props.color ? props.color : '#fa7fe7')};
   position: absolute;
   z-index: 500;
   top: 120px;
@@ -50,10 +50,22 @@ const SectorLabel = styled.p`
   }
 `;
 
-const ImageItem = ({ url, image, text, sector, boldText }) => {
+const sectors = [
+  { name: 'Education', color: '#E56997' },
+  { name: 'FOSS', color: '#129530' },
+  { name: 'Law & Justice', color: '#FBC740' },
+  { name: 'Public Finance', color: '#66D2D6' },
+  { name: 'Urban Planning', color: '#BD97CB' }
+];
+
+const sectorLabelColorGenerator = (sectorName) => {
+  return sectors.find((sector) => sector.name === sectorName).color;
+};
+
+const ImageItem = ({ url, image, text, sectorName, boldText }) => {
   return (
     <ImageItemContainer boldtext={boldText.toString()} to={url || '/'}>
-      {sector ? <SectorLabel>{sector}</SectorLabel> : null}
+      {sectorName ? <SectorLabel color={sectorLabelColorGenerator(sectorName)}>{sectorName}</SectorLabel> : null}
       {image ? <Image fluid={image} /> : <div />} <p>{text}</p>
     </ImageItemContainer>
   );

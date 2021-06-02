@@ -35,7 +35,7 @@ const SectorLabel = styled.div`
   display: none;
   @media (min-width: 1024px) {
     display: block;
-    background-color: #fa7fe7;
+    background-color: ${(props) => (props.color ? props.color : '#fa7fe7')};
     width: max-content;
     padding: 15px 26px;
     font-size: 25px;
@@ -60,7 +60,9 @@ const SectorTemplate = ({ data }) => {
           <TitleContainer ref={leftContainerRef}>
             <HeroText>Our Work</HeroText>
             <SectorInfo>
-              <SectorLabel>{data.markdownRemark.frontmatter.name}</SectorLabel>
+              <SectorLabel color={data.markdownRemark.frontmatter.color}>
+                {data.markdownRemark.frontmatter.name}
+              </SectorLabel>
               {/* <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a> */}
             </SectorInfo>
           </TitleContainer>
