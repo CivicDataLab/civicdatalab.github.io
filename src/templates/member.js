@@ -91,11 +91,11 @@ export const QuoteContainer = styled.div`
     position: absolute;
     left: 0;
     top: 50%;
-    height: 820px;
+    height: 780px;
     width: 400px;
 
     p {
-      margin-top: 520px;
+      margin-top: 485px;
       font-size: 20px;
       line-height: 1.4em;
 
@@ -108,10 +108,11 @@ export const QuoteContainer = styled.div`
 
   @media (min-width: 1440px) {
     width: 460px;
+    height: 860px;
     top: 55%;
 
     p {
-      margin-top: 580px;
+      margin-top: 480px;
       font-size: 25px;
     }
   }
@@ -154,10 +155,11 @@ export const Bio = styled.div`
 
   @media (min-width: 1280px) {
     grid-column: 6/12;
+    min-height: 1000px;
   }
 
   @media (min-width: 1440px) {
-    min-height: 300px;
+    min-height: 1180px;
   }
 `;
 
@@ -207,16 +209,6 @@ const BlogContainer = styled.div`
     > h2 {
       font-size: 40px;
     }
-  }
-
-  @media (min-width: 1280px) {
-    margin-top: 250px;
-    min-height: 500px;
-  }
-
-  @media (min-width: 1440px) {
-    margin-top: 250px;
-    min-height: 800px;
   }
 `;
 
@@ -340,11 +332,11 @@ const MemberTemplate = ({ data }) => {
               <p key={d}>{d}</p>
             ))}
             {member.html && <div dangerouslySetInnerHTML={{ __html: member.html }}></div>}
-            <BlogContainer>
-              <h2>Blogs</h2>
-              <BlogPostGrid>
-                {blogPosts.length ? (
-                  blogPosts.map((post) => {
+            {blogPosts.length ? (
+              <BlogContainer>
+                <h2>Blogs</h2>
+                <BlogPostGrid>
+                  {blogPosts.map((post) => {
                     return (
                       <BlogCard
                         key={post.guid}
@@ -353,12 +345,10 @@ const MemberTemplate = ({ data }) => {
                         postUrl={post.link}
                       />
                     );
-                  })
-                ) : (
-                  <p style={{ gridColumn: 'span 4' }}>No blogs found for the member.</p>
-                )}
-              </BlogPostGrid>
-            </BlogContainer>
+                  })}
+                </BlogPostGrid>
+              </BlogContainer>
+            ) : null}
           </Bio>
         </StandardGrid>
       </MemberContainer>

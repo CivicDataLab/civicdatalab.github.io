@@ -1,4 +1,5 @@
 import React from 'react';
+import HeroText from '../styles/HeroText';
 
 const CONSTANTS = {
   DELETING_SPEED: 100,
@@ -61,10 +62,10 @@ const TypeWriter = ({ messages }) => {
   };
 
   return (
-    <h1>
+    <HeroText>
       <span>{state.text}</span>
       {/* <span id="cursor" /> */}
-    </h1>
+    </HeroText>
   );
 };
 
