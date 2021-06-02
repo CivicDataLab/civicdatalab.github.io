@@ -201,7 +201,7 @@ const Footer = () => {
               {workLinks.map((navLink) => (
                 <li key={navLink.path}>
                   {!navLink.external ? (
-                    <Link to={navLink.path}>{navLink.name}</Link>
+                    <Link to={`/work${navLink.path}`}>{navLink.name}</Link>
                   ) : (
                     <ExternalLink url={navLink.path} name={navLink.name} />
                   )}

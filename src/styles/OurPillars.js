@@ -3,6 +3,11 @@ import styled from 'styled-components';
 const OurPillars = styled.div`
 margin-top: 60px;
 
+p {
+  margin-top: 40px;
+  line-height: 1.5em;
+}
+
 .pillars-container {
   display:grid;
   grid-template-columns: 50% 50%;
@@ -43,6 +48,11 @@ margin-top: 60px;
 @media (min-width: 1280px) {
   padding: 0;
   margin-top: 80px;
+
+  p {
+    margin-top: 60px;
+    width: 60%;
+  }
   
   h3 {
     font-size: 40px;

@@ -43,6 +43,10 @@ const OurPillars = () => {
     <MainContainer>
       <OurPillarsStyle>
         <HeroText className={'sectors-heading'}>Our Pillars</HeroText>
+        <p>
+          We believe in building holistic solutions that take our four pillars into equal consideration when trying to
+          address complex societal challenges.
+        </p>
         <div className={'pillars-container'}>
           <div className={'image-container'}>
             <h3>Data</h3>

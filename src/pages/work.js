@@ -14,7 +14,7 @@ export const TitleContainer = styled.div`
   padding: 0;
   font-size: 16px;
   margin-bottom: 10px;
-  margin-top: 48px;
+  margin-top: 40px;
 
   h1,
   h3 {
@@ -99,7 +99,7 @@ const Sectors = ({ data }) => {
                   url={project.fields.slug}
                   image={project.frontmatter.image.childImageSharp.fluid}
                   text={project.frontmatter.name}
-                  sector={project.frontmatter.sector}
+                  sectorName={project.frontmatter.sector}
                   boldText
                 />
               ))}

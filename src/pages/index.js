@@ -15,7 +15,6 @@ import { CivicDays } from './team';
 import Footer from '../components/Layout/Footer';
 import Navbar from '../components/Layout/Navbar';
 import TypeWriter from '../components/TypeWriter';
-import OurPillars from '../components/OurPillars';
 import OurPartners from '../components/OurPartners';
 import Seo from '../components/Seo/Seo';
 import BlogStrip from '../components/BlogStrip';
@@ -38,10 +37,11 @@ const HeroSection = styled(Section)`
   background-color: rgb(0, 0, 0, 0.5);
 
   h1 {
-    font-family: 'Bungee', cursive;
+    font-family: 'Bungee';
     font-size: 32px;
     text-align: left;
     margin-top: 0px;
+    color: white;
   }
 
   @media (min-width: 550px) {
@@ -168,23 +168,10 @@ const Index = ({ data }) => {
                 />
               ))}
             </StandardGrid>
-            {/* <div className="container-sectors">
-              {sectors.map((sector) => (
-                <SectorsCard
-                  key={sector.fields.slug}
-                  name={sector.frontmatter.name}
-                  description={sector.frontmatter.description}
-                  image={sector.frontmatter.image.childImageSharp.fluid}
-                  color={sector.frontmatter.color}
-                  link={sector.fields.slug}
-                />
-              ))}
-            </div> */}
           </MainContainer>
         </Sectors>
         <BlogStrip />
         <OurPartners partners={partners} />
-        <OurPillars />
 
         <TeamHomePage />
         <WorkHomePage />
