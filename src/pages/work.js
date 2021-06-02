@@ -25,7 +25,6 @@ export const TitleContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-    max-width: 60%;
 
     h1 {
       border-bottom: none;
@@ -37,12 +36,6 @@ export const TitleContainer = styled.div`
     grid-column: 1/4;
     padding-left: 0;
     padding-right: 0;
-  }
-`;
-
-export const FixedTitleContainer = styled(TitleContainer)`
-  @media (min-width: 1280px) {
-    position: fixed;
   }
 `;
 
@@ -94,9 +87,9 @@ const Sectors = ({ data }) => {
       <Seo title="Our Work" />
       <MainContainer>
         <StandardGrid>
-          <FixedTitleContainer ref={leftContainerRef}>
+          <TitleContainer ref={leftContainerRef}>
             <HeroText>Our Work</HeroText>
-          </FixedTitleContainer>
+          </TitleContainer>
           <ProjectsContent ref={rightContainerRef}>
             <SectorNav />
             <ProjectsContainer>
