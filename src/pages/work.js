@@ -99,7 +99,7 @@ const Sectors = ({ data }) => {
                   url={project.fields.slug}
                   image={project.frontmatter.image.childImageSharp.fluid}
                   text={project.frontmatter.name}
-                  sector={project.frontmatter.sector}
+                  sectorName={project.frontmatter.sector}
                   boldText
                 />
               ))}
