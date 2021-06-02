@@ -36,20 +36,21 @@ const ValueContainer = styled.div`
       padding: 0;
       max-width: 480px;
     }
-
-    div {
-      flex: 1;
-      margin-right: 40px;
-    }
-
-    div:last-of-type {
-      flex: 2;
-    }
   }
 
   @media (min-width: 1280px) {
+    padding-right: 20px;
+  }
+
+  @media (min-width: 1440px) {
     h2 {
-      font-size: 48px;
+      font-size: 40px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    h2 {
+      font-size: 45px;
     }
   }
 `;
@@ -62,7 +63,6 @@ const Value = ({ number, title, bodyHTML }) => {
         <h2 className="title">{title}</h2>
         <div dangerouslySetInnerHTML={{ __html: bodyHTML }} />
       </div>
-      <div className="image-container"></div>
     </ValueContainer>
   );
 };
