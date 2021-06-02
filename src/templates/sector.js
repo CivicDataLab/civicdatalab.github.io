@@ -7,12 +7,12 @@ import SectorNav from '../components/SectorNav';
 import HeroText from '../styles/HeroText';
 import ImageItem from '../components/ImageItem';
 import WorkHomePage from '../components/WorkHomePage';
-import SliderHomePage from '../components/SliderHomePage';
 import MiniTeamSection from '../components/MiniTeamSection';
 import Seo from '../components/Seo/Seo';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
 import StandardGrid from '../styles/StandardGrid';
+import BlogStrip from '../components/BlogStrip';
 
 const SectorInfo = styled.div`
   a {
@@ -42,6 +42,18 @@ const SectorLabel = styled.div`
     font-weight: 500;
   }
 `;
+
+const sectorBlogTagGenerator = (fullSectorName) => {
+  const sectorTags = [
+    { name: 'Public Finance', tag: 'publicfinance' },
+    { name: 'Law & Justice', tag: 'law' },
+    { name: 'Education', tag: 'education' },
+    { name: 'Urban Planning', tag: 'cities' },
+    { name: 'FOSS', tag: 'foss' }
+  ];
+
+  return sectorTags.find((sector) => sector.name === fullSectorName).tag;
+};
 
 const SectorTemplate = ({ data }) => {
   const members = data.members.nodes;
@@ -83,18 +95,7 @@ const SectorTemplate = ({ data }) => {
           </ProjectsContent>
         </StandardGrid>
       </MainContainer>
-      <div className="slider-wrapper" style={{ marginBottom: 150, width: '100%', display: 'flex', overflow: 'auto' }}>
-        {data.markdownRemark.frontmatter.events?.map((event, index) => (
-          <SliderHomePage
-            key={event.title}
-            dark={index % 2 !== 0}
-            theme="true"
-            project={event.project}
-            title={event.title}
-            link={event.url}
-          />
-        ))}
-      </div>
+      <BlogStrip sectorName={sectorBlogTagGenerator(data.markdownRemark.frontmatter.name)} />
       <WorkHomePage />
     </Layout>
   );

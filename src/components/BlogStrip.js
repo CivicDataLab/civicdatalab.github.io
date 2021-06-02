@@ -36,20 +36,23 @@ const BlogPreview = ({ title, author, imageUrl, postUrl }) => {
   );
 };
 
-const BlogStrip = () => {
+const BlogStrip = ({ sectorName }) => {
   const [blogPosts] = useMediumFeed('civicdatalab');
 
   return (
     <BlogStripContainer>
-      {blogPosts?.map((post) => (
-        <BlogPreview
-          key={post.guid}
-          title={post.title}
-          author={post['dc:creator']}
-          imageUrl={getCoverImageUrlFromMediumPost(post['content:encoded'])}
-          postUrl={post.link}
-        />
-      ))}
+      {blogPosts
+        .filter((post) => post.categories.indexOf(sectorName) > -1)
+        ?.slice(0, 4)
+        .map((post) => (
+          <BlogPreview
+            key={post.guid}
+            title={post.title}
+            author={post['dc:creator']}
+            imageUrl={getCoverImageUrlFromMediumPost(post['content:encoded'])}
+            postUrl={post.link}
+          />
+        ))}
     </BlogStripContainer>
   );
 };
