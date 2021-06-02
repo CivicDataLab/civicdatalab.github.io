@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout/Layout';
-import { FixedTitleContainer, ProjectsContainer, ProjectsContent } from '../pages/work';
+import { TitleContainer, ProjectsContainer, ProjectsContent } from '../pages/work';
 import SectorNav from '../components/SectorNav';
 import HeroText from '../styles/HeroText';
 import ImageItem from '../components/ImageItem';
@@ -57,13 +57,13 @@ const SectorTemplate = ({ data }) => {
       <Seo title={data.markdownRemark.frontmatter.name} />
       <MainContainer>
         <StandardGrid>
-          <FixedTitleContainer ref={leftContainerRef}>
+          <TitleContainer ref={leftContainerRef}>
             <HeroText>Our Work</HeroText>
             <SectorInfo>
               <SectorLabel>{data.markdownRemark.frontmatter.name}</SectorLabel>
               {/* <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a> */}
             </SectorInfo>
-          </FixedTitleContainer>
+          </TitleContainer>
           <ProjectsContent ref={rightContainerRef}>
             <SectorNav />
             <ProjectsContainer>
