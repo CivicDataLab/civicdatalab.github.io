@@ -79,7 +79,7 @@ const CardContent = styled.div`
   }
 
   @media (min-width: 1440px) {
-    height: 350px;
+    height: 380px;
     h4 {
       font-size: 32px;
       line-height: 56px;
@@ -117,7 +117,7 @@ const SectorCard = ({ name, description, link, color, image, about }) => {
       <Image fluid={image} />
       <CardContent>
         <h4 style={{ color: color }} className={'sector-name'}>
-          {name}
+          {name == 'Free & Open Source Software' ? 'FOSS' : name}
         </h4>
         <p>{description}</p>
         <CardLink to={link}>
