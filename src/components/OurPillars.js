@@ -5,7 +5,7 @@ import HeroText from '../styles/HeroText';
 import OurPillarsStyle from '../styles/OurPillars';
 import MainContainer from '../styles/MainContainer';
 
-const OurPillars = () => {
+export const PillarImages = () => {
   const imageData = useStaticQuery(graphql`
     query {
       dataPillar: file(relativePath: { eq: "data.png" }) {
@@ -40,6 +40,29 @@ const OurPillars = () => {
   `);
 
   return (
+    <>
+      <div className={'image-container'}>
+        <h3>Data</h3>
+        <Image fluid={imageData.dataPillar.childImageSharp.fluid} />
+      </div>
+      <div className={'image-container'}>
+        <h3>Tech</h3>
+        <Image fluid={imageData.technologyPillar.childImageSharp.fluid} />
+      </div>
+      <div className={'image-container'}>
+        <h3>Design</h3>
+        <Image fluid={imageData.designPillar.childImageSharp.fluid} />
+      </div>
+      <div className={'image-container'}>
+        <h3>Social Science</h3>
+        <Image fluid={imageData.socialPillar.childImageSharp.fluid} />
+      </div>
+    </>
+  );
+};
+
+const OurPillars = () => {
+  return (
     <MainContainer>
       <OurPillarsStyle>
         <HeroText className={'sectors-heading'}>Our Pillars</HeroText>
@@ -48,22 +71,7 @@ const OurPillars = () => {
           address complex societal challenges.
         </p>
         <div className={'pillars-container'}>
-          <div className={'image-container'}>
-            <h3>Data</h3>
-            <Image fluid={imageData.dataPillar.childImageSharp.fluid} />
-          </div>
-          <div className={'image-container'}>
-            <h3>Tech</h3>
-            <Image fluid={imageData.technologyPillar.childImageSharp.fluid} />
-          </div>
-          <div className={'image-container'}>
-            <h3>Design</h3>
-            <Image fluid={imageData.designPillar.childImageSharp.fluid} />
-          </div>
-          <div className={'image-container'}>
-            <h3>Social Science</h3>
-            <Image fluid={imageData.socialPillar.childImageSharp.fluid} />
-          </div>
+          <PillarImages />
         </div>
       </OurPillarsStyle>
     </MainContainer>

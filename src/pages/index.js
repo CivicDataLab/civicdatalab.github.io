@@ -31,7 +31,7 @@ export const Section = styled.section`
 `;
 
 const HeroSection = styled(Section)`
-  height: 45vh;
+  height: 60vh;
   color: white;
   padding-top: 100px;
   background-color: rgb(0, 0, 0, 0.5);
@@ -40,8 +40,14 @@ const HeroSection = styled(Section)`
     font-family: 'Bungee';
     font-size: 32px;
     text-align: left;
-    margin-top: 0px;
+    margin-top: 80px;
     color: white;
+    width: 100%;
+    line-height: 1.4em;
+  }
+
+  .animated-text {
+    color: #1DCCCC;
   }
 
   @media (min-width: 550px) {
@@ -55,9 +61,15 @@ const HeroSection = styled(Section)`
     height: 75vh;
 
     h1 {
-      width: 50%;
+      width: 75%;
       font-size: 60px;
       margin-top: 50px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    h1 {
+      margin-top: 100px;
     }
   }
 
@@ -142,13 +154,7 @@ const Index = ({ data }) => {
           <Navbar dark />
           <HeroSection>
             <MainContainer>
-              <TypeWriter
-                messages={[
-                  'We co-create free and open source solutions for social change.',
-                  'We collaborate with the community on social innovation projects.',
-                  'We empower civic participation through access to information.'
-                ]}
-              />
+              <TypeWriter messages={['data.', 'tech.', 'design.', 'social science.']} />
             </MainContainer>
           </HeroSection>
         </BackgroundImage>

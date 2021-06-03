@@ -5,7 +5,7 @@ import MainContainer from '../styles/MainContainer';
 import HeroText from '../styles/HeroText';
 import StandardGrid from '../styles/StandardGrid';
 
-const TeamHomePage = (props) => {
+const TeamHomePage = () => {
   return (
     <MainContainer>
       <TeamHomePageStyle>
