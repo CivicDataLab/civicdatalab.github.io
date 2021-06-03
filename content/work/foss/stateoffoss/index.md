@@ -35,6 +35,6 @@ resources:
       link: 'https://www.youtube.com/watch?v=apXUA9xM4Zk',
       type: 'Video'
     }
-sector: FOSS
+sector: Free & Open Source Software
 type: project
 ---
