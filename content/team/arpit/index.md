@@ -9,7 +9,7 @@ twitter: https://twitter.com/TheDataAreClean
 linkedin: https://linkedin.com/in/thedataareclean
 image: ./arpit.png
 accentcolor: '#FFCCFF'
-sectors: Public Finance,Education,FOSS
+sectors: Public Finance,Education,Free & Open Source Software
 projects: NORAL,Girl Education and Spending Tracker, The State of FOSS in India
 ---
 

@@ -49,7 +49,7 @@ const sectorBlogTagGenerator = (fullSectorName) => {
     { name: 'Law & Justice', tag: 'law' },
     { name: 'Education', tag: 'education' },
     { name: 'Urban Planning', tag: 'cities' },
-    { name: 'FOSS', tag: 'foss' }
+    { name: 'Free & Open Source Software', tag: 'foss' }
   ];
 
   return sectorTags.find((sector) => sector.name === fullSectorName).tag;

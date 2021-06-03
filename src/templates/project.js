@@ -3,18 +3,18 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt, FaFacebook } from 'react-icons/fa';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+// import Carousel from 'react-multi-carousel';
+// import 'react-multi-carousel/lib/styles.css';
 import Layout from '../components/Layout/Layout';
 import HeroText from '../styles/HeroText';
 import { TitleContainer } from '../pages/work';
 import MiniTeamSection from '../components/MiniTeamSection';
-import SliderHomePage from '../components/SliderHomePage';
 import Seo from '../components/Seo/Seo';
 // import Timeline from '../components/Timeline';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
 import StandardGrid from '../styles/StandardGrid';
+import Resources from '../components/Resources';
 
 const ProjectContent = styled.div`
   display: grid;
@@ -189,7 +189,8 @@ const SocialLinksContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -204,50 +205,50 @@ const PartnersContainer = styled.div`
   }
 `;
 
-const StyledCarousel = styled(Carousel)`
-  li > div {
-    max-height: 300px;
-  }
+// const StyledCarousel = styled(Carousel)`
+//   li > div {
+//     max-height: 300px;
+//   }
 
-  @media (min-width: 1024px) {
-    li > div {
-      max-height: 600px;
-      margin-left: 4px;
-      margin-right: 4px;
-    }
-  }
-`;
+//   @media (min-width: 1024px) {
+//     li > div {
+//       max-height: 600px;
+//       margin-left: 4px;
+//       margin-right: 4px;
+//     }
+//   }
+// `;
 
-const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
+// const responsive = {
+//   superLargeDesktop: {
+//     breakpoint: { max: 4000, min: 3000 },
+//     items: 5
+//   },
+//   desktop: {
+//     breakpoint: { max: 3000, min: 1024 },
+//     items: 3
+//   },
+//   tablet: {
+//     breakpoint: { max: 1024, min: 464 },
+//     items: 2
+//   },
+//   mobile: {
+//     breakpoint: { max: 464, min: 0 },
+//     items: 1
+//   }
+// };
 
 const ProjectTemplate = ({ data }) => {
   const project = data.markdownRemark;
   const members = data.members.nodes;
   const partners = data.partners.nodes;
 
-  const { twitter, linkedin, github, facebook, url, solution, aim } = project.frontmatter;
+  const { twitter, linkedin, github, facebook, url, solution, aim, resources } = project.frontmatter;
 
   const leftContainerRef = React.useRef(null);
   const rightContainerRef = React.useRef(null);
 
-  useFixedScroll(leftContainerRef, rightContainerRef, -100);
+  useFixedScroll(leftContainerRef, rightContainerRef);
 
   return (
     <Layout>
@@ -354,24 +355,12 @@ const ProjectTemplate = ({ data }) => {
         </StandardGrid>
       </MainContainer>
       {/* {project.frontmatter.timeline && <Timeline timelineItems={project.frontmatter.timeline} />} */}
-      <StyledCarousel responsive={responsive}>
+      {/* <StyledCarousel responsive={responsive}>
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
         <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
-      </StyledCarousel>
-      <div className="slider-wrapper" style={{ width: '100%', display: 'flex', overflow: 'auto' }}>
-        {project.frontmatter.events?.map((event, index) => (
-          <SliderHomePage
-            key={event.title}
-            dark={index % 2 !== 0}
-            theme="true"
-            project={event.project}
-            title={event.title}
-            link={event.url}
-          />
-        ))}
-      </div>
+      </StyledCarousel> */}
       <MainContainer>
         <StandardGrid>
           <ProjectContent>
@@ -379,6 +368,7 @@ const ProjectTemplate = ({ data }) => {
           </ProjectContent>
         </StandardGrid>
       </MainContainer>
+      {resources && <Resources resources={resources} />}
     </Layout>
   );
 };
@@ -400,26 +390,10 @@ export const pageQuery = graphql`
         twitter
         linkedin
         facebook
-        events {
-          url
+        resources {
+          link
           title
           type
-          project
-        }
-        timeline {
-          date
-          title
-        }
-        resources {
-          url
-          title
-          image {
-            childImageSharp {
-              fluid(maxWidth: 500, quality: 100) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-            }
-          }
         }
         image {
           childImageSharp {

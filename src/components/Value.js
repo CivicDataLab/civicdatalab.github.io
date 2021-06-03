@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ValueContainer = styled.div`
-  margin: 48px auto;
+  margin: 20px auto;
 
   .content {
-    padding: 0 24px;
+    padding: 0;
   }
 
   h2 {
@@ -21,6 +21,10 @@ const ValueContainer = styled.div`
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 3rem;
+  }
+
+  p {
+    line-height: 1.5em;
   }
 
   .image-container {
@@ -40,6 +44,10 @@ const ValueContainer = styled.div`
 
   @media (min-width: 1280px) {
     padding-right: 20px;
+
+    .title {
+      min-height: 100px;
+    }
   }
 
   @media (min-width: 1440px) {
