@@ -1,6 +1,6 @@
 ---
 name: Law & Justice
-description: We believe that access to justice can be improved by better access to information. We curate datasets, build tools and create resources to promote evidence based reforms in the sector.
+description: We create and curate high quality public datasets in the areas of law and justice. We build open data portals to increase information accessibility and conduct trainings and workshops for our partners to enhance their data and tech capacity.
 image: ./lnj.jpg
 color: '#FBC740'
 type: sector

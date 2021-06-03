@@ -41,12 +41,29 @@ const Section = styled.section`
 
     .section-text {
       max-width: 250px;
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .section-text {
+      font-size: 18px;
     }
   }
 `;
 
 const TeamContainer = styled(MainContainer)`
   margin-top: 20px;
+`;
+
+const TeamTitleContainer = styled(TitleContainer)`
+  @media (min-width: 1280px) {
+    margin-top: 0;
+  }
+
+  @media (min-width: 1920px) {
+    margin-top: 40px;
+  }
 `;
 
 const MemberCardsContainer = styled.div`
@@ -124,6 +141,14 @@ const StickyBox = styled.div`
     a {
       font-size: 18px;
     }
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 60px;
+  }
+
+  @media (min-width: 1920px) {
+    margin-top: 180px;
   }
 `;
 
@@ -228,12 +253,12 @@ const Team = ({ data }) => {
       <Seo title="Team" />
       <TeamContainer>
         <StandardGrid>
-          <TitleContainer ref={teamTitleContainerRef}>
-            <HeroText>The Team</HeroText>
+          <TeamTitleContainer ref={teamTitleContainerRef}>
+            <HeroText style={{ marginTop: 0 }}>The Team</HeroText>
             <Section>
               <p className="section-text">
-                CivicDataLab works across sectors to increase access to information. We use free and open source tools
-                to collaborate and co-create with social change makers.
+                CivicDataLab works across sectors to increase access to information. Meet the multi-disciplinary team
+                who work behind the scenes to make it all happen!
               </p>
             </Section>
             <div style={{ position: 'relative', height: '80%' }}>
@@ -242,7 +267,7 @@ const Team = ({ data }) => {
                 <Link to="/openings">browse jobs</Link>
               </StickyBox>
             </div>
-          </TitleContainer>
+          </TeamTitleContainer>
           <MemberCardsContainer ref={membersContainerRef}>
             {members.map((member) => (
               <MemberImageBox
