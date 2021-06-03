@@ -54,7 +54,7 @@ const CardContent = styled.div`
   box-sizing: border-box;
   padding: 18px 20px;
   position: relative;
-  height: 260px;
+  height: 375px;
 
   h4 {
     text-align: left;
@@ -75,11 +75,11 @@ const CardContent = styled.div`
 
   @media (min-width: 1280px) {
     padding: 30px;
-    height: 280px;
+    height: 340px;
   }
 
   @media (min-width: 1440px) {
-    height: 320px;
+    height: 350px;
     h4 {
       font-size: 32px;
       line-height: 56px;
@@ -103,7 +103,7 @@ const CardLink = styled(Link)`
   left: 20px;
   bottom: 20px;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     font-size: 20px;
     line-height: 78px;
     right: 18px;
@@ -119,7 +119,7 @@ const SectorCard = ({ name, description, link, color, image, about }) => {
         <h4 style={{ color: color }} className={'sector-name'}>
           {name}
         </h4>
-        <p>{description.substring(0, 100)}...</p>
+        <p>{description}</p>
         <CardLink to={link}>
           {about ? 'Find them here ' : 'Learn more '}
           &gt;&gt;
