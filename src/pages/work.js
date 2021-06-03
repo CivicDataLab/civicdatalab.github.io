@@ -36,6 +36,10 @@ export const TitleContainer = styled.div`
     grid-column: 1/4;
     padding-left: 0;
     padding-right: 0;
+
+    h1 {
+      padding-bottom: 0;
+    }
   }
 `;
 

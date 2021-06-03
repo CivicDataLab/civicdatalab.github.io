@@ -3,7 +3,7 @@ import HeroText from '../styles/HeroText';
 
 const CONSTANTS = {
   DELETING_SPEED: 100,
-  TYPING_SPEED: 50
+  TYPING_SPEED: 75
 };
 
 const TypeWriter = ({ messages }) => {
@@ -63,7 +63,8 @@ const TypeWriter = ({ messages }) => {
 
   return (
     <HeroText>
-      <span>{state.text}</span>
+      <span>We work to strengthen the course of civic engagements using </span>
+      <span className="animated-text">{state.text}</span>
       {/* <span id="cursor" /> */}
     </HeroText>
   );
