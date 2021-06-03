@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 const TeamHomePage = styled.div`
-  display: flex;
-  flex-direction: column;
   padding: 48px 0;
 
   hr {
@@ -24,17 +22,14 @@ const TeamHomePage = styled.div`
 
   .meet-the-team {
     text-align: left;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 33px;
-    font-family: Montserrat;
     font-weight: 500;
     color: #0da3b7;
     text-decoration: none;
   }
 
   @media (min-width: 900px) {
-    flex-direction: row;
-
     .content {
       flex: 50%;
     }
@@ -94,14 +89,14 @@ const TeamHomePage = styled.div`
     .section-heading {
       font-size: 60px;
       line-height: 60px;
-      margin-top: 161px;
+      margin-top: 150px;
     }
     hr {
       margin-top: 40px;
       margin-bottom: 40px;
     }
     .lower-content-section {
-      margin-top: 89px;
+      margin-top: 80px;
     }
 
     p {

@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
-import Image from 'gatsby-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
 import { Section } from './index';
@@ -16,7 +15,8 @@ import MainContainer from '../styles/MainContainer';
 import Value from '../components/Value';
 import Seo from '../components/Seo/Seo';
 import StandardGrid from '../styles/StandardGrid';
-import OurPillars from '../components/OurPillars';
+import { PillarImages } from '../components/OurPillars';
+import Resources from '../components/Resources';
 
 const HeroSection = styled(Section)`
   height: 40vh;
@@ -72,27 +72,56 @@ const ThreeGrid = styled(StandardGrid)`
 `;
 
 const TwoGrid = styled(StandardGrid)`
-  .gatsby-image-wrapper {
-    height: 100%;
-    width: 60%;
-    margin: auto;
-  }
-
   @media (min-width: 1280px) {
     padding: 40px 0;
     > * {
       grid-column: span 6;
     }
+  }
+`;
 
+const FourGrid = styled(StandardGrid)`
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h3 {
+      margin-top: 0;
+      min-height: 40px;
+    }
+  }
+
+  .gatsby-image-wrapper {
+    height: 100%;
+    width: 80%;
+  }
+
+  grid-template-columns: repeat(2, 1fr);
+  > * {
+    grid-column: span 1;
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(12, 1fr);
+    > * {
+      grid-column: span 3;
+    }
     .gatsby-image-wrapper {
-      height: 83%;
+      height: 100%;
       width: 50%;
-      margin: auto;
+    }
+
+    > * {
+      grid-column: span 3;
     }
   }
 `;
 
 const ValuesSection = styled.div`
+  padding-top: 40px;
+
   @media (min-width: 1280px) {
     padding-top: 80px;
   }
@@ -101,6 +130,18 @@ const ValuesSection = styled.div`
     padding-top: 100px;
   }
 `;
+
+const resources = [
+  {
+    link: 'https://medium.com/civicdatalab/the-many-lives-of-open-data-1eb44becc261',
+    title: 'The Many Lives of Open Data'
+  },
+  {
+    link: 'https://medium.com/civicdatalab/work-in-the-time-of-coronavirus-8663bb6e3908',
+    title: 'Work in the time of Coronavirus'
+  },
+  { link: 'https://medium.com/civicdatalab/the-scrumji-experiment-44b25fe60b55', title: 'The ScrumJi Experiment!' }
+];
 
 const About = ({ data }) => {
   const values = data.allMarkdownRemark.edges;
@@ -116,9 +157,9 @@ const About = ({ data }) => {
         </BackgroundImage>
         <StorySection>
           <MainContainer>
-            <div>
-              <HeroText>About Us</HeroText>
-              <ThreeGrid>
+            <HeroText>About Us</HeroText>
+            <TwoGrid>
+              <div>
                 <p>
                   We are a research lab working on the intersection use data, tech, design and social science to
                   strengthen the course of civic engagements in India.
@@ -131,24 +172,11 @@ const About = ({ data }) => {
                   We aim to grow data and tech literacy of governments, non-profits, think-tanks, media houses,
                   universities, and more to enable data-driven decision making at scale.
                 </p>
-              </ThreeGrid>
-            </div>
-          </MainContainer>
-        </StorySection>
-        <OurPillars />
-        <StorySection>
-          <MainContainer>
-            <div>
-              <HeroText>Open by default</HeroText>
-              <p class="description-text">
-                One of our key beliefs is to ensure all our work is open and free for everyone to use, build on and
-                share.
-              </p>
-              <TwoGrid>
-                <Image fluid={data.openData.childImageSharp.fluid} />
-                <Image fluid={data.openSource.childImageSharp.fluid} />
-              </TwoGrid>
-            </div>
+              </div>
+              <FourGrid>
+                <PillarImages />
+              </FourGrid>
+            </TwoGrid>
           </MainContainer>
         </StorySection>
         <MainContainer>
@@ -168,27 +196,10 @@ const About = ({ data }) => {
             </ThreeGrid>
           </ValuesSection>
         </MainContainer>
+        <Resources onlyBlogs resources={resources} />
         <TeamHomePage />
         <WorkHomePage />
         <CivicDays />
-        {/* <AboutCardsSection>
-          <SectorCard
-            name="Brand Assets"
-            image={data.assetsCover.childImageSharp.fluid}
-            description="Looking for our logo and official colours?"
-            color="#000"
-            link=""
-            about
-          />
-          <SectorCard
-            name="Blogs"
-            image={data.blogsCover.childImageSharp.fluid}
-            description="Want to know of our experiences and insights on work and life?"
-            color="#000"
-            link=""
-            about
-          />
-        </AboutCardsSection> */}
       </main>
       <Footer />
     </ThemeProvider>

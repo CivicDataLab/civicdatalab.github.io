@@ -14,24 +14,26 @@ timeline:
   - { date: '2020-09-01', title: 'Entry into hackathon' }
   - { date: '2020-12-01', title: 'Conference' }
 resources:
-  - { url: 'https://docs.justicehub.in', image: './image.jpg', title: 'Justice Hub resources website' }
-events:
   - {
-      url: 'https://medium.com/civicdatalab/the-state-of-data-in-the-judicial-sector-9a178a143e',
+      link: 'https://medium.com/civicdatalab/the-state-of-data-in-the-judicial-sector-9a178a143e',
       title: 'The State of Data in the Judicial Sector',
-      project: 'Blog',
       type: 'Blog'
     }
   - {
-      url: 'https://dataforjustice.substack.com',
-      title: 'DataforJustice - Newsletter',
-      project: 'News Letter',
-      type: 'NewsLetter'
+      link: 'https://idronline.org/developing-our-digital-commons/',
+      title: 'Developing our digital commons',
+      type: 'Blog'
     }
+  - { link: 'https://dataforjustice.substack.com', title: 'DataforJustice - Newsletter', type: 'NewsLetter' }
   - {
-      url: 'https://www.thequint.com/voices/opinion/legal-datasets-information-technology-access-to-data',
+      link: 'https://www.thequint.com/voices/opinion/legal-datasets-information-technology-access-to-data',
       title: 'Cost of Not Sharing Legal Datasets? Truth Is, We Don’t Know Yet',
-      project: 'Blog',
       type: 'Blog'
     }
+  - {
+      link: 'https://www.barandbench.com/columns/the-open-justice-data-revolution',
+      title: 'The Open Justice data revolution',
+      type: 'Blog'
+    }
+  - { link: 'https://docs.justicehub.in', title: 'Justice Hub - Documentation and Resources', type: 'Guidebook' }
 ---

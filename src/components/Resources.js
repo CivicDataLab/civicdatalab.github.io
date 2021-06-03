@@ -1,60 +1,54 @@
 import React from 'react';
+import TeamHomePageStyle from '../styles/TeamHomePage';
+import MainContainer from '../styles/MainContainer';
+import HeroText from '../styles/HeroText';
+import StandardGrid from '../styles/StandardGrid';
 import styled from 'styled-components';
-import ImageItem from './ImageItem';
 
-const ResourcesContainer = styled.div`
-  padding: 0 30px;
-  h3 {
-    font-family: Bungee;
-    font-size: 32px;
-    width: 60px;
-    display: inline-block;
-    text-align: left;
-    margin-bottom: 16px;
-  }
+const ResourcesStyle = styled(TeamHomePageStyle)`
+  a {
+    display: block;
+    font-weight: 500;
+    color: #0da3b7;
+    text-decoration: none;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #0da3b7;
+    margin: 20px 0;
 
-  @media (min-width: 1024px) {
-    padding: 0;
-    margin-bottom: 50px;
-    h3 {
-      font-size: 44px;
-      width: max-content;
-      margin-bottom: 35px;
+    &:hover {
+      color: #1dcccc;
     }
   }
-`;
 
-const ResourcesGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 12px;
-  margin-top: 16px;
-
-  @media (min-width: 1024px) {
-    grid-gap: 24px;
-    grid-template-columns: 1fr 1fr;
+  .upper-content-section {
+    max-width: 100%;
   }
 
-  @media (min-width: 2000px) {
-    grid-template-columns: 1fr 1fr 1fr;
+  h1 {
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
 `;
 
-const Resources = ({ resources }) => {
+const Resources = ({ resources, onlyBlogs }) => {
   return (
-    <ResourcesContainer>
-      <h3>Resources</h3>
-      <ResourcesGrid>
-        {resources.map((resource) => (
-          <ImageItem
-            key={resource.url}
-            url={resource.url}
-            image={resource.image.childImageSharp.fluid}
-            text={resource.title}
-          />
-        ))}
-      </ResourcesGrid>
-    </ResourcesContainer>
+    <MainContainer>
+      <ResourcesStyle>
+        <StandardGrid>
+          <div className={'content upper-content-section'}>
+            <HeroText className={'section-heading'}>{onlyBlogs ? 'blogs' : 'resources'}</HeroText>
+          </div>
+          <div className={'content lower-content-section'}>
+            <hr />
+            {resources?.map((resource) => (
+              <a key={resource.link} href={resource.link} target="_blank" rel="noopener noreferrer">
+                {resource.title}
+              </a>
+            ))}
+          </div>
+        </StandardGrid>
+      </ResourcesStyle>
+    </MainContainer>
   );
 };
 

@@ -14,27 +14,10 @@ text: light
 projects: Justice Hub, Child Rights Laws Implementation Tracker, Zombie Tracker
 ---
 
-Apoorv joined the CivicDataLab team in 2018. Starting this journey, he wasn't sure about the other hats he will have to wear apart from just handling datasets - a task that he was trained in before joining the two member team. His open data journey started with a short volunteering stint at DataKind. There he used his "data-skills" to do "Data-for-good". He wasn't sure what "data-for-good" meant then and he's still learning and unlearning what it means now. At CivicDataLab, he's working on finding opportunities to make data-driven discourse the norm and not the exception especially in the areas of Law and Justice. Through these collaborations, he's discovering the importance of a few components that might eventually lead him to understand the meaning of doing "data-for-good".
+Apoorv started his "open data" journey as a volunteer, with DataKind, to do "Data-for-good". He wasn't sure what "data-for-good" meant then. Searching for answers, he joined the two-member CivicDataLab team, in 2018, and started collaborating to make public datasets more accessible to citizens. This sounded as easy as creating an API, but soon he found about the other critical components that are needed, and are often hidden or missing, to enhance public access to information. His role in the team is to find collaboration opportunities that seek to bridge the gap between the demand and supply of key datasets especially in the areas of Law and Justice. 
 
-He started this journey with a miniscule understanding of one category of compoents, the ones which are usually for granted:
+To curate more open datasets in this sector and contribute to an improved practice of using data to understand the nuances of Rule of Law and Access to Justice, he has lead a few research initiatives including (non-inclusive list)
 
-- (Good) Datasets to begin with,
-- and Transparent and Well documented processes to collect data.
-
-Collaborating with partners, he discovered another category of components, ones that are usually missing from the data-discourse:
-
-- A community of people who are represented in those datasets,
-- The challenges of collectivising efforts for long term sustainability,
-- Sharing Resources and
-- The role of different actors at each of these steps. ...
-
-While continously adding more components to this list, he's also in search for a formula, hoping it exists, which can help him can arrange these variables in some order to build more participatory, transparent and accountable communities.
-
-Here are a few memorable moments from this short journey with CivicDataLab:
-
-- Launching the Justice Hub - A community, with an open source data platform at its core, to crowd source datasets, create commons, and share knowledge in the areas of law and justice. This was just a milestone, the multiple events, sessions, workshops that lead us here were equally, if not more, memorable events.
-- The Zombie Tracker launch event - Where he was part of a panel comprising of lawyers and activists to discuss the process on gathering more evidence around unconstitutional cases that are registered under Section 66A of the IT Act. Recently, we, in collaboration with the Internet Freedom Foundation, submitted our application to the eCommittee - Supreme Court of India to bring this to their notice and seek their help in scaling this project to other parts of the country.
-- The opportunity to present our work and learn from dignitaries from the Judiciary, professors from the National Law univerties and other friends and advisors who have always helped us in understanding the sectoral nuances of our work.
-- Organising and attending Civic Days - As a remote team this is quite-an-essential ingredient which adds a lot to our existence. It's a week long get together event that helps us in building the team and organisation which we're all proud to associate ourselves with. We try and organise these events at a place where one of our bandhu (team member) lives. Till now, we've been to Warangal, Bangalore, Delhi, Indore, Shangarh (Himachal Pradesh) and Coonoor.
-
-Well, I have to stay within the work limit, but I hope that to keep adding to this list ..
+- The [Justice Hub](justicehub.in/) - An open data platform to crowd source datasets and create data and tech commons in the areas of law and justice. 
+- [The Zombie Tracker](zombietracker.in/) - A platform to curate evidence and track the unconstitutional cases registered under section 66A of the Information Technology Act.
+- [Tracking the implementation of law](https://civicdatalab.in/website-new/work/lawandjustice/childrights/) around Child Sexual Offences in the country. 

@@ -8,6 +8,24 @@ url: https://zombietracker.in
 twitter: https://twitter.com/internetfreedom
 facebook:
 github: https://github.com/CivicDataLab/stop-66A
+resources:
+  - {
+      type: 'blog',
+      title: 'A data driven approach to curb the zombie that is 66A',
+      link: 'https://medium.com/civicdatalab/a-data-driven-approach-to-curb-the-zombie-that-is-66a-1578d955ad4b'
+    }
+  - {
+      type: 'blog',
+      title: 'What we learned while developing the Zombie Tracker',
+      link: 'https://medium.com/civicdatalab/launching-the-zombie-tracker-11a592a60071'
+    }
+  - {
+      type: 'blog',
+      title: 'We write to the Supreme Court e-Committee with CDL to improve the eCourts platform',
+      link: 'https://internetfreedom.in/we-write-to-the-supreme-court-e-committee-with-cdl-to-improve-the-ecourts-platform/'
+    }
+  - { type: 'blog', title: 'Zombie Tracker - Blogs', link: 'http://zombietracker.in/blog/' }
+  - { type: 'video', title: 'Zombie Tracker - Launch Event', link: 'https://www.youtube.com/watch?v=fcFKCTNGEZU' }
 sector: Law & Justice
 type: project
 ---
