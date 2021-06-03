@@ -8,7 +8,7 @@ github: https://github.com/apoorv74
 twitter:
 linkedin: https://www.linkedin.com/in/apoorvanand
 image: ./apoorv.jpg
-sectors: Law & Justice, Public Finance, FOSS
+sectors: Law & Justice, Public Finance, Free & Open Source Software
 accentcolor: '#153243'
 text: light
 projects: Justice Hub, Child Rights Laws Implementation Tracker, Zombie Tracker
