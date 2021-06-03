@@ -12,7 +12,7 @@ import Seo from '../components/Seo/Seo';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
 import StandardGrid from '../styles/StandardGrid';
-import BlogStrip from '../components/BlogStrip';
+// import BlogStrip from '../components/BlogStrip';
 
 const SectorInfo = styled.div`
   a {
@@ -36,24 +36,24 @@ const SectorLabel = styled.div`
   @media (min-width: 1024px) {
     display: block;
     background-color: ${(props) => (props.color ? props.color : '#fa7fe7')};
-    width: max-content;
+    max-width: 200px;
     padding: 15px 26px;
     font-size: 25px;
     font-weight: 500;
   }
 `;
 
-const sectorBlogTagGenerator = (fullSectorName) => {
-  const sectorTags = [
-    { name: 'Public Finance', tag: 'publicfinance' },
-    { name: 'Law & Justice', tag: 'law' },
-    { name: 'Education', tag: 'education' },
-    { name: 'Urban Planning', tag: 'cities' },
-    { name: 'Free & Open Source Software', tag: 'foss' }
-  ];
+// const sectorBlogTagGenerator = (fullSectorName) => {
+//   const sectorTags = [
+//     { name: 'Public Finance', tag: 'publicfinance' },
+//     { name: 'Law & Justice', tag: 'law' },
+//     { name: 'Education', tag: 'education' },
+//     { name: 'Urban Planning', tag: 'cities' },
+//     { name: 'Free & Open Source Software', tag: 'foss' }
+//   ];
 
-  return sectorTags.find((sector) => sector.name === fullSectorName).tag;
-};
+//   return sectorTags.find((sector) => sector.name === fullSectorName).tag;
+// };
 
 const SectorTemplate = ({ data }) => {
   const members = data.members.nodes;
@@ -95,7 +95,7 @@ const SectorTemplate = ({ data }) => {
           </ProjectsContent>
         </StandardGrid>
       </MainContainer>
-      <BlogStrip sectorName={sectorBlogTagGenerator(data.markdownRemark.frontmatter.name)} />
+      {/* <BlogStrip sectorName={sectorBlogTagGenerator(data.markdownRemark.frontmatter.name)} /> */}
       <WorkHomePage />
     </Layout>
   );
