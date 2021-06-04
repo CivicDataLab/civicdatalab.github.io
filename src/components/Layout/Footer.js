@@ -78,7 +78,7 @@ const NavigationContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    margin-top: 40px;
+    margin-top: 0px;
   }
 `;
 
@@ -109,7 +109,7 @@ const BottomContainer = styled.div`
   }
 
   @media (min-width: 1280px) {
-    margin-top: 80px;
+    margin-top: 40px;
     .gatsby-image-wrapper {
       height: 160px !important;
       width: 125px !important;
