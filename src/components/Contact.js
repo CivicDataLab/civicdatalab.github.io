@@ -37,11 +37,27 @@ const SocialLinksContainer = styled.div`
   }
 
   @media (min-width: 1280px) {
-    margin-top: 110px;
+    margin-top: 100px;
   }
 `;
 
-const Contact = (props) => {
+export const SocialLinks = () => {
+  return (
+    <SocialLinksContainer>
+      <a href="https://twitter.com/civicdatalab" target="_blank" rel="noreferrer noopener">
+        <FaTwitter />
+      </a>
+      <a href="https://www.linkedin.com/company/civicdatalab" target="_blank" rel="noreferrer noopener">
+        <FaLinkedinIn />
+      </a>
+      <a href="https://github.com/CivicDataLab" target="_blank" rel="noreferrer noopener">
+        <FaGithubAlt />
+      </a>
+    </SocialLinksContainer>
+  );
+};
+
+const Contact = () => {
   return (
     <MainContainer>
       <ContactStyle>
@@ -53,17 +69,7 @@ const Contact = (props) => {
             Get in touch to learn more about CivicDataLab, our work and how we can collaborate!
           </p>
           <p className={'mail-text-block'}>info@civicdatalab.in</p>
-          <SocialLinksContainer>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer noopener">
-              <FaTwitter />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
-              <FaLinkedinIn />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer noopener">
-              <FaGithubAlt />
-            </a>
-          </SocialLinksContainer>
+          <SocialLinks />
         </div>
         <div className={'content lower-content-section'}>
           <form>

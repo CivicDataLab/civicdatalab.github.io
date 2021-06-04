@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
+// import BackgroundImage from 'gatsby-background-image';
 // import Fade from 'react-reveal/Fade';
 import HeroText from '../styles/HeroText';
 import MainContainer from '../styles/MainContainer';
@@ -32,22 +32,22 @@ export const Section = styled.section`
 
 const HeroSection = styled(Section)`
   height: 60vh;
-  color: white;
+  color: black;
   padding-top: 100px;
-  background-color: rgb(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0, 0.1);
 
   h1 {
     font-family: 'Bungee';
     font-size: 32px;
     text-align: left;
     margin-top: 80px;
-    color: white;
+    color: black;
     width: 100%;
     line-height: 1.4em;
   }
 
   .animated-text {
-    color: #1DCCCC;
+    color: #1dcccc;
   }
 
   @media (min-width: 550px) {
@@ -61,8 +61,11 @@ const HeroSection = styled(Section)`
     height: 75vh;
 
     h1 {
-      width: 75%;
+      text-align: center;
+      width: 80%;
       font-size: 60px;
+      margin-left: auto;
+      margin-right: auto;
       margin-top: 50px;
     }
   }
@@ -75,7 +78,7 @@ const HeroSection = styled(Section)`
 
   @media (min-width: 1440px) {
     h1 {
-      margin-top: 140px;
+      margin-top: 150px;
     }
   }
 `;
@@ -136,7 +139,7 @@ const Sectors = styled.section`
 `;
 
 const Index = ({ data }) => {
-  const image = data?.landingBackground?.childImageSharp?.fluid;
+  // const image = data?.landingBackground?.childImageSharp?.fluid;
 
   const sectors = data.allMarkdownRemark.nodes;
   const partners = data.partners.nodes;
@@ -150,14 +153,14 @@ const Index = ({ data }) => {
       <GlobalStyle />
       <Seo title="CivicDataLab" />
       <main>
-        <BackgroundImage style={{ zIndex: 999 }} fluid={image}>
-          <Navbar dark />
+        <>
+          <Navbar />
           <HeroSection>
             <MainContainer>
               <TypeWriter messages={['data.', 'tech.', 'design.', 'social science.']} />
             </MainContainer>
           </HeroSection>
-        </BackgroundImage>
+        </>
         {/* <Fade bottom> */}
         <Sectors>
           <MainContainer>

@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 
-const MiniTeam = styled.div`
+export const MiniTeam = styled.div`
   padding: 0;
   h3 {
     font-family: Bungee;
