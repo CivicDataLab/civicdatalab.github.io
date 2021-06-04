@@ -93,7 +93,13 @@ const CardContent = styled.div`
 const CardLink = styled(Link)`
   font-size: 16px;
   line-height: 45px;
-  font-weight: 500; later today
+  font-weight: 500;
+  color: #168cd6;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 23px;
+  position: absolute;
   left: 20px;
   bottom: 20px;
 
