@@ -63,7 +63,9 @@ const TypeWriter = ({ messages }) => {
 
   return (
     <HeroText>
-      <span>We work to strengthen the course of civic engagements using </span>
+      <span>
+        We work to strengthen the course of civic engagements using <br />{' '}
+      </span>
       <span className="animated-text">{state.text}</span>
       {/* <span id="cursor" /> */}
     </HeroText>

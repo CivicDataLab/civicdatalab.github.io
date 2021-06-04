@@ -9,6 +9,7 @@ import ImageItem from '../components/ImageItem';
 import Seo from '../components/Seo/Seo';
 import useFixedScroll from '../hooks/useFixedScroll';
 import StandardGrid from '../styles/StandardGrid';
+import { SocialLinks } from '../components/Contact';
 
 export const TitleContainer = styled.div`
   padding: 0;
@@ -25,7 +26,6 @@ export const TitleContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-
     h1 {
       border-bottom: none;
       margin-top: 16px;
@@ -76,6 +76,8 @@ export const ProjectsContainer = styled.div`
   }
 `;
 
+// add social links below our link
+
 // const PartnersContainer = styled.div``;
 
 const Sectors = ({ data }) => {
@@ -93,6 +95,7 @@ const Sectors = ({ data }) => {
         <StandardGrid>
           <TitleContainer ref={leftContainerRef}>
             <HeroText>Our Work</HeroText>
+            <SocialLinks />
           </TitleContainer>
           <ProjectsContent ref={rightContainerRef}>
             <SectorNav />

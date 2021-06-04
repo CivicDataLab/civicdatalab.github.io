@@ -17,21 +17,17 @@ const FooterContainer = styled.div`
   grid-template-areas:
     'address address'
     'navigate header'
-    'bottom bottom';
+    'logo logo';
 
   @media (min-width: 768px) {
-    padding-bottom: 0px;
     grid-template-columns: auto 1fr 1fr 3fr;
     grid-gap: 30px;
-    grid-template-areas:
-      'address navigate header empty'
-      'bottom bottom bottom bottom';
+    grid-template-areas: 'address navigate header logo';
   }
 
   @media (min-width: 1280px) {
+    padding: 54px 0;
     grid-template-columns: 2.5fr 1fr 1fr 3fr;
-    padding-left: 0;
-    padding-right: 0;
   }
 
   @media (min-width: 1440px) {
@@ -43,6 +39,13 @@ const AddressContainer = styled.div`
   grid-area: address;
   max-width: 600px;
   width: 100%;
+
+  .email {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+  }
 
   p {
     line-height: 22px;
@@ -63,7 +66,7 @@ const AddressContainer = styled.div`
 `;
 
 const NavigationContainer = styled.div`
-  margin-top: 30px;
+  margin-top: 40px;
   h2 {
     font-size: 22px;
     text-transform: uppercase;
@@ -75,7 +78,7 @@ const NavigationContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    margin-top: 0;
+    margin-top: 40px;
   }
 `;
 
@@ -93,27 +96,32 @@ const NavLinksContainer = styled.ul`
 `;
 
 const BottomContainer = styled.div`
-  grid-area: bottom;
-  margin-top: 80px;
+  grid-area: logo;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
 
   @media (min-width: 768px) {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: baseline;
-    position: relative;
-    top: -30%;
+    justify-content: center;
+    align-items: end;
+    margin-right: 40px;
     margin-top: 0;
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: 80px;
+    .gatsby-image-wrapper {
+      height: 160px !important;
+      width: 125px !important;
+    }
   }
 `;
 
 const ExternalLinksContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 20px;
   font-size: 18px;
 
   @media (min-width: 768px) {
@@ -140,6 +148,17 @@ const SocialLinksContainer = styled.div`
     color: black;
   }
 `;
+
+const SiteMap = styled.div`
+  display: ${(props) => (props.mobile ? 'block' : 'none')};
+  margin-top: 40px;
+
+  @media (min-width: 1280px) {
+    display: ${(props) => (props.mobile ? 'none' : 'block')};
+  }
+`;
+
+// Change the address and
 
 const workLinks = [
   { path: '/education', name: 'Education' },
@@ -177,9 +196,23 @@ const Footer = () => {
         <FooterContainer>
           <AddressContainer>
             <h3>We are remote, but if you want to write to us:</h3>
-            <p>
-              CivicDataLab Pvt Ltd, 301-A, 296/2 Lord Shiva Residency, Bholaram Ustad Marg Indore, MP - 452001, India.
-            </p>
+            <a className="email" href="mailto:info@civicdatalab.in">
+              info@civicdatalab.in
+            </a>
+            <ExternalLinksContainer>
+              <SocialLinksContainer>
+                <a href="https://twitter.com/civicdatalab" target="_blank" rel="noreferrer noopener">
+                  <FaTwitter />
+                </a>
+                <a href="https://in.linkedin.com/company/civicdatalab" target="_blank" rel="noreferrer noopener">
+                  <FaLinkedinIn />
+                </a>
+                <a href="https://github.com/CivicDataLab" target="_blank" rel="noreferrer noopener">
+                  <FaGithubAlt />
+                </a>
+              </SocialLinksContainer>
+              <SiteMap>License | Site Map</SiteMap>
+            </ExternalLinksContainer>
           </AddressContainer>
           <NavigationContainer>
             <h2>Navigate</h2>
@@ -213,21 +246,8 @@ const Footer = () => {
             <Link to="/">
               <Image fixed={cdlLogo} />
             </Link>
-            <ExternalLinksContainer>
-              <SocialLinksContainer>
-                <a href="https://twitter.com/civicdatalab" target="_blank" rel="noreferrer noopener">
-                  <FaTwitter />
-                </a>
-                <a href="https://in.linkedin.com/company/civicdatalab" target="_blank" rel="noreferrer noopener">
-                  <FaLinkedinIn />
-                </a>
-                <a href="https://github.com/CivicDataLab" target="_blank" rel="noreferrer noopener">
-                  <FaGithubAlt />
-                </a>
-              </SocialLinksContainer>
-              <div>License | Site Map</div>
-            </ExternalLinksContainer>
           </BottomContainer>
+          <SiteMap mobile>License | Site Map</SiteMap>
         </FooterContainer>
       </MainContainer>
     </div>
