@@ -67,7 +67,6 @@ const Value = ({ number, title, bodyHTML }) => {
   return (
     <ValueContainer>
       <div className="content">
-        <h2 className="number">{number}</h2>
         <h2 className="title">{title}</h2>
         <div dangerouslySetInnerHTML={{ __html: bodyHTML }} />
       </div>
