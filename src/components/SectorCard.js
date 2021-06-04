@@ -93,13 +93,7 @@ const CardContent = styled.div`
 const CardLink = styled(Link)`
   font-size: 16px;
   line-height: 45px;
-  font-weight: 500;
-  color: #168cd6;
-  text-decoration: none;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 23px;
-  position: absolute;
+  font-weight: 500; later today
   left: 20px;
   bottom: 20px;
 
@@ -117,7 +111,7 @@ const SectorCard = ({ name, description, link, color, image, about }) => {
       <Image fluid={image} />
       <CardContent>
         <h4 style={{ color: color }} className={'sector-name'}>
-          {name == 'Free & Open Source Software' ? 'FOSS' : name}
+          {name === 'Free & Open Source Software' ? 'FOSS' : name}
         </h4>
         <p>{description}</p>
         <CardLink to={link}>

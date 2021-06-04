@@ -152,10 +152,19 @@ const LeftText = styled.div`
     margin-top: 8px;
   }
 
+  .btn-newsletter {
+    margin-top: 12px;
+    padding: 12px 18px;
+    background-color: #1dcccc;
+    color: black;
+    font-weight: 500;
+    border-radius: 12px;
+  }
+
   @media (min-width: 1024px) {
     display: ${(props) => (props.mobile ? 'none' : 'block')};
     padding: 0;
-    margin: 40px 0;
+    margin: 28px 0;
 
     a {
       max-width: 250px;
@@ -243,12 +252,12 @@ const ProjectTemplate = ({ data }) => {
   const members = data.members.nodes;
   const partners = data.partners.nodes;
 
-  const { twitter, linkedin, github, facebook, url, solution, aim, resources } = project.frontmatter;
+  const { twitter, linkedin, github, facebook, url, solution, aim, resources, newsletter } = project.frontmatter;
 
   const leftContainerRef = React.useRef(null);
   const rightContainerRef = React.useRef(null);
 
-  useFixedScroll(leftContainerRef, rightContainerRef);
+  useFixedScroll(leftContainerRef, rightContainerRef, 750);
 
   return (
     <Layout>
@@ -287,7 +296,16 @@ const ProjectTemplate = ({ data }) => {
               </SocialLinksContainer>
             </LeftText>
 
-            {partners && (
+            {newsletter && (
+              <LeftText>
+                <p>Subscribe to our newsletter:</p>
+                <a class="btn-newsletter" href={newsletter}>
+                  Subscribe
+                </a>
+              </LeftText>
+            )}
+
+            {partners.length ? (
               <LeftText>
                 <p>In partnership with:</p>
                 <PartnersContainer>
@@ -298,7 +316,7 @@ const ProjectTemplate = ({ data }) => {
                   ))}
                 </PartnersContainer>
               </LeftText>
-            )}
+            ) : null}
           </TitleContainer>
           <ProjectContent ref={rightContainerRef}>
             <ImageSection>
@@ -328,15 +346,26 @@ const ProjectTemplate = ({ data }) => {
                 {url}
               </a>
               <SocialLinksContainer mobile>
-                <a href={twitter} target="_blank" rel="noreferrer noopener">
-                  <FaTwitter />
-                </a>
-                <a href={linkedin} target="_blank" rel="noreferrer noopener">
-                  <FaLinkedinIn />
-                </a>
-                <a href={github} target="_blank" rel="noreferrer noopener">
-                  <FaGithubAlt />
-                </a>
+                {twitter && (
+                  <a href={twitter} target="_blank" rel="noreferrer noopener">
+                    <FaTwitter />
+                  </a>
+                )}
+                {linkedin && (
+                  <a href={linkedin} target="_blank" rel="noreferrer noopener">
+                    <FaLinkedinIn />
+                  </a>
+                )}
+                {facebook && (
+                  <a href={facebook} target="_blank" rel="noreferrer noopener">
+                    <FaFacebook />
+                  </a>
+                )}
+                {github && (
+                  <a href={github} target="_blank" rel="noreferrer noopener">
+                    <FaGithubAlt />
+                  </a>
+                )}
               </SocialLinksContainer>
             </LeftText>
             {partners && (
@@ -365,10 +394,10 @@ const ProjectTemplate = ({ data }) => {
         <StandardGrid>
           <ProjectContent>
             <MiniTeamSection members={members} />
+            <Resources resources={resources} />
           </ProjectContent>
         </StandardGrid>
       </MainContainer>
-      {resources && <Resources resources={resources} />}
     </Layout>
   );
 };
@@ -390,6 +419,7 @@ export const pageQuery = graphql`
         twitter
         linkedin
         facebook
+        newsletter
         resources {
           link
           title
