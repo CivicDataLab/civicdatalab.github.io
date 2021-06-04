@@ -5,7 +5,7 @@ medium: '@samriddhii'
 description:
 quote: It is in collectivities that we find reservoirs of hope and optimism.
 github: https://github.com/samwhocodes
-twitter: https://twitter.com/PixeledCode
+twitter:
 linkedin: https://www.linkedin.com/in/samriddhi-00135663/
 image: ./samriddhi.jpg
 accentcolor: '#008080'
