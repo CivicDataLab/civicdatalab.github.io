@@ -21,12 +21,32 @@ const SectorInfo = styled.div`
     width: 200px;
   }
 
+  .description {
+    display: none;
+  }
+
   @media (min-width: 1024px) {
     a {
       width: 200px;
       font-size: 18px;
       line-height: 27px;
       margin-top: 20px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .description {
+      display: block;
+      line-height: 1.5em;
+      margin-top: 50px;
+      width: 250px;
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .description {
+      font-size: 18px;
     }
   }
 `;
@@ -36,7 +56,7 @@ const SectorLabel = styled.div`
   @media (min-width: 1024px) {
     display: block;
     background-color: ${(props) => (props.color ? props.color : '#fa7fe7')};
-    max-width: 200px;
+    max-width: 180px;
     padding: 15px 26px;
     font-size: 25px;
     font-weight: 500;
@@ -54,6 +74,8 @@ const SectorLabel = styled.div`
 
 //   return sectorTags.find((sector) => sector.name === fullSectorName).tag;
 // };
+
+// TODO add a separate button for
 
 const SectorTemplate = ({ data }) => {
   const members = data.members.nodes;
@@ -75,6 +97,7 @@ const SectorTemplate = ({ data }) => {
               <SectorLabel color={data.markdownRemark.frontmatter.color}>
                 {data.markdownRemark.frontmatter.name}
               </SectorLabel>
+              <p className="description">{data.markdownRemark.frontmatter.description}</p>
               {/* <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a> */}
             </SectorInfo>
           </TitleContainer>

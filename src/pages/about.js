@@ -16,7 +16,7 @@ import Value from '../components/Value';
 import Seo from '../components/Seo/Seo';
 import StandardGrid from '../styles/StandardGrid';
 import { PillarImages } from '../components/OurPillars';
-import Resources from '../components/Resources';
+import { ResourcesAbout } from '../components/Resources';
 
 const HeroSection = styled(Section)`
   height: 40vh;
@@ -196,7 +196,7 @@ const About = ({ data }) => {
             </ThreeGrid>
           </ValuesSection>
         </MainContainer>
-        <Resources onlyBlogs resources={resources} />
+        <ResourcesAbout resources={resources} />
         <TeamHomePage />
         <WorkHomePage />
         <CivicDays />
@@ -205,6 +205,8 @@ const About = ({ data }) => {
     </ThemeProvider>
   );
 };
+
+// TODO add more images on the header section for the about us
 
 export default About;
 

@@ -8,6 +8,7 @@ url: https://justicehub.in
 twitter: https://twitter.com/JusticeHubIndia
 linkedin:
 github: https://github.com/justicehub-in
+newsletter: https://dataforjustice.substack.com
 sector: Law & Justice
 type: project
 timeline:
