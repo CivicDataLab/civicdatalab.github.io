@@ -3,11 +3,15 @@ import styled from 'styled-components';
 
 const StyledLink = styled.a`
   text-decoration: none;
-  color: black;
+  color: #535151 !important;
+
+  @media (min-width: 1280px) {
+    grid-column: span 3;
+  }
 `;
 
 const Card = styled.div`
-  height: 360px;
+  height: 300px;
   box-shadow: 7px 3px 4px rgba(0, 0, 0, 0.29);
 
   img {

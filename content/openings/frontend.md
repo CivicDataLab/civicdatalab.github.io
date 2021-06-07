@@ -15,5 +15,4 @@ expectations:
     - A good command of Javascript We have used several systems in the past to build UIs. But one thing that was common in most of our projects was Javascript. Experience with working on multiple frameworks is a plus, but what is essential and important is a good understanding of plain vanilla Javascript.
   - Taking ownership of your ideas and work
     - Taking ownership of your ideas and work We’re a small & a remote team. As a member of CDL, you’ll have multiple opportunities to sign up for different projects (both internal and external) and wear multiple hats. We encourage you to work on issues that you associate with and help as a team to work around it. The most valuable skill you bring to this role is how you deal with these opportunities. We don’t follow a hierarchical structure and acting responsibly in whatever you sign up, is not only essential it also helps the team move forward.
-template: job
 ---
