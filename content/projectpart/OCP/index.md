@@ -1,9 +1,9 @@
 ---
-name: Centre for Budget and Governance Accountability
-short: CBGA
+name: Open Contracting Partnership
+short: OCP
 logo: ./logo.png
 testimonial:
 website: https://www.open-contracting.org/
-sectors: Public Finance, Law & Justice
+sectors: Public Finance
 projects: Health Procurement Performance Index, Assam Procurement
 ---
