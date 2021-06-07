@@ -292,15 +292,21 @@ const MemberTemplate = ({ data }) => {
           </MemberDetails>
           <PictureContainer>
             <SocialLinksContainer>
-              <a href={member.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
-                <FaTwitter />
-              </a>
-              <a href={member.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
-                <FaLinkedinIn />
-              </a>
-              <a href={member.frontmatter.github} target="_blank" rel="noreferrer noopener">
-                <FaGithubAlt />
-              </a>
+              {member.frontmatter.twitter && (
+                <a href={member.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
+                  <FaTwitter />
+                </a>
+              )}
+              {member.frontmatter.linkedin && (
+                <a href={member.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
+                  <FaLinkedinIn />
+                </a>
+              )}
+              {member.frontmatter.github && (
+                <a href={member.frontmatter.github} target="_blank" rel="noreferrer noopener">
+                  <FaGithubAlt />
+                </a>
+              )}
             </SocialLinksContainer>
             <Image fluid={member.frontmatter.image?.childImageSharp.fluid} />
             <QuoteContainer background={member.frontmatter.accentcolor} text={member.frontmatter.text}>
