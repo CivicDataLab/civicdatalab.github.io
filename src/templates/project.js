@@ -16,6 +16,25 @@ import MainContainer from '../styles/MainContainer';
 import StandardGrid from '../styles/StandardGrid';
 import Resources from '../components/Resources';
 
+const ProjectTitleContainer = styled(TitleContainer)`
+  @media (min-width: 1280px) {
+    h1 {
+      overflow-wrap: break-word;
+      font-size: 45px;
+      line-height: 1em;
+      width: 380px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    h1 {
+      font-size: 45px;
+      font-weight: 1em;
+      min-width: 350px;
+    }
+  }
+`;
+
 const ProjectContent = styled.div`
   display: grid;
   grid-template-rows: auto auto;
@@ -26,11 +45,15 @@ const ProjectContent = styled.div`
   }
 
   @media (min-width: 1280px) {
-    grid-column: 4/13;
+    grid-column: 5/13;
   }
 
   @media (min-width: 1440px) {
     padding: 0;
+  }
+
+  @media (min-width: 1920px) {
+    grid-column: 4/13;
   }
 `;
 
@@ -164,7 +187,7 @@ const LeftText = styled.div`
   @media (min-width: 1024px) {
     display: ${(props) => (props.mobile ? 'none' : 'block')};
     padding: 0;
-    margin: 28px 0;
+    margin: 36px 0;
 
     a {
       max-width: 250px;
@@ -264,14 +287,18 @@ const ProjectTemplate = ({ data }) => {
       <Seo title={project.frontmatter.name} />
       <MainContainer>
         <StandardGrid>
-          <TitleContainer ref={leftContainerRef}>
-            <HeroText style={{ wordWrap: 'break-word', maxWidth: '310px' }}>{project.frontmatter.name}</HeroText>
+          <ProjectTitleContainer ref={leftContainerRef}>
+            <HeroText>{project.frontmatter.name}</HeroText>
 
             <LeftText>
-              <p>Check us here:</p>
-              <a target="_blank" rel="noreferrer noopener" href={`https://${url}`}>
-                {url}
-              </a>
+              {url && (
+                <>
+                  <p>Check us here:</p>
+                  <a target="_blank" rel="noreferrer noopener" href={`https://${url}`}>
+                    {url}
+                  </a>
+                </>
+              )}
               <SocialLinksContainer>
                 {twitter && (
                   <a href={twitter} target="_blank" rel="noreferrer noopener">
@@ -317,7 +344,7 @@ const ProjectTemplate = ({ data }) => {
                 </PartnersContainer>
               </LeftText>
             ) : null}
-          </TitleContainer>
+          </ProjectTitleContainer>
           <ProjectContent ref={rightContainerRef}>
             <ImageSection>
               <Image fluid={project.frontmatter.image.childImageSharp.fluid} />

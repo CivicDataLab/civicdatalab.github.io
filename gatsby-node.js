@@ -34,21 +34,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  const jobResults = await graphql(`
-    query {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/openings/" } }) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `);
-
   const sectorResults = await graphql(`
     query {
       allMarkdownRemark(filter: { frontmatter: { type: { eq: "sector" } } }) {
@@ -86,7 +71,6 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   const members = memberResults.data.allMarkdownRemark.edges;
-  const jobs = jobResults.data.allMarkdownRemark.edges;
   const sectors = sectorResults.data.allMarkdownRemark.edges;
   const projects = projectResults.data.allMarkdownRemark.edges;
 
@@ -96,16 +80,6 @@ exports.createPages = async ({ graphql, actions }) => {
       component: memberTemplate,
       context: {
         id: member.node.id
-      }
-    });
-  });
-
-  jobs.forEach((job) => {
-    createPage({
-      path: job.node.fields.slug,
-      component: jobTemplate,
-      context: {
-        id: job.node.id
       }
     });
   });

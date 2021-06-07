@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import BackgroundImage from 'gatsby-background-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
 import { Section } from './index';
@@ -17,6 +16,7 @@ import Seo from '../components/Seo/Seo';
 import StandardGrid from '../styles/StandardGrid';
 import { PillarImages } from '../components/OurPillars';
 import { ResourcesAbout } from '../components/Resources';
+import AboutBackground from '../components/AboutBackground';
 
 const HeroSection = styled(Section)`
   height: 40vh;
@@ -86,6 +86,7 @@ const FourGrid = styled(StandardGrid)`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    z-index: -1;
 
     h3 {
       margin-top: 0;
@@ -151,10 +152,10 @@ const About = ({ data }) => {
       <GlobalStyle />
       <Seo title="About" />
       <main>
-        <BackgroundImage style={{ zIndex: 999 }} fluid={data.landingImage.childImageSharp.fluid}>
+        <AboutBackground>
           <Navbar dark />
           <HeroSection />
-        </BackgroundImage>
+        </AboutBackground>
         <StorySection>
           <MainContainer>
             <HeroText>About Us</HeroText>
@@ -221,20 +222,6 @@ export const pageQuery = graphql`
             title
           }
           html
-        }
-      }
-    }
-    blogsCover: file(relativePath: { eq: "blogs.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 600, quality: 100) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    assetsCover: file(relativePath: { eq: "assets.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 600, quality: 100) {
-          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }

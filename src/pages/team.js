@@ -58,7 +58,7 @@ const TeamContainer = styled(MainContainer)`
 
 const TeamTitleContainer = styled(TitleContainer)`
   @media (min-width: 1280px) {
-    margin-top: 0;
+    margin-top: 20px;
   }
 
   @media (min-width: 1920px) {

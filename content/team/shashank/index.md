@@ -3,6 +3,7 @@ name: Shashank Sharma
 role: Backend Engineer
 medium: 
 description:
+quote:
 github: https://github.com/shashank-sharma
 twitter: https://www.twitter.com/shashank_py
 linkedin: https://linkedin.com/in/shashank-developer
