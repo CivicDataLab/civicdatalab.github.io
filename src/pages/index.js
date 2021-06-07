@@ -1,24 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
+// import BackgroundImage from 'gatsby-background-image';
+// import Fade from 'react-reveal/Fade';
 import HeroText from '../styles/HeroText';
-import SectorsCard from '../components/SectorsCard';
+import MainContainer from '../styles/MainContainer';
+import SectorsCard from '../components/SectorCard';
 import TeamHomePage from '../components/TeamHomePage';
 import WorkHomePage from '../components/WorkHomePage';
 import Contact from '../components/Contact';
-import SliderHomePage from '../components/SliderHomePage';
-import BackgroundImage from 'gatsby-background-image';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
-import { HorizontalImageScrollContainer } from './team';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import { CivicDays } from './team';
+import Footer from '../components/Layout/Footer';
+import Navbar from '../components/Layout/Navbar';
 import TypeWriter from '../components/TypeWriter';
-import OurPillars from '../components/OurPillars';
 import OurPartners from '../components/OurPartners';
+import Seo from '../components/Seo/Seo';
+import BlogStrip from '../components/BlogStrip';
+import StandardGrid from '../styles/StandardGrid';
 
-const Section = styled.section`
-  padding: 0 72px;
+export const Section = styled.section`
+  padding: 0;
   background-color: ${(props) => (props.background ? props.background : 'white')};
 
   p {
@@ -28,131 +31,162 @@ const Section = styled.section`
 `;
 
 const HeroSection = styled(Section)`
-  height: 40vh;
-  color: white;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  background-color: rgb(0, 0, 0, 0.5);
+  height: 60vh;
+  color: black;
+  padding-top: 100px;
+  background-color: rgb(0, 0, 0, 0.1);
 
   h1 {
-    font-family: 'Bungee', cursive;
+    font-family: 'Bungee';
     font-size: 32px;
     text-align: left;
+    margin-top: 80px;
+    color: black;
+    width: 100%;
+    line-height: 1.4em;
+  }
+
+  .animated-text {
+    color: #1dcccc;
   }
 
   @media (min-width: 550px) {
-    height: 50vh;
     h1 {
       font-size: 40px;
     }
   }
 
   @media (min-width: 1024px) {
-    padding-top: 40px;
-    padding-left: 72px;
-    height: 80vh;
+    padding-top: 120px;
+    height: 75vh;
 
     h1 {
+      text-align: center;
       width: 80%;
       font-size: 60px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    h1 {
+      margin-top: 100px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    h1 {
+      margin-top: 150px;
     }
   }
 `;
 
 const Sectors = styled.section`
   margin-top: 24px;
+  z-index: 1;
+
   .sectors-heading {
-    padding-left: 20px;
     margin-bottom: 20px;
   }
   .container-sectors {
-    margin-left: 20px;
-    margin-right: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    grid-gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    column-gap: 60px;
+    row-gap: 24px;
     justify-items: center;
-    align-items: stretch;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1280px) {
+    margin-top: 100px;
+    margin-bottom: 80px;
+
+    padding: 0;
+
     .sectors-heading {
       font-size: 70px;
       line-height: 67px;
     }
+
+    .container-sectors {
+      row-gap: 60px;
+    }
   }
 
   @media (min-width: 1440px) {
+    margin-top: 120px;
+    margin-bottom: 100px;
+
     .sectors-heading {
       font-size: 60px;
       line-height: 60px;
-      padding-left: 73px;
     }
     .container-sectors {
-      margin-left: 55px;
-      margin-right: 55px;
       margin-top: 38px;
-      grid-template-columns: repeat(4, minmax(320px, 1fr));
+      column-gap: 20px;
+      grid-template-columns: repeat(3, minmax(320px, 1fr));
+    }
+  }
+
+  @media (min-width: 1600px) {
+    padding: 0;
+
+    .container-sectors {
+      column-gap: 35px;
     }
   }
 `;
 
 const Index = ({ data }) => {
-  const image = data?.landingBackground?.childImageSharp?.fluid;
+  // const image = data?.landingBackground?.childImageSharp?.fluid;
 
   const sectors = data.allMarkdownRemark.nodes;
   const partners = data.partners.nodes;
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Seo title="CivicDataLab" />
       <main>
-        <BackgroundImage fluid={image}>
-          <Navbar dark />
+        <>
+          <Navbar />
           <HeroSection>
-            <TypeWriter
-              messages={[
-                'We co-create free and open source solutions for social change.',
-                'We collaborate with the community on social innovation projects.',
-                'We empower civic participation through access to information.'
-              ]}
-            />
+            <MainContainer>
+              <TypeWriter messages={['data.', 'tech.', 'design.', 'social science.']} />
+            </MainContainer>
           </HeroSection>
-        </BackgroundImage>
+        </>
+        {/* <Fade bottom> */}
         <Sectors>
-          <HeroText className={'sectors-heading'}>Our Sectors</HeroText>
-          <div className={'container-sectors'}>
-            {sectors.map((sector) => (
-              <SectorsCard
-                key={sector.fields.slug}
-                name={sector.frontmatter.name}
-                description={sector.frontmatter.description}
-                image={sector.frontmatter.image.childImageSharp.fluid}
-                color={sector.frontmatter.color}
-              />
-            ))}
-          </div>
+          <MainContainer>
+            <HeroText className="sectors-heading">Our Work</HeroText>
+            <StandardGrid>
+              {sectors.map((sector) => (
+                <SectorsCard
+                  key={sector.fields.slug}
+                  name={sector.frontmatter.name}
+                  description={sector.frontmatter.description}
+                  image={sector.frontmatter.image.childImageSharp.fluid}
+                  color={sector.frontmatter.color}
+                  link={sector.fields.slug}
+                />
+              ))}
+            </StandardGrid>
+          </MainContainer>
         </Sectors>
-        <div
-          className={'slider-wrapper'}
-          style={{ width: '100%', display: 'flex', overflow: 'auto', marginTop: '18px' }}
-        >
-          {[1, 1, 1, 1].map((element, index) => {
-            return <SliderHomePage key={index} dark={index % 2 !== 0} theme="true" />;
-          })}
-        </div>
+        <BlogStrip />
         <OurPartners partners={partners} />
-        <OurPillars />
 
         <TeamHomePage />
         <WorkHomePage />
         <Contact />
-        <HorizontalImageScrollContainer>
-          {[1, 1, 1, 11, 1, 1, 1].map((item) => {
-            return <div></div>;
-          })}
-        </HorizontalImageScrollContainer>
+        <CivicDays home />
+        {/* </Fade> */}
       </main>
       <Footer />
     </ThemeProvider>
@@ -165,7 +199,7 @@ export const pageQuery = graphql`
   query HomepageQuery {
     landingBackground: file(relativePath: { eq: "landing-image.jpeg" }) {
       childImageSharp {
-        fluid(maxWidth: 1920) {
+        fluid(maxWidth: 1920, quality: 100) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
@@ -178,13 +212,13 @@ export const pageQuery = graphql`
         id
         name
         childImageSharp {
-          fixed(width: 160) {
-            ...GatsbyImageSharpFixed
+          fixed(width: 160, quality: 100) {
+            ...GatsbyImageSharpFixed_noBase64
           }
         }
       }
     }
-    allMarkdownRemark(filter: { frontmatter: { template: { eq: "sector" } } }, sort: { fields: frontmatter___name }) {
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "sector" } } }, sort: { fields: frontmatter___name }) {
       nodes {
         fields {
           slug
@@ -194,8 +228,8 @@ export const pageQuery = graphql`
           description
           image {
             childImageSharp {
-              fluid(maxWidth: 300, quality: 100) {
-                ...GatsbyImageSharpFluid
+              fluid(maxWidth: 600, quality: 100) {
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
           }

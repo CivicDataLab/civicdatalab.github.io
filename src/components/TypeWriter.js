@@ -1,8 +1,9 @@
 import React from 'react';
+import HeroText from '../styles/HeroText';
 
 const CONSTANTS = {
-  DELETING_SPEED: 200,
-  TYPING_SPEED: 100
+  DELETING_SPEED: 100,
+  TYPING_SPEED: 75
 };
 
 const TypeWriter = ({ messages }) => {
@@ -61,11 +62,13 @@ const TypeWriter = ({ messages }) => {
   };
 
   return (
-    <h1>
-      <br />
-      <span>{state.text}</span>
+    <HeroText>
+      <span>
+        We work to strengthen the course of civic engagements using <br />{' '}
+      </span>
+      <span className="animated-text">{state.text}</span>
       {/* <span id="cursor" /> */}
-    </h1>
+    </HeroText>
   );
 };
 

@@ -14,25 +14,25 @@ const SliderHomePage = styled.div`
     text-align: left;
     font-size: 10px;
     line-height: 12px;
-    font-family: 'Helvetica', 'Neue';
     letter-spacing: 0px;
-    
     color:${(props) => (props.dark === true ? 'white' : '#707070')};
     opacity: 1;
     display: flex;
+    text-transform: uppercase;
   }
+  
   .circle-scroll-section {
     height: 24px;
     width: 23px;
     background-color:${(props) => (props.dark === true ? 'white' : 'black')} ;
     border-radius: 50%;
-  
     display: flex;
   }
+
   .circle-container{
     display: flex;
     justify-content: space-between;
-}
+    align-items: center;
   }
 
   .line-scroll-section {
@@ -42,32 +42,38 @@ const SliderHomePage = styled.div`
     border-color:${(props) => (props.dark === true ? '#DDF521' : '#707070')} ;
     opacity: 1;
     margin-left:0px;
+    margin-top: 0;
+    margin-bottom: 0;
    
   }
   .content-scroll-section {
-   
+    display: block;
     text-align: left;
     font-size: 20px;
     line-height: 24px;
-    font-family: 'Helvetica', 'Neue';
     letter-spacing: 0px;
-    
     color: ${(props) => (props.dark === true ? 'white' : '#585050')} ;
     opacity: 1;
     margin-top: 10px;
     width: 225px;
   }
-  .circle-container{
-      display: flex;
-      align-items:center;
-    
-  }
 
   @media (min-width: 1024px) {
-    height: 240px;
+    min-height: 220px;
+
+    .circle-container > div {
+      width: 80%;
+    }
+
     .heading-scroll-section {
-      font-size: 23px;
+      font-size: 24px;
       line-height:23px;
+    }
+
+    .content-scroll-section {
+      margin-top: 36px;
+      width: 80%;
+      font-size: 20px;
     }
   }
 }

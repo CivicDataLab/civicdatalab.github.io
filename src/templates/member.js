@@ -1,47 +1,245 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import BlogCard from '../components/BlogCard';
 import { getCoverImageUrlFromMediumPost } from '../utils/helpers';
 import useMediumFeed from '../hooks/useMediumFeed';
+import Seo from '../components/Seo/Seo';
+import StandardGrid from '../styles/StandardGrid';
+import MainContainer from '../styles/MainContainer';
 // import MemberImage from '../components/MemberImage';
 
-const MemberContainer = styled.div`
-  padding-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    'bio'
-    'picture'
-    'blogs';
+const MemberContainer = styled(MainContainer)`
+  margin-top: 20px;
 
-  @media (min-width: 550px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      'picture bio'
-      'blogs blogs';
+  @media (min-width: 1280px) {
+    margin-top: 80px;
+  }
+`;
+
+const PictureContainer = styled.div`
+  box-sizing: border-box;
+
+  .gatsby-image-wrapper {
+    height: 400px;
+    margin: auto;
   }
 
   @media (min-width: 1024px) {
-    grid-column-gap: 100px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-      'picture bio bio'
-      'picture blogs blogs';
+    .gatsby-image-wrapper {
+      height: 500px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    grid-column: 1/6;
+    .gatsby-image-wrapper {
+      height: 600px;
+    }
   }
 
   @media (min-width: 1440px) {
-    grid-column-gap: 180px;
+    .gatsby-image-wrapper {
+      height: 700px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .gatsby-image-wrapper {
+      height: 900px;
+    }
+  }
+`;
+
+export const QuoteContainer = styled.div`
+  background-color: ${(props) => (props.background ? props.background : '#1DCCCC')};
+  color: ${(props) => (props.text ? 'white' : 'black')};
+  z-index: -1;
+  padding: 40px 0;
+
+  p {
+    line-height: 28px;
+    font-weight: 300;
+    font-style: italic;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+
+    span {
+      display: inline-block;
+    }
+
+    span:first-of-type,
+    span:last-of-type {
+      font-size: 120px;
+      color: rgb(0, 0, 0, 0.26);
+    }
+
+    span:first-of-type {
+      transform: translate(-10px, 20px);
+    }
+
+    span:last-of-type {
+      transform: rotate(-180deg) translate(-80px);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 780px;
+    width: 400px;
+
+    p {
+      margin-top: 485px;
+      font-size: 20px;
+      line-height: 1.4em;
+
+      span:first-of-type,
+      span:last-of-type {
+        font-size: 140px;
+      }
+    }
+  }
+
+  @media (min-width: 1440px) {
+    width: 460px;
+    height: 860px;
+    top: 55%;
+
+    p {
+      margin-top: 480px;
+      font-size: 25px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    height: 1000px;
+    width: 600px;
+
+    p {
+      margin-top: 620px;
+    }
   }
 `;
 
 export const Bio = styled.div`
-  padding: 0 32px;
   box-sizing: border-box;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+
+  p {
+    margin: 18px 0;
+    line-height: 28px;
+  }
+
+  a {
+    color: #168cd6;
+  }
+
+  li {
+    line-height: 28px;
+  }
+
+  @media (min-width: 1024px) {
+    min-height: 500px;
+    p {
+      font-size: 18px;
+      line-height: 27px;
+      margin: 44px 0;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    grid-column: 6/12;
+    min-height: 1000px;
+  }
+
+  @media (min-width: 1440px) {
+    min-height: 1180px;
+  }
+`;
+
+export const SocialLinksContainer = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-color: black;
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+      color: white;
+      margin-left: 8px;
+    }
+
+    a > * {
+      width: 50%;
+      height: 50%;
+    }
+  }
+`;
+
+const BlogContainer = styled.div`
+  box-sizing: border-box;
+  margin-top: 80px;
+  margin-bottom: 20px;
+
+  > h2 {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    > h2 {
+      font-size: 40px;
+    }
+  }
+`;
+
+const BlogPostGrid = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 25px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1280px) {
+    grid-column: 6/12;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 25px;
+  }
+
+  @media (min-width: 1440px) {
+    column-gap: 30px;
+    row-gap: 45px;
+  }
+
+  @media (min-width: 1920px) {
+    column-gap: 45px;
+  }
+`;
+
+const MemberDetails = styled.div`
+  display: ${(props) => (props.mobile ? 'block' : 'none')};
   h2 {
     text-transform: uppercase;
     font-weight: 700;
@@ -55,19 +253,8 @@ export const Bio = styled.div`
     margin: 3px 0;
   }
 
-  p {
-    margin: 18px 0;
-    line-height: 28px;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 0 20px;
-    width: 600px;
-    p {
-      font-size: 18px;
-      line-height: 27px;
-      margin: 44px 0;
-    }
+  @media (min-width: 1280px) {
+    display: ${(props) => (props.mobile ? 'none' : 'block')};
     h2 {
       font-size: 50px;
       margin-bottom: 12px;
@@ -75,185 +262,6 @@ export const Bio = styled.div`
     h5 {
       font-size: 20px;
     }
-  }
-
-  @media (min-width: 1280px) {
-    width: 720px;
-  }
-`;
-
-const PictureContainer = styled.div`
-  grid-area: picture;
-  height: 600px;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 540px;
-
-  div:last-of-type {
-    position: relative;
-    background-color: #1dcccc;
-  }
-
-  .gatsby-image-wrapper {
-    max-width: 275px;
-    height: 410px;
-    position: absolute;
-    bottom: 70px;
-    margin: auto;
-  }
-
-  p {
-    line-height: 28px;
-    font-weight: 300;
-    font-style: italic;
-    position: relative;
-    width: 75%;
-    margin: 0 auto;
-    padding-bottom: 75px;
-
-    span {
-      font-size: 200px;
-      text-align: left;
-      color: rgb(0, 0, 0, 0.26);
-      display: inline-block;
-      position: absolute;
-      top: 84px;
-    }
-
-    span:first-of-type {
-      transform: translate(-40px, -80px);
-    }
-
-    span:last-of-type {
-      transform: rotate(-180deg) translate(10px, -50px);
-    }
-  }
-
-  @media (min-width: 768px) {
-    .gatsby-image-wrapper {
-      margin-right: -10px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    div:last-of-type {
-      width: 589px;
-      position: relative;
-      background-color: #1dcccc;
-    }
-
-    .gatsby-image-wrapper {
-      max-width: 500px;
-      height: 780px;
-      position: absolute;
-    }
-
-    p {
-      padding-bottom: 100px;
-      padding-top: 40px;
-
-      span:first-of-type {
-        padding-top: 40px;
-      }
-
-      span:last-of-type {
-        transform: rotate(-180deg) translate(10px, 0px);
-      }
-    }
-  }
-
-  @media (min-width: 1440px) {
-    margin-bottom: 600px;
-
-    .gatsby-image-wrapper {
-      left: 40px;
-    }
-
-    p {
-      padding-bottom: 100px;
-      width: 50%;
-
-      span:last-of-type {
-        transform: rotate(-180deg) translate(10px, -60px);
-      }
-    }
-  }
-`;
-
-const SocialLinksContainer = styled.div`
-  display: none;
-  @media (min-width: 768px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 100px;
-    margin-left: 100px;
-
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      background-color: black;
-      width: 45px;
-      height: 45px;
-      border-radius: 100%;
-      color: white;
-      margin: 0 4px;
-    }
-
-    a > * {
-      width: 50%;
-      height: 50%;
-    }
-  }
-`;
-
-const BlogContainer = styled.div`
-  grid-area: blogs;
-  padding: 0 20px;
-  box-sizing: border-box;
-  max-width: 1020px;
-  width: 100%;
-  margin-top: 60px;
-
-  > h2 {
-    display: inline-block;
-    text-transform: uppercase;
-    padding-top: 20px;
-    font-weight: bold;
-    border-top: 8px solid black;
-  }
-
-  @media (min-width: 550px) {
-    margin-top: 80px;
-  }
-
-  @media (min-width: 768px) {
-    margin-top: 200px;
-  }
-
-  @media (min-width: 1024px) {
-    > h2 {
-      font-size: 40px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    margin-top: 100px;
-  }
-`;
-
-const BlogPostGrid = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 32px;
   }
 `;
 
@@ -263,69 +271,92 @@ const MemberTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <Seo title={member.frontmatter.name} />
       <MemberContainer>
-        <Bio>
-          <h2>{member.frontmatter.name}</h2>
-          <h5>
-            {member.frontmatter.role.split(',').map((role, index) => {
-              if (index === member.frontmatter.role.split(',').length - 1) {
-                return <span key={role}>{role}</span>;
-              }
-              return (
-                <span key={role}>
-                  {role}
-                  {' - '}
-                </span>
-              );
-            })}
-          </h5>
-          <p>{member.frontmatter.description}</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-          </p>
-        </Bio>
-        <PictureContainer>
-          <SocialLinksContainer>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer noopener">
-              <FaTwitter />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
-              <FaLinkedinIn />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer noopener">
-              <FaGithubAlt />
-            </a>
-          </SocialLinksContainer>
-          <div style={{ backgroundColor: member.frontmatter.accentcolor }}>
-            <Image fluid={member.frontmatter.image.childImageSharp.fluid} />
-            {/* <img src={require(`../images/${member.frontmatter.image}`)} className="profile-picture" alt="profile" /> */}
-            <p>
-              <span>“</span>
-              {member.frontmatter.quote}
-              <span>“</span>
-            </p>
-          </div>
-        </PictureContainer>
-        <BlogContainer>
-          <h2>Blogs</h2>
-          <BlogPostGrid>
-            {blogPosts.length ? (
-              blogPosts.slice(0, 4).map((post) => {
+        <StandardGrid>
+          <MemberDetails mobile>
+            <h2>{member.frontmatter.name}</h2>
+            <h5>
+              {member.frontmatter.role.split(',').map((role, index) => {
+                if (index === member.frontmatter.role.split(',').length - 1) {
+                  return <span key={role}>{role}</span>;
+                }
                 return (
-                  <BlogCard
-                    key={post.guid}
-                    title={post.title}
-                    imageUrl={getCoverImageUrlFromMediumPost(post['content:encoded'])}
-                    postUrl={post.link}
-                  />
+                  <span key={role}>
+                    {role}
+                    {' - '}
+                  </span>
                 );
-              })
-            ) : (
-              <p style={{ fontSize: 17 }}>No blogs found for the member.</p>
-            )}
-          </BlogPostGrid>
-        </BlogContainer>
+              })}
+            </h5>
+          </MemberDetails>
+          <PictureContainer>
+            <SocialLinksContainer>
+              {member.frontmatter.twitter && (
+                <a href={member.frontmatter.twitter} target="_blank" rel="noreferrer noopener">
+                  <FaTwitter />
+                </a>
+              )}
+              {member.frontmatter.linkedin && (
+                <a href={member.frontmatter.linkedin} target="_blank" rel="noreferrer noopener">
+                  <FaLinkedinIn />
+                </a>
+              )}
+              {member.frontmatter.github && (
+                <a href={member.frontmatter.github} target="_blank" rel="noreferrer noopener">
+                  <FaGithubAlt />
+                </a>
+              )}
+            </SocialLinksContainer>
+            <Image fluid={member.frontmatter.image?.childImageSharp.fluid} />
+            <QuoteContainer background={member.frontmatter.accentcolor} text={member.frontmatter.text}>
+              <p>
+                <span>“</span>
+                <span>{member.frontmatter.quote}</span>
+                <span>“</span>
+              </p>
+            </QuoteContainer>
+          </PictureContainer>
+          <Bio>
+            <MemberDetails>
+              <h2>{member.frontmatter.name}</h2>
+              <h5>
+                {member.frontmatter.role.split(',').map((role, index) => {
+                  if (index === member.frontmatter.role.split(',').length - 1) {
+                    return <span key={role}>{role}</span>;
+                  }
+                  return (
+                    <span key={role}>
+                      {role}
+                      {' - '}
+                    </span>
+                  );
+                })}
+              </h5>
+            </MemberDetails>
+            {member.frontmatter.description?.split(';').map((d) => (
+              <p key={d}>{d}</p>
+            ))}
+            {member.html && <div dangerouslySetInnerHTML={{ __html: member.html }}></div>}
+            {blogPosts.length ? (
+              <BlogContainer>
+                <h2>Blogs</h2>
+                <BlogPostGrid>
+                  {blogPosts.map((post) => {
+                    return (
+                      <BlogCard
+                        key={post.guid}
+                        title={post.title}
+                        imageUrl={getCoverImageUrlFromMediumPost(post['content:encoded'])}
+                        postUrl={post.link}
+                      />
+                    );
+                  })}
+                </BlogPostGrid>
+              </BlogContainer>
+            ) : null}
+          </Bio>
+        </StandardGrid>
       </MemberContainer>
     </Layout>
   );
@@ -337,6 +368,7 @@ export const pageQuery = graphql`
   query TeamMemberQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
+      html
       frontmatter {
         name
         role
@@ -345,12 +377,16 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             fluid(maxWidth: 800, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
         medium
+        github
+        linkedin
+        twitter
         accentcolor
+        text
       }
     }
   }

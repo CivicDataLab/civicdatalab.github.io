@@ -1,24 +1,22 @@
 import styled from 'styled-components';
+
 const WorkHomePage = styled.div`
-  background: rgba(178, 201, 229, 0.27);
+  color: white;
   display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40px 0;
 
   .sub-text {
     width: 100%;
-    opacity: 1;
   }
 
   hr {
-    border: 8px solid #000000;
-    opacity: 1;
+    border: 8px solid #FFF;
+    border-radius: 12px;
     width: 58px;
     margin-left: 0px;
     margin-top: 18px;
-  }
-
-  .container-work-section {
-    padding: 40px 20px 50px;
-    width: 100%;
   }
 
   .content {
@@ -28,21 +26,15 @@ const WorkHomePage = styled.div`
   .first-text-block {
     text-align: left;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 1.4em;
     font-family: Montserrat;
-    letter-spacing: 0px;
-    color: #000000;
-    opacity: 1;
-    margin-right: 40px;
     margin-top: 16px;
     padding-left: 0px;
   }
 
   .circle-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 18px;
+    display: grid;
+    margin-top: 80px;
   }
 
   .circle {
@@ -50,31 +42,30 @@ const WorkHomePage = styled.div`
     width: 159px;
     background-color: #ffffff;
     border-radius: 50%;
-    // margin-left: 77px;
-    // margin-bottom: 25px;
+    margin-bottom: 14px;
+    box-shadow: 0px 10px 30px #A2CAFD3C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img {
-      width: inherit;
-      height: inherit;
-      border-radius: inherit;
+      width: 100%;
+      height: 100%;
     }
   }
 
   .below-text {
-    background-color: black;
     text-align: left;
-    font: normal normal medium;
+    font-weight: 500;
     font-size: 18px;
     line-height: 31px;
     font-family: Montserrat;
     letter-spacing: 0px;
     color: #ffffff;
-    opacity: 1;
-    // margin-left: 68px;
-    // margin-right: 75px;
     width: 100%;
     text-decoration: none;
   }
+
   p {
     padding-left: 22px;
     padding-right: 21px;
@@ -86,98 +77,104 @@ const WorkHomePage = styled.div`
   }
 
   .content-circle {
-    // margin-top: 25px;
-    // margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 10px;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      .circle {
+        box-shadow: 0px 10px 60px #A2CAFD3C;
+      }
+    }
+  }
+
+  #first-circle {
+    margin-bottom: 40px;
   }
 
   @media (min-width: 550px) {
     .circle-wrapper {
-      flex-direction: row;
-      justify-content: space-around;
-    }
-
-    .content-circle {
-      margin-right: 40px;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
   @media (min-width: 900px) {
     padding-top: 40px;
     padding-bottom: 40px;
+    max-width: 100%;
     .container-work-section {
       display: flex;
     }
     .circle-wrapper {
-      // column-gap: 18px;
-      justify-content: flex-start;
+      justify-items: start;
       width: 50%;
     }
-    .content {
+    .content {ase64
+      tracedSVG
+      srcWebp
+      srcSetWebp
+      originalImg
+      originalName
+      font-size: 18px;
+      line-height: 25px;
       width: 50%;
+    }
+
+    .circle-wrapper {
+      grid-template-columns: 360px 360px;
+    }
+    .circle {
+      margin-bottom: 24px;
+      width: 240px;
+      height: 240px;
+
+      img {
+        width: 240px;
+        height: 240px;
+      }
+    }
+  }
+
+  @media(min-width: 1280px) {
+    flex-direction: row;
+    padding: 100px 0px;
+    margin-bottom: 60px;
+
+    .first-text-block {
+      width: 60%;
     }
   }
 
   @media (min-width: 1440px) {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    .work-part {
-      font-size: 60px;
-      line-height: 60px;
-    }
+    padding: 150px 0px;
+    margin-bottom: 80px;
+
     .sub-text {
       font-size: 60px;
       line-height: 60px;
     }
-    .container-work-section {
-      display: flex;
-      justify-content: space-between;
-      padding-left: 72px;
-      padding-right: 72px;
-    }
 
     .circle {
-      width: 300px;
-      height: 300px;
-      margin-bottom: 12px;
+      width: 260px;
+      height: 260px;
     }
 
-    .content-circle {
-      margin-right: 120px;
+    .below-text {
+      font-size: 20px;
     }
 
     .first-text-block {
       font-size: 18px;
       line-height: 27px;
-      width: 615px;
+      width: 40%;
     }
     .work-home-page {
       width: 94px;
-    }
-    .container-work-section {
-      padding: 40px 73px 50px;
-    }
-    .circle-wraper {
-      display: flex;
-    }
-  }
-  @media (min-width: 1200px) and (max-width: 1440px) {
-    .work-part {
-      font-size: 70px;
-      line-height: 70px;
-    }
-
-    .sub-text {
-      font-size: 70px;
-      line-height: 70px;
-    }
-    .first-text-block {
-      font-size: 18px;
-      line-height: 25px;
-      width: 615px;
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
   }
 `;

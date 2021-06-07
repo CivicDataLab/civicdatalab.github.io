@@ -2,7 +2,7 @@ import { useReducer, useEffect } from 'react';
 import Parser from 'rss-parser';
 
 const parser = new Parser();
-const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
+const CORS_PROXY = 'https://cors0any.herokuapp.com/';
 
 const intialState = {
   blogPosts: [],
@@ -41,14 +41,17 @@ const useMediumFeed = (mediumUserName) => {
   useEffect(() => {
     dispatch({ type: 'FETCHING_POSTS' });
     parser
-      .parseURL(CORS_PROXY + `https://medium.com/feed/@${mediumUserName}`)
+      .parseURL(CORS_PROXY + `https://medium.com/feed/${mediumUserName}`)
       .then((response) => {
-        dispatch({ type: 'FETCHING_POSTS_SUCCESS', payload: response.items });
+        dispatch({
+          type: 'FETCHING_POSTS_SUCCESS',
+          payload: response.items.filter((post) => post['content:encoded'].indexOf('CivicDataLab') > -1)
+        });
       })
       .catch((error) => {
         dispatch({ type: 'FETCHING_POSTS_FAILED', payload: error.message });
       });
-  }, []);
+  }, [mediumUserName]);
 
   return [state.blogPosts, state.error, state.loading];
 };

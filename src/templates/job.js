@@ -1,9 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import Perk from '../components/Perk';
+import { SiAngellist } from 'react-icons/si';
+import { GoMail } from 'react-icons/go';
 import ApplicationProcess from '../components/ApplicationProcess';
+import Seo from '../components/Seo/Seo';
 
 const JobContainer = styled.div`
   padding-top: 50px;
@@ -48,8 +51,14 @@ const DescriptionContainer = styled.div`
 
   a {
     color: #208da7;
-    margin-right: 16px;
+    margin-right: 24px;
     font-size: inherit;
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      margin-right: 2px;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -88,6 +97,12 @@ const AboutContainer = styled.div`
   li {
     font-weight: 600;
     margin-bottom: 12px;
+  }
+
+  @media (min-width: 1024px) {
+    p {
+      max-width: 600px;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -250,10 +265,9 @@ const applicationProcess = [
 const Job = ({ data }) => {
   const job = data.markdownRemark;
 
-  console.log(job.frontmatter.expectations);
-
   return (
     <Layout>
+      <Seo title={job.frontmatter.title} />
       <Header>
         <h1>{job.frontmatter.title}</h1>
         <p>CivicDataLab works across sectors to increase access to information.</p>
@@ -264,9 +278,12 @@ const Job = ({ data }) => {
           <h2>Apply</h2>
           <div>
             <a href={job.frontmatter.angellist} target="_blank" rel="noreferrer">
-              AngelList
+              <SiAngellist /> AngelList
             </a>
-            <a href="mailto:careers@civicdatalab.in">Email</a>
+            <a href="mailto:careers@civicdatalab.in">
+              <GoMail />
+              Email
+            </a>
           </div>
         </DescriptionContainer>
         <RolesContainer>

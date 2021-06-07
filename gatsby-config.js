@@ -5,8 +5,10 @@ module.exports = {
   siteMetadata: {
     title: `CivicDataLab`,
     summary: '',
-    description: '',
-    siteUrl: 'https://civicdatalab.in',
+    description:
+      'A research lab working on the intersection use data, tech, design and social science to strengthen the course of civic engagements in India.',
+    siteUrl: 'https://civicdatalab.in/website-new',
+    image: '/cdl_logo.png',
     social: {
       twitter: '',
       github: '',
@@ -34,6 +36,7 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap'
   ]
 };

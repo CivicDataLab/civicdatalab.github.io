@@ -2,21 +2,46 @@ import React from 'react';
 import HeroText from '../styles/HeroText';
 import OurPartnersStyle from '../styles/OurPartners';
 import Image from 'gatsby-image';
+import ScrollContainer from 'react-indiana-drag-scroll';
+import MainContainer from '../styles/MainContainer';
 
 const OurPartners = ({ partners }) => {
+  const scrollContainer = React.useRef(null);
+
+  React.useEffect(() => {
+    let scrollInterval;
+    if (scrollContainer.current) {
+      let scrollWidth = 0;
+      scrollInterval = setInterval(() => {
+        if (scrollWidth > scrollContainer.current.scrollWidth + 1000) {
+          scrollWidth = 0;
+        } else {
+          scrollWidth = scrollWidth + 2;
+          scrollContainer.current.scrollTo(scrollWidth, 0);
+        }
+      }, 20);
+    }
+
+    return () => {
+      clearInterval(scrollInterval);
+    };
+  }, []);
+
   return (
-    <OurPartnersStyle>
-      <div className={'partners-section-wraper'}>
+    <MainContainer>
+      <OurPartnersStyle>
         <div className={'content'}>
           <HeroText className={'section-heading'}>Our Partners</HeroText>
         </div>
-        <div className={'partners-container'}>
+        <ScrollContainer className="partners-container" vertical={false} innerRef={scrollContainer}>
           {partners.map((partner) => (
-            <Image key={partner.id} fixed={partner.childImageSharp.fixed} />
+            <a key={partner.id} href={`https://${partner.name}`} target="_blank" rel="noreferrer noopener">
+              <Image fixed={partner.childImageSharp.fixed} />
+            </a>
           ))}
-        </div>
-      </div>
-    </OurPartnersStyle>
+        </ScrollContainer>
+      </OurPartnersStyle>
+    </MainContainer>
   );
 };
 

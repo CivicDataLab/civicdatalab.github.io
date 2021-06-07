@@ -1,31 +1,29 @@
 import styled from 'styled-components';
-const Contact = styled.div`
+import StandardGrid from './StandardGrid';
+
+
+const Contact = styled(StandardGrid)`
+  padding-top: 40px;
+  margin-right: 18px;
+  margin-bottom: 60px;
+
   .sub-text {
     width: 100%;
-    opacity: 1;
+    color: black;
   }
 
   hr {
     border: 8px solid #000000;
-    opacity: 1;
+    border-radius: 12px;
     width: 58px;
     margin-left: 0px;
     margin-top: 18px;
   }
 
-  .container-contact-section {
-    padding-left: 20px;
-    padding-top: 40px;
-    margin-right: 18px;
-  }
   .first-text-block {
     text-align: left;
     font-size: 18px;
-    line-height: 20px;
-    font-family: Montserrat;
-    letter-spacing: 0px;
-    color: #000000;
-    opacity: 1;
+    line-height: 1.4em;
     margin-right: 40px;
     margin-top: 40px;
     padding-left: 0px;
@@ -36,22 +34,20 @@ const Contact = styled.div`
     font-weight: 600;
     font-size: 22px;
     line-height: 27px;
-    font-family: Montserrat;
-    letter-spacing: 0px;
-    color: #000000;
-    opacity: 1;
   }
 
   input {
+    font-family: Montserrat;
     background: #ffffff padding-box;
     border: 1px solid #707070;
-    opacity: 1;
     width: 100%;
     margin-bottom: 21px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 15px;
     box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 12px;
   }
 
   .write-input-type {
@@ -60,9 +56,10 @@ const Contact = styled.div`
     padding-bottom: 15px;
     padding-left: 15px;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     font-size: 18px;
     border: 1px solid rgb(112, 112, 112);
+    border-radius: 12px;
   }
 
   input::-webkit-input-placeholder {
@@ -72,20 +69,6 @@ const Contact = styled.div`
     line-height: 20px;
     font-family: Montserrat;
     letter-spacing: 0px;
-    opacity: 1;
-  }
-  .send-button {
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    line-height: 26px;
-    font-family: Montserrat;
-    letter-spacing: 0px;
-    color: #ffffff;
-    opacity: 1;
-    height: 32px;
-    width: 90px;
-    border-radius: 36px;
   }
 
   .send-button-container {
@@ -94,25 +77,28 @@ const Contact = styled.div`
   }
 
   .send-button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-family: Montserrat;
     margin-top: 40px;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    padding: 8px 40px;
+    border-radius: 28px;
   }
 
   @media (min-width: 900px) {
-    .container-contact-section {
-      display: flex;
-    }
-    .content {
-      width: 50%;
-    }
 
-    .lower-content-section {
-      margin-top: 141px;
-    }
-    .first-text-block {
-      margin-right: 175px;
+    .send-button {
+      padding: 15px 50px;
     }
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
+    margin-right: 0;
+    padding: 80px 0;
+
     .main-part {
       font-size: 70px;
       line-height: 70px;
@@ -122,12 +108,28 @@ const Contact = styled.div`
       font-size: 70px;
       line-height: 70px;
     }
+
+    .upper-content-section {
+      grid-column: 1/4;
+    }
+
+    .lower-content-section {
+      grid-column: 4/10;
+    }
   }
 
   @media (min-width: 1440px) {
+    margin-bottom: 120px;
+    margin-right: 0px;
+
     .main-part {
       font-size: 60px;
       line-height: 60px;
+    }
+
+    hr {
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
 
     .sub-text {
@@ -137,12 +139,6 @@ const Contact = styled.div`
     .contact-page-line {
       width: 94px;
       margin-left: 0px;
-    }
-
-    .container-contact-section {
-      padding-left: 73px;
-      padding-right: 116px;
-      margin-right: 0px;
     }
 
     .first-text-block {
@@ -155,9 +151,6 @@ const Contact = styled.div`
       line-height: 27px;
     }
 
-    .lower-content-section {
-      margin-top: 200px;
-    }
     input {
       padding-left: 30px;
       padding-top: 25px;
@@ -168,10 +161,6 @@ const Contact = styled.div`
     .write-input-type {
       padding-left: 30px;
       padding-top: 25px;
-    }
-
-    button {
-      height: 90px;
     }
   }
 `;
