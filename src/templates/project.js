@@ -394,7 +394,7 @@ const ProjectTemplate = ({ data }) => {
         <StandardGrid>
           <ProjectContent>
             <MiniTeamSection members={members} />
-            <Resources resources={resources} />
+            {resources && <Resources resources={resources} />}
           </ProjectContent>
         </StandardGrid>
       </MainContainer>
