@@ -1,46 +1,28 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
 import styled from 'styled-components';
 import Layout from '../components/Layout/Layout';
 import JobRow from '../components/JobRow';
-import MainGrid from '../styles/MainGrid';
 import Seo from '../components/Seo/Seo';
+import MainContainer from '../styles/MainContainer';
+import StandardGrid from '../styles/StandardGrid';
+import { TitleContainer } from './work';
+import HeroText from '../styles/HeroText';
 
-const DescriptionContainer = styled.div`
-  grid-area: left;
-  padding: 0 32px;
-  font-size: 16px;
-
-  h1 {
-    font-family: Bungee;
-    font-size: 2em;
-    width: 80px;
-    display: inline-block;
-    padding-bottom: 10px;
-    border-bottom: 8px solid black;
-  }
-
+const OpeningsTitleContainer = styled(TitleContainer)`
   p {
-    font-size: 18px;
-    line-height: 28px;
+    line-height: 1.5em;
+    margin-top: 50px;
+    width: 250px;
+    font-size: 16px;
   }
 
-  @media (min-width: 1024px) {
-    width: 60%;
-    padding-left: 72px;
-    h1 {
-      font-size: 60px;
-      display: block;
-      padding: 0;
-      border: none;
-      width: 200px;
-      margin-top: 20px;
-    }
+  @media (min-width: 1440px) {
+    font-size: 18px;
   }
 `;
+
 const OpeningListContainer = styled.div`
-  grid-area: bottom;
   font-size: 18px;
   margin: 32px 0;
 
@@ -48,40 +30,23 @@ const OpeningListContainer = styled.div`
     background-color: #0000001a;
   }
 
-  @media (min-width: 1024px) {
-    margin-right: 106px;
-  }
-`;
-
-const PictureContainer = styled.div`
-  grid-area: right;
-  margin: 32px 0;
-
-  .gatsby-image-wrapper {
-    max-height: 500px;
+  @media (min-width: 1280px) {
+    margin-top: 40px;
+    grid-column: 4/13;
+    min-height: 55vh;
   }
 `;
 
 const Openings = () => {
   const data = useStaticQuery(graphql`
     query {
-      jobsPicture: file(relativePath: { eq: "landing-image.jpeg" }) {
-        childImageSharp {
-          fluid(maxHeight: 1375, quality: 100) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-
       allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/openings/" } }) {
         edges {
           node {
             id
-            fields {
-              slug
-            }
             frontmatter {
               title
+              url
             }
           }
         }
@@ -94,24 +59,23 @@ const Openings = () => {
   return (
     <Layout>
       <Seo title="Join Us" />
-      <MainGrid>
-        <DescriptionContainer>
-          <h1>Join us</h1>
-          <p>CivicDataLab works across sectors to increase access to information.</p>
-        </DescriptionContainer>
-        <OpeningListContainer>
-          {openings.map((opening) => (
-            <JobRow
-              key={opening.node.fields.slug}
-              title={opening.node.frontmatter.title}
-              link={opening.node.fields.slug}
-            />
-          ))}
-        </OpeningListContainer>
-        <PictureContainer>
-          <Image fluid={data.jobsPicture.childImageSharp.fluid} />
-        </PictureContainer>
-      </MainGrid>
+      <MainContainer>
+        <StandardGrid>
+          <OpeningsTitleContainer>
+            <HeroText>Join us</HeroText>
+            <p>CivicDataLab works across sectors to increase access to information.</p>
+          </OpeningsTitleContainer>
+          <OpeningListContainer>
+            {openings.map((opening) => (
+              <JobRow
+                key={opening.node.id}
+                title={opening.node.frontmatter.title}
+                link={opening.node.frontmatter.url}
+              />
+            ))}
+          </OpeningListContainer>
+        </StandardGrid>
+      </MainContainer>
     </Layout>
   );
 };

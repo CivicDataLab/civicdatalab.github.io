@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
 const OpeningRow = styled.div`
   padding: 8px 32px;
@@ -18,7 +17,7 @@ const OpeningRow = styled.div`
   }
 `;
 
-const OpeningLink = styled(Link)`
+const OpeningLink = styled.a`
   color: white;
   background-color: black;
   padding: 8px 16px;
@@ -34,7 +33,9 @@ const JobRow = ({ title, link }) => {
   return (
     <OpeningRow>
       <p>{title}</p>
-      <OpeningLink to={link}>View opening</OpeningLink>
+      <OpeningLink href={link} target="_blank" rel="noopener noreferrer">
+        View opening
+      </OpeningLink>
     </OpeningRow>
   );
 };
