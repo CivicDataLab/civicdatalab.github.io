@@ -33,7 +33,7 @@ const AboutBackground = ({ children }) => {
   }, [data.allFile.nodes]);
 
   return (
-    <BackgroundImage style={{ zIndex: -1 }} fluid={currentImage}>
+    <BackgroundImage fluid={currentImage}>
       {children}
     </BackgroundImage>
   );
