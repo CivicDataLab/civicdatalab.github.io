@@ -4,6 +4,7 @@ import BackgroundImage from 'gatsby-background-image';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
+import useHorizontalAutoScroll from '../hooks/useHorizontalAutoScroll';
 
 const StyledScrollContainer = styled(ScrollContainer)`
   display: flex;
@@ -21,6 +22,15 @@ const StyledScrollContainer = styled(ScrollContainer)`
 
   @media (min-width: 1280px) {
     margin-bottom: 90px;
+  }
+
+  @media (min-width: 2000px) {
+    height: 480px;
+
+    > * {
+      height: 350px;
+      width: 350px;
+    }
   }
 `;
 
@@ -53,24 +63,7 @@ const CivicDaysImages = () => {
 
   const scrollContainer = React.useRef(null);
 
-  React.useEffect(() => {
-    let scrollInterval;
-    if (scrollContainer.current) {
-      let scrollWidth = 0;
-      scrollInterval = setInterval(() => {
-        if (scrollWidth > scrollContainer.current.scrollWidth) {
-          scrollWidth = 0;
-        } else {
-          scrollWidth = scrollWidth + 1;
-          scrollContainer.current.scrollTo(scrollWidth, 0);
-        }
-      }, 20);
-    }
-
-    return () => {
-      clearInterval(scrollInterval);
-    };
-  }, []);
+  useHorizontalAutoScroll(scrollContainer);
 
   return (
     <BackgroundImage fluid={data.file.childImageSharp.fluid}>
