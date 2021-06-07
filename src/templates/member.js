@@ -118,11 +118,22 @@ export const QuoteContainer = styled.div`
   }
 
   @media (min-width: 1920px) {
-    height: 1000px;
+    height: 960px;
     width: 600px;
+    top: 45%;
 
     p {
-      margin-top: 620px;
+      margin-top: 700px;
+    }
+  }
+
+  @media (min-width: 2000px) {
+    left: 5%;
+    top: 40%;
+    height: 900px;
+
+    p {
+      margin-top: 650px;
     }
   }
 `;
@@ -160,6 +171,10 @@ export const Bio = styled.div`
 
   @media (min-width: 1440px) {
     min-height: 1180px;
+  }
+
+  @media (min-width: 1920px) {
+    min-height: 1280px;
   }
 `;
 
@@ -309,13 +324,13 @@ const MemberTemplate = ({ data }) => {
               )}
             </SocialLinksContainer>
             <Image fluid={member.frontmatter.image?.childImageSharp.fluid} />
-            <QuoteContainer background={member.frontmatter.accentcolor} text={member.frontmatter.text}>
+            {member.frontmatter.quote && <QuoteContainer background={member.frontmatter.accentcolor} text={member.frontmatter.text}>
               <p>
                 <span>“</span>
                 <span>{member.frontmatter.quote}</span>
                 <span>“</span>
               </p>
-            </QuoteContainer>
+            </QuoteContainer>}
           </PictureContainer>
           <Bio>
             <MemberDetails>
