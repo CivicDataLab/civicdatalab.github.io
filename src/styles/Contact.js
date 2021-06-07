@@ -105,21 +105,22 @@ const Contact = styled(StandardGrid)`
     }
 
     .sub-text {
-      font-size: 70px;
-      line-height: 70px;
+      font-size: 60px;
+      line-height: 60px;
     }
 
     .upper-content-section {
-      grid-column: 1/4;
+      grid-column: 3/6;
     }
 
     .lower-content-section {
-      grid-column: 4/10;
+      grid-column: 6/12;
     }
   }
 
   @media (min-width: 1440px) {
-    margin-bottom: 120px;
+    margin-bottom: 80px;
+    margin-top: 80px;
     margin-right: 0px;
 
     .main-part {
