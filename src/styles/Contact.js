@@ -89,6 +89,17 @@ const Contact = styled(StandardGrid)`
     border-radius: 28px;
   }
 
+  .lower-content-section {
+    a {
+      font-weight: 700;
+      color: black;
+    }
+
+    p {
+      line-height: 1.5em;
+    }
+  }
+
   @media (min-width: 900px) {
 
     .send-button {
@@ -110,11 +121,17 @@ const Contact = styled(StandardGrid)`
     }
 
     .upper-content-section {
-      grid-column: 2/6;
+      grid-column: 2/5;
     }
 
     .lower-content-section {
-      grid-column: 6/12;
+      grid-column: 5/11;
+
+      p {
+        margin-top: 0;
+        line-height: 1.5em;
+        margin-bottom: 2em;
+      }
     }
   }
 
