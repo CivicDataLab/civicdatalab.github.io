@@ -110,7 +110,7 @@ const Contact = styled(StandardGrid)`
     }
 
     .upper-content-section {
-      grid-column: 3/6;
+      grid-column: 2/6;
     }
 
     .lower-content-section {
