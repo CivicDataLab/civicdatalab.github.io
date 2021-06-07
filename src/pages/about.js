@@ -86,6 +86,7 @@ const FourGrid = styled(StandardGrid)`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    z-index: -1;
 
     h3 {
       margin-top: 0;

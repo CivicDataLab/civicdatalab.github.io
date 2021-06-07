@@ -21,6 +21,7 @@ const ValueContainer = styled.div`
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 3rem;
+    color: #1dcccc;
   }
 
   p {
