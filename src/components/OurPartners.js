@@ -4,28 +4,12 @@ import OurPartnersStyle from '../styles/OurPartners';
 import Image from 'gatsby-image';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import MainContainer from '../styles/MainContainer';
+import useHorizontalAutoScroll from '../hooks/useHorizontalAutoScroll';
 
 const OurPartners = ({ partners }) => {
   const scrollContainer = React.useRef(null);
 
-  React.useEffect(() => {
-    let scrollInterval;
-    if (scrollContainer.current) {
-      let scrollWidth = 0;
-      scrollInterval = setInterval(() => {
-        if (scrollWidth > scrollContainer.current.scrollWidth + 1000) {
-          scrollWidth = 0;
-        } else {
-          scrollWidth = scrollWidth + 2;
-          scrollContainer.current.scrollTo(scrollWidth, 0);
-        }
-      }, 20);
-    }
-
-    return () => {
-      clearInterval(scrollInterval);
-    };
-  }, []);
+  useHorizontalAutoScroll(scrollContainer);
 
   return (
     <MainContainer>
