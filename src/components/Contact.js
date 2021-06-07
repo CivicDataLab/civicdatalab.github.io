@@ -4,11 +4,12 @@ import HeroText from '../styles/HeroText';
 import styled from 'styled-components';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import MainContainer from '../styles/MainContainer';
+import { Link } from 'gatsby';
 
 const SocialLinksContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   margin-top: 20px;
 
   a {
@@ -65,25 +66,25 @@ const Contact = () => {
           <HeroText className={'main-part'}>Come </HeroText>
           <HeroText className={'sub-text'}> Say Hi!</HeroText>
           <hr className={'contact-page-line'}></hr>
-          <p className={'first-text-block'}>
-            Get in touch to learn more about CivicDataLab, our work and how we can collaborate!
-          </p>
-          <p className={'mail-text-block'}>info@civicdatalab.in</p>
           <SocialLinks />
         </div>
         <div className={'content lower-content-section'}>
-          <form>
-            <input type="name" id="name" name="name" placeholder="Name" />
-            <br></br>
-
-            <input type="email" id="email" name="email" placeholder="Email" />
-            <br></br>
-            <textarea rows={8} id="write" name="write" placeholder="Write..." className={'write-input-type'}></textarea>
-            <br></br>
-            <div className="send-button-container">
-              <button className="send-button">Submit</button>
-            </div>
-          </form>
+          <p>
+            We love discussing project ideas and challenges. Drop us a line here:{' '}
+            <a href="mailto:info@civicdatalab.in">info@civicdatalab.in</a>
+          </p>
+          <p>
+            For all hiring related queries, please write to us at{' '}
+            <a href="mailto:careers@civicdatalab.in">careers@civicdatalab.in</a>. Do check out our{' '}
+            <Link to="/openings">openings</Link> page to know more about the roles we're hiring for.{' '}
+          </p>
+          <p>
+            We're also on{' '}
+            <a href="https://twitter.com/civicdatalab" target="_blank" rel="noreferrer noopener">
+              Twitter
+            </a>
+            . Sure, you can DM us there as well!
+          </p>
         </div>
       </ContactStyle>
     </MainContainer>
