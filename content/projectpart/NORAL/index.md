@@ -5,5 +5,5 @@ logo: ./logo.jpg
 testimonial:
 website: https://www.dataforchildrencollaborative.com/
 sectors: Education
-projects: NORAL
+projects: The Northern Alliance of Scotland
 ---
