@@ -30,6 +30,12 @@ module.exports = {
         path: path.join(__dirname, 'content')
       }
     },
+    {
+      resolve: 'gatsby-plugin-plausible',
+      options: {
+        domain: 'civicdatalab.in'
+      }
+    },
     'gatsby-background-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
