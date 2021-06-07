@@ -4,16 +4,11 @@ image: ./image.jpg
 summary: Fixing Public Procurement with public data!
 context: How the government spends money on public goods, services, and infrastructure is referred to as Public Procurement. Public procurement data is imperative to understand government priorities and advocate for better spending. What started as a hackathon project, creating an index for procurement practices for health related procurement turned into a full fledged partnership, between CivicDataLab and Open Contracting Partnership.
 solution: To open up more public procurement data in interoperable formats that are easy to analyse and gather insights from - on a variety of issues including public health, education and more.
-url:
+url: https://hp.openbudgetsindia.org/#/procurement/analysis
 twitter:
 facebook:
 instagram:
 resources:
-  - {
-      title: 'Health Procurement Performance Index',
-      link: 'https://hp.openbudgetsindia.org/#/procurement/analysis',
-      type: 'Dashboard'
-    }
   - {
       title: 'Health and WASH procurements in OCDS',
       link: 'https://github.com/CivicDataLab/himachal-pradesh-health-procurement-OCDS',
