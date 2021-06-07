@@ -3,13 +3,13 @@ name: Deepthi Chand
 role: Founder
 medium: '@deepthichand'
 description:
-quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+quote:
 github: https://github.com/deepthi-Chand
 twitter: https://twitter.com/eopoxf
 linkedin: https://www.linkedin.com/in/deepthi-chand-alagandula-5415862b/
 image: ./dc.jpg
 sectors: Education,Urban Planning,Law & Justice
-projects: PetaBencana, JusticeHub, HAQ-POCSO implementation tracker, OpenCity, NORAL, PetaBencana, STiR Education, Pratham Books, Child Rights Laws Implementation Tracker, Akshara Foundation
+projects: PetaBencana, JusticeHub, HAQ-POCSO implementation tracker, OpenCity, The Northern Alliance of Scotland, PetaBencana, STiR Education, Pratham Books, Child Rights Laws Implementation Tracker, Akshara Foundation
 ---
 
 Deepthi Chand aka DC is data and tech evangelist motivated towards understanding the role technology plays in making the civic engagements better in the country.
