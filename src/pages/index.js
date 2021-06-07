@@ -8,7 +8,6 @@ import MainContainer from '../styles/MainContainer';
 import SectorsCard from '../components/SectorCard';
 import TeamHomePage from '../components/TeamHomePage';
 import WorkHomePage from '../components/WorkHomePage';
-import Contact from '../components/Contact';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../theme/theme';
 import { CivicDays } from './team';
@@ -80,6 +79,10 @@ const HeroSection = styled(Section)`
     h1 {
       margin-top: 150px;
     }
+  }
+
+  @media (min-width: 1920px) {
+    height: 65vh;
   }
 `;
 
@@ -184,7 +187,6 @@ const Index = ({ data }) => {
 
         <TeamHomePage />
         <WorkHomePage />
-        <Contact />
         <CivicDays home />
         {/* </Fade> */}
       </main>

@@ -36,10 +36,8 @@ const BlogPreview = ({ title, author, imageUrl, postUrl }) => {
   );
 };
 
-const BlogStrip = ({ sectorName }) => {
+const BlogStrip = () => {
   const [blogPosts] = useMediumFeed('civicdatalab');
-
-  console.log(blogPosts);
 
   return (
     <BlogStripContainer>

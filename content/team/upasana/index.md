@@ -3,7 +3,7 @@ name: Upasana Hembram
 role: Tech Policy Fellow
 medium: 
 description:
-quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+quote:
 twitter: https://twitter.com/watzernehm
 linkedin: https://www.linkedin.com/in/upasana-hembram/
 image: ./upasana.jpg

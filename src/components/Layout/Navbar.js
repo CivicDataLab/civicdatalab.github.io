@@ -227,15 +227,23 @@ const Navbar = ({ dark, overlay }) => {
           }
         }
       }
+      darkLogo: file(relativePath: { eq: "cdl_logo_dark.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 100, quality: 100) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
     }
   `);
 
-  const logo = data?.logo?.childImageSharp?.fluid;
+  const logo = data?.logo?.childImageSharp.fluid;
+  const darkLogo = data?.darkLogo?.childImageSharp.fluid;
 
   return (
     <StyledNav ref={navbarRef} overlay={overlay}>
       <Link to="/">
-        <Image fluid={logo} />
+        <Image fluid={dark ? darkLogo : logo} />
       </Link>
       <MdMenu onClick={() => setDisplayMobileNav(true)} className="mobile-nav" />
       <LinksContainer dark={dark} displayMobile={displayMobileNav}>

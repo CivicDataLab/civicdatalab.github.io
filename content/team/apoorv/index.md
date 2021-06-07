@@ -3,7 +3,7 @@ name: Apoorv Anand
 role: Data Strategist and Partnerships
 medium: '@APo_ORV'
 description:
-quote: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+quote:
 github: https://github.com/apoorv74
 twitter:
 linkedin: https://www.linkedin.com/in/apoorvanand

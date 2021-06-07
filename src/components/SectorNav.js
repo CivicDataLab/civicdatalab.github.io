@@ -92,7 +92,7 @@ const SectorNav = () => {
 
   return (
     <SectorNavContainer>
-      <SectorNavItem activeClassName="active-sector" to="/work/">
+      <SectorNavItem activeClassName="active-sector" to="/work">
         All
       </SectorNavItem>
       {sectorsData.map((sector) => (
