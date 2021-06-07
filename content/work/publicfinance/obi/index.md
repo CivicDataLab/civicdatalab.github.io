@@ -38,9 +38,14 @@ resources:
       link: 'https://medium.com/civicdatalab/when-cookies-tell-stories-c1f284db1ff3',
       type: 'Blog'
     }
-  - {
+    - {
       title: 'Austerity in a COVID-19 world: Tales from Tripura',
       link: 'https://medium.com/civicdatalab/austerity-in-a-covid-19-world-tales-from-tripura-8d47e61083d4',
+      type: 'Blog'
+    }
+  - {
+      title: 'Inconsistencies within the 2020 Union Budget',
+      link: 'https://medium.com/civicdatalab/inconsistencies-within-the-union-budget-2020-5961d74ec98e',
       type: 'Blog'
     }
   - {
