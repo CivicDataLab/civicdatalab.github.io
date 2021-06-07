@@ -9,7 +9,7 @@ twitter:
 facebook:
 instagram:
 resources:
-- {
+  - {
       title: Health Procurement Performance Index',
       link: 'https://hp.openbudgetsindia.org/#/procurement/analysis',
       type: 'Dashboard'
