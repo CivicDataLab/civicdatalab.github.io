@@ -294,7 +294,7 @@ const ProjectTemplate = ({ data }) => {
               {url && (
                 <>
                   <p>Check us here:</p>
-                  <a target="_blank" rel="noreferrer noopener" href={`https://${url}`}>
+                  <a target="_blank" rel="noreferrer noopener" href={url}>
                     {url}
                   </a>
                 </>
