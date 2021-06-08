@@ -4,7 +4,7 @@ description: We create and curate high quality public datasets in the areas of l
 image: ./lnj.jpg
 color: '#FBC740'
 type: sector
-projects: Child Rights Laws Implementation Tracker,Zombie Tracker,Justice Hub
+projects: Tracking the implementation of POCSO law,Zombie Tracker,Justice Hub
 events:
   - {
       url: 'https://medium.com/civicdatalab/the-state-of-data-in-the-judicial-sector-9a178a143e',
