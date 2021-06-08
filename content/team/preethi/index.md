@@ -9,7 +9,7 @@ twitter: https://twitter.com/preethical
 linkedin: https://www.linkedin.com/in/preethi-g-95814b60/
 image: ./preethi.jpg
 sectors: Public Finance, Free & Open Source Software
-projects: Public Procurements, The State of FOSS in India Report
+projects: Public Procurements, The State of Free and Open Source Software in India
 accentcolor: '#9E0877'
 text: light
 ---

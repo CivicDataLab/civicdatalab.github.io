@@ -10,7 +10,7 @@ const AboutBackground = ({ children }) => {
           id
           childImageSharp {
             fluid(maxWidth: 2000, quality: 100) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid
             }
           }
         }

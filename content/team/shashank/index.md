@@ -9,7 +9,7 @@ twitter: https://www.twitter.com/shashank_py
 linkedin: https://linkedin.com/in/shashank-developer
 image: ./shashank.jpg
 sectors: Law & Justice
-projects: Justice Hub, The State of FOSS in India Report
+projects: Justice Hub, The State of Free and Open Source Software in India
 accentcolor: '#69995D'
 ---
 

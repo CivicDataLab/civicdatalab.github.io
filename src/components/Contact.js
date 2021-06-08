@@ -40,6 +40,11 @@ const SocialLinksContainer = styled.div`
   @media (min-width: 1280px) {
     margin-top: 100px;
   }
+
+  @media(min-width: 2000px) {
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
 `;
 
 export const SocialLinks = () => {
