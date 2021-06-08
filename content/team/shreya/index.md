@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/shreya-agrawal-080302
 image: ./shreya.jpg
 accentcolor: '#008B8B'
 sectors: Public Finance, Education
-projects: Public Procurements, Open Budgets India Platform - 2.0, Girl Education and Spending Tracker, The State of FOSS in India Report
+projects: Public Procurements, Open Budgets India Platform - 2.0, Girl Education Spending Tracker, The State of Free and Open Source Software in India
 ---
 
 Shreya is a civic technologist and a data fanatic. She has found her happy place in developing resilient solutions to civic issues. In her career journey she has been part of various efforts such as leading a project, developing solutions, hiring etc.
