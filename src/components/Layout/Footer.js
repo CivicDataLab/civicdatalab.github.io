@@ -195,7 +195,7 @@ const Footer = () => {
       <MainContainer>
         <FooterContainer>
           <AddressContainer>
-            <h3>We are remote, but if you want to write to us:</h3>
+            <h3>Write to us at:</h3>
             <a className="email" href="mailto:info@civicdatalab.in">
               info@civicdatalab.in
             </a>
