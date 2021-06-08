@@ -1,5 +1,5 @@
 ---
-name: Girl Education and Spending Tracker
+name: Girl Education Spending Tracker
 image: ./image.jpg
 summary: Strengthening Financial Accountability towards Girl Education
 context: The project aims at monitoring the financing of education related scheme with a special focus on promoting girl education in the state of Uttar Pradesh.

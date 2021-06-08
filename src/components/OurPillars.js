@@ -11,28 +11,28 @@ export const PillarImages = () => {
       dataPillar: file(relativePath: { eq: "data.png" }) {
         childImageSharp {
           fluid(maxHeight: 400, quality: 100) {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid
           }
         }
       }
       technologyPillar: file(relativePath: { eq: "technology.png" }) {
         childImageSharp {
           fluid(maxHeight: 400, quality: 100) {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid
           }
         }
       }
       designPillar: file(relativePath: { eq: "design.png" }) {
         childImageSharp {
           fluid(maxHeight: 400, quality: 100) {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid
           }
         }
       }
       socialPillar: file(relativePath: { eq: "social.png" }) {
         childImageSharp {
           fluid(maxHeight: 400, quality: 100) {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid
           }
         }
       }
