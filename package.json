@@ -1,7 +1,7 @@
 {
   "name": "cdl-website",
   "private": true,
-  "description": "CivicDataLab's webiste",
+  "description": "CivicDataLab's website",
   "version": "0.1.0",
   "author": "CivicDataLab",
   "dependencies": {
@@ -15,6 +15,7 @@
     "gatsby-plugin-react-helmet": "^3.4.0",
     "gatsby-plugin-sharp": "^2.11.2",
     "gatsby-plugin-sitemap": "^4.1.0",
+    "gatsby-plugin-styled-components": "^4.6.0",
     "gatsby-remark-images": "^3.5.1",
     "gatsby-source-filesystem": "^2.5.0",
     "gatsby-transformer-remark": "^2.10.0",
