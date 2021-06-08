@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
-import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
+import { FaTwitter, FaLinkedinIn, FaGithubAlt, FaBehance } from 'react-icons/fa';
 import BlogCard from '../components/BlogCard';
 import { getCoverImageUrlFromMediumPost } from '../utils/helpers';
 import useMediumFeed from '../hooks/useMediumFeed';
@@ -322,15 +322,22 @@ const MemberTemplate = ({ data }) => {
                   <FaGithubAlt />
                 </a>
               )}
+              {member.frontmatter.behance && (
+                <a href={member.frontmatter.behance} target="_blank" rel="noreferrer noopener">
+                  <FaBehance />
+                </a>
+              )}
             </SocialLinksContainer>
             <Image fluid={member.frontmatter.image?.childImageSharp.fluid} />
-            {member.frontmatter.quote && <QuoteContainer background={member.frontmatter.accentcolor} text={member.frontmatter.text}>
-              <p>
-                <span>“</span>
-                <span>{member.frontmatter.quote}</span>
-                <span>“</span>
-              </p>
-            </QuoteContainer>}
+            {member.frontmatter.quote && (
+              <QuoteContainer background={member.frontmatter.accentcolor} text={member.frontmatter.text}>
+                <p>
+                  <span>“</span>
+                  <span>{member.frontmatter.quote}</span>
+                  <span>“</span>
+                </p>
+              </QuoteContainer>
+            )}
           </PictureContainer>
           <Bio>
             <MemberDetails>
@@ -400,6 +407,7 @@ export const pageQuery = graphql`
         github
         linkedin
         twitter
+        behance
         accentcolor
         text
       }
