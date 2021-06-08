@@ -5,5 +5,5 @@ logo: ./logo.png
 testimonial:
 website: https://www.haqcrc.org/
 sectors: Public Finance, Law & Justice
-projects: Girl Education Spending Tracker, Child Rights Laws Implementation Tracker
+projects: Girl Education Spending Tracker, Tracking the implementation of POCSO law
 ---

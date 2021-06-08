@@ -1,9 +1,9 @@
 ---
 name: Justice Hub
 image: ./image.jpg
-summary: An open source platform for data related to the Indian legal and justice system.
-context: Open data will enable everyone to see and solve justice problems using data. Justice Hub empowers communities for data-driven justice by making legal and justice data open, accessible and actionable. By becoming a shared and open resource for discovering and publishing well documented datasets and other information resources, JusticeHub aims to enhance the access to data related to law and justice in the country.
-solution:
+summary: A platform to crowd source public datasets related to the Indian legal and justice system.
+context: Justice Hub was born out of the [Agami Data for Justice Challenge](https://agami.in/d4j/) in June 2019. The Challenge sought to curate a collaborative entrepreneurial effort that increases and evolves the use of data. Inputs from a wide range of changemakers, led us to see the opportunity to collaborate on each other’s datasets.
+solution: Justice Hub empowers communities for data-driven justice by making legal and justice data open, accessible and actionable. By becoming a shared and open resource for discovering and publishing well documented datasets and other information resources, JusticeHub aims to enhance the access to data related to law and justice in the country.
 url: https://justicehub.in
 twitter: https://twitter.com/JusticeHubIndia
 linkedin:
