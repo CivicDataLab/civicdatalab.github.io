@@ -10,7 +10,7 @@ const BackgroundSectionWithImage = ({ children }) => {
       background: file(relativePath: { eq: "landing-image.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 1920, quality: 100) {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid
           }
         }
       }
