@@ -40,7 +40,7 @@ const CivicDaysImages = () => {
       file(relativePath: { eq: "reel.png" }) {
         childImageSharp {
           fluid(maxWidth: 2000, quality: 100) {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -53,7 +53,7 @@ const CivicDaysImages = () => {
           name
           childImageSharp {
             fluid(maxWidth: 1000, quality: 100) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid
             }
           }
         }

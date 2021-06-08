@@ -202,7 +202,7 @@ export const pageQuery = graphql`
     landingBackground: file(relativePath: { eq: "landing-image.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 1920, quality: 100) {
-          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -231,7 +231,7 @@ export const pageQuery = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 600, quality: 100) {
-                ...GatsbyImageSharpFluid_noBase64
+                ...GatsbyImageSharpFluid
               }
             }
           }

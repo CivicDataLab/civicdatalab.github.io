@@ -5,7 +5,6 @@ export default function useHorizontalAutoScroll(scrollContainerRef) {
     let scrollInterval;
     let scrollWidth = 0;
     if (scrollContainerRef.current) {
-      console.log(scrollContainerRef.current.scrollWidth);
       scrollInterval = setInterval(() => {
         if (scrollWidth >= scrollContainerRef.current.scrollWidth) {
           scrollWidth = 0;
