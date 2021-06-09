@@ -199,25 +199,6 @@ export const navLinks = [
 ];
 
 const Navbar = ({ dark, overlay }) => {
-  const [displayMobileNav, setDisplayMobileNav] = React.useState(false);
-  const navbarRef = React.useRef(null);
-
-  React.useEffect(() => {
-    const addFixedClass = () => {
-      if (window.scrollY > 50) {
-        navbarRef.current.classList.add('fixed');
-      } else {
-        navbarRef.current.classList.remove('fixed');
-      }
-    };
-
-    window.addEventListener('scroll', addFixedClass);
-
-    return () => {
-      window.removeEventListener('scroll', addFixedClass);
-    };
-  }, []);
-
   const data = useStaticQuery(graphql`
     query LogoQuery {
       logo: file(relativePath: { eq: "cdl_logo.png" }) {
@@ -237,13 +218,34 @@ const Navbar = ({ dark, overlay }) => {
     }
   `);
 
-  const logo = data?.logo?.childImageSharp.fluid;
-  const darkLogo = data?.darkLogo?.childImageSharp.fluid;
+  const [displayMobileNav, setDisplayMobileNav] = React.useState(false);
+  const [navBarLogo, setNavBarLogo] = React.useState(
+    dark ? data.darkLogo.childImageSharp.fluid : data.logo.childImageSharp.fluid
+  );
+  const navbarRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const addFixedClass = () => {
+      if (window.scrollY > 50) {
+        navbarRef.current.classList.add('fixed');
+        setNavBarLogo(data.logo.childImageSharp.fluid);
+      } else {
+        navbarRef.current.classList.remove('fixed');
+        setNavBarLogo(dark ? data.darkLogo.childImageSharp.fluid : data.logo.childImageSharp.fluid);
+      }
+    };
+
+    window.addEventListener('scroll', addFixedClass);
+
+    return () => {
+      window.removeEventListener('scroll', addFixedClass);
+    };
+  }, [data.logo.childImageSharp.fluid, data.darkLogo.childImageSharp.fluid, dark]);
 
   return (
     <StyledNav ref={navbarRef} overlay={overlay}>
       <Link to="/">
-        <Image fluid={dark ? darkLogo : logo} />
+        <Image fluid={navBarLogo} />
       </Link>
       <MdMenu onClick={() => setDisplayMobileNav(true)} className="mobile-nav" />
       <LinksContainer dark={dark} displayMobile={displayMobileNav}>
