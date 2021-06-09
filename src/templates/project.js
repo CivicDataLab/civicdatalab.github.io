@@ -326,7 +326,7 @@ const ProjectTemplate = ({ data }) => {
             {newsletter && (
               <LeftText>
                 <p>Subscribe to our newsletter:</p>
-                <a class="btn-newsletter" href={newsletter}>
+                <a className="btn-newsletter" href={newsletter}>
                   Subscribe
                 </a>
               </LeftText>
@@ -493,7 +493,7 @@ export const pageQuery = graphql`
           website
           logo {
             childImageSharp {
-              fixed(width: 180) {
+              fixed(width: 110) {
                 ...GatsbyImageSharpFixed_noBase64
               }
             }
