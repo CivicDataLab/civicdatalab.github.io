@@ -64,6 +64,10 @@ const PartnersContainer = styled(MainContainer)`
       line-height: 60px;
     }
   }
+
+  @media (min-width: 1920px) {
+    padding: 0;
+  }
 `;
 
 const StyledCarousel = styled(Carousel)`
