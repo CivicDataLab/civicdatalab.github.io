@@ -3,8 +3,11 @@
 ## Architecture/Tech Stack
 
 🖼️ Framework: [Gatsby](https://www.gatsbyjs.com/)
+
 🎨 Styling: [styled-components](https://styled-components.com/)
+
 ✏️ Content source: markdown files inside the `content` folder
+
 📊 Analytics: [Plausible](https://plausible.io/)
 
 ## Run it locally
