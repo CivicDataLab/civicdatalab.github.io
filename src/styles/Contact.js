@@ -137,7 +137,8 @@ const Contact = styled(StandardGrid)`
 
   @media (min-width: 1440px) {
     margin-bottom: 80px;
-    margin-top: 80px;
+    margin-top: 100px;
+    min-height: 38vh;
     margin-right: 0px;
 
     .main-part {
