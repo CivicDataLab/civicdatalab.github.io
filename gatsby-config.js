@@ -1,13 +1,12 @@
 const path = require('path');
 
 module.exports = {
-  pathPrefix: '/website-new',
   siteMetadata: {
     title: `CivicDataLab`,
     summary: '',
     description:
       'A research lab working on the intersection use data, tech, design and social science to strengthen the course of civic engagements in India.',
-    siteUrl: 'https://civicdatalab.in/website-new',
+    siteUrl: 'https://civicdatalab.in',
     image: '/cdl_logo.png',
     social: {
       twitter: '',
