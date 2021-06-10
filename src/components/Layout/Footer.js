@@ -152,6 +152,10 @@ const SocialLinksContainer = styled.div`
 const SiteMap = styled.div`
   display: ${(props) => (props.mobile ? 'block' : 'none')};
   margin-top: 40px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 
   @media (min-width: 1280px) {
     display: ${(props) => (props.mobile ? 'none' : 'block')};
@@ -211,7 +215,15 @@ const Footer = () => {
                   <FaGithubAlt />
                 </a>
               </SocialLinksContainer>
-              <SiteMap>License | Site Map</SiteMap>
+              <SiteMap>
+                <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer noopener">
+                  License
+                </a>
+                {' '}|{' '}
+                <a href="/sitemap/sitemap-0.xml" target="_blank">
+                  Site Map
+                </a>
+              </SiteMap>
             </ExternalLinksContainer>
           </AddressContainer>
           <NavigationContainer>
