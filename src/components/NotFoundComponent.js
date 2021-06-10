@@ -16,7 +16,7 @@ const NotFoundComponent = () => {
           <p>No page found at this url.</p>
           <p>
             {' '}
-            Please got back to the <Link to="/">homepage.</Link>
+            Please go back to the <Link to="/">homepage.</Link>
           </p>
         </div>
       </ContactStyle>
