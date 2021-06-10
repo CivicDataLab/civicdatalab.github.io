@@ -50,7 +50,7 @@ const WorkHomePage = styled.div`
 
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
     }
   }
 
@@ -110,16 +110,6 @@ const WorkHomePage = styled.div`
     }
     .circle-wrapper {
       justify-items: start;
-      width: 50%;
-    }
-    .content {ase64
-      tracedSVG
-      srcWebp
-      srcSetWebp
-      originalImg
-      originalName
-      font-size: 18px;
-      line-height: 25px;
       width: 50%;
     }
 
