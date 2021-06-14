@@ -4,8 +4,8 @@ title: Openness
 image: 
 ---
 
-As Aaron Swartz popularly said,
+_"A piece of knowledge, unlike a piece of physical property, can be shared by large groups of people without making anybody poorer."_ - Aaron Swartz
 
-_A piece of knowledge, unlike a piece of physical property, can be shared by large groups of people without making anybody poorer._
+At CivicDataLab, we exercise openness as core to our work and encourage our partners to collaborate in open as well. We are committed to sharing our learnings and failures to grow together.
 
-We are committed to sharing our learnings and failures to grow together. We believe that our world can become a much better place if we start thinking and working in open.
+We believe that our world can become a much better place if we start thinking and working in open.
