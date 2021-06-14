@@ -4,10 +4,8 @@ title: Experimentation & Innovation
 image:
 ---
 
-We believe that:
+_Exploration and Experimentation are intrinsic to our work, from day to day tasks to organizational conducts._
 
-_Diversity is the only thing we should have in common as a group._
+By encouraging experiments, we foster a culture of research that defines who we are as an organization. What works is retained and reproduced and what doesn’t is yet another lesson learned.
 
-We endeavour to think and act independently together while creating a safe working culture.
-
-Promoting a culture where everyone irrespective of their uniqueness work and grow together.
+Innovation thrives when we continuously experiment and challenge ourselves. So as we ensure experimentation, we inherently encourage innovation.
