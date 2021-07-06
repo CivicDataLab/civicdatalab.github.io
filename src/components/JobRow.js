@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const OpeningRow = styled.div`
-  padding: 8px 32px;
-  display: flex;
-  justify-content: space-between;
+  padding: 8px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
 
   p {
@@ -20,9 +20,11 @@ const OpeningRow = styled.div`
 const OpeningLink = styled.a`
   color: white;
   background-color: black;
-  padding: 8px 16px;
+  padding: 12px;
+  width: max-content;
   text-decoration: none;
   border-radius: 45px;
+  justify-self: end;
 
   @media (min-width: 1024px) {
     padding: 10px 32px;
