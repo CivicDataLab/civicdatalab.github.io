@@ -76,10 +76,10 @@ const SummaryText = styled.div`
   background-color: #dded1b;
   font-weight: 500;
   font-size: 20px;
-  width: 75%;
+  width: 85%;
   position: absolute;
   bottom: -100px;
-  padding: 20px 32px;
+  padding: 20px 24px;
   box-sizing: border-box;
 
   @media (min-width: 834px) {
@@ -110,7 +110,7 @@ const SummaryText = styled.div`
 `;
 
 const ProjectText = styled.div`
-  padding: 0 32px;
+  padding: 0;
   margin: 30px 0;
 
   a {
