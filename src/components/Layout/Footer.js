@@ -87,7 +87,7 @@ const NavLinksContainer = styled.ul`
   margin-top: 0;
   li {
     list-style: none;
-    margin: 6px 0;
+    margin: 14px 0;
     a {
       color: white;
       text-decoration: none;
