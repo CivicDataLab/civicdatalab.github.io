@@ -30,9 +30,12 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-plausible',
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        domain: 'civicdatalab.in'
+        trackingId: 'UA-120203184-1',
+        anonymize: true,
+        respectDNT: true,
+        enableWebVitalsTracking: true
       }
     },
     'gatsby-background-image',
