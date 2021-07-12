@@ -352,7 +352,11 @@ const ProjectTemplate = ({ data }) => {
             </ImageSection>
             <ProjectText>
               <p>Context:</p>
-              <p>{project.frontmatter.context}</p>
+              {project.frontmatter.context ? (
+                <p>{project.frontmatter.context}</p>
+              ) : (
+                <div dangerouslySetInnerHTML={{ __html: project.html }} />
+              )}
             </ProjectText>
             {aim && (
               <ProjectText>
@@ -435,6 +439,7 @@ export const pageQuery = graphql`
   query ProjectQuery($id: String!, $nameRegex: String!) {
     markdownRemark(id: { eq: $id }) {
       id
+      html
       frontmatter {
         name
         summary
