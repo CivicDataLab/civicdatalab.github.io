@@ -13,8 +13,6 @@ sectors: Public Finance
 projects: Open Budgets India Platform - 2.0, Public Procurements
 ---
 
-Shoaib Ahmed is a Frontend Developer. He found his love for Frontend Development after creating the website for the Technical Fest of his college and after that, he never looked back. 
+Shoaib Ahmed is a self-taught web developer, currently working as a Frontend Engineer at CivicDataLab. As a developer, his areas of focus are building web apps that are semantic, accessible and efficient. 
 
-After working in the field, he realised that it's not just the frontend that he loves, but also design, colours, typography. So his next goal turned to become a Creative Developer.
-
-Other than his professional life, Shoaib loves watching anime, reading light novels, fixing other people tech-related issues.
+Outside his professional life, Shoaib loves fanboying over great minimalistic designs, watching anime, reading novels and building PCs.
