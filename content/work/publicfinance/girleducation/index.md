@@ -10,13 +10,18 @@ facebook:
 github: https://github.com/CivicDataLab/up-fiscal-data
 resources:
   - {
+      title: 'Strengthening Financial Accountability towards Girl Education',
+      link: 'https://medium.com/civicdatalab/strengthening-financial-accountability-towards-girl-education-b9e3ba9be7d9',
+      type: 'Blog'
+    }
+  - {
       title: 'Digital Ingress & rise of Ed-Tech in the COVID-19 Era',
       link: 'https://medium.com/civicdatalab/budget-ed-tech-covid-19-era-7b37afe561ee',
       type: 'Blog'
     }
   - {
-      title: 'Strengthening Financial Accountability towards Girl Education',
-      link: 'https://medium.com/civicdatalab/strengthening-financial-accountability-towards-girl-education-b9e3ba9be7d9',
+      title: 'Following The Education Financing Breadcrumbs',
+      link: 'https://medium.com/civicdatalab/following-the-education-financing-breadcrumbs-c48f803c84a1',
       type: 'Blog'
     }
 sector: Public Finance
