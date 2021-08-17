@@ -4,7 +4,6 @@ import HeroText from '../styles/HeroText';
 import styled from 'styled-components';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import MainContainer from '../styles/MainContainer';
-import { Link } from 'gatsby';
 
 const SocialLinksContainer = styled.div`
   display: flex;
@@ -41,7 +40,7 @@ const SocialLinksContainer = styled.div`
     margin-top: 100px;
   }
 
-  @media(min-width: 2000px) {
+  @media (min-width: 2000px) {
     margin-top: 150px;
     margin-bottom: 150px;
   }
@@ -81,7 +80,10 @@ const Contact = () => {
           <p>
             For all hiring related queries, please write to us at{' '}
             <a href="mailto:careers@civicdatalab.in">careers@civicdatalab.in</a>. Do check out our{' '}
-            <Link to="/openings">openings</Link> page to know more about the roles we're hiring for.{' '}
+            <a href="https://jobs.civicdatalab.in" target="_blank" rel="noreferrer">
+              openings
+            </a>{' '}
+            page to know more about the roles we're hiring for.{' '}
           </p>
           <p>
             We're also on{' '}
