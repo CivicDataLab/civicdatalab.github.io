@@ -46,14 +46,14 @@ const WorkHomePage = () => {
                 <p>Partner With Us</p>
               </div>
             </Link>
-            <Link to="/openings" className={'content-circle'}>
+            <a href="https://jobs.civicdatalab.in" target="_blank" rel="noreferrer" className={'content-circle'}>
               <div className={'circle'}>
                 <img src={require('../images/partner-icon.png')} alt="Partner with us" />
               </div>
               <div className={'below-text'}>
                 <p>Join Us</p>
               </div>
-            </Link>
+            </a>
           </div>
         </WorkHomePageStyle>
       </MainContainer>
