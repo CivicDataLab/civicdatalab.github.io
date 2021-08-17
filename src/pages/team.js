@@ -264,7 +264,9 @@ const Team = ({ data }) => {
             <div style={{ position: 'relative', height: '80%' }}>
               <StickyBox>
                 <h1>Current Job Openings</h1>
-                <Link to="/openings">browse jobs</Link>
+                <a href="https://jobs.civicdatalab.in" target="_blank" rel="noreferrer">
+                  browse jobs
+                </a>
               </StickyBox>
             </div>
           </TeamTitleContainer>
