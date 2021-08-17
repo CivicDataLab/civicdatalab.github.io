@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import MemberImageBox from '../components/MemberImageBox';
 import { TitleContainer } from './work';
@@ -286,7 +286,9 @@ const Team = ({ data }) => {
       <div style={{ position: 'relative' }}>
         <StickyBox mobile>
           <h1>Current Job Openings</h1>
-          <Link to="/openings">browse jobs</Link>
+          <a href="https://jobs.civicdatalab.in" target="_blank" rel="noreferrer">
+            browse jobs
+          </a>
         </StickyBox>
       </div>
       <CivicDays home />
