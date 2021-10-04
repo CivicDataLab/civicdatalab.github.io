@@ -7,7 +7,7 @@ quote: The Power of the People is Greater Than the People in Power
 github: https://github.com/apoorv74
 twitter:
 linkedin: https://www.linkedin.com/in/apoorvanand
-image: ./apoorv.jpg
+image: ./apoorv.png
 sectors: Law & Justice, Public Finance, Free & Open Source Software
 accentcolor: '#567568'
 text: light
