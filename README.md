@@ -41,7 +41,7 @@ Prerequisites: NodeJS must be installed on your machine.
 4. To run the local build, run the following command: `npm run serve`.
 
 ## Wiki
-You can find the guides on how to add/update the project and bandhu level info [here](https://github.com/CivicDataLab/civicdatalab.github.io/wiki).
+You can find guides on how to add/update project and bandhu level info [here](https://github.com/CivicDataLab/civicdatalab.github.io/wiki).
 
 ## License
 
