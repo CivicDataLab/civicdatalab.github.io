@@ -1,6 +1,7 @@
 # The new CivicDataLab website
+![website-video](https://user-images.githubusercontent.com/7601150/135970492-6346bb9a-7142-40e4-a31e-79230358e59d.gif)
 
-## About Us !
+## About Us!
 
 We are a research lab working with the goal of using data, tech, design and social science to strengthen the course of civic engagements in India. We work to harness the potential of open-source movement  to enable citizens  to engage better with public reforms. We aim to grow data and tech capacity of governments, nonprofits, think-tanks, media houses, universities etc to enable data-driven decision making at scale.
 
