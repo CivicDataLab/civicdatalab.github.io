@@ -40,6 +40,9 @@ Prerequisites: NodeJS must be installed on your machine.
 3. To build the website, run `npm run build`.
 4. To run the local build, run the following command: `npm run serve`.
 
+## Wiki
+You can find the guides on how to add/update the project and bandhu level info [here](https://github.com/CivicDataLab/civicdatalab.github.io/wiki).
+
 ## License
 
 The code is licensed under [MIT License](https://mit-license.org/) while the contents inside the `content` folder are licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/).
