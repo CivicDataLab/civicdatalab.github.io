@@ -20,17 +20,17 @@ const AboutBackground = ({ children }) => {
 
   const [currentImage, setCurrentImage] = React.useState(data.allFile.nodes[0].childImageSharp.fluid);
 
-  React.useEffect(() => {
-    let currentIndex = 0;
-    const transitionInterval = setInterval(() => {
-      setCurrentImage(data.allFile.nodes[currentIndex].childImageSharp.fluid);
-      currentIndex = currentIndex === 2 ? 0 : currentIndex + 1;
-    }, 4000);
+  // React.useEffect(() => {
+  //   let currentIndex = 0;
+  //   const transitionInterval = setInterval(() => {
+  //     setCurrentImage(data.allFile.nodes[currentIndex].childImageSharp.fluid);
+  //     currentIndex = currentIndex === 2 ? 0 : currentIndex + 1;
+  //   }, 4000);
 
-    return () => {
-      clearInterval(transitionInterval);
-    };
-  }, [data.allFile.nodes]);
+  //   return () => {
+  //     clearInterval(transitionInterval);
+  //   };
+  // }, [data.allFile.nodes]);
 
   return (
     <BackgroundImage style={{ zIndex: 999 }} fluid={currentImage}>
