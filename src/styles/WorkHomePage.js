@@ -108,14 +108,7 @@ const WorkHomePage = styled.div`
     .container-work-section {
       display: flex;
     }
-    .circle-wrapper {
-      justify-items: start;
-      width: 50%;
-    }
-
-    .circle-wrapper {
-      grid-template-columns: 360px 360px;
-    }
+    
     .circle {
       margin-bottom: 24px;
       width: 240px;
@@ -135,6 +128,14 @@ const WorkHomePage = styled.div`
 
     .first-text-block {
       width: 60%;
+    }
+
+    .circle-wrapper {
+      margin-top: 0;
+      grid-template-columns: 360px 360px;
+      justify-items: start;
+      width: 50%;
+
     }
   }
 

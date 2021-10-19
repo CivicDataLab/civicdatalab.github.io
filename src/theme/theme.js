@@ -19,6 +19,12 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  :focus-visible {
+    outline-width: 3px;
+    outline-color: #0da3b7;
+    outline-style: solid;
+  }
+
   .fixed {
     background-color: white !important;
     z-index: 999;
