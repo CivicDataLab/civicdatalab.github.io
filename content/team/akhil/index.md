@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/akhil-sagiraju
 image: akhil.jpeg
 sectors: Law & Justice, Education, Urban Planning
-projects: Justice Hub, Zombie Tracker, OpenCity, The Northern Alliance of Scotland
+projects: Justice Hub, Zombie Tracker, OpenCity, Democratising Action for Attainment
 ---
 
 Akhil is a self taught Front-end developer who loves open source software. He is also a proponent of minimalism and a metalhead.

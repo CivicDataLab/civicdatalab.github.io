@@ -10,6 +10,6 @@ linkedin: https://www.linkedin.com/in/jatinbaghel/
 behance: https://www.behance.net/jatinbaghel
 image: ./jatin.jpg
 sectors: Education, Law & Justice
-projects: The Northern Alliance of Scotland
+projects: Democratising Action for Attainment
 accentcolor:
 ---
