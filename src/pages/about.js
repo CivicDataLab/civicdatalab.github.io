@@ -39,6 +39,7 @@ const HeroSection = styled(Section)`
 const StorySection = styled.div`
   background-color: rgba(178, 201, 220, 0.27);
   padding: 48px 0;
+  margin-top: 100px;
 
   p {
     line-height: 1.5em;
@@ -46,6 +47,10 @@ const StorySection = styled.div`
 
   .description-text {
     margin-top: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 120px;
   }
 
   @media (min-width: 1280px) {
@@ -154,7 +159,7 @@ const About = ({ data }) => {
       <main>
         <AboutBackground>
           <Navbar dark />
-          <HeroSection />
+          {/* <HeroSection /> */}
         </AboutBackground>
         <StorySection>
           <MainContainer>
