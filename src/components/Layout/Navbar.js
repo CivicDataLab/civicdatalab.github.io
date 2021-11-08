@@ -35,7 +35,9 @@ const StyledNav = styled.nav`
     padding: 0 72px 22px 72px;
     align-items: start;
     height: 120px;
-    background: ${(props) => (props.overlay ? 'rgb(0, 0, 0, 0.5)' : 'transparent')};
+    background-color: ${(props) => (props.overlay ? 'rgb(0, 0, 0, 0.5)' : 'transparent')};
+    background-color: ${(props) => (props.dark && '#ffffff !important')};
+    transition: background-color 300ms ease;
 
     .mobile-nav {
       display: none;
@@ -90,7 +92,7 @@ const LinksContainer = styled.ul`
     height: 75px;
     margin: 0;
     padding: 0 0 12px 0;
-    border-bottom: ${(props) => (props.dark ? '4px solid white' : '4px solid black')};
+    border-bottom: 4px solid black;
     background-color: transparent;
 
     li {
@@ -125,7 +127,7 @@ const StyledLink = styled(Link)`
   display: inline-block;
 
   @media (min-width: 1024px) {
-    color: ${(props) => (props.dark ? 'white' : 'black')};
+    color: black;
     height: 100%;
     text-transform: capitalize;
     display: flex;
@@ -135,13 +137,13 @@ const StyledLink = styled(Link)`
     padding-right: 16px;
 
     &:hover {
-      color: ${(props) => (props.dark ? 'black' : 'white')};
-      background-color: ${(props) => (props.dark ? 'white' : 'black')};
+      color: white;
+      background-color: black;
     }
 
     &.active-link {
-      color: ${(props) => (props.dark ? 'black' : 'white')};
-      background-color: ${(props) => (props.dark ? 'white' : 'black')};
+      color: white;
+      background-color: black;
     }
   }
 
@@ -164,7 +166,7 @@ const StyledExternalLink = styled.a`
   }
 
   @media (min-width: 1024px) {
-    color: ${(props) => (props.dark ? 'white' : 'black')};
+    color: black;
     height: 100%;
     text-transform: capitalize;
     display: flex;
@@ -178,13 +180,13 @@ const StyledExternalLink = styled.a`
     }
 
     &:hover {
-      color: ${(props) => (props.dark ? 'black' : 'white')};
-      background-color: ${(props) => (props.dark ? 'white' : 'black')};
+      color: white;
+      background-color: black;
     }
 
     &.active-link {
-      color: ${(props) => (props.dark ? 'black' : 'white')};
-      background-color: ${(props) => (props.dark ? 'white' : 'black')};
+      color: white;
+      background-color: black;
     }
   }
 `;
@@ -220,7 +222,7 @@ const Navbar = ({ dark, overlay }) => {
 
   const [displayMobileNav, setDisplayMobileNav] = React.useState(false);
   const [navBarLogo, setNavBarLogo] = React.useState(
-    dark ? data.darkLogo.childImageSharp.fluid : data.logo.childImageSharp.fluid
+    data.logo.childImageSharp.fluid
   );
   const navbarRef = React.useRef(null);
 
@@ -228,10 +230,8 @@ const Navbar = ({ dark, overlay }) => {
     const addFixedClass = () => {
       if (window.scrollY > 50) {
         navbarRef.current.classList.add('fixed');
-        setNavBarLogo(data.logo.childImageSharp.fluid);
       } else {
         navbarRef.current.classList.remove('fixed');
-        setNavBarLogo(dark ? data.darkLogo.childImageSharp.fluid : data.logo.childImageSharp.fluid);
       }
     };
 
@@ -240,10 +240,10 @@ const Navbar = ({ dark, overlay }) => {
     return () => {
       window.removeEventListener('scroll', addFixedClass);
     };
-  }, [data.logo.childImageSharp.fluid, data.darkLogo.childImageSharp.fluid, dark]);
+  }, [data.logo.childImageSharp.fluid, dark]);
 
   return (
-    <StyledNav ref={navbarRef} overlay={overlay}>
+    <StyledNav ref={navbarRef} overlay={overlay} dark={dark}>
       <Link to="/">
         <Image fluid={navBarLogo} />
       </Link>
