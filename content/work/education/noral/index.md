@@ -1,14 +1,15 @@
 ---
-name: The Northern Alliance of Scotland
-image: ./image.jpg
-summary: Using novel data sets and techniques to effectively understand the impact of child poverty on education within urban and rural contexts.
-context: Education and children services are in a unique position where they can work collaboratively across sectors to reduce structural inequalities and collaborate with a wide range of stakeholders to get it right for every child. This can be facilitated by having a deeper understanding of the mechanisms in which educational attainment can be negatively affected by poverty and subsequently support professionals to design bespoke interventions suitable to their own unique context and achieve excellence and equity of educational outcomes for children and young people.
-aim: The aim of this collaboration is to determine what data sources and techniques best reflect the challenges of child poverty, and subsequently provide a means to assess the poverty related attainment gap as a result – which will further allow individual school settings, local authorities and other bodies to plan targeted interventions to reduce it.
-url: https://github.com/The-Data-for-Children-Collaborative/noral-platform-research
+name: Democratising Action for Attainment
+image: ./image.png
+summary: Understanding attainment through the lens of poverty across the Northern Alliance region of Scotland.
+context: The circumstances in which a child grows up strongly influence their outcomes across Scotland. The impact of child poverty on the attainment of a child needs to be holistically assessed to better understand how it affects them. There are structural inequalities in the resources available to these children and the support provided to best utilise them.
+aim: Education and children services have been working on these problems for years to understand the challenges faced by a child growing in the different local contexts by attempting to follow the journey of a child through the system. One way they are trying to achieve this is by interacting with various sources of data and platforms available to them that help them understand the same.
+solution: All our research lies on the intersection of `data`, `tech`, `design`, and `social science` to understand all aspects of the ecosystem and suggest solutions that strengthen the course of civic engagements. Through our research, we interacted with the stakeholders to understand their role in the ecosystem, the tools they are engaging with, their current experiences, and their aspirations for an ideal future. Through all these inputs were able to identify the preferences of various stakeholders and their requirements from a new platform.
+url: https://noral.civicdatalab.in/
 twitter:
 facebook:
 instagram:
-github: https://github.com/The-Data-for-Children-Collaborative/noral-platform-research
+github: https://github.com/The-Data-for-Children-Collaborative/noral-project
 sector: Education
 type: project
 ---
