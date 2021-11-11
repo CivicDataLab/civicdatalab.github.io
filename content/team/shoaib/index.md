@@ -1,7 +1,7 @@
 ---
 name: Shoaib Ahmed
-role: Front-end Developer
-medium:
+role: Frontend Engineer
+medium: '@pixeledcode'
 description:
 quote: Code is for humans.
 github: https://github.com/pixeledcode
@@ -10,9 +10,12 @@ linkedin: https://www.linkedin.com/in/pixeledcode
 image: ./shoaib.jpg
 accentcolor: '#008080'
 sectors: Public Finance
-projects: Open Budgets India Platform - 2.0, Public Procurements
+projects: Open Budgets India Platform - 2.0, Public Procurements, Girl Education Spending Tracker, Open Contracting India - Assam
+text: light
 ---
 
-Shoaib Ahmed is a self-taught web developer, currently working as a Frontend Engineer at CivicDataLab. As a developer, his areas of focus are building web apps that are semantic, accessible and efficient. 
+Shoaib Ahmed is a Frontend Engineer currently working with Open Data Platforms. His areas of focus are building web apps and platforms that are semantic, accessible, inclusive, and efficient.
 
-Outside his professional life, Shoaib loves fanboying over great minimalistic designs, watching anime, reading novels and building PCs.
+At CivicDataLab, Shoaib mainly works with the Public Finance sector, building platforms that make data more easily understandable and accessible by a variety of users.
+
+Apart from this, Shoaib loves fanboying over great minimalistic designs, watching anime, reading novels, and building PCs.
