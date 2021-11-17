@@ -3,7 +3,8 @@ name: Open Contracting India - Assam
 image: ./image.png
 summary: Fixing Public Procurement with Public data!
 context: 
-solution: We will explore the following 4 priority areas and following a rigorous assessment, identify the top two options that are most likely to translate into meaningful reforms that will deliver life changing impacts for the people of Assam - Child Health, Floods Management, COVID-19 Relief Efforts, Water & Sanitation. Develop a basic replicable open data and analytical platform - Public Procurement Suite. We hope tp co create a  suite that will enable users to download raw data as well as data mapped to Open Contracting Data Standards in machine-readable format moving away from scanned images/pdfs/CAPTCHAs.
+solution: We will explore the following 4 priority areas and following a rigorous assessment, identify the top two options that are most likely to translate into meaningful reforms that will deliver life-changing impacts for the people of Assam - Child Health, Floods Management, COVID-19 Relief Efforts, Water & Sanitation. Develop a basic replicable open data and analytical platform - Public Procurement Suite. We hope to co-create a  suite that will enable users to download raw data as well as data mapped to Open Contracting Data Standards in the machine-readable format moving away from scanned images/pdfs/CAPTCHAs.
+
 aim:
 url:
 twitter:
