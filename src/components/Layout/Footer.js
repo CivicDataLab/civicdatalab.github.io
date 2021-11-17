@@ -184,7 +184,7 @@ const Footer = () => {
     query FooterLogoQuery {
       logo: file(relativePath: { eq: "cdl_logo_dark.png" }) {
         childImageSharp {
-          fixed(width: 85) {
+          fixed(width: 125) {
             ...GatsbyImageSharpFixed
           }
         }
