@@ -146,7 +146,18 @@ const resources = [
     link: 'https://medium.com/civicdatalab/work-in-the-time-of-coronavirus-8663bb6e3908',
     title: 'Work in the time of Coronavirus'
   },
-  { link: 'https://medium.com/civicdatalab/the-scrumji-experiment-44b25fe60b55', title: 'The ScrumJi Experiment!' }
+  { 
+    link: 'https://medium.com/civicdatalab/the-scrumji-experiment-44b25fe60b55', 
+    title: 'The ScrumJi Experiment!' 
+  },
+  { 
+    link: 'https://medium.com/civicdatalab/baithak-f2afc1b23e69', 
+    title: 'Baithak' 
+  },
+  { 
+    link: 'https://medium.com/civicdatalab/civic-days-with-peanut-5e433d216b8c', 
+    title: 'Civic Days with Peanut' 
+  }
 ];
 
 const About = ({ data }) => {
