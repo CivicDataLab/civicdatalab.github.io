@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import { FaTwitter, FaLinkedinIn, FaGithubAlt, FaFacebook } from 'react-icons/fa';
+import { FaTwitter, FaLinkedinIn, FaGithubAlt, FaYoutube, FaFacebook } from 'react-icons/fa';
 // import Carousel from 'react-multi-carousel';
 // import 'react-multi-carousel/lib/styles.css';
 import Layout from '../components/Layout/Layout';
@@ -276,7 +276,7 @@ const ProjectTemplate = ({ data }) => {
   const members = data.members.nodes;
   const partners = data.partners.nodes;
 
-  const { twitter, linkedin, github, facebook, url, solution, aim, resources, newsletter } = project.frontmatter;
+  const { twitter, linkedin, github, youtube, facebook, url, solution, aim, resources, newsletter } = project.frontmatter;
 
   const leftContainerRef = React.useRef(null);
   const rightContainerRef = React.useRef(null);
@@ -319,6 +319,11 @@ const ProjectTemplate = ({ data }) => {
                 {github && (
                   <a href={github} target="_blank" rel="noreferrer noopener">
                     <FaGithubAlt />
+                  </a>
+                )}
+                {youtube && (
+                  <a href={youtube} target="_blank" rel="noreferrer noopener">
+                    <FaYoutube />
                   </a>
                 )}
               </SocialLinksContainer>
@@ -402,6 +407,11 @@ const ProjectTemplate = ({ data }) => {
                     <FaGithubAlt />
                   </a>
                 )}
+                {youtube && (
+                  <a href={youtube} target="_blank" rel="noreferrer noopener">
+                    <FaYoutube />
+                  </a>
+                )}
               </SocialLinksContainer>
             </LeftText>
             {partners && (
@@ -455,6 +465,7 @@ export const pageQuery = graphql`
         github
         twitter
         linkedin
+        youtube
         facebook
         newsletter
         resources {
