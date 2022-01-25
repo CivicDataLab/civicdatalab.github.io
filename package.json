@@ -26,6 +26,7 @@
     "react-icons": "^4.1.0",
     "react-multi-carousel": "^2.6.2",
     "react-reveal": "^1.2.2",
+    "react-showdown": "^2.3.1",
     "rss-parser": "^3.10.0",
     "styled-components": "^5.2.1"
   },
