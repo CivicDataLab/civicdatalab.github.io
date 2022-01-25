@@ -15,6 +15,7 @@ import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
 import StandardGrid from '../styles/StandardGrid';
 import Resources from '../components/Resources';
+import MarkdownView from 'react-showdown';
 
 const ProjectTitleContainer = styled(TitleContainer)`
   @media (min-width: 1280px) {
@@ -125,12 +126,12 @@ const ProjectText = styled.div`
     font-size: 18px;
   }
 
-  p:first-of-type {
+  > p {
     font-weight: 700;
     margin-bottom: 0;
   }
 
-  p:last-of-type {
+  > div p {
     margin-top: 8px;
   }
 
@@ -358,7 +359,7 @@ const ProjectTemplate = ({ data }) => {
             <ProjectText>
               <p>Context:</p>
               {project.frontmatter.context ? (
-                <p>{project.frontmatter.context}</p>
+                <MarkdownView markdown={project.frontmatter.context} />
               ) : (
                 <div dangerouslySetInnerHTML={{ __html: project.html }} />
               )}
@@ -366,13 +367,17 @@ const ProjectTemplate = ({ data }) => {
             {aim && (
               <ProjectText>
                 <p>Aim:</p>
-                <p>{aim}</p>
+                <div>
+                  <p>{aim}</p>
+                </div>
               </ProjectText>
             )}
             {solution && (
               <ProjectText>
                 <p>Our solution:</p>
-                <p>{solution}</p>
+                <div>
+                  <p>{solution}</p>
+                </div>
               </ProjectText>
             )}
 
