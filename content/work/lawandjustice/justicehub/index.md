@@ -3,7 +3,7 @@ name: Justice Hub
 image: ./image.jpg
 summary: A platform to crowd source datasets related to the Indian legal and justice system.
 context: |
-  Justice Hub, launched in February 2021, was born out of the Agami Data for Justice Challenge. The challenge sought to curate a 
+  Justice Hub, launched in February 2021, was born out of the [Agami Data for Justice Challenge](https://agami.in/d4j/). The challenge sought to curate a 
   collaborative entrepreneurial effort that increases and evolves the use of data in the areas of law and justice. 
   The core of Justice Hub is an open data platform that curates datasets for making legal and justice data open, accessible and actionable. 
   By becoming a shared and open resource for discovering and publishing well documented datasets and other information resources, 
