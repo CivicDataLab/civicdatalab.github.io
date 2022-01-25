@@ -10,6 +10,6 @@ linkedin: https://www.linkedin.com/in/jatinbaghel/
 behance: https://www.behance.net/jatinbaghel
 image: ./jatin.jpg
 sectors: Education, Law & Justice
-projects: Democratising Action for Attainment, Justice Hub
+projects: Democratising Action for Attainment, Budgets for Justice
 accentcolor:
 ---
