@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/samriddhi-00135663/
 image: ./samriddhi.jpg
 accentcolor: '#008080'
 sectors: Public Finance
-projects: Open Budgets India Platform - 2.0, Public Procurements
+projects: Open Budgets India Platform - 2.0, Public Procurements, Justice Hub
 ---
 
 Samriddhi is an inter-disciplinary social science researcher by training with a multidisciplinary academic background and experience in the field of Economics, Law & Justice, Public Policy, and Urban Studies. At CDL she is working with the public finance team as an Economist and GIS Specialist to support Open Budgets India initiative to enhance data transperency and accessibility. 
