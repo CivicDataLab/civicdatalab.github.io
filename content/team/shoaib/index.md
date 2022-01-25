@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/pixeledcode
 image: ./shoaib.jpg
 accentcolor: '#008080'
 sectors: Public Finance
-projects: Open Budgets India Platform - 2.0, Public Procurements, Girl Education Spending Tracker, Open Contracting India - Assam
+projects: Open Budgets India Platform - 2.0, Public Procurements, Girl Education Spending Tracker, Open Contracting India - Assam, Justice Hub
 text: light
 ---
 
