@@ -9,7 +9,7 @@ twitter: https://twitter.com/PixeledCode
 linkedin: https://www.linkedin.com/in/pixeledcode
 image: ./shoaib.jpg
 accentcolor: '#008080'
-sectors: Public Finance
+sectors: Public Finance, Law & Justice
 projects: Open Budgets India Platform - 2.0, Public Procurements, Girl Education Spending Tracker, Open Contracting India - Assam, Budgets for Justice
 text: light
 ---
