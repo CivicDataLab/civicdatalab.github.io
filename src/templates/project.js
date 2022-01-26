@@ -294,7 +294,7 @@ const ProjectTemplate = ({ data }) => {
             <LeftText>
               {url && (
                 <>
-                  <p>Check us here:</p>
+                  <p>Check our work here:</p>
                   <a target="_blank" rel="noreferrer noopener" href={url}>
                     {url}
                   </a>
@@ -382,7 +382,7 @@ const ProjectTemplate = ({ data }) => {
             )}
 
             <LeftText mobile>
-              <p>Check us here:</p>
+              <p>Check our work here:</p>
               <a target="_blank" rel="noreferrer noopener" href={`https://${url}`}>
                 {url}
               </a>
