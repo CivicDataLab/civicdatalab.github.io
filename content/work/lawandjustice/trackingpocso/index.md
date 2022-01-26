@@ -1,5 +1,5 @@
 ---
-name: Tracking the implementation of POCSO law
+name: Tracking the implementation of the POCSO Act
 image: ./image-bg.png
 summary: Unpacking Judicial Data to Track Implementation of the POCSO Act in Assam, Delhi & Haryana
 context: The vast legal framework on child rights is unfortunately not backed with data that can inform law and policy change as well as help in monitoring implementation of these laws. There is very little systematic information on what happens in courts, how do special laws and provisions pan out in practice, to what extent have they been able to meet their purpose, what are the challenges and how can these be overcome. The only official set of data that gives some insight on implementation of laws are the NCRB’s statistics on disposal of cases by police and court in terms of charge sheeting rate, rate of conviction and pendency percentage. District level data continues to remain a challenge on all counts.
