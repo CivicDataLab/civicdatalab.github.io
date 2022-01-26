@@ -5,5 +5,5 @@ logo: ./logo.png
 testimonial:
 website: https://agami.in/
 sectors: Law & Justice
-projects: Justice Hub
+projects: Justice Hub, Budgets for Justice
 ---
