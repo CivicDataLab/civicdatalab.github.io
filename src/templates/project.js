@@ -362,17 +362,13 @@ const ProjectTemplate = ({ data }) => {
             {aim && (
               <ProjectText>
                 <p>Aim:</p>
-                <div>
-                  <p>{aim}</p>
-                </div>
+                <MarkdownView markdown={aim} />
               </ProjectText>
             )}
             {solution && (
               <ProjectText>
                 <p>Our solution:</p>
-                <div>
-                  <p>{solution}</p>
-                </div>
+                <MarkdownView markdown={solution} />
               </ProjectText>
             )}
 
