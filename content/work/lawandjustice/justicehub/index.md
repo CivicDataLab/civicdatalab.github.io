@@ -3,17 +3,18 @@ name: Justice Hub
 image: ./image.jpg
 summary: A platform to crowd source datasets related to the Indian legal and justice system.
 context: |
-  Justice Hub, launched in February 2021, was born out of the [Agami Data for Justice Challenge](https://agami.in/d4j/). The challenge sought to curate a 
+  [Justice Hub](https://justicehub.in/), launched in February 2021, was born out of the [Agami Data for Justice Challenge](https://agami.in/d4j/#tab_61f38a60d6f57). The challenge sought to curate a 
   collaborative entrepreneurial effort that increases and evolves the use of data in the areas of law and justice. 
-  The core of Justice Hub is an open data platform that curates datasets for making legal and justice data open, accessible and actionable. 
+  The core of Justice Hub is an [open data platform](https://justicehub.in/dataset) that curates datasets for making legal and justice data open, accessible and actionable. 
   By becoming a shared and open resource for discovering and publishing well documented datasets and other information resources, 
   JusticeHub aims to enhance the access to data related to law and justice in the country. 
-solution:  |
-  Making datasets actionable required a collaborative effort from the community. In this direction, the Justice Hub has initiated 
-  a few initiatives like the Summer of Data program, where we worked with students from law universities across India 
-  to curate a well documented datasets on the Judges of the High Courts of India, and Budgets for Justice 
-  where we're building tools to explore and analyse the budget data for key schemes from the 
-  Ministry of Law and Justice, the Department of Police, etc.
+
+  Making datasets actionable requires a collaborative effort from the community. In this direction, the Justice Hub has initiated 
+  a few initiatives like the [Summer of Data program](https://justicehub.in/initiatives/summer-of-data-2021), where we worked with students from law universities across India 
+  to curate a well documented datasets on the Judges of the High Courts of India, and [Budgets for Justice](https://budgets.justicehub.in/about) 
+  where we're building tools to explore and analyse the budget data for key schemes around law and justice from various ministries and departments. 
+
+solution:
 url: https://justicehub.in
 twitter: https://twitter.com/JusticeHubIndia
 linkedin:
@@ -22,9 +23,6 @@ github: https://github.com/justicehub-in
 newsletter: https://dataforjustice.substack.com
 sector: Law & Justice
 type: project
-timeline:
-  - { date: '2020-09-01', title: 'Entry into hackathon' }
-  - { date: '2020-12-01', title: 'Conference' }
 resources:
   - {
       link: 'https://justicehub.in/initiatives/summer-of-data-2021',
