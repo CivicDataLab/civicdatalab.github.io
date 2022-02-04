@@ -5,7 +5,7 @@ summary: Unpacking Judicial Data to Track Implementation of the POCSO Act in Ass
 context: |
   The vast legal framework on child rights is unfortunately not backed with data that can inform law and policy change as well as help in monitoring implementation of these laws. There is very little systematic information on what happens in courts, how do special laws and provisions pan out in practice, to what extent have they been able to meet their purpose, what are the challenges and how can these be overcome. The only official set of data that gives some insight on implementation of laws are the NCRB’s statistics on disposal of cases by police and court in terms of charge sheeting rate, rate of conviction and pendency percentage. District level data continues to remain a challenge on all counts.
 
-  With support coming through the [AGAMI Data for Justice Challenge](https://agami.in/d4j/#tab_61f3dee24db36), we collaborated with [HAQ - Centre for Child Rights](https://www.haqcrc.org/) to study the implementation of the POCSO Act by curating and analysing data from the district courts of Assam, Haryana and Delhi. For this project, we curated court cases, from eCourts portal, registered under the POCSO Act between 2012 and 2020. Read more [here](https://docs.google.com/document/d/e/2PACX-1vQ0uCuO6eQo8UArfWf0lCu8eBbrujc32p880oiJ6IflZeTQFAJU2wjoMGfLUbGI0y74GXNJklKa8GFX/pub).
+  With support coming through the [AGAMI Data for Justice Challenge](https://agami.in/d4j/#tab_61f3dee24db36), we collaborated with [HAQ - Centre for Child Rights](https://www.haqcrc.org/) to study the implementation of the POCSO Act by curating and analysing data from the district courts of Assam, Haryana and Delhi. For this project, we curated court cases, from eCourts portal, registered under the POCSO Act between 2012 and 2020. Read more [here](https://docs.google.com/document/d/1_iDZk9-ceoxt7C3Q8wbRUEz0FmYQpcSMiiUNhBCw4KA/preview).
 
   The reports and datasets are available on the [Justice Hub](https://justicehub.in/dataset/data4justice-unpacking-judicial-data-to-track-implementation-of-the-pocso-act-in-assam-delhi-haryana). 
 solution:
@@ -19,7 +19,7 @@ resources:
   - {
       type: 'Report',
       title: 'About the project',
-      link: 'https://docs.google.com/document/d/e/2PACX-1vQ0uCuO6eQo8UArfWf0lCu8eBbrujc32p880oiJ6IflZeTQFAJU2wjoMGfLUbGI0y74GXNJklKa8GFX/pub'
+      link: 'https://docs.google.com/document/d/1_iDZk9-ceoxt7C3Q8wbRUEz0FmYQpcSMiiUNhBCw4KA/preview'
     }
   - {
       type: 'Report',

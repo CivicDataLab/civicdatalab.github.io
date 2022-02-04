@@ -35,4 +35,9 @@ resources:
       title: 'Twitter Spaces - A discussion on understanding law enforcement budgets in India',
       type: 'Audio'
     }
+  - {
+      link: 'https://twitter.com/i/spaces/1gqxvlMlZMeGB',
+      title: 'Twitter Spaces - Understanding Legal Aid Budgets with Project 39A',
+      type: 'Audio'
+    }
 ---
