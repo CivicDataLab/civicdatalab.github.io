@@ -14,4 +14,9 @@ newsletter:
 sector: Law & Justice
 type: project
 resources:
+  - {
+      type: 'Doc',
+      title: 'Course Module',
+      link: 'https://drive.google.com/file/d/1vL4EkVc2KlOFIgpw8jaWqebLBC9qJrqp/view?usp=sharing'
+    } 
 ---
