@@ -19,4 +19,9 @@ resources:
       title: 'Course Module',
       link: 'https://drive.google.com/file/d/1vL4EkVc2KlOFIgpw8jaWqebLBC9qJrqp/view?usp=sharing'
     } 
+  - {
+      type: 'Doc',
+      title: 'Partner Testimonials',
+      link: 'https://docs.google.com/document/d/1oEBGubzrDoJytxIQSwjyQvjQyf6p7cMqJwMaHNn6XW0/preview'
+    } 
 ---
