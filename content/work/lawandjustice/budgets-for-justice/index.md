@@ -7,9 +7,9 @@ context:  |
 
   **Features of the Budgets for Justice platform**
 
-  - [Curated datasets](https://budgets.justicehub.in/datasets) which include budget data between the years 2015-16 and 2021-22 for specific schemes under different ministries and departments  
-  - Explorers to visualize and compare budget data
-  - Curated conversations and discussions with experts in the areas of public finance and law and justice to help understand the budgeting process and the data.
+  - [Curated budget datasets](https://budgets.justicehub.in/datasets) between the years 2015-16 and 2022-23 for specific schemes under different ministries and departments  
+  - [Explorers](https://budgets.justicehub.in/datasets/union-budget-data-for-the-ministry-of-law-and-justice) to visualize and compare budget data
+  - [Curated conversations and discussions](https://twitter.com/search?q=(%23SpacesHost)%20(from%3AJusticeHubIndia)&src=typed_query) with experts in the areas of public finance and law and justice to help understand the budgeting process and the data.
 solution:
 url: https://budgets.justicehub.in
 twitter: https://twitter.com/JusticeHubIndia
