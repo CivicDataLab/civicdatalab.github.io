@@ -40,4 +40,14 @@ resources:
       title: 'Twitter Spaces - Understanding Legal Aid Budgets with Project 39A',
       type: 'Audio'
     }
+  - {
+      link: 'https://twitter.com/i/spaces/1eaKbNXPgmdKX',
+      title: 'Twitter Spaces - Understand Law and Justice Budget on E-Courts and Judicial Infra',
+      type: 'Audio'
+    }
+  - {
+      link: 'https://twitter.com/i/spaces/1YqxopXrMXAKv',
+      title: 'Twitter Spaces - Understanding Prison Budgets in India',
+      type: 'Audio'
+    }
 ---
