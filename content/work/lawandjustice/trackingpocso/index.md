@@ -32,6 +32,16 @@ resources:
       link: 'https://www.youtube.com/watch?v=mQ4hEk7pPdM'
     }
   - {
+      type: 'Video',
+      title: 'Data Dialogues Assam - Panel Discussion - The state of data for tracking child protection laws in Assam',
+      link: 'https://www.youtube.com/watch?v=BmeTLuzUEwQ'
+    }
+  - {
+      type: 'Video',
+      title: 'Data Dialogues Assam - Presentation - Using data to track child protection laws in Assam',
+      link: 'https://www.youtube.com/watch?v=HXU4CKoA9yc'
+    }
+  - {
       type: 'Report',
       title: 'A report by the Engine Room on dealing with sensitive datasets to highlight problems of Child Sexual Abuse in India.',
       link: 'https://drive.google.com/file/d/1_KSTF40ykcXAerGwDe4UHykBetwvazBj/view?usp=sharing'
