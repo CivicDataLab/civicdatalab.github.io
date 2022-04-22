@@ -8,7 +8,7 @@ github: https://github.com/akkisagiraju
 twitter: 
 linkedin: https://www.linkedin.com/in/akhil-sagiraju
 image: akhil.jpeg
-sectors: Law & Justice, Education, Urban Planning
+sectors: Law & Justice, Education, Urban Development
 projects: Justice Hub, Zombie Tracker, OpenCity, Democratising Action for Attainment
 ---
 

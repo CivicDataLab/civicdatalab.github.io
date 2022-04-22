@@ -10,16 +10,14 @@ context: |
   The first phase of the project (December 2019 - August 2021) focused on (i) expanding the platform to report six types of disasters (earthquake, flood, volcano, haze, forest fire, and wind), and (ii) expanding the platform to cover entire Indonesia. While the second phase of the project (August 2021 - November 2022) focuses on adding and upgrading features on the platform. 
   
   CDL supports [PetaBencana.id](http://petabencana.id) in Indonesia, [MapaKalamidad.ph](https://mapakalamidad.ph) in the Philippines, and additional urban experiments with the code in Asia and beyond.
-
 solution:
 url: https://petabencana.id
 twitter: https://twitter.com/petabencana
 linkedin:
 github: https://github.com/petabencana
-sector: Urban Planning
+sector: Urban Development
 type: project
 resources:
-
   - {
       link: 'https://medium.com/civicdatalab/exploring-the-role-of-technology-in-disaster-response-and-management-c745cca74d5c',
       title: 'Exploring the Role of Technology in Disaster Response and Management',

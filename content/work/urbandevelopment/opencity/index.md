@@ -14,6 +14,6 @@ resources:
       link: 'https://medium.com/civicdatalab/redesigning-a-city-level-data-platform-73b08b4f9510',
       type: 'Blog'
     }
-sector: Urban Planning
+sector: Urban Development
 type: project
 ---

@@ -8,7 +8,7 @@ github: https://github.com/deepthi-Chand
 twitter: https://twitter.com/eopoxf
 linkedin: https://www.linkedin.com/in/deepthi-chand-alagandula-5415862b/
 image: ./dc.jpg
-sectors: Education,Urban Planning,Law & Justice
+sectors: Education,Urban Development,Law & Justice
 projects: PetaBencana, JusticeHub, HAQ-POCSO implementation tracker, OpenCity, Democratising Action for Attainment, PetaBencana, STiR Education, Pratham Books, Tracking the implementation of the POCSO Act, Akshara Foundation
 ---
 

@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/bianca-shah-325b35118/
 image: ./bianca.jpeg
 accentcolor:
-sectors: Urban Planning
+sectors: Urban Development
 projects: PetaBencana
 ---
 
