@@ -169,7 +169,7 @@ const workLinks = [
   { path: '/foss', name: 'Free & Open Source Software' },
   { path: '/lawandjustice', name: 'Law & Justice' },
   { path: '/publicfinance', name: 'Public Finance' },
-  { path: '/urbanplanning', name: 'Urban Planning' }
+  { path: '/urbandevelopment', name: 'Urban Development' }
 ];
 
 const ExternalLink = ({ url, name }) => (

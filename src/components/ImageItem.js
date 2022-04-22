@@ -55,7 +55,7 @@ const sectors = [
   { name: 'Free & Open Source Software', color: '#129530' },
   { name: 'Law & Justice', color: '#FBC740' },
   { name: 'Public Finance', color: '#66D2D6' },
-  { name: 'Urban Planning', color: '#BD97CB' }
+  { name: 'Urban Development', color: '#BD97CB' }
 ];
 
 const sectorLabelColorGenerator = (sectorName) => {

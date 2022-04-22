@@ -68,7 +68,7 @@ const SectorLabel = styled.div`
 //     { name: 'Public Finance', tag: 'publicfinance' },
 //     { name: 'Law & Justice', tag: 'law' },
 //     { name: 'Education', tag: 'education' },
-//     { name: 'Urban Planning', tag: 'cities' },
+//     { name: 'Urban Development', tag: 'cities' },
 //     { name: 'Free & Open Source Software', tag: 'foss' }
 //   ];
 
