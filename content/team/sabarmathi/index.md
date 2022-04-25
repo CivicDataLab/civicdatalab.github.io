@@ -6,7 +6,7 @@ description:
 quote: When you Stumble in the waves, become the Tide!
 github: 
 twitter:
-linkedin: 
+linkedin: https://www.linkedin.com/in/sabarmathi-gandhi-96707a1aa
 image: ./sg.jpg
 sectors:
 accentcolor: '#567568'
