@@ -255,12 +255,12 @@ const Team = ({ data }) => {
         <StandardGrid>
           <TeamTitleContainer ref={teamTitleContainerRef}>
             <HeroText style={{ marginTop: 0 }}>The Team</HeroText>
-            <Section>
+            {/* <Section>
               <p className="section-text">
                 CivicDataLab works across sectors to increase access to information. Meet the multi-disciplinary team
                 who work behind the scenes to make it all happen!
               </p>
-            </Section>
+            </Section> */}
             <div style={{ position: 'relative', height: '80%' }}>
               <StickyBox>
                 <h1>Current Job Openings</h1>
