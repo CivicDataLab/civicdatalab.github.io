@@ -328,7 +328,10 @@ const MemberTemplate = ({ data }) => {
                 </a>
               )}
             </SocialLinksContainer>
-            <Image fluid={member.frontmatter.image?.childImageSharp.fluid} />
+            <Image imgStyle={{
+              objectFit: "contain",
+            }}
+              fluid={member.frontmatter.image?.childImageSharp.fluid} />
             {member.frontmatter.quote && (
               <QuoteContainer background={member.frontmatter.accentcolor} text={member.frontmatter.text}>
                 <p>
