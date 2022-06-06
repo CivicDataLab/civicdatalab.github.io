@@ -23,5 +23,10 @@ resources:
       type: 'Doc',
       title: 'Partner Testimonials',
       link: 'https://docs.google.com/document/d/1oEBGubzrDoJytxIQSwjyQvjQyf6p7cMqJwMaHNn6XW0/preview'
-    } 
+    }
+  - {
+      type: 'Video',
+      title: 'Data Dialogues Assam - Workshop on working with Public Datasets',
+      link: 'https://www.youtube.com/watch?v=i101KnPAv5k'
+    }
 ---
