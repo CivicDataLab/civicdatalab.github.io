@@ -72,9 +72,10 @@ const CardContent = styled.div`
     line-height: 1.4em;
     color: #585050;
     overflow: hidden;
-    display: box;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
     line-clamp: 5;
-    box-orient: vertical;
+    -webkit-box-orient: vertical;
   }
 
   @media (min-width: 1280px) {
