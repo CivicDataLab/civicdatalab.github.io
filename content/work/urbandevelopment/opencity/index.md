@@ -14,6 +14,11 @@ resources:
       link: 'https://medium.com/civicdatalab/redesigning-a-city-level-data-platform-73b08b4f9510',
       type: 'Blog'
     }
+  - {
+      title: 'Podcast - Redesigning Open City',
+      link: 'https://open.spotify.com/episode/4mkRxbOcXhI2CiwwzrDA5n?si=H_5FiOBzT0SmGQPArQHjpQ',
+      type: 'Podcast'
+    }
 sector: Urban Development
 type: project
 ---
