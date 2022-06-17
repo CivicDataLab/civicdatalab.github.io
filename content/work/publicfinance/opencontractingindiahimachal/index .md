@@ -14,4 +14,15 @@ github:
 newsletter:
 sector: Public Finance
 type: project
+resources:
+  - {
+      title: 'Fiscal Transparency and Accountability during COVID19',
+      link: 'https://anchor.fm/civicdatalab/episodes/Fiscal-Transparency-and-Accountability-during-COVID19--Episode-2--CivicDataLab-ei8ha7',
+      type: 'Podcast'
+    }
+  - {
+      title: 'Himachal Fiscal Data Explorer | Beta Launch',
+      link:  'https://www.youtube.com/watch?v=_7zWad8UxKY',
+      type: 'Video'
+    }
 ---
