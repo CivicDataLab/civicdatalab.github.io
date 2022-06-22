@@ -26,28 +26,33 @@ resources:
       type: 'Blog'
     }
   - {
-      link: 'https://twitter.com/i/spaces/1lDxLLqVdgQxm',
-      title: 'Twitter Spaces - A discussion on understanding Law and Justice budgets in India',
+      link: 'https://open.spotify.com/episode/6vUst4BfrBgEbl8r8Njb95?si=TMNwsyN7RtC4WPVZ_Cnt0w',
+      title: 'Podcast - A discussion on understanding Law and Justice budgets in India',
       type: 'Audio'
     }
   - {
-      link: 'https://twitter.com/i/spaces/1YqGopZqwrAJv',
-      title: 'Twitter Spaces - A discussion on understanding law enforcement budgets in India',
+      link: 'https://open.spotify.com/episode/2RReAAOp0SvTBjgJQdkPP4?si=cD6omUslTw-YMYh1f43htQ',
+      title: 'Podcast - A discussion on understanding law enforcement budgets in India',
       type: 'Audio'
     }
   - {
-      link: 'https://twitter.com/i/spaces/1gqxvlMlZMeGB',
-      title: 'Twitter Spaces - Understanding Legal Aid Budgets with Project 39A',
+      link: 'https://open.spotify.com/episode/6TKvn8M8LBVuc1ttAMt6K9?si=9f574ae4bd224aee',
+      title: 'Podcast - Understanding Legal Aid Budgets with Project 39A',
       type: 'Audio'
     }
   - {
-      link: 'https://twitter.com/i/spaces/1eaKbNXPgmdKX',
-      title: 'Twitter Spaces - Understand Law and Justice Budget on E-Courts and Judicial Infra',
+      link: 'https://open.spotify.com/episode/0sZZbar5rXjehoRQrECKsV?si=fe303360e5e94a09',
+      title: 'Podcast - Understand Law and Justice Budget on E-Courts and Judicial Infra',
       type: 'Audio'
     }
   - {
-      link: 'https://twitter.com/i/spaces/1YqxopXrMXAKv',
-      title: 'Twitter Spaces - Understanding Prison Budgets in India',
+      link: 'https://dataforjustice.substack.com/p/understanding-budgets-for-correctional',
+      title: 'Understanding Budgets for correctional facilities in India',
+      type: 'Substack Post'
+    }
+  - {
+      link: 'https://open.spotify.com/episode/0EPrflC8z96dsLLY0Vsc2l?si=a4d5ee07d15c4f70',
+      title: 'Podcast - Insights from the India Justice Report',
       type: 'Audio'
     }
 ---
