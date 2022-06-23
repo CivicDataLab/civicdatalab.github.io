@@ -25,6 +25,11 @@ sector: Law & Justice
 type: project
 resources:
   - {
+      link: 'https://medium.com/civicdatalab/the-justice-hub-in-numbers-8a33dd72aee9',
+      title: 'Justice Hub - In Numbers',
+      type: 'Blog'
+    }
+  - {
       link: 'https://justicehub.in/initiatives/summer-of-data-2021',
       title: 'Summer of Data - 2021',
       type: 'Initiative'
