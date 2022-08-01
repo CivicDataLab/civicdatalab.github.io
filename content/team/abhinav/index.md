@@ -9,6 +9,8 @@ twitter:
 linkedin:
 image: abhinav.jpeg
 sectors: Law & Justice, Public Finance, Urban Development
+eventtypes: Data Dialogue 
+eventdetails: Data Dialogue Assam
 projects: Justice Hub, Zombie Tracker, OpenCity, Open Budgets India Platform - 2.0, Tracking the implementation of the POCSO Act, Budgets for Justice
 ---
 
