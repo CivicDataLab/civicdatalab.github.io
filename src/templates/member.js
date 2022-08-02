@@ -153,7 +153,6 @@ export const Bio = styled.div`
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
-    /* hyphens: auto; */
   }
 
   li {
@@ -336,7 +335,8 @@ const MemberTemplate = ({ data }) => {
             <Image
               imgStyle={{
                 objectFit: 'contain',
-                objectPosition: 'top'
+                objectPosition: 'top',
+                maxHeight: '600px'
               }}
               fluid={member.frontmatter.image?.childImageSharp.fluid}
             />
