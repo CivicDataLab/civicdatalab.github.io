@@ -9,7 +9,7 @@ twitter: https://twitter.com/tauseefsshah
 linkedin:
 image: ./tauseef.jpg
 accentcolor: '#ff3030'
-sectors: Public Finance
+sectors: Public Finance, Urban Development
 projects: Open Budgets India Platform 2.0, OpenCity
 text: dark
 ---
