@@ -149,6 +149,11 @@ export const Bio = styled.div`
 
   a {
     color: #168cd6;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    /* hyphens: auto; */
   }
 
   li {
@@ -328,10 +333,13 @@ const MemberTemplate = ({ data }) => {
                 </a>
               )}
             </SocialLinksContainer>
-            <Image imgStyle={{
-              objectFit: "contain",
-            }}
-              fluid={member.frontmatter.image?.childImageSharp.fluid} />
+            <Image
+              imgStyle={{
+                objectFit: 'contain',
+                objectPosition: 'top'
+              }}
+              fluid={member.frontmatter.image?.childImageSharp.fluid}
+            />
             {member.frontmatter.quote && (
               <QuoteContainer background={member.frontmatter.accentcolor} text={member.frontmatter.text}>
                 <p>
