@@ -4,6 +4,8 @@ const memberTemplate = path.resolve('./src/templates/member.js');
 const jobTemplate = path.resolve('./src/templates/job.js');
 const sectorTemplate = path.resolve('./src/templates/sector.js');
 const projectTemplate = path.resolve('./src/templates/project.js');
+const eventTemplate = path.resolve('./src/templates/event.js');
+const eventdetailTemplate = path.resolve('./src/templates/eventdetail.js');
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === 'MarkdownRemark') {
@@ -70,9 +72,47 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  const eventResults = await graphql(`
+    query {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "eventtype" } } }) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              name
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const eventdetailResults = await graphql(`
+    query {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "eventdetail" } } }) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              name
+            }
+          }
+        }
+      }
+    }
+  `);
+
   const members = memberResults.data.allMarkdownRemark.edges;
   const sectors = sectorResults.data.allMarkdownRemark.edges;
   const projects = projectResults.data.allMarkdownRemark.edges;
+  const events = eventResults.data.allMarkdownRemark.edges;
+  const eventdetails = eventdetailResults.data.allMarkdownRemark.edges;
 
   members.forEach((member) => {
     createPage({
@@ -102,6 +142,28 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         id: project.node.id,
         nameRegex: `/${project.node.frontmatter.name}/`
+      }
+    });
+  });
+
+  events.forEach((event) => {
+    createPage({
+      path: event.node.fields.slug,
+      component: eventTemplate,
+      context: {
+        id: event.node.id,
+        nameRegex: `/${event.node.frontmatter.name}/`
+      }
+    });
+  });
+
+  eventdetails.forEach((eventdetail) => {
+    createPage({
+      path: eventdetail.node.fields.slug,
+      component: eventdetailTemplate,
+      context: {
+        id: eventdetail.node.id,
+        nameRegex: `/${eventdetail.node.frontmatter.name}/`
       }
     });
   });
