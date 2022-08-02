@@ -26,7 +26,8 @@ Gaurav is a technologist turned social entreprenuer working to strengthen data-f
 - Leveraging Open Ecosystems - Charcha 2020, India 2020: https://www.youtube.com/watch?v=Uxye_AdYfhw
 - Open Data in India: Data & Technology for Impact - Arthan, India 2020: https://www.youtube.com/watch?v=UcndoaIUMow
 - Fantastic Indian Open Datasets & Where to Find Them - ODSC, India 2019: https://www.youtube.com/watch?v=1RtopUeqRaY
-- Open Data, Open Opportunities - TEDxNITKSurathkal, India 2019: https://www.ted.com/talks/gaurav_godhwani_open_data_open_opportunities \* Time Series Analysis of District-wise Government Spending in India - ODSC, India 2018: https://www.youtube.com/watch?v=TGltOKRG5X8
+- Open Data, Open Opportunities - TEDxNITKSurathkal, India 2019: https://www.ted.com/talks/gaurav_godhwani_open_data_open_opportunities
+- Time Series Analysis of District-wise Government Spending in India - ODSC, India 2018: https://www.youtube.com/watch?v=TGltOKRG5X8
 - Transforming India's Budgets into Open Linked Data - HasGeek, India 2017: https://www.youtube.com/watch?v=tX7-Ega6OxA
 - Ingredients Of Co-Creating An Open Data Initiative - Creative Commons Summit, 2017: https://speakerdeck.com/gggodhwani/cc-summit-2017-ingredients-of-co-creating-an-open-data-initiative
 - Open Budgets & Public Health Indicators - Open Data Camp, Bangalore 2017: https://www.youtube.com/watch?v=26oz-HsHprQ
