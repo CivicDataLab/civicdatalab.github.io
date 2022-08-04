@@ -1,14 +1,27 @@
 ---
-name: Data Dialogue Assam
+name: Data Dialogues - Assam - March, 2022
 image: ./placeholder.jpg
-summary: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.
-context: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-solution:
-aim:
-url:
-twitter:
-facebook:
-instagram:
+summary: A two-day discussion to improve access to Government Data, Data Sharing, Data-driven decision-making & Community Building in Assam.
+context: We have started a new series - Data Dialogues, a forum for various government agencies, civil societies, academia, media and other actors to come together and shape data-driven policy discourse in the country. Our first event in the series was Data Dialogues - Assam, a two-day consultation, on 21st and 22nd March 2022, in collaboration with the Open Government Data (OGD) - project management team at the National Informatics Centre (NIC). The objective of this consultation was to understand how to improve the publishing of government data and enable data sharing to strengthen access to information and enhance the state’s efficiency in governance. The objective was also to hear from the non-government actors working in different sectors about the public data they use, how they use it and the challenges they face.
+
+The event had key speakers from the Ministry of Electronics and Information Technology, Assam State Disaster Management Authority, Assam Finance Department, Assam Panchayat & RuralDevelopment Department, Assam State Child Protection Society, World Bank, IIT Guwahati, Universal Team for Social Action and Help (UTSAH), among others.
+url: https://civicdatalab.in/resources/report-data-dialogues-assam-2022.pdf
 eventtype: Data Dialogue 
 type: eventdetail
+resources:
+  - {
+      type: 'Doc',
+      title: 'Event Report',
+      link: 'https://civicdatalab.in/resources/report-data-dialogues-assam-2022.pdf'
+    } 
+  - {
+      type: 'Video',
+      title: 'Event Playlist',
+      link: 'https://youtube.com/playlist?list=PLvHFO4BKByIVQGa1SSauiOcZZ8brCJFMb'
+    }
+  - {
+      type: 'Doc',
+      title: 'Press Release',
+      link: 'https://docs.google.com/document/d/e/2PACX-1vQfKVtrDHmBychU8mZXFqb86PofBL3PhpmljEgptcIVIQCNd8e6ddFFyQtWs2yoFYQNOUcNNYNZyJo5/pub'
+    }
 ---
