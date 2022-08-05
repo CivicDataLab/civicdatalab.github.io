@@ -7,7 +7,6 @@ import EventNav from '../components/EventNav';
 import HeroText from '../styles/HeroText';
 import ImageEventItem from '../components/ImageEventItem';
 import WorkHomePage from '../components/WorkHomePage';
-import MiniTeamSection from '../components/MiniTeamSection';
 import Seo from '../components/Seo/Seo';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
@@ -64,7 +63,6 @@ const EventLabel = styled.div`
 
 
 const EventTemplate = ({ data }) => {
-  const members = data.members.nodes;
   const events = data.events.nodes;
 
   const leftContainerRef = React.useRef(null);
@@ -104,7 +102,6 @@ const EventTemplate = ({ data }) => {
                 />
               ))}
             </EventsContainer>
-            <MiniTeamSection members={members} />
           </EventsContent>
         </StandardGrid>
       </MainContainer>
@@ -126,27 +123,6 @@ export const pageQuery = graphql`
         events {
           url
           title
-        }
-      }
-    }
-    members: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/team/" }, frontmatter: { eventtypes : { regex: $nameRegex } } }
-      sort: { fields: frontmatter___name }
-    ) {
-      nodes {
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          name
-          image {
-            childImageSharp {
-              fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
         }
       }
     }
