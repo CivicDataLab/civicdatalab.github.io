@@ -225,9 +225,21 @@ const SocialLinksContainer = styled.div`
   }
 `;
 
+const PartnersContainer = styled.div`
+  a {
+    display: block;
+    margin-top: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-bottom: 60px;
+  }
+`;
+
 const EventDetailTemplate = ({ data }) => {
   const eventdetail = data.markdownRemark;
   const members = data.members.nodes;
+  const partners = data.partners.nodes;
 
   const { twitter, linkedin, github, youtube, facebook, url, solution, aim, resources, newsletter } = eventdetail.frontmatter;
 
@@ -292,6 +304,18 @@ const EventDetailTemplate = ({ data }) => {
                 </a>
               </LeftText>
             )}
+            {partners.length ? (
+              <LeftText>
+                <p>In partnership with:</p>
+                <PartnersContainer>
+                  {partners.map((partner) => (
+                    <a key={partner.id} href={partner.frontmatter.website} target="_blank" rel="noreferrer noopener">
+                      <Image fixed={partner.frontmatter.logo.childImageSharp.fixed} />
+                    </a>
+                  ))}
+                </PartnersContainer>
+              </LeftText>
+            ) : null}
           </EventDetailTitleContainer>
           <EventDetailContent ref={rightContainerRef}>
             <ImageSection>
@@ -352,6 +376,18 @@ const EventDetailTemplate = ({ data }) => {
                 )}
               </SocialLinksContainer>
             </LeftText>
+            {partners && (
+              <LeftText mobile>
+                <p>In partnership with:</p>
+                <PartnersContainer>
+                  {partners.map((partner) => (
+                    <a key={partner.id} href={partner.frontmatter.website} target="_blank" rel="noreferrer noopener">
+                      <Image fixed={partner.frontmatter.logo.childImageSharp.fixed} />
+                    </a>
+                  ))}
+                </PartnersContainer>
+              </LeftText>
+            )}
           </EventDetailContent>
         </StandardGrid>
       </MainContainer>
@@ -423,7 +459,7 @@ export const pageQuery = graphql`
       }
     }
     partners: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projectpart/" }, frontmatter: { projects: { regex: $nameRegex } } }
+      filter: { fileAbsolutePath: { regex: "/projectpart/" }, frontmatter: { eventdetails: { regex: $nameRegex } } }
       sort: { fields: frontmatter___name }
     ) {
       nodes {
