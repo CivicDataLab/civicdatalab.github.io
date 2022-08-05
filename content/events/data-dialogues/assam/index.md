@@ -22,4 +22,5 @@ resources:
 summary: "A two-day discussion to improve access to Government Data, Data Sharing, Data-driven decision-making & Community Building in Assam."
 type: eventdetail
 url: "https://civicdatalab.in/resources/report-data-dialogues-assam-2022.pdf"
+youtube: "https://www.youtube.com/watch?v=Qms4k6y7OgI&t=8s"
 ---
