@@ -238,7 +238,6 @@ const PartnersContainer = styled.div`
 
 const EventDetailTemplate = ({ data }) => {
   const eventdetail = data.markdownRemark;
-  const members = data.members.nodes;
   const partners = data.partners.nodes;
 
   const { twitter, linkedin, github, youtube, facebook, url, solution, aim, resources, newsletter } = eventdetail.frontmatter;
@@ -394,7 +393,6 @@ const EventDetailTemplate = ({ data }) => {
       <MainContainer>
         <StandardGrid>
           <EventDetailContent>
-            <MiniTeamSection members={members} />
             {resources && <Resources resources={resources} />}
           </EventDetailContent>
         </StandardGrid>
@@ -432,27 +430,6 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 1200, quality: 100) {
               ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-    members: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/team/" }, frontmatter: { eventdetails: { regex: $nameRegex } } }
-      sort: { fields: frontmatter___name }
-    ) {
-      nodes {
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          name
-          image {
-            childImageSharp {
-              fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
             }
           }
         }
