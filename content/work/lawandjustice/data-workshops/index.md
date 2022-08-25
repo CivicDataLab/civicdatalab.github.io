@@ -25,6 +25,11 @@ resources:
       link: 'https://docs.google.com/document/d/1oEBGubzrDoJytxIQSwjyQvjQyf6p7cMqJwMaHNn6XW0/preview'
     }
   - {
+      type: 'Doc',
+      title: 'Workshop at NLU Odisha',
+      link: 'https://www.nluo.ac.in/news_updates/cpplgg-organised-session-on-research-data-management-in-collaboration-with-civildatalab/'
+    }
+  - {
       type: 'Video',
       title: 'Data Dialogues Assam - Workshop on working with Public Datasets',
       link: 'https://www.youtube.com/watch?v=i101KnPAv5k'
