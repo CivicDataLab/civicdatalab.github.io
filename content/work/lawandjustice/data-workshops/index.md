@@ -30,6 +30,11 @@ resources:
       link: 'https://www.nluo.ac.in/news_updates/cpplgg-organised-session-on-research-data-management-in-collaboration-with-civildatalab/'
     }
   - {
+      type: 'Doc',
+      title: 'CivicDataLab signed an MoU with NLU Odisha',
+      link: 'https://medium.com/civicdatalab/cdl-signs-an-mou-with-nlu-odisha-9968a3449700'
+    }
+  - {
       type: 'Video',
       title: 'Data Dialogues Assam - Workshop on working with Public Datasets',
       link: 'https://www.youtube.com/watch?v=i101KnPAv5k'
