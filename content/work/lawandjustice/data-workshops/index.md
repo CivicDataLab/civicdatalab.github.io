@@ -36,7 +36,7 @@ resources:
     }
   - {
       type: 'Video',
-      title: 'Data Dialogues Assam - Workshop on working with Public Datasets',
-      link: 'https://www.youtube.com/watch?v=i101KnPAv5k'
+      title: 'Data Dialogues Assam - A session on handling public datasets',
+      link: 'https://www.youtube.com/watch?v=__-OORFtyzk'
     }
 ---
