@@ -11,6 +11,7 @@ image: ./bhavabhuthi.jpeg
 accentcolor: '#b8383b'
 sectors: 
 projects:
+text: light
 ---
 
 Bhavabhuthi is a Frontend Developer. An open source enthusiast and Open Access supporter. In addition to Software Development, he is a speaker, designer, localizer and organizer at several open source communities. 
