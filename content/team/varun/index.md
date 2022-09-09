@@ -14,6 +14,6 @@ projects:
 text: light
 ---
 
-Varun is a Backend developer at CDL. His areas of interest include Machine Learning, Artificial Intelligence, and Python. 
+Varun is a Backend Engineer at CDL. His areas of interest include Machine Learning, Artificial Intelligence, and Python. 
 
-While weekdays are for work, weekends are for bike rides and watching F1 races. Huge fan of Ferrari.
+While weekdays are for work, weekends are for bike rides and watching F1 races. He is a huge fan of Ferrari.
