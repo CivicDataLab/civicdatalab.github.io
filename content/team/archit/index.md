@@ -3,7 +3,7 @@ name: Archit Dubey
 role: Backend Engineer
 medium:
 description:
-quote: Simplicity is the biggest sophistication.
+quote: Simplicity is the biggest sophistication
 github: https://github.com/ArcD7
 twitter: https://twitter.com/imarchitdubey
 linkedin: https://www.linkedin.com/in/architdubey/
