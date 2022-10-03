@@ -3,7 +3,7 @@ name: Bianca Shah
 role: Associate Researcher
 medium:
 description:
-quote: We are all dead in the long run.
+quote: 
 github:
 twitter:
 linkedin: https://www.linkedin.com/in/bianca-shah-325b35118/
