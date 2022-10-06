@@ -46,7 +46,7 @@ resources:
       type: 'Audio'
     }
   - {
-      link: 'https://dataforjustice.substack.com/p/understanding-budgets-for-correctional',
+      link: 'https://dataforjustice.substack.com/p/understanding-budgets-for-correctional-facilities-1393943',
       title: 'Understanding Budgets for correctional facilities in India',
       type: 'Substack Post'
     }
