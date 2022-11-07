@@ -8,9 +8,9 @@ github: https://github.com/arunsud
 twitter: https://twitter.com/mrarunsudarsan
 linkedin: https://www.linkedin.com/in/arunsud
 image: ./arun.jpg
-accentcolor: '#66cc99'
+accentcolor: '#d03d41'
 sectors: Public Finance
-projects: Open Budgets India Platform - 2.0, OpenCity
+projects: Open Budgets India Platform - 2.0, OpenCity, Girl Education Spending Tracker
 ---
 
 Arun is an Economist & Policy Researcher. An eternal optimist and a perennial pessimist, he has seen the highs and lows of governance in India at his previous stint at NITI Aayog as a Young Professional.
