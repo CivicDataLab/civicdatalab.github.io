@@ -13,6 +13,13 @@ github:
 newsletter:
 sector: Public Finance
 type: project
+resources:
+   - {
+      link: 'https://civicdatalab.in/resources/report-flood-governance-in-assam-nov-2022.pdf',
+      title: 'Flood Governance in Assam - Mapping the flows of information and funds during floods in Assam',
+      type: 'document'
+    }
+
 ---
 
 How the government spends money on public goods, services, and infrastructure is referred to as Public Procurement. Public procurement data is imperative to understand government priorities and advocate for better spending. 
