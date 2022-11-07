@@ -15,8 +15,8 @@ sector: Public Finance
 type: project
 resources:
 {
-  link: 'https://civicdatalab.in/resources/report-flood-governance-in-assam-nov-2022.pdf'
-  title: 'Flood Governance in Assam: Mapping the flows of information and funds during floods in Assam'
+  link: 'https://civicdatalab.in/resources/report-flood-governance-in-assam-nov-2022.pdf',
+  title: 'Flood Governance in Assam - Mapping the flows of information and funds during floods in Assam',
   type: 'document'
 }
 ---
