@@ -38,15 +38,14 @@ const BlogPreview = ({ title, author, imageUrl, postUrl }) => {
 
 const BlogStrip = () => {
   const [blogPosts] = useMediumFeed('civicdatalab');
-
   return (
     <BlogStripContainer>
       {blogPosts?.slice(0, 4).map((post) => (
         <BlogPreview
           key={post.guid}
           title={post.title}
-          author={post['dc:creator']}
-          imageUrl={getCoverImageUrlFromMediumPost(post['content:encoded'])}
+          author={post['author']}
+          imageUrl={getCoverImageUrlFromMediumPost(post['content'])}
           postUrl={post.link}
         />
       ))}
