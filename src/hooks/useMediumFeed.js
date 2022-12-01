@@ -1,8 +1,6 @@
 import { useReducer, useEffect } from 'react';
-import Parser from 'rss-parser';
 
-const parser = new Parser();
-const CORS_PROXY = 'https://cors0any.herokuapp.com/';
+const CORS_PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=';
 
 const intialState = {
   blogPosts: [],
@@ -39,18 +37,21 @@ const useMediumFeed = (mediumUserName) => {
   const [state, dispatch] = useReducer(reducer, intialState);
 
   useEffect(() => {
-    dispatch({ type: 'FETCHING_POSTS' });
-    parser
-      .parseURL(CORS_PROXY + `https://medium.com/feed/${mediumUserName}`)
-      .then((response) => {
-        dispatch({
-          type: 'FETCHING_POSTS_SUCCESS',
-          payload: response.items.filter((post) => post['content:encoded'].indexOf('CivicDataLab') > -1)
+    async function fetchData() {
+      dispatch({ type: 'FETCHING_POSTS' });
+      await fetch(CORS_PROXY + `https://medium.com/feed/${mediumUserName}`)
+        .then((res) => res.json())
+        .then((response) => {
+          dispatch({
+            type: 'FETCHING_POSTS_SUCCESS',
+            payload: response.items
+          });
+        })
+        .catch((error) => {
+          dispatch({ type: 'FETCHING_POSTS_FAILED', payload: error.message });
         });
-      })
-      .catch((error) => {
-        dispatch({ type: 'FETCHING_POSTS_FAILED', payload: error.message });
-      });
+    }
+    fetchData();
   }, [mediumUserName]);
 
   return [state.blogPosts, state.error, state.loading];
