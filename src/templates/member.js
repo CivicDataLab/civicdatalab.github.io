@@ -371,7 +371,7 @@ const MemberTemplate = ({ data }) => {
               <p key={d}>{d}</p>
             ))}
             {member.html && <div dangerouslySetInnerHTML={{ __html: member.html }}></div>}
-            {blogPosts.length ? (
+            {blogPosts?.length ? (
               <BlogContainer>
                 <h2>Blogs</h2>
                 <BlogPostGrid>
@@ -380,7 +380,7 @@ const MemberTemplate = ({ data }) => {
                       <BlogCard
                         key={post.guid}
                         title={post.title}
-                        imageUrl={getCoverImageUrlFromMediumPost(post['content:encoded'])}
+                        imageUrl={getCoverImageUrlFromMediumPost(post['content'])}
                         postUrl={post.link}
                       />
                     );
