@@ -44,7 +44,7 @@ const useMediumFeed = (mediumUserName) => {
         .then((response) => {
           dispatch({
             type: 'FETCHING_POSTS_SUCCESS',
-            payload: response.items
+            payload: response.items.filter((post) => post['content'].indexOf('CivicDataLab') > -1)
           });
         })
         .catch((error) => {
