@@ -39,4 +39,9 @@ resources:
       title: 'Data Dialogues Assam - A session on handling public datasets',
       link: 'https://www.youtube.com/watch?v=__-OORFtyzk'
     }
+  - {
+      type: 'Blog',
+      title: 'Workshop at SNEHA, Mumbai',
+      link: 'https://medium.com/civicdatalab/building-a-learning-module-to-work-with-data-in-an-open-and-reproducible-way-f001ef21bc22'
+    }
 ---
