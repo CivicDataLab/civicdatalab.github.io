@@ -21,6 +21,11 @@ sector: Law & Justice
 type: project
 resources:
   - {
+      link: 'https://medium.com/civicdatalab/a-data-dialogue-around-budgets-for-justice-in-assam-858420bb0e9e',
+      title: 'A data dialogue around budgets-for-justice in Assam',
+      type: 'Blog'
+    }
+  - {
       link: 'https://medium.com/civicdatalab/budgets-for-justice-making-law-and-justice-budgets-accessible-and-actionable-28eb56a0d348',
       title: 'Budgets for Justice: Making Law and Justice budgets Accessible and Actionable',
       type: 'Blog'
