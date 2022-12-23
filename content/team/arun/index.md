@@ -5,7 +5,6 @@ medium: '@arunsud'
 description:
 quote: No manmade system is immune to human deceit.
 github: https://github.com/arunsud
-twitter: https://twitter.com/mrarunsudarsan
 linkedin: https://www.linkedin.com/in/arunsud
 image: ./arun.jpg
 accentcolor: '#d03d41'
