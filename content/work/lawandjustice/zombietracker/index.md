@@ -14,6 +14,11 @@ github: https://github.com/CivicDataLab/stop-66A
 resources:
   - {
       type: 'blog',
+      title: 'Third Time Lucky?: Section 66A and the Afterlife of Strategic Litigation',
+      link: 'https://globalfreedomofexpression.columbia.edu/updates/2023/01/third-time-lucky-section-66a-and-the-afterlife-of-strategic-litigation/'
+    }
+  - {
+      type: 'blog',
       title: 'A data driven approach to curb the zombie that is 66A',
       link: 'https://medium.com/civicdatalab/a-data-driven-approach-to-curb-the-zombie-that-is-66a-1578d955ad4b'
     }
@@ -32,8 +37,14 @@ resources:
       title: 'We write to the Supreme Court e-Committee with CDL to improve the eCourts platform',
       link: 'https://internetfreedom.in/we-write-to-the-supreme-court-e-committee-with-cdl-to-improve-the-ecourts-platform/'
     }
-  - { type: 'blog', title: 'Zombie Tracker - Blogs', link: 'http://zombietracker.in/blog/' }
-  - { type: 'video', title: 'Zombie Tracker - Launch Event', link: 'https://www.youtube.com/watch?v=fcFKCTNGEZU' }
+  - { type: 'blog', 
+      title: 'Zombie Tracker - Blogs', 
+      link: 'http://zombietracker.in/blog/' 
+    }
+  - { type: 'video', 
+      title: 'Zombie Tracker - Launch Event', 
+      link: 'https://www.youtube.com/watch?v=fcFKCTNGEZU' 
+    }
 sector: Law & Justice
 type: project
 ---
