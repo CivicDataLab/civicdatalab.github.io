@@ -26,7 +26,7 @@ resources:
       type: 'Blog'
     }
   - {
-      title: 'UUsing data analysis to spot gaps in access to maternal and child health services',
+      title: 'Using data analysis to spot gaps in access to maternal and child health services',
       link: 'https://www.open-contracting.org/2022/04/06/using-data-analysis-to-spot-gaps-in-access-to-maternal-and-child-health-services/',
       type: 'Blog'
     }
