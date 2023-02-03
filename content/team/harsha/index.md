@@ -3,12 +3,11 @@ name: Sri Harsha Kandukuri
 role: Child Rights Research Consultant
 medium: ''
 description:
-image: ./harsha.jpg
 quote: Aano bhadra krtavo yantu vishwatah - Let noble thoughts come to us from all directions - Rig Veda
 github:
 twitter: https://twitter.com/SuryaHarshaTeja
 linkedin: https://www.linkedin.com/in/sri-harsha-kandukuri-94b747b3/
-image: ./harsha.png
+image: ./harsha.jpg
 sectors: Law & Justice
 accentcolor: '#fff'
 text: light
