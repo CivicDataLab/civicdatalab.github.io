@@ -9,7 +9,7 @@ twitter: https://twitter.com/SuryaHarshaTeja
 linkedin: https://www.linkedin.com/in/sri-harsha-kandukuri-94b747b3/
 image: ./harsha.jpg
 sectors: Law & Justice
-accentcolor: '#fff'
+accentcolor: '#30394B'
 text: light
 projects:
 ---
