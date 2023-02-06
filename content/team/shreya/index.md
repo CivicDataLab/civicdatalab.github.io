@@ -1,6 +1,6 @@
 ---
 name: Shreya Agarwal
-role: Civic Technologist
+role: Data Engineer
 medium: '@shreyaagrawal0809'
 description:
 quote: It always feels impossible until it is done.

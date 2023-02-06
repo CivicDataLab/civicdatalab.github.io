@@ -1,6 +1,6 @@
 ---
 name: Nupura
-role: Design Researcher
+role: Design Lead
 medium:
 description: 
 quote: 
