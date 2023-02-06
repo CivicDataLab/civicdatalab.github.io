@@ -12,5 +12,6 @@ image: ./anushka.jpg
 sectors: Free & Open Source Software
 projects:
 accentcolor: '#8E1254'
+text: light
 ---
 Anushka is currently exploring the role of design in data, public policy and citizen engagement. As a design generalist, she believes that having many interests helps grow other interests and oneself as a creative practitioner.
