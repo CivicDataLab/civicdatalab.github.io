@@ -1,6 +1,6 @@
 ---
 name: Arun Sudarsan
-role: Economist
+role: Senior Researcher (Public Finance Expert)
 medium: '@arunsud'
 description:
 quote: No manmade system is immune to human deceit.

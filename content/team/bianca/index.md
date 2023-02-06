@@ -1,6 +1,6 @@
 ---
 name: Bianca Shah
-role: Associate Researcher
+role: Researcher (Urban Development)
 medium:
 description:
 quote: 
