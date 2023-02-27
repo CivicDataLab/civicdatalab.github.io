@@ -186,7 +186,7 @@ const About = ({ data }) => {
                   matters of public reform.
                 </p>
                 <p>
-                  We aim to grow data and tech literacy of governments, non-profits, think-tanks, media houses,
+                  We aim to grow data and tech capacity of governments, non-profits, think-tanks, media houses,
                   universities, and more to enable data-driven decision making at scale.
                 </p>
               </div>
