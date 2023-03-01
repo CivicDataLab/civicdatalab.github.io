@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/saikrishnadammalapati/
 image: ./sai.png
 accentcolor:
 sectors: Public Finance
-projects: Public Procurements, Open Contracting India - Assam
+projects: Public Procurements, Open Contracting India - Assam, Justice Hub
 text: light
 ---
 

@@ -10,5 +10,5 @@ linkedin: https://www.linkedin.com/in/manjunath-hegde-blgr/
 image: ./manjunath.jpg
 accentcolor:
 sectors: 
-projects: 
+projects: Justice Hub
 ---
