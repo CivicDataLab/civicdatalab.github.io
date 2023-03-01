@@ -1,7 +1,7 @@
 ---
 name: Sri Harsha Kandukuri
 role: Child Rights Research Consultant
-medium:
+medium: '@harshatej.kandukuri'
 description:
 quote: Aano bhadra krtavo yantu vishwatah
 github:
