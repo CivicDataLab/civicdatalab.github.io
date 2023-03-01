@@ -8,7 +8,7 @@ github:
 twitter:
 linkedin: https://www.linkedin.com/in/jeeno-george-23662577
 image: ./jeeno.jpg
-sectors: Public Finance
+sectors: Public Finance, Urban Development
 accentcolor: '#567568'
 text: light
 projects: Public Procurements, Open Contracting India - Assam
