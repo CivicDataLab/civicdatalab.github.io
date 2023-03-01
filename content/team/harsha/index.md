@@ -11,7 +11,7 @@ image: ./harsha.jpg
 sectors: Law & Justice
 accentcolor: '#30394B'
 text: light
-projects:
+projects: Justice Hub
 ---
 
 Harsha is a lawyer by training. At CDL, he works on projects under the Law and Justice vertical. He is passionate about using data in legal research, evidence-based policy making and inter-disciplinary research. His research interests include public laws, human rights, politics, development, public policy and governance. In free time, he enjoys watching cricket, sit coms and political dramas.
