@@ -1,6 +1,6 @@
 ---
 name: Apoorv Anand
-role: Data Strategist and Partnerships
+role: Data Pillar Lead
 medium: '@APo_ORV'
 description:
 quote: The Power of the People is Greater Than the People in Power
