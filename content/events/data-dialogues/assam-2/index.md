@@ -4,7 +4,7 @@ context: |
     
     The event had key speakers from the Ministry of Electronics and Information Technology, Assam State Disaster Management Authority, Assam Finance Department, Assam Panchayat & RuralDevelopment Department, Assam State Child Protection Society, World Bank, IIT Guwahati, Universal Team for Social Action and Help (UTSAH), among others.
 eventtype: "Data Dialogues"
-image: ./dd-assam-website-thumbnail.png
+image: ./datadailogues-thumbnail-2.png
 name: "Data Dialogues 2 - Assam - November, 2022"
 resources: 
   - 
