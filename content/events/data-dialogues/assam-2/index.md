@@ -1,26 +1,21 @@
 --- 
 context: |
-    We have started a new series - Data Dialogues, a forum for various government agencies, civil societies, academia, media and other actors to come together and shape data-driven policy discourse in the country. Our first event in the series was Data Dialogues - Assam, a two-day consultation, on 21st and 22nd March 2022, in collaboration with the Open Government Data (OGD) - project management team at the National Informatics Centre (NIC). The objective of this consultation was to understand how to improve the publishing of government data and enable data sharing to strengthen access to information and enhance the state’s efficiency in governance. The objective was also to hear from the non-government actors working in different sectors about the public data they use, how they use it and the challenges they face.
+    In continuation to our journey, we have conducted another round of Data Dialogue in November 2022 with a forum for various government agencies, civil societies, academia, media and other actors coming together and adding their ideas and insights to shape data-driven policy discourse in the state. Our event was a one-day consultation, on 16th November 2022, in collaboration with the Open Contracting Partnership (OCP) and Assam Start Up. The objective of this event was focused on the launch of Intelligent Data Ecosystem for Assam – Flood Response Management (IDEA-FRM) report & datasets along with consultations on Green Budget and sessions on Innovative solutions to Climate Change and Success Stories around the world of partnerships for Climate Action. 
     
-    The event had key speakers from the Ministry of Electronics and Information Technology, Assam State Disaster Management Authority, Assam Finance Department, Assam Panchayat & RuralDevelopment Department, Assam State Child Protection Society, World Bank, IIT Guwahati, Universal Team for Social Action and Help (UTSAH), among others.
+    We at CivicDataLab have been working on creating IDEA-FRM, a Data Model combining flood related procurement and other fiscal data with socio-economic indicators, past damages and flood conditioning factors for better flood management and response in Assam. We have launched our report with initial findings, detailed methodology and publicly accessible climate datasets for Assam. Additionally, the objective was also to hear from the non-government actors working in different sectors about their opinions in the matters of public data, how they use it and the challenges they face. The event had key speakers from the Assam State Disaster Management Authority, Assam Finance Department, Indian Institute of Technology Guwahati, Tata Institute of Social Science- Guwahati, Centre for Budget and Governance Accountability, Council on Energy, Environment and Water, among others.
 eventtype: "Data Dialogues"
 image: ./datadailogues-thumbnail-2.png
 name: "Data Dialogues 2 - Assam - November, 2022"
 resources: 
   - 
-    link: "https://civicdatalab.in/resources/report-data-dialogues-assam-2022.pdf"
-    title: "Event Report"
-    type: Doc
-  - 
-    link: "https://youtube.com/playlist?list=PLvHFO4BKByIVQGa1SSauiOcZZ8brCJFMb"
+    link: "https://www.youtube.com/playlist?list=PLvHFO4BKByIWSD1maNH6Spz66Cc690GGJ"
     title: "Event Playlist"
     type: Video
   - 
-    link: "https://docs.google.com/document/d/e/2PACX-1vQfKVtrDHmBychU8mZXFqb86PofBL3PhpmljEgptcIVIQCNd8e6ddFFyQtWs2yoFYQNOUcNNYNZyJo5/pub"
+    link: "https://docs.google.com/document/d/1gT7Bq_78JLQF84S41kwl9Vy6a5iJqfWE77temxLKuxU/edit?usp=sharing"
     title: "Press Release"
     type: Doc
 summary: "A two-day discussion to improve access to Government Data, Data Sharing, Data-driven decision-making & Community Building in Assam."
 type: eventdetail
-url: "https://civicdatalab.in/resources/report-data-dialogues-assam-2022.pdf"
-youtube: "https://www.youtube.com/watch?v=Qms4k6y7OgI&t=8s"
+youtube: "https://www.youtube.com/playlist?list=PLvHFO4BKByIWSD1maNH6Spz66Cc690GGJ"
 ---
