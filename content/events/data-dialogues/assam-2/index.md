@@ -8,7 +8,11 @@ image: ./dd-assam-website-thumbnail.png
 name: "Data Dialogues 2 - Assam - November, 2022"
 resources: 
   - 
-    link: "https://www.youtube.com/playlist?list=PLvHFO4BKByIWSD1maNH6Spz66Cc690GGJ"
+    link: "https://civicdatalab.in/resources/report-data-dialogues-assam-2022.pdf"
+    title: "Event Report"
+    type: Doc
+  - 
+    link: "https://youtube.com/playlist?list=PLvHFO4BKByIVQGa1SSauiOcZZ8brCJFMb"
     title: "Event Playlist"
     type: Video
   - 
@@ -17,5 +21,6 @@ resources:
     type: Doc
 summary: "A two-day discussion to improve access to Government Data, Data Sharing, Data-driven decision-making & Community Building in Assam."
 type: eventdetail
-youtube: "https://www.youtube.com/playlist?list=PLvHFO4BKByIWSD1maNH6Spz66Cc690GGJ"
+url: "https://civicdatalab.in/resources/report-data-dialogues-assam-2022.pdf"
+youtube: "https://www.youtube.com/watch?v=Qms4k6y7OgI&t=8s"
 ---
