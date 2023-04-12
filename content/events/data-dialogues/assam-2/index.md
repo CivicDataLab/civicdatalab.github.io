@@ -4,7 +4,7 @@ context: |
     
     We at CivicDataLab have been working on creating IDEA-FRM, a Data Model combining flood related procurement and other fiscal data with socio-economic indicators, past damages and flood conditioning factors for better flood management and response in Assam. We have launched our report with initial findings, detailed methodology and publicly accessible climate datasets for Assam. Additionally, the objective was also to hear from the non-government actors working in different sectors about their opinions in the matters of public data, how they use it and the challenges they face. The event had key speakers from the Assam State Disaster Management Authority, Assam Finance Department, Indian Institute of Technology Guwahati, Tata Institute of Social Science- Guwahati, Centre for Budget and Governance Accountability, Council on Energy, Environment and Water, among others.
 eventtype: "Data Dialogues"
-image: ./datadailogues-thumbnail-2.png
+image: ./datadailogues-thumbnail-2.jpg
 name: "Data Dialogues 2 - Assam - November, 2022"
 resources: 
   - 
