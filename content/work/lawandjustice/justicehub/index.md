@@ -30,6 +30,11 @@ resources:
       type: 'Blog'
     }
   - {
+      link: 'https://bit.ly/csv-khoj',
+      title: 'About KHOJ - Presentation for csv,conf,v7',
+      type: 'Github Repo'
+    }
+  - {
       link: 'https://justicehub.in/initiatives/summer-of-data-2021',
       title: 'Summer of Data - 2021',
       type: 'Initiative'
