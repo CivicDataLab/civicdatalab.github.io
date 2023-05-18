@@ -3,10 +3,15 @@ import styled from 'styled-components';
 import { getCoverImageUrlFromMediumPost } from '../utils/helpers';
 import useMediumFeed from '../hooks/useMediumFeed';
 import HeroText from '../styles/HeroText';
+import MainContainer from '../styles/MainContainer';
 
 const Container = styled.div`
   margin-bottom: 40px;
   margin-inline: auto;
+
+  .sectors-heading {
+    margin-bottom: 20px;
+  }
 `
 
 const BlogStripContainer = styled.div`
@@ -45,7 +50,9 @@ const BlogStrip = () => {
   const [blogPosts] = useMediumFeed('civicdatalab');
   return (
     <Container>
-      <HeroText className={'section-heading'}>Latest Blogs</HeroText>
+       <MainContainer>
+        <HeroText className={'section-heading'}>Latest Blogs</HeroText>
+       </MainContainer>
       <BlogStripContainer>
         {blogPosts?.slice(0, 4).map((post) => (
           <BlogPreview
