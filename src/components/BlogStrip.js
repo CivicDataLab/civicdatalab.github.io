@@ -9,8 +9,22 @@ const Container = styled.div`
   margin-bottom: 40px;
   margin-inline: auto;
 
-  .sectors-heading {
+  .section-heading {
     margin-bottom: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    .section-heading {
+      font-size: 70px;
+      line-height: 67px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .section-heading {
+      font-size: 60px;
+      line-height: 60px;
+    }
   }
 `
 
