@@ -178,7 +178,7 @@ const About = ({ data }) => {
             <TwoGrid>
               <div>
                 <p>
-                  We are a research lab working at the intersection of data, tech, design and social science to
+                  We are a research lab working at the intersection of data, technology, design and social science to
                   strengthen the course of civic engagements in India.
                 </p>
                 <p>
