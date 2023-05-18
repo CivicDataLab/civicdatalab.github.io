@@ -4,10 +4,13 @@ import { getCoverImageUrlFromMediumPost } from '../utils/helpers';
 import useMediumFeed from '../hooks/useMediumFeed';
 import HeroText from '../styles/HeroText';
 
-const BlogStripContainer = styled.div`
-  display: grid;
+const Container = styled.div`
   margin-bottom: 40px;
   margin-inline: auto;
+`
+
+const BlogStripContainer = styled.div`
+  display: grid;
 
   @media (min-width: 1280px) {
     grid-template-columns: repeat(4, 1fr);
@@ -41,18 +44,20 @@ const BlogPreview = ({ title, author, imageUrl, postUrl }) => {
 const BlogStrip = () => {
   const [blogPosts] = useMediumFeed('civicdatalab');
   return (
-    <BlogStripContainer>
+    <Container>
       <HeroText className={'section-heading'}>Latest Blogs</HeroText>
-      {blogPosts?.slice(0, 4).map((post) => (
-        <BlogPreview
+      <BlogStripContainer>
+        {blogPosts?.slice(0, 4).map((post) => (
+          <BlogPreview
           key={post.guid}
           title={post.title}
           author={post['author']}
           imageUrl={getCoverImageUrlFromMediumPost(post['content'])}
           postUrl={post.link}
-        />
-      ))}
-    </BlogStripContainer>
+          />
+          ))}
+      </BlogStripContainer>
+    </Container>
   );
 };
 
