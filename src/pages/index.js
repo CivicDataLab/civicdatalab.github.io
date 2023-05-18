@@ -160,7 +160,7 @@ const Index = ({ data }) => {
           <Navbar />
           <HeroSection>
             <MainContainer>
-              <TypeWriter messages={['data.', 'tech.', 'design.', 'social science.']} />
+              <TypeWriter messages={['data.', 'technology.', 'design.', 'social science.']} />
             </MainContainer>
           </HeroSection>
         </>

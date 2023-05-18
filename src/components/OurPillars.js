@@ -46,7 +46,7 @@ export const PillarImages = () => {
         <Image fluid={imageData.dataPillar.childImageSharp.fluid} />
       </div>
       <div className={'image-container'}>
-        <h3>Tech</h3>
+        <h3>Technology</h3>
         <Image fluid={imageData.technologyPillar.childImageSharp.fluid} />
       </div>
       <div className={'image-container'}>
