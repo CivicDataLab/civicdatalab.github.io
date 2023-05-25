@@ -9,6 +9,6 @@ twitter:
 linkedin: https://www.linkedin.com/in/manjunath-hegde-blgr/
 image: ./manjunath.jpg
 accentcolor:
-sectors: 
+sectors: Law & Justice
 projects: Justice Hub, Analysing the implementation of child protection laws in India
 ---
