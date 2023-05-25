@@ -9,7 +9,7 @@ twitter:
 linkedin: 
 image: ./ruchira.jpg
 accentcolor:
-sectors: Public Finance
+sectors: Public Finance, Law & Justice
 projects: Public Procurements
 text: 
 ---

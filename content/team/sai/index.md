@@ -9,7 +9,7 @@ twitter: https://twitter.com/chaotic__neuron
 linkedin: https://www.linkedin.com/in/saikrishnadammalapati/
 image: ./sai.png
 accentcolor:
-sectors: Public Finance
+sectors: Public Finance, Law & Justice
 projects: Public Procurements, Open Contracting India - Assam, Justice Hub, Analysing the implementation of child protection laws in India
 text: light
 ---
