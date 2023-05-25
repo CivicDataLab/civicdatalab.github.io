@@ -1,7 +1,7 @@
 ---
 name: Analysing the implementation of child protection laws in India
 image: ./image.png
-summary: Co-creating evidence-based data models to unpack implementation of child protection laws(Child and Adolescent Labour (Prohibition and Regulation) Act, 1986 (CALPRA); Prohibition of Child Marriage Act, 2006 (PCMA); and the Juvenile Justice (Care and Protection of Children) Act, 2015 (JJ Act)) in India.
+summary: Co-creating evidence-based data models to unpack implementation of child protection laws in India.
 context: |
   There is a lack of comprehensive, data-based analysis concerning judicial information on child labor, child marriage, and crimes against children under the JJ Act. The existing Crime in India report by the NCRB is insufficient since it only provides limited indicators at the state level. Moreover, information regarding specific offenses under these laws, court processing time for cases, victim testimonies, the number of effective hearings, and the factors influencing conviction and acquittal in such cases is not publicly available. Additionally, there is a gap in data regarding the utilization of these laws, who is utilizing them, and for what purposes they are being used. 
 solution: | 
