@@ -10,5 +10,5 @@ linkedin: https://www.linkedin.com/in/manjunath-hegde-blgr/
 image: ./manjunath.jpg
 accentcolor:
 sectors: 
-projects: Justice Hub
+projects: Justice Hub, Analysing the implementation of child protection laws in India
 ---

@@ -11,7 +11,7 @@ image: ./apoorv.png
 sectors: Law & Justice, Public Finance, Free & Open Source Software
 accentcolor: '#567568'
 text: light
-projects: Justice Hub, Tracking the implementation of the POCSO Act, Zombie Tracker, Open Budgets India Platform 2.0, Budgets for Justice, Data Workshops
+projects: Justice Hub, Tracking the implementation of the POCSO Act, Zombie Tracker, Open Budgets India Platform 2.0, Budgets for Justice, Data Workshops, Analysing the implementation of child protection laws in India
 ---
 
 Apoorv started his "open data" journey as a volunteer, with DataKind, to do "Data-for-good". He wasn't sure what "data-for-good" meant then. Searching for answers, he joined the two-member CivicDataLab team, in 2018, and started collaborating to make public datasets more accessible to citizens. This sounded as easy as creating an API, but soon he found about the other critical components that are needed, and are often hidden or missing, to enhance public access to information. His role in the team is to find collaboration opportunities that seek to bridge the gap between the demand and supply of key datasets especially in the areas of Law and Justice.
