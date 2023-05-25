@@ -1,82 +1,23 @@
 ---
-name: Justice Hub
-image: ./image.jpg
-summary: A platform to crowd source datasets related to the Indian legal and justice system.
+name: Analysing the implementation of child protection laws in India
+image: ./image.png
+summary: Co-creating evidence-based data models to unpack implementation of child protection laws(Child and Adolescent Labour (Prohibition and Regulation) Act, 1986 (CALPRA); Prohibition of Child Marriage Act, 2006 (PCMA); and the Juvenile Justice (Care and Protection of Children) Act, 2015 (JJ Act)) in India.
 context: |
-  [Justice Hub](https://justicehub.in/), launched in February 2021, was born out of the [Agami Data for Justice Challenge](https://agami.in/d4j/#tab_61f38a60d6f57). The challenge sought to curate a 
-  collaborative entrepreneurial effort that increases and evolves the use of data in the areas of law and justice. 
-  The core of Justice Hub is an [open data platform](https://justicehub.in/dataset) that curates datasets for making legal and justice data open, accessible and actionable. 
-  By becoming a shared and open resource for discovering and publishing well documented datasets and other information resources, 
-  JusticeHub aims to enhance the access to data related to law and justice in the country. 
-
-  Making datasets actionable requires a collaborative effort from the community. In this direction, the Justice Hub has initiated 
-  a few initiatives like the [Summer of Data program](https://justicehub.in/initiatives/summer-of-data-2021), where we worked with students from law universities across India 
-  to curate a well documented datasets on the Judges of the High Courts of India, and [Budgets for Justice](https://budgets.justicehub.in/about) 
-  where we're building tools to explore and analyse the budget data for key schemes around law and justice from various ministries and departments. 
-
-solution:
-url: https://justicehub.in
+  There is a lack of comprehensive, data-based analysis concerning judicial information on child labor, child marriage, and crimes against children under the JJ Act. The existing Crime in India report by the NCRB is insufficient since it only provides limited indicators at the state level. Moreover, information regarding specific offenses under these laws, court processing time for cases, victim testimonies, the number of effective hearings, and the factors influencing conviction and acquittal in such cases is not publicly available. Additionally, there is a gap in data regarding the utilization of these laws, who is utilizing them, and for what purposes they are being used. 
+solution: | 
+  We are undertaking an exploratory study to generate more evidence on how these special laws are being applied by the judiciary and to understand their effectiveness in advancing children’s rights. For this study we will be analysing the cases registered under these acts () across the various districts courts in the country. We will be curating these cases from the e-Courts platform for district courts.
+url: 
 twitter: https://twitter.com/JusticeHubIndia
-linkedin:
-youtube: https://www.youtube.com/channel/UCkETmnBNNjvvOJklZenNQaA
-github: https://github.com/justicehub-in
+linkedin:  https://in.linkedin.com/company/justice-hub-india
+youtube: 
+github: 
 newsletter: https://dataforjustice.substack.com
 sector: Law & Justice
 type: project
 resources:
   - {
-      link: 'https://medium.com/civicdatalab/the-justice-hub-in-numbers-8a33dd72aee9',
-      title: 'Justice Hub - In Numbers',
-      type: 'Blog'
-    }
-  - {
-      link: 'https://bit.ly/csv-khoj',
-      title: 'About KHOJ - Presentation for csv,conf,v7',
-      type: 'Github Repo'
-    }
-  - {
-      link: 'https://justicehub.in/initiatives/summer-of-data-2021',
-      title: 'Summer of Data - 2021',
-      type: 'Initiative'
-    }
-  - {
-      link: 'https://www.youtube.com/channel/UCkETmnBNNjvvOJklZenNQaA',
-      title: 'Date with Data - Conversations with data contributors',
-      type: 'Interviews'
-    }
-  - {
-      link: 'https://budgets.justicehub.in/',
-      title: 'Budgets for Justice',
-      type: 'Initiative'
-    }
-  - {
-      link: 'https://medium.com/civicdatalab/budgets-for-justice-making-law-and-justice-budgets-accessible-and-actionable-28eb56a0d348',
-      title: 'Budgets for Justice: Making Law and Justice budgets Accessible and Actionable',
-      type: 'Blog'
-    }
-  - {
-      link: 'https://medium.com/civicdatalab/the-state-of-data-in-the-judicial-sector-9a178a143e',
-      title: 'The State of Data in the Judicial Sector',
-      type: 'Blog'
-    }
-  - {
-      link: 'https://idronline.org/developing-our-digital-commons/',
-      title: 'Developing our digital commons',
-      type: 'Blog'
-    }
-  - { link: 'https://dataforjustice.substack.com', title: 'DataforJustice - Newsletter', type: 'NewsLetter' }
-  - {
-      link: 'https://www.thequint.com/voices/opinion/legal-datasets-information-technology-access-to-data',
-      title: 'Cost of Not Sharing Legal Datasets? Truth Is, We Don’t Know Yet',
-      type: 'Blog'
-    }
-  - {
-      link: 'https://www.barandbench.com/columns/the-open-justice-data-revolution',
-      title: 'The Open Justice data revolution',
-      type: 'Blog'
-    }
-  - { link: 'https://docs.justicehub.in', 
-      title: 'Justice Hub - Documentation and Resources', 
-      type: 'Guidebook' 
+      link: 'https://drive.google.com/file/d/1QkOSTPaOJIQXeRo6XSdlxlQ6FGgAd0YX/preview',
+      title: 'Project Roadmap',
+      type: 'Document'
     }
 ---
