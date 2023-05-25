@@ -9,8 +9,8 @@ solution: |
 url: 
 twitter: https://twitter.com/JusticeHubIndia
 linkedin:  https://in.linkedin.com/company/justice-hub-india
-youtube: 
-github: 
+youtube: https://www.youtube.com/channel/UCkETmnBNNjvvOJklZenNQaA 
+github: https://github.com/justicehub-in
 newsletter: https://dataforjustice.substack.com
 sector: Law & Justice
 type: project
