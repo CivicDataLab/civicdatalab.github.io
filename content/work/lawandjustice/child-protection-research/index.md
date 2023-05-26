@@ -21,3 +21,5 @@ resources:
       type: 'Document'
     }
 ---
+
+This project is generously funded by the [Patrick J. McGovern Foundation](https://www.mcgovern.org/) through the [Data and Society Accelerator Program](https://www.mcgovern.org/our-work/data-and-society/accelerator/).
