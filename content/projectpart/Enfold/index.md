@@ -1,7 +1,7 @@
 ---
 name: Enfold
 short: Enfold
-logo: ./logo.png
+logo: ./logo.jpg
 testimonial:
 website: https://enfoldindia.org/
 sectors: Law & Justice
