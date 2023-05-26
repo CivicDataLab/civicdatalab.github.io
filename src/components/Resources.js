@@ -67,8 +67,8 @@ const Resources = ({ resources }) => {
         <h3>Resources</h3>
         <div>
           {resources?.map((resource) => (
-            <a key={resource.link} href={resource.link} target="_blank" rel="noopener noreferrer">
-              {resource.title}
+            <a key={resource?.link} href={resource?.link} target="_blank" rel="noopener noreferrer">
+              {resource?.title}
             </a>
           ))}
         </div>
@@ -88,8 +88,8 @@ export const ResourcesAbout = ({ resources }) => {
           <div className={'content lower-content-section'}>
             <hr />
             {resources?.map((resource) => (
-              <a key={resource.link} href={resource.link} target="_blank" rel="noopener noreferrer">
-                {resource.title}
+              <a key={resource?.link} href={resource?.link} target="_blank" rel="noopener noreferrer">
+                {resource?.title}
               </a>
             ))}
           </div>
