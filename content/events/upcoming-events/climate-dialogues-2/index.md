@@ -4,7 +4,7 @@ context: |
 
   Watch this space for more information
 eventtype: "Upcoming Events"
-image: ./climate-dialogues-banner.png
+image: ./climate-dialogues.jpg
 name: "Climate Dialogues - June, 2023"
 summary: "Harnessing public procurement for delivering sustainable and green solutions to climate change"
 type: eventdetail
