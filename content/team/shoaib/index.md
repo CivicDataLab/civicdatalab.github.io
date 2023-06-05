@@ -1,6 +1,6 @@
 ---
 name: Shoaib Ahmed
-role: Lead Developer - Frontend
+role: Associate Lead Engineer - Frontend
 medium: '@pixeledcode'
 description:
 quote: Good code is like a love letter to the next developer who will maintain it

@@ -1,6 +1,6 @@
 ---
 name: Ruthvik Mandapati
-role: Lead Developer - Javascript
+role: Associate Lead Engineer - Javascript
 medium:
 description:
 quote: The more opinions you have the lesser you see.
