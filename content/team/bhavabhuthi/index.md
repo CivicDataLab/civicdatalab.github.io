@@ -1,6 +1,6 @@
 ---
 name: Bhavabhuthi
-role: Frontend Engineer
+role: Senior Frontend Engineer
 medium: https://medium.com/@bhavabhuthi_81071
 description:
 quote: 'Information is power. But like all power, there are those who want to keep it for themselves. : Aaron Swartz'

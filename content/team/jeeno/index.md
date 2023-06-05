@@ -1,6 +1,6 @@
 ---
 name: Jeeno George
-role: Geospatial Researcher
+role: Senior Researcher - GIS
 medium:
 description:
 quote: If you eat slowly, you can also eat a palm tree.
