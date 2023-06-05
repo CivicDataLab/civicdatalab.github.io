@@ -1,6 +1,6 @@
 ---
 name: Kabeer Arora
-role: Project Lead
+role: Initiative Lead - OCI
 medium: 
 description: Kabeer is an urban researcher and a chai addict, who loves to find simple ways of communicating seemingly complex research knowledge and data sets with different citizen groups. In his free time, he likes to walk the narrow streets of old city areas or hike amidst nature and sometimes sketches, reads, and binge-watches mind-numbing series.
 quote: 

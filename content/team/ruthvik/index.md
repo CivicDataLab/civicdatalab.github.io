@@ -1,6 +1,6 @@
 ---
 name: Ruthvik Mandapati
-role: Frontend Engineer
+role: Lead Developer - Javascript
 medium:
 description:
 quote: The more opinions you have the lesser you see.

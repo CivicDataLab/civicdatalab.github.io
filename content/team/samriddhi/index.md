@@ -1,6 +1,6 @@
 ---
 name: Samriddhi
-role: Economist and GIS Specialist
+role: Associate Initiative Lead - PF
 medium: '@samriddhii'
 description:
 quote: It is in collectivities that we find reservoirs of hope and optimism.

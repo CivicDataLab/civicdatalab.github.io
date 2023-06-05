@@ -1,6 +1,6 @@
 ---
 name: Sabarmathi Gandhi
-role: Operations Lead
+role: Associate Lead - Finance and Operations
 medium: '@sabarmathi'
 description:
 quote: When you Stumble in the waves, become the Tide!
