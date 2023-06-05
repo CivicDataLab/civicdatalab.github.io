@@ -1,6 +1,6 @@
 ---
 name: Sai Krishna Dammalapati
-role: Data Engineer
+role: Senior Data Engineer
 medium: '@saikrishna_17904'
 description:
 quote: A good life is the one in the pursuit of curiosity, responsibly.
