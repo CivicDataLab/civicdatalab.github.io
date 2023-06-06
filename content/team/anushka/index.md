@@ -1,6 +1,6 @@
 ---
 name: Anushka Gokhale
-role: Product Designer
+role: Senior Product Designer
 medium: '@anushkaag'
 description:
 quote: Free access to data does not turn into knowledge without effort - Hans Rosling
