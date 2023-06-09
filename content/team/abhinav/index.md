@@ -7,7 +7,7 @@ quote:
 github: https://github.com/Abhi2102
 twitter:
 linkedin:
-image: abhinav.jpg
+image: abhinav.jpeg
 sectors: Law & Justice, Public Finance, Urban Development
 eventtypes: Data Dialogue 
 eventdetails: Data Dialogue Assam
