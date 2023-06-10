@@ -1,6 +1,6 @@
 ---
 name: Abhinav Kumar
-role: Tech Lead
+role: Team Lead
 medium:
 description:
 quote:
@@ -14,4 +14,4 @@ eventdetails: Data Dialogue Assam
 projects: Justice Hub, Zombie Tracker, OpenCity, Open Budgets India Platform - 2.0, Tracking the implementation of the POCSO Act, Budgets for Justice, Girl Education Spending Tracker
 ---
 
-Abhinav is a data enthusiast and tech developer. He loves exploring new technologies and understanding things from scratch . He is a foodie and travel maniac.
+Abhinav is a data enthusiast and tech developer. He loves exploring new technologies and understanding things from scratch. He is a foodie and travel maniac.
