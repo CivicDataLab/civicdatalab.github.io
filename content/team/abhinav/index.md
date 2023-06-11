@@ -1,6 +1,6 @@
 ---
 name: Abhinav Kumar
-role: Team Lead
+role: Tech Lead
 medium:
 description:
 quote:
