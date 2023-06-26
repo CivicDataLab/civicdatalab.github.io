@@ -1,5 +1,5 @@
 ---
-name: Mohammad Saqib Manan
+name: Saqib Manan
 role: Quality Assurance Engineer
 medium:
 description:
