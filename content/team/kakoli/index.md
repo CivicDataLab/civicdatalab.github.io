@@ -8,7 +8,7 @@ github:
 twitter: https://twitter.com/KakoliSaharia
 linkedin: https://www.linkedin.com/in/kakolisaharia/
 behance:
-image: ./rakhi.jpg
+image: ./kakoli.jpg
 sectors:
 projects:
 accentcolor:

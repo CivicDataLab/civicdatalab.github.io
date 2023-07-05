@@ -8,7 +8,7 @@ github:
 twitter:
 linkedin: https://www.linkedin.com/in/rakhi-kashyap-b3939823/
 behance:
-image: ./kakoli.jpg
+image: ./rakhi.jpg
 sectors:
 projects:
 accentcolor:
