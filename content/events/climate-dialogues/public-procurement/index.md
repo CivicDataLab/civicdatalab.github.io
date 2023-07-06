@@ -13,6 +13,10 @@ resources:
     link: "https://www.youtube.com/watch?v=cx-CBj9qIEs&t=5147s"
     title: "Event Video"
     type: Video
+  - 
+    link: "https://drive.google.com/drive/folders/1-JO7qqPjvjpfjAHSasVeVuxDWPqnt_H4?usp=drive_link"
+    title: "Event Presentations"
+    type: Doc
 summary: "Harnessing public procurement data for delivering green solutions"
 type: eventdetail
 url: "https://civicdatalab.in/resources/climate-dialogues-June-27.pdf"
