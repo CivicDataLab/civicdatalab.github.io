@@ -13,6 +13,10 @@ resources:
     link: "https://www.youtube.com/watch?v=tZ_3JvPxRYM&t=2450s"
     title: "Event Video"
     type: Video
+  - 
+    link: "https://drive.google.com/drive/folders/1Vl81yHmx0Cpf6JoNVRH0OAQ2GTauG3Se?usp=drive_link"
+    title: "Event Presentations"
+    type: Doc
 summary: "Free & Open-source Software (FOSS) and Climate Change"
 type: eventdetail
 url: "https://civicdatalab.in/resources/climate-dialogues-May-9.pdf"
