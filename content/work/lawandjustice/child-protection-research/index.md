@@ -22,4 +22,9 @@ resources:
       title: 'Project Roadmap',
       type: 'Document'
     }
+  - {
+      link: 'https://medium.com/civicdatalab/creating-a-dataset-of-cases-to-analyze-the-implementation-of-child-protection-laws-in-india-19230a299663',
+      title: 'Creating a dataset of cases to analyze the implementation of child protection laws in India',
+      type: 'Blog'
+    }
 ---
