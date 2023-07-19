@@ -50,9 +50,9 @@ const EventLabel = styled.p`
   }
 `;
 
-const ImageEvent = ({ url, image, text, eventName, boldText }) => {
+const ImageEvent = ({ url, image, text, eventName, boldText, openInNewTab }) => {
   return (
-    <ImageEventContainer boldtext={boldText.toString()} to={url || '/'}>
+    <ImageEventContainer boldtext={boldText.toString()} to={url || '/'} target={openInNewTab ? '_blank' : '_self'}>
       {eventName ? <EventLabel >{eventName}</EventLabel> : null}
       {image ? <Image fluid={image} /> : <div />} <p>{text}</p>
     </ImageEventContainer>
