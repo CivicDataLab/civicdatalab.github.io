@@ -187,7 +187,7 @@ const Resources = ({ data }) => {
             <EventsContainer>
               {filteredResources.length > 0
                 ? filteredResources.map((res) => (
-                    <ImageEventItem boldText url={res.link} text={res.title} eventName={res.sector} />
+                    <ImageEventItem boldText url={res.link} text={res.title} eventName={res.sector} openInNewTab/>
                   ))
                 : 
                 <div>
