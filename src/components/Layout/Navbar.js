@@ -198,7 +198,8 @@ export const navLinks = [
   { path: 'https://medium.com/civicdatalab', name: 'Blogs', external: true },
   { path: '/about', name: 'About' },
   { path: '/contact', name: 'Contact' },
-  { path: '/events', name: 'Events'}
+  { path: '/events', name: 'Events'},
+  { path: '/resource', name: 'Resources'}
 ];
 
 const Navbar = ({ dark, overlay }) => {
