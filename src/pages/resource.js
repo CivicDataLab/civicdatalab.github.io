@@ -90,7 +90,8 @@ const HeroText = styled.h1`
   }
 `;
 
-const Resources = () => {
+const Resources = ({data}) => {
+  const nodes = data.allMarkdownRemark.nodes;
 
   const leftContainerRef = React.useRef(null);
   const rightContainerRef = React.useRef(null);
@@ -116,3 +117,25 @@ const Resources = () => {
 
 export default Resources;
 
+export const pageQuery = graphql`
+  query ResourceCompQuery {
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }, sort: { fields: frontmatter___name }) {
+      nodes {
+        id
+
+        fields {
+          slug
+        }
+        frontmatter {
+          name
+          resources {
+            title
+            link
+            type
+          }
+          sector
+        }
+      }
+    }
+  }
+`;
