@@ -8,6 +8,7 @@ import Seo from '../components/Seo/Seo';
 import useFixedScroll from '../hooks/useFixedScroll';
 import StandardGrid from '../styles/StandardGrid';
 import { SocialLinks } from '../components/Contact';
+import Select from 'react-select';
 
 export const TitleContainer = styled.div`
   padding: 0;
@@ -90,6 +91,19 @@ const HeroText = styled.h1`
   }
 `;
 
+const SearchOption = styled.div`
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: 670px) {
+    flex-direction:column;
+  }
+
+  .react-select {
+    width:300px;
+  }
+`;
+
 const Resources = ({ data }) => {
   const nodes = data.allMarkdownRemark.nodes;
 
@@ -113,9 +127,46 @@ const Resources = ({ data }) => {
   React.useEffect(() => {
     processNodes();
   }, [nodes]);
-
+  
   const leftContainerRef = React.useRef(null);
   const rightContainerRef = React.useRef(null);
+
+  const options = [
+    { value: 'All', label: 'All' },
+    { value: 'video', label: 'video' },
+    { value: 'Document', label: 'Document' },
+    { value: 'Blog', label: 'Blog' },
+    { value: 'Audio', label: 'Audio' },
+    { value: 'Doc', label: 'Doc' },
+    { value: 'News', label: 'News' },
+    { value: 'blog', label: 'blog' },
+    { value: 'Report', label: 'Report' }
+  ];
+
+  const options2 = [
+    { value: 'All', label: 'All' },
+    { value: 'Law & Justice', label: 'Law & Justice' },
+    { value: 'Public Finance', label: 'Public Finance' },
+  ];
+
+  const [TypeFilter, setTypeFilter] = React.useState(null);
+
+  const handleFilterChange = (TypeFilter) => {
+    setTypeFilter(TypeFilter);
+  };
+
+  const [sectorFilter, setSectorFilter] = React.useState(null);
+
+  const handleSectorChange = (sectorFilter) => {
+    setSectorFilter(sectorFilter);
+  };
+
+  const filteredResources = allResources.filter((resource) => {
+    const filterByType = !TypeFilter || TypeFilter.value === 'All' || resource.type === TypeFilter.value;
+    const filterBySector =
+      !sectorFilter || sectorFilter.value === 'All' || resource.sector === sectorFilter.value;
+    return filterByType && filterBySector;
+  });
 
   useFixedScroll(leftContainerRef, rightContainerRef);
 
@@ -129,14 +180,21 @@ const Resources = ({ data }) => {
             <SocialLinks />
           </TitleContainer>
           <EventsContent ref={rightContainerRef}>
+            <SearchOption>
+              <Select className="react-select" placeholder="Select a type..." options={options} onChange={handleFilterChange} />
+              <Select className="react-select" placeholder="Select a sector..." options={options2} onChange={handleSectorChange} />
+            </SearchOption>
             <EventsContainer>
-              {allResources.length > 0 ? (
-                allResources.map((res) => (
-                  <ImageEventItem boldText url={res.link} text={res.title} eventName={res.sector} />
-                ))
-              ) : (
-                 null
-              )}
+              {filteredResources.length > 0
+                ? filteredResources.map((res) => (
+                    <ImageEventItem boldText url={res.link} text={res.title} eventName={res.sector} />
+                  ))
+                : 
+                <div>
+                  Currently there are no resources available for the selected filters. Please choose a different sector
+                  and type combination to explore available resources.
+                </div>
+              }
             </EventsContainer>
           </EventsContent>
         </StandardGrid>
