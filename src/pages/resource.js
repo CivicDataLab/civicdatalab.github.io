@@ -90,8 +90,29 @@ const HeroText = styled.h1`
   }
 `;
 
-const Resources = ({data}) => {
+const Resources = ({ data }) => {
   const nodes = data.allMarkdownRemark.nodes;
+
+  const [allResources, setAllResources] = React.useState([]);
+
+  const processNodes = () => {
+    nodes.forEach((node) => {
+      const sector = node.frontmatter.sector;
+      const resources = node.frontmatter.resources;
+
+      if (resources) {
+        const resourcesWithSector = resources.map((resource) => ({
+          ...resource,
+          sector: sector
+        }));
+        setAllResources((prevResources) => [...prevResources, ...resourcesWithSector]);
+      }
+    });
+  };
+
+  React.useEffect(() => {
+    processNodes();
+  }, [nodes]);
 
   const leftContainerRef = React.useRef(null);
   const rightContainerRef = React.useRef(null);
@@ -108,6 +129,15 @@ const Resources = ({data}) => {
             <SocialLinks />
           </TitleContainer>
           <EventsContent ref={rightContainerRef}>
+            <EventsContainer>
+              {allResources.length > 0 ? (
+                allResources.map((res) => (
+                  <ImageEventItem boldText url={res.link} text={res.title} eventName={res.sector} />
+                ))
+              ) : (
+                 null
+              )}
+            </EventsContainer>
           </EventsContent>
         </StandardGrid>
       </MainContainer>
