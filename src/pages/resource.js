@@ -133,14 +133,11 @@ const Resources = ({ data }) => {
 
   const options = [
     { value: 'All', label: 'All' },
-    { value: 'video', label: 'video' },
-    { value: 'Document', label: 'Document' },
+    { value: 'Working Paper', label: 'Working Paper' },
+    { value: 'Reports', label: 'Reports' },
     { value: 'Blog', label: 'Blog' },
-    { value: 'Audio', label: 'Audio' },
-    { value: 'Doc', label: 'Doc' },
-    { value: 'News', label: 'News' },
-    { value: 'blog', label: 'blog' },
-    { value: 'Report', label: 'Report' }
+    { value: 'Published Papers', label: 'Published Papers' },
+    { value: 'Guidebook ', label: 'Guidebook ' },
   ];
 
   const options2 = [
