@@ -155,8 +155,7 @@ const Resources = ({ data }) => {
   const [TypeFilter, setTypeFilter] = React.useState(null);
 
   const handleFilterChange = (TypeFilter) => {
-    setType  console.log(iconImg)
-    Filter(TypeFilter);
+    setTypeFilter(TypeFilter);
   };
 
   const [sectorFilter, setSectorFilter] = React.useState(null);
