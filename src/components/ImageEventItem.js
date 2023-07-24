@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
 import { Link } from 'gatsby';
+import fileImg from '../images/cdl_logo.png'
 
 const ImageEventContainer = styled(Link)`
   display: flex;
@@ -50,11 +51,17 @@ const EventLabel = styled.p`
   }
 `;
 
-const ImageEvent = ({ url, image, text, eventName, boldText, openInNewTab }) => {
+const IconBackground = styled.div`
+  background-image: ${(props) => (props.iconImg ? `url(${props.iconImg})` : `url(${fileImg})`)};
+  background-size: 100% 100%;
+`;
+
+const ImageEvent = ({ url, image, text, eventName, boldText, openInNewTab,iconImg }) => {
+
   return (
     <ImageEventContainer boldtext={boldText.toString()} to={url || '/'} target={openInNewTab ? '_blank' : '_self'}>
       {eventName ? <EventLabel >{eventName}</EventLabel> : null}
-      {image ? <Image fluid={image} /> : <div />} <p>{text}</p>
+      {image ? <Image fluid={image} /> : iconImg? <IconBackground iconImg={iconImg} />: <div/>} <p>{text}</p>
     </ImageEventContainer>
   );
 };
