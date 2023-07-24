@@ -14,4 +14,4 @@ projects:
 accentcolor:
 text: 
 ---
-Rakhi Kashyap is Asscoaite Initaitive Lead DRR & CC at Civic Data Lab . She is driving force behingd shaping up ideas. She loves playing racing games, reading, writing and travelling.
+Rakhi Kashyap is Associate Initiative Lead - DRR & CC at CivicDataLab. She is driving force behind shaping up ideas. She loves playing racing games, reading, writing and travelling.
