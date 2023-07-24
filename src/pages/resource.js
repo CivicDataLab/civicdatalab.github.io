@@ -9,6 +9,12 @@ import useFixedScroll from '../hooks/useFixedScroll';
 import StandardGrid from '../styles/StandardGrid';
 import { SocialLinks } from '../components/Contact';
 import Select from 'react-select';
+import blogImg from '../images/icons/blog.svg'
+import guideImg from '../images/icons/guidebook.svg'
+import publishedImg from '../images/icons/publishedpaper.svg'
+import reportImg from '../images/icons/report.svg'
+import workingImg from '../images/icons/workingpaper.svg'
+
 
 export const TitleContainer = styled.div`
   padding: 0;
@@ -167,6 +173,14 @@ const Resources = ({ data }) => {
 
   useFixedScroll(leftContainerRef, rightContainerRef);
 
+  const imgIcon = {
+    'Working Paper': workingImg,
+    'Reports' : reportImg,
+    'Blog' : blogImg,
+    'Published Papers' : publishedImg,
+    'Guidebook' : guideImg
+  }
+
   return (
     <Layout>
       <Seo title="Our Event" />
@@ -184,7 +198,7 @@ const Resources = ({ data }) => {
             <EventsContainer>
               {filteredResources.length > 0
                 ? filteredResources.map((res) => (
-                    <ImageEventItem boldText url={res.link} text={res.title} eventName={res.sector} openInNewTab/>
+                    <ImageEventItem boldText iconImg={imgIcon[res.type]} url={res.link} text={res.title} eventName={res.sector} openInNewTab/>
                   ))
                 : 
                 <div>
