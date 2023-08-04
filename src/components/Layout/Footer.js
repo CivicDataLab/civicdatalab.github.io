@@ -165,9 +165,9 @@ const SiteMap = styled.div`
 // Change the address and
 
 const workLinks = [
-  { path: '/education', name: 'Education' },
   { path: '/dpg', name: 'Digital Public Goods' },
   { path: '/lawandjustice', name: 'Law & Justice' },
+  { path: '/opencontracting', name: 'Open Contracting' },
   { path: '/publicfinance', name: 'Public Finance' },
   { path: '/urbandevelopment', name: 'Urban Development' }
 ];
