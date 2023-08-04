@@ -9,12 +9,11 @@ import useFixedScroll from '../hooks/useFixedScroll';
 import StandardGrid from '../styles/StandardGrid';
 import { SocialLinks } from '../components/Contact';
 import Select from 'react-select';
-import blogImg from '../images/icons/blog.svg'
-import guideImg from '../images/icons/guidebook.svg'
-import publishedImg from '../images/icons/publishedpaper.svg'
-import reportImg from '../images/icons/report.svg'
-import workingImg from '../images/icons/workingpaper.svg'
-
+import blogImg from '../images/icons/blog.svg';
+import guideImg from '../images/icons/guidebook.svg';
+import publishedImg from '../images/icons/publishedpaper.svg';
+import reportImg from '../images/icons/report.svg';
+import workingImg from '../images/icons/workingpaper.svg';
 
 export const TitleContainer = styled.div`
   padding: 0;
@@ -102,11 +101,11 @@ const SearchOption = styled.div`
   gap: 20px;
 
   @media (max-width: 670px) {
-    flex-direction:column;
+    flex-direction: column;
   }
 
   .react-select {
-    width:300px;
+    width: 300px;
   }
 `;
 
@@ -133,23 +132,26 @@ const Resources = ({ data }) => {
   React.useEffect(() => {
     processNodes();
   }, [nodes]);
-  
+
   const leftContainerRef = React.useRef(null);
   const rightContainerRef = React.useRef(null);
 
-  const options = [
+  const categories = [
     { value: 'All', label: 'All' },
     { value: 'Working Paper', label: 'Working Paper' },
     { value: 'Reports', label: 'Reports' },
     { value: 'Blog', label: 'Blog' },
     { value: 'Published Papers', label: 'Published Papers' },
-    { value: 'Guidebook ', label: 'Guidebook ' },
+    { value: 'Guidebook ', label: 'Guidebook ' }
   ];
 
-  const options2 = [
+  const sectors = [
     { value: 'All', label: 'All' },
+    { value: 'Digital Public Goods', label: 'Digital Public Goods' },
     { value: 'Law & Justice', label: 'Law & Justice' },
     { value: 'Public Finance', label: 'Public Finance' },
+    { value: 'Urban Development', label: 'Urban Development' },
+    { value: 'Open Contracting', label: 'Open Contracting' }
   ];
 
   const [TypeFilter, setTypeFilter] = React.useState(null);
@@ -166,8 +168,7 @@ const Resources = ({ data }) => {
 
   const filteredResources = allResources.filter((resource) => {
     const filterByType = !TypeFilter || TypeFilter.value === 'All' || resource.type === TypeFilter.value;
-    const filterBySector =
-      !sectorFilter || sectorFilter.value === 'All' || resource.sector === sectorFilter.value;
+    const filterBySector = !sectorFilter || sectorFilter.value === 'All' || resource.sector === sectorFilter.value;
     return filterByType && filterBySector;
   });
 
@@ -175,11 +176,11 @@ const Resources = ({ data }) => {
 
   const imgIcon = {
     'Working Paper': workingImg,
-    'Reports' : reportImg,
-    'Blog' : blogImg,
-    'Published Papers' : publishedImg,
-    'Guidebook' : guideImg
-  }
+    Reports: reportImg,
+    Blog: blogImg,
+    'Published Papers': publishedImg,
+    Guidebook: guideImg
+  };
 
   return (
     <Layout>
@@ -192,20 +193,37 @@ const Resources = ({ data }) => {
           </TitleContainer>
           <EventsContent ref={rightContainerRef}>
             <SearchOption>
-              <Select className="react-select" placeholder="Select a type..." options={options} onChange={handleFilterChange} />
-              <Select className="react-select" placeholder="Select a sector..." options={options2} onChange={handleSectorChange} />
+              <Select
+                className="react-select"
+                placeholder="Select a type..."
+                options={categories}
+                onChange={handleFilterChange}
+              />
+              <Select
+                className="react-select"
+                placeholder="Select a sector..."
+                options={sectors}
+                onChange={handleSectorChange}
+              />
             </SearchOption>
             <EventsContainer>
-              {filteredResources.length > 0
-                ? filteredResources.map((res) => (
-                    <ImageEventItem boldText iconImg={imgIcon[res.type]} url={res.link} text={res.title} eventName={res.sector} openInNewTab/>
-                  ))
-                : 
+              {filteredResources.length > 0 ? (
+                filteredResources.map((res) => (
+                  <ImageEventItem
+                    boldText
+                    iconImg={imgIcon[res.type]}
+                    url={res.link}
+                    text={res.title}
+                    eventName={res.sector}
+                    openInNewTab
+                  />
+                ))
+              ) : (
                 <div>
                   Currently there are no resources available for the selected filters. Please choose a different sector
                   and type combination to explore available resources.
                 </div>
-              }
+              )}
             </EventsContainer>
           </EventsContent>
         </StandardGrid>
