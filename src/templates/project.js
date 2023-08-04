@@ -60,7 +60,6 @@ const ProjectContent = styled.div`
 
 const ImageSection = styled.div`
   position: relative;
-  margin-bottom: 80px;
 
   .gatsby-image-wrapper {
     max-height: 400px;
@@ -74,45 +73,18 @@ const ImageSection = styled.div`
 `;
 
 const SummaryText = styled.div`
-  background-color: #dded1b;
   font-weight: 500;
-  font-size: 20px;
-  width: 85%;
-  position: absolute;
-  bottom: -100px;
-  padding: 20px 24px;
-  box-sizing: border-box;
-
-  @media (min-width: 834px) {
-    left: 0px;
-    font-size: 24px;
-    bottom: -50px;
-  }
-
-  @media (min-width: 1024px) {
-    left: -32px;
-  }
+  font-size: 1.5rem;
+  margin-top: 24px;
 
   @media (min-width: 1280px) {
-    font-size: 35px;
-  }
-
-  @media (min-width: 1440px) {
-    line-height: 1.5em;
-    left: -30px;
-    bottom: -100px;
-    padding: 45px;
-  }
-
-  @media (min-width: 1600px) {
-    font-size: 45px;
-    padding: 60px;
+    font-size: 2rem;
   }
 `;
 
 const ProjectText = styled.div`
   padding: 0;
-  margin: 30px 0;
+  margin-bottom: 32px;
 
   a {
     display: inline-block;
@@ -276,7 +248,18 @@ const ProjectTemplate = ({ data }) => {
   const members = data.members.nodes;
   const partners = data.partners.nodes;
 
-  const { twitter, linkedin, github, youtube, facebook, url, solution, aim, resources, newsletter } = project.frontmatter;
+  const {
+    twitter,
+    linkedin,
+    github,
+    youtube,
+    facebook,
+    url,
+    solution,
+    aim,
+    resources,
+    newsletter
+  } = project.frontmatter;
 
   const leftContainerRef = React.useRef(null);
   const rightContainerRef = React.useRef(null);
