@@ -10,6 +10,6 @@ twitter:
 facebook:
 instagram:
 github: https://github.com/The-Data-for-Children-Collaborative/noral-project
-sector: Education
+sector: Public Finance
 type: project
 ---

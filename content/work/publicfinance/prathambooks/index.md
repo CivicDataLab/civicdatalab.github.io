@@ -8,6 +8,6 @@ url: https://storyweaver.org.in
 twitter:
 facebook:
 instagram:
-sector: Education
+sector: Public Finance
 type: project
 ---
