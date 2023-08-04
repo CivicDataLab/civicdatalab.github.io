@@ -36,7 +36,7 @@ const StyledNav = styled.nav`
     align-items: start;
     height: 120px;
     background-color: ${(props) => (props.overlay ? 'rgb(0, 0, 0, 0.5)' : 'transparent')};
-    background-color: ${(props) => (props.dark && '#ffffff !important')};
+    background-color: ${(props) => props.dark && '#ffffff !important'};
     transition: background-color 300ms ease;
 
     .mobile-nav {
@@ -195,11 +195,10 @@ export const navLinks = [
   { path: '/', name: 'Home' },
   { path: '/work', name: 'Work' },
   { path: '/team', name: 'Team' },
-  { path: 'https://medium.com/civicdatalab', name: 'Blogs', external: true },
   { path: '/about', name: 'About' },
   { path: '/contact', name: 'Contact' },
-  { path: '/events', name: 'Events'},
-  { path: '/resource', name: 'Resources'}
+  { path: '/events', name: 'Events' },
+  { path: '/resource', name: 'Resources' }
 ];
 
 const Navbar = ({ dark, overlay }) => {
@@ -223,9 +222,7 @@ const Navbar = ({ dark, overlay }) => {
   `);
 
   const [displayMobileNav, setDisplayMobileNav] = React.useState(false);
-  const [navBarLogo, setNavBarLogo] = React.useState(
-    data.logo.childImageSharp.fluid
-  );
+  const [navBarLogo, setNavBarLogo] = React.useState(data.logo.childImageSharp.fluid);
   const navbarRef = React.useRef(null);
 
   React.useEffect(() => {
