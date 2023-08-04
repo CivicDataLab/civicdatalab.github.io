@@ -2,9 +2,9 @@
 name: Public Procurement
 image: ./image.png
 summary: Fixing Public Procurement with public data!
-context: How the government spends money on public goods, services, and infrastructure is referred to as Public Procurement. Public procurement data is imperative to understand government priorities and advocate for better spending. What started as a hackathon project, creating an index for procurement practices for health related procurement turned into a full fledged partnership, between CivicDataLab and Open Contracting Partnership 
-solution: We are working with different state governments to help open up more public procurement data in interoperable formats that are easy to analyse and gather insights from to help foster a culture of transparency and accountability. 
-url: 
+context: How the government spends money on public goods, services, and infrastructure is referred to as Public Procurement. Public procurement data is imperative to understand government priorities and advocate for better spending. What started as a hackathon project, creating an index for procurement practices for health related procurement turned into a full fledged partnership, between CivicDataLab and Open Contracting Partnership
+solution: We are working with different state governments to help open up more public procurement data in interoperable formats that are easy to analyse and gather insights from to help foster a culture of transparency and accountability.
+url:
 twitter:
 facebook:
 instagram:
@@ -44,6 +44,6 @@ resources:
       link: 'https://medium.com/civicdatalab/taking-stock-of-indias-covid-19-vaccine-procurement-situation-f6b851f0c36a',
       type: 'Blog'
     }
-sector: Public Finance
+sector: Open Contracting
 type: project
 ---

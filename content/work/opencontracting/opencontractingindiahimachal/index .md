@@ -12,7 +12,7 @@ twitter:
 linkedin:
 github:
 newsletter:
-sector: Public Finance
+sector: Open Contracting
 type: project
 resources:
   - {
@@ -22,7 +22,7 @@ resources:
     }
   - {
       title: 'Himachal Fiscal Data Explorer | Beta Launch',
-      link:  'https://www.youtube.com/watch?v=_7zWad8UxKY',
+      link: 'https://www.youtube.com/watch?v=_7zWad8UxKY',
       type: 'Video'
     }
 ---

@@ -51,11 +51,11 @@ const SectorLabel = styled.p`
 `;
 
 const sectors = [
-  { name: 'Education', color: '#E56997' },
-  { name: 'Digital Public Goods', color: '#fcfcb2ff' },
-  { name: 'Law & Justice', color: '#ed7263ff' },
-  { name: 'Public Finance', color: '#c2d7eaff' },
-  { name: 'Urban Development', color: '#dfc481ff' }
+  { name: 'Digital Public Goods', color: '#fcfcb2' },
+  { name: 'Law & Justice', color: '#ed7263' },
+  { name: 'Public Finance', color: '#c2d7ea' },
+  { name: 'Urban Development', color: '#dfc481' },
+  { name: 'Open Contracting', color: '#e8ded4' }
 ];
 
 const sectorLabelColorGenerator = (sectorName) => {
