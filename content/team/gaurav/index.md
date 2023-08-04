@@ -8,7 +8,7 @@ github: https://github.com/gggodhwani
 twitter: https://twitter.com/gggodhwani
 linkedin: https://www.linkedin.com/in/gggodhwani
 image: ./gaurav.jpg
-sectors: Public Finance, Law & Justice, Free & Open Source Software, Education
+sectors: Public Finance, Law & Justice, Digital Public Goods, Education
 projects: Public Procurements, Open Budgets India Platform - 2.0, The State of Free and Open Source Software in India, Justice Hub, Girl Education Spending Tracker, Zombie Tracker, The State of FOSS in India, Akshara Foundation
 accentcolor: '#00008B'
 text: light

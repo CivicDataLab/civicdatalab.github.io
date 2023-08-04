@@ -8,7 +8,7 @@ github: https://github.com/apoorv74
 twitter:
 linkedin: https://www.linkedin.com/in/apoorvanand
 image: ./apoorv.png
-sectors: Law & Justice, Public Finance, Free & Open Source Software
+sectors: Law & Justice, Public Finance, Digital Public Goods
 accentcolor: '#567568'
 text: light
 projects: Justice Hub, Tracking the implementation of the POCSO Act, Zombie Tracker, Open Budgets India Platform 2.0, Budgets for Justice, Data Workshops, Analysing the implementation of child protection laws in India

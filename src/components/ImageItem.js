@@ -52,14 +52,14 @@ const SectorLabel = styled.p`
 
 const sectors = [
   { name: 'Education', color: '#E56997' },
-  { name: 'Free & Open Source Software', color: '#129530' },
-  { name: 'Law & Justice', color: '#FBC740' },
-  { name: 'Public Finance', color: '#66D2D6' },
-  { name: 'Urban Development', color: '#BD97CB' }
+  { name: 'Digital Public Goods', color: '#fcfcb2ff' },
+  { name: 'Law & Justice', color: '#ed7263ff' },
+  { name: 'Public Finance', color: '#c2d7eaff' },
+  { name: 'Urban Development', color: '#dfc481ff' }
 ];
 
 const sectorLabelColorGenerator = (sectorName) => {
-  return sectors.find((sector) => sector.name === sectorName).color;
+  return sectors.find((sector) => sector.name === sectorName)?.color;
 };
 
 const ImageItem = ({ url, image, text, sectorName, boldText }) => {

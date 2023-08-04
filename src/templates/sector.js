@@ -63,20 +63,6 @@ const SectorLabel = styled.div`
   }
 `;
 
-// const sectorBlogTagGenerator = (fullSectorName) => {
-//   const sectorTags = [
-//     { name: 'Public Finance', tag: 'publicfinance' },
-//     { name: 'Law & Justice', tag: 'law' },
-//     { name: 'Education', tag: 'education' },
-//     { name: 'Urban Development', tag: 'cities' },
-//     { name: 'Free & Open Source Software', tag: 'foss' }
-//   ];
-
-//   return sectorTags.find((sector) => sector.name === fullSectorName).tag;
-// };
-
-// TODO add a separate button for
-
 const SectorTemplate = ({ data }) => {
   const members = data.members.nodes;
   const projects = data.projects.nodes;

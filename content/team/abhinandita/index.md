@@ -9,9 +9,10 @@ twitter:
 linkedin: https://www.linkedin.com/in/abhinandita-mohapatra/
 behance:
 image: ./abhinandita.jpg
-sectors: Free & Open Source Software
+sectors: Digital Public Goods
 projects:
 accentcolor:
-text: 
+text:
 ---
+
 Abhinandita is a Product Designer at Civic Data Lab and she enjoys creating interfaces which are both functional and aesthetic. When not working, she can be found solving puzzles, reading books, listening to music or pursuing a totally new hobby.
