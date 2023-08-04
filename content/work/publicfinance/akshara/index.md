@@ -9,6 +9,6 @@ url:
 twitter:
 facebook:
 instagram:
-sector: Education
+sector: Public Finance
 type: project
 ---

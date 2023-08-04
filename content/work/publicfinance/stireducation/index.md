@@ -8,6 +8,6 @@ url: https://stireducation.org
 twitter:
 facebook:
 instagram:
-sector: Education
+sector: Public Finance
 type: project
 ---
