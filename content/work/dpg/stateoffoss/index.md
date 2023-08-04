@@ -1,7 +1,7 @@
 ---
 name: The State of Free and Open Source Software in India
 image: ./image.png
-summary: A chronicle of the FOSS ecosystem in India. 
+summary: A chronicle of the FOSS ecosystem in India.
 context: CivicDataLab partnered with the Omidyar Network India to author a report titled "The State of Free and Open Source Software in India" which chronicles the FOSS movement in India, the current situation, the key players as well as the challenges and recommendations in order to truly leverage the power of FOSS for equitable change in the country.
 solution:
 url: https://state-of-foss.in
@@ -35,6 +35,6 @@ resources:
       link: 'https://www.youtube.com/watch?v=apXUA9xM4Zk',
       type: 'Video'
     }
-sector: Free & Open Source Software
+sector: Digital Public Goods
 type: project
 ---

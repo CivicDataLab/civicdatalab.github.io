@@ -166,7 +166,7 @@ const SiteMap = styled.div`
 
 const workLinks = [
   { path: '/education', name: 'Education' },
-  { path: '/foss', name: 'Free & Open Source Software' },
+  { path: '/dpg', name: 'Digital Public Goods' },
   { path: '/lawandjustice', name: 'Law & Justice' },
   { path: '/publicfinance', name: 'Public Finance' },
   { path: '/urbandevelopment', name: 'Urban Development' }
@@ -218,8 +218,8 @@ const Footer = () => {
               <SiteMap>
                 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer noopener">
                   License
-                </a>
-                {' '}|{' '}
+                </a>{' '}
+                |{' '}
                 <a href="/sitemap/sitemap-0.xml" target="_blank">
                   Site Map
                 </a>
