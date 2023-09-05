@@ -2,7 +2,7 @@
 name: Law & Justice
 description: We create and curate high quality public datasets in the areas of law and justice. We build open data portals to increase information accessibility and conduct trainings and workshops for our partners to enhance their data and tech capacity.
 image: ./lnj.jpg
-color: '#ed7263'
+color: '#4b4140'
 type: sector
 projects: Tracking the implementation of POCSO law,Zombie Tracker,Justice Hub
 events:

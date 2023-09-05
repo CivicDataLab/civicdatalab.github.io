@@ -58,10 +58,10 @@ const IconBackground = styled.div`
 
 const sectors = [
   { name: 'Digital Public Goods', color: '#74719e' },
-  { name: 'Law & Justice', color: '#ed7263' },
-  { name: 'Public Finance', color: '#c2d7ea' },
-  { name: 'Urban Development', color: '#dfc481' },
-  { name: 'Open Contracting', color: '#e8ded4' }
+  { name: 'Law & Justice', color: '#4b4140' },
+  { name: 'Public Finance', color: '#525568' },
+  { name: 'Urban Development', color: '#4b4140' },
+  { name: 'Open Contracting', color: '#076775' }
 ];
 
 const sectorLabelColorGenerator = (eventName) => {
