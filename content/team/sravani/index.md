@@ -8,7 +8,7 @@ github: https://github.com/Ssravani272
 twitter:
 linkedin: http://www.linkedin.com/in/sravanisruthi-07
 behance:
-image: ./swati.jpg
+image: ./sravani.jpg
 sectors: Digital Public Goods
 projects:
 accentcolor:
