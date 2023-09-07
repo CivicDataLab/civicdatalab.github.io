@@ -105,7 +105,15 @@ const SearchOption = styled.div`
   }
 
   .react-select {
-    width: 300px;
+    &__menu {
+      margin-top: 1px;
+      z-index:999;
+    }
+    &__control {
+      width: 300px;
+      @media(max-width:720px){
+        width: 100%;
+      }
   }
 `;
 
@@ -194,13 +202,13 @@ const Resources = ({ data }) => {
           <EventsContent ref={rightContainerRef}>
             <SearchOption>
               <Select
-                className="react-select"
+                classNamePrefix="react-select"
                 placeholder="Select a type..."
                 options={categories}
                 onChange={handleFilterChange}
               />
               <Select
-                className="react-select"
+                classNamePrefix="react-select"
                 placeholder="Select a sector..."
                 options={sectors}
                 onChange={handleSectorChange}
@@ -208,8 +216,9 @@ const Resources = ({ data }) => {
             </SearchOption>
             <EventsContainer>
               {filteredResources.length > 0 ? (
-                filteredResources.map((res) => (
+                filteredResources.map((res,index) => (
                   <ImageEventItem
+                    key={`resource-${index}`}
                     boldText
                     iconImg={imgIcon[res.type]}
                     url={res.link}

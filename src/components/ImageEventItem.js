@@ -36,24 +36,29 @@ const ImageEventContainer = styled(Link)`
   }
 `;
 
-const EventLabel = styled.p`
+const EventLabel = styled.span`
   padding: 4px 10px;
-  color: black !important;
+  color: white !important;
   background-color: ${(props) => (props.color ? props.color : '#fa7fe7')};
   position: absolute;
   z-index: 500;
-  top: 120px;
+  top: 60%;
   right: 0;
   font-weight: 500 !important;
 
+  @media(max-width:1024px) {
+    top:50%;
+  }
   @media (min-width: 1280px) {
-    top: 60%;
+    top: 55%;
   }
 `;
 
 const IconBackground = styled.div`
   background-image: ${(props) => (props.iconImg ? `url(${props.iconImg})` : `url(${fileImg})`)};
-  background-size: 100% 100%;
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const sectors = [
