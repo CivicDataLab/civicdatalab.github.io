@@ -122,6 +122,8 @@ const Resources = ({ data }) => {
 
   const [allResources, setAllResources] = React.useState([]);
 
+  const [loading, setLoading] = React.useState(true);
+
   const processNodes = () => {
     nodes.forEach((node) => {
       const sector = node.frontmatter.sector;
@@ -135,6 +137,7 @@ const Resources = ({ data }) => {
         setAllResources((prevResources) => [...prevResources, ...resourcesWithSector]);
       }
     });
+   setLoading(false);
   };
 
   React.useEffect(() => {
@@ -192,7 +195,7 @@ const Resources = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Our Event" />
+      <Seo title="Our Resources" />
       <MainContainer>
         <StandardGrid>
           <TitleContainer ref={leftContainerRef}>
@@ -215,8 +218,10 @@ const Resources = ({ data }) => {
               />
             </SearchOption>
             <EventsContainer>
-              {filteredResources.length > 0 ? (
-                filteredResources.map((res,index) => (
+              {loading ? (
+                <div>Loading resources. Please wait...</div>
+              ) : filteredResources.length > 0 ? (
+                filteredResources.map((res, index) => (
                   <ImageEventItem
                     key={`resource-${index}`}
                     boldText
