@@ -11,6 +11,11 @@ linkedin:
 github:
 resources:
   - {
+      title: 'Intelligent Data Ecosystem for Assam - Flood Response and Management (IDEA FRM)',
+      link: 'https://drive.google.com/file/d/1WjYlRdyoxliBhyAEJbmN_Q0IXQz8nJBk/view',
+      type: 'Reports'
+    }
+  - {
       title: 'Setting the sustainability standard for India’s healthcare procurement',
       link: 'https://www.open-contracting.org/2020/12/14/setting-the-sustainability-standard-for-indias-healthcare-procurement/',
       type: 'Blog'
