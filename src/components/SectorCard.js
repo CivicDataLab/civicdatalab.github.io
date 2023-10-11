@@ -122,7 +122,7 @@ const SectorCard = ({ name, description, link, color, image, about }) => {
       <Image fluid={image} />
       <CardContent>
         <h4 style={{ color: color }} className={'sector-name'}>
-          {name}
+          {name === 'Digital Public Goods' ? 'Digital Public Goods (DPG)' : name}
         </h4>
         <p>{description}</p>
         <CardLink to={link}>
