@@ -119,7 +119,13 @@ const CardLink = styled(Link)`
 const SectorCard = ({ name, description, link, color, image, about }) => {
   return (
     <Card color={color}>
-      <Image fluid={image} objectFit="contain" />
+      <Image
+        fluid={image}
+        imgStyle={{
+          objectFit: 'contain',
+          objectPosition: '50% 50%'
+        }}
+      />
       <CardContent>
         <h4 style={{ color: color }} className={'sector-name'}>
           {name === 'Digital Public Goods' ? 'Digital Public Goods (DPG)' : name}
