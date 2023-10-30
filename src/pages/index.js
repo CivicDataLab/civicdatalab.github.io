@@ -18,6 +18,8 @@ import OurPartners from '../components/OurPartners';
 import Seo from '../components/Seo/Seo';
 import BlogStrip from '../components/BlogStrip';
 import StandardGrid from '../styles/StandardGrid';
+import { Link } from 'gatsby';
+import Image from 'gatsby-image';
 
 export const Section = styled.section`
   padding: 0;
@@ -141,6 +143,12 @@ const Sectors = styled.section`
   }
 `;
 
+const ImageBox = styled(Link)`
+  display: block;
+  margin-top:12px;
+  margin-bottom: 12px;
+`;
+
 const Index = ({ data }) => {
   // const image = data?.landingBackground?.childImageSharp?.fluid;
 
@@ -164,6 +172,10 @@ const Index = ({ data }) => {
             </MainContainer>
           </HeroSection>
         </>
+
+       <ImageBox to={'https://civicsabha.civicdatalab.in/'}>
+         <Image fluid={data?.civicsabha?.childImageSharp?.fluid} />
+       </ImageBox>
         {/* <Fade bottom> */}
         <Sectors>
           <MainContainer>
@@ -202,6 +214,13 @@ export const pageQuery = graphql`
     landingBackground: file(relativePath: { eq: "landing-image.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 1920, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    civicsabha: file(relativePath: { eq: "civicsabha.jpg" }) {
+      childImageSharp {
+        fluid(maxHeight: 400, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }
