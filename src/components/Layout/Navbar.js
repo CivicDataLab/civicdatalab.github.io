@@ -260,7 +260,7 @@ const Navbar = ({ dark, overlay }) => {
               <StyledLink
                 dark={dark?.toString()}
                 activeClassName="active-link"
-                partiallyActive={link.name === 'Work' || link.name === 'Team'}
+                partiallyActive={link.name === 'Work' || link.name === 'Team' || link.name === 'Events'}
                 to={link.path}
               >
                 {link.name}
