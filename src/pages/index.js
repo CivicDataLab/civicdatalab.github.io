@@ -218,7 +218,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    civicsabha: file(relativePath: { eq: "civicsabha.jpg" }) {
+    civicsabha: file(relativePath: { eq: "civicsabha.png" }) {
       childImageSharp {
         fluid(maxHeight: 400, quality: 100) {
           ...GatsbyImageSharpFluid
