@@ -105,7 +105,15 @@ const SearchOption = styled.div`
   }
 
   .react-select {
-    width: 300px;
+    &__menu {
+      margin-top: 1px;
+      z-index:999;
+    }
+    &__control {
+      width: 300px;
+      @media(max-width:720px){
+        width: 100%;
+      }
   }
 `;
 
@@ -113,6 +121,8 @@ const Resources = ({ data }) => {
   const nodes = data.allMarkdownRemark.nodes;
 
   const [allResources, setAllResources] = React.useState([]);
+
+  const [loading, setLoading] = React.useState(true);
 
   const processNodes = () => {
     nodes.forEach((node) => {
@@ -127,6 +137,7 @@ const Resources = ({ data }) => {
         setAllResources((prevResources) => [...prevResources, ...resourcesWithSector]);
       }
     });
+   setLoading(false);
   };
 
   React.useEffect(() => {
@@ -184,7 +195,7 @@ const Resources = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Our Event" />
+      <Seo title="Our Resources" />
       <MainContainer>
         <StandardGrid>
           <TitleContainer ref={leftContainerRef}>
@@ -194,22 +205,25 @@ const Resources = ({ data }) => {
           <EventsContent ref={rightContainerRef}>
             <SearchOption>
               <Select
-                className="react-select"
+                classNamePrefix="react-select"
                 placeholder="Select a type..."
                 options={categories}
                 onChange={handleFilterChange}
               />
               <Select
-                className="react-select"
+                classNamePrefix="react-select"
                 placeholder="Select a sector..."
                 options={sectors}
                 onChange={handleSectorChange}
               />
             </SearchOption>
             <EventsContainer>
-              {filteredResources.length > 0 ? (
-                filteredResources.map((res) => (
+              {loading ? (
+                <div>Loading resources. Please wait...</div>
+              ) : filteredResources.length > 0 ? (
+                filteredResources.map((res, index) => (
                   <ImageEventItem
+                    key={`resource-${index}`}
                     boldText
                     iconImg={imgIcon[res.type]}
                     url={res.link}

@@ -74,6 +74,11 @@ resources:
       title: 'Will Tripura show ambition in Budget 2021?',
       link: 'https://medium.com/civicdatalab/will-tripura-show-ambition-in-budget-2021-e1ee8924d5eb',
       type: 'Blog'
+    }  
+  - {
+      title: 'Recommendation to Action: Green Budgeting in Assam',
+      link: 'https://drive.google.com/file/d/1CutJ1mvNESB6kaForc49P-na-j1qlXEl/view',
+      type: 'Report'
     }
 sector: Public Finance
 type: project

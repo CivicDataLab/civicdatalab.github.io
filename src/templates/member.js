@@ -95,7 +95,7 @@ export const QuoteContainer = styled.div`
     width: 400px;
 
     p {
-      margin-top: 485px;
+      margin-top: 325px;
       font-size: 20px;
       line-height: 1.4em;
 
