@@ -47,6 +47,9 @@ export const EventsContent = styled.div`
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr;
+  min-height: 90vh;
+  align-items: start;
+  align-content: start;
 
   @media (min-width: 1024px) {
     padding: 0;

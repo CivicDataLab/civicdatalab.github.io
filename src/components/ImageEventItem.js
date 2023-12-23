@@ -36,32 +36,37 @@ const ImageEventContainer = styled(Link)`
   }
 `;
 
-const EventLabel = styled.p`
+const EventLabel = styled.span`
   padding: 4px 10px;
-  color: black !important;
+  color: white !important;
   background-color: ${(props) => (props.color ? props.color : '#fa7fe7')};
   position: absolute;
   z-index: 500;
-  top: 120px;
+  top: 60%;
   right: 0;
   font-weight: 500 !important;
 
+  @media(max-width:1024px) {
+    top:50%;
+  }
   @media (min-width: 1280px) {
-    top: 60%;
+    top: 55%;
   }
 `;
 
 const IconBackground = styled.div`
   background-image: ${(props) => (props.iconImg ? `url(${props.iconImg})` : `url(${fileImg})`)};
-  background-size: 100% 100%;
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const sectors = [
-  { name: 'Digital Public Goods', color: '#fcfcb2' },
-  { name: 'Law & Justice', color: '#ed7263' },
-  { name: 'Public Finance', color: '#c2d7ea' },
-  { name: 'Urban Development', color: '#dfc481' },
-  { name: 'Open Contracting', color: '#e8ded4' }
+  { name: 'Digital Public Goods', color: '#74719e' },
+  { name: 'Law & Justice', color: '#4b4140' },
+  { name: 'Public Finance', color: '#525568' },
+  { name: 'Urban Development', color: '#4b4140' },
+  { name: 'Open Contracting', color: '#076775' }
 ];
 
 const sectorLabelColorGenerator = (eventName) => {
