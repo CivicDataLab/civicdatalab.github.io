@@ -1,6 +1,6 @@
 ---
 name: Tauseef Shah
-role: Backend Engineer
+role: Full Stack Engineer
 medium:
 description:
 quote: Never Settle
