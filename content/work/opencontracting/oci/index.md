@@ -11,6 +11,11 @@ linkedin:
 github:
 resources:
   - {
+      title: 'Buying Better for the Planet: A Green Public Procurement Guidebook for Assam',
+      link: 'https://drive.google.com/drive/folders/1n0wRDmLBe3sT0Dp0I3DhrwWKySwVnyIV?usp=sharing',
+      type: 'Guidebook'
+    }
+  - {
       title: 'Intelligent Data Ecosystem for Assam - Flood Response and Management (IDEA FRM)',
       link: 'https://drive.google.com/file/d/1WjYlRdyoxliBhyAEJbmN_Q0IXQz8nJBk/view',
       type: 'Reports'
