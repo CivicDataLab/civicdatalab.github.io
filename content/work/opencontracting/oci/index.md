@@ -12,7 +12,7 @@ github:
 resources:
   - {
       title: 'Buying Better for the Planet: A Green Public Procurement Guidebook for Assam',
-      link: 'https://drive.google.com/drive/folders/1n0wRDmLBe3sT0Dp0I3DhrwWKySwVnyIV?usp=sharing',
+      link: 'https://drive.google.com/file/d/1dDDCdudn3qiOfBFk7D6paKHPD31N_93c/view',
       type: 'Guidebook'
     }
   - {
