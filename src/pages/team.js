@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import MemberImageBox from '../components/MemberImageBox';
+import MemberImageBoxCheck from '../components/MemberImageBoxCheck';
 import { TitleContainer } from './work';
 import Seo from '../components/Seo/Seo';
 import CivicDaysImages from '../components/CivicDaysImages';
@@ -242,11 +243,23 @@ export const CivicDays = ({ home }) => {
 
 const Team = ({ data }) => {
   const members = data.allMarkdownRemark.nodes;
+  const [checkmode, setCheckmode] = React.useState(false);
 
   const membersContainerRef = React.useRef(null);
   const teamTitleContainerRef = React.useRef(null);
 
   useFixedScroll(teamTitleContainerRef, membersContainerRef);
+
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'F') {
+        setCheckmode((prev) => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   return (
     <Layout>
@@ -270,17 +283,11 @@ const Team = ({ data }) => {
               </StickyBox>
             </div>
           </TeamTitleContainer>
-          <MemberCardsContainer ref={membersContainerRef}>
-            {members.map((member) => (
-              <MemberImageBox
-                key={member.fields.slug}
-                link={member.fields.slug}
-                name={member.frontmatter.name}
-                role={member.frontmatter.role.split(',')[0]}
-                image={member.frontmatter.image?.childImageSharp.fluid}
-              />
-            ))}
-          </MemberCardsContainer>
+          {checkmode ? (
+            <MemberListCheck ref={membersContainerRef} members={members} />
+          ) : (
+            <MemberList ref={membersContainerRef} members={members} />
+          )}
         </StandardGrid>
       </TeamContainer>
       <div style={{ position: 'relative' }}>
@@ -320,3 +327,35 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const MemberList = React.forwardRef(({ members }, ref) => {
+  return (
+    <MemberCardsContainer ref={ref}>
+      {members.map((member) => (
+        <MemberImageBox
+          key={member.fields.slug}
+          link={member.fields.slug}
+          name={member.frontmatter.name}
+          role={member.frontmatter.role.split(',')[0]}
+          image={member.frontmatter.image?.childImageSharp.fluid}
+        />
+      ))}
+    </MemberCardsContainer>
+  );
+});
+
+const MemberListCheck = React.forwardRef(({ members }, ref) => {
+  return (
+    <MemberCardsContainer ref={ref}>
+      {members.map((member) => (
+        <MemberImageBoxCheck
+          key={member.fields.slug}
+          link={member.fields.slug}
+          name={member.frontmatter.name}
+          role={member.frontmatter.role.split(',')[0]}
+          image={member.frontmatter.image?.childImageSharp.fluid}
+        />
+      ))}
+    </MemberCardsContainer>
+  );
+});
