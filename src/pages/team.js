@@ -346,16 +346,26 @@ const MemberList = React.forwardRef(({ members }, ref) => {
 
 const MemberListCheck = React.forwardRef(({ members }, ref) => {
   return (
-    <MemberCardsContainer ref={ref}>
-      {members.map((member) => (
-        <MemberImageBoxCheck
-          key={member.fields.slug}
-          link={member.fields.slug}
-          name={member.frontmatter.name}
-          role={member.frontmatter.role.split(',')[0]}
-          image={member.frontmatter.image?.childImageSharp.fluid}
-        />
-      ))}
-    </MemberCardsContainer>
+    <>
+      <CheckText>Check Mode</CheckText>
+      <MemberCardsContainer ref={ref}>
+        {members.map((member) => (
+          <MemberImageBoxCheck
+            key={member.fields.slug}
+            link={member.fields.slug}
+            name={member.frontmatter.name}
+            role={member.frontmatter.role.split(',')[0]}
+            image={member.frontmatter.image?.childImageSharp.fluid}
+          />
+        ))}
+      </MemberCardsContainer>
+    </>
   );
 });
+
+const CheckText = styled.p`
+  position: fixed;
+  top: 120px;
+  color: teal;
+  font-weight: 600;
+`;
