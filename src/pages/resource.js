@@ -153,7 +153,7 @@ const Resources = ({ data }) => {
     { value: 'Reports', label: 'Reports' },
     { value: 'Blog', label: 'Blog' },
     { value: 'Published Papers', label: 'Published Papers' },
-    { value: 'Guidebook ', label: 'Guidebook ' }
+    { value: 'Guidebook', label: 'Guidebook' }
   ];
 
   const sectors = [
@@ -178,8 +178,8 @@ const Resources = ({ data }) => {
   };
 
   const filteredResources = allResources.filter((resource) => {
-    const filterByType = !TypeFilter || TypeFilter.value === 'All' || resource.type === TypeFilter.value;
-    const filterBySector = !sectorFilter || sectorFilter.value === 'All' || resource.sector === sectorFilter.value;
+    const filterByType = !TypeFilter || TypeFilter.value === 'All' || resource.type === TypeFilter.value.trim();
+    const filterBySector = !sectorFilter || sectorFilter.value === 'All' || resource.sector === sectorFilter.value.trim();
     return filterByType && filterBySector;
   });
 
