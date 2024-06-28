@@ -30,6 +30,12 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: ' https://civicdatalab.us17.list-manage.com/subscribe/post?u=6d9135407622328dd66aff2ca&amp;id=891171b752&amp;f_id=00eec2e1f0',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-120203184-1',
