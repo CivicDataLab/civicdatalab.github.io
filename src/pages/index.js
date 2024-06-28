@@ -20,6 +20,7 @@ import BlogStrip from '../components/BlogStrip';
 import StandardGrid from '../styles/StandardGrid';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
+import SubscribeForm from './SubscribeForm';
 
 export const Section = styled.section`
   padding: 0;
@@ -145,8 +146,13 @@ const Sectors = styled.section`
 
 const ImageBox = styled(Link)`
   display: block;
-  margin-top:12px;
+  margin-top: 12px;
   margin-bottom: 12px;
+`;
+
+const StyledForm = styled.div`
+  margin-top: 20px;
+  margin-bottom: 40px;
 `;
 
 const Index = ({ data }) => {
@@ -173,9 +179,9 @@ const Index = ({ data }) => {
           </HeroSection>
         </>
 
-       <ImageBox to={'https://civicsabha.civicdatalab.in/'}>
-         <Image fluid={data?.civicsabha?.childImageSharp?.fluid} />
-       </ImageBox>
+        <ImageBox to={'https://civicsabha.civicdatalab.in/'}>
+          <Image fluid={data?.civicsabha?.childImageSharp?.fluid} />
+        </ImageBox>
         {/* <Fade bottom> */}
         <Sectors>
           <MainContainer>
@@ -196,11 +202,13 @@ const Index = ({ data }) => {
         </Sectors>
         <BlogStrip />
         <OurPartners partners={partners} />
-
         <TeamHomePage />
         <WorkHomePage />
         <CivicDays home />
         {/* </Fade> */}
+        <StyledForm>
+          <SubscribeForm />
+        </StyledForm>
       </main>
       <Footer />
     </ThemeProvider>
