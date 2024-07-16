@@ -27,6 +27,11 @@ sector: Law & Justice
 type: project
 resources:
   - {
+      link: 'https://medium.com/civicdatalab/lost-in-the-crowd-data-for-child-protection-fa2836900078',
+      title: 'Lost in the crowd: Data for Child Protection',
+      type: 'Blog'
+    }
+  - {
       link: 'https://drive.google.com/file/d/1QkOSTPaOJIQXeRo6XSdlxlQ6FGgAd0YX/preview',
       title: 'Project Roadmap',
       type: 'Document'
