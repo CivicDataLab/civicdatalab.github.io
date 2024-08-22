@@ -3,7 +3,7 @@ name: Sanjay Pinna
 role: Frontend Engineer
 medium:
 description:
-quote: Work for a CAUSE, not for APPLAUSE. Live life to EXPRESS, not to IMPRESS.
+quote: You don't have to be great to start, but you have to start to be great.
 github: https://github.com/sanjaypinna
 twitter:
 linkedin: https://www.linkedin.com/in/sanjaypinna/
