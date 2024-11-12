@@ -144,12 +144,18 @@ const Sectors = styled.section`
   }
 `;
 
-const ImageBox = styled(Link)`
-  display: block;
-  margin-top: 12px;
-  margin-bottom: 12px;
+const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
-
+const ImageBox = styled.a`
+  display: block;
+  margin-bottom: -5px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
 const StyledForm = styled.div`
   margin-top: 20px;
   margin-bottom: 40px;
@@ -157,6 +163,7 @@ const StyledForm = styled.div`
 
 const Index = ({ data }) => {
   // const image = data?.landingBackground?.childImageSharp?.fluid;
+  console.log(data);
 
   const sectors = data.allMarkdownRemark.nodes;
   const partners = data.partners.nodes;
@@ -178,10 +185,14 @@ const Index = ({ data }) => {
             </MainContainer>
           </HeroSection>
         </>
-
-        <ImageBox to={'https://civicsabha.civicdatalab.in/'}>
-          <Image fluid={data?.civicsabha?.childImageSharp?.fluid} />
-        </ImageBox>
+        <Flex>
+          <ImageBox href="/DataSpace.pdf" target="_blank" rel="noopener noreferrer">
+            <img src="/DataSpace Banner.svg" />
+          </ImageBox>
+          <ImageBox href="/IDS-DRR.pdf" target="_blank" rel="noopener noreferrer">
+            <img src="/IDS Banner.svg" />
+          </ImageBox>
+        </Flex>
         {/* <Fade bottom> */}
         <Sectors>
           <MainContainer>
@@ -226,13 +237,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    civicsabha: file(relativePath: { eq: "civicsabha.png" }) {
-      childImageSharp {
-        fluid(maxHeight: 400, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+
     partners: allFile(
       filter: { relativePath: { regex: "/partners/" }, extension: { in: ["jpg", "jpeg", "png"] } }
       sort: { fields: name }
