@@ -52,13 +52,12 @@ resources:
       type: 'Brochure'
     } 
   - {
-      title: 'Media coverage of IDS-DRR in Assam',
-      link: 'https://docs.google.com/document/d/18jvTuFShkjQO1XMN2b66uCuvxT6bFooinFL-GuL5hto/edit?usp=drive_web&ouid=110552926427656901844',
+      title: 'Media coverage of IDS-DRR in Assam: Assam Disaster Management Authority Partners with CivicDataLab to enhance data-driven disaster mitigation efforts',
+      link: 'https://economictimes.indiatimes.com/news/india/assam-state-disaster-management',
       type: 'Doc'
-
     } 
   - {
-      title: 'IDS-DRR in the news',
+      title: 'Co-founder and executive director Gaurav Godhwani talks about IDS-DRR in the news',
       link: 'https://analyticsindiamag.com/tech-ai-blend/machine-learning-enhances-assam-governments-disaster-response-amid-floods/',
       type: 'Blog'
 
