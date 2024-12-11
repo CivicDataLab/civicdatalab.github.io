@@ -11,7 +11,7 @@ linkedin: https://www.linkedin.com/in/prajna-prayas/
 image: ./prajna.jpg
 accentcolor: '#4ECDC4'
 sectors: Public Finance
-projects: Open Budgets India Platform - 2.0, Girl Education Spending Tracker
+projects: Open Budgets India Platform - 2.0, Girl Education Spending Tracker, Intelligent Data Solution for Disaster Risk Reduction
 text:
 ---
 

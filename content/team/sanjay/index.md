@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/sanjaypinna/
 image: ./sanjay.jpg
 accentcolor: '#c87c48'
 sectors: Law & Justice
-projects: Budgets for Justice - Assam
+projects: Budgets for Justice - Assam,Intelligent Data Solution for Disaster Risk Reduction
 text: dark
 ---
 
