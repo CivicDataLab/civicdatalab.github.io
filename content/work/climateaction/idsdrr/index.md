@@ -52,16 +52,26 @@ resources:
       type: 'Brochure'
     } 
   - {
-      title: 'Media coverage of IDS-DRR in Assam: Assam Disaster Management Authority Partners with CivicDataLab to enhance data-driven disaster mitigation efforts',
+      title: 'Media Coverage: Assam Disaster Management Authority Partners with CivicDataLab to enhance data-driven disaster mitigation efforts',
       link: 'https://economictimes.indiatimes.com/news/india/assam-state-disaster-management',
-      type: 'Doc'
+      type: 'Article'
     } 
   - {
-      title: 'Co-founder and executive director Gaurav Godhwani talks about IDS-DRR in the news',
+      title: 'Media Coverage: Assam teams up with CivicDataLab for enhanced disaster mitigation strategiesAssam teams up with CivicDataLab for enhanced disaster mitigation strategies',
+      link: 'https://www.indiatodayne.in/assam/story/assam-teams-up-with-civicdatalab-for-enhanced-disaster-mitigation-strategies-1061482-2024-07-31',
+      type: 'Article'
+    }
+  - {
+      title: 'Media Coverage: ASDMA collaborates with CivicDataLab to build an intelligent data solution for disaster risk reduction',
+      link: 'https://www.syllad.com/asdma-collaborates-with-cdl-to-build-an-intelligent-data-solution-for-disaster-risk-reduction/',
+      type: 'Article'
+    }
+  - {
+      title: 'Media Coverage: : Co-founder and executive director Gaurav Godhwani talks about IDS-DRR in the news',
       link: 'https://analyticsindiamag.com/tech-ai-blend/machine-learning-enhances-assam-governments-disaster-response-amid-floods/',
-      type: 'Blog'
-
-    } 
+      type: 'Article'
+    }   
+  
 sector: Climate Action
 type: project
 ---
