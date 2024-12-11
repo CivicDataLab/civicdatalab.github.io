@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/aparnaraghuram/
 image: ./aparna.jpg
 accentcolor: '#b8383b'
 sectors: 
-projects:
+projects: Intelligent Data Solution for Disaster Risk Reduction
 text: light
 ---
 

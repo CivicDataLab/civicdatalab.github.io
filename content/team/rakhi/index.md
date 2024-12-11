@@ -9,8 +9,8 @@ twitter:
 linkedin: https://www.linkedin.com/in/rakhi-kashyap-b3939823/
 behance:
 image: ./rakhi.jpg
-sectors:
-projects:
+sectors: Climate Action
+projects: Intelligent Data Solution for Disaster Risk Reduction
 accentcolor:
 text: 
 ---
