@@ -9,6 +9,6 @@ twitter: https://twitter.com/kabeer3391
 linkedin: https://www.linkedin.com/in/kabeer-arora-69827661/
 image: ./kabeer.jpg
 accentcolor: 
-sectors: Public Finance
-projects: Public Procurements, Open Contracting India - Assam
+sectors: Public Finance, Climate Action
+projects: Public Procurements, Open Contracting India - Assam, Intelligent Data Solution for Disaster Risk Reduction
 ---
