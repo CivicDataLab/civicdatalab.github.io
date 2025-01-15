@@ -186,11 +186,9 @@ const Index = ({ data }) => {
           </HeroSection>
         </>
         <Flex>
-          <ImageBox href="/DataSpace.pdf" target="_blank" rel="noopener noreferrer">
-            <img src="/DataSpace Banner.svg" />
-          </ImageBox>
-          <ImageBox href="/IDS-DRR.pdf" target="_blank" rel="noopener noreferrer">
-            <img src="/IDS Banner.svg" />
+          
+          <ImageBox href="https://docs.google.com/forms/d/e/1FAIpQLSdrWkVxT5oP61vBnO_5uKW_vx88jiia_dlygixDvh-4zEqihg/viewform" target="_blank" rel="noopener noreferrer">
+            <img src="/Parakh_AI.svg" />
           </ImageBox>
         </Flex>
         {/* <Fade bottom> */}

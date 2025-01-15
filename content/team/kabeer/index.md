@@ -10,5 +10,5 @@ linkedin: https://www.linkedin.com/in/kabeer-arora-69827661/
 image: ./kabeer.jpg
 accentcolor: 
 sectors: Public Finance, Climate Action
-projects: Public Procurements, Open Contracting India - Assam, Intelligent Data Solution for Disaster Risk Reduction
+projects: Public Procurements, Open Contracting India - Assam, Intelligent Data Solution for Disaster Risk Reduction,Open Contracting India - Himachal Pradesh
 ---

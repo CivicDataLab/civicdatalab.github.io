@@ -10,7 +10,7 @@ linkedin: http://www.linkedin.com/in/sravanisruthi-07
 behance:
 image: ./sravani.jpg
 sectors: Digital Public Goods
-projects:
+projects: PetaBencana
 accentcolor:
 text:
 ---

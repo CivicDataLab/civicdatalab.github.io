@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import addToMailchimp from 'gatsby-plugin-mailchimp'
+import addToMailchimp from 'gatsby-plugin-mailchimp';
 
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; 
+  gap: 0.5rem;
   width: 30%;
-  padding: 1rem; 
+  padding: 1rem;
   margin: 0 auto;
-  border-radius: 0.5rem; 
+  border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   @media (max-width: 720px) {
     width: 80%;
@@ -17,29 +17,32 @@ const FormContainer = styled.form`
 `;
 
 const Input = styled.input`
-  padding: 0.5rem; 
-  border: 1px solid #ccc; 
+  padding: 0.5rem;
+  border: 1px solid #ccc;
   border-radius: 0.25rem;
-  font-size: 1rem; 
+  font-size: 1rem;
 `;
 
 const Label = styled.label`
-  font-size: 1rem; 
+  font-size: 1rem;
   color: #333;
   margin-top: 12px;
+  font-weight: bold;
 `;
 
 const Button = styled.button`
-  padding: 0.7rem 1rem; 
-  background-color: #000; 
-  color: white; 
+  padding: 0.7rem 1rem;
+  background-color: #000;
+  color: white;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
   margin-top: 20px;
   margin-bottom: 20px;
   display: inline-block;
-  white-space: nowrap; 
+  white-space: nowrap;
+  font-weight: bold;
+  font-family: Montserrat;
 `;
 
 const SubscribeForm = () => {
@@ -55,24 +58,23 @@ const SubscribeForm = () => {
     setLoading(true);
 
     if (emailRef.current?.value && nameRef.current?.value) {
-
       const result = await addToMailchimp(emailRef.current?.value, {
         FNAME: nameRef.current?.value,
-        MMERGE6 : orgRef.current?.value,
-        MMERGE7 : interestRef.current?.value
-      })
+        MMERGE6: orgRef.current?.value,
+        MMERGE7: interestRef.current?.value
+      });
 
       setLoading(false);
-      emailRef.current.value = ''
-      nameRef.current.value = ''
-      orgRef.current.value = ''
-      interestRef.current.value = ''
+      emailRef.current.value = '';
+      nameRef.current.value = '';
+      orgRef.current.value = '';
+      interestRef.current.value = '';
     }
   };
 
   return (
     <FormContainer onSubmit={subscribeUser}>
-      <h2>Subscribe</h2>
+      <h3>Subscribe to CivicDataLab Digest - our monthly Newsletter</h3>
       <Label htmlFor="name">Name:</Label>
       <Input ref={nameRef} id="name" type="text" required autoCapitalize="off" autoCorrect="off" disabled={loading} />
 
