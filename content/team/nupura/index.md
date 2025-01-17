@@ -9,8 +9,8 @@ twitter:
 linkedin: https://www.linkedin.com/in/nupuragawde
 image: ./nupura.jpeg
 accentcolor: 
-sectors: Education
-projects: Democratising Action for Attainment, Open Budgets India Platform - 2.0
+sectors: Education, Digital Public Goods
+projects: Democratising Action for Attainment, Open Budgets India Platform - 2.0, ParakhAI
 ---
 
 My approach is highly interactive and user centric. As a reseracher, I believe in understanding users' pain areas and having an empathetic approach to the research process. Being from a design background my focus highly relies on Design Thinking Methodologies.
