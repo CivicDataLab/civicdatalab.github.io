@@ -9,18 +9,23 @@ The urgent need for coordinated action, highlighted in international frameworks 
 
 
 A significant obstacle in leveraging data for effective climate action and DRR is the fragmented and siloed nature of data making it challenging for decision-makers to build the required capacity, access, analyse and utilise data in a timely and coherent manner, especially for resource mobilisation for building long-term resilience. This results in inefficient processes and policies, along with ad-hoc responses that fail to create data-driven DRR informed by the nuanced local realities."
-solution: "To address these barriers, we have developed the Intelligent Data Solution for Disaster Risk Reduction [(IDS-DRR)](https://civicdatalab.in/IDS-DRR.pdf), which brings together government spending and procurement data from diverse and complex datasets. It highlights flood hazard, exposure, losses and damages and vulnerability through these datasets and can be used as  a crucial innovation that will help both governments and vulnerable communities to better prepare for floods through more robust flood planning and management activities. 
+solution: "To address these barriers, we have developed the Intelligent Data Solution for Disaster Risk Reduction [(IDS-DRR)](/IDS-DRR.pdf), which brings together government spending and procurement data from diverse and complex datasets. It highlights flood hazard, exposure, losses and damages and vulnerability through these datasets and can be used as  a crucial innovation that will help both governments and vulnerable communities to better prepare for floods through more robust flood planning and management activities. 
 
 
 It can help minimise the worst effects of hydro-meteorological disasters for both  vulnerable communities and geographies in addition to strengthening repair and restoration of essential infrastructure and services in the aftermath of floods. 
 
 
 We have tried and tested our AI solution in the state of Assam in India and are in the process of scaling this proven solution from one disaster prone geography to four additional states in India (Himachal Pradesh, Odisha, Bihar and Uttar Pradesh) as well as in Bangkok, Thailand. We are working towards further scaling this data driven solution  to other Asian geographies namely - Indonesia, Philippines and Vietnam."
-url: 
+url: https://drr.open-contracting.in/en
 twitter:
 linkedin:
 github:
 resources:
+  - {
+      title: 'VIDEO: Intelligent Data Solution for Disaster Risk Reduction Platform',
+      link: '/IDS-DRR Video.mp4',
+      type: 'Video'
+    }
   - {
       title: 'Disaster Optional: Building climate resilience with data and tech to reduce the impact of floods',
       link: 'https://medium.com/civicdatalab/disaster-optional-building-climate-resilience-with-data-and-tech-to-reduce-the-impact-of-floods-ac142251ed77',
