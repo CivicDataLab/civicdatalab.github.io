@@ -151,15 +151,34 @@ const Flex = styled.div`
 const ImageBox = styled.a`
   display: block;
   margin-bottom: -5px;
+  padding: 20px;
+
   img {
     width: 100%;
     height: 100%;
   }
+  @media (max-width: 550px) {
+    padding: 0px;
+  }
+
 `;
 const StyledForm = styled.div`
   margin-top: 20px;
   margin-bottom: 40px;
 `;
+
+const HomeBanner = styled.img`
+  box-shadow: 0px 10px 20px #0000001a;
+  border-radius: 20px;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  @media (max-width: 550px) {
+    border-radius: 0px;
+
+  }
+`;
+
 
 const Index = ({ data }) => {
   // const image = data?.landingBackground?.childImageSharp?.fluid;
@@ -186,9 +205,8 @@ const Index = ({ data }) => {
           </HeroSection>
         </>
         <Flex>
-          
-          <ImageBox href="https://docs.google.com/forms/d/e/1FAIpQLSdrWkVxT5oP61vBnO_5uKW_vx88jiia_dlygixDvh-4zEqihg/viewform" target="_blank" rel="noopener noreferrer">
-            <img src="/Parakh_AI.svg" />
+        <ImageBox href="https://drr.open-contracting.in/en" target="_blank" rel="noopener noreferrer">
+        <HomeBanner  src="/IDS banner.png" />
           </ImageBox>
         </Flex>
         {/* <Fade bottom> */}
