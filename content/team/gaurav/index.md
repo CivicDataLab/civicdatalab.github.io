@@ -14,7 +14,7 @@ accentcolor: '#00008B'
 text: light
 ---
 
-Gaurav is a technologist turned social entreprenuer working to strengthen data-for-good ecosystem in India. At CivicDataLab, he works closely with Public Finance and Law & Justice verticals to improve access to information and enable civic-engagements using Open Data and Open-Source practices. He has been instrumental in starting initiatives like DataKind Bangalore & Open Budgets India. He is passionate about Open Data, Open Source Tech, Education and Human Rights. When he is away from the keyboard, he enjoys spending his time travelling, teaching and doing photography.
+Gaurav Godhwani is co-founder and executive director at CivicDataLab - a research lab harnessing data, tech, design and social science to strengthen data for public good and enhance civic engagements in India & other countries. For last 13+ years, he has been instrumental in shaping data initiatives like - DataKind Bangalore, Open Budgets India, Justice Hub & Open Contracting India. Currently, he is focused to enable millions of changemakers to harness data & AI innovations in sectors like Climate Resilience, Disaster Risk Reduction, Public Finance, Public Health, Urban Planning, Law & Justice, and more
 
 ### Related Talks:
 
