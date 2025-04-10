@@ -16,6 +16,7 @@ import Seo from '../components/Seo/Seo';
 import StandardGrid from '../styles/StandardGrid';
 import { PillarImages } from '../components/OurPillars';
 import { ResourcesAbout } from '../components/Resources';
+import { PoliciesAbout } from '../components/Policies';
 import AboutBackground from '../components/AboutBackground';
 
 const HeroSection = styled(Section)`
@@ -160,6 +161,29 @@ const resources = [
   }
 ];
 
+const policies = [
+  {
+    link: 'https://drive.google.com/file/d/1i3zj9-pCJ-oOVp4g83RTExqKzHkEp6Wq/view?usp=drive_link',
+    title: 'Health & Safety'
+  },
+  {
+    link: 'https://drive.google.com/file/d/1fDQ-X4PV_GQXYb4jELf3S5uRZOC_QeiH/view?usp=drive_link',
+    title: 'Environment & Sustainability'
+  },
+  {
+    link: 'https://drive.google.com/file/d/1p1TGkLeZlPgstbByFNB-Ksk62EnIWHRW/view?usp=drive_link',
+    title: 'Safeguarding'
+  },
+  {
+    link: 'https://drive.google.com/file/d/16xsSLdgk76Y7-1Dd9AaS-Z2lRXY22lEq/view?usp=drive_link',
+    title: 'Whistleblowing'
+  },
+  {
+    link: 'https://drive.google.com/file/d/1I0rebTUbmhrVtli_hNwLOgRL6vN912kR/view?usp=drive_link',
+    title: 'Modern Slavery'
+  }
+];
+
 const About = ({ data }) => {
   const values = data.allMarkdownRemark.edges;
 
@@ -214,6 +238,8 @@ const About = ({ data }) => {
           </ValuesSection>
         </MainContainer>
         <ResourcesAbout resources={resources} />
+        <PoliciesAbout policies={policies} />
+
         <TeamHomePage />
         <WorkHomePage />
         <CivicDays />
