@@ -163,24 +163,28 @@ const resources = [
 
 const policies = [
   {
-    link: 'https://drive.google.com/file/d/1i3zj9-pCJ-oOVp4g83RTExqKzHkEp6Wq/view?usp=drive_link',
+    link: 'https://docs.google.com/document/d/1uDXhXJBhgBk34bOHBKeZW2tuzresyoUT6WsKghpa3L8/edit?usp=sharing',
     title: 'Health & Safety'
   },
   {
-    link: 'https://drive.google.com/file/d/1fDQ-X4PV_GQXYb4jELf3S5uRZOC_QeiH/view?usp=drive_link',
+    link: 'https://docs.google.com/document/d/1zAxWN6KQN74H1puwmcDKKGASjwS1XmfZrwaehXp0t9w/edit?usp=sharing',
     title: 'Environment & Sustainability'
   },
   {
-    link: 'https://drive.google.com/file/d/1p1TGkLeZlPgstbByFNB-Ksk62EnIWHRW/view?usp=drive_link',
+    link: 'https://docs.google.com/document/d/1YB_vsM6-sfy-93fHvTlnyfLgvZaBdGSbvqAJHykzdMo/edit?usp=sharing',
     title: 'Safeguarding'
   },
   {
-    link: 'https://drive.google.com/file/d/16xsSLdgk76Y7-1Dd9AaS-Z2lRXY22lEq/view?usp=drive_link',
+    link: 'https://docs.google.com/document/d/1_cWP1APdEJ_MoQ9NPeVIECFJnnvXqpdat7Al2pSs87A/edit?usp=sharing',
     title: 'Whistleblowing'
   },
   {
-    link: 'https://drive.google.com/file/d/1I0rebTUbmhrVtli_hNwLOgRL6vN912kR/view?usp=drive_link',
+    link: 'https://docs.google.com/document/d/1IKrdStFw0y08JT9pckpwVJv0sdcW0jeXWul5aABue5c/edit?usp=sharing',
     title: 'Modern Slavery'
+  },
+  {
+    link:'https://docs.google.com/document/d/14jCoqzif3grF5w7ZUCuDjJjWENi8s4idVJHCBRTe5jM/edit?usp=sharing',
+    title:'Anti Bullying Policy'
   }
 ];
 
