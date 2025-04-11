@@ -176,7 +176,7 @@ const policies = [
   },
   {
     link: 'https://docs.google.com/document/d/1zAxWN6KQN74H1puwmcDKKGASjwS1XmfZrwaehXp0t9w/edit?usp=sharing',
-    title: 'Environment & Sustainability'
+    title: 'Environment and Sustainability'
   },
   {
     link: 'https://docs.google.com/document/d/1uDXhXJBhgBk34bOHBKeZW2tuzresyoUT6WsKghpa3L8/edit?usp=sharing',
