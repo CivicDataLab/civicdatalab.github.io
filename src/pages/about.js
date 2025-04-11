@@ -168,7 +168,7 @@ const policies = [
   },
   {
     link:'https://docs.google.com/document/d/14jCoqzif3grF5w7ZUCuDjJjWENi8s4idVJHCBRTe5jM/edit?usp=sharing',
-    title:'Anti Bullying Policy'
+    title:'Anti Bullying'
   },
   {
     link:'https://docs.google.com/document/d/1rYA0jWFgg_dI7zMOg0Zwdwfk7vPxgoelagsdwKAr80A/edit?usp=sharing',
