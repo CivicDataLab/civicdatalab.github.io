@@ -184,7 +184,7 @@ const policies = [
   },
   {
     link: 'https://docs.google.com/document/d/1IKrdStFw0y08JT9pckpwVJv0sdcW0jeXWul5aABue5c/edit?usp=sharing',
-    title: 'Modern Slavery'
+    title: 'Ethical Labour Practices'
   },
   {
     link: 'https://docs.google.com/document/d/1YB_vsM6-sfy-93fHvTlnyfLgvZaBdGSbvqAJHykzdMo/edit?usp=sharing',
