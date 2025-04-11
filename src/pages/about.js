@@ -163,16 +163,16 @@ const resources = [
 
 const policies = [
   {
-    link:'https://docs.google.com/document/d/1PE3pUoN3O3SvEngbkNdjpX3-u1kYBsWPEuHGK41AB9g/edit?usp=sharing',
-    title:'Anti-Bribery and Corruption'
+    link: 'https://docs.google.com/document/d/1PE3pUoN3O3SvEngbkNdjpX3-u1kYBsWPEuHGK41AB9g/edit?usp=sharing',
+    title: 'Anti-Bribery and Corruption'
   },
   {
-    link:'https://docs.google.com/document/d/14jCoqzif3grF5w7ZUCuDjJjWENi8s4idVJHCBRTe5jM/edit?usp=sharing',
-    title:'Anti Bullying'
+    link: 'https://docs.google.com/document/d/14jCoqzif3grF5w7ZUCuDjJjWENi8s4idVJHCBRTe5jM/edit?usp=sharing',
+    title: 'Anti Bullying'
   },
   {
-    link:'https://docs.google.com/document/d/1rYA0jWFgg_dI7zMOg0Zwdwfk7vPxgoelagsdwKAr80A/edit?usp=sharing',
-    title:'Diversity and Inclusion'
+    link: 'https://docs.google.com/document/d/1rYA0jWFgg_dI7zMOg0Zwdwfk7vPxgoelagsdwKAr80A/edit?usp=sharing',
+    title: 'Diversity and Inclusion'
   },
   {
     link: 'https://docs.google.com/document/d/1zAxWN6KQN74H1puwmcDKKGASjwS1XmfZrwaehXp0t9w/edit?usp=sharing',
@@ -194,7 +194,10 @@ const policies = [
     link: 'https://docs.google.com/document/d/1_cWP1APdEJ_MoQ9NPeVIECFJnnvXqpdat7Al2pSs87A/edit?usp=sharing',
     title: 'Whistleblowing'
   },
-  
+  {
+    link: 'https://docs.google.com/document/d/1MjYfBS45NnOJ6pL9nDcYZsDeiobi_dJ5RN4u6a3qtWE/edit?usp=sharing',
+    title: 'Workplace Against Sexual Harassment (WASH)'
+  }
 ];
 
 const About = ({ data }) => {
