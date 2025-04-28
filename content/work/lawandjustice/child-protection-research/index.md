@@ -9,9 +9,9 @@ solution: |
 
   The reports released as part of this project are as follows:
   
-  The [first report](https://qr.me-qr.com/85P4yeYy) titled - Decoding data on Implementation of the Child and Adolescent Labour (Prohibition and Regulation) Act, 1986 is based on an analysis of 10,800 ongoing and disposed cases available on eCourts from 6 States - Assam, Bihar, Jharkhand, Maharashtra, Tamil Nadu and Uttar Pradesh. It also includes the analysis of 142 judgments from Maharashtra,Tamil Nadu, and Assam, between January 2015 - early 2023.
+  The [first report](https://justicehub.in/dataset/analysis-calpra-2015-2023/resource/284e9946-cf50-40bd-9223-3b8333a3741b) titled - Decoding data on Implementation of the Child and Adolescent Labour (Prohibition and Regulation) Act, 1986 is based on an analysis of 10,800 ongoing and disposed cases available on eCourts from 6 States - Assam, Bihar, Jharkhand, Maharashtra, Tamil Nadu and Uttar Pradesh. It also includes the analysis of 142 judgments from Maharashtra,Tamil Nadu, and Assam, between January 2015 - early 2023.
 
-  The [second report](https://qr.me-qr.com/uuTMiYaJ) titled Trends in Child Marriage is based on the analysis of 174 judgements under the Prohibition of Child Marriage Act, 2006 from Assam, Maharashtra, and Tamil Nadu between January 2015 and January 2023.
+  The [second report](https://justicehub.in/dataset/analysis-pcma-2015-2023/resource/2f132a57-b104-4ac0-92d8-29de21ace9a1) titled Trends in Child Marriage is based on the analysis of 174 judgements under the Prohibition of Child Marriage Act, 2006 from Assam, Maharashtra, and Tamil Nadu between January 2015 and January 2023.
 
   We had the privilege of having Prof. Mahesh Menon and Ms. Bharti Ali as project advisors.
 
