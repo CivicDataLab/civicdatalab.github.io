@@ -1,6 +1,6 @@
 ---
 name: Tarun Sharma
-role: Project Lead - Himachal Pradesh
+role: Associate State Lead - Himachal Pradesh
 medium: 
 description:
 quote: "Facilitating change isn’t about intervention; it’s about enabling people with the right tools, knowledge, and networks to lead their own transformation."
