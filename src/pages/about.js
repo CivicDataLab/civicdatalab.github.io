@@ -171,6 +171,14 @@ const policies = [
     title: 'Anti Bullying'
   },
   {
+    link:'https://docs.google.com/document/d/1LNKksTsKgjIeVLZ9BRYb_akuOnvrbmPJq0DZd0-jvd0/edit?usp=sharing',
+    title:'Code of Conduct'
+  },
+  {
+    link:'https://docs.google.com/document/d/11nr9-LZAaLuLUn79TJnsUc15kujuBX69Oe6MnUr9mYQ/edit?usp=sharing',
+    title:'Data Protection Policy'
+  },
+  {
     link: 'https://docs.google.com/document/d/1rYA0jWFgg_dI7zMOg0Zwdwfk7vPxgoelagsdwKAr80A/edit?usp=sharing',
     title: 'Diversity and Inclusion'
   },
