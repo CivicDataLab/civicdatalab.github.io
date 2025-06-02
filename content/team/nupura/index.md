@@ -1,6 +1,6 @@
 ---
 name: Nupura
-role: Design Lead
+role: Initiative Lead - Digital Public Goods & Infrastructure
 medium:
 description: 
 quote: 
