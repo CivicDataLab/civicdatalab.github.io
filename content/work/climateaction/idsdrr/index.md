@@ -26,6 +26,16 @@ resources:
       link: '/IDS-DRR Video.mp4',
       type: 'Video'
     }
+  -  {
+      title: 'Assam Risk Score Model',
+      link: 'https://github.com/CivicDataLab/IDS-DRR-Assam-Risk-Model',
+      type: 'Repo'
+    }
+  -  {
+      title: 'Flood Data Ecosystem Assam',
+      link: 'https://github.com/CivicDataLab/flood-data-ecosystem-Assam',
+      type: 'Repo'
+    }
   - {
       title: 'Disaster Optional: Building climate resilience with data and tech to reduce the impact of floods',
       link: 'https://medium.com/civicdatalab/disaster-optional-building-climate-resilience-with-data-and-tech-to-reduce-the-impact-of-floods-ac142251ed77',
