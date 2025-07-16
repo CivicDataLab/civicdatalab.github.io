@@ -8,7 +8,7 @@ github:
 twitter:
 linkedin: https://www.linkedin.com/in/ridhi-choudhary-90b12077/
 behance:
-image: ./ridhi.png
+image: ./Ridhi.jpg
 sectors:
 projects:
 accentcolor:
