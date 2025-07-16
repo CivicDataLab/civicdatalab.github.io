@@ -6,7 +6,7 @@ description:
 quote:
 github:
 twitter:
-linkedin: www.linkedin.com/in/bhanita-boro-0b0762185
+linkedin: https://www.linkedin.com/in/bhanita-boro-0b0762185
 image: ./bhanita.jpg
 accentcolor:
 sectors: Public Finance
