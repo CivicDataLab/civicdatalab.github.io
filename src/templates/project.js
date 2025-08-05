@@ -362,7 +362,7 @@ const ProjectTemplate = ({ data }) => {
 
             <LeftText mobile>
               <p>Explore the platform:</p>
-              <a target="_blank" rel="noreferrer noopener" href={`https://${url}`}>
+              <a target="_blank" rel="noreferrer noopener" href={`${url}`}>
                 {url}
               </a>
               <SocialLinksContainer mobile>
