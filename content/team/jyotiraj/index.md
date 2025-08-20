@@ -1,6 +1,6 @@
 ---
 name: Jyotiraj Kar
-role: Climate Change and Disaster Management Fellow
+role: State Coordinator - Odisha
 medium:
 description:
 quote: 1st know yourself align yourelf with the nature then everything will be easier. Don't go opposite to the streamline. Summary is "Smart work".
