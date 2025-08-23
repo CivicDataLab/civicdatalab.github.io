@@ -1,7 +1,7 @@
 ---
 name: Stephen Shaiju Mathew
 role: Data Analyst Fellow
-medium: https://medium.com/@bhavabhuthi_81071
+medium:
 description:
 quote: 'Believe'
 github: https://github.com/steve341
