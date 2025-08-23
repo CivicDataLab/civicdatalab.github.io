@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/vaibhav-ojha-b56074172/
 image: ./vaibhav.jpg
 sectors:
-projects: Intelligent Data Solution for Disaster Risk Reduction
+projects:
 text: light
 ---
 
