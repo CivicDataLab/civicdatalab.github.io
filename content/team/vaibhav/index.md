@@ -1,7 +1,7 @@
 ---
 name: Vaibhav Kumar Ojha
 role: Climate Action and Disaster Management Fellow
-medium: https://medium.com/@bhavabhuthi_81071
+medium:
 description:
 quote: 'If something is humanly possible, its attainable by you too. - Marcus Aurelius'
 github:
