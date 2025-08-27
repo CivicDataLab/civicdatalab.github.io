@@ -5,5 +5,5 @@ logo: ./logo.png
 testimonial:
 website: https://www.open-contracting.org/
 sectors: Public Finance, Climate Action
-projects: Health Procurement Performance Index, Assam Procurement, Public Procurement, Intelligent Data Solution for Disaster Risk Reduction
+projects: Health Procurement Performance Index, Assam Procurement, Public Procurement, Intelligent Data Solution for Disaster Risk Reduction, Bangkok Metropolitan Administration’s Flood Risk Management Platform
 ---
