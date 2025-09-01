@@ -51,4 +51,9 @@ resources:
       title: 'PCMA datasets & report on the Justice Hub',
       type: 'Dataset'
     }
+  - {
+      link: 'https://justicehub.in/dataset/analysis-ecourts-metadata-2015-2023',
+      title: 'Possibilities of eCourts Data for Advancing Research on Law Implementation.',
+      type: 'Dataset'
+    }
 ---
