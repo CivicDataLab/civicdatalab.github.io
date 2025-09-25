@@ -8,7 +8,7 @@ github:
 twitter:
 linkedin: https://www.linkedin.com/in/tarun-sharma-384a7bb2/
 image: ./tarun.jpeg
-sectors: Education, Public Finance
+sectors: Education, Public Finance, Climate Action
 accentcolor: 
 text: 
 projects: 
