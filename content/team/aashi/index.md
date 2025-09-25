@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/aashi-srivastava-a9413ba8/
 behance:
 image: ./Aashi.JPG
-sectors: 
+sectors: Climate Action
 projects: 
 accentcolor:
 text:
