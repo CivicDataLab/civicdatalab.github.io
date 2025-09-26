@@ -9,7 +9,7 @@ twitter:
 linkedin: http://linkedin.com/in/jyotiraj-kar-environmental-engineer
 image: ./jyotiraj.png
 accentcolor: '#b8383b'
-sectors: 
+sectors: Climate Action
 projects:
 text: light
 ---
