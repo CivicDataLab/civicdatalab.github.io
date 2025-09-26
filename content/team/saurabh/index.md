@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/saurabh-levin-82a1a625/
 behance:
 image: ./Saurabh.jpg
-sectors: 
+sectors: Climate Action
 projects: Intelligent Data Solution for Disaster Risk Reduction
 accentcolor:
 text:
