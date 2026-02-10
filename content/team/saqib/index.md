@@ -4,7 +4,7 @@ role: Quality Assurance Engineer
 medium:
 description:
 quote:
-github:
+github: https://github.com/saqibmanan
 twitter: https://twitter.com/Saqibmanan6
 linkedin: https://www.linkedin.com/in/msaqibmanan/
 behance:
