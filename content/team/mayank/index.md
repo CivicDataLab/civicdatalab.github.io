@@ -15,4 +15,4 @@ accentcolor:
 text:
 ---
 
-Mayank is a public policy professional with a passion for tackling issues at the intersection of governance and society. His research interests span a wide range, including how governments function (governance and state capacity), the interplay between politics and economics (political economy), the impact of technology on policy (digitalisation and technology policy), public health, and the challenges and opportunities of growing cities (urbanisation). He also likes to curate heritage walks and talk about food in his free time.
+Mayank is a Public Policy professional with 7+ years of experience. He works towards translating complex data into actionable policy & insights to architect more effective systems. His expertise spans across Governance & Building State capacity, AI Safety & Governance, Data & Tech policy, Public Finance Management (PFM), Climate Action, Political economy, Public health, and Urban Development. He also likes to curate heritage walks and talk about food in his free time.
