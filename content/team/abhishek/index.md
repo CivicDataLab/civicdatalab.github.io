@@ -7,7 +7,7 @@ quote: 'Nothing is permanant'
 github: https://github.com/Abhishekfm
 twitter:
 linkedin: https://www.linkedin.com/in/abhishek-singh-fm/
-image: ./abhishek.jpeg
+image: ./abhishek.jpg
 accentcolor:
 sectors:
 projects: Intelligent Data Solution for Disaster Risk Reduction
