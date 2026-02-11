@@ -6,7 +6,7 @@ description:
 quote: Good design and good coffee fix almost everything.
 github:
 twitter:
-linkedin: linkedin.com/in/n-admin-a54542204
+linkedin: https://www.linkedin.com/in/n-admin-a54542204
 behance:
 image: ./n.jpg
 sectors:
