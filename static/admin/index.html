@@ -5,7 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CivicDataLab | Content Manager</title>
   </head>
+  <style>
+    #splash {
+      position: fixed;
+      inset: 0;
+      background: #eff0f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+    #splash img { width: 180px; }
+    img[src="/cdl_logo.png"] { width: 180px !important; }
+    #splash p {
+      margin-top: 16px;
+      font-family: sans-serif;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
   <body>
+    <div id="splash">
+      <img src="/cdl_logo.png" alt="CivicDataLab" />
+      <p>Loading Content Manager...</p>
+    </div>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        var splash = document.getElementById('splash');
+        splash.style.opacity = '0';
+        setTimeout(function () { splash.style.display = 'none'; }, 400);
+      });
+
+      // Hide Decap footer SVG branding once it renders
+      function hideDecapBranding() {
+        document.querySelectorAll('svg[viewBox="0 0 335 90"]').forEach(function (el) {
+          var parent = el.parentElement;
+          (parent || el).style.display = 'none';
+        });
+      }
+      var observer = new MutationObserver(hideDecapBranding);
+      observer.observe(document.body, { childList: true, subtree: true });
+      var interval = setInterval(hideDecapBranding, 500);
+      setTimeout(function () { clearInterval(interval); }, 10000);
+    </script>
   </body>
 </html>
