@@ -3,9 +3,7 @@ backend:
   repo: CivicDataLab/civicdatalab.github.io
   branch: main
   auth_type: pkce
-  app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID  # Replace this after OAuth setup
-
-local_backend: true  # Remove this line before deploying to production
+  app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
