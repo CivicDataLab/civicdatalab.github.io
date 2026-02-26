@@ -36,9 +36,52 @@ We are a research lab working with the goal of using data, tech, design and soci
 Prerequisites: NodeJS must be installed on your machine.
 
 1. Clone this repo.
-2. Run `npm start` command inside the root folder of the project.
-3. To build the website, run `npm run build`.
-4. To run the local build, run the following command: `npm run serve`.
+2. Run `npm install --legacy-peer-deps` to install dependencies.
+3. Run `npm start` to start the development server at `http://localhost:8000`.
+4. To build the website, run `npm run build`.
+5. To run the local build, run the following command: `npm run serve`.
+
+## Content Management (Decap CMS)
+
+The website uses [Decap CMS](https://decapcms.org/) for managing content through a UI without editing markdown files directly.
+
+### Running the CMS locally
+
+1. Start the Gatsby dev server: `npm start`
+2. In a separate terminal, start the Decap proxy server: `npx decap-server`
+3. Open `http://localhost:8000/admin/index.html` in your browser
+4. Click **Login** — no GitHub auth needed locally, it connects directly to your local files
+
+### Accessing the CMS in production
+
+Visit `https://civicdatalab.in/admin/` and log in with your GitHub account.
+
+> You must have **Write** access to the `CivicDataLab/civicdatalab.github.io` repo to save content.
+
+### Giving someone CMS access
+
+1. Go to the repo on GitHub → **Settings → Collaborators and teams**
+2. Add the person's GitHub account with **Write** access
+3. They can now log into the CMS using their GitHub account
+
+### Setting up the GitHub OAuth App (one-time, for production)
+
+1. Go to **GitHub → Settings → Developer settings → OAuth Apps → New OAuth App**
+2. Set **Homepage URL** to `https://civicdatalab.in`
+3. Set **Authorization callback URL** to `https://civicdatalab.in/admin/`
+4. Copy the **Client ID** and update `app_id` in `static/admin/config.yml`
+
+### CMS collections available
+
+| Collection | Content folder |
+|---|---|
+| Team Members | `content/team/` |
+| Alumni | `content/alumnus/` |
+| Work (by sector) | `content/work/` |
+| Events | `content/events/` |
+| Job Openings | `content/openings/` |
+| Values | `content/values/` |
+| Project Partners | `content/projectpart/` |
 
 ## Wiki
 You can find guides on how to add/update project and bandhu level info [here](https://github.com/CivicDataLab/civicdatalab.github.io/wiki).

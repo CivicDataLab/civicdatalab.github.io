@@ -3,7 +3,7 @@ backend:
   repo: CivicDataLab/civicdatalab.github.io
   branch: main
   auth_type: pkce
-  app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID
+  app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID  # TODO: Create a GitHub OAuth App and replace this before merging to main
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
