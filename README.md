@@ -71,6 +71,15 @@ Visit `https://civicdatalab.in/admin/` and log in with your GitHub account.
 3. Set **Authorization callback URL** to `https://civicdatalab.in/admin/`
 4. Copy the **Client ID** and update `app_id` in `static/admin/config.yml`
 
+### Admin portal branding
+
+The CMS login page (`/admin/`) has been customised:
+- **Splash screen** — a full-page branded loading screen with the CivicDataLab logo (`/static/cdl_logo.png`) is shown while the CMS loads, then fades out.
+- **Login page logo** — the default Decap logo is replaced with the CivicDataLab logo via the `logo_url` field in `static/admin/config.yml`.
+- **Decap footer** — the Decap attribution SVG at the bottom of the login page is hidden via a `MutationObserver` in `static/admin/index.html`.
+
+To update the logo, replace `/static/cdl_logo.png` and update the `logo_url` in `static/admin/config.yml` if the path changes.
+
 ### CMS collections available
 
 | Collection | Content folder |
