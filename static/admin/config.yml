@@ -1,0 +1,359 @@
+backend:
+  name: github
+  repo: CivicDataLab/civicdatalab.github.io
+  branch: main
+  auth_type: pkce
+  app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID  # Replace this after OAuth setup
+
+local_backend: true  # Remove this line before deploying to production
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+
+  # ─── TEAM MEMBERS ───────────────────────────────────────────────────────────
+  - label: "Team Members"
+    name: "team"
+    folder: "content/team"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}} — {{role}}"
+    fields:
+      - { label: "Full Name", name: "name", widget: "string" }
+      - { label: "Role / Title", name: "role", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Quote", name: "quote", widget: "string", required: false }
+      - { label: "Profile Image", name: "image", widget: "image", required: false }
+      - { label: "GitHub URL", name: "github", widget: "string", required: false }
+      - { label: "Twitter URL", name: "twitter", widget: "string", required: false }
+      - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+      - { label: "Medium URL", name: "medium", widget: "string", required: false }
+      - { label: "Accent Color", name: "accentcolor", widget: "string", required: false }
+      - { label: "Sectors", name: "sectors", widget: "string", required: false, hint: "Comma-separated. e.g. Public Finance, Climate Action" }
+      - { label: "Projects", name: "projects", widget: "string", required: false, hint: "Comma-separated project names" }
+      - { label: "Bio (body text)", name: "body", widget: "markdown", required: false }
+
+  # ─── ALUMNI ─────────────────────────────────────────────────────────────────
+  - label: "Alumni"
+    name: "alumnus"
+    folder: "content/alumnus"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}} — {{role}}"
+    fields:
+      - { label: "Full Name", name: "name", widget: "string" }
+      - { label: "Role / Title", name: "role", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Quote", name: "quote", widget: "string", required: false }
+      - { label: "Profile Image", name: "image", widget: "image", required: false }
+      - { label: "GitHub URL", name: "github", widget: "string", required: false }
+      - { label: "Twitter URL", name: "twitter", widget: "string", required: false }
+      - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+      - { label: "Medium URL", name: "medium", widget: "string", required: false }
+      - { label: "Accent Color", name: "accentcolor", widget: "string", required: false }
+      - { label: "Sectors", name: "sectors", widget: "string", required: false }
+      - { label: "Projects", name: "projects", widget: "string", required: false }
+      - { label: "Bio (body text)", name: "body", widget: "markdown", required: false }
+
+  # ─── PROJECT PARTNERS ───────────────────────────────────────────────────────
+  - label: "Project Partners"
+    name: "projectpart"
+    folder: "content/projectpart"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    fields:
+      - { label: "Organisation Name", name: "name", widget: "string" }
+      - { label: "Short Name / Acronym", name: "short", widget: "string", required: false }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "Testimonial", name: "testimonial", widget: "text", required: false }
+      - { label: "Website", name: "website", widget: "string", required: false }
+      - { label: "Sectors", name: "sectors", widget: "string", required: false }
+      - { label: "Projects", name: "projects", widget: "string", required: false }
+
+  # ─── VALUES ─────────────────────────────────────────────────────────────────
+  - label: "Values"
+    name: "values"
+    folder: "content/values"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: title
+    summary: "{{number}}. {{title}}"
+    fields:
+      - { label: "Number", name: "number", widget: "string", required: false, hint: "e.g. 01, 02 ..." }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Description", name: "body", widget: "markdown", required: false }
+
+  # ─── JOB OPENINGS ───────────────────────────────────────────────────────────
+  - label: "Job Openings"
+    name: "openings"
+    folder: "content/openings"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: title
+    summary: "{{title}}"
+    fields:
+      - { label: "Job Title", name: "title", widget: "string" }
+      - { label: "Application URL", name: "url", widget: "string" }
+
+  # ─── WORK: PUBLIC FINANCE ────────────────────────────────────────────────────
+  - label: "Work: Public Finance"
+    name: "work_publicfinance"
+    folder: "content/work/publicfinance"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "project" }
+    fields:
+      - { label: "Project Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Website URL", name: "url", widget: "string", required: false }
+      - { label: "Twitter", name: "twitter", widget: "string", required: false }
+      - { label: "GitHub", name: "github", widget: "string", required: false }
+      - { label: "Facebook", name: "facebook", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      - { label: "Sector", name: "sector", widget: "hidden", default: "Public Finance" }
+      - { label: "Type", name: "type", widget: "hidden", default: "project" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Blog", "Report", "Dashboard", "Video", "Forum", "Tutorial", "Doc"] }
+
+  # ─── WORK: CLIMATE ACTION ────────────────────────────────────────────────────
+  - label: "Work: Climate Action"
+    name: "work_climateaction"
+    folder: "content/work/climateaction"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "project" }
+    fields:
+      - { label: "Project Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Website URL", name: "url", widget: "string", required: false }
+      - { label: "Twitter", name: "twitter", widget: "string", required: false }
+      - { label: "GitHub", name: "github", widget: "string", required: false }
+      - { label: "Sector", name: "sector", widget: "hidden", default: "Climate Action" }
+      - { label: "Type", name: "type", widget: "hidden", default: "project" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Blog", "Report", "Dashboard", "Video", "Forum", "Tutorial", "Doc"] }
+
+  # ─── WORK: LAW & JUSTICE ─────────────────────────────────────────────────────
+  - label: "Work: Law & Justice"
+    name: "work_lawandjustice"
+    folder: "content/work/lawandjustice"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "project" }
+    fields:
+      - { label: "Project Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Website URL", name: "url", widget: "string", required: false }
+      - { label: "Twitter", name: "twitter", widget: "string", required: false }
+      - { label: "GitHub", name: "github", widget: "string", required: false }
+      - { label: "Sector", name: "sector", widget: "hidden", default: "Law & Justice" }
+      - { label: "Type", name: "type", widget: "hidden", default: "project" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Blog", "Report", "Dashboard", "Video", "Forum", "Tutorial", "Doc"] }
+
+  # ─── WORK: OPEN CONTRACTING ──────────────────────────────────────────────────
+  - label: "Work: Open Contracting"
+    name: "work_opencontracting"
+    folder: "content/work/opencontracting"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "project" }
+    fields:
+      - { label: "Project Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Website URL", name: "url", widget: "string", required: false }
+      - { label: "Twitter", name: "twitter", widget: "string", required: false }
+      - { label: "GitHub", name: "github", widget: "string", required: false }
+      - { label: "Sector", name: "sector", widget: "hidden", default: "Open Contracting" }
+      - { label: "Type", name: "type", widget: "hidden", default: "project" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Blog", "Report", "Dashboard", "Video", "Forum", "Tutorial", "Doc"] }
+
+  # ─── WORK: DIGITAL PUBLIC GOODS ──────────────────────────────────────────────
+  - label: "Work: Digital Public Goods"
+    name: "work_dpg"
+    folder: "content/work/dpg"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "project" }
+    fields:
+      - { label: "Project Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Website URL", name: "url", widget: "string", required: false }
+      - { label: "GitHub", name: "github", widget: "string", required: false }
+      - { label: "Sector", name: "sector", widget: "hidden", default: "Digital Public Goods" }
+      - { label: "Type", name: "type", widget: "hidden", default: "project" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Blog", "Report", "Dashboard", "Video", "Forum", "Tutorial", "Doc"] }
+
+  # ─── WORK: URBAN DEVELOPMENT ─────────────────────────────────────────────────
+  - label: "Work: Urban Development"
+    name: "work_urbandevelopment"
+    folder: "content/work/urbandevelopment"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "project" }
+    fields:
+      - { label: "Project Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Website URL", name: "url", widget: "string", required: false }
+      - { label: "GitHub", name: "github", widget: "string", required: false }
+      - { label: "Sector", name: "sector", widget: "hidden", default: "Urban Development" }
+      - { label: "Type", name: "type", widget: "hidden", default: "project" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Blog", "Report", "Dashboard", "Video", "Forum", "Tutorial", "Doc"] }
+
+  # ─── EVENTS: DATA DIALOGUES ──────────────────────────────────────────────────
+  - label: "Events: Data Dialogues"
+    name: "events_datadialogues"
+    folder: "content/events/data-dialogues"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "eventdetail" }
+    fields:
+      - { label: "Event Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Event Type", name: "eventtype", widget: "hidden", default: "Data Dialogues" }
+      - { label: "Banner Image", name: "image", widget: "image", required: false }
+      - { label: "Report URL", name: "url", widget: "string", required: false }
+      - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+      - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Doc", "Video", "Blog", "Report"] }
+
+  # ─── EVENTS: CLIMATE DIALOGUES ───────────────────────────────────────────────
+  - label: "Events: Climate Dialogues"
+    name: "events_climatedialogues"
+    folder: "content/events/climate-dialogues"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "eventdetail" }
+    fields:
+      - { label: "Event Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Event Type", name: "eventtype", widget: "hidden", default: "Climate Dialogues" }
+      - { label: "Banner Image", name: "image", widget: "image", required: false }
+      - { label: "Report URL", name: "url", widget: "string", required: false }
+      - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+      - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Doc", "Video", "Blog", "Report"] }
