@@ -7,7 +7,7 @@ quote: Good design, when it's done well, becomes invisible. - Jared Spool
 github:
 twitter: https://twitter.com/daytimedesigner
 linkedin: https://www.linkedin.com/in/aparnaraghuram/
-image: ./aparna.jpg
+image: ./aparna.png
 accentcolor: '#b8383b'
 sectors:
 projects: Intelligent Data Solution for Disaster Risk Reduction, Bangkok Metropolitan Administration’s Flood Risk Management Platform

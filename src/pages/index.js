@@ -205,8 +205,8 @@ const Index = ({ data }) => {
           </HeroSection>
         </>
         <Flex>
-        <ImageBox href="https://drr.open-contracting.in/en" target="_blank" rel="noopener noreferrer">
-        <HomeBanner  src="/IDS banner.png" />
+          <ImageBox href="https://www.civicsabha.in/" target="_blank" rel="noopener noreferrer">
+            <HomeBanner src="./BANNER-CDL-WEB.png" />
           </ImageBox>
         </Flex>
         {/* <Fade bottom> */}

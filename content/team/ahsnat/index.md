@@ -1,6 +1,6 @@
 ---
 name: Ahsnat Mokarim
-role: AI Research Fellow
+role: Associate Researcher
 medium: 
 description:
 quote:
@@ -15,4 +15,4 @@ accentcolor:
 text:
 ---
 
-Ahsnat is an AI Research Fellow at CivicDataLab, where she contributes to building ethical and participatory AI governance frameworks as part of the Digital Public Goods & Infrastructure (DPG&I) initiative. A graduate of Maharashtra National Law University, Mumbai, she is committed to advancing public interest values in emerging technology governance through an intersectional lens that centers rights, gender, and disability justice.
+Ahsnat is an Associate Researcher at CivicDataLab, working at the intersection of law, policy, data, and emerging technologies. Her work focuses on rights-based AI governance, with particular emphasis on gender justice and disability inclusion. As part of the Digital Public Goods & Infrastructure (DPG&I) initiative, she contributes to research, governance frameworks, and ecosystem engagement around responsible AI and public sector technologies, aiming to embed fairness, accountability, and accessibility into technology design and deployment. She is a graduate of Maharashtra National Law University, Mumbai, and is committed to advancing public interest values in emerging technology governance through an intersectional lens.

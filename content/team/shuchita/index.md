@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/shuchita-rawal-92697bb8/
 behance:
 image: ./Shuchita.jpg
-sectors:
+sectors: Climate Action
 projects: Bangkok Metropolitan Administration’s Flood Risk Management Platform
 accentcolor:
 text:
