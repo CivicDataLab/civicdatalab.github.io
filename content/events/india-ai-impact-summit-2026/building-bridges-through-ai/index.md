@@ -9,9 +9,9 @@ context: |
     The dialogue also explored how AFD's AI Investment Potential Index can be leveraged by Indian states to build stronger cases for climate and development financing, including access to multilateral development bank (MDB) support.
 
     With both AFD and CivicDataLab currently supporting the Government of Himachal Pradesh through HPDRRP and IDS-DRR respectively, the session reflected a growing opportunity for deeper collaboration towards resilient, data-driven public systems.
-eventtype:
+eventtype: "India AI Impact Summit"
 image: ./india-africa.jpeg
-name: "Building Bridges through AI: India-Africa-France Dialogue"
+name: "Building Bridges through AI: India-Africa-France Dialogue - Feb, 2026"
 resources:
 summary: "A dialogue at the AFD Pavilion exploring cross-regional collaboration and South–South partnerships for advancing AI for the common good."
 type: eventdetail
