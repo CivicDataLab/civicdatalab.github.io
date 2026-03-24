@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 
-export default function useFixedScroll(leftRef, rightRef, additionalHeight = 50) {
+export default function useFixedScroll(leftRef, rightRef) {
   useEffect(() => {
     function scrollHandler() {
       if (window.innerWidth >= 1280) {
-        if (rightRef && window.scrollY > rightRef.current.scrollHeight / 2 + additionalHeight) {
+        const rightBottom = rightRef.current.getBoundingClientRect().bottom;
+        if (rightBottom <= window.innerHeight) {
           leftRef.current.style.position = 'static';
         } else {
           leftRef.current.style.position = 'fixed';
@@ -17,5 +18,5 @@ export default function useFixedScroll(leftRef, rightRef, additionalHeight = 50)
     return () => {
       window.removeEventListener('scroll', scrollHandler);
     };
-  }, [leftRef, rightRef, additionalHeight]);
+  }, [leftRef, rightRef]);
 }

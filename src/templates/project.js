@@ -11,7 +11,6 @@ import { TitleContainer } from '../pages/work';
 import MiniTeamSection from '../components/MiniTeamSection';
 import Seo from '../components/Seo/Seo';
 // import Timeline from '../components/Timeline';
-import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
 import StandardGrid from '../styles/StandardGrid';
 import Resources from '../components/Resources';
@@ -19,6 +18,10 @@ import MarkdownView from 'react-showdown';
 
 const ProjectTitleContainer = styled(TitleContainer)`
   @media (min-width: 1280px) {
+    position: sticky;
+    top: 40px;
+    align-self: start;
+
     h1 {
       overflow-wrap: break-word;
       font-size: 45px;
@@ -200,9 +203,14 @@ const SocialLinksContainer = styled.div`
 `;
 
 const PartnersContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+
   a {
-    display: block;
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
   }
 
   @media (min-width: 1024px) {
@@ -261,17 +269,14 @@ const ProjectTemplate = ({ data }) => {
     newsletter
   } = project.frontmatter;
 
-  const leftContainerRef = React.useRef(null);
   const rightContainerRef = React.useRef(null);
-
-  useFixedScroll(leftContainerRef, rightContainerRef, 750);
 
   return (
     <Layout>
       <Seo title={project.frontmatter.name} />
       <MainContainer>
         <StandardGrid>
-          <ProjectTitleContainer ref={leftContainerRef}>
+          <ProjectTitleContainer>
             <HeroText>{project.frontmatter.name}</HeroText>
 
             <LeftText>
