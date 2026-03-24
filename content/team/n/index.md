@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/n-admin-a54542204
 behance:
 image: ./n.jpg
 sectors:
-projects: 
+projects: CivicDataSpace
 accentcolor:
 text:
 ---

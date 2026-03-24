@@ -5,5 +5,5 @@ logo: ./logo.png
 testimonial:
 website: https://akshara.org.in
 sectors: Education
-projects: Akshara Foundation
+projects: Akshara Foundation, CivicDataSpace
 ---
