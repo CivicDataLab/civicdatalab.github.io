@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/msaqibmanan/
 behance:
 image: ./saqib.jpg
 sectors: Digital Public Goods
-projects: Intelligent Data Solution for Disaster Risk Reduction, ParakhAI
+projects: Intelligent Data Solution for Disaster Risk Reduction, ParakhAI, CivicDataSpace
 accentcolor:
 text:
 ---

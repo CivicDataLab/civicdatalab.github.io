@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/abhishek-singh-fm/
 image: ./abhishek.jpg
 accentcolor:
 sectors:
-projects: Intelligent Data Solution for Disaster Risk Reduction
+projects: Intelligent Data Solution for Disaster Risk Reduction, CivicDataSpace
 text: light
 ---
 
