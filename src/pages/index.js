@@ -205,7 +205,7 @@ const Index = ({ data }) => {
           </HeroSection>
         </>
         <Flex>
-          <ImageBox href="https://www.civicsabha.in/" target="_blank" rel="noopener noreferrer">
+          <ImageBox href="https://civicdataspace.in/" target="_blank" rel="noopener noreferrer">
             <HomeBanner src="./BANNER-CDL-WEB.png" />
           </ImageBox>
         </Flex>
