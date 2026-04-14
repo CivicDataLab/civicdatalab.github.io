@@ -35,6 +35,6 @@ resources:
       type: 'Form'
     }
   
-sector: Digital Public Goods
+sector: DPG&I and Responsible AI
 type: project
 ---

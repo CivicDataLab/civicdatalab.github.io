@@ -35,6 +35,6 @@ resources:
       link: 'https://www.youtube.com/watch?v=apXUA9xM4Zk',
       type: 'Video'
     }
-sector: Digital Public Goods
+sector: DPG&I and Responsible AI
 type: project
 ---
