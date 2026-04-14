@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/ahsnat-mokarim-5b30061bb/
 behance:
 image: ./ahsnat.jpg
 sectors: 
-projects: 
+projects: ParakhAI
 accentcolor:
 text:
 ---
