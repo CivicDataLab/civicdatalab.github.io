@@ -4,6 +4,6 @@ short: OSDMA
 logo: ./OSDMA.png
 testimonial:
 website: https://osdma.odisha.gov.in/
-sectors: Digital Public Goods
+sectors: DPG&I and Responsible AI
 projects: CivicDataSpace
 ---

@@ -51,7 +51,7 @@ const SectorLabel = styled.p`
 `;
 
 const sectors = [
-  { name: 'Digital Public Goods', color: '#74719e' },
+  { name: 'DPG&I and Responsible AI', color: '#74719e' },
   { name: 'Law & Justice', color: '#4b4140' },
   { name: 'Public Finance', color: '#525568' },
   { name: 'Urban Development', color: '#4b4140' },

@@ -158,7 +158,7 @@ const Resources = ({ data }) => {
 
   const sectors = [
     { value: 'All', label: 'All' },
-    { value: 'Digital Public Goods', label: 'Digital Public Goods' },
+    { value: 'Digital Public Goods', label: 'DPG&I and Responsible AI' },
     { value: 'Law & Justice', label: 'Law & Justice' },
     { value: 'Public Finance', label: 'Public Finance' },
     { value: 'Urban Development', label: 'Urban Development' },

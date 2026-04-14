@@ -8,7 +8,7 @@ github: https://github.com/codedtt
 twitter:
 linkedin: https://www.linkedin.com/in/deepak-thakur-61784414b/
 image: ./deepak.jpg
-sectors: DPG
+sectors: DPG&I and Responsible AI
 projects:
 text:
 ---

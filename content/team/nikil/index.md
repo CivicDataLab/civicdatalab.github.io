@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/nikilaugustine/
 image: nikil.jpg
 sectors:
-projects:
+projects: Dataset Onboarding Support Team DOST
 ---
 
 "Nikil has over 5 Years of experience in IT infrastructure and digital transformation across mission-driven and public-interest organisations, with a background spanning both technical systems and social design. His work focuses on building stable, scalable, and well-governed technology systems, with particular interest in digital public infrastructure and data-driven approaches to social impact. He is known for translating complex technical systems into practical, sustainable solutions that enable non-technical teams and institutions.

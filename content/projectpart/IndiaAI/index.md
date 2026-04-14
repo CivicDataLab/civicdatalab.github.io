@@ -4,6 +4,6 @@ short: IndiaAI
 logo: ./logo.PNG
 testimonial:
 website: https://indiaai.gov.in/
-sectors: Digital Public Goods
+sectors: DPG&I and Responsible AI
 projects: ParakhAI
 ---

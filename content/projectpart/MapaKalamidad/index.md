@@ -4,6 +4,6 @@ short: MapaKalamidad
 logo: ./KALAMIDAD.png
 testimonial:
 website: https://www.mapakalamidad.ph/
-sectors: Digital Public Goods
+sectors: DPG&I and Responsible AI
 projects: CivicDataSpace
 ---

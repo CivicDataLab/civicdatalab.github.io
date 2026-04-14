@@ -10,7 +10,7 @@ context: |
 
     The panel featured key note speakers: Harry Verweij (Keynote) — Ambassador-at-large, Ministry of Foreign Affairs, The Hague, Netherlands, Fred Werner (Keynote) — Chief, Strategic Engagement Division & AI for Good, International Telecommunication Union. The speakers were, Agnes Kiragga — Head of Data Science Program & Research Scientist, African Population and Health Research Center (APHRC), Alexandru Oprunenco — Innovation Advisor, United Nations Development Programme (UNDP), Anna Tumadóttir — CEO, Creative Commons, Ariane Hildebrandt — Director General, Federal Ministry for Economic Cooperation and Development (BMZ), Germany, Christine Arab — Regional Director, UN Women, Cecilia Celeste Danesi — Professor of AI & Civil Law, University of Buenos Aires, Hwirin Kim — Chief, Hydrological & Water Resources Services Division, World Meteorological Organization, Kathleen Victoir — Senior Scientific Co-operation Officer, Pasteur Network, Martin Tisné — Founder & Chair of the Board, Current AI, Nasubo Ongoma — Chief Operating Officer, Qhala.
 
-    The session was moderated by Mercedes Forgassey, Lead - Innovation and Digitisation, PARIS21; Gaurav Godhwani, Executive Director & Co-Founder, CivicDataLab; Nupura Gawde, Initiative Lead – Digital Public Goods & Infrastructure, CivicDataLab.
+    The session was moderated by Mercedes Forgassey, Lead - Innovation and Digitisation, PARIS21; Gaurav Godhwani, Executive Director & Co-Founder, CivicDataLab; Nupura Gawde, Initiative Lead – DPG&I and Responsible AI & Infrastructure, CivicDataLab.
 eventtype: "India AI Impact Summit"
 image: ./data-ai.jpeg
 name: "CivicDataLab Panel: Strengthening Data & AI Collaboratives for Social & Economic Growth - Feb, 2026"
