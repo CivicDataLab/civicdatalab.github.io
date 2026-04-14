@@ -4,6 +4,6 @@ short: Paris21
 logo: ./paris21.jpeg
 testimonial:
 website: https://paris21.org/
-sectors: Digital Public Goods
+sectors: DPG&I and Responsible AI
 projects: CivicDataSpace
 ---

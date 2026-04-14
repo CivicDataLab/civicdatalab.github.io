@@ -9,7 +9,7 @@ twitter: https://twitter.com/gokhaleanushka/
 linkedin: https://www.linkedin.com/in/anushkaag/
 behance:
 image: ./anushka.jpg
-sectors: Digital Public Goods
+sectors: DPG&I and Responsible AI
 projects:
 accentcolor: '#8E1254'
 text: light

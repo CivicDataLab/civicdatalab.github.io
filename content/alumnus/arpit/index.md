@@ -9,7 +9,7 @@ twitter: https://twitter.com/TheDataAreClean
 linkedin: https://linkedin.com/in/thedataareclean
 image: ./arpit.jpg
 accentcolor: '#FFCCFF'
-sectors: Public Finance,Education,Digital Public Goods
+sectors: Public Finance,Education,DPG&I and Responsible AI
 projects: Democratising Action for Attainment,Girl Education Spending Tracker, The State of FOSS in India
 ---
 

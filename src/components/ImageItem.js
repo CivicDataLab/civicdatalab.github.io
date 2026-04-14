@@ -51,7 +51,7 @@ const SectorLabel = styled.p`
 `;
 
 const sectors = [
-  { name: 'Digital Public Goods', displayName: 'DPG&I and Responsible AI', color: '#74719e' },
+  { name: 'DPG&I and Responsible AI', color: '#74719e' },
   { name: 'Law & Justice', color: '#4b4140' },
   { name: 'Public Finance', color: '#525568' },
   { name: 'Urban Development', color: '#4b4140' },
@@ -62,14 +62,10 @@ const sectorLabelColorGenerator = (sectorName) => {
   return sectors.find((sector) => sector.name === sectorName)?.color;
 };
 
-const sectorDisplayName = (sectorName) => {
-  return sectors.find((sector) => sector.name === sectorName)?.displayName || sectorName;
-};
-
 const ImageItem = ({ url, image, text, sectorName, boldText }) => {
   return (
     <ImageItemContainer boldtext={boldText.toString()} to={url || '/'}>
-      {sectorName ? <SectorLabel color={sectorLabelColorGenerator(sectorName)}>{sectorDisplayName(sectorName)}</SectorLabel> : null}
+      {sectorName ? <SectorLabel color={sectorLabelColorGenerator(sectorName)}>{sectorName}</SectorLabel> : null}
       {image ? <Image fluid={image} /> : <div />} <p>{text}</p>
     </ImageItemContainer>
   );

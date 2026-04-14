@@ -62,7 +62,7 @@ const IconBackground = styled.div`
 `;
 
 const sectors = [
-  { name: 'Digital Public Goods', displayName: 'DPG&I and Responsible AI', color: '#74719e' },
+  { name: 'DPG&I and Responsible AI', color: '#74719e' },
   { name: 'Law & Justice', color: '#4b4140' },
   { name: 'Public Finance', color: '#525568' },
   { name: 'Urban Development', color: '#4b4140' },
@@ -73,14 +73,10 @@ const sectorLabelColorGenerator = (eventName) => {
   return sectors.find((sector) => sector.name === eventName)?.color;
 };
 
-const sectorDisplayName = (sectorName) => {
-  return sectors.find((sector) => sector.name === sectorName)?.displayName || sectorName;
-};
-
 const ImageEvent = ({ url, image, text, eventName, boldText, openInNewTab, iconImg }) => {
   return (
     <ImageEventContainer boldtext={boldText.toString()} to={url || '/'} target={openInNewTab ? '_blank' : '_self'}>
-      {eventName ? <EventLabel color={sectorLabelColorGenerator(eventName)}>{sectorDisplayName(eventName)}</EventLabel> : null}
+      {eventName ? <EventLabel color={sectorLabelColorGenerator(eventName)}>{eventName}</EventLabel> : null}
       {image ? <Image fluid={image} /> : iconImg ? <IconBackground iconImg={iconImg} /> : <div />} <p>{text}</p>
     </ImageEventContainer>
   );
