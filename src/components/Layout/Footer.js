@@ -165,7 +165,7 @@ const SiteMap = styled.div`
 // Change the address and
 
 const workLinks = [
-  { path: '/dpg', name: 'Digital Public Goods' },
+  { path: '/dpg', name: 'DPG&I and Responsible AI' },
   { path: '/lawandjustice', name: 'Law & Justice' },
   { path: '/opencontracting', name: 'Open Contracting' },
   { path: '/publicfinance', name: 'Public Finance' },
