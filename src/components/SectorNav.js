@@ -97,7 +97,7 @@ const SectorNav = () => {
       </SectorNavItem>
       {sectorsData.map((sector) => (
         <SectorNavItem activeClassName="active-sector" key={sector.node.id} to={sector.node.fields.slug}>
-          {sector.node.frontmatter.name === 'Digital Public Goods' ? 'DPG&I and Responsible AI' : sector.node.frontmatter.name}
+          {sector.node.frontmatter.name}
         </SectorNavItem>
       ))}
     </SectorNavContainer>
