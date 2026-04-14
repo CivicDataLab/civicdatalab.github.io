@@ -1,6 +1,6 @@
 ---
 name: Nupura
-role: Initiative Lead - Digital Public Goods & Infrastructure
+role: Initiative Lead - DPG&I and Responsible AI & Infrastructure
 medium:
 description: 
 quote: 
@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/nupuragawde
 image: ./nupura.jpeg
 accentcolor: 
-sectors: Education, Digital Public Goods
+sectors: Education, DPG&I and Responsible AI
 projects: Democratising Action for Attainment, Open Budgets India Platform - 2.0, ParakhAI
 ---
 

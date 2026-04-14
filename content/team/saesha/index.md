@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/saesha-parekh/
 behance:
 image: ./saesha.jpg
 sectors:
-projects:
+projects: ParakhAI, Dataset Onboarding Support Team DOST
 accentcolor:
 text:
 ---

@@ -8,7 +8,7 @@ github: https://github.com/deepthi-Chand
 twitter: https://twitter.com/eopoxf
 linkedin: https://www.linkedin.com/in/deepthi-chand-alagandula-5415862b/
 image: ./dc.jpg
-sectors: Education,Urban Development,Law & Justice,Climate Action, Digital Public Goods
+sectors: Education,Urban Development,Law & Justice,Climate Action, DPG&I and Responsible AI
 projects: PetaBencana, JusticeHub, HAQ-POCSO implementation tracker, OpenCity, Democratising Action for Attainment, PetaBencana, STiR Education, Pratham Books, Tracking the implementation of the POCSO Act, Akshara Foundation, Intelligent Data Solution for Disaster Risk Reduction, Analysing the implementation of child protection laws in India, Budgets for Justice, Data Workshops, Justice Hub, Open Contracting India - Himachal Pradesh, ParakhAI, Bangkok Metropolitan Administration’s Flood Risk Management Platform, CivicDataSpace
 ---
 

@@ -28,6 +28,6 @@ github:
 resources:   
   - { title: 'CivicDataSpace Brochure', link: 'https://drive.google.com/file/d/16FYnI8wzcfjb9mazbZkgheZ24OZlfh59/view?usp=sharing', type: 'Brochure' }
 
-sector: Digital Public Goods
+sector: DPG&I and Responsible AI
 type: project
 ---
