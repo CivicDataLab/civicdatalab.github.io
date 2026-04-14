@@ -9,7 +9,7 @@ twitter:
 linkedin: http://www.linkedin.com/in/sravanisruthi-07
 behance:
 image: ./sravani.jpg
-sectors: Digital Public Goods
+sectors: DPG&I and Responsible AI
 projects: PetaBencana
 accentcolor:
 text:

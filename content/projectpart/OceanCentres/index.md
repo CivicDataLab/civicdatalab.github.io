@@ -4,6 +4,6 @@ short: OceanCentres
 logo: ./ocean-center-logo.png
 testimonial:
 website: https://oceancentres.org/
-sectors: Digital Public Goods
+sectors: DPG&I and Responsible AI
 projects: CivicDataSpace
 ---

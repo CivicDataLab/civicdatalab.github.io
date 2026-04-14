@@ -4,6 +4,6 @@ short: HDMA
 logo: ./logo.jpeg
 testimonial:
 website: https://hpsdma.nic.in/
-sectors: Digital Public Goods, CivicDataSpace
+sectors: DPG&I and Responsible AI, CivicDataSpace
 projects: CivicDataSpace
 ---

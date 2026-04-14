@@ -4,6 +4,6 @@ short: MeitY
 logo: ./logo.png
 testimonial:
 website: https://www.meity.gov.in/
-sectors: Digital Public Goods
+sectors: DPG&I and Responsible AI
 projects: ParakhAI
 ---

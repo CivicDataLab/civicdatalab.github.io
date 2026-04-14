@@ -8,7 +8,7 @@ github: https://github.com/shefali24
 twitter:
 linkedin: https://www.linkedin.com/in/shefali-singh-b41aa817a
 image: ./shefali.jpg
-sectors: DPG
+sectors: DPG&I and Responsible AI
 projects: 
 text:
 ---

@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/swatis1/
 behance:
 image: ./swati.jpg
-sectors: Digital Public Goods
+sectors: DPG&I and Responsible AI
 projects:
 accentcolor:
 text:
