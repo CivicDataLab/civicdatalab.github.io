@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/aparnaraghuram/
 image: ./aparna.png
 accentcolor: '#b8383b'
 sectors:
-projects: Intelligent Data Solution for Disaster Risk Reduction, Bangkok Metropolitan Administration’s Flood Risk Management Platform, CivicDataSpace
+projects: Intelligent Data Solution for Disaster Risk Reduction, Bangkok Metropolitan Administration’s Flood Risk Management Platform, CivicDataSpace, ParakhAI
 text: light
 ---
 
