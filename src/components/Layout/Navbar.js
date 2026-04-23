@@ -198,7 +198,7 @@ export const navLinks = [
   { path: 'https://medium.com/civicdatalab', name: 'Blogs', external: true },
   { path: '/about', name: 'About' },
   { path: '/contact', name: 'Contact' },
-  { path: '/events', name: 'Events' },
+  { path: '/events', name: 'Our Events' },
   { path: '/resource', name: 'Resources' }
 ];
 
@@ -260,7 +260,7 @@ const Navbar = ({ dark, overlay }) => {
               <StyledLink
                 dark={dark?.toString()}
                 activeClassName="active-link"
-                partiallyActive={link.name === 'Work' || link.name === 'Team' || link.name === 'Events'}
+                partiallyActive={link.name === 'Work' || link.name === 'Team' || link.name === 'Our Events'}
                 to={link.path}
               >
                 {link.name}
