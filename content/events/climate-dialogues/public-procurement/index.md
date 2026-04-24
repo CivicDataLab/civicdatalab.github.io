@@ -18,6 +18,7 @@ resources:
     title: "Event Presentations"
     type: Doc
 summary: "Harnessing public procurement data for delivering green solutions"
+date: "2023-06-27"
 type: eventdetail
 url: "https://civicdatalab.in/resources/climate-dialogues-June-27.pdf"
 youtube: "https://www.youtube.com/watch?v=cx-CBj9qIEs&t=5147s"

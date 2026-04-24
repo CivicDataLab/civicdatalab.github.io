@@ -14,6 +14,7 @@ resources:
     title: "Event Video"
     type: Video
 summary: "Innovative Use of AI Models and Open Data for Climate Action"
+date: "2023-08-08"
 type: eventdetail
 url: "https://civicdatalab.in/resources/climate-dialogues-August-8.pdf"
 youtube: "https://www.youtube.com/watch?v=RA9yZey76w4"

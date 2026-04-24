@@ -128,7 +128,7 @@ export const pageQuery = graphql`
     }
     events: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "eventdetail" }, eventtype: { regex: $nameRegex } } }
-      sort: { fields: frontmatter___name }
+      sort: { fields: [frontmatter___date, frontmatter___name], order: [DESC, ASC] }
     ) {
       nodes {
         id
