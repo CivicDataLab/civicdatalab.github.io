@@ -15,7 +15,7 @@ name: "Building Bridges through AI: India-Africa-France Dialogue - Feb, 2026"
 resources:
 summary: "A dialogue at the AFD Pavilion exploring cross-regional collaboration and South–South partnerships for advancing AI for the common good."
 type: eventdetail
-date: "16 February 2026"
+date: "2026-02-16"
 time: "4:00 PM – 4:20 PM"
 venue: "Bharat Mandapam"
 url: ""

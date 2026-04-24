@@ -18,6 +18,7 @@ resources:
     title: "Event Presentations"
     type: Doc
 summary: "Free & Open-source Software (FOSS) and Climate Change"
+date: "2023-05-09"
 type: eventdetail
 url: "https://civicdatalab.in/resources/climate-dialogues-May-9.pdf"
 youtube: "https://www.youtube.com/watch?v=tZ_3JvPxRYM&t=2450s"

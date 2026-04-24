@@ -7,7 +7,7 @@ name: "Responsible Deployment of AI for Social Welfare - Feb, 2026"
 resources:
 summary: "A panel examining safeguards and governance frameworks for deploying AI in social welfare systems."
 type: eventdetail
-date: "16 February 2026"
+date: "2026-02-16"
 time: "2:30 PM – 3:30 PM"
 venue: "Bharat Mandapam"
 url: ""

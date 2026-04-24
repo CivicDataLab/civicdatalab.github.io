@@ -7,7 +7,7 @@ name: "CivicDataLab Pavilion at the India AI Impact Summit 2026 - Feb, 2026"
 resources:
 summary: "The CDL Pavilion at the India AI Impact Summit 2026, bringing together industry leaders, startups, and innovators to showcase real-world AI applications and ecosystem conversations."
 type: eventdetail
-date: "16-20 February 2026"
+date: "2026-02-16"
 time: ""
 venue: "Bharat Mandapam"
 url: ""

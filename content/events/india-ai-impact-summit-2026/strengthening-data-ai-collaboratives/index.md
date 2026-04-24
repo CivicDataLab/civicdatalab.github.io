@@ -21,7 +21,7 @@ resources:
     type: Video
 summary: "A high-level panel at India AI Impact Summit 2026 exploring how Data & AI Collaboratives can evolve into foundational digital public infrastructure."
 type: eventdetail
-date: "18 February 2026"
+date: "2026-02-18"
 time: "9:30 AM – 10:30 AM"
 venue: "Bharat Mandapam"
 youtube: "https://www.youtube.com/live/Nd0QDAIkAzs"
