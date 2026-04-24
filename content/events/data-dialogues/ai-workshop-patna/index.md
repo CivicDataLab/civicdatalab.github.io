@@ -14,5 +14,6 @@ resources:
     title: "Workshop Slide Deck"
     type: Slide Deck
 summary: "A one-day workshop for mid and senior level government officials on understanding the role of Artificial Intelligence in Sustainable Rural Development"
+date: "2024-03-21"
 type: eventdetail
 ---

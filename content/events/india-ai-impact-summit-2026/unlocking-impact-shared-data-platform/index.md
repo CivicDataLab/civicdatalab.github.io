@@ -7,7 +7,7 @@ name: "Unlocking Impact: A Shared Data Platform for AI Innovation - Feb, 2026"
 resources:
 summary: "A session exploring how shared data platforms can strengthen development cooperation and accelerate responsible AI adoption across sectors."
 type: eventdetail
-date: "16 February 2026"
+date: "2026-02-16"
 time: "4:30 PM – 5:30 PM"
 venue: "Bharat Mandapam"
 url: ""

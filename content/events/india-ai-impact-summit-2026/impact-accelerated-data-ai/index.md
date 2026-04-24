@@ -7,7 +7,7 @@ name: "Impact Accelerated: Data & AI Capacity Building Showcase - Feb, 2026"
 resources:
 summary: "A showcase spotlighting global efforts to strengthen data and AI capacity for social impact, bringing together practitioners advancing responsible, scalable innovation worldwide."
 type: eventdetail
-date: "17 February 2026"
+date: "2026-02-17"
 time: "12:00 PM – 2:30 PM"
 venue: "The Claridges, New Delhi"
 url: ""

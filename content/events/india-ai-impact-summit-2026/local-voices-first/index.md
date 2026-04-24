@@ -7,7 +7,7 @@ name: "Local Voices First: Inclusive AI Starts on the Ground - Feb, 2026"
 resources:
 summary: "A session spotlighting why community-led data systems and local context are foundational to building truly inclusive AI."
 type: eventdetail
-date: "17 February 2026"
+date: "2026-02-17"
 time: "3:00 PM – 5:00 PM"
 venue: "Bharat Mandapam"
 url: ""
