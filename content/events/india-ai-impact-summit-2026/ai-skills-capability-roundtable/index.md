@@ -7,7 +7,7 @@ name: "AI Skills & Capability: High-Level Government Roundtable - Feb, 2026"
 resources:
 summary: "A closed-door roundtable focused on strengthening AI readiness across government, spanning leadership capacity, institutional frameworks, and practical pathways to adoption."
 type: eventdetail
-date: "18 February 2026"
+date: "2026-02-18"
 time: "2:00 PM – 4:00 PM"
 venue: "The LaLit, New Delhi"
 url: ""

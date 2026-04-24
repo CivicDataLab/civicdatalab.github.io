@@ -13,7 +13,7 @@ name: "Unlocking Insights for All with Data Commons - Feb, 2026"
 resources:
 summary: "A session exploring how data commons can democratise access to insights and unlock AI-driven public good."
 type: eventdetail
-date: "18 February 2026"
+date: "2026-02-18"
 time: "12:00 PM – 1:00 PM"
 venue: "Bharat Mandapam"
 url: ""

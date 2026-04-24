@@ -9,7 +9,7 @@ name: "Rethinking AI Openness: Data Power, Access & Community Control - Feb, 202
 resources:
 summary: "A roundtable unpacking critical questions around data ownership, openness, and community governance — putting people at the centre of AI ecosystems."
 type: eventdetail
-date: "17 February 2026"
+date: "2026-02-17"
 time: "11:30 AM – 1:30 PM"
 venue: "Le Meridien, New Delhi"
 url: ""

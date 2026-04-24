@@ -16,6 +16,7 @@ resources:
     title: "Press Release"
     type: Doc
 summary: "A two-day discussion to improve access to Government Data, Data Sharing, Data-driven decision-making & Community Building in Assam."
+date: "2022-11-16"
 type: eventdetail
 youtube: "https://www.youtube.com/playlist?list=PLvHFO4BKByIWSD1maNH6Spz66Cc690GGJ"
 ---

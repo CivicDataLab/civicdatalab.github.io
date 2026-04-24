@@ -122,7 +122,7 @@ export default Events;
 
 export const pageQuery = graphql`
   query EventCompQuery {
-    allMarkdownRemark(filter: { frontmatter: { type: { eq: "eventdetail" } } }, sort: { fields: frontmatter___name }) {
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "eventdetail" } } }, sort: { fields: [frontmatter___date, frontmatter___name], order: [DESC, ASC] }) {
       nodes {
         id
         fields {

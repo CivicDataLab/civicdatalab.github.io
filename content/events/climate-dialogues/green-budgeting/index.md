@@ -23,6 +23,7 @@ resources:
     title: "Event Presentations"
     type: Doc
 summary: "Global Perspectives on Data-Driven Green Budgeting"
+date: "2023-09-01"
 type: eventdetail
 url: "https://civicdatalab.in/resources/climate-dialogues-september.pdf"
 youtube: "https://www.youtube.com/watch?v=QAIUNNRIlhE"
