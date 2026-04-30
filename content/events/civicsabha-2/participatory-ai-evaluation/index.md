@@ -9,7 +9,7 @@ image: ./round-t1_2.jpg
 name: "CivicSabha 2.0 - Participatory AI Evaluation for Safe and Trusted Systems"
 resources:
   - 
-    link: "https://drive.google.com/file/d/1gxc3TC7L6e51UyVmbL2_3pFjGG7hJNgo/view?usp=drive_link"
+    link: "https://drive.google.com/file/d/16lef7p29PWTX9Wcz5Y3gn5R6dwxPL3j7/view?usp=sharing"
     title: "Roundtable Report: Participatory AI Evaluation for Safe and Trusted Systems | CivicSabha 2.0"
     type: Report
 summary: ""
