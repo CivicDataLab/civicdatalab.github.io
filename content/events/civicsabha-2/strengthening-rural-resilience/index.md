@@ -9,7 +9,7 @@ image: ./round-t2_3.jpg
 name: "CivicSabha 2.0 - Strengthening Rural Resilience, Employment and Livelihoods through Digital Decision Tools"
 resources:
   - 
-    link: "https://drive.google.com/file/d/1ZvsbwQIQoGLp0VrMWHz-LaHE5svjtv5c/view?usp=drive_link"
+    link: "https://drive.google.com/file/d/14nRzwCiP-NLZRnCxhey2ziq5zkygTY4D/view?usp=sharing"
     title: "Roundtable Report: Strengthening Rural Resilience, Employment & Livelihoods through Digital Decision Tools | CivicSabha 2.0"
     type: Report
 summary: ""
