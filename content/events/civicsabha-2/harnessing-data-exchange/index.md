@@ -9,7 +9,7 @@ image: ./round-t4_2.jpg
 name: "CivicSabha 2.0 - Harnessing Data Exchange to Drive Economic Growth and Inclusion"
 resources:
   - 
-    link: "https://drive.google.com/file/d/1HY70ySxLpRtHGFGYTsBIcALN-YhzxBYi/view?usp=drive_link"
+    link: "https://drive.google.com/file/d/1QjrqaOfysnbCLh_NHS8sECPYniZHwIpq/view?usp=sharing"
     title: "Roundtable Report: Harnessing Data Exchange to Drive Economic Growth and Inclusion | CivicSabha 2.0"
     type: Report
 summary: ""
