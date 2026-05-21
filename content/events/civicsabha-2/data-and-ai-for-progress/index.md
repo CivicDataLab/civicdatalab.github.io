@@ -11,9 +11,9 @@ image: ./planery_3.jpg
 name: "CivicSabha 2.0 - Data & AI for Progress - Scaling Innovation for Economic Growth and Social Good"
 resources:
   - 
-    link: "https://drive.google.com/file/d/1xnL4p0kE-F-xigKwgHHLACyQOEE-BrA2/view?usp=drive_link"
-    title: "Plenary Report: Data & AI for Progress - Scaling Innovation for Economic Growth and Social Good | CivicSabha 2.0"
-    type: Report
+    link: 
+    title: 
+    type: 
 summary: ""
 type: eventdetail
 date: "2026-02-13"
