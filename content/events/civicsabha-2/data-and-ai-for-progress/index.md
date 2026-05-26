@@ -11,9 +11,9 @@ image: ./planery_3.jpg
 name: "CivicSabha 2.0 - Data & AI for Progress - Scaling Innovation for Economic Growth and Social Good"
 resources:
   - 
-    link: 
-    title: 
-    type: 
+    link: "https://drive.google.com/file/d/1Ty6_lF-kX9FPgv2SjryyakqFeRhaEx82/view?usp=sharing"
+    title: "Roundtable Report: Data & AI for Progress - Scaling Innovation for Economic Growth and Social Good"
+    type: Report
 summary: ""
 type: eventdetail
 date: "2026-02-13"
