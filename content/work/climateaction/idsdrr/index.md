@@ -1,32 +1,48 @@
 ---
-name: Intelligent Data Solution for Disaster Risk Reduction
+name: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR)
 image: ./image.png
 summary: 
-context: "Intense climate-related disasters are on the rise worldwide. Floods are the most frequent of natural disasters, causing widespread devastation, loss of life and livelihoods as well as property damage and critical infrastructure failures.
+context: "Climate risks linked to a 1.5 °C rise in global temperatures pose serious threats to both human populations and ecosystems. Between 1995 and 2015, the Centre for Research on the Epidemiology of Disasters (CRED) and the United Nations Office for Disaster Risk Reduction (UNDRR) [reported](https://www.unisdr.org/files/46796_cop21weatherdisastersreport2015.pdf) a significant increase in weather-related disasters, largely driven by more frequent storm and flood events. Among these, floods alone accounted for nearly 47% of all weather-related extreme events worldwide, affecting around 2.3 billion people (95% of whom reside in Asia). 
 
 
-The urgent need for coordinated action, highlighted in international frameworks such as the Conference of the Parties (COP) and the Sendai Framework for Disaster Risk Reduction (DRR), stresses upon the importance of leveraging data to drive effective strategies, investments, policies and actions to address climate change.
+Given the context, efficient disaster preparedness is crucial, but long-term resilience must be the ultimate goal. The fragmented and siloed nature of data, dispersed across various departments, systems, locations, and formats, impedes decision-makers' ability to cultivate necessary capacity and to access, analyse, and utilise data in a timely and coherent manner. This is particularly evident in the context of resource mobilisation for fostering long-term resilience against natural disasters. 
 
 
-A significant obstacle in leveraging data for effective climate action and DRR is the fragmented and siloed nature of data making it challenging for decision-makers to build the required capacity, access, analyse and utilise data in a timely and coherent manner, especially for resource mobilisation for building long-term resilience. This results in inefficient processes and policies, along with ad-hoc responses that fail to create data-driven DRR informed by the nuanced local realities."
-solution: "To address these barriers, we have developed the Intelligent Data Solution for Disaster Risk Reduction [(IDS-DRR)](/IDS-DRR.pdf), which brings together government spending and procurement data from diverse and complex datasets. It highlights flood hazard, exposure, losses and damages and vulnerability through these datasets and can be used as  a crucial innovation that will help both governments and vulnerable communities to better prepare for floods through more robust flood planning and management activities. 
+Furthermore, decision-makers frequently encounter difficulties in making data-informed decisions that accurately reflect or prioritise the most pressing needs. Too often, disaster risk reduction decisions are reactive, made on a first-come-first-served basis, ‘best guess’ or based on public outcry and media coverage without taking socio-economic, demographic and other vulnerability data into account which further exacerbates inequities and reduces resilience."
 
+solution: "[Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR)](https://drr.open-contracting.in/en), developed by [CivicDataLab](https://civicdatalab.in/), is an open-access, AI-based platform that integrates high-value datasets including satellite imagery, demographics, losses and damages, government spending and socio-economic vulnerability. It uses AI and statistical modelling to provide actionable insights on disaster risk which can be used by authorities and vulnerable communities to better prepare for floods. It helps authorities to take timely, data-driven decisions, prioritise public funds and conduct public procurement in a manner that strengthens long-term disaster risk reduction and protects the most vulnerable people from the adverse effects of extreme weather events. We have tested IDS-DRR in the Indian states, viz. Assam and Himachal Pradesh and are scaling to three additional Indian states of Odisha, Bihar and Uttar Pradesh. We are now  working towards scaling it in Thailand, Philippines and Indonesia." 
 
-It can help minimise the worst effects of hydro-meteorological disasters for both  vulnerable communities and geographies in addition to strengthening repair and restoration of essential infrastructure and services in the aftermath of floods. 
-
-
-We have tried and tested our AI solution in the state of Assam in India and are in the process of scaling this proven solution from one disaster prone geography to four additional states in India (Himachal Pradesh, Odisha, Bihar and Uttar Pradesh) as well as in Bangkok, Thailand. We are working towards further scaling this data driven solution  to other Asian geographies namely - Indonesia, Philippines and Vietnam."
 url: https://drr.open-contracting.in/en
 twitter:
 linkedin:
 github:
 resources:
   - {
-      title: 'VIDEO: Intelligent Data Solution for Disaster Risk Reduction Platform',
+      title: 'Explainer Video: Intelligent Data Solution for Disaster Risk Reduction Platform',
       link: '/IDS-DRR Video.mp4',
       type: 'Video'
     }
-  -  {
+  - {
+      title: 'Improving climate resilience in flood-prone Assam, India',
+      link: 'https://www.open-contracting.org/2023/09/28/improving-climate-resilience-in-flood-prone-assam-india/',
+      type: 'Report'
+    }
+  - {
+      title: 'Enhancing data-driven decision making for flood governance in Bihar and Uttar Pradesh, India',
+      link: 'https://medium.com/civicdatalab/enhancing-data-driven-decision-making-for-flood-governance-in-bihar-and-uttar-pradesh-india-54324459c79c',
+      type: 'Blog'
+    }
+  - {
+      title: 'IDS-DRR Documentation',
+      link: 'https://ids-drr.readthedocs.io/en/latest/index.html',
+      type: 'Doc'
+    }
+  - {
+      title: 'FOSS United talk on the methodology and context:',
+      link: 'https://youtu.be/BkulGPeE2E4',
+      type: 'Video'
+    }
+  - {
       title: 'Assam Risk Score Model',
       link: 'https://github.com/CivicDataLab/IDS-DRR-Assam-Risk-Model',
       type: 'Repo'
