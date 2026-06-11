@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/niharika-das-669aa981/
 behance:
 image: ./Niharika.jpg
 sectors: Climate Action
-projects: Intelligent Data Solution for Disaster Risk Reduction
+projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR)
 accentcolor:
 text:
 ---
