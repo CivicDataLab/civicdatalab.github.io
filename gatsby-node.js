@@ -6,6 +6,7 @@ const sectorTemplate = path.resolve('./src/templates/sector.js');
 const projectTemplate = path.resolve('./src/templates/project.js');
 const eventTemplate = path.resolve('./src/templates/event.js');
 const eventdetailTemplate = path.resolve('./src/templates/eventdetail.js');
+const escapeRegex = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === 'MarkdownRemark') {
@@ -130,7 +131,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: sectorTemplate,
       context: {
         id: sector.node.id,
-        nameRegex: `/${sector.node.frontmatter.name}/`
+        nameRegex: `/${escapeRegex(sector.node.frontmatter.name)}/`
       }
     });
   });
@@ -141,7 +142,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: projectTemplate,
       context: {
         id: project.node.id,
-        nameRegex: `/${project.node.frontmatter.name}/`
+        nameRegex: `/${escapeRegex(project.node.frontmatter.name)}/`
       }
     });
   });
@@ -152,7 +153,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: eventTemplate,
       context: {
         id: event.node.id,
-        nameRegex: `/${event.node.frontmatter.name}/`
+        nameRegex: `/${escapeRegex(event.node.frontmatter.name)}/`
       }
     });
   });
@@ -163,7 +164,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: eventdetailTemplate,
       context: {
         id: eventdetail.node.id,
-        nameRegex: `/${eventdetail.node.frontmatter.name}/`
+        nameRegex: `/${escapeRegex(eventdetail.node.frontmatter.name)}/`
       }
     });
   });
