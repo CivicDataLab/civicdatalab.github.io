@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/saurabh-levin-82a1a625/
 behance:
 image: ./Saurabh.jpg
 sectors: Climate Action
-projects: Intelligent Data Solution for Disaster Risk Reduction, CivicDataSpace, Dataset Onboarding Support Team DOST
+projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), CivicDataSpace, Dataset Onboarding Support Team DOST
 accentcolor:
 text:
 ---

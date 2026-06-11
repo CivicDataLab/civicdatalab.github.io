@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/shuchita-rawal-92697bb8/
 behance:
 image: ./Shuchita.jpg
 sectors: Climate Action
-projects: Bangkok Metropolitan Administration’s Flood Risk Management Platform
+projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), Bangkok Metropolitan Administration’s Flood Risk Management Platform
 accentcolor:
 text:
 ---
