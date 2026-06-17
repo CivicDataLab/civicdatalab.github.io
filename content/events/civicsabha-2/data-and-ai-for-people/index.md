@@ -11,7 +11,7 @@ image: ./planery_1.jpg
 name: "CivicSabha 2.0 - Data & AI for People - Building Human Capital & Inclusive Workforce"
 resources:
   - 
-    link: "https://drive.google.com/file/d/1EkQeb17HFOHQ_BCkzgHsyTUx8WZKCoMe/view?usp=drive_link"
+    link: "https://drive.google.com/file/d/1sLOK6ed69zBLfsXivpr4XSky69-exXFx/view?usp=sharing"
     title: "Plenary Report: Data & AI for People - Building Human Capital & Inclusive Workforce | CivicSabha 2.0"
     type: Report
 summary: ""

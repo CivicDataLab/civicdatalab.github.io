@@ -11,7 +11,7 @@ image: ./planery_2.jpg
 name: "CivicSabha 2.0 - Data & AI for Planet - Strengthening Climate Resilience and Sustainability"
 resources:
   - 
-    link: "https://drive.google.com/file/d/1S5R5Re8nfJbCqnPsS0_9mJSva9S2r1kG/view?usp=drive_link"
+    link: "https://drive.google.com/file/d/1IdQ9roGhCA-2Zcj1yq_0CkX-Rr-hDLzB/view?usp=sharing"
     title: "Plenary Report: Data & AI for Planet - Strengthening Climate Resilience and Sustainability | CivicSabha 2.0"
     type: Report
 summary: ""
