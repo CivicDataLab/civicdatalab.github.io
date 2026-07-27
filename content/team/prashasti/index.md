@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/prashastiyadav/
 image: ./prashasti.jpeg
 accentcolor: 
 sectors: 
-projects: 
+projects: "Data-Driven Decision Making (DDDM) Micro-Credential Course, Understanding Data: Practical Foundations for Non-Tech Learners"
 text:
 ---
 
