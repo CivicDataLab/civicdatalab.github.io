@@ -5,5 +5,5 @@ logo: ./DS2S.png
 testimonial:
 website: https://www.ds2snetwork.com/about
 sectors: DPG&I and Responsible AI
-projects: "Understanding Data: Practical Foundations for Non-Tech Learners"
+projects: "Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven Decision Making (DDDM) Micro-Credential Course"
 ---

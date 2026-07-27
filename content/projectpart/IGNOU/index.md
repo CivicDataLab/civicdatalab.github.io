@@ -5,5 +5,5 @@ logo: ./IGNOU.png
 testimonial:
 website: https://www.ignou.ac.in/
 sectors: DPG&I and Responsible AI
-projects: "Understanding Data: Practical Foundations for Non-Tech Learners"
+projects: "Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven Decision Making (DDDM) Micro-Credential Course"
 ---

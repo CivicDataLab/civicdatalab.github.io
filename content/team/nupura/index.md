@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/nupuragawde
 image: ./nupura.jpeg
 accentcolor: 
 sectors: Education, DPG&I and Responsible AI
-projects: "Democratising Action for Attainment, Open Budgets India Platform - 2.0, ParakhAI, Building a Unified National Data Exchange Platform for Better Data Governance, Understanding Data: Practical Foundations for Non-Tech Learners"
+projects: "Democratising Action for Attainment, Open Budgets India Platform - 2.0, ParakhAI, Building a Unified National Data Exchange Platform for Better Data Governance, Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven Decision Making (DDDM) Micro-Credential Course"
 ---
 
 My approach is highly interactive and user centric. As a reseracher, I believe in understanding users' pain areas and having an empathetic approach to the research process. Being from a design background my focus highly relies on Design Thinking Methodologies.
