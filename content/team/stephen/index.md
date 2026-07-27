@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/stephen-s-mathew-991079217/
 image: ./stephen.jpg
 sectors:
-projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR)
+projects: "Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), Understanding Data: Practical Foundations for Non-Tech Learners"
 text:
 ---
 
