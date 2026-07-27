@@ -5,5 +5,5 @@ logo: ./MOE.png
 testimonial:
 website: https://www.education.gov.in/
 sectors: DPG&I and Responsible AI
-projects: "Understanding Data: Practical Foundations for Non-Tech Learners"
+projects: "Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven Decision Making (DDDM) Micro-Credential Course"
 ---
