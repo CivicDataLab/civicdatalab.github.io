@@ -10,7 +10,7 @@ linkedin: https://www.linkedin.com/in/msaqibmanan/
 behance:
 image: ./saqib.jpg
 sectors: DPG&I and Responsible AI
-projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), ParakhAI, CivicDataSpace
+projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), ParakhAI, CivicDataSpace, Building a Unified National Data Exchange Platform for Better Data Governance
 accentcolor:
 text:
 ---
