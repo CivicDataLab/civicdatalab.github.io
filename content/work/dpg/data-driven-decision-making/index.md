@@ -25,7 +25,7 @@ solution: |
   Upon successful completion, learners earn a recognised micro-credential demonstrating practical competency in data-driven decision-making.
 
   The course is ideal for students and early-career professionals, researchers and development practitioners, government officials and civil society professionals, and anyone with basic familiarity with data seeking to strengthen practical data literacy. No prior experience in coding, statistics, or data science is required.
-url:
+url: https://onlinecourses.swayam2.ac.in/e-learning/preview/nou26_mg22
 twitter:
 linkedin:
 github:
