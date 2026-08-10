@@ -92,6 +92,11 @@ resources:
       link: 'https://www.syllad.com/asdma-collaborates-with-cdl-to-build-an-intelligent-data-solution-for-disaster-risk-reduction/',
       type: 'Article'
     } 
+  - {
+      title: 'Using the IDS-DRR Platform: A Practical Guide for Making Resource Allocation Decisions',
+      link: 'https://medium.com/civicdatalab/using-the-ids-drr-platform-a-practical-guide-for-making-resource-allocation-decisions-557b46a07525?postPublishedType=repub',
+      type: 'Blog'
+    }
   
 sector: Climate Action
 type: project
