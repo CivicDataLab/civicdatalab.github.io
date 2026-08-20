@@ -1,6 +1,6 @@
 ---
 name: Saurabh Levin
-role: Associate Data Lead
+role: Data & AI Lead
 medium:
 description:
 quote:
@@ -8,7 +8,7 @@ github: https://github.com/saurabhlevin
 twitter: 
 linkedin: https://www.linkedin.com/in/saurabh-levin-82a1a625/
 behance:
-image: ./Saurabh.jpg
+image: ./saurabh.png
 sectors: Climate Action
 projects: "Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), CivicDataSpace, Dataset Onboarding Support Team DOST, Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven Decision Making (DDDM) Micro-Credential Course"
 accentcolor:

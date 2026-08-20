@@ -1,6 +1,6 @@
 ---
 name: Shuchita Rawal
-role: Open Contracting India Lead
+role: Lead - Strategic Partnership, Growth & Inclusion
 medium:
 description:
 quote:
