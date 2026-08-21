@@ -1,6 +1,6 @@
 ---
 name: Saqib Manan
-role: Quality Assurance Engineer
+role: Senior SDET & DevOps Engineer
 medium:
 description:
 quote:
@@ -15,8 +15,8 @@ accentcolor:
 text:
 ---
 
-Saqib works as a Quality Assurance Specialist. Embracing the essence of simplicity, Saqib ensures that quality shines through in every line of code, making web apps accessible, inclusive, and efficient.
+Saqib is CivicDataLab's Senior SDET & DevOps Engineer, owning the quality of our products and the platform they run on. His remit spans cloud architecture, delivery pipelines, observability, and performance tuning — the engineering foundation that lets our teams ship confidently and often. He keeps that foundation lean and legible, infrastructure that's understood, not merely inherited, so the web apps we release stay accessible, inclusive, and efficient for everyone who opens them.
 
-Beyond the digital realm, he finds inspiration in minimalistic designs, anime adventures, capturing life's moments, savoring diverse cuisines.
+Away from the terminal, the same instinct for simplicity follows him around: minimal design, long-running anime, a camera for the moments worth keeping, and a standing curiosity about food he hasn't tried yet.
 
 With a holistic approach, Saqib thrives in the pursuit of excellence, both in his professional endeavors and the passions that fuel his spirit.
