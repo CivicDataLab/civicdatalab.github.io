@@ -8,7 +8,7 @@ github:
 twitter: 
 linkedin: https://www.linkedin.com/in/aashi-srivastava-a9413ba8/
 behance:
-image: ./Aashi.JPG
+image: ./Aashi.jpg
 sectors: Climate Action
 projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR)
 accentcolor:

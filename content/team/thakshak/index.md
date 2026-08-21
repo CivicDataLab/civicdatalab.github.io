@@ -7,7 +7,7 @@ quote:
 github:
 twitter:
 linkedin: https://www.linkedin.com/in/thakshak-b-145222272/
-image: thakshak.jpeg
+image: thakshak.jpg
 sectors:
 projects:
 ---

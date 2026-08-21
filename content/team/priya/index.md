@@ -7,7 +7,7 @@ quote: You can't wait for inspiration, you have to go after it.
 github: 
 twitter: 
 linkedin: https://www.linkedin.com/in/priya-yadav-7b9a6a24b
-image: ./priya.png
+image: ./priya.jpg
 accentcolor: 
 sectors: 
 projects: 

@@ -1,13 +1,13 @@
 ---
 name: Nupura
-role: Initiative Lead - DPG&I and Responsible AI & Infrastructure
+role: Initiative Lead - Digital Public Goods and Infrastructure (DPG&I)
 medium:
 description: 
 quote: 
 github: https://github.com/Gnupura
 twitter:
 linkedin: https://www.linkedin.com/in/nupuragawde
-image: ./nupura.jpeg
+image: ./nupura.jpg
 accentcolor: 
 sectors: Education, DPG&I and Responsible AI
 projects: "Democratising Action for Attainment, Open Budgets India Platform - 2.0, ParakhAI, Building a Unified National Data Exchange Platform for Better Data Governance, Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven Decision Making (DDDM) Micro-Credential Course"

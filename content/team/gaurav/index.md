@@ -1,6 +1,6 @@
 ---
 name: Gaurav Godhwani
-role: Founder
+role: Founder & CEO
 medium:
 description:
 quote: The problems we face are always going to be more than the solutions we have. Thus, try co-creating your solutions in open so that these can reach to more people.
