@@ -1,13 +1,13 @@
 ---
 name: Aparna
-role: Product Designer
+role: Associate Product Design - Consultant
 medium: https://medium.com/@daytimedesigner
 description:
 quote: Good design, when it's done well, becomes invisible. - Jared Spool
 github:
 twitter: https://twitter.com/daytimedesigner
 linkedin: https://www.linkedin.com/in/aparnaraghuram/
-image: ./aparna.png
+image: ./aparna.jpg
 accentcolor: '#b8383b'
 sectors:
 projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), Bangkok Metropolitan Administration’s Flood Risk Management Platform, CivicDataSpace, ParakhAI

@@ -1,6 +1,6 @@
 ---
 name: Niharika Das
-role: Associate State Lead Partnerships and Growth- Assam
+role: State Lead Assam - Partnerships & Growth
 medium:
 description:
 quote:
@@ -8,7 +8,7 @@ github:
 twitter: 
 linkedin: https://www.linkedin.com/in/niharika-das-669aa981/
 behance:
-image: ./Niharika.jpg
+image: ./Niharika.png
 sectors: Climate Action
 projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR)
 accentcolor:

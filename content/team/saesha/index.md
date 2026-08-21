@@ -8,7 +8,7 @@ github: https://github.com/psaesha
 twitter:
 linkedin: https://www.linkedin.com/in/saesha-parekh/
 behance:
-image: ./saesha.jpg
+image: ./saesha.png
 sectors:
 projects: ParakhAI, Dataset Onboarding Support Team DOST
 accentcolor:
