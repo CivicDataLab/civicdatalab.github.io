@@ -1,5 +1,5 @@
 ---
-name: Shweta Chaudhary
+name: Shweta Jain Chaudhury
 role: Head of Data & AI Products 
 medium:
 description:
