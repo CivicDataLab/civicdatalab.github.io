@@ -1,4 +1,4 @@
---- 
+---
 context: |
     CivicDataLab recently facilitated a one-day workshop in Patna, Bihar, aimed at providing mid and senior-level officials from the Department of Rural Development, Government of Bihar, with insights into Artificial Intelligence (AI) technology. The agenda covered fundamental AI concepts, discussion of AI use-cases tailored to Bihar's agricultural context, and deliberation on ethical considerations and risk mitigation strategies.
     

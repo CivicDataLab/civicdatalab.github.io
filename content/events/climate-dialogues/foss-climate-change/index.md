@@ -1,4 +1,4 @@
---- 
+---
 context: |
    We kickstart the series by learning from the Asian leaders about uses and applications of Free & Open-source Software (FOSS) Solutions for Climate Change Adaptation in their respective countries. The discussions include various benefits, challenges and opportunities that FOSS building blocks, products and community bring in combating climate change.
 eventtype: "Climate Dialogues"
