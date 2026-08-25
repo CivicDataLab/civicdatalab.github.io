@@ -40,6 +40,20 @@ Prerequisites: NodeJS must be installed on your machine.
 3. To build the website, run `npm run build`.
 4. To run the local build, run the following command: `npm run serve`.
 
+## Content Management (CMS)
+
+Non-technical editors can update site content (team, alumni, partners, projects, events, openings) through a browser UI at `/admin/` instead of editing markdown by hand, powered by [Decap CMS](https://decapcms.org/) reading `static/admin/config.yml`.
+
+**In production:** visit `https://civicdatalab.in/admin/`, sign in with your **CivicDataLab Keycloak account** — the same one you use for other CDL products, no GitHub account needed — then edit an entry and save. With `editorial_workflow` on, saving opens a PR against `main` for a reviewer to check before it goes live.
+
+Sign-in and all GitHub access go through [`cms-auth-proxy`](cms-auth-proxy/) at `cms-auth.civicdatalab.in`, which verifies your Keycloak token and commits on your behalf using a GitHub App. See `cms-keycloak-design.md` for the architecture.
+
+**Local development.** The CMS talks to `cms-auth-proxy` in every environment, including localhost — there is no separate offline mode. Run the proxy locally and point `base_url`/`api_root` at it; see [`cms-auth-proxy/README.md`](cms-auth-proxy/README.md) under *Testing*.
+
+> Decap's `local_backend` option is deliberately **not** used. On localhost it makes Decap prefer its own git proxy and skip `cms-auth-proxy` entirely — so a local test would silently exercise none of the real auth path. Editing markdown directly in the `content/` folder covers the offline case it was there for.
+
+See `cms-strategy.md` for the overall plan and `cms-keycloak-design.md` for the authentication architecture.
+
 ## Wiki
 You can find guides on how to add/update project and bandhu level info [here](https://github.com/CivicDataLab/civicdatalab.github.io/wiki).
 
