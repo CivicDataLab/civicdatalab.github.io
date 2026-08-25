@@ -1,4 +1,4 @@
---- 
+---
 context: |
     In continuation to our journey, we have conducted another round of Data Dialogue in November 2022 with a forum for various government agencies, civil societies, academia, media and other actors coming together and adding their ideas and insights to shape data-driven policy discourse in the state. Our event was a one-day consultation, on 16th November 2022, in collaboration with the Open Contracting Partnership (OCP) and Assam Start Up. The objective of this event was focused on the launch of Intelligent Data Ecosystem for Assam – Flood Response Management (IDEA-FRM) report & datasets along with consultations on Green Budget and sessions on Innovative solutions to Climate Change and Success Stories around the world of partnerships for Climate Action. 
     
