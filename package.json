@@ -48,6 +48,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": ""
+    "test": "",
+    "cms:local": "bash scripts/cms-config.sh local",
+    "cms:prod": "bash scripts/cms-config.sh prod",
+    "cms:status": "bash scripts/cms-config.sh status"
   }
 }

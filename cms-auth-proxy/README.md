@@ -255,7 +255,17 @@ DEBUG=true
 npm start
 ```
 
-**4. CMS** — in `static/admin/config.yml`, temporarily:
+**4. CMS** — from the repository root:
+
+```bash
+npm run cms:local      # rewrites static/admin/config.yml to point here
+```
+
+That reads `GITHUB_REPO` and `PUBLIC_URL` straight out of this service's `.env`,
+so the two cannot disagree. Restore with `npm run cms:prod` before committing;
+`npm run cms:status` says which mode you are in.
+
+<details><summary>What it writes, if you prefer to do it by hand</summary>
 
 ```yaml
 backend:
@@ -268,6 +278,8 @@ backend:
 
 # NOTE: local_backend is intentionally absent - see below
 ```
+
+</details>
 
 > **Never add `local_backend: true`.** On localhost Decap prefers its own git
 > proxy and never calls this service at all - the CMS would appear to work

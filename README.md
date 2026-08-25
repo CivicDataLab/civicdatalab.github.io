@@ -48,7 +48,16 @@ Non-technical editors can update site content (team, alumni, partners, projects,
 
 Sign-in and all GitHub access go through [`cms-auth-proxy`](cms-auth-proxy/) at `cms-auth.civicdatalab.in`, which verifies your Keycloak token and commits on your behalf using a GitHub App. See `cms-keycloak-design.md` for the architecture.
 
-**Local development.** The CMS talks to `cms-auth-proxy` in every environment, including localhost — there is no separate offline mode. Run the proxy locally and point `base_url`/`api_root` at it; see [`cms-auth-proxy/README.md`](cms-auth-proxy/README.md) under *Testing*.
+**Local development.** The CMS talks to `cms-auth-proxy` in every environment, including localhost — there is no separate offline mode. The committed `config.yml` points at production, so switch it over first:
+
+```bash
+npm run cms:local      # point config.yml at a locally-run proxy
+npm run develop        # site on :8000  (proxy: cd cms-auth-proxy && npm start)
+npm run cms:prod       # ALWAYS restore before committing
+npm run cms:status     # which mode am I in?
+```
+
+`cms:local` reads the repo and URL from `cms-auth-proxy/.env`, so `base_url` cannot drift from the proxy's `PUBLIC_URL` — a mismatch there makes the login hang silently. Full walkthrough in [`cms-auth-proxy/README.md`](cms-auth-proxy/README.md) under *Testing*.
 
 > Decap's `local_backend` option is deliberately **not** used. On localhost it makes Decap prefer its own git proxy and skip `cms-auth-proxy` entirely — so a local test would silently exercise none of the real auth path. Editing markdown directly in the `content/` folder covers the offline case it was there for.
 
