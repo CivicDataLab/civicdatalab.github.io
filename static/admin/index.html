@@ -46,9 +46,58 @@
           (parent || el).style.display = 'none';
         });
       }
-      var observer = new MutationObserver(hideDecapBranding);
+
+      // Relabel the login button.
+      //
+      // Decap's stock `github` backend renders "Login with GitHub" because it
+      // is, as far as it knows, talking to GitHub. Here it is talking to
+      // cms-auth-proxy, which authenticates against CivicDataLab's Keycloak -
+      // editors do not have or need GitHub accounts. Leaving the default label
+      // would contradict exactly what they are told during onboarding.
+      //
+      // The GitHub mark is hidden for the same reason.
+      var LOGIN_LABEL = 'Sign in';
+      function relabelLoginButton() {
+        document.querySelectorAll('button, a').forEach(function (el) {
+          if (!/login with github/i.test(el.textContent || '')) return;
+
+          // Replace only text nodes, leaving Decap's own DOM structure intact.
+          (function walk(node) {
+            node.childNodes.forEach(function (child) {
+              if (child.nodeType === 3) {
+                if (/login with github/i.test(child.nodeValue)) {
+                  child.nodeValue = LOGIN_LABEL;
+                }
+              } else if (child.nodeType === 1) {
+                if (child.tagName.toLowerCase() === 'svg') {
+                  // Hide the icon's *wrapper*, not the svg itself. Decap wraps
+                  // it in a span carrying `margin-right: 18px`; hiding only the
+                  // svg leaves that margin behind, shunting the label off
+                  // centre inside a fixed-width button.
+                  var wrapper = child.parentElement;
+                  ((wrapper && wrapper !== el) ? wrapper : child).style.display = 'none';
+                } else {
+                  walk(child);
+                }
+              }
+            });
+          })(el);
+
+          // The button is display:flex with justify-content:normal, sized to fit
+          // icon + label. With the icon gone, centre what is left.
+          el.style.justifyContent = 'center';
+          el.setAttribute('aria-label', LOGIN_LABEL);
+        });
+      }
+
+      function applyCustomisations() {
+        hideDecapBranding();
+        relabelLoginButton();
+      }
+
+      var observer = new MutationObserver(applyCustomisations);
       observer.observe(document.body, { childList: true, subtree: true });
-      var interval = setInterval(hideDecapBranding, 500);
+      var interval = setInterval(applyCustomisations, 500);
       setTimeout(function () { clearInterval(interval); }, 10000);
     </script>
   </body>
