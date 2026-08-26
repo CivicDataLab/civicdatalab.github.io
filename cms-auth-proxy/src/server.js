@@ -16,8 +16,8 @@ try {
 
 const app = createApp(cfg);
 
-const server = app.listen(cfg.port, () => {
-  console.log(`cms-auth-proxy listening on :${cfg.port}`);
+const server = app.listen(cfg.port, cfg.host, () => {
+  console.log(`cms-auth-proxy listening on ${cfg.host}:${cfg.port}`);
   console.log(`  repo    ${cfg.github.repo}`);
   console.log(`  issuer  ${cfg.keycloak.issuer}`);
   console.log(`  client  ${cfg.keycloak.clientId}`);

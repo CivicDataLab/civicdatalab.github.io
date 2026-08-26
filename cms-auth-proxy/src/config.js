@@ -64,6 +64,15 @@ export function loadConfig(env = process.env) {
     port: Number(optional('PORT', '3000')),
 
     /**
+     * Interface to bind. Defaults to loopback: this service is meant to sit
+     * behind nginx or Caddy terminating TLS, and binding all interfaces would
+     * expose the plain-HTTP port directly on the host's public address if a
+     * security group ever allowed it. Set 0.0.0.0 only when something else
+     * provides the boundary - a container network, for instance.
+     */
+    host: optional('HOST', '127.0.0.1'),
+
+    /**
      * This service's own public origin. Two things depend on it being exact:
      * the OAuth redirect_uri registered in Keycloak, and Decap's popup
      * handshake, which compares `event.origin` against the configured

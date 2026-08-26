@@ -10,8 +10,11 @@ reaches the browser.
 See [`../cms-keycloak-design.md`](../cms-keycloak-design.md) for the full design
 and rationale.
 
-> **Status: built and unit-tested, not yet deployed.** Requires a GitHub App, a
-> Keycloak client, and a host — none of which exist yet. See *Still needed*.
+> **Status: verified end to end, not yet deployed.** On 2026-08-26 a full login,
+> edit and save was exercised against the real Keycloak and a real GitHub App,
+> producing a pull request whose commit was authored by the editor. That run used
+> a personal App against a fork; production still needs an org-owned App and a
+> host. See *Still needed*.
 
 ## What it does, per request
 
@@ -346,7 +349,8 @@ Only after tier 3 passes. Same thing with `PUBLIC_URL` and `base_url` set to
 
 - Installation tokens last ~1 hour; the provider refreshes 5 minutes early and
   collapses concurrent refreshes into one request.
-- Bind to localhost and put TLS in front (Caddy or nginx). Do not expose the
-  Node port directly.
+- Binds `127.0.0.1` by default, so TLS must be terminated in front of it
+  (Caddy or nginx). Override with `HOST` only when something else provides that
+  boundary, such as a container network.
 - `DEBUG=true` logs method, path, status, and actor email per request. Leave it
   off in production.
