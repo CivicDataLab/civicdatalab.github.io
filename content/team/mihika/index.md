@@ -7,8 +7,8 @@ github:
 twitter:
 linkedin: https://www.linkedin.com/in/mihika-wakhloo-760ab2b1/
 image: mihika.jpg
-sectors:
-projects: 
+sectors: Gender & Inclusion
+projects: Building FemHealth Data Collaborative in Assam
 ---
 
 Mihika Wakhloo is a public health and development professional with over eight years of experience working across nutrition, large-scale staple food fortification, community health, tuberculosis, gender and inclusion, and public health systems in India. Her work focuses on using data, evidence, and programme learning to strengthen public systems and inform equitable policy and practice. Her expertise includes programme management, data and monitoring, quality assurance and regulatory compliance, government engagement, policy advocacy, and capacity building.
