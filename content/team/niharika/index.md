@@ -9,7 +9,7 @@ twitter:
 linkedin: https://www.linkedin.com/in/niharika-das-669aa981/
 behance:
 image: ./Niharika.png
-sectors: Climate Action
+sectors: Climate Action, Gender & Inclusion
 projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR)
 accentcolor:
 text:
