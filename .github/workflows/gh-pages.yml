@@ -4,9 +4,14 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
+  # PR-time check only: proves the site still builds before anything reaches main.
   build:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,18 +24,29 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      # - name: Cache node modules
-      #   uses: actions/cache@v2
-      #   env:
-      #     cache-name: cache-node-modules
-      #   with:
-      #     path: ~/.npm
-      #     key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-build-${{ env.cache-name }}-
-      #       ${{ runner.os }}-build-
-      #       ${{ runner.os }}-
       - run: npm install
+      - run: npm run build
+
+  deploy:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    # Holds the job until a reviewer approves it, so nothing reaches
+    # civicdatalab.in unattended. Configured in Settings > Environments.
+    environment: production
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      # Rebuilds instead of reusing the build job's output: the built site runs
+      # to hundreds of MB, so an artifact round-trip costs more than a rebuild.
       - run: npm run build
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
