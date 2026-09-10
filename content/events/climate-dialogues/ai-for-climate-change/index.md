@@ -1,4 +1,4 @@
---- 
+---
 context: |
     In the third webinar held on 8th August 2023, the panelists shared their learnings, use cases, and approaches to leveraging digital technologies for different sectors such as agriculture, irrigation, public health, and pollution.  They jointly stressed the need to share data and algorithms in the open to encourage further collaborations, which is the essence of DPG&I and Responsible AI (DPG) and how AI models can be used and leveraged to build a more sustainable and resilient future. 
 eventtype: "Climate Dialogues"

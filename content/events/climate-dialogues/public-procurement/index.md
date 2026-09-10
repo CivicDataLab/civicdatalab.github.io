@@ -1,4 +1,4 @@
---- 
+---
 context: |
     In the second webinar held on 27th June 2023, we focused on harnessing public procurement for delivering sustainable and green solutions to climate change. We took a deep dive into understanding how public procurement is instrumental in delivering green actions and the role of data and technological innovations.
 eventtype: "Climate Dialogues"

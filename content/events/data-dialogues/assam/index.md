@@ -1,4 +1,4 @@
---- 
+---
 context: |
     We have started a new series - Data Dialogues, a forum for various government agencies, civil societies, academia, media and other actors to come together and shape data-driven policy discourse in the country. Our first event in the series was Data Dialogues - Assam, a two-day consultation, on 21st and 22nd March 2022, in collaboration with the Open Government Data (OGD) - project management team at the National Informatics Centre (NIC). The objective of this consultation was to understand how to improve the publishing of government data and enable data sharing to strengthen access to information and enhance the state’s efficiency in governance. The objective was also to hear from the non-government actors working in different sectors about the public data they use, how they use it and the challenges they face.
     
