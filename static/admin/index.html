@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivicDataLab | Content Manager</title>
+  </head>
+  <style>
+    #splash {
+      position: fixed;
+      inset: 0;
+      background: #eff0f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+    #splash img { width: 180px; }
+    img[src="/cdl_logo.png"] { width: 180px !important; }
+    #splash p {
+      margin-top: 16px;
+      font-family: sans-serif;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+  <body>
+    <div id="splash">
+      <img src="/cdl_logo.png" alt="CivicDataLab" />
+      <p>Loading Content Manager...</p>
+    </div>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        var splash = document.getElementById('splash');
+        splash.style.opacity = '0';
+        setTimeout(function () { splash.style.display = 'none'; }, 400);
+      });
+
+      // Hide Decap footer SVG branding once it renders
+      function hideDecapBranding() {
+        document.querySelectorAll('svg[viewBox="0 0 335 90"]').forEach(function (el) {
+          var parent = el.parentElement;
+          (parent || el).style.display = 'none';
+        });
+      }
+
+      // Relabel the login button.
+      //
+      // Decap's stock `github` backend renders "Login with GitHub" because it
+      // is, as far as it knows, talking to GitHub. Here it is talking to
+      // cms-auth-proxy, which authenticates against CivicDataLab's Keycloak -
+      // editors do not have or need GitHub accounts. Leaving the default label
+      // would contradict exactly what they are told during onboarding.
+      //
+      // The GitHub mark is hidden for the same reason.
+      var LOGIN_LABEL = 'Sign in';
+      function relabelLoginButton() {
+        document.querySelectorAll('button, a').forEach(function (el) {
+          if (!/login with github/i.test(el.textContent || '')) return;
+
+          // Replace only text nodes, leaving Decap's own DOM structure intact.
+          (function walk(node) {
+            node.childNodes.forEach(function (child) {
+              if (child.nodeType === 3) {
+                if (/login with github/i.test(child.nodeValue)) {
+                  child.nodeValue = LOGIN_LABEL;
+                }
+              } else if (child.nodeType === 1) {
+                if (child.tagName.toLowerCase() === 'svg') {
+                  // Hide the icon's *wrapper*, not the svg itself. Decap wraps
+                  // it in a span carrying `margin-right: 18px`; hiding only the
+                  // svg leaves that margin behind, shunting the label off
+                  // centre inside a fixed-width button.
+                  var wrapper = child.parentElement;
+                  ((wrapper && wrapper !== el) ? wrapper : child).style.display = 'none';
+                } else {
+                  walk(child);
+                }
+              }
+            });
+          })(el);
+
+          // The button is display:flex with justify-content:normal, sized to fit
+          // icon + label. With the icon gone, centre what is left.
+          el.style.justifyContent = 'center';
+          el.setAttribute('aria-label', LOGIN_LABEL);
+        });
+      }
+
+      function applyCustomisations() {
+        hideDecapBranding();
+        relabelLoginButton();
+      }
+
+      var observer = new MutationObserver(applyCustomisations);
+      observer.observe(document.body, { childList: true, subtree: true });
+      var interval = setInterval(applyCustomisations, 500);
+      setTimeout(function () { clearInterval(interval); }, 10000);
+    </script>
+  </body>
+</html>
