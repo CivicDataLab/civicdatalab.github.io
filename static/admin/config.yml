@@ -307,6 +307,36 @@ collections:
           - { label: "Link", name: "link", widget: "string" }
           - { label: "Type", name: "type", widget: "select", options: ["Blog", "Report", "Dashboard", "Video", "Forum", "Tutorial", "Doc"] }
 
+  # ─── WORK: GENDER & INCLUSION ────────────────────────────────────────────────
+  - label: "Work: Gender & Inclusion"
+    name: "work_genderinclusion"
+    folder: "content/work/genderinclusion"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "project" }
+    fields:
+      - { label: "Project Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Website URL", name: "url", widget: "string", required: false }
+      - { label: "GitHub", name: "github", widget: "string", required: false }
+      - { label: "Sector", name: "sector", widget: "hidden", default: "Gender & Inclusion" }
+      - { label: "Type", name: "type", widget: "hidden", default: "project" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Blog", "Report", "Dashboard", "Video", "Forum", "Tutorial", "Doc"] }
+
   # ─── EVENTS: DATA DIALOGUES ──────────────────────────────────────────────────
   - label: "Events: Data Dialogues"
     name: "events_datadialogues"
@@ -352,6 +382,64 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "Climate Dialogues" }
+      - { label: "Banner Image", name: "image", widget: "image", required: false }
+      - { label: "Report URL", name: "url", widget: "string", required: false }
+      - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+      - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Doc", "Video", "Blog", "Report"] }
+
+  # ─── EVENTS: CIVICSABHA 2.0 ──────────────────────────────────────────────────
+  - label: "Events: CivicSabha 2.0"
+    name: "events_civicsabha2"
+    folder: "content/events/civicsabha-2"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "eventdetail" }
+    fields:
+      - { label: "Event Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Event Type", name: "eventtype", widget: "hidden", default: "CivicSabha 2.0" }
+      - { label: "Banner Image", name: "image", widget: "image", required: false }
+      - { label: "Report URL", name: "url", widget: "string", required: false }
+      - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+      - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Doc", "Video", "Blog", "Report"] }
+
+  # ─── EVENTS: INDIA AI IMPACT SUMMIT ──────────────────────────────────────────
+  - label: "Events: India AI Impact Summit"
+    name: "events_indiaaiimpactsummit"
+    folder: "content/events/india-ai-impact-summit-2026"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "eventdetail" }
+    fields:
+      - { label: "Event Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Event Type", name: "eventtype", widget: "hidden", default: "India AI Impact Summit" }
       - { label: "Banner Image", name: "image", widget: "image", required: false }
       - { label: "Report URL", name: "url", widget: "string", required: false }
       - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
