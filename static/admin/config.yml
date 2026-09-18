@@ -484,3 +484,71 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Link", name: "link", widget: "string" }
           - { label: "Type", name: "type", widget: "select", options: ["Doc", "Video", "Blog", "Report", "Article"] }
+
+  # ─── SECTOR PAGES (fixed set: edit only, no create/delete) ──────────────────
+  # These are the intro blurb + color for each Work sector's landing page, not
+  # the individual projects within it (those are the "Work: X" collections
+  # above). A files collection has no add/delete UI, which is deliberate: the
+  # set of sectors is fixed and adding one needs matching code changes.
+  - label: "Sector Pages"
+    name: "sector_pages"
+    files:
+      - label: "Climate Action"
+        name: "sector_climateaction"
+        file: "content/work/climateaction/index.md"
+        fields: &sectorFields
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Color", name: "color", widget: "color" }
+          - { label: "Type", name: "type", widget: "hidden", default: "sector" }
+      - label: "DPG&I and Responsible AI"
+        name: "sector_dpg"
+        file: "content/work/dpg/index.md"
+        fields: *sectorFields
+      - label: "Gender & Inclusion"
+        name: "sector_genderinclusion"
+        file: "content/work/genderinclusion/index.md"
+        fields: *sectorFields
+      - label: "Law & Justice"
+        name: "sector_lawandjustice"
+        file: "content/work/lawandjustice/index.md"
+        fields: *sectorFields
+      - label: "Open Contracting"
+        name: "sector_opencontracting"
+        file: "content/work/opencontracting/index.md"
+        fields: *sectorFields
+      - label: "Public Finance"
+        name: "sector_publicfinance"
+        file: "content/work/publicfinance/index.md"
+        fields: *sectorFields
+      - label: "Urban Development"
+        name: "sector_urbandevelopment"
+        file: "content/work/urbandevelopment/index.md"
+        fields: *sectorFields
+
+  # ─── EVENT CATEGORY PAGES (fixed set: edit only, no create/delete) ──────────
+  - label: "Event Category Pages"
+    name: "eventtype_pages"
+    files:
+      - label: "CivicSabha 2.0"
+        name: "eventtype_civicsabha2"
+        file: "content/events/civicsabha-2/index.md"
+        fields: &eventtypeFields
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Color", name: "color", widget: "color" }
+          - { label: "Type", name: "type", widget: "hidden", default: "eventtype" }
+      - label: "Climate Dialogues"
+        name: "eventtype_climatedialogues"
+        file: "content/events/climate-dialogues/index.md"
+        fields: *eventtypeFields
+      - label: "Data Dialogues"
+        name: "eventtype_datadialogues"
+        file: "content/events/data-dialogues/index.md"
+        fields: *eventtypeFields
+      - label: "India AI Impact Summit"
+        name: "eventtype_indiaaiimpactsummit"
+        file: "content/events/india-ai-impact-summit-2026/index.md"
+        fields: *eventtypeFields
