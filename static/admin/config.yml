@@ -452,3 +452,35 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Link", name: "link", widget: "string" }
           - { label: "Type", name: "type", widget: "select", options: ["Doc", "Video", "Blog", "Report"] }
+
+  # ─── EVENTS: STANDALONE (no category) ────────────────────────────────────────
+  # Catches event cards created directly under content/events/ without a
+  # category folder — e.g. content/events/osdma-civicdatalab-mou/. Scoped one
+  # level deep from content/events itself, so it correctly skips the category
+  # folders (their own index.md is type: eventtype, filtered out here) and
+  # never reaches into their nested per-event entries.
+  - label: "Events: Standalone"
+    name: "events_standalone"
+    folder: "content/events"
+    path: "{{slug}}/index"
+    create: true
+    format: frontmatter
+    extension: md
+    identifier_field: name
+    summary: "{{name}}"
+    filter: { field: "type", value: "eventdetail" }
+    fields:
+      - { label: "Event Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Context", name: "context", widget: "text", required: false }
+      - { label: "Date", name: "date", widget: "string", required: false, hint: "YYYY-MM-DD" }
+      - { label: "Banner Image", name: "image", widget: "image", required: false }
+      - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
+      - label: "Resources"
+        name: "resources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Doc", "Video", "Blog", "Report", "Article"] }
