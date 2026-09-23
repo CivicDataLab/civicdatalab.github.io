@@ -1,7 +1,7 @@
 ---
-number: '03'
-title: Feedbacks
-image:
+number: "03"
+title: Feedback
+image: null
 ---
 
 We understand feedback is powerful as it serves as a guide to assist people to know how they and others perceive their performance.
