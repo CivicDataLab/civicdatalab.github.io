@@ -5,7 +5,7 @@ description: ""
 image: vinay.jpg
 github: null
 twitter: null
-linkedin: null
+linkedin: https://www.linkedin.com/in/vinay-a-a4ab3a387/
 medium: null
 sectors: null
 projects: null
