@@ -1,0 +1,58 @@
+name: Move deleted team members to alumni
+
+# Decap CMS commits a delete of an already-published entry straight to main
+# (no PR). This catches that and re-creates the deleted content/team/<slug>
+# folder (index.md + any images) under content/alumnus/<slug>, so removing
+# someone from the team automatically lists them as alumni.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/team/**'
+
+permissions:
+  contents: write
+
+jobs:
+  move-to-alumni:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Move deleted team folders to alumni
+        run: |
+          set -e
+          deleted_slugs=$(git diff --diff-filter=D --name-only HEAD^ HEAD -- content/team/ \
+            | sed -E 's#^content/team/([^/]+)/.*#\1#' | sort -u)
+
+          if [ -z "$deleted_slugs" ]; then
+            echo "No team members deleted, nothing to do."
+            exit 0
+          fi
+
+          for slug in $deleted_slugs; do
+            if [ -d "content/alumnus/$slug" ]; then
+              echo "content/alumnus/$slug already exists, skipping $slug."
+              continue
+            fi
+            for f in $(git diff --diff-filter=D --name-only HEAD^ HEAD -- "content/team/$slug/"); do
+              dest="content/alumnus/${f#content/team/}"
+              mkdir -p "$(dirname "$dest")"
+              git show "HEAD^:$f" > "$dest"
+            done
+          done
+
+          git add content/alumnus
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Move deleted team member(s) to alumni"
+          git push
