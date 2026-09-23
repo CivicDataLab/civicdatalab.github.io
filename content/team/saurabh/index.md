@@ -1,18 +1,21 @@
 ---
 name: Saurabh Levin
 role: Data & AI Lead
-medium:
-description:
-quote:
-github: https://github.com/saurabhlevin
-twitter: 
-linkedin: https://www.linkedin.com/in/saurabh-levin-82a1a625/
-behance:
+description: null
+quote: null
 image: ./saurabh.png
-sectors: Climate Action
-projects: "Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), CivicDataSpace, Dataset Onboarding Support Team DOST, Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven Decision Making (DDDM) Micro-Credential Course"
-accentcolor:
-text:
+github: https://github.com/saurabhlevin
+text: null
+twitter: null
+linkedin: https://www.linkedin.com/in/saurabh-levin-82a1a625/
+sectors: Climate Action, DPG&I, Gender & Inclusion
+behance: null
+medium: null
+accentcolor: null
+projects: "Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR),
+  CivicDataSpace, Dataset Onboarding Support Team DOST, Understanding Data:
+  Practical Foundations for Non-Tech Learners, Data-Driven Decision Making
+  (DDDM) Micro-Credential Course"
 ---
 
 Saurabh Levin is a designer and researcher whose work explores the intersections of natural resource management, technology, the commons, and sound art. After graduating from Srishti college of Art, Design and Technology in 2012, he developed open source, smartphone-based tools for monitoring water and soil quality. in 2017, he co-founded the social enterprise Foundation for Environmental Monitoring, whose goal was to develop platforms that could scale open environmental data collection. Fueled by a growing interest in the field of the commons, he briefly pursued a PhD on commons-based practices at London Metropolitan University, followed by a few years of working as a design consultant with organizations working in the space of the commons. He joined Civic Data Lab as part of the CAN data fellowship, where he is working as a data fellow on the IDS-DRR project. 
