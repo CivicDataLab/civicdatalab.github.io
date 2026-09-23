@@ -8,7 +8,7 @@ github: https://github.com/saurabhlevin
 text: null
 twitter: null
 linkedin: https://www.linkedin.com/in/saurabh-levin-82a1a625/
-sectors: Climate Action, DPG&I, Gender & Inclusion
+sectors: Climate Action, DPG&I and Responsible AI, Gender & Inclusion
 behance: null
 medium: null
 accentcolor: null
