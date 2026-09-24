@@ -63,7 +63,7 @@ collections:
       - { label: "Role / Title", name: "role", widget: "string", required: false }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Quote", name: "quote", widget: "string", required: false }
-      - { label: "Profile Image", name: "image", widget: "image", required: false }
+      - { label: "Profile Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Portrait 4:5, about 1000×1250 px, under 500 KB. Keep the face centred." }
       - { label: "GitHub URL", name: "github", widget: "string", required: false }
       - { label: "Twitter URL", name: "twitter", widget: "string", required: false }
       - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
@@ -86,7 +86,7 @@ collections:
     fields:
       - { label: "Organisation Name", name: "name", widget: "string" }
       - { label: "Short Name / Acronym", name: "short", widget: "string", required: false }
-      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "Logo", name: "logo", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Testimonial", name: "testimonial", widget: "text", required: false }
       - { label: "Website", name: "website", widget: "string", required: false }
       - { label: "Sectors", name: "sectors", widget: "string", required: false }
@@ -105,7 +105,7 @@ collections:
     fields:
       - { label: "Number", name: "number", widget: "string", required: false, hint: "e.g. 01, 02 ..." }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Description", name: "body", widget: "markdown", required: false }
 
   # ─── JOB OPENINGS ───────────────────────────────────────────────────────────
@@ -137,7 +137,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Solution", name: "solution", widget: "text", required: false }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
       - { label: "GitHub", name: "github", widget: "string", required: false }
@@ -170,7 +170,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Solution", name: "solution", widget: "text", required: false }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
       - { label: "GitHub", name: "github", widget: "string", required: false }
@@ -201,7 +201,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Solution", name: "solution", widget: "text", required: false }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
       - { label: "GitHub", name: "github", widget: "string", required: false }
@@ -232,7 +232,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Solution", name: "solution", widget: "text", required: false }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
       - { label: "GitHub", name: "github", widget: "string", required: false }
@@ -263,7 +263,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Solution", name: "solution", widget: "text", required: false }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "GitHub", name: "github", widget: "string", required: false }
       - { label: "Sector", name: "sector", widget: "hidden", default: "Digital Public Goods" }
@@ -293,7 +293,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Solution", name: "solution", widget: "text", required: false }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "GitHub", name: "github", widget: "string", required: false }
       - { label: "Sector", name: "sector", widget: "hidden", default: "Urban Development" }
@@ -323,7 +323,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Solution", name: "solution", widget: "text", required: false }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "GitHub", name: "github", widget: "string", required: false }
       - { label: "Sector", name: "sector", widget: "hidden", default: "Gender & Inclusion" }
@@ -353,7 +353,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "Data Dialogues" }
-      - { label: "Banner Image", name: "image", widget: "image", required: false }
+      - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Report URL", name: "url", widget: "string", required: false }
       - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
       - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
@@ -382,7 +382,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "Climate Dialogues" }
-      - { label: "Banner Image", name: "image", widget: "image", required: false }
+      - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Report URL", name: "url", widget: "string", required: false }
       - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
       - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
@@ -411,7 +411,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "CivicSabha 2.0" }
-      - { label: "Banner Image", name: "image", widget: "image", required: false }
+      - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Report URL", name: "url", widget: "string", required: false }
       - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
       - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
@@ -440,7 +440,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "India AI Impact Summit" }
-      - { label: "Banner Image", name: "image", widget: "image", required: false }
+      - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Report URL", name: "url", widget: "string", required: false }
       - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
       - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
@@ -474,7 +474,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Date", name: "date", widget: "string", required: false, hint: "YYYY-MM-DD" }
-      - { label: "Banner Image", name: "image", widget: "image", required: false }
+      - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
       - label: "Resources"
         name: "resources"
@@ -499,7 +499,7 @@ collections:
         fields: &sectorFields
           - { label: "Name", name: "name", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
-          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Image", name: "image", widget: "image", hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
           - { label: "Color", name: "color", widget: "color" }
           - { label: "Type", name: "type", widget: "hidden", default: "sector" }
       - label: "DPG&I and Responsible AI"
@@ -537,7 +537,7 @@ collections:
         fields: &eventtypeFields
           - { label: "Name", name: "name", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
-          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Image", name: "image", widget: "image", hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
           - { label: "Color", name: "color", widget: "color" }
           - { label: "Type", name: "type", widget: "hidden", default: "eventtype" }
       - label: "Climate Dialogues"
