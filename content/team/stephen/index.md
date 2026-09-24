@@ -1,16 +1,18 @@
 ---
 name: Stephen Shaiju Mathew
 role: Data Analyst
-medium:
-description:
-quote: 'Believe'
-github: https://github.com/steve341
-twitter:
-linkedin: https://www.linkedin.com/in/stephen-s-mathew-991079217/
+description: null
 image: ./stephen.jpg
-sectors: 
-projects: "Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven Decision Making (DDDM) Micro-Credential Course"
-text:
+github: https://github.com/steve341
+text: null
+quote: ""
+twitter: null
+linkedin: https://www.linkedin.com/in/stephen-s-mathew-991079217/
+medium: null
+sectors: null
+projects: "Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR),
+  Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven
+  Decision Making (DDDM) Micro-Credential Course"
 ---
 
 Stephen is a Data Analyst at CivicDataLab, working at the intersection of data, climate action, and disaster risk reduction. From building data pipelines on a computer to collecting data in the field, he enjoys working across the entire data journey especially when the subject is climate.
