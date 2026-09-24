@@ -9,7 +9,7 @@ description: null
 twitter: https://twitter.com/daytimedesigner
 linkedin: https://www.linkedin.com/in/aparnaraghuram/
 medium: https://medium.com/@daytimedesigner
-accentcolor: "#b8383b"
+accentcolor: ""
 sectors: null
 projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR),
   Bangkok Metropolitan Administration’s Flood Risk Management Platform,
