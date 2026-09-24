@@ -1,18 +1,18 @@
 ---
 name: N Admin
 role: Product Designer
-medium:
-description:
-quote: Good design and good coffee fix almost everything.
-github:
-twitter:
-linkedin: https://www.linkedin.com/in/n-admin-a54542204
-behance:
+description: null
+quote: ""
 image: ./n.jpg
-sectors:
+github: null
+text: null
+twitter: null
+linkedin: https://www.linkedin.com/in/n-admin-a54542204
+sectors: null
+behance: null
+medium: null
+accentcolor: null
 projects: CivicDataSpace
-accentcolor:
-text:
 ---
 
 N Admin is a Product Designer who specialises in simplifying complex workflows, improving usability, and shaping intuitive digital experiences. He works across UX strategy, UI design, and system thinking, with a strong focus on clarity, structure, and problem-solving.
