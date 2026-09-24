@@ -1,17 +1,28 @@
 ---
 name: Gaurav Godhwani
 role: Founder & CEO
-medium:
-description:
-quote: The problems we face are always going to be more than the solutions we have. Thus, try co-creating your solutions in open so that these can reach to more people.
+quote: The problems we face are always going to be more than the solutions we
+  have. Thus, try co-creating your solutions in open so that these can reach to
+  more people.
+image: ./gaurav.jpg
 github: https://github.com/gggodhwani
+text: light
+description: null
 twitter: https://twitter.com/gggodhwani
 linkedin: https://www.linkedin.com/in/gggodhwani
-image: ./gaurav.jpg
-sectors: Public Finance, Law & Justice, DPG&I and Responsible AI, Education, Climate Action
-projects: "Public Procurements, Open Budgets India Platform - 2.0, The State of Free and Open Source Software in India, Justice Hub, Girl Education Spending Tracker, Zombie Tracker, The State of FOSS in India, Akshara Foundation, Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), Analysing the implementation of child protection laws in India, Data Workshops,ParakhAI, Bangkok Metropolitan Administration’s Flood Risk Management Platform, Building a Unified National Data Exchange Platform for Better Data Governance, Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven Decision Making (DDDM) Micro-Credential Course"
-accentcolor: '#00008B'
-text: light
+medium: null
+accentcolor: ""
+sectors: Public Finance, Law & Justice, DPG&I and Responsible AI, Education,
+  Climate Action
+projects: "Public Procurements, Open Budgets India Platform - 2.0, The State of
+  Free and Open Source Software in India, Justice Hub, Girl Education Spending
+  Tracker, Zombie Tracker, The State of FOSS in India, Akshara Foundation,
+  Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), Analysing the
+  implementation of child protection laws in India, Data Workshops,ParakhAI,
+  Bangkok Metropolitan Administration’s Flood Risk Management Platform, Building
+  a Unified National Data Exchange Platform for Better Data Governance,
+  Understanding Data: Practical Foundations for Non-Tech Learners, Data-Driven
+  Decision Making (DDDM) Micro-Credential Course"
 ---
 
 Gaurav Godhwani is co-founder and executive director at CivicDataLab - a research lab harnessing data, tech, design and social science to strengthen data for public good and enhance civic engagements in India & other countries. For last 13+ years, he has been instrumental in shaping data initiatives like - DataKind Bangalore, Open Budgets India, Justice Hub & Open Contracting India. Currently, he is focused to enable millions of changemakers to harness data & AI innovations in sectors like Climate Resilience, Disaster Risk Reduction, Public Finance, Public Health, Urban Planning, Law & Justice, and more
