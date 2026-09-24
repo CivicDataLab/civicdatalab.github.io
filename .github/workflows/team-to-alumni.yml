@@ -4,6 +4,10 @@ name: Move deleted team members to alumni
 # (no PR). This catches that and re-creates the deleted content/team/<slug>
 # folder (index.md + any images) under content/alumnus/<slug>, so removing
 # someone from the team automatically lists them as alumni.
+#
+# main only accepts changes through a PR, so the move is opened as a PR for
+# someone to merge. (A PR opened with GITHUB_TOKEN does not trigger the build
+# check; it only copies existing content, which already built on main.)
 
 on:
   push:
@@ -14,6 +18,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   move-to-alumni:
@@ -54,5 +59,12 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          branch="team-to-alumni/${GITHUB_SHA::7}"
+          git switch -c "$branch"
           git commit -m "Move deleted team member(s) to alumni"
-          git push
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" \
+            --title "Move deleted team member(s) to alumni: $(echo "$deleted_slugs" | paste -sd, -)" \
+            --body "Deleted from Team Members in $GITHUB_SHA. Merge to list them as alumni."
+        env:
+          GH_TOKEN: ${{ github.token }}
