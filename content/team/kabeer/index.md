@@ -1,6 +1,6 @@
 ---
 name: Kabeer Arora
-role: Climate Action-Consultant
+role: Climate Action - Consultant
 description: ""
 quote: null
 image: ./kabeer.jpg
