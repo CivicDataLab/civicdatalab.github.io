@@ -1,15 +1,15 @@
 ---
 name: Sumita Gupta
-role:  Finance & Operations-Consultant
-medium:
-description:
-quote: 'if we wait for the moment when everything, absolutely everything is ready, we shall never begin'
-github: 
-twitter:
-linkedin: https://www.linkedin.com/in/sumita-gupta-825441360/
+role: Finance & Operations-Consultant
+description: null
+quote: ""
 image: sumita.jpeg
-sectors:
-projects: 
+github: null
+twitter: null
+linkedin: https://www.linkedin.com/in/sumita-gupta-825441360/
+medium: null
+sectors: null
+projects: null
 ---
 
 Sumita Gupta is an Accounts and Operations professional with over 18 years of experience in Accounts, Finance, and Operations. She focuses on strengthening accounting processes, ensuring accuracy, and supporting efficient organisational operations. She believes in bringing efficiency, and attention to detail to her work.
