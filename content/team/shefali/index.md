@@ -1,16 +1,16 @@
 ---
 name: Shefali Singh
 role: Data Analyst
-medium:
-description:
-quote: 
+description: null
+image: shefali.jpg
 github: https://github.com/shefali24
-twitter:
+text: null
+quote: null
+twitter: null
 linkedin: https://www.linkedin.com/in/shefali-singh-b41aa817a
-image: ./shefali.jpg
+medium: null
 sectors: DPG&I and Responsible AI
-projects: 
-text:
+projects: null
 ---
 
 Shefali Singh is a data science professional with expertise in ML, NLP, and Generative AI. She combines strong analytical skills with hands-on experience in LLM applications and MLOps to create efficient, data-driven solutions.
