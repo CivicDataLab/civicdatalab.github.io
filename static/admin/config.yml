@@ -38,7 +38,7 @@ collections:
       - { label: "Role / Title", name: "role", widget: "string" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Quote", name: "quote", widget: "string", required: false }
-      - { label: "Profile Image", name: "image", widget: "image", required: false }
+      - { label: "Profile Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Portrait 4:5, about 1000×1250 px, under 500 KB. Keep the face centred." }
       - { label: "GitHub URL", name: "github", widget: "string", required: false }
       - { label: "Twitter URL", name: "twitter", widget: "string", required: false }
       - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
