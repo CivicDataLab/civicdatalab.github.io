@@ -1,5 +1,5 @@
 ---
-name: Tejswini Panigrahi
+name: Tejaswini Panigrahi
 role: State Lead Odisha - Partnerships & Growth
 image: tejswani-panigrahi.jpeg
 linkedin: https://www.linkedin.com/in/tejaswini-panigrahi-513713184/
