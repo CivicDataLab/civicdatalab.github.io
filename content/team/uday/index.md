@@ -1,16 +1,16 @@
 ---
 name: Uday Raj Sahai
 role: Junior Frontend Developer
-medium:
-description:
-quote: 'The important thing is to never stop questioning. Curiosity has its own reason for existing - Albert Einstein'
-github: https://github.com/UdayRajSahai2
-twitter:
-linkedin: https://www.linkedin.com/in/udayrajsahai/
+quote: ""
 image: ./uday.jpg
-sectors:
-accentcolor:
-text:
+github: https://github.com/UdayRajSahai2
+text: null
+description: null
+twitter: null
+linkedin: https://www.linkedin.com/in/udayrajsahai/
+medium: null
+accentcolor: null
+sectors: null
 projects: ParakhAI
 ---
 
