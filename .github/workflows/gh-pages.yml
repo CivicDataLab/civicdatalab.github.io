@@ -7,11 +7,25 @@ on:
   pull_request:
     branches:
       - main
+    types: [opened, synchronize, reopened, labeled]
 
 jobs:
   # PR-time check only: proves the site still builds before anything reaches main.
+  # CMS PRs (cms/* branches) get a new commit on every editor save, so they only
+  # build once the entry is marked Ready (Decap's pending_publish label), and on
+  # later saves while it stays Ready. Other PRs build as before; `labeled` is
+  # only listened to for the CMS case.
   build:
-    if: github.event_name == 'pull_request'
+    if: >-
+      github.event_name == 'pull_request' && (
+        startsWith(github.head_ref, 'cms/')
+          && contains(github.event.pull_request.labels.*.name, 'decap-cms/pending_publish')
+        || !startsWith(github.head_ref, 'cms/') && github.event.action != 'labeled'
+      )
+    # A newer save to the same PR makes the running build pointless.
+    concurrency:
+      group: build-${{ github.head_ref }}
+      cancel-in-progress: true
     runs-on: ubuntu-latest
 
     strategy:
@@ -33,6 +47,13 @@ jobs:
     # Holds the job until a reviewer approves it, so nothing reaches
     # civicdatalab.in unattended. Configured in Settings > Environments.
     environment: production
+    # Every deploy builds the whole of main, so the newest one supersedes any
+    # still waiting for approval or running: several publishes in a row need
+    # one approval, not one each. gh-pages is updated by a single git push at
+    # the very end, so a cancelled run never leaves the site half-deployed.
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: true
 
     strategy:
       matrix:
