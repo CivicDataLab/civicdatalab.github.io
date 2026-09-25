@@ -3,10 +3,11 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import styled from 'styled-components';
 import Image from 'gatsby-image';
-import { FaTwitter, FaLinkedinIn, FaGithubAlt, FaBehance } from 'react-icons/fa';
+import { FaTwitter, FaLinkedinIn, FaGithubAlt, FaBehance, FaMedium } from 'react-icons/fa';
 import BlogCard from '../components/BlogCard';
 import { getCoverImageUrlFromMediumPost } from '../utils/helpers';
 import useMediumFeed from '../hooks/useMediumFeed';
+import { mediumProfileUrl } from '../utils/mediumFeedUrl';
 import Seo from '../components/Seo/Seo';
 import StandardGrid from '../styles/StandardGrid';
 import MainContainer from '../styles/MainContainer';
@@ -329,6 +330,11 @@ const MemberTemplate = ({ data }) => {
               {member.frontmatter.behance && (
                 <a href={member.frontmatter.behance} target="_blank" rel="noreferrer noopener">
                   <FaBehance />
+                </a>
+              )}
+              {mediumProfileUrl(member.frontmatter.medium) && (
+                <a href={mediumProfileUrl(member.frontmatter.medium)} target="_blank" rel="noreferrer noopener">
+                  <FaMedium />
                 </a>
               )}
             </SocialLinksContainer>

@@ -1,5 +1,5 @@
 import { useReducer, useEffect } from 'react';
-import mediumFeedUrl from '../utils/mediumFeedUrl';
+import { mediumFeedUrl } from '../utils/mediumFeedUrl';
 
 const CORS_PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=';
 
