@@ -1,4 +1,5 @@
 import { useReducer, useEffect } from 'react';
+import mediumFeedUrl from '../utils/mediumFeedUrl';
 
 const CORS_PROXY = 'https://api.rss2json.com/v1/api.json?rss_url=';
 
@@ -37,9 +38,12 @@ const useMediumFeed = (mediumUserName) => {
   const [state, dispatch] = useReducer(reducer, intialState);
 
   useEffect(() => {
+    const feedUrl = mediumFeedUrl(mediumUserName);
+    if (!feedUrl) return;
+
     async function fetchData() {
       dispatch({ type: 'FETCHING_POSTS' });
-      await fetch(CORS_PROXY + `https://medium.com/feed/${mediumUserName}`)
+      await fetch(CORS_PROXY + feedUrl)
         .then((res) => res.json())
         .then((response) => {
           dispatch({
