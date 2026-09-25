@@ -20,6 +20,7 @@ context: >
   Under the MoU, CDL will extend its Intelligent Data Solutions for Disaster Risk Reduction (IDS-DRR) platform to Odisha, integrating datasets held across line departments, harmonising them into standardised formats, and delivering real-time dashboards and analytical insights to OSDMA and all DDMAs. At the signing, OSDMA convened 18 line departments to share data on a single unified platform. The first phase focuses on riverine floods, coastal floods and extreme heat across all 30 districts and their sub-districts, with cyclones, earthquakes, lightning and hazards such as air pollution to follow in subsequent phases.
 date: 2026-09-02
 image: ./OSDMA_MOU.jpg
+url: https://drr.civicdatalab.in/
 type: eventdetail
 resources:
   - title: Intelligent Data Solution for Disaster Risk Reduction
