@@ -89,6 +89,7 @@ collections:
       - { label: "Logo", name: "logo", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Testimonial", name: "testimonial", widget: "text", required: false }
       - { label: "Website", name: "website", widget: "string", required: false }
+      - { label: "Shown On Events", name: "eventdetails", widget: "string", required: false, hint: "Event name this partner's logo appears on (must match the event's name exactly)." }
       - { label: "Sectors", name: "sectors", widget: "string", required: false }
       - { label: "Projects", name: "projects", widget: "string", required: false }
 
@@ -354,7 +355,7 @@ collections:
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "Data Dialogues" }
       - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
-      - { label: "Report URL", name: "url", widget: "string", required: false }
+      - { label: "Platform Link", name: "url", widget: "string", required: false, hint: "e.g. datadialogues.civicdatalab.in — shown as \"Explore the platform\"." }
       - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
       - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
       - label: "Resources"
@@ -383,7 +384,7 @@ collections:
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "Climate Dialogues" }
       - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
-      - { label: "Report URL", name: "url", widget: "string", required: false }
+      - { label: "Platform Link", name: "url", widget: "string", required: false, hint: "e.g. datadialogues.civicdatalab.in — shown as \"Explore the platform\"." }
       - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
       - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
       - label: "Resources"
@@ -412,7 +413,7 @@ collections:
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "CivicSabha 2.0" }
       - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
-      - { label: "Report URL", name: "url", widget: "string", required: false }
+      - { label: "Platform Link", name: "url", widget: "string", required: false, hint: "e.g. datadialogues.civicdatalab.in — shown as \"Explore the platform\"." }
       - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
       - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
       - label: "Resources"
@@ -441,7 +442,7 @@ collections:
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "India AI Impact Summit" }
       - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
-      - { label: "Report URL", name: "url", widget: "string", required: false }
+      - { label: "Platform Link", name: "url", widget: "string", required: false, hint: "e.g. datadialogues.civicdatalab.in — shown as \"Explore the platform\"." }
       - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
       - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
       - label: "Resources"
@@ -475,6 +476,7 @@ collections:
       - { label: "Context", name: "context", widget: "text", required: false }
       - { label: "Date", name: "date", widget: "string", required: false, hint: "YYYY-MM-DD" }
       - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
+      - { label: "Platform Link", name: "url", widget: "string", required: false, hint: "e.g. datadialogues.civicdatalab.in — shown as \"Explore the platform\"." }
       - { label: "Type", name: "type", widget: "hidden", default: "eventdetail" }
       - label: "Resources"
         name: "resources"
