@@ -1,17 +1,18 @@
 ---
 name: Prashasti Yadav
 role: Communications and Outreach Manager
-medium: https://illuminatedbythought.medium.com/
-description:
-quote: 
-github: 
-twitter: 
-linkedin: https://www.linkedin.com/in/prashastiyadav/
+quote: null
 image: ./prashasti.jpg
-accentcolor: 
-sectors: 
-projects: "Data-Driven Decision Making (DDDM) Micro-Credential Course, Understanding Data: Practical Foundations for Non-Tech Learners"
-text:
+github: null
+text: null
+description: null
+twitter: null
+linkedin: https://www.linkedin.com/in/prashastiyadav/
+medium: https://medium.com/@illuminatedbythought
+accentcolor: null
+sectors: null
+projects: "Data-Driven Decision Making (DDDM) Micro-Credential Course,
+  Understanding Data: Practical Foundations for Non-Tech Learners"
 ---
 
 Prashasti brings rich experience in strategic communication, content design, and narrative-building across the development sector. Her work intersects with domains like sustainability, education, livelihoods, and social justice, shaped by a foundation in social work spanning geriatric, correctional, and psychiatric fields. She approaches communication as a tool for centering people, meaning, and impact - amplifying voices from the margins to the mainstream.
