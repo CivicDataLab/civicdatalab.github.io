@@ -22,7 +22,7 @@ image: ./round-t2_3.jpg
 url: ""
 youtube: ""
 resources:
-  - link: https://drive.google.com/drive/folders/1e660w-baDNrtOimsufSp98mzVJh-5QBj
+  - link: https://drive.google.com/file/d/1ZvsbwQIQoGLp0VrMWHz-LaHE5svjtv5c/view?usp=sharing
     title: "Roundtable Report: Strengthening Rural Resilience, Employment &
       Livelihoods through Digital Decision Tools | CivicSabha 2.0"
     type: Doc
