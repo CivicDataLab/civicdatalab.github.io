@@ -15,9 +15,15 @@ jobs:
   # build once the entry is marked Ready (Decap's pending_publish label), and on
   # later saves while it stays Ready. Other PRs build as before; `labeled` is
   # only listened to for the CMS case.
+  #
+  # Marking Ready and clicking Publish happen seconds apart in Decap, so this
+  # job sometimes starts just before the merge and loses the race: checkout
+  # then fails with "couldn't find remote ref refs/pull/N/merge" because
+  # GitHub drops that ref the moment the PR merges. Not a real failure (this
+  # check was never required to merge), just a false alarm — skip instead.
   build:
     if: >-
-      github.event_name == 'pull_request' && (
+      github.event_name == 'pull_request' && !github.event.pull_request.merged && (
         startsWith(github.head_ref, 'cms/')
           && contains(github.event.pull_request.labels.*.name, 'decap-cms/pending_publish')
         || !startsWith(github.head_ref, 'cms/') && github.event.action != 'labeled'
