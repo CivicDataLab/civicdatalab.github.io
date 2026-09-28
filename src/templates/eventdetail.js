@@ -111,8 +111,6 @@ const EventDetailText = styled.div`
   }
 
   @media (min-width: 1440px) {
-    width: 50%;
-
     p {
       font-size: 20px;
     }
