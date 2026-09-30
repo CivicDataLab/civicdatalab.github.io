@@ -29,6 +29,7 @@ solution: >
 
 
   Earlier in 2026, CORD was endorsed as a project under UN Ocean Practices for the Decade Programme, joining a global movement of science-based initiatives working toward the "science we need for the ocean we want."
+image: cord.png.png
 sector: Climate Action
 type: project
 resources:
