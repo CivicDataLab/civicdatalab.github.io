@@ -1,12 +1,12 @@
 ---
 name: Mihika Wakhloo
-role:  Project Manager (Gender & Inclusion)
-medium:
-description:
-github: 
-twitter:
-linkedin: https://www.linkedin.com/in/mihika-wakhloo-760ab2b1/
+role: Project Manager (Gender & Inclusion)
+description: null
 image: mihika.jpg
+github: null
+twitter: null
+linkedin: https://www.linkedin.com/in/mihika-wakhloo-760ab2b1/
+medium: null
 sectors: Gender & Inclusion
 projects: Building FemHealth Data Collaborative in Assam
 ---
