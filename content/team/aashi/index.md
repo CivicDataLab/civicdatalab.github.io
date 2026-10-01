@@ -1,18 +1,19 @@
 ---
 name: Aashi Srivastava
 role: Climate Action Lead
-medium: https://medium.com/@aashisrivastava1995
-description:
-quote:
-github: 
-twitter: 
-linkedin: https://www.linkedin.com/in/aashi-srivastava-a9413ba8/
-behance:
+description: null
+quote: null
 image: ./Aashi.jpg
+github: null
+text: null
+twitter: null
+linkedin: https://www.linkedin.com/in/aashi-srivastava-a9413ba8/
 sectors: Climate Action
-projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR)
-accentcolor:
-text:
+behance: null
+medium: https://medium.com/@aashisrivastava1995
+accentcolor: null
+projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR),
+  Coastal and Ocean Resilience Data Collaborative (CORD)
 ---
 
 Aashi brings extensive experience in programme management, strategy, monitoring, and advisory services. Her work spans the fields of climate action, nutrition, sustainable agriculture, and natural resource management, with a strong focus on designing and evaluating inclusive, evidence-based development initiatives. She has contributed to projects led by organizations such as CIFOR-ICRAF, USAID, GAIN, UNDP, KfW Germany, IOM, and the Ministry of Environment, Forest and Climate Change.
