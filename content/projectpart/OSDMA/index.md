@@ -8,5 +8,5 @@ eventdetails: OSDMA and CivicDataLab Sign Multi-Year MoU to Strengthen
   Risk-Informed and Data-Driven Disaster Risk Reduction in Odisha Coastal and
   Ocean Resilience Data Collaborative (CORD)
 sectors: DPG&I and Responsible AI
-projects: CivicDataSpace
+projects: CivicDataSpace, Coastal and Ocean Resilience Data Collaborative (CORD)
 ---
