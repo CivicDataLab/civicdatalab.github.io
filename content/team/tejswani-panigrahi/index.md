@@ -4,6 +4,7 @@ role: State Lead Odisha - Partnerships & Growth
 image: tejswani-panigrahi.jpeg
 linkedin: https://www.linkedin.com/in/tejaswini-panigrahi-513713184/
 sectors: Climate Action
+projects: " Coastal and Ocean Resilience Data Collaborative (CORD)"
 ---
 Tejaswini leads CivicDataLab's partnerships and programme delivery in Odisha, working where data and technology meet the everyday systems of state governance. Based in Bhubaneswar, she brings twelve years of experience across education, youth livelihoods, agritech and CSR, with a focus on turning policy into on-ground action in eastern India.
 
