@@ -1,12 +1,12 @@
 ---
 name: Divitamayee Deogam
 role: AI-DAN Fellow (Odisha)
-medium:
-description:
-github: 
-twitter:
-linkedin: 
+description: null
 image: divitamayee.jpg
-sectors:
-projects: 
+github: null
+twitter: null
+linkedin: null
+medium: null
+sectors: null
+projects: " Coastal and Ocean Resilience Data Collaborative (CORD)"
 ---
