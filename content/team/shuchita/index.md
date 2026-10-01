@@ -1,18 +1,21 @@
 ---
 name: Shuchita Rawal
 role: Lead - Strategic Partnership, Growth & Inclusion
-medium:
-description:
-quote:
-github:
-twitter:
-linkedin: https://www.linkedin.com/in/shuchita-rawal-92697bb8/
-behance:
+description: null
+quote: null
 image: ./Shuchita.jpg
+github: null
+text: null
+twitter: null
+linkedin: https://www.linkedin.com/in/shuchita-rawal-92697bb8/
 sectors: Climate Action, Gender & Inclusion
-projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR), Bangkok Metropolitan Administration’s Flood Risk Management Platform, Building FemHealth Data Collaborative in Assam
-accentcolor:
-text:
+behance: null
+medium: null
+accentcolor: null
+projects: Intelligent Data Solution for Disaster Risk Reduction (IDS-DRR),
+  Bangkok Metropolitan Administration’s Flood Risk Management Platform, Building
+  FemHealth Data Collaborative in Assam,  Coastal and Ocean Resilience Data
+  Collaborative (CORD)
 ---
 
 Shuchita Rawal is a public policy professional and communications specialist with almost 17 years of experience in governance and developments in the social sectors through research, policy engagement, and knowledge management across civil society organisations and corporate social responsibility (CSR) domains. Civic engagement with fiscal governance, bringing in the equity and inclusion perspective in fiscal policy, and efforts around fiscal transparency and accountability are the main drivers of her work. I am passionate about bridging the gap between research and practice by analysing complex information and crafting compelling narratives for diverse stakeholders.
