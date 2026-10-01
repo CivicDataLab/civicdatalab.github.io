@@ -1,14 +1,14 @@
 ---
-name: Jatin Kumar 
-role:  Climate Action Fellow
-medium:
-description:
-github: 
-twitter:
+name: Jatin Kumar
+role: Climate Action Fellow
+description: null
+image: image.jpg
+github: null
+twitter: null
 linkedin: https://www.linkedin.com/in/jatinkumarhansraj/
-image: jatin.jpg
-sectors:
-projects: 
+medium: null
+sectors: null
+projects: null
 ---
 
 Jatin is a Climate Action Fellow at CivicDataLab, where his work centres on climate policy research - trying to understand where climate commitments break down before they turn into real, on-ground action, and building the kind of research that can help close that gap.
