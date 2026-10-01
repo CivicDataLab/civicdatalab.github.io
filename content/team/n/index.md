@@ -12,7 +12,7 @@ sectors: null
 behance: null
 medium: null
 accentcolor: null
-projects: CivicDataSpace
+projects: CivicDataSpace, Coastal and Ocean Resilience Data Collaborative (CORD)
 ---
 
 N Admin is a Product Designer who specialises in simplifying complex workflows, improving usability, and shaping intuitive digital experiences. He works across UX strategy, UI design, and system thinking, with a strong focus on clarity, structure, and problem-solving.
