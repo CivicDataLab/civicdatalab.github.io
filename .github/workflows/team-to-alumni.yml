@@ -31,7 +31,9 @@ jobs:
       - name: Move deleted team folders to alumni
         run: |
           set -e
-          deleted_slugs=$(git diff --diff-filter=D --name-only HEAD^ HEAD -- content/team/ \
+          # A member left only if their index.md was deleted. Deleting just a
+          # photo from the media library must not move them (#386).
+          deleted_slugs=$(git diff --diff-filter=D --name-only HEAD^ HEAD -- 'content/team/*/index.md' \
             | sed -E 's#^content/team/([^/]+)/.*#\1#' | sort -u)
 
           if [ -z "$deleted_slugs" ]; then
