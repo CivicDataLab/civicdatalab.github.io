@@ -137,7 +137,7 @@ collections:
       - { label: "Project Name", name: "name", widget: "string" }
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
-      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
@@ -170,7 +170,7 @@ collections:
       - { label: "Project Name", name: "name", widget: "string" }
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
-      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
@@ -201,7 +201,7 @@ collections:
       - { label: "Project Name", name: "name", widget: "string" }
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
-      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
@@ -232,7 +232,7 @@ collections:
       - { label: "Project Name", name: "name", widget: "string" }
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
-      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "Twitter", name: "twitter", widget: "string", required: false }
@@ -263,7 +263,7 @@ collections:
       - { label: "Project Name", name: "name", widget: "string" }
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
-      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "GitHub", name: "github", widget: "string", required: false }
@@ -293,7 +293,7 @@ collections:
       - { label: "Project Name", name: "name", widget: "string" }
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
-      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "GitHub", name: "github", widget: "string", required: false }
@@ -323,7 +323,7 @@ collections:
       - { label: "Project Name", name: "name", widget: "string" }
       - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
-      - { label: "Solution", name: "solution", widget: "text", required: false }
+      - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
       - { label: "Website URL", name: "url", widget: "string", required: false }
       - { label: "GitHub", name: "github", widget: "string", required: false }
