@@ -75,6 +75,15 @@ const SummaryText = styled.div`
   font-size: 1.5rem;
   margin-top: 24px;
 
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: #05b7be;
+    text-decoration: none;
+  }
+
   @media (min-width: 1280px) {
     font-size: 2rem;
   }
@@ -298,7 +307,9 @@ const EventDetailTemplate = ({ data }) => {
           <EventDetailContent ref={rightContainerRef}>
             <ImageSection>
               <Image fluid={eventdetail.frontmatter.image.childImageSharp.fluid} />
-              <SummaryText>{eventdetail.frontmatter.summary}</SummaryText>
+              <SummaryText>
+                <MarkdownView markdown={eventdetail.frontmatter.summary || ''} />
+              </SummaryText>
             </ImageSection>
             <EventDetailText>
               <p>Context:</p>

@@ -135,7 +135,7 @@ collections:
     filter: { field: "type", value: "project" }
     fields:
       - { label: "Project Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -168,7 +168,7 @@ collections:
     filter: { field: "type", value: "project" }
     fields:
       - { label: "Project Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -199,7 +199,7 @@ collections:
     filter: { field: "type", value: "project" }
     fields:
       - { label: "Project Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -230,7 +230,7 @@ collections:
     filter: { field: "type", value: "project" }
     fields:
       - { label: "Project Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -261,7 +261,7 @@ collections:
     filter: { field: "type", value: "project" }
     fields:
       - { label: "Project Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -291,7 +291,7 @@ collections:
     filter: { field: "type", value: "project" }
     fields:
       - { label: "Project Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -321,7 +321,7 @@ collections:
     filter: { field: "type", value: "project" }
     fields:
       - { label: "Project Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Solution", name: "solution", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -351,7 +351,7 @@ collections:
     filter: { field: "type", value: "eventdetail" }
     fields:
       - { label: "Event Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "Data Dialogues" }
       - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -380,7 +380,7 @@ collections:
     filter: { field: "type", value: "eventdetail" }
     fields:
       - { label: "Event Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "Climate Dialogues" }
       - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -409,7 +409,7 @@ collections:
     filter: { field: "type", value: "eventdetail" }
     fields:
       - { label: "Event Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "CivicSabha 2.0" }
       - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -438,7 +438,7 @@ collections:
     filter: { field: "type", value: "eventdetail" }
     fields:
       - { label: "Event Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Event Type", name: "eventtype", widget: "hidden", default: "India AI Impact Summit" }
       - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
@@ -472,7 +472,7 @@ collections:
     filter: { field: "type", value: "eventdetail" }
     fields:
       - { label: "Event Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Summary", name: "summary", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Context", name: "context", widget: "markdown", required: false, buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
       - { label: "Date", name: "date", widget: "string", required: false, hint: "YYYY-MM-DD" }
       - { label: "Banner Image", name: "image", widget: "image", required: false, hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
