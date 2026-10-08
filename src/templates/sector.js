@@ -8,6 +8,7 @@ import HeroText from '../styles/HeroText';
 import ImageItem from '../components/ImageItem';
 import WorkHomePage from '../components/WorkHomePage';
 import MiniTeamSection from '../components/MiniTeamSection';
+import MarkdownView from 'react-showdown';
 import Seo from '../components/Seo/Seo';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
@@ -23,6 +24,18 @@ const SectorInfo = styled.div`
 
   .description {
     display: none;
+  }
+
+  .description p {
+    margin: 0 0 1em;
+  }
+
+  .description a {
+    display: inline;
+    width: auto;
+    margin-top: 0;
+    font-size: inherit;
+    line-height: inherit;
   }
 
   @media (min-width: 1024px) {
@@ -83,7 +96,7 @@ const SectorTemplate = ({ data }) => {
               <SectorLabel color={data.markdownRemark.frontmatter.color}>
                 {data.markdownRemark.frontmatter.name}
               </SectorLabel>
-              <p className="description">{data.markdownRemark.frontmatter.description}</p>
+              <MarkdownView className="description" markdown={data.markdownRemark.frontmatter.description || ''} />
               {/* <a href="#">View All {data.markdownRemark.frontmatter.name} Case Studies</a> */}
             </SectorInfo>
           </TitleContainer>

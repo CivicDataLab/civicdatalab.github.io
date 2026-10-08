@@ -500,7 +500,7 @@ collections:
         file: "content/work/climateaction/index.md"
         fields: &sectorFields
           - { label: "Name", name: "name", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
           - { label: "Image", name: "image", widget: "image", hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
           - { label: "Color", name: "color", widget: "color" }
           - { label: "Type", name: "type", widget: "hidden", default: "sector" }
@@ -538,7 +538,7 @@ collections:
         file: "content/events/civicsabha-2/index.md"
         fields: &eventtypeFields
           - { label: "Name", name: "name", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link", "bulleted-list", "numbered-list"], editor_components: [], hint: "Select text and use the link button to add a hyperlink." }
           - { label: "Image", name: "image", widget: "image", hint: "JPG, PNG or WebP only (no GIF/SVG). Keep it under 500 KB; larger files fail to save." }
           - { label: "Color", name: "color", widget: "color" }
           - { label: "Type", name: "type", widget: "hidden", default: "eventtype" }
