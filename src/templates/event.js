@@ -7,6 +7,7 @@ import EventNav from '../components/EventNav';
 import HeroText from '../styles/HeroText';
 import ImageEventItem from '../components/ImageEventItem';
 import WorkHomePage from '../components/WorkHomePage';
+import MarkdownView from 'react-showdown';
 import Seo from '../components/Seo/Seo';
 import useFixedScroll from '../hooks/useFixedScroll';
 import MainContainer from '../styles/MainContainer';
@@ -21,6 +22,18 @@ const EventInfo = styled.div`
 
   .description {
     display: none;
+  }
+
+  .description p {
+    margin: 0 0 1em;
+  }
+
+  .description a {
+    display: inline;
+    width: auto;
+    margin-top: 0;
+    font-size: inherit;
+    line-height: inherit;
   }
 
   @media (min-width: 1024px) {
@@ -83,9 +96,7 @@ const EventTemplate = ({ data }) => {
               <EventLabel color={data.markdownRemark.frontmatter.color}>
                 {data.markdownRemark.frontmatter.name}
               </EventLabel>
-              <p className="description">
-                  {data.markdownRemark.frontmatter.description}
-              </p>
+              <MarkdownView className="description" markdown={data.markdownRemark.frontmatter.description || ''} />
             </EventInfo>
           </TitleContainer>
           <EventsContent ref={rightContainerRef}>

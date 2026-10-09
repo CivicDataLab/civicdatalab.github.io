@@ -80,6 +80,15 @@ const SummaryText = styled.div`
   font-size: 1.5rem;
   margin-top: 24px;
 
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: #05b7be;
+    text-decoration: none;
+  }
+
   @media (min-width: 1280px) {
     font-size: 2rem;
   }
@@ -340,7 +349,9 @@ const ProjectTemplate = ({ data }) => {
           <ProjectContent ref={rightContainerRef}>
             <ImageSection>
               <Image fluid={project.frontmatter.image.childImageSharp.fluid} />
-              <SummaryText>{project.frontmatter.summary}</SummaryText>
+              <SummaryText>
+                <MarkdownView markdown={project.frontmatter.summary || ''} />
+              </SummaryText>
             </ImageSection>
             <ProjectText>
               <p>Context:</p>
