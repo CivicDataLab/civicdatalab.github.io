@@ -10,7 +10,7 @@ context: >-
   constrain risk-informed planning, resource mobilisation and long-term
   resilience.
 
-  To address this, we are developing the Coastal & Ocean Resilience Data Collaborative (CORD), an interoperable open data platform and a collaborative framework for resilient coastal planning. The CORD is being developed with support from the[ Lloyd’s Register Foundation](http://www.lrfoundation.org.uk), focusing on vulnerable coastal regions across Odisha, Tamil Nadu and Kerala.
+  To address this, we are developing the Coastal & Ocean Resilience Data Collaborative (CORD), an interoperable open data platform and a collaborative framework for resilient coastal planning. The CORD is being developed with support from the [ Lloyd’s Register Foundation](http://www.lrfoundation.org.uk), focusing on vulnerable coastal regions across Odisha, Tamil Nadu and Kerala.
 solution: >
   CORD will bring together government, researchers and other changemakers across
   coastal resilience to better understand the interconnected risks coastal
