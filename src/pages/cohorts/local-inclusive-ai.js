@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
 import Seo from '../../components/Seo/Seo';
 import FitCheck from '../../components/cohort/FitCheck';
+import ApplyForm from '../../components/cohort/ApplyForm';
 import { DEADLINE } from '../../components/cohort/config';
 import background from '../../images/cohort/background.webp';
 import bubbleBody from '../../images/cohort/bubble-body.webp';
@@ -334,11 +335,13 @@ const CohortPage = () => {
         {closed ? (
           <p>Applications for this cohort have closed. Thank you for your interest.</p>
         ) : (
-          <p>The application form opens here soon.</p>
+          <>
+            <p>
+              Not sure yet? <a href="#fit">Check if we’re a fit</a> first.
+            </p>
+            <ApplyForm />
+          </>
         )}
-        <p>
-          Not sure yet? <a href="#fit">Check if we’re a fit</a> first.
-        </p>
       </Section>
 
       <Hills src={hillsArt} alt="" />

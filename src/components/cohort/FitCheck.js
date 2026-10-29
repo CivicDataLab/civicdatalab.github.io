@@ -1,15 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
 import { SCRIPT_URL } from './config';
+import {
+  EMAIL_RE,
+  Card,
+  Heading,
+  Muted,
+  Fieldset,
+  Legend,
+  Option,
+  TextInput,
+  FieldLabel,
+  ErrorText,
+  Button,
+  TextButton,
+  Honeypot,
+  Result
+} from './ui';
 
-const NAVY = '#0B3865';
-const MUTED = '#4B5B6E';
-const BLUE = '#4A74A0';
-const CORAL = '#E8705F';
-const CORAL_DARK = '#D85C4B';
-const BORDER = '#D5DCE4';
-const LIGHT_BLUE = '#EAF0F7';
-const ERROR = '#B3261E';
 const OTHER = 'Other: please specify';
 
 const QUESTIONS = [
@@ -54,158 +61,7 @@ const QUESTIONS = [
   }
 ];
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const focusRing = `
-  outline: 3px solid ${BLUE};
-  outline-offset: 2px;
-`;
-
-const Card = styled.div`
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 32px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(11, 56, 101, 0.08);
-  color: ${NAVY};
-  font-family: inherit;
-  @media (max-width: 600px) {
-    padding: 20px;
-  }
-`;
-
-const Heading = styled.h2`
-  margin: 0 0 8px;
-  font-size: 1.6rem;
-  line-height: 1.25;
-  color: ${NAVY};
-`;
-
-const Muted = styled.p`
-  margin: 0 0 24px;
-  color: ${MUTED};
-  font-size: ${(p) => (p.small ? '0.875rem' : '1rem')};
-`;
-
-const Fieldset = styled.fieldset`
-  border: 0;
-  padding: 0;
-  margin: 0 0 28px;
-  min-width: 0;
-`;
-
-const Legend = styled.legend`
-  padding: 0;
-  margin-bottom: 12px;
-  font-weight: 700;
-  font-size: 1.05rem;
-  line-height: 1.4;
-`;
-
-const Option = styled.label`
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 8px;
-  padding: 12px 14px;
-  border: 1px solid ${(p) => (p.selected ? BLUE : BORDER)};
-  border-radius: 10px;
-  background: ${(p) => (p.selected ? LIGHT_BLUE : '#fff')};
-  cursor: pointer;
-  line-height: 1.4;
-  &:focus-within {
-    ${focusRing}
-  }
-  input {
-    margin: 3px 0 0;
-    flex-shrink: 0;
-    accent-color: ${BLUE};
-  }
-`;
-
-const TextInput = styled.input`
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px 14px;
-  border: 1px solid ${(p) => (p.invalid ? ERROR : BORDER)};
-  border-radius: 10px;
-  font: inherit;
-  color: ${NAVY};
-  &:focus {
-    ${focusRing}
-  }
-`;
-
-const FieldLabel = styled.label`
-  display: block;
-  margin: 8px 0 6px;
-  font-weight: 700;
-`;
-
-const Error = styled.p`
-  margin: 6px 0 0;
-  color: ${ERROR};
-  font-size: 0.9rem;
-`;
-
-const Button = styled.button`
-  display: inline-block;
-  padding: 12px 28px;
-  border: 0;
-  border-radius: 999px;
-  background: ${CORAL};
-  color: #fff;
-  font: inherit;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover {
-    background: ${CORAL_DARK};
-  }
-  &:focus-visible {
-    ${focusRing}
-  }
-  &:disabled {
-    opacity: 0.7;
-    cursor: wait;
-  }
-`;
-
-const TextButton = styled.button`
-  padding: 0;
-  border: 0;
-  background: none;
-  color: ${BLUE};
-  font: inherit;
-  font-size: 0.875rem;
-  text-decoration: underline;
-  cursor: pointer;
-  &:focus-visible {
-    ${focusRing}
-  }
-`;
-
-const Honeypot = styled.input`
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-`;
-
-const Result = styled.div`
-  padding: 20px;
-  border-radius: 10px;
-  background: ${LIGHT_BLUE};
-  &:focus {
-    ${focusRing}
-  }
-  p {
-    margin: 0 0 16px;
-  }
-`;
 
 export default function FitCheck() {
   const [answers, setAnswers] = useState({ email: '', domain_other: '', website: '' });
@@ -311,7 +167,7 @@ export default function FitCheck() {
                   aria-describedby={errors.domain_other ? 'fit-domain_other-error' : undefined}
                   onChange={(ev) => set('domain_other', ev.target.value)}
                 />
-                {errors.domain_other && <Error id="fit-domain_other-error">{errors.domain_other}</Error>}
+                {errors.domain_other && <ErrorText id="fit-domain_other-error">{errors.domain_other}</ErrorText>}
               </>
             )}
             {q.note && (
@@ -319,7 +175,7 @@ export default function FitCheck() {
                 {q.note}
               </Muted>
             )}
-            {errors[q.name] && <Error id={`fit-${q.name}-error`}>{errors[q.name]}</Error>}
+            {errors[q.name] && <ErrorText id={`fit-${q.name}-error`}>{errors[q.name]}</ErrorText>}
           </Fieldset>
         ))}
 
@@ -336,7 +192,7 @@ export default function FitCheck() {
           aria-describedby={errors.email ? 'fit-email-error' : undefined}
           onChange={(ev) => set('email', ev.target.value)}
         />
-        {errors.email && <Error id="fit-email-error">{errors.email}</Error>}
+        {errors.email && <ErrorText id="fit-email-error">{errors.email}</ErrorText>}
 
         <Honeypot
           type="text"
