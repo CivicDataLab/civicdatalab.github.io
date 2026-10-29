@@ -4,7 +4,14 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Seo from '../../components/Seo/Seo';
 import FitCheck from '../../components/cohort/FitCheck';
 import { DEADLINE } from '../../components/cohort/config';
-import cdlLogo from '../../images/cdl_logo.png';
+import background from '../../images/cohort/background.webp';
+import bubbleBody from '../../images/cohort/bubble-body.webp';
+import bubbleTail from '../../images/cohort/bubble-tail.webp';
+import cdlLogo from '../../images/cohort/cdl-logo.webp';
+import tech4devLogo from '../../images/cohort/tech4dev-logo.webp';
+import peopleArt from '../../images/cohort/people.webp';
+import flagsArt from '../../images/cohort/flags.webp';
+import hillsArt from '../../images/cohort/hills.webp';
 
 const C = {
   blue: '#4A74A0',
@@ -165,8 +172,8 @@ const CohortPage = () => {
         <HeroBubble>
           <Logos>
             <img src={cdlLogo} alt="CivicDataLab" />
-            {/* Placeholders until the Tech4Dev and Gram Vaani logo files arrive. */}
-            <LogoText>Tech4Dev</LogoText>
+            <img src={tech4devLogo} alt="Project Tech4Dev" />
+            {/* Placeholder until the Gram Vaani logo file arrives. */}
             <LogoText>Gram Vaani</LogoText>
           </Logos>
           <Eyebrow>Call For Applications: Local &amp; Inclusive AI Cohort</Eyebrow>
@@ -181,7 +188,7 @@ const CohortPage = () => {
             </Button>
           </HeroActions>
         </HeroBubble>
-        <Art h="320px">Illustration: people group</Art>
+        <People src={peopleArt} alt="" />
       </Hero>
 
       <Section>
@@ -228,7 +235,10 @@ const CohortPage = () => {
       </Section>
 
       <Section narrow>
-        <h2>Programme structure</h2>
+        <JourneyHead>
+          <h2>Programme structure</h2>
+          <img src={flagsArt} alt="" />
+        </JourneyHead>
         <Journey>
           {journey.map(([title, body], i) => (
             <Step key={title} data-reveal={i} className={shown.includes(String(i)) ? 'in' : ''}>
@@ -326,14 +336,14 @@ const CohortPage = () => {
         {closed ? (
           <p>Applications for this cohort have closed. Thank you for your interest.</p>
         ) : (
-          <Art h="240px">Long application form (questions pending)</Art>
+          <p>The application form opens here soon.</p>
         )}
         <p>
           Not sure yet? <a href="#fit">Check if we’re a fit</a> first.
         </p>
       </Section>
 
-      <Art h="220px">Illustration: hills and people</Art>
+      <Hills src={hillsArt} alt="" />
       <Footer>
         <a href="/">civicdatalab.in</a>
       </Footer>
@@ -345,7 +355,7 @@ export default CohortPage;
 
 const PageStyle = createGlobalStyle`
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: ${C.bg}; }
+  body { margin: 0; background: #F4F5F7 url(${background}) top center / 100% auto repeat-y; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 `;
 
@@ -403,24 +413,29 @@ const Hero = styled.div`
   padding: 0 16px;
 `;
 
-// ponytail: plain rounded bubble with a CSS tail; swap for the brush-textured artwork when it arrives.
-const HeroBubble = styled.div`
+// The bubble art is 9-sliced so its brush edges and corners survive any box size;
+// the tail is a separate piece hung off the bottom edge.
+const bubble = (corner, tailW) => `
   position: relative;
-  background: ${C.blue};
-  color: #fff;
-  text-align: center;
-  border-radius: 0 0 48px 48px;
-  padding: 0 20px 40px;
-  margin-bottom: 48px;
+  border: 0 solid transparent;
+  border-image: url(${bubbleBody}) 130 fill / ${corner} stretch;
   &::after {
     content: '';
     position: absolute;
-    bottom: -34px;
-    left: 30%;
-    border: 18px solid transparent;
-    border-top: 36px solid ${C.blue};
-    border-right-width: 0;
+    top: calc(100% - ${tailW * 0.25}px);
+    left: max(18%, ${corner} + 12px);
+    width: ${tailW}px;
+    height: ${tailW * 1.33}px;
+    background: url(${bubbleTail}) top / contain no-repeat;
   }
+`;
+
+const HeroBubble = styled.div`
+  ${bubble('90px', 150)}
+  color: #fff;
+  text-align: center;
+  padding: 28px 20px 48px;
+  margin-bottom: 150px;
   h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 500; letter-spacing: -0.02em; margin: 0.5rem 0 1rem; }
   em { color: ${C.coral}; font-weight: 800; font-style: italic; }
 `;
@@ -429,11 +444,13 @@ const Logos = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
   background: #fff;
-  padding: 14px 24px;
-  border-radius: 0 0 14px 14px;
-  margin-bottom: 20px;
-  img { height: 44px; }
+  padding: 12px 22px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  img { height: 48px; width: auto; }
 `;
 
 const LogoText = styled.span`
@@ -461,16 +478,29 @@ const HeroActions = styled.div`
   gap: 12px;
 `;
 
-const Art = styled.div`
-  display: grid;
-  place-items: center;
-  height: ${(p) => p.h};
+const People = styled.img`
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
   margin: 0 auto 24px;
-  max-width: 960px;
-  border: 2px dashed #B8C4D2;
-  border-radius: 16px;
-  color: #8A99AA;
-  font-size: 0.9rem;
+`;
+
+const Hills = styled.img`
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin: 24px 0 0 auto;
+`;
+
+const JourneyHead = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  h2 { margin-bottom: 0; }
+  img { width: 140px; height: auto; flex: none; }
 `;
 
 const Section = styled.section`
@@ -484,26 +514,17 @@ const Stats = styled.ul`
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 40px 24px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 96px 24px;
+  margin-bottom: 80px;
+  @media (min-width: 560px) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 900px) { grid-template-columns: repeat(3, 1fr); }
 `;
 
 const Stat = styled.li`
-  position: relative;
-  background: ${C.blue};
+  ${bubble('48px', 72)}
   color: #fff;
-  border-radius: 40px;
-  padding: 24px;
+  padding: 28px 24px 32px;
   text-align: center;
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -24px;
-    left: 28%;
-    border: 12px solid transparent;
-    border-top: 24px solid ${C.blue};
-    border-right-width: 0;
-  }
   strong { display: block; font-size: 2.25rem; font-weight: 800; line-height: 1.1; }
   span { display: block; margin-top: 6px; font-size: 0.95rem; opacity: 0.9; }
 `;
@@ -546,7 +567,6 @@ const Note = styled.p`
   padding-left: 12px;
 `;
 
-// ponytail: vertical timeline with numbered flags; swap in the flags-and-path artwork later.
 const Journey = styled.ol`
   list-style: none;
   padding: 0;
