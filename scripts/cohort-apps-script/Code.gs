@@ -1,6 +1,9 @@
 // Cohort application form backend. Container-bound to the responses Sheet.
 // See README.md in this folder for setup and deployment.
 
+// The long ID from the Sheet's URL: docs.google.com/spreadsheets/d/<SHEET_ID>/edit
+// Needed when the script was created at script.google.com rather than from the Sheet.
+var SHEET_ID = '';
 var NOTIFY_EMAIL = ''; // e.g. 'team@civicdatalab.in' to get an email per submission; '' = off
 var TABS = { short: 'Short', long: 'Long' };
 var SKIP = { form: true, website: true };
@@ -33,7 +36,7 @@ function doPost(e) {
     var lock = LockService.getScriptLock();
     lock.waitLock(10000);
     try {
-      var ss = SpreadsheetApp.getActiveSpreadsheet();
+      var ss = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
       var sheet = ss.getSheetByName(tabName) || ss.insertSheet(tabName);
       var headers = sheet.getLastColumn() > 0
         ? sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0].map(String)
@@ -53,7 +56,7 @@ function doPost(e) {
 
     if (NOTIFY_EMAIL) {
       MailApp.sendEmail(NOTIFY_EMAIL, 'New cohort application (' + tabName + ')',
-        'From: ' + p.email + '\n\nOpen the sheet: ' + SpreadsheetApp.getActiveSpreadsheet().getUrl());
+        'From: ' + p.email + '\n\nOpen the sheet: ' + ss.getUrl());
     }
     return json({ ok: true });
   } catch (err) {

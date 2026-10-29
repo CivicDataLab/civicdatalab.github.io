@@ -6,7 +6,7 @@ Short-form answers go to the `Short` tab, long-form answers to the `Long` tab (c
 ## Setup (one time, on the CivicDataLab Google account)
 
 1. Create a new Google Sheet, e.g. "Cohort applications".
-2. In the Sheet: **Extensions → Apps Script**.
+2. In the Sheet: **Extensions → Apps Script**. (If you made the script at script.google.com instead, set `SHEET_ID` at the top of Code.gs to the ID in the Sheet's URL.)
 3. Delete the sample code, paste the whole of `Code.gs` from this folder, and click **Save**.
 4. Click **Deploy → New deployment**. Click the gear icon next to "Select type" and choose **Web app**.
    - Execute as: **Me**
