@@ -10,5 +10,5 @@ export const TECH4DEV = {
 
 export const UNDP = {
   deadline: null, // not announced yet; null hides the countdown
-  scriptUrl: ''
+  scriptUrl: 'https://script.google.com/macros/s/AKfycbyQ-83ZwdLEPasHzTDaW9t1ig-tBH5fxXoPnPsMw1m7Lo200gG-ItCP9bo2f8mfwQ-D/exec'
 };
