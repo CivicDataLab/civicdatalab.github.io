@@ -119,11 +119,17 @@ export const Button = styled.a`
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-  background: ${(p) => (p.ghost ? 'transparent' : C.coral)};
-  color: #fff !important;
-  border: 2px solid ${(p) => (p.ghost ? '#fff' : C.coral)};
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  /* ghost: white outline for blue backgrounds; outline: navy outline for light ones */
+  background: ${(p) => (p.ghost || p.outline ? 'transparent' : C.coral)};
+  color: ${(p) => (p.outline ? C.navy : '#fff')} !important;
+  border: 2px solid ${(p) => (p.ghost ? '#fff' : p.outline ? C.navy : C.coral)};
   transition: background 0.15s;
-  &:hover { background: ${(p) => (p.ghost ? 'rgba(255,255,255,0.15)' : C.coralDark)}; }
+  &:hover {
+    background: ${(p) => (p.ghost ? 'rgba(255,255,255,0.15)' : p.outline ? '#e6ebf1' : C.coralDark)};
+  }
   &:focus-visible { outline: 3px solid ${C.navy}; outline-offset: 2px; }
 `;
 

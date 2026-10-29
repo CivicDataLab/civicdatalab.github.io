@@ -163,3 +163,6 @@ export const TECH4DEV_SECTIONS = [
     ]
   }
 ];
+
+// Pending the UNDP questionnaire; while empty, the UNDP page shows a placeholder instead of the form.
+export const UNDP_SECTIONS = [];
