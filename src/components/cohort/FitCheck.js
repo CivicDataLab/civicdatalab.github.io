@@ -93,16 +93,14 @@ export default function FitCheck() {
 
   const save = async () => {
     setStatus('saving');
-    const data = {
-      form: 'short',
-      website: answers.website,
-      email: answers.email.trim()
-    };
+    // The Sheet's column headers are the question texts.
+    const data = { form: 'short', website: answers.website };
     QUESTIONS.forEach((q) => {
-      data[q.name] = answers[q.name];
+      // "Other" is saved as "Other: <what they typed>" in the same column.
+      data[q.legend] =
+        q.name === 'domain' && answers.domain === OTHER ? `Other: ${answers.domain_other.trim()}` : answers[q.name];
     });
-    // "Other" is saved as "Other: <what they typed>" in the same column.
-    if (answers.domain === OTHER) data.domain = `Other: ${answers.domain_other.trim()}`;
+    data['Your email'] = answers.email.trim();
     let error = '';
     try {
       if (!SCRIPT_URL) throw new Error('Form not connected yet');

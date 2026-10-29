@@ -25,9 +25,10 @@ import {
 const OTHER = 'Other: please specify';
 const PHONE_RE = /^\+?[\d\s()-]{8,}$/;
 
-// Field kinds: `options` = single choice, `checks` = required checkboxes,
-// `words` = paragraph with a suggested word limit, otherwise a one-line input.
-// Field names become the Sheet's column headers, in this order.
+// Field kinds: `options` = single choice, `checks` = required checkboxes
+// ([name, text, short column label]), `words` = paragraph with a suggested
+// word limit, otherwise a one-line input. The Sheet's column headers are the
+// numbered questions ("Q1. Your full name"), in this order.
 const SECTIONS = [
   {
     title: 'Your details & organisation',
@@ -163,11 +164,13 @@ const SECTIONS = [
         checks: [
           [
             'declaration_accurate',
-            'I confirm that the information provided is accurate to the best of my knowledge and that I am authorised to submit it on behalf of my organisation.'
+            'I confirm that the information provided is accurate to the best of my knowledge and that I am authorised to submit it on behalf of my organisation.',
+            'Information is accurate and I am authorised'
           ],
           [
             'declaration_no_guarantee',
-            'I understand that submitting this form does not guarantee selection, funding or any other commitment from the programme partners.'
+            'I understand that submitting this form does not guarantee selection, funding or any other commitment from the programme partners.',
+            'Submission does not guarantee selection'
           ]
         ]
       },
@@ -177,7 +180,8 @@ const SECTIONS = [
         checks: [
           [
             'consent_review',
-            'I consent to CivicDataLab, Gram Vaani and Tech4Dev accessing, reviewing and using the information submitted in this form to assess our application and contact us about the cohort.'
+            'I consent to CivicDataLab, Gram Vaani and Tech4Dev accessing, reviewing and using the information submitted in this form to assess our application and contact us about the cohort.',
+            'I consent'
           ]
         ]
       }
@@ -255,15 +259,16 @@ export default function ApplyForm() {
   const save = async () => {
     setStatus('saving');
     const data = { form: 'long', website: answers.website };
-    FIELDS.forEach((f) => {
+    FIELDS.forEach((f, i) => {
+      const column = `Q${i + 1}. ${f.label}`;
       if (f.checks) {
-        f.checks.forEach(([n]) => {
-          data[n] = answers[n] ? 'Yes' : '';
+        f.checks.forEach(([n, , short]) => {
+          data[`${column}: ${short}`] = answers[n] ? 'Yes' : '';
         });
         return;
       }
       // "Other" is saved as "Other: <what they typed>" in the same column.
-      data[f.name] =
+      data[column] =
         value(f.name) === OTHER ? `Other: ${value(`${f.name}_other`).trim()}` : value(f.name).trim();
     });
     let error = '';

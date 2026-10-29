@@ -28,7 +28,10 @@ function doPost(e) {
     if (p.website) return json({ ok: true }); // honeypot: pretend success
     var tabName = TABS[p.form];
     if (!tabName) return json({ ok: false, error: 'Invalid form' });
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(p.email || '').trim())) {
+    // Column names are the question texts, so find the email by name.
+    var emailKey = Object.keys(p).filter(function (k) { return /email/i.test(k); })[0];
+    var email = String(p[emailKey] || '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return json({ ok: false, error: 'Invalid email' });
     }
 
@@ -56,7 +59,7 @@ function doPost(e) {
 
     if (NOTIFY_EMAIL) {
       MailApp.sendEmail(NOTIFY_EMAIL, 'New cohort application (' + tabName + ')',
-        'From: ' + p.email + '\n\nOpen the sheet: ' + ss.getUrl());
+        'From: ' + email + '\n\nOpen the sheet: ' + ss.getUrl());
     }
     return json({ ok: true });
   } catch (err) {
