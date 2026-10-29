@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { OTHER } from './questions';
 import {
   EMAIL_RE,
   BLUE,
@@ -25,6 +24,12 @@ import {
 const PHONE_RE = /^\+?[\d\s()-]{8,}$/;
 
 const countWords = (text) => text.trim().split(/\s+/).filter(Boolean).length;
+
+// An option ending in ": please specify" opens a text box; the answer is saved
+// as e.g. "Other: <what they typed>" or "Another language: <what they typed>".
+const SPECIFY = ': please specify';
+const isSpecify = (opt) => opt.endsWith(SPECIFY);
+const NUMBER_WORDS = ['', 'one', 'two', 'three', 'four', 'five'];
 
 // Id of the element to focus when `name` has an error.
 const focusId = (fields, name) => {
@@ -65,6 +70,21 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
   };
 
   const value = (name) => answers[name] || '';
+  // Selected options of a field, as a list for both single and multi choice.
+  const chosen = (f) => (f.multi ? answers[f.name] || [] : [value(f.name)].filter(Boolean));
+  const resolve = (f, opt) =>
+    isSpecify(opt) ? `${opt.slice(0, -SPECIFY.length)}: ${value(`${f.name}_other`).trim()}` : opt;
+
+  // Multi choice: an `exclusive` option ("No major barriers") clears the rest, and vice versa.
+  const toggle = (f, opt) => {
+    const cur = chosen(f);
+    const solo = f.exclusive || [];
+    let next;
+    if (cur.includes(opt)) next = cur.filter((o) => o !== opt);
+    else if (solo.includes(opt)) next = [opt];
+    else next = [...cur.filter((o) => !solo.includes(o)), opt];
+    set(f.name, next);
+  };
 
   const set = (name, v) => {
     setAnswers((a) => ({ ...a, [name]: v }));
@@ -74,14 +94,20 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
   const validate = (fields) => {
     const e = {};
     fields.forEach((f) => {
-      const v = value(f.name);
+      const v = f.options ? '' : value(f.name);
       if (f.checks) {
         if (f.checks.some(([n]) => !answers[n])) e[f.name] = 'Please tick every box to continue.';
       } else if (f.options) {
-        if (!v) e[f.name] = 'Please choose an option.';
-        else if (v === OTHER && !value(`${f.name}_other`).trim()) e[f.name] = 'Please specify.';
+        const picked = chosen(f);
+        if (!picked.length) {
+          if (!f.optional) e[f.name] = 'Please choose an option.';
+        } else if (picked.some(isSpecify) && !value(`${f.name}_other`).trim()) {
+          e[f.name] = 'Please specify.';
+        } else if (f.mustAgree && picked[0] !== f.options[0]) {
+          e[f.name] = f.mustAgree;
+        }
       } else if (!v.trim()) {
-        e[f.name] = 'This question is required.';
+        if (!f.optional) e[f.name] = 'This question is required.';
       } else if (f.type === 'email' && !EMAIL_RE.test(v.trim())) {
         e[f.name] = 'Please enter a valid email address.';
       } else if (f.type === 'tel' && !PHONE_RE.test(v.trim())) {
@@ -102,9 +128,11 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
         });
         return;
       }
-      // "Other" is saved as "Other: <what they typed>" in the same column.
-      data[column] =
-        value(f.name) === OTHER ? `Other: ${value(`${f.name}_other`).trim()}` : value(f.name).trim();
+      data[column] = f.options
+        ? chosen(f)
+            .map((opt) => resolve(f, opt))
+            .join('; ')
+        : value(f.name).trim();
     });
     let error = '';
     try {
@@ -159,22 +187,29 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
       return (
         <Fieldset key={f.name} aria-describedby={describedBy}>
           <Legend>
-            {label} <Req />
+            {label} <Req optional={f.optional} />
           </Legend>
+          {f.multi && <Hint>{f.max ? `Choose up to ${NUMBER_WORDS[f.max]}.` : 'Select all that apply.'}</Hint>}
           {f.hint && <Hint>{f.hint}</Hint>}
           {f.options &&
-            f.options.map((opt, i) => (
-              <Option key={opt} selected={value(f.name) === opt}>
-                <input
-                  type="radio"
-                  id={`apply-${f.name}-${i}`}
-                  name={f.name}
-                  checked={value(f.name) === opt}
-                  onChange={() => set(f.name, opt)}
-                />
-                {opt}
-              </Option>
-            ))}
+            f.options.map((opt, i) => {
+              const picked = chosen(f);
+              const on = picked.includes(opt);
+              const full = f.max && picked.length >= f.max && !on && !(f.exclusive || []).includes(opt);
+              return (
+                <Option key={opt} selected={on} style={full ? { opacity: 0.5 } : undefined}>
+                  <input
+                    type={f.multi ? 'checkbox' : 'radio'}
+                    id={`apply-${f.name}-${i}`}
+                    name={f.name}
+                    checked={on}
+                    disabled={full}
+                    onChange={() => (f.multi ? toggle(f, opt) : set(f.name, opt))}
+                  />
+                  {isSpecify(opt) ? opt.slice(0, -SPECIFY.length) : opt}
+                </Option>
+              );
+            })}
           {f.checks &&
             f.checks.map(([name, text]) => (
               <Option key={name} selected={!!answers[name]}>
@@ -190,7 +225,7 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
                 {text}
               </Option>
             ))}
-          {value(f.name) === OTHER && (
+          {f.options && chosen(f).some(isSpecify) && (
             <TextInput
               aria-label={`${f.label}: please specify`}
               placeholder="Please specify"
@@ -211,14 +246,14 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
     return (
       <Field key={f.name}>
         <FieldLabel htmlFor={`apply-${f.name}`}>
-          {label} <Req />
+          {label} <Req optional={f.optional} />
         </FieldLabel>
         {f.hint && <Hint>{f.hint}</Hint>}
         <TextInput
-          as={f.words ? 'textarea' : 'input'}
-          rows={f.words ? 4 : undefined}
+          as={f.words || f.paragraph ? 'textarea' : 'input'}
+          rows={f.words || f.paragraph ? 4 : undefined}
           id={`apply-${f.name}`}
-          type={f.words ? undefined : f.type || 'text'}
+          type={f.words || f.paragraph ? undefined : f.type || 'text'}
           autoComplete={f.autoComplete}
           value={value(f.name)}
           invalid={err}
@@ -241,7 +276,7 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
   return (
     <Card>
       <Heading>{heading}</Heading>
-      <Muted>{intro}</Muted>
+      <Intro>{intro}</Intro>
       <Progress ref={progressRef}>
         <span>
           Step {step + 1} of {SECTIONS.length}
@@ -292,11 +327,20 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
   );
 }
 
-const Req = () => (
-  <span aria-hidden="true" style={{ color: CORAL_DARK }}>
-    *
-  </span>
-);
+const Req = ({ optional }) =>
+  optional ? (
+    <span style={{ color: MUTED, fontWeight: 400 }}>(optional)</span>
+  ) : (
+    <span aria-hidden="true" style={{ color: CORAL_DARK }}>
+      *
+    </span>
+  );
+
+const Intro = styled.div`
+  margin: 0 0 24px;
+  color: ${MUTED};
+  p { margin: 0 0 12px; }
+`;
 
 const SectionTitle = styled.h3`
   margin: 0 0 16px;

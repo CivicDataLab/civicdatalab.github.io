@@ -361,7 +361,10 @@ const UndpCohortPage = () => {
               </summary>
               <ol>
                 {s.fields.map((f) => (
-                  <li key={f.name}>{f.label}</li>
+                  <li key={f.name}>
+                    {f.label}
+                    {f.optional ? ' (optional)' : ' *'}
+                  </li>
                 ))}
               </ol>
             </details>
@@ -393,19 +396,42 @@ const UndpCohortPage = () => {
             <ApplyForm
               sections={UNDP_SECTIONS}
               scriptUrl={UNDP.scriptUrl}
-              heading="Application form"
+              heading="Baseline assessment questionnaire"
               intro={
                 <>
-                  All questions are required. For queries, write to{' '}
-                  <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
+                  <p>
+                    This form takes approximately 10 minutes. No prior AI experience is required. Brief answers and
+                    estimates are welcome. Starred questions are mandatory. Submission does not guarantee selection.
+                  </p>
+                  <p>
+                    <strong>How your information will be used.</strong> CDL, working with UNDP India, will use your
+                    responses to understand training needs, plan the programme and contact you about participation.
+                    Responses may be shared with UNDP India. Findings will be reported in aggregate or without
+                    identifying your organisation.
+                  </p>
+                  <p>
+                    Participation is voluntary. Please do not include confidential information or personal details of
+                    the people you serve. Publication of case studies will follow the consent preferences recorded
+                    below. Personal quotations, photographs or other identifying information will require separate
+                    consent.
+                  </p>
+                  <p>
+                    For queries or assistance, contact <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
+                  </p>
                 </>
               }
               thanks={
                 <>
                   <p>
-                    <strong>Thank you for applying to the AI &amp; Digital Tools for CSOs programme.</strong>
+                    <strong>Thank you for sharing your organisation’s needs and experience.</strong>
                   </p>
-                  <p>We will review your application and contact you about next steps.</p>
+                  <p>
+                    Your responses will help CivicDataLab and UNDP India shape the programme. We may contact you for
+                    further information or to discuss next steps.
+                  </p>
+                  <p>
+                    For queries, write to <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
+                  </p>
                 </>
               }
             />
