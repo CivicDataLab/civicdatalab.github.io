@@ -454,6 +454,8 @@ export default UndpCohortPage;
 const WhiteStat = styled(Stat)`
   ${bubble('48px', 72, { body: whiteBubbleBody, tail: whiteBubbleTail })}
   color: ${C.navy};
+  /* follows the brush outline (tail included) so the white bubble reads on a light page */
+  filter: drop-shadow(0 6px 14px rgba(11, 56, 101, 0.12));
   span { opacity: 1; color: ${C.muted}; }
 `;
 
