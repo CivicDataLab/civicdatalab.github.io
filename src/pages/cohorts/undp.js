@@ -44,7 +44,6 @@ import flagsArt from '../../images/cohort/flags.webp';
 import coralCard from '../../images/cohort/coral-card.webp';
 import whiteBubbleBody from '../../images/cohort/bubble-white-body.webp';
 import whiteBubbleTail from '../../images/cohort/bubble-white-tail.webp';
-import grainTile from '../../images/cohort/grain-tile.webp';
 
 const stats = [
   ['~100', 'CSO representatives across cohorts'],
@@ -171,10 +170,10 @@ const UndpCohortPage = () => {
       <CohortHead
         title="AI & Digital Tools for CSOs"
         description="Call for applications: CivicDataLab with UNDP India. AI and digital skills for the organisations closest to communities."
-        background={`#fafafa url(${grainTile}) 0 0 / 600px repeat`}
+        background="#F6F3EE"
       />
 
-      <TopBar>
+      <TopBar style={{ background: 'rgba(246, 243, 238, 0.95)' }}>
         <span>
           <TopBarCredit>CivicDataLab with UNDP India · </TopBarCredit>
           {deadlineLabel || 'Applications open'}
