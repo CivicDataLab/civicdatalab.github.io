@@ -3,4 +3,4 @@ export const DEADLINE = new Date('2026-11-07T23:59:59+05:30');
 
 // Google Apps Script web app that appends submissions to the cohort Sheet.
 // Setup: scripts/cohort-apps-script/README.md. Empty = forms show a "not connected" error.
-export const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzbNXaGv9PFTHY9OWHsYswQsSvXCV14db5mIFXflWKMVpKoASWbw0vvh9nBMGQqqD5G/exec';
+export const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzlPWzrK_l7UFY0rDjD9QkyaalkmQNpuYOvu9683m5bHis-40JSJEfePRQRRtmRTEiS/exec';
