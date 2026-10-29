@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { SCRIPT_URL } from './config';
 import {
   EMAIL_RE,
+  BLUE,
   CORAL_DARK,
   MUTED,
   NAVY,
@@ -201,11 +202,28 @@ export default function ApplyForm() {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | saving | done
   const [saveError, setSaveError] = useState('');
+  const [step, setStep] = useState(0);
   const doneRef = useRef(null);
+  const stepRef = useRef(null);
+  const progressRef = useRef(null);
+  const moved = useRef(false);
 
   useEffect(() => {
     if (status === 'done' && doneRef.current) doneRef.current.focus();
   }, [status]);
+
+  // On each step change, bring the progress bar into view and move focus to the step title.
+  useEffect(() => {
+    if (!moved.current || !stepRef.current) return;
+    progressRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    stepRef.current.focus({ preventScroll: true });
+  }, [step]);
+
+  const last = step === SECTIONS.length - 1;
+  const go = (to) => {
+    moved.current = true;
+    setStep(to);
+  };
 
   const value = (name) => answers[name] || '';
 
@@ -214,9 +232,9 @@ export default function ApplyForm() {
     setErrors((e) => ({ ...e, [name]: undefined }));
   };
 
-  const validate = () => {
+  const validate = (fields) => {
     const e = {};
-    FIELDS.forEach((f) => {
+    fields.forEach((f) => {
       const v = value(f.name);
       if (f.checks) {
         if (f.checks.some(([n]) => !answers[n])) e[f.name] = 'Please tick every box to continue.';
@@ -265,9 +283,10 @@ export default function ApplyForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const e = validate();
+    const fields = SECTIONS[step].fields;
+    const e = validate(fields);
     setErrors(e);
-    const first = FIELDS.find((f) => e[f.name]);
+    const first = fields.find((f) => e[f.name]);
     if (first) {
       const el = document.getElementById(focusId(first.name));
       if (el) {
@@ -276,7 +295,8 @@ export default function ApplyForm() {
       }
       return;
     }
-    save();
+    if (last) save();
+    else go(step + 1);
   };
 
   if (status === 'done') {
@@ -383,7 +403,8 @@ export default function ApplyForm() {
     );
   };
 
-  let n = 0;
+  const section = SECTIONS[step];
+  const firstQ = SECTIONS.slice(0, step).reduce((sum, sec) => sum + sec.fields.length, 1);
   return (
     <Card>
       <Heading>NGO screening questionnaire</Heading>
@@ -392,16 +413,22 @@ export default function ApplyForm() {
         exact figures aren't available. Responses are used for screening only and do not guarantee a cohort seat.
         For queries, write to <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
       </Muted>
+      <Progress ref={progressRef}>
+        <span>
+          Step {step + 1} of {SECTIONS.length}
+        </span>
+        <Bar role="progressbar" aria-valuemin={1} aria-valuemax={SECTIONS.length} aria-valuenow={step + 1}>
+          <i style={{ width: `${((step + 1) / SECTIONS.length) * 100}%` }} />
+        </Bar>
+      </Progress>
       <form onSubmit={handleSubmit} noValidate>
-        {SECTIONS.map((s, i) => (
-          <section key={s.title}>
-            <SectionTitle>
-              Section {i + 1}: {s.title}
-            </SectionTitle>
-            {s.intro && <Muted>{s.intro}</Muted>}
-            {s.fields.map((f) => renderField(f, (n += 1)))}
-          </section>
-        ))}
+        <section>
+          <SectionTitle ref={stepRef} tabIndex={-1}>
+            {section.title}
+          </SectionTitle>
+          {section.intro && <Muted>{section.intro}</Muted>}
+          {section.fields.map((f, i) => renderField(f, firstQ + i))}
+        </section>
 
         <Honeypot
           type="text"
@@ -413,9 +440,16 @@ export default function ApplyForm() {
           onChange={(ev) => set('website', ev.target.value)}
         />
 
-        <Button type="submit" disabled={status === 'saving'}>
-          {status === 'saving' ? 'Submitting…' : 'Submit application'}
-        </Button>
+        <Nav>
+          {step > 0 && (
+            <BackButton type="button" onClick={() => go(step - 1)} disabled={status === 'saving'}>
+              Back
+            </BackButton>
+          )}
+          <Button type="submit" disabled={status === 'saving'}>
+            {!last ? 'Next' : status === 'saving' ? 'Submitting…' : 'Submit application'}
+          </Button>
+        </Nav>
         {saveError && (
           <ErrorText role="alert">
             We couldn't submit your application ({saveError}). Your answers are still here.{' '}
@@ -436,11 +470,39 @@ const Req = () => (
 );
 
 const SectionTitle = styled.h3`
-  margin: 32px 0 16px;
-  padding-top: 24px;
-  border-top: 1px solid #e3e8ee;
-  font-size: 1.2rem;
+  margin: 0 0 16px;
+  font-size: 1.3rem;
   color: ${NAVY};
+  &:focus { outline: none; }
+`;
+
+const Progress = styled.div`
+  margin: 0 0 24px;
+  scroll-margin-top: 96px;
+  span { display: block; margin-bottom: 8px; font-size: 0.9rem; font-weight: 600; color: ${MUTED}; }
+`;
+
+const Bar = styled.div`
+  height: 6px;
+  border-radius: 999px;
+  background: #e3e8ee;
+  overflow: hidden;
+  i { display: block; height: 100%; background: ${BLUE}; transition: width 0.3s; }
+`;
+
+const Nav = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  button:last-child { margin-left: auto; }
+`;
+
+const BackButton = styled(Button)`
+  background: transparent;
+  color: ${NAVY};
+  box-shadow: inset 0 0 0 2px ${NAVY};
+  &:hover { background: #eef2f6; }
 `;
 
 const Field = styled.div`
