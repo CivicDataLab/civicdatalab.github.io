@@ -262,10 +262,9 @@ export default function ApplyForm() {
         });
         return;
       }
-      data[f.name] = value(f.name).trim();
-      if (f.options && f.options.includes(OTHER)) {
-        data[`${f.name}_other`] = value(f.name) === OTHER ? value(`${f.name}_other`).trim() : '';
-      }
+      // "Other" is saved as "Other: <what they typed>" in the same column.
+      data[f.name] =
+        value(f.name) === OTHER ? `Other: ${value(`${f.name}_other`).trim()}` : value(f.name).trim();
     });
     let error = '';
     try {

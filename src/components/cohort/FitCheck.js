@@ -96,12 +96,13 @@ export default function FitCheck() {
     const data = {
       form: 'short',
       website: answers.website,
-      email: answers.email.trim(),
-      domain_other: answers.domain === OTHER ? answers.domain_other.trim() : ''
+      email: answers.email.trim()
     };
     QUESTIONS.forEach((q) => {
       data[q.name] = answers[q.name];
     });
+    // "Other" is saved as "Other: <what they typed>" in the same column.
+    if (answers.domain === OTHER) data.domain = `Other: ${answers.domain_other.trim()}`;
     let error = '';
     try {
       if (!SCRIPT_URL) throw new Error('Form not connected yet');
