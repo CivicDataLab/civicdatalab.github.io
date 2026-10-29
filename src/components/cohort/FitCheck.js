@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { SCRIPT_URL } from './config';
 import {
   EMAIL_RE,
   Card,
@@ -17,7 +16,7 @@ import {
   Result
 } from './ui';
 
-const OTHER = 'Other: please specify';
+import { OTHER } from './questions';
 
 const QUESTIONS = [
   {
@@ -63,7 +62,7 @@ const QUESTIONS = [
 
 
 
-export default function FitCheck() {
+export default function FitCheck({ scriptUrl }) {
   const [answers, setAnswers] = useState({ email: '', domain_other: '', website: '' });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | saving | done
@@ -103,8 +102,8 @@ export default function FitCheck() {
     data['Your email'] = answers.email.trim();
     let error = '';
     try {
-      if (!SCRIPT_URL) throw new Error('Form not connected yet');
-      const res = await fetch(SCRIPT_URL, { method: 'POST', body: new URLSearchParams(data) });
+      if (!scriptUrl) throw new Error('Form not connected yet');
+      const res = await fetch(scriptUrl, { method: 'POST', body: new URLSearchParams(data) });
       const json = await res.json();
       if (!json.ok) error = json.error || 'Unknown error';
     } catch (err) {
