@@ -59,9 +59,10 @@ export const useReveal = () => {
 };
 
 // Page-level styles, SEO tags and the Inter font.
-export const CohortHead = ({ title, description }) => (
+// `background` overrides the page background (CSS `background` value).
+export const CohortHead = ({ title, description, background: bg }) => (
   <>
-    <PageStyle />
+    <PageStyle bg={bg} />
     <Seo title={title} description={description} />
     <Helmet>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -75,7 +76,7 @@ export const CohortHead = ({ title, description }) => (
 
 export const PageStyle = createGlobalStyle`
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: #F4F5F7 url(${background}) top center / 100% auto repeat-y; }
+  body { margin: 0; background: ${(p) => p.bg || `#F4F5F7 url(${background}) top center / 100% auto repeat-y`}; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 `;
 
