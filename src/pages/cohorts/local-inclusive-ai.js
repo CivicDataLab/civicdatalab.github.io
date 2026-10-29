@@ -9,6 +9,8 @@ import bubbleBody from '../../images/cohort/bubble-body.webp';
 import bubbleTail from '../../images/cohort/bubble-tail.webp';
 import cdlLogo from '../../images/cohort/cdl-logo.webp';
 import tech4devLogo from '../../images/cohort/tech4dev-logo.webp';
+// ponytail: 104px source from gramvaani.org, slightly soft on retina; swap for the official hi-res file when Gram Vaani sends it.
+import gramvaaniLogo from '../../images/cohort/gramvaani-logo.webp';
 import peopleArt from '../../images/cohort/people.webp';
 import flagsArt from '../../images/cohort/flags.webp';
 import hillsArt from '../../images/cohort/hills.webp';
@@ -173,8 +175,7 @@ const CohortPage = () => {
           <Logos>
             <img src={cdlLogo} alt="CivicDataLab" />
             <img src={tech4devLogo} alt="Project Tech4Dev" />
-            {/* Placeholder until the Gram Vaani logo file arrives. */}
-            <LogoText>Gram Vaani</LogoText>
+            <img src={gramvaaniLogo} alt="Gram Vaani" />
           </Logos>
           <Eyebrow>Call For Applications: Local &amp; Inclusive AI Cohort</Eyebrow>
           <h1>
@@ -451,11 +452,6 @@ const Logos = styled.div`
   border-radius: 14px;
   margin-bottom: 16px;
   img { height: 48px; width: auto; }
-`;
-
-const LogoText = styled.span`
-  color: ${C.navy};
-  font-weight: 700;
 `;
 
 const Eyebrow = styled.p`
