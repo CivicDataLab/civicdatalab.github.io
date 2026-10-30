@@ -4,6 +4,7 @@ import ApplyForm from '../../components/cohort/ApplyForm';
 import { TECH4DEV } from '../../components/cohort/config';
 import { TECH4DEV_SECTIONS } from '../../components/cohort/questions';
 import {
+  deadlineText,
   useDeadlineLabel,
   useReveal,
   CohortHead,
@@ -17,15 +18,18 @@ import {
   Eyebrow,
   Sub,
   HeroActions,
-  People,
-  Hills,
+  PeopleArt,
   JourneyHead,
+  JourneyAxis,
+  JourneyEnd,
+  JourneyTrack,
+  MobileOnly,
   Section,
-  Stats,
-  Stat,
-  Lead,
+  StatsBand,
+  QuoteBand,
   Ticks,
   Chips,
+  CardGrid,
   Note,
   Journey,
   Step,
@@ -35,6 +39,8 @@ import {
   Cards,
   Card,
   Price,
+  CtaBand,
+  Consent,
   Footer
 } from '../../components/cohort/layout';
 import cdlLogo from '../../images/cohort/cdl-logo.webp';
@@ -42,6 +48,7 @@ import tech4devLogo from '../../images/cohort/tech4dev-logo.webp';
 import peopleArt from '../../images/cohort/people.webp';
 import flagsArt from '../../images/cohort/flags.webp';
 import hillsArt from '../../images/cohort/hills.webp';
+import chatBubble from '../../images/cohort/hero-bubble.webp';
 
 const stats = [
   ['6–8', 'NGOs in the cohort'],
@@ -121,6 +128,16 @@ const criteria = [
   'Willingness to share appropriate code, documentation, benchmarks and learning as open-source resources'
 ];
 
+const consent = (
+  <Consent>
+    By submitting this form, you consent to CivicDataLab, Gram Vaani and Tech4Dev collecting and using the information
+    you provide to assess your application for the Local &amp; Inclusive AI Cohort and to contact you about it,
+    including if you are selected. To withdraw your consent at any time, to exercise your rights under the Digital
+    Personal Data Protection Act, 2023, or to make a complaint, please email us at{' '}
+    <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
+  </Consent>
+);
+
 const CohortPage = () => {
   const deadlineLabel = useDeadlineLabel(TECH4DEV.deadline);
   const closed = deadlineLabel === 'Applications closed';
@@ -144,7 +161,7 @@ const CohortPage = () => {
       <Hero>
         <HeroBubble>
           <Logos>
-            <img src={cdlLogo} alt="CivicDataLab" />
+            <img src={cdlLogo} alt="CivicDataLab" style={{ height: 64 }} />
             <img src={tech4devLogo} alt="Project Tech4Dev" />
           </Logos>
           <Eyebrow>Call For Applications: Local &amp; Inclusive AI Cohort</Eyebrow>
@@ -159,26 +176,25 @@ const CohortPage = () => {
             </Button>
           </HeroActions>
         </HeroBubble>
-        <People src={peopleArt} alt="" />
+        <PeopleArt src={peopleArt} bubble={chatBubble} />
       </Hero>
 
-      <Section>
-        <Stats>
-          {stats.map(([big, small]) => (
-            <Stat key={big}>
-              <strong>{big}</strong>
-              <span>{small}</span>
-            </Stat>
-          ))}
-        </Stats>
-      </Section>
+      <StatsBand>
+        {stats.map(([big, small]) => (
+          <li key={big}>
+            <strong>{big}</strong>
+            <span>{small}</span>
+          </li>
+        ))}
+      </StatsBand>
+
+      <QuoteBand>
+        Does your NGO already have an AI solution or is building one, but face challenges in making it useful, trusted
+        and widely adopted by communities and frontline teams?
+      </QuoteBand>
 
       <Section narrow>
-        <Lead>
-          Does your NGO already have an AI solution or is building one, but face challenges in making it useful,
-          trusted and widely adopted by communities and frontline teams?
-        </Lead>
-        <p>The Local and Inclusive AI Cohort will help you</p>
+        <p>The Local &amp; Inclusive AI Cohort will help you</p>
         <Ticks>
           {helps.map((t) => (
             <li key={t}>{t}</li>
@@ -194,8 +210,7 @@ const CohortPage = () => {
         </p>
         <p>
           The focus is on improving an existing AI application or a credible pilot. Participating NGOs will own
-          implementation, supported by mentors who help them make practical design, integration and evaluation
-          choices.
+          implementation, supported by mentors who help them make practical design, integration and evaluation choices.
         </p>
         <h3>Cohort focus areas</h3>
         <Chips>
@@ -205,41 +220,56 @@ const CohortPage = () => {
         </Chips>
       </Section>
 
-      <Section narrow>
+      <Section>
         <JourneyHead>
           <h2>Programme structure</h2>
-          <img src={flagsArt} alt="" />
+          <MobileOnly>
+            <img src={flagsArt} alt="" />
+          </MobileOnly>
         </JourneyHead>
-        <Journey>
-          {journey.map(([title, body], i) => (
-            <Step key={title} data-reveal={i} className={shown.includes(String(i)) ? 'in' : ''}>
-              <Flag aria-hidden="true">{i + 1}</Flag>
-              <div>
-                <h3>{title}</h3>
-                <p>{body}</p>
-              </div>
-            </Step>
-          ))}
-        </Journey>
+        <JourneyAxis>
+          <span>15 November</span>
+          <span className="dash">–</span>
+          <span>31 March</span>
+        </JourneyAxis>
+        <JourneyTrack>
+          <Journey across={journey.length} style={{ marginTop: 0 }}>
+            {journey.map(([title, body], i) => (
+              <Step key={title} data-reveal={i} className={shown.includes(String(i)) ? 'in' : ''}>
+                <Flag aria-hidden="true">{i + 1}</Flag>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{body}</p>
+                </div>
+              </Step>
+            ))}
+          </Journey>
+          <JourneyEnd>
+            <img src={flagsArt} alt="" />
+            Pilot-ready
+          </JourneyEnd>
+        </JourneyTrack>
+      </Section>
 
-        <h2>Programme approach</h2>
+      <Section narrow>
+        <h2 style={{ marginTop: 0 }}>Programme approach</h2>
         <p>
           The programme follows a learn, build, test, iterate and share approach. CivicDataLab will lead cohort
-          management, readiness assessment, technical mentorship and participatory evaluation exercises. Gram Vaani
-          will contribute expertise in voice-first design, community engagement, contextualisation, human oversight
-          and feedback processes.
+          management, readiness assessment, technical mentorship and participatory evaluation exercises. Gram Vaani will
+          contribute expertise in voice-first design, community engagement, contextualisation, human oversight and
+          feedback processes.
         </p>
         <p>
-          Participants will work on their own products throughout the cohort. Support will include co-design
-          sessions, implementation rubrics, technical troubleshooting, demonstrations and peer learning, tailored to
-          each NGO’s use case and starting point.
+          Participants will work on their own products throughout the cohort. Support will include co-design sessions,
+          implementation rubrics, technical troubleshooting, demonstrations and peer learning, tailored to each NGO’s
+          use case and starting point.
         </p>
         <h3>What you will leave with</h3>
-        <Ticks>
+        <CardGrid>
           {leaveWith.map((t) => (
             <li key={t}>{t}</li>
           ))}
-        </Ticks>
+        </CardGrid>
         <Note>
           Success will be assessed against each NGO’s agreed use case, including user value, technical performance,
           field adoption, internal capacity and sustainability. The end-of-cohort goal is pilot readiness; reaching
@@ -251,8 +281,8 @@ const CohortPage = () => {
         <BandInner>
           <h2>The investment</h2>
           <p>
-            This subsidised fee covers technical mentorship, implementation support and peer learning at
-            substantially below the full programme cost.
+            This subsidised fee covers technical mentorship, implementation support and peer learning at substantially
+            below the full programme cost.
           </p>
           <Cards>
             <Card>
@@ -283,8 +313,8 @@ const CohortPage = () => {
       <Section narrow>
         <h2>Who should apply</h2>
         <p>
-          We invite applications from NGOs working in health, agriculture, and public services that can demonstrate
-          the following:
+          We invite applications from NGOs working in health, agriculture, and public services that can demonstrate the
+          following:
         </p>
         <Ticks>
           {criteria.map((t) => (
@@ -299,6 +329,7 @@ const CohortPage = () => {
       </Section>
 
       <Section id="fit">
+        {consent}
         <FitCheck scriptUrl={TECH4DEV.scriptUrl} />
       </Section>
 
@@ -308,9 +339,7 @@ const CohortPage = () => {
           <p>Applications for this cohort have closed. Thank you for your interest.</p>
         ) : (
           <>
-            <p>
-              Not sure yet? <a href="#fit">Check if we’re a fit</a> first.
-            </p>
+            {consent}
             <ApplyForm
               sections={TECH4DEV_SECTIONS}
               scriptUrl={TECH4DEV.scriptUrl}
@@ -318,9 +347,8 @@ const CohortPage = () => {
               intro={
                 <>
                   This screening form takes approximately 5–7 minutes. All questions are required. Rough answers are
-                  fine where exact figures aren't available. Responses are used for screening only and do not
-                  guarantee a cohort seat. For queries, write to{' '}
-                  <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
+                  fine where exact figures aren't available. Responses are used for screening only and do not guarantee
+                  a cohort seat. For queries, write to <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
                 </>
               }
               thanks={
@@ -329,8 +357,8 @@ const CohortPage = () => {
                     <strong>Thank you for your interest in the Local and Inclusive AI Cohort.</strong>
                   </p>
                   <p>
-                    We will review your responses and contact you if further information is needed or to discuss
-                    next steps.
+                    We will review your responses and contact you if further information is needed or to discuss next
+                    steps.
                   </p>
                 </>
               }
@@ -339,7 +367,26 @@ const CohortPage = () => {
         )}
       </Section>
 
-      <Hills src={hillsArt} alt="" />
+      <CtaBand>
+        <div>
+          <h2>From AI pilot to implementation. What’s your next move?</h2>
+          <p>
+            If your organisation is ready to make its existing AI solution more accessible and useful in the field, we
+            invite you to apply.
+          </p>
+          {!closed && (
+            <p>
+              <Button href="#apply">Apply now</Button>
+            </p>
+          )}
+          <p style={{ marginBottom: 0 }}>
+            Applications close: {deadlineText(TECH4DEV.deadline)}
+            <br />
+            For queries, reach out to: <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>
+          </p>
+        </div>
+        <img src={hillsArt} alt="" />
+      </CtaBand>
       <Footer>
         <a href="/">civicdatalab.in</a>
       </Footer>

@@ -5,6 +5,7 @@ import { UNDP } from '../../components/cohort/config';
 import { UNDP_SECTIONS } from '../../components/cohort/questions';
 import {
   C,
+  deadlineText,
   useDeadlineLabel,
   useReveal,
   CohortHead,
@@ -21,9 +22,7 @@ import {
   People,
   JourneyHead,
   Section,
-  Stats,
-  Stat,
-  bubble,
+  StatsBand,
   Lead,
   Ticks,
   Note,
@@ -35,6 +34,7 @@ import {
   Cards,
   Card,
   Price,
+  Consent,
   Footer
 } from '../../components/cohort/layout';
 import cdlLogo from '../../images/cohort/cdl-logo.webp';
@@ -42,15 +42,16 @@ import undpLogo from '../../images/cohort/undp-logo.webp';
 import heroArt from '../../images/cohort/undp-hero.webp';
 import flagsArt from '../../images/cohort/flags.webp';
 import coralCard from '../../images/cohort/coral-card.webp';
-import whiteBubbleBody from '../../images/cohort/bubble-white-body.webp';
-import whiteBubbleTail from '../../images/cohort/bubble-white-tail.webp';
+
+const closes = UNDP.deadline
+  ? UNDP.deadline.toLocaleString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' })
+  : '';
 
 const stats = [
-  ['~100', 'CSO representatives across cohorts'],
+  ['100', 'CSO representatives across cohorts'],
   ['Free of cost', 'participation fee'],
-  ['Mostly virtual', 'one in-person cohort in Delhi/NCR for about 30'],
-  ['4 skill areas', 'documentation, data, outreach, workflow'],
-  ['Free tools', 'open-source or freely accessible']
+  ['Primarily virtual', 'one in-person cohort in Delhi/NCR for 30'],
+  [closes, 'applications close, 11:59 PM IST']
 ];
 
 // ponytail: placeholder line icons; swap for the CDL icon set when the files arrive.
@@ -94,7 +95,7 @@ const journey = [
   ],
   [
     'Practise with support',
-    'Training will include live sessions, hands-on tasks, demonstrations, recorded modules and practical resources. Approximately 30 participants will join a two-day workshop in Delhi/NCR; remaining participants will be reached through virtual cohorts. Cohort allocation and the confirmed session schedule will be shared with selected applicants. Mentoring clinics, troubleshooting support and peer exchange will help participants apply tools to their own organisational tasks. The proposed approach includes a helpdesk, a discussion forum and peer champions who can support continued learning within and across organisations.'
+    'Training will include live sessions, hands-on tasks, demonstrations, recorded modules and practical resources. 30 participants will join a two-day workshop in Delhi/NCR; remaining participants will be reached through virtual cohorts. Cohort allocation and the confirmed session schedule will be shared with selected applicants. Mentoring clinics, troubleshooting support and peer exchange will help participants apply tools to their own organisational tasks. The proposed approach includes a helpdesk, a discussion forum and peer champions who can support continued learning within and across organisations.'
   ]
 ];
 
@@ -122,16 +123,6 @@ const outcomes = [
   'Identify practical opportunities to improve organisational workflows and share learning with colleagues',
   'Assess their progress and identify priorities for continued learning and adoption'
 ];
-
-const deadlineText = UNDP.deadline
-  ? UNDP.deadline.toLocaleString('en-IN', {
-      day: 'numeric',
-      month: 'long',
-      hour: 'numeric',
-      minute: '2-digit',
-      timeZone: 'Asia/Kolkata'
-    }) + ' IST'
-  : '';
 
 // Opens the phone's share sheet; on desktop, copies the link instead.
 const ShareButton = () => {
@@ -181,37 +172,37 @@ const UndpCohortPage = () => {
         {!closed && <Button href="#apply">Apply now</Button>}
       </TopBar>
 
-      <Hero>
-        <HeroBubble>
-          <Logos>
-            <img src={cdlLogo} alt="CivicDataLab" />
-            <img src={undpLogo} alt="UNDP" style={{ height: 72 }} />
-          </Logos>
-          <Eyebrow>Call for Applications: AI &amp; Digital Tools for CSOs</Eyebrow>
-          <h1>
-            AI &amp; digital skills for the organisations <em>closest to communities</em>
-          </h1>
-          <Sub>Building practical skills for stronger programmes and evidence based advocacy</Sub>
-          <HeroActions>
-            {!closed && <Button href="#apply">Apply now</Button>}
-            <Button href="#how" ghost>
-              See how it works
-            </Button>
-          </HeroActions>
-        </HeroBubble>
-        <People src={heroArt} alt="" style={{ maxWidth: 420 }} />
+      <Hero wide>
+        <HeroGrid>
+          <HeroBubble>
+            <Logos>
+              <img src={cdlLogo} alt="CivicDataLab" style={{ height: 72 }} />
+              <img src={undpLogo} alt="UNDP" style={{ height: 100 }} />
+            </Logos>
+            <Eyebrow>Call for Applications: AI &amp; Digital Tools for CSOs</Eyebrow>
+            <h1>
+              AI &amp; digital skills for the organisations <em>closest to communities</em>
+            </h1>
+            <Sub>Building practical skills for stronger programmes and evidence based advocacy</Sub>
+            <HeroActions>
+              {!closed && <Button href="#apply">Apply now</Button>}
+              <Button href="#how" ghost>
+                See how it works
+              </Button>
+            </HeroActions>
+          </HeroBubble>
+          <People src={heroArt} alt="" />
+        </HeroGrid>
       </Hero>
 
-      <Section>
-        <CenteredStats>
-          {stats.map(([big, small]) => (
-            <WhiteStat key={big}>
-              <strong>{big}</strong>
-              <span>{small}</span>
-            </WhiteStat>
-          ))}
-        </CenteredStats>
-      </Section>
+      <StatsBand cols={4}>
+        {stats.map(([big, small]) => (
+          <li key={small}>
+            <strong>{big}</strong>
+            <span>{small}</span>
+          </li>
+        ))}
+      </StatsBand>
 
       <Section narrow>
         <h2>Every CSO carries a long to-do list</h2>
@@ -220,14 +211,14 @@ const UndpCohortPage = () => {
           deserves to be heard.
         </Lead>
         <p>
-          Behind each of them is a small team doing the work of many. This programme is for the people who carry all
-          of it.
+          Behind each of them is a small team doing the work of many. This programme is for the people who carry all of
+          it.
         </p>
         <p>
           CivicDataLab, along with UNDP India, invites applications from civil society organisations for a
-          capacity-building programme on AI and digital tools. The programme will equip approximately 100 CSO
-          representatives with practical skills they can apply to their day-to-day work and their organisation’s
-          contribution to the Sustainable Development Goals.
+          capacity-building programme on AI and digital tools. The programme will equip 100 CSO representatives with
+          practical skills they can apply to their day-to-day work and their organisation’s contribution to the
+          Sustainable Development Goals.
         </p>
         <p>
           The programme will help CSOs choose and use AI and digital tools for common organisational tasks, understand
@@ -250,9 +241,8 @@ const UndpCohortPage = () => {
           ))}
         </Tools>
         <Note style={{ maxWidth: 728, margin: '24px auto 0' }}>
-          The programme will also help participants recognise common risks associated with AI use, including
-          inaccurate or misleading outputs, bias, data privacy concerns and the use of sensitive community
-          information.
+          The programme will also help participants recognise common risks associated with AI use, including inaccurate
+          or misleading outputs, bias, data privacy concerns and the use of sensitive community information.
         </Note>
       </Section>
 
@@ -282,17 +272,17 @@ const UndpCohortPage = () => {
               <Price>Free of cost</Price>
               <p>
                 Participants will have access to practical learning materials, toolkits and guides developed for the
-                programme. Materials will be designed for varying levels of digital literacy; specific accessibility
-                and regional-language support will be confirmed with the final delivery plan.
+                programme. Materials will be designed for varying levels of digital literacy; specific accessibility and
+                regional-language support will be confirmed with the final delivery plan.
               </p>
             </CoralCard>
             <Card>
               <h3>In-person workshop</h3>
               <p>
                 Selected 30 organisations will participate in one in-person two-day workshop for immersive training.
-                Participants will have to make their own travel arrangements (flights/trains) for the in-person
-                workshop in Delhi. The workshop venue, accommodation, training materials, lunch and tea/coffee breaks
-                are arranged under the programme. Dates will be announced at a later stage.
+                Participants will have to make their own travel arrangements (flights/trains) for the in-person workshop
+                in Delhi. The workshop venue, accommodation, training materials, lunch and tea/coffee breaks are
+                arranged under the programme. Dates will be announced at a later stage.
               </p>
               {!closed && <Button href="#apply">Apply now</Button>}
             </Card>
@@ -303,8 +293,8 @@ const UndpCohortPage = () => {
       <Section narrow>
         <h2>Who should apply</h2>
         <p>
-          Applications are invited from CSOs in India seeking to strengthen the practical use of AI and digital tools
-          in their organisational work. The programme will accommodate participants with different levels of digital
+          Applications are invited from CSOs in India seeking to strengthen the practical use of AI and digital tools in
+          their organisational work. The programme will accommodate participants with different levels of digital
           literacy, with learning pathways informed by the baseline assessment.
         </p>
         <p>
@@ -322,30 +312,38 @@ const UndpCohortPage = () => {
           The selection process will seek diversity across geography, thematic focus, organisational size and
           representation of marginalised communities. Women-led organisations are encouraged to apply.
         </Note>
+      </Section>
 
-        <h2>Expectations from participants</h2>
-        <Ticks>
-          {expectations.map((t) => (
-            <li key={t}>{t}</li>
-          ))}
-        </Ticks>
+      <Section>
+        <BlueBlocks>
+          <div>
+            <h2>Expectations from participants</h2>
+            <Ticks>
+              {expectations.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </Ticks>
+          </div>
+          <div>
+            <h2>Expected learning outcomes</h2>
+            <p>By the end of the training, participants are expected to be better able to:</p>
+            <Ticks>
+              {outcomes.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </Ticks>
+          </div>
+        </BlueBlocks>
+      </Section>
 
-        <h2>Expected learning outcomes</h2>
-        <p>By the end of the training, participants are expected to be better able to:</p>
-        <Ticks>
-          {outcomes.map((t) => (
-            <li key={t}>{t}</li>
-          ))}
-        </Ticks>
-
-        <h2>How applications will be assessed</h2>
+      <Section narrow>
+        <h2 style={{ marginTop: 0 }}>How applications will be assessed</h2>
         <p>
           Applications and baseline findings will inform an assessment of programme fit, digital readiness, learning
-          needs and opportunities to apply the training in organisational practice. Shortlisting will balance the
-          stated priorities with diversity and inclusion across the cohort. Final selection criteria and the
-          participant list will be approved by UNDP.
+          needs and opportunities to apply the training in organisational practice. Shortlisting will balance the stated
+          priorities with diversity and inclusion across the cohort. Final selection criteria and the participant list
+          will be approved by UNDP.
         </p>
-        <Note>Programme led by UNDP India. Delivery partner: CivicDataLab.</Note>
       </Section>
 
       {UNDP_SECTIONS.length > 0 && (
@@ -376,12 +374,12 @@ const UndpCohortPage = () => {
       <Section id="apply" narrow>
         <h2>Ready to apply</h2>
         <p>
-          We invite organisations interested in using AI and digital tools responsibly to strengthen their everyday
-          work and contribution to inclusive development to apply.
+          We invite organisations interested in using AI and digital tools responsibly to strengthen their everyday work
+          and contribution to inclusive development to apply.
         </p>
-        {deadlineText && (
+        {UNDP.deadline && (
           <p>
-            <strong>Applications close: {deadlineText}</strong>
+            <strong>Applications close: {deadlineText(UNDP.deadline)}</strong>
           </p>
         )}
         <p>
@@ -394,48 +392,59 @@ const UndpCohortPage = () => {
         {closed && <p>Applications for this programme have closed. Thank you for your interest.</p>}
         {!closed &&
           (UNDP_SECTIONS.length > 0 ? (
-            <ApplyForm
-              sections={UNDP_SECTIONS}
-              scriptUrl={UNDP.scriptUrl}
-              heading="Baseline assessment questionnaire"
-              intro={
-                <>
-                  <p>
-                    This form takes approximately 10 minutes. No prior AI experience is required. Brief answers and
-                    estimates are welcome. Starred questions are mandatory. Submission does not guarantee selection.
-                  </p>
-                  <p>
-                    <strong>How your information will be used.</strong> CDL, working with UNDP India, will use your
-                    responses to understand training needs, plan the programme and contact you about participation.
-                    Responses may be shared with UNDP India. Findings will be reported in aggregate or without
-                    identifying your organisation.
-                  </p>
-                  <p>
-                    Participation is voluntary. Please do not include confidential information or personal details of
-                    the people you serve. Publication of case studies will follow the consent preferences recorded
-                    below. Personal quotations, photographs or other identifying information will require separate
-                    consent.
-                  </p>
-                  <p>
-                    For queries or assistance, contact <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
-                  </p>
-                </>
-              }
-              thanks={
-                <>
-                  <p>
-                    <strong>Thank you for sharing your organisation’s needs and experience.</strong>
-                  </p>
-                  <p>
-                    Your responses will help CivicDataLab and UNDP India shape the programme. We may contact you for
-                    further information or to discuss next steps.
-                  </p>
-                  <p>
-                    For queries, write to <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
-                  </p>
-                </>
-              }
-            />
+            <>
+              <Consent>
+                By submitting this form, you consent to CivicDataLab and UNDP India collecting and using the information
+                you provide (your name, role, email address, phone number, organisation details and your responses about
+                your digital and AI use and learning needs) to assess your application for the AI &amp; Digital Tools
+                for CSOs programme, to plan the programme, and to contact you about participation, including if you are
+                selected. To withdraw your consent at any time, to exercise your rights under the Digital Personal Data
+                Protection Act, 2023, or to make a complaint, please email us at{' '}
+                <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
+              </Consent>
+              <ApplyForm
+                sections={UNDP_SECTIONS}
+                scriptUrl={UNDP.scriptUrl}
+                heading="Baseline assessment questionnaire"
+                intro={
+                  <>
+                    <p>
+                      This form takes approximately 10 minutes. No prior AI experience is required. Brief answers and
+                      estimates are welcome. Starred questions are mandatory. Submission does not guarantee selection.
+                    </p>
+                    <p>
+                      <strong>How your information will be used.</strong> CDL, working with UNDP India, will use your
+                      responses to understand training needs, plan the programme and contact you about participation.
+                      Responses may be shared with UNDP India. Findings will be reported in aggregate or without
+                      identifying your organisation.
+                    </p>
+                    <p>
+                      Participation is voluntary. Please do not include confidential information or personal details of
+                      the people you serve. Publication of case studies will follow the consent preferences recorded
+                      below. Personal quotations, photographs or other identifying information will require separate
+                      consent.
+                    </p>
+                    <p>
+                      For queries or assistance, contact <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
+                    </p>
+                  </>
+                }
+                thanks={
+                  <>
+                    <p>
+                      <strong>Thank you for sharing your organisation’s needs and experience.</strong>
+                    </p>
+                    <p>
+                      Your responses will help CivicDataLab and UNDP India shape the programme. We may contact you for
+                      further information or to discuss next steps.
+                    </p>
+                    <p>
+                      For queries, write to <a href="mailto:dpg@civicdatalab.in">dpg@civicdatalab.in</a>.
+                    </p>
+                  </>
+                }
+              />
+            </>
           ) : (
             <Note>The application form will appear here once the questions are final.</Note>
           ))}
@@ -450,20 +459,23 @@ const UndpCohortPage = () => {
 
 export default UndpCohortPage;
 
-const WhiteStat = styled(Stat)`
-  ${bubble('48px', 72, { body: whiteBubbleBody, tail: whiteBubbleTail })}
-  color: ${C.navy};
-  /* follows the brush outline (tail included) so the white bubble reads on a light page */
-  filter: drop-shadow(0 6px 14px rgba(11, 56, 101, 0.12));
-  span { opacity: 1; color: ${C.muted}; }
+// Bubble on the left, illustration on the right; stacked on phones.
+const HeroGrid = styled.div`
+  display: grid;
+  gap: 8px;
+  align-items: end;
+  @media (min-width: 900px) { grid-template-columns: 1fr 380px; gap: 24px; }
+  img { max-width: 380px; margin: 0 0 24px auto; }
 `;
 
-// Five bubbles: flex so the short last row sits centred.
-const CenteredStats = styled(Stats)`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  > li { flex: 0 1 320px; }
+// Two blue blocks side by side.
+const BlueBlocks = styled.div`
+  display: grid;
+  gap: 24px;
+  @media (min-width: 900px) { grid-template-columns: 1fr 1fr; }
+  > div { background: ${C.block}; color: #fff; border-radius: 24px; padding: 32px 28px; }
+  h2 { margin-top: 0; font-size: 1.6rem; }
+  p { color: #fff; }
 `;
 
 const CoralCard = styled(Card)`
@@ -471,7 +483,7 @@ const CoralCard = styled(Card)`
   border-radius: 0;
   border: 0 solid transparent;
   border-image: url(${coralCard}) 120 fill / 40px stretch;
-  p { color: ${C.navy} !important; }
+  &, p, ${Price} { color: #fff !important; }
 `;
 
 const Tools = styled.ul`

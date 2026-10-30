@@ -32,8 +32,9 @@ export const Card = styled.div`
 `;
 
 export const Heading = styled.h2`
-  margin: 0 0 8px;
-  font-size: 1.6rem;
+  /* !important: the page's h2 spacing would otherwise push the card's title down */
+  margin: 0 0 8px !important;
+  font-size: 2rem;
   line-height: 1.25;
   color: ${NAVY};
 `;
@@ -41,7 +42,7 @@ export const Heading = styled.h2`
 export const Muted = styled.p`
   margin: 0 0 24px;
   color: ${MUTED};
-  font-size: ${(p) => (p.small ? '0.875rem' : '1rem')};
+  font-size: ${(p) => (p.small ? '0.875em' : '1em')};
 `;
 
 export const Fieldset = styled.fieldset`
@@ -49,13 +50,15 @@ export const Fieldset = styled.fieldset`
   padding: 0;
   margin: 0 0 28px;
   min-width: 0;
+  /* a required question left blank is marked by a red bar rather than a message under it */
+  ${(p) => p.invalid && `border-left: 3px solid ${ERROR}; padding-left: 12px;`}
 `;
 
 export const Legend = styled.legend`
   padding: 0;
   margin-bottom: 12px;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.05em;
   line-height: 1.4;
 `;
 
@@ -102,8 +105,9 @@ export const FieldLabel = styled.label`
 
 export const ErrorText = styled.p`
   margin: 6px 0 0;
-  color: ${ERROR};
-  font-size: 0.9rem;
+  /* !important: the page's paragraph colour would otherwise turn errors grey */
+  color: ${ERROR} !important;
+  font-size: 0.9em;
 `;
 
 export const Button = styled.button`
@@ -135,7 +139,7 @@ export const TextButton = styled.button`
   background: none;
   color: ${BLUE};
   font: inherit;
-  font-size: 0.875rem;
+  font-size: 0.875em;
   text-decoration: underline;
   cursor: pointer;
   &:focus-visible {

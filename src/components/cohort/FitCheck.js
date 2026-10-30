@@ -17,6 +17,7 @@ import {
 } from './ui';
 
 import { OTHER } from './questions';
+import { REQUIRED } from './ApplyForm';
 
 const QUESTIONS = [
   {
@@ -60,8 +61,6 @@ const QUESTIONS = [
   }
 ];
 
-
-
 export default function FitCheck({ scriptUrl }) {
   const [answers, setAnswers] = useState({ email: '', domain_other: '', website: '' });
   const [errors, setErrors] = useState({});
@@ -81,12 +80,13 @@ export default function FitCheck({ scriptUrl }) {
   const validate = () => {
     const e = {};
     QUESTIONS.forEach((q) => {
-      if (!answers[q.name]) e[q.name] = 'Please choose an option.';
+      if (!answers[q.name]) e[q.name] = REQUIRED;
     });
     if (answers.domain === OTHER && !answers.domain_other.trim()) {
       e.domain_other = 'Please specify the domain.';
     }
-    if (!EMAIL_RE.test(answers.email.trim())) e.email = 'Please enter a valid email address.';
+    if (!answers.email.trim()) e.email = REQUIRED;
+    else if (!EMAIL_RE.test(answers.email.trim())) e.email = 'Please enter a valid email address.';
     return e;
   };
 
@@ -137,7 +137,11 @@ export default function FitCheck({ scriptUrl }) {
       <Muted>We'll save your answers and your email so we can follow up.</Muted>
       <form onSubmit={handleSubmit} noValidate>
         {QUESTIONS.map((q) => (
-          <Fieldset key={q.name} aria-describedby={errors[q.name] ? `fit-${q.name}-error` : undefined}>
+          <Fieldset
+            key={q.name}
+            invalid={!!errors[q.name]}
+            aria-describedby={errors[q.name] ? 'fit-blanks' : undefined}
+          >
             <Legend>{q.legend}</Legend>
             {q.options.map((opt, i) => (
               <Option key={opt} selected={answers[q.name] === opt}>
@@ -173,7 +177,6 @@ export default function FitCheck({ scriptUrl }) {
                 {q.note}
               </Muted>
             )}
-            {errors[q.name] && <ErrorText id={`fit-${q.name}-error`}>{errors[q.name]}</ErrorText>}
           </Fieldset>
         ))}
 
@@ -187,10 +190,10 @@ export default function FitCheck({ scriptUrl }) {
           value={answers.email}
           invalid={!!errors.email}
           aria-invalid={!!errors.email}
-          aria-describedby={errors.email ? 'fit-email-error' : undefined}
+          aria-describedby={errors.email ? (errors.email === REQUIRED ? 'fit-blanks' : 'fit-email-error') : undefined}
           onChange={(ev) => set('email', ev.target.value)}
         />
-        {errors.email && <ErrorText id="fit-email-error">{errors.email}</ErrorText>}
+        {errors.email && errors.email !== REQUIRED && <ErrorText id="fit-email-error">{errors.email}</ErrorText>}
 
         <Honeypot
           type="text"
@@ -203,6 +206,11 @@ export default function FitCheck({ scriptUrl }) {
         />
 
         <div style={{ marginTop: 24 }}>
+          {Object.values(errors).includes(REQUIRED) && (
+            <ErrorText id="fit-blanks" role="alert" style={{ marginBottom: 12 }}>
+              Please answer the questions marked in red.
+            </ErrorText>
+          )}
           {status === 'done' ? (
             <Result ref={resultRef} tabIndex={-1} aria-live="polite">
               <p>

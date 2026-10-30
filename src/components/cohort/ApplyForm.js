@@ -31,6 +31,10 @@ const SPECIFY = ': please specify';
 const isSpecify = (opt) => opt.endsWith(SPECIFY);
 const NUMBER_WORDS = ['', 'one', 'two', 'three', 'four', 'five'];
 
+// A blank required question is marked in red and summed up once above the buttons,
+// instead of repeating a message under every question.
+export const REQUIRED = 'required';
+
 // Id of the element to focus when `name` has an error.
 const focusId = (fields, name) => {
   const field = fields.find((f) => f.name === name);
@@ -100,14 +104,14 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
       } else if (f.options) {
         const picked = chosen(f);
         if (!picked.length) {
-          if (!f.optional) e[f.name] = 'Please choose an option.';
+          if (!f.optional) e[f.name] = REQUIRED;
         } else if (picked.some(isSpecify) && !value(`${f.name}_other`).trim()) {
           e[f.name] = 'Please specify.';
         } else if (f.mustAgree && picked[0] !== f.options[0]) {
           e[f.name] = f.mustAgree;
         }
       } else if (!v.trim()) {
-        if (!f.optional) e[f.name] = 'This question is required.';
+        if (!f.optional) e[f.name] = REQUIRED;
       } else if (f.type === 'email' && !EMAIL_RE.test(v.trim())) {
         e[f.name] = 'Please enter a valid email address.';
       } else if (f.type === 'tel' && !PHONE_RE.test(v.trim())) {
@@ -176,16 +180,18 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
     );
   }
 
-  const errorFor = (name) => errors[name] && <ErrorText id={`apply-${name}-error`}>{errors[name]}</ErrorText>;
+  const errorFor = (name) =>
+    errors[name] && errors[name] !== REQUIRED && <ErrorText id={`apply-${name}-error`}>{errors[name]}</ErrorText>;
+  const blanks = SECTIONS[step].fields.filter((f) => errors[f.name] === REQUIRED).length;
 
   const renderField = (f, n) => {
     const err = !!errors[f.name];
-    const describedBy = err ? `apply-${f.name}-error` : undefined;
+    const describedBy = !err ? undefined : errors[f.name] === REQUIRED ? 'apply-blanks' : `apply-${f.name}-error`;
     const label = `Q${n}. ${f.label}`;
 
     if (f.options || f.checks) {
       return (
-        <Fieldset key={f.name} aria-describedby={describedBy}>
+        <Fieldset key={f.name} invalid={err} aria-describedby={describedBy}>
           <Legend>
             {label} <Req optional={f.optional} />
           </Legend>
@@ -304,6 +310,12 @@ export default function ApplyForm({ sections: SECTIONS, scriptUrl, heading, intr
           onChange={(ev) => set('website', ev.target.value)}
         />
 
+        {blanks > 0 && (
+          <ErrorText id="apply-blanks" role="alert" style={{ marginBottom: 12 }}>
+            {blanks === 1 ? 'One required question is' : `${blanks} required questions are`} still blank. They are
+            marked in red.
+          </ErrorText>
+        )}
         <Nav>
           {step > 0 && (
             <BackButton type="button" onClick={() => go(step - 1)} disabled={status === 'saving'}>
