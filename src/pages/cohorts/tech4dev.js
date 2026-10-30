@@ -265,12 +265,19 @@ const CohortPage = () => {
           implementation rubrics, technical troubleshooting, demonstrations and peer learning, tailored to each NGO’s
           use case and starting point.
         </p>
-        <h3>What you will leave with</h3>
+      </Section>
+
+      {/* wide, so each card can hold its text on one line on desktop */}
+      <Section style={{ paddingTop: 0, paddingBottom: 0 }}>
+        <h3 style={{ marginTop: 0 }}>What you will leave with</h3>
         <CardGrid>
           {leaveWith.map((t) => (
             <li key={t}>{t}</li>
           ))}
         </CardGrid>
+      </Section>
+
+      <Section narrow style={{ paddingTop: 0 }}>
         <Note>
           Success will be assessed against each NGO’s agreed use case, including user value, technical performance,
           field adoption, internal capacity and sustainability. The end-of-cohort goal is pilot readiness; reaching

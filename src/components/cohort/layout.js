@@ -387,19 +387,17 @@ export const CardGrid = styled.ul`
   padding: 0;
   margin: 16px 0 24px;
   display: grid;
-  gap: 16px;
-  @media (min-width: 560px) { grid-template-columns: repeat(2, 1fr); }
-  @media (min-width: 900px) { grid-template-columns: repeat(3, 1fr); }
+  gap: 12px;
   li {
     background: #fff;
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 14px;
+    padding: 16px 20px;
     line-height: 1.45;
     box-shadow: 0 2px 10px rgba(11, 56, 101, 0.06);
-    border-top: 4px solid ${C.coral};
+    border-left: 5px solid ${C.coral};
     transition: transform 0.2s, box-shadow 0.2s;
   }
-  li:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 14px 30px rgba(11, 56, 101, 0.16); }
+  li:hover { transform: translateX(8px) scale(1.01); box-shadow: 0 12px 28px rgba(11, 56, 101, 0.16); }
   @media (prefers-reduced-motion: reduce) { li { transition: none; } li:hover { transform: none; } }
 `;
 
