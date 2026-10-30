@@ -159,7 +159,7 @@ const CohortPage = () => {
       </TopBar>
 
       <Hero>
-        <HeroBubble>
+        <HeroBubble art="flat">
           <Logos>
             <img src={cdlLogo} alt="CivicDataLab" style={{ height: 64 }} />
             <img src={tech4devLogo} alt="Project Tech4Dev" />

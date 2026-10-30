@@ -5,6 +5,7 @@ import Seo from '../Seo/Seo';
 import background from '../../images/cohort/background.webp';
 import brushBody from '../../images/cohort/bubble-body.webp';
 import heroBubble from '../../images/cohort/hero-bubble.webp';
+import heroBubbleFlat from '../../images/cohort/hero-bubble-flat.webp';
 import bandTexture from '../../images/cohort/band-texture.webp';
 
 // Shared layout for the cohort landing pages under /cohorts/.
@@ -157,26 +158,32 @@ export const Hero = styled.div`
   padding: 0 16px;
 `;
 
-// The designer's speech bubble, 9-sliced so its brush edges survive any box size.
+// The designer's speech bubbles, 9-sliced so their edges survive any box size.
 // The bottom-left slice holds the whole tail, so the tail is never stretched.
-// Slices are in pixels of hero-bubble.webp (1200 × 907); `s` scales them on screen.
-const heroSlice = (s) => `
-  border-image-width: ${170 * s}px ${170 * s}px ${370 * s}px ${430 * s}px;
-  /* the tail hangs ${250 * s}px below the body */
-  padding-bottom: ${250 * s + 36}px;
+// `slice` (top right bottom left) and `tail` (how far it hangs below the body)
+// are in pixels of the image; `s` scales them on screen.
+const BUBBLES = {
+  brush: { src: heroBubble, slice: [170, 170, 370, 430], tail: 250 }, // 1200 × 907
+  flat: { src: heroBubbleFlat, slice: [130, 130, 320, 460], tail: 200 } // 996 × 897
+};
+
+const heroSlice = ({ slice, tail }, s) => `
+  border-image-width: ${slice.map((v) => `${v * s}px`).join(' ')};
+  padding-bottom: ${tail * s + 36}px;
 `;
 
+// `art`: 'brush' (default) or 'flat'.
 export const HeroBubble = styled.div`
   border: 0 solid transparent;
-  border-image-source: url(${heroBubble});
-  border-image-slice: 170 170 370 430 fill;
-  ${heroSlice(0.3)}
+  border-image-source: url(${(p) => BUBBLES[p.art || 'brush'].src});
+  border-image-slice: ${(p) => BUBBLES[p.art || 'brush'].slice.join(' ')} fill;
+  ${(p) => heroSlice(BUBBLES[p.art || 'brush'], 0.3)}
   color: #fff;
   text-align: center;
   padding-top: 32px;
   padding-left: 20px;
   padding-right: 20px;
-  @media (min-width: 768px) { ${heroSlice(0.5)} }
+  @media (min-width: 768px) { ${(p) => heroSlice(BUBBLES[p.art || 'brush'], 0.5)} }
   h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 500; letter-spacing: -0.02em; margin: 0.5rem 0 1rem; }
   em { color: ${C.coral}; font-weight: 800; font-style: italic; }
 `;
