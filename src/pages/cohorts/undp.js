@@ -172,7 +172,7 @@ const UndpCohortPage = () => {
         {!closed && <Button href="#apply">Apply now</Button>}
       </TopBar>
 
-      <Hero wide>
+      <Hero>
         <HeroGrid>
           <HeroBubble>
             <Logos>
@@ -240,7 +240,7 @@ const UndpCohortPage = () => {
             </li>
           ))}
         </Tools>
-        <Note style={{ maxWidth: 728, margin: '24px auto 0' }}>
+        <Note style={{ maxWidth: 760, margin: '24px auto 0' }}>
           The programme will also help participants recognise common risks associated with AI use, including inaccurate
           or misleading outputs, bias, data privacy concerns and the use of sensitive community information.
         </Note>

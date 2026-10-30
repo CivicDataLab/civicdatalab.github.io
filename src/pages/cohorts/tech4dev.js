@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import FitCheck from '../../components/cohort/FitCheck';
 import ApplyForm from '../../components/cohort/ApplyForm';
 import { TECH4DEV } from '../../components/cohort/config';
@@ -21,9 +21,6 @@ import {
   PeopleArt,
   JourneyHead,
   JourneyAxis,
-  JourneyEnd,
-  JourneyTrack,
-  MobileOnly,
   Section,
   StatsBand,
   QuoteBand,
@@ -31,8 +28,10 @@ import {
   Chips,
   CardGrid,
   Note,
-  Journey,
-  Step,
+  Trail,
+  TrailStep,
+  PilotEnd,
+  useScrollProgress,
   Flag,
   Band,
   BandInner,
@@ -143,6 +142,12 @@ const CohortPage = () => {
   const deadlineLabel = useDeadlineLabel(TECH4DEV.deadline);
   const closed = deadlineLabel === 'Applications closed';
   const shown = useReveal();
+  const trailRef = useRef(null);
+  useScrollProgress(trailRef);
+  const [fitOpen, setFitOpen] = useState(false);
+  useEffect(() => {
+    if (window.location.hash === '#fit') setFitOpen(true);
+  }, []);
 
   return (
     <Page>
@@ -172,7 +177,7 @@ const CohortPage = () => {
           <Sub>Enabling NGOs to Extend Local Language AI Solutions to Last-Mile Users</Sub>
           <HeroActions>
             {!closed && <Button href="#apply">Apply now</Button>}
-            <Button href="#fit" ghost>
+            <Button href="#fit" ghost onClick={() => setFitOpen(true)}>
               Check if we’re a fit
             </Button>
           </HeroActions>
@@ -221,35 +226,36 @@ const CohortPage = () => {
         </Chips>
       </Section>
 
-      <Section>
+      <Section narrow>
         <JourneyHead>
           <h2>Programme structure</h2>
-          <MobileOnly>
-            <img src={flagsArt} alt="" />
-          </MobileOnly>
+          <img src={flagsArt} alt="" />
         </JourneyHead>
         <JourneyAxis>
           <span>15 November</span>
           <span className="dash">–</span>
           <span>31 March</span>
         </JourneyAxis>
-        <JourneyTrack>
-          <Journey across={journey.length} style={{ marginTop: 0 }}>
-            {journey.map(([title, body], i) => (
-              <Step key={title} data-reveal={i} className={shown.includes(String(i)) ? 'in' : ''}>
-                <Flag aria-hidden="true">{i + 1}</Flag>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-              </Step>
-            ))}
-          </Journey>
-          <JourneyEnd>
-            <img src={flagsArt} alt="" />
-            Pilot-ready
-          </JourneyEnd>
-        </JourneyTrack>
+        <Trail ref={trailRef}>
+          {['base', 'fill'].map((layer) => (
+            <svg key={layer} className={`trail ${layer}`} viewBox="0 0 46 100" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M23 0 C 9 6, 9 16, 23 25 S 37 44, 23 50 S 9 68, 23 75 S 37 94, 23 100" />
+            </svg>
+          ))}
+          {journey.map(([title, body], i) => (
+            <TrailStep id={`step-${i}`} key={title} data-reveal={i} className={shown.includes(String(i)) ? 'in' : ''}>
+              <Flag aria-hidden="true">{i + 1}</Flag>
+              <div>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </div>
+            </TrailStep>
+          ))}
+        </Trail>
+        <PilotEnd>
+          <img src={flagsArt} alt="" />
+          Pilot-ready
+        </PilotEnd>
       </Section>
 
       <Section narrow>
@@ -267,10 +273,10 @@ const CohortPage = () => {
         </p>
       </Section>
 
-      {/* wide, so each card can hold its text on one line on desktop */}
-      <Section style={{ paddingTop: 0, paddingBottom: 0 }}>
-        <h3 style={{ marginTop: 0 }}>What you will leave with</h3>
-        <CardGrid>
+      {/* horizontal cards (tick beside text) at text width */}
+      <Section narrow style={{ paddingTop: 16, paddingBottom: 0 }}>
+        <h2 style={{ marginTop: 0 }}>What you will leave with</h2>
+        <CardGrid check>
           {leaveWith.map((t) => (
             <li key={t}>{t}</li>
           ))}
@@ -303,7 +309,9 @@ const CohortPage = () => {
                   <li key={t}>{t}</li>
                 ))}
               </Ticks>
-              <Button href="#fit">Check if we’re a fit</Button>
+              <Button href="#fit" onClick={() => setFitOpen(true)}>
+                Check if we’re a fit
+              </Button>
             </Card>
             <Card>
               <h3>What you receive</h3>
@@ -336,9 +344,31 @@ const CohortPage = () => {
         </Note>
       </Section>
 
-      <Section id="fit">
-        {consent}
-        <FitCheck scriptUrl={TECH4DEV.scriptUrl} />
+      <Section id="fit" narrow>
+        <Card style={{ alignItems: 'center', textAlign: 'center' }}>
+          {!fitOpen && (
+            <>
+              <h3 style={{ marginTop: 0 }}>Are we a fit? Check in a minute</h3>
+              <p>We&apos;ll save your answers and your email so we can follow up.</p>
+            </>
+          )}
+          <Button
+            as="button"
+            type="button"
+            style={{ border: 0 }}
+            aria-expanded={fitOpen}
+            aria-controls="fit-panel"
+            onClick={() => setFitOpen((open) => !open)}
+          >
+            {fitOpen ? 'Hide the fit check' : 'Check if we’re a fit'}
+          </Button>
+        </Card>
+        {fitOpen && (
+          <div id="fit-panel" style={{ marginTop: 16 }}>
+            {consent}
+            <FitCheck scriptUrl={TECH4DEV.scriptUrl} />
+          </div>
+        )}
       </Section>
 
       <Section id="apply" narrow>

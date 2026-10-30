@@ -105,7 +105,7 @@ export const Page = styled.div`
   * { box-sizing: border-box; }
   h1, h2, h3 { line-height: 1.2; margin: 0 0 0.75rem; }
   /* one heading size per level across the page, forms included */
-  h2 { font-size: 2rem; font-weight: 700; margin-top: 2.5rem; }
+  h2 { font-size: 2rem; font-weight: 700; margin-top: 1.75rem; }
   h3 { font-size: 1.3rem; font-weight: 600; margin-top: 1.5rem; }
   p { margin: 0 0 1rem; color: ${C.muted}; }
   a { color: ${C.blue}; }
@@ -153,7 +153,7 @@ export const Button = styled.a`
 `;
 
 export const Hero = styled.div`
-  max-width: ${(p) => (p.wide ? '1200px' : '960px')};
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 16px;
 `;
@@ -264,7 +264,7 @@ const PeopleWrap = styled.div`
 export const StatsBand = styled.ul`
   list-style: none;
   margin: 0 0 32px;
-  padding: 40px max(16px, calc((100% - 1000px) / 2));
+  padding: 40px max(16px, calc((100% - 1100px) / 2 + 16px));
   background: ${C.navy} url(${bandTexture}) center / cover;
   color: #fff;
   display: grid;
@@ -282,8 +282,8 @@ export const StatsBand = styled.ul`
 
 // Large pull-quote on a full-width blue block.
 export const QuoteBand = styled.blockquote`
-  margin: 32px 0;
-  padding: 56px max(16px, calc((100% - 860px) / 2));
+  margin: 20px 0;
+  padding: 40px max(16px, calc((100% - 860px) / 2));
   background: ${C.block};
   color: #fff;
   font-size: clamp(1.5rem, 3.6vw, 2.25rem);
@@ -323,7 +323,7 @@ export const CtaBand = styled.div`
 
 // Data-protection consent line shown above each form.
 export const Consent = styled.p`
-  max-width: 760px;
+  max-width: 728px;
   margin: 0 auto 16px !important;
   font-size: 0.9rem;
 `;
@@ -340,7 +340,7 @@ export const JourneyHead = styled.div`
 export const Section = styled.section`
   max-width: ${(p) => (p.narrow ? '760px' : '1100px')};
   margin: 0 auto;
-  padding: 32px 16px;
+  padding: 20px 16px;
 `;
 
 export const Lead = styled.p`
@@ -399,6 +399,31 @@ export const CardGrid = styled.ul`
   }
   li:hover { transform: translateX(8px) scale(1.01); box-shadow: 0 12px 28px rgba(11, 56, 101, 0.16); }
   @media (prefers-reduced-motion: reduce) { li { transition: none; } li:hover { transform: none; } }
+  /* check: full-width outcome rows with a tick badge; they lift instead of sliding past the page edge */
+  ${(p) =>
+    p.check &&
+    `li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      border-left: 0;
+      text-wrap: pretty;
+    }
+    li::before {
+      content: '\\2713';
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      margin-top: -1px;
+      border-radius: 50%;
+      background: ${C.coral};
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+    li:hover { transform: translateY(-3px); }`}
 `;
 
 export const Note = styled.p`
@@ -429,9 +454,10 @@ export const Journey = styled.ol`
       gap: 24px;
       padding-right: 120px;
       &::before { left: 0; right: 40px; top: 21px; bottom: auto; border-left: 0; border-top: 4px dashed #5BC0BE; }
+      gap: 20px;
       > li { flex-direction: column; gap: 12px; margin-bottom: 0; }
-      h3 { font-size: 1.1rem; }
-      p { font-size: 0.9rem; }
+      h3 { font-size: 1.1rem; min-height: 2.6em; }
+      p { font-size: 0.9rem; line-height: 1.6; }
     }`}
 `;
 
@@ -455,7 +481,6 @@ export const JourneyAxis = styled.p`
   font-weight: 700;
   color: ${C.navy} !important;
   margin: 1rem 0 0 !important;
-  @media (min-width: 900px) { justify-content: space-between; padding-right: 120px; .dash { display: none; } }
 `;
 
 // Holds the path and its end flag; leaves room above for the flag on desktop.
@@ -502,15 +527,15 @@ export const Flag = styled.span`
 export const Band = styled.div`
   background: ${C.blue};
   color: #fff;
-  margin: 32px 0;
+  margin: 16px 0;
   h2 { margin-top: 0; }
   > div > p { color: #e6edf5; }
 `;
 
 export const BandInner = styled.div`
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 56px 16px;
+  padding: 40px 16px;
 `;
 
 export const Cards = styled.div`
@@ -544,4 +569,75 @@ export const Footer = styled.footer`
   text-align: center;
   padding: 20px 16px;
   a { color: #fff; }
+`;
+
+// Sets --p (0 to 1) on the element as it scrolls through the viewport; drives the filling path.
+export const useScrollProgress = (ref) => {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const update = () => {
+      const r = el.getBoundingClientRect();
+      const p = still ? 1 : Math.min(1, Math.max(0, (window.innerHeight * 0.6 - r.top) / r.height));
+      el.style.setProperty('--p', p.toFixed(3));
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    return () => {
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
+  }, [ref]);
+};
+
+// The step list with a winding path behind the numbers that fills in coral as you scroll.
+export const Trail = styled.ol`
+  --p: 0;
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  position: relative;
+  .trail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 46px;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+  }
+  .trail path { fill: none; stroke-width: 4; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+  .base path { stroke: #5bc0be; stroke-dasharray: 2 9; }
+  .fill { clip-path: inset(0 0 calc((1 - var(--p)) * 100%) 0); }
+  .fill path { stroke: ${C.coral}; }
+`;
+
+export const TrailStep = styled(Step)`
+  gap: 16px;
+  margin-bottom: 14px;
+  scroll-margin-top: 80px;
+  ${Flag} { background: #c3cfdc; transition: background 0.4s; z-index: 1; }
+  &.in ${Flag} { background: ${C.coral}; }
+  > div {
+    flex: 1;
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px 20px;
+    box-shadow: 0 2px 10px rgba(11, 56, 101, 0.06);
+  }
+  h3 { margin: 0 0 4px; font-size: 1.15rem; }
+  p { margin: 0; font-size: 0.98rem; line-height: 1.55; }
+`;
+
+// Closing marker under the last step.
+export const PilotEnd = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 0;
+  font-weight: 700;
+  color: ${C.navy};
+  img { width: 56px; height: auto; display: block; }
 `;
