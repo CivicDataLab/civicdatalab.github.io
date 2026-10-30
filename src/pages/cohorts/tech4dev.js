@@ -48,7 +48,8 @@ import tech4devLogo from '../../images/cohort/tech4dev-logo.webp';
 import peopleArt from '../../images/cohort/people.webp';
 import flagsArt from '../../images/cohort/flags.webp';
 import hillsArt from '../../images/cohort/hills.webp';
-import chatBubble from '../../images/cohort/hero-bubble.webp';
+import chatLeft from '../../images/cohort/chat-left.webp';
+import chatRight from '../../images/cohort/chat-right.webp';
 
 const stats = [
   ['6–8', 'NGOs in the cohort'],
@@ -176,7 +177,7 @@ const CohortPage = () => {
             </Button>
           </HeroActions>
         </HeroBubble>
-        <PeopleArt src={peopleArt} bubble={chatBubble} />
+        <PeopleArt src={peopleArt} left={chatLeft} right={chatRight} />
       </Hero>
 
       <StatsBand>

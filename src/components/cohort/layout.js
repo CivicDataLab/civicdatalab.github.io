@@ -236,11 +236,11 @@ export const People = styled.img`
 `;
 
 // Hero illustration tucked under the bubble's tail, with two small chat bubbles beside it.
-export const PeopleArt = ({ src, bubble }) => (
+export const PeopleArt = ({ src, left, right }) => (
   <PeopleWrap>
-    <img src={bubble} alt="" className="chat left" />
+    <img src={left} alt="" className="chat left" />
     <img src={src} alt="" className="people" />
-    <img src={bubble} alt="" className="chat right" />
+    <img src={right} alt="" className="chat right" />
   </PeopleWrap>
 );
 
@@ -255,9 +255,9 @@ const PeopleWrap = styled.div`
     /* the line art is a pale blue; deepen it so it holds up next to the bubble */
     filter: brightness(0.62) saturate(1.4) contrast(1.15);
   }
-  .chat { position: absolute; width: 13%; max-width: 88px; top: 6%; }
-  .left { left: 0; transform: scaleX(-1); }
-  .right { right: 0; top: 2%; }
+  .chat { position: absolute; width: 11%; max-width: 84px; top: 2%; }
+  .left { left: -2%; top: 14%; }
+  .right { right: 2%; top: -6%; }
 `;
 
 // Full-width dark textured band of key numbers.
