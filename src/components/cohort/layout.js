@@ -6,6 +6,7 @@ import background from '../../images/cohort/background.webp';
 import brushBody from '../../images/cohort/bubble-body.webp';
 import heroBubble from '../../images/cohort/hero-bubble.webp';
 import heroBubbleFlat from '../../images/cohort/hero-bubble-flat.webp';
+import heroBubbleOrange from '../../images/cohort/hero-bubble-orange.webp';
 import bandTexture from '../../images/cohort/band-texture.webp';
 
 // Shared layout for the cohort landing pages under /cohorts/.
@@ -142,12 +143,12 @@ export const Button = styled.a`
   font-weight: 700;
   cursor: pointer;
   /* ghost: white outline for blue backgrounds; outline: navy outline for light ones */
-  background: ${(p) => (p.ghost || p.outline ? 'transparent' : C.coral)};
+  background: ${(p) => (p.ghost || p.outline ? 'transparent' : p.navy ? C.navy : C.coral)};
   color: ${(p) => (p.outline ? C.navy : '#fff')} !important;
-  border: 2px solid ${(p) => (p.ghost ? '#fff' : p.outline ? C.navy : C.coral)};
+  border: 2px solid ${(p) => (p.ghost ? '#fff' : p.outline || p.navy ? C.navy : C.coral)};
   transition: background 0.15s;
   &:hover {
-    background: ${(p) => (p.ghost ? 'rgba(255,255,255,0.15)' : p.outline ? '#e6ebf1' : C.coralDark)};
+    background: ${(p) => (p.ghost ? 'rgba(255,255,255,0.15)' : p.outline ? '#e6ebf1' : p.navy ? C.blue : C.coralDark)};
   }
   &:focus-visible { outline: 3px solid ${C.navy}; outline-offset: 2px; }
 `;
@@ -164,7 +165,8 @@ export const Hero = styled.div`
 // are in pixels of the image; `s` scales them on screen.
 const BUBBLES = {
   brush: { src: heroBubble, slice: [170, 170, 370, 430], tail: 250 }, // 1200 × 907
-  flat: { src: heroBubbleFlat, slice: [130, 130, 320, 460], tail: 200 } // 996 × 897
+  flat: { src: heroBubbleFlat, slice: [130, 130, 320, 460], tail: 200 }, // 996 × 897
+  orange: { src: heroBubbleOrange, slice: [200, 200, 450, 430], tail: 245 } // 1200 × 905
 };
 
 const heroSlice = ({ slice, tail }, s) => `
@@ -172,20 +174,21 @@ const heroSlice = ({ slice, tail }, s) => `
   padding-bottom: ${tail * s + 36}px;
 `;
 
-// `art`: 'brush' (default) or 'flat'.
+// `art`: 'brush' (default), 'flat' or 'orange'. The orange bubble is too light for white text, so it uses navy.
 export const HeroBubble = styled.div`
   border: 0 solid transparent;
   border-image-source: url(${(p) => BUBBLES[p.art || 'brush'].src});
   border-image-slice: ${(p) => BUBBLES[p.art || 'brush'].slice.join(' ')} fill;
   ${(p) => heroSlice(BUBBLES[p.art || 'brush'], 0.3)}
-  color: #fff;
+  color: ${(p) => (p.art === 'orange' ? C.navy : '#fff')};
   text-align: center;
   padding-top: 32px;
   padding-left: 20px;
   padding-right: 20px;
   @media (min-width: 768px) { ${(p) => heroSlice(BUBBLES[p.art || 'brush'], 0.5)} }
   h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 500; letter-spacing: -0.02em; margin: 0.5rem 0 1rem; }
-  em { color: ${C.coral}; font-weight: 800; font-style: italic; }
+  em { color: ${(p) => (p.art === 'orange' ? C.navy : C.coral)}; font-weight: 800; font-style: italic; }
+  ${(p) => p.art === 'orange' && `p { color: ${C.navy} !important; }`}
 `;
 
 // A brush-edged box with no tail.

@@ -174,7 +174,7 @@ const UndpCohortPage = () => {
 
       <Hero>
         <HeroGrid>
-          <HeroBubble>
+          <HeroBubble art="orange">
             <Logos>
               <img src={cdlLogo} alt="CivicDataLab" style={{ height: 72 }} />
               <img src={undpLogo} alt="UNDP" style={{ height: 100 }} />
@@ -185,8 +185,12 @@ const UndpCohortPage = () => {
             </h1>
             <Sub>Building practical skills for stronger programmes and evidence based advocacy</Sub>
             <HeroActions>
-              {!closed && <Button href="#apply">Apply now</Button>}
-              <Button href="#how" ghost>
+              {!closed && (
+                <Button href="#apply" navy>
+                  Apply now
+                </Button>
+              )}
+              <Button href="#how" outline>
                 See how it works
               </Button>
             </HeroActions>
