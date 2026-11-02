@@ -215,7 +215,7 @@ const UndpCohortPage = () => {
           it.
         </p>
         <p>
-          CivicDataLab, along with UNDP India, invites applications from civil society organisations for a
+          CivicDataLab, in partnership with UNDP India, invites applications from civil society organisations for a
           capacity-building programme on AI and digital tools. The programme will equip 100 CSO representatives with
           practical skills they can apply to their day-to-day work and their organisation’s contribution to the
           Sustainable Development Goals.
