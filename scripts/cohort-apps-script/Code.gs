@@ -73,9 +73,14 @@ function doPost(e) {
       lock.releaseLock();
     }
 
+    // The row is already saved, so a failed email must not report the submission as failed.
     if (NOTIFY_EMAIL) {
-      MailApp.sendEmail(NOTIFY_EMAIL, 'New cohort application (' + tabName + ')',
-        'From: ' + email + '\n\nOpen the sheet: ' + ss.getUrl());
+      try {
+        MailApp.sendEmail(NOTIFY_EMAIL, 'New cohort application (' + tabName + ')',
+          'From: ' + email + '\n\nOpen the sheet: ' + ss.getUrl());
+      } catch (mailErr) {
+        console.error(mailErr);
+      }
     }
     return json({ ok: true });
   } catch (err) {
