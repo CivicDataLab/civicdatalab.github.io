@@ -454,9 +454,7 @@ const UndpCohortPage = () => {
           ))}
       </Section>
 
-      <Footer>
-        <a href="/">civicdatalab.in</a>
-      </Footer>
+      <Footer />
     </Page>
   );
 };

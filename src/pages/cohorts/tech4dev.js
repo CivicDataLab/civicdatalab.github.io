@@ -425,9 +425,7 @@ const CohortPage = () => {
         </div>
         <img src={hillsArt} alt="" />
       </CtaBand>
-      <Footer>
-        <a href="/">civicdatalab.in</a>
-      </Footer>
+      <Footer partner={{ name: 'Project Tech4Dev', logo: tech4devLogo, url: 'https://projecttech4dev.org' }} />
     </Page>
   );
 };

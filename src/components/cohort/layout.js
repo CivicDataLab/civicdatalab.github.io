@@ -7,6 +7,8 @@ import brushBody from '../../images/cohort/bubble-body.webp';
 import heroBubble from '../../images/cohort/hero-bubble.webp';
 import heroBubbleFlat from '../../images/cohort/hero-bubble-flat.webp';
 import heroBubbleOrange from '../../images/cohort/hero-bubble-orange.webp';
+import footerLogo from '../../images/cohort/cdl-logo-white.svg';
+import { FaLinkedinIn, FaInstagram, FaGithubAlt, FaTwitter } from 'react-icons/fa';
 import bandTexture from '../../images/cohort/band-texture.webp';
 
 // Shared layout for the cohort landing pages under /cohorts/.
@@ -567,12 +569,60 @@ export const Price = styled.p`
   span { display: block; font-size: 0.95rem; font-weight: 500; color: ${C.muted}; }
 `;
 
-export const Footer = styled.footer`
+const FooterBar = styled.footer`
   background: ${C.navy};
-  text-align: center;
-  padding: 20px 16px;
+  color: #fff;
+  padding: 40px 16px 28px;
+  > div { max-width: 1068px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
   a { color: #fff; }
+  .brands { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .brands img { display: block; height: 56px; width: auto; }
+  .brands .partner { padding-left: 28px; border-left: 1px solid rgba(255, 255, 255, 0.3); }
+  .brands .partner img { height: 40px; background: #fff; border-radius: 8px; padding: 6px 10px; box-sizing: content-box; }
+  .social { display: flex; gap: 12px; }
+  .social a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.55); font-size: 18px; transition: background 0.15s, border-color 0.15s; }
+  .social a:hover { background: ${C.coral}; border-color: ${C.coral}; }
+  .social a:focus-visible, .brands a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .legal { flex-basis: 100%; margin: 0; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.2); font-size: 0.85em; color: rgba(255, 255, 255, 0.8); text-align: center; }
+  @media (max-width: 600px) {
+    > div { flex-direction: column; align-items: flex-start; }
+    .brands .partner { padding-left: 0; border-left: 0; }
+    .legal { align-self: stretch; text-align: left; }
+  }
 `;
+
+const SOCIAL = [
+  ['LinkedIn', 'https://in.linkedin.com/company/civicdatalab', FaLinkedinIn],
+  ['Instagram', 'https://www.instagram.com/civicdatalab/', FaInstagram],
+  ['GitHub', 'https://github.com/CivicDataLab', FaGithubAlt],
+  ['X (Twitter)', 'https://twitter.com/civicdatalab', FaTwitter]
+];
+
+// partner = { name, logo, url } for a cohort run with another organisation (omit for none).
+export const Footer = ({ partner }) => (
+  <FooterBar>
+    <div>
+      <div className="brands">
+        <a href="https://civicdatalab.in" target="_blank" rel="noreferrer noopener" aria-label="CivicDataLab website">
+          <img src={footerLogo} alt="CivicDataLab" />
+        </a>
+        {partner && (
+          <a className="partner" href={partner.url} target="_blank" rel="noreferrer noopener" aria-label={`${partner.name} website`}>
+            <img src={partner.logo} alt={partner.name} />
+          </a>
+        )}
+      </div>
+      <div className="social">
+        {SOCIAL.map(([name, href, Icon]) => (
+          <a key={name} href={href} target="_blank" rel="noreferrer noopener" aria-label={`CivicDataLab on ${name}`}>
+            <Icon aria-hidden="true" />
+          </a>
+        ))}
+      </div>
+      <p className="legal">© CivicDataLab · <a href="mailto:info@civicdatalab.in">info@civicdatalab.in</a></p>
+    </div>
+  </FooterBar>
+);
 
 // Sets --p (0 to 1) on the element as it scrolls through the viewport; drives the filling path.
 export const useScrollProgress = (ref) => {
