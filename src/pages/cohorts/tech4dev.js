@@ -20,7 +20,6 @@ import {
   HeroActions,
   PeopleArt,
   JourneyHead,
-  JourneyAxis,
   Section,
   StatsBand,
   QuoteBand,
@@ -43,6 +42,7 @@ import {
   Footer
 } from '../../components/cohort/layout';
 import cdlLogo from '../../images/cohort/cdl-logo.webp';
+import gramVaaniLogo from '../../images/cohort/gram-vaani-logo.png';
 import tech4devLogo from '../../images/cohort/tech4dev-logo.webp';
 import peopleArt from '../../images/cohort/people.webp';
 import flagsArt from '../../images/cohort/flags.webp';
@@ -56,7 +56,7 @@ const stats = [
   ['3 focus sectors', 'health, agriculture, public services'],
   ['Hybrid', 'two-day in-person kick-off, virtual mentorship and clinics, in-person closing showcase'],
   ['₹1 lakh', 'subsidised investment, inclusive of taxes'],
-  ['7 Nov', 'applications close, 11:59 PM IST']
+  ['25 Nov', 'applications close, 11:59 PM IST']
 ];
 
 const helps = [
@@ -169,6 +169,10 @@ const CohortPage = () => {
           <Logos>
             <img src={cdlLogo} alt="CivicDataLab" style={{ height: 64 }} />
             <img src={tech4devLogo} alt="Project Tech4Dev" />
+            <span className="knowledge">
+              <small>Knowledge partner</small>
+              <img src={gramVaaniLogo} alt="Gram Vaani" />
+            </span>
           </Logos>
           <Eyebrow>Call For Applications: Local &amp; Inclusive AI Cohort</Eyebrow>
           <h1>
@@ -231,11 +235,6 @@ const CohortPage = () => {
           <h2>Programme structure</h2>
           <img src={flagsArt} alt="" />
         </JourneyHead>
-        <JourneyAxis>
-          <span>15 November</span>
-          <span className="dash">–</span>
-          <span>31 March</span>
-        </JourneyAxis>
         <Trail ref={trailRef}>
           {['base', 'fill'].map((layer) => (
             <svg key={layer} className={`trail ${layer}`} viewBox="0 0 46 100" preserveAspectRatio="none" aria-hidden="true">

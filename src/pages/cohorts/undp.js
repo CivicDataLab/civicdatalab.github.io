@@ -164,7 +164,7 @@ const UndpCohortPage = () => {
         background="#F6F3EE"
       />
 
-      <TopBar style={{ background: 'rgba(246, 243, 238, 0.95)' }}>
+      <TopBar style={{ background: 'rgba(226, 235, 246, 0.96)', boxShadow: '0 1px 0 rgba(11, 56, 101, 0.12)' }}>
         <span>
           <TopBarCredit>CivicDataLab with UNDP India · </TopBarCredit>
           {deadlineLabel || 'Applications open'}

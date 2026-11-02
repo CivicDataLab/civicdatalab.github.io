@@ -7,7 +7,7 @@ import brushBody from '../../images/cohort/bubble-body.webp';
 import heroBubble from '../../images/cohort/hero-bubble.webp';
 import heroBubbleFlat from '../../images/cohort/hero-bubble-flat.webp';
 import heroBubbleOrange from '../../images/cohort/hero-bubble-orange.webp';
-import footerLogo from '../../images/cohort/cdl-logo-white.svg';
+import footerLogo from '../../images/cohort/cdl-logo.webp';
 import { FaLinkedinIn, FaInstagram, FaGithubAlt, FaTwitter } from 'react-icons/fa';
 import bandTexture from '../../images/cohort/band-texture.webp';
 
@@ -21,7 +21,8 @@ export const C = {
   coralDark: '#D85C4B',
   navy: '#0B3865',
   muted: '#4B5B6E',
-  bg: '#EEF0F3'
+  bg: '#EEF0F3',
+  border: '#D5DCE4'
 };
 
 // Computed in the browser so the static build never shows a stale count.
@@ -210,6 +211,9 @@ export const Logos = styled.div`
   border-radius: 14px;
   margin-bottom: 16px;
   img { height: 48px; width: auto; }
+  .knowledge { display: flex; flex-direction: column; align-items: center; gap: 2px; padding-left: 20px; border-left: 1px solid ${C.border}; }
+  .knowledge small { font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: ${C.muted}; }
+  .knowledge img { height: 40px; }
 `;
 
 export const Eyebrow = styled.p`
@@ -576,9 +580,8 @@ const FooterBar = styled.footer`
   > div { max-width: 1068px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
   a { color: #fff; }
   .brands { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-  .brands img { display: block; height: 56px; width: auto; }
-  .brands .partner { padding-left: 28px; border-left: 1px solid rgba(255, 255, 255, 0.3); }
-  .brands .partner img { height: 40px; background: #fff; border-radius: 8px; padding: 6px 10px; box-sizing: content-box; }
+  .brands img { display: block; height: 64px; width: auto; }
+  .brands a { background: #fff; border-radius: 12px; padding: 12px 20px; }
   .social { display: flex; gap: 12px; }
   .social a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.55); font-size: 18px; transition: background 0.15s, border-color 0.15s; }
   .social a:hover { background: ${C.coral}; border-color: ${C.coral}; }
@@ -586,7 +589,6 @@ const FooterBar = styled.footer`
   .legal { flex-basis: 100%; margin: 0; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.2); font-size: 0.85em; color: rgba(255, 255, 255, 0.8); text-align: center; }
   @media (max-width: 600px) {
     > div { flex-direction: column; align-items: flex-start; }
-    .brands .partner { padding-left: 0; border-left: 0; }
     .legal { align-self: stretch; text-align: left; }
   }
 `;
