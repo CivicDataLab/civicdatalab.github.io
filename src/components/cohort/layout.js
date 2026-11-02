@@ -213,7 +213,7 @@ export const Logos = styled.div`
   img { height: 48px; width: auto; }
   .knowledge { display: flex; flex-direction: column; align-items: center; gap: 2px; padding-left: 20px; border-left: 1px solid ${C.border}; }
   .knowledge small { font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: ${C.muted}; }
-  .knowledge img { height: 40px; }
+  .knowledge img { height: 60px; }
 `;
 
 export const Eyebrow = styled.p`
@@ -582,7 +582,10 @@ const FooterBar = styled.footer`
   .brands { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
   .brands { background: #fff; border-radius: 14px; padding: 14px 24px; gap: 24px; }
   .brands img { display: block; height: 52px; width: auto; }
-  .brands a + a { padding-left: 24px; border-left: 1px solid ${C.border}; }
+  .brands a + a, .brands .knowledge { padding-left: 24px; border-left: 1px solid ${C.border}; }
+  .brands .knowledge { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .brands .knowledge small { font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: ${C.muted}; }
+  .brands .knowledge img { height: 60px; }
   .social { display: flex; gap: 12px; }
   .social a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.55); font-size: 18px; transition: background 0.15s, border-color 0.15s; }
   .social a:hover { background: ${C.coral}; border-color: ${C.coral}; }
@@ -593,7 +596,8 @@ const FooterBar = styled.footer`
     .legal { align-self: stretch; text-align: left; }
     .brands { padding: 12px 16px; gap: 16px; flex-wrap: nowrap; }
     .brands img { height: 40px; }
-    .brands a + a { padding-left: 16px; }
+    .brands a + a, .brands .knowledge { padding-left: 16px; }
+    .brands .knowledge img { height: 48px; }
   }
 `;
 
@@ -605,7 +609,7 @@ const SOCIAL = [
 ];
 
 // partner = { name, logo, url } for a cohort run with another organisation (omit for none).
-export const Footer = ({ partner }) => (
+export const Footer = ({ partner, knowledge }) => (
   <FooterBar>
     <div>
       <div className="brands">
@@ -616,6 +620,14 @@ export const Footer = ({ partner }) => (
           <a className="partner" href={partner.url} target="_blank" rel="noreferrer noopener" aria-label={`${partner.name} website`}>
             <img src={partner.logo} alt={partner.name} />
           </a>
+        )}
+        {knowledge && (
+          <span className="knowledge">
+            <small>Knowledge partner</small>
+            <a href={knowledge.url} target="_blank" rel="noreferrer noopener" aria-label={`${knowledge.name} website`}>
+              <img src={knowledge.logo} alt={knowledge.name} />
+            </a>
+          </span>
         )}
       </div>
       <div className="social">

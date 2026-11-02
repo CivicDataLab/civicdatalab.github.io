@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import FitCheck from '../../components/cohort/FitCheck';
 import ApplyForm from '../../components/cohort/ApplyForm';
 import { TECH4DEV } from '../../components/cohort/config';
@@ -152,10 +152,6 @@ const CohortPage = () => {
   const shown = useReveal();
   const trailRef = useRef(null);
   useScrollProgress(trailRef);
-  const [fitOpen, setFitOpen] = useState(true);
-  useEffect(() => {
-    if (window.location.hash === '#fit') setFitOpen(true);
-  }, []);
 
   return (
     <Page>
@@ -191,7 +187,7 @@ const CohortPage = () => {
           <Sub>Enabling NGOs to Extend Local Language AI Solutions to Last-Mile Users</Sub>
           <HeroActions>
             {!closed && <Button href="#apply">Apply now</Button>}
-            <Button href="#fit" ghost onClick={() => setFitOpen(true)}>
+            <Button href="#fit" ghost>
               Check if we’re a fit
             </Button>
           </HeroActions>
@@ -322,7 +318,7 @@ const CohortPage = () => {
                   <li key={t}>{t}</li>
                 ))}
               </Ticks>
-              <Button href="#fit" onClick={() => setFitOpen(true)}>
+              <Button href="#fit">
                 Check if we’re a fit
               </Button>
             </Card>
@@ -358,30 +354,8 @@ const CohortPage = () => {
       </Section>
 
       <Section id="fit" narrow>
-        <Card style={{ alignItems: 'center', textAlign: 'center' }}>
-          {!fitOpen && (
-            <>
-              <h3 style={{ marginTop: 0 }}>Are we a fit? Check in a minute</h3>
-              <p>We&apos;ll save your answers and your email so we can follow up.</p>
-            </>
-          )}
-          <Button
-            as="button"
-            type="button"
-            style={{ border: 0 }}
-            aria-expanded={fitOpen}
-            aria-controls="fit-panel"
-            onClick={() => setFitOpen((open) => !open)}
-          >
-            {fitOpen ? 'Hide the fit check' : 'Check if we’re a fit'}
-          </Button>
-        </Card>
-        {fitOpen && (
-          <div id="fit-panel" style={{ marginTop: 16 }}>
-            {consent}
-            <FitCheck scriptUrl={TECH4DEV.scriptUrl} />
-          </div>
-        )}
+        {consent}
+        <FitCheck scriptUrl={TECH4DEV.scriptUrl} />
       </Section>
 
       <Section id="apply" narrow>
@@ -438,7 +412,9 @@ const CohortPage = () => {
         </div>
         <img src={hillsArt} alt="" />
       </CtaBand>
-      <Footer partner={{ name: 'Project Tech4Dev', logo: tech4devLogo, url: 'https://projecttech4dev.org' }} />
+      <Footer partner={{ name: 'Project Tech4Dev', logo: tech4devLogo, url: 'https://projecttech4dev.org' }}
+        knowledge={{ name: 'Gram Vaani', logo: gramVaaniLogo, url: 'https://gramvaani.org' }}
+      />
     </Page>
   );
 };
