@@ -582,6 +582,8 @@ const FooterBar = styled.footer`
   .brands { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
   .brands { background: #fff; border-radius: 14px; padding: 14px 24px; gap: 24px; }
   .brands img { display: block; height: 52px; width: auto; }
+  .brands > a:first-child img { height: 72px; }
+  .brands .partner img { height: 38px; }
   .brands a + a, .brands .knowledge { padding-left: 24px; border-left: 1px solid ${C.border}; }
   .brands .knowledge { display: flex; flex-direction: column; align-items: center; gap: 2px; }
   .brands .knowledge small { font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: ${C.muted}; }
@@ -596,6 +598,8 @@ const FooterBar = styled.footer`
     .legal { align-self: stretch; text-align: left; }
     .brands { padding: 12px 16px; gap: 16px; flex-wrap: nowrap; }
     .brands img { height: 40px; }
+    .brands > a:first-child img { height: 54px; }
+    .brands .partner img { height: 28px; }
     .brands a + a, .brands .knowledge { padding-left: 16px; }
     .brands .knowledge img { height: 48px; }
   }
