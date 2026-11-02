@@ -622,7 +622,7 @@ export const Footer = ({ partner, knowledge }) => (
         </a>
         {partner && (
           <a className="partner" href={partner.url} target="_blank" rel="noreferrer noopener" aria-label={`${partner.name} website`}>
-            <img src={partner.logo} alt={partner.name} />
+            <img src={partner.logo} alt={partner.name} style={partner.height ? { height: partner.height } : undefined} />
           </a>
         )}
         {knowledge && (

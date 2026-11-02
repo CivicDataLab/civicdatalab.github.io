@@ -465,7 +465,7 @@ const UndpCohortPage = () => {
           ))}
       </Section>
 
-      <Footer />
+      <Footer partner={{ name: 'UNDP India', logo: undpLogo, url: 'https://www.undp.org/india', height: 72 }} />
     </Page>
   );
 };
