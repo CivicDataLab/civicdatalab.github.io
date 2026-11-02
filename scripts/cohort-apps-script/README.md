@@ -48,7 +48,11 @@ Set it back to `''` to switch emails off.
 
 ## Notes
 
-- Columns: `Timestamp`, then one column per question. New questions are added as new columns at the
-  right; existing columns are never moved, so sorting and filtering the sheet is safe.
+- Columns: `Timestamp`, then one column per question, in question order (the form sends the order,
+  because Apps Script does not keep the order fields arrive in). A tab with no answers yet is rebuilt in
+  that order on the next submission. Once it has rows, new questions are added as new columns at the
+  right and existing columns are never moved, so sorting and filtering the sheet is safe.
+  To put a tab that already has answers into question order, make a copy of the Sheet, then run
+  `sortLongColumns` or `sortShortColumns` once from the Apps Script editor.
   Don't rename row 1 headers — the script matches answers to columns by those names.
 - **Privacy:** the sheet holds applicants' personal data. Share it only with the programme team.

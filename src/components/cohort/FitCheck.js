@@ -100,6 +100,8 @@ export default function FitCheck({ scriptUrl }) {
         q.name === 'domain' && answers.domain === OTHER ? `Other: ${answers.domain_other.trim()}` : answers[q.name];
     });
     data['Your email'] = answers.email.trim();
+    // Apps Script does not keep the order fields arrive in, so say what the column order should be.
+    data._order = JSON.stringify(Object.keys(data).filter((k) => k !== 'form' && k !== 'website'));
     let error = '';
     try {
       if (!scriptUrl) throw new Error('Form not connected yet');
