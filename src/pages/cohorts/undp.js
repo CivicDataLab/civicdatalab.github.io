@@ -95,7 +95,7 @@ const journey = [
   ],
   [
     'Practise with support',
-    'Training will include live sessions, hands-on tasks, demonstrations, recorded modules and practical resources. 30 participants will join a two-day workshop in Delhi/NCR; remaining participants will be reached through virtual cohorts. Cohort allocation and the confirmed session schedule will be shared with selected applicants. Mentoring clinics, troubleshooting support and peer exchange will help participants apply tools to their own organisational tasks. The proposed approach includes a helpdesk, a discussion forum and peer champions who can support continued learning within and across organisations.'
+    'Training will include live sessions, hands-on tasks, demonstrations, recorded modules and practical resources. Mentoring clinics, troubleshooting support and peer exchange will help participants apply tools to their own organisational tasks. The proposed approach includes a helpdesk, a discussion forum and peer champions who can support continued learning within and across organisations.'
   ]
 ];
 
@@ -180,8 +180,12 @@ const UndpCohortPage = () => {
               <img src={undpLogo} alt="UNDP" style={{ height: 100 }} />
             </Logos>
             <Eyebrow>Call for Applications: AI &amp; Digital Tools for CSOs</Eyebrow>
-            <h1>
-              AI &amp; digital skills for the organisations <em>closest to communities</em>
+            <h1 style={{ fontSize: 'clamp(1.7rem, 5.1vw, 2.98rem)', padding: '0 12px' }}>
+              AI &amp; digital skills
+              <br />
+              for the organisations
+              <br />
+              <em>closest to communities</em>
             </h1>
             <Sub>Building practical skills for stronger programmes and evidence based advocacy</Sub>
             <HeroActions>
@@ -219,8 +223,15 @@ const UndpCohortPage = () => {
           it.
         </p>
         <p>
-          CivicDataLab, in partnership with UNDP India, invites applications from civil society organisations for a
-          capacity-building programme on AI and digital tools. The programme will equip 100 CSO representatives with
+          <strong>
+            CivicDataLab, in partnership with{' '}
+            <a href="https://www.undp.org/india" target="_blank" rel="noreferrer noopener">
+              UNDP India
+            </a>
+            , invites applications from civil society organisations for a capacity-building programme on AI and digital
+            tools.
+          </strong>{' '}
+          The programme will equip 100 CSO representatives with
           practical skills they can apply to their day-to-day work and their organisation’s contribution to the
           Sustainable Development Goals.
         </p>

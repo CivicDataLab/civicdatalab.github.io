@@ -580,8 +580,9 @@ const FooterBar = styled.footer`
   > div { max-width: 1068px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
   a { color: #fff; }
   .brands { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-  .brands img { display: block; height: 64px; width: auto; }
-  .brands a { background: #fff; border-radius: 12px; padding: 12px 20px; }
+  .brands { background: #fff; border-radius: 14px; padding: 14px 24px; gap: 24px; }
+  .brands img { display: block; height: 52px; width: auto; }
+  .brands a + a { padding-left: 24px; border-left: 1px solid ${C.border}; }
   .social { display: flex; gap: 12px; }
   .social a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.55); font-size: 18px; transition: background 0.15s, border-color 0.15s; }
   .social a:hover { background: ${C.coral}; border-color: ${C.coral}; }
@@ -590,6 +591,9 @@ const FooterBar = styled.footer`
   @media (max-width: 600px) {
     > div { flex-direction: column; align-items: flex-start; }
     .legal { align-self: stretch; text-align: left; }
+    .brands { padding: 12px 16px; gap: 16px; flex-wrap: nowrap; }
+    .brands img { height: 40px; }
+    .brands a + a { padding-left: 16px; }
   }
 `;
 

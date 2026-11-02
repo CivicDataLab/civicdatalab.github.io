@@ -130,7 +130,15 @@ const criteria = [
 
 const consent = (
   <Consent>
-    By submitting this form, you consent to CivicDataLab, Gram Vaani and Tech4Dev collecting and using the information
+    By submitting this form, you consent to CivicDataLab,{' '}
+    <a href="https://gramvaani.org" target="_blank" rel="noreferrer noopener">
+      Gram Vaani
+    </a>{' '}
+    and{' '}
+    <a href="https://projecttech4dev.org" target="_blank" rel="noreferrer noopener">
+      Tech4Dev
+    </a>{' '}
+    collecting and using the information
     you provide to assess your application for the Local &amp; Inclusive AI Cohort and to contact you about it,
     including if you are selected. To withdraw your consent at any time, to exercise your rights under the Digital
     Personal Data Protection Act, 2023, or to make a complaint, please email us at{' '}
@@ -144,7 +152,7 @@ const CohortPage = () => {
   const shown = useReveal();
   const trailRef = useRef(null);
   useScrollProgress(trailRef);
-  const [fitOpen, setFitOpen] = useState(false);
+  const [fitOpen, setFitOpen] = useState(true);
   useEffect(() => {
     if (window.location.hash === '#fit') setFitOpen(true);
   }, []);
@@ -176,7 +184,9 @@ const CohortPage = () => {
           </Logos>
           <Eyebrow>Call For Applications: Local &amp; Inclusive AI Cohort</Eyebrow>
           <h1>
-            You’ve built the AI. Now make it work in the <em>real world</em>
+            You’ve built the AI solution.
+            <br />
+            Now make it work in the <em>real world</em>
           </h1>
           <Sub>Enabling NGOs to Extend Local Language AI Solutions to Last-Mile Users</Sub>
           <HeroActions>
@@ -213,7 +223,11 @@ const CohortPage = () => {
 
         <h2>About the cohort</h2>
         <p>
-          Through the Local &amp; Inclusive AI cohort, CivicDataLab, along with Gram Vaani as knowledge partner, will
+          Through the Local &amp; Inclusive AI cohort, CivicDataLab, along with{' '}
+          <a href="https://gramvaani.org" target="_blank" rel="noreferrer noopener">
+            Gram Vaani
+          </a>{' '}
+          as knowledge partner, will
           support 6-8 NGOs working in domains like health, agriculture and public services. The programme combines
           technical mentorship, exploration of the open-source multilingual ecosystem, community testing, and peer
           learning across five months, followed by light-touch implementation support post completion.
