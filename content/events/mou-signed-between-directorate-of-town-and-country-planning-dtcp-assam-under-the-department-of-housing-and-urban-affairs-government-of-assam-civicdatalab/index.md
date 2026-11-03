@@ -6,11 +6,12 @@ summary: Strengthening institutional capacity for data-driven urban planning,
   climate risk management, and the use of emerging technologies in urban
   governance
 context: >-
-  CivicDataLab (CDL) has signed an MoU  with the Directorate of Town and Country
-  Planning (DTCP), Assam, under the Department of Housing and Urban Affairs,
-  Government of Assam, to strengthen institutional capacity for data-driven
-  urban planning, climate risk management, and the use of emerging technologies
-  in urban governance.
+  CivicDataLab (CDL) has signed an MoU  with the [Directorate of Town and
+  Country Planning (DTCP), Assam](https://tcp.assam.gov.in/), under the
+  [Department of Housing and Urban Affairs, Government of
+  Assam](https://dohua.assam.gov.in/), to strengthen institutional capacity for
+  data-driven urban planning, climate risk management, and the use of emerging
+  technologies in urban governance.
 
 
   The collaboration aims to enhance the state’s urban data infrastructure, with a particular focus on flood and heat risk management, integrating Artificial Intelligence (AI) and Machine Learning (ML) capabilities into the existing GIS GeoHub Portal and supporting the establishment of a comprehensive Urban Data Observatory for Assam,  focusing on open-source climate indicators, including water scarcity, heatwaves, and urban flooding.
