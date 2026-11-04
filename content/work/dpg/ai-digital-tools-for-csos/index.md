@@ -1,5 +1,5 @@
 ---
-name: AI & Digital Tools for CSOs
+name: AI & Digital Skills for CSOs
 summary: Building Practical Skills for Stronger Programmes and Evidence-Based Advocacy
 context: Many Civil Society Organisations (CSOs) play an important role in
   addressing development challenges, but limited access to digital resources,
@@ -12,7 +12,7 @@ context: Many Civil Society Organisations (CSOs) play an important role in
   responsible AI use, including data privacy, informed consent and bias
   awareness.
 solution: >-
-  Through the AI & Digital Tools for CSOs programme, CivicDataLab, in
+  Through the AI & Digital Skills for CSOs programme, CivicDataLab, in
   partnership with UNDP India, aims to equip approximately 100 CSO
   representatives across India with practical skills to integrate AI and digital
   tools into their organisational workflows.

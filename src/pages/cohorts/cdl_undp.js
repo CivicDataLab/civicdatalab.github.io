@@ -131,7 +131,7 @@ const ShareButton = () => {
     const url = window.location.href.split('#')[0];
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'AI & Digital Tools for CSOs: call for applications', url });
+        await navigator.share({ title: 'AI & Digital Skills for CSOs: call for applications', url });
       } catch (e) {
         // closing the share sheet rejects; nothing to do
       }
@@ -159,7 +159,7 @@ const UndpCohortPage = () => {
   return (
     <Page>
       <CohortHead
-        title="AI & Digital Tools for CSOs"
+        title="AI & Digital Skills for CSOs"
         description="Call for applications: CivicDataLab with UNDP India. AI and digital skills for the organisations closest to communities."
         background="#F6F3EE"
       />
@@ -179,7 +179,7 @@ const UndpCohortPage = () => {
               <img src={cdlLogo} alt="CivicDataLab" style={{ height: 72 }} />
               <img src={undpLogo} alt="UNDP" style={{ height: 100 }} />
             </Logos>
-            <Eyebrow>Call for Applications: AI &amp; Digital Tools for CSOs</Eyebrow>
+            <Eyebrow>Call for Applications: AI &amp; Digital Skills for CSOs</Eyebrow>
             <h1 style={{ fontSize: 'clamp(1.7rem, 5.1vw, 2.98rem)', padding: '0 12px' }}>
               AI &amp; digital skills
               <br />
@@ -411,7 +411,7 @@ const UndpCohortPage = () => {
               <Consent>
                 By submitting this form, you consent to CivicDataLab and UNDP India collecting and using the information
                 you provide (your name, role, email address, phone number, organisation details and your responses about
-                your digital and AI use and learning needs) to assess your application for the AI &amp; Digital Tools
+                your digital and AI use and learning needs) to assess your application for the AI &amp; Digital Skills
                 for CSOs programme, to plan the programme, and to contact you about participation, including if you are
                 selected. To withdraw your consent at any time, to exercise your rights under the Digital Personal Data
                 Protection Act, 2023, or to make a complaint, please email us at{' '}
