@@ -411,7 +411,7 @@ const UndpCohortPage = () => {
               <Consent>
                 By submitting this form, you consent to CivicDataLab and UNDP India collecting and using the information
                 you provide (your name, role, email address, phone number, organisation details and your responses about
-                your digital and AI use and learning needs) to assess your application for the AI &amp; Digital Tools
+                your digital and AI use and learning needs) to assess your application for the AI &amp; Digital Skills
                 for CSOs programme, to plan the programme, and to contact you about participation, including if you are
                 selected. To withdraw your consent at any time, to exercise your rights under the Digital Personal Data
                 Protection Act, 2023, or to make a complaint, please email us at{' '}
