@@ -9,7 +9,7 @@ export const TECH4DEV = {
 };
 
 export const UNDP = {
-  // Applications close 10 Dec, 11:59 PM IST.
-  deadline: new Date('2026-12-10T23:59:59+05:30'),
+  // Applications close 11 Dec, 11:59 PM IST.
+  deadline: new Date('2026-12-11T23:59:59+05:30'),
   scriptUrl: 'https://script.google.com/macros/s/AKfycbyUKn1v-K69KEfbLhGeBRJ92HjzRVZXSltjtKGxbN19n7uPu7UsSHyqHBARUyxkj3C4/exec'
 };
