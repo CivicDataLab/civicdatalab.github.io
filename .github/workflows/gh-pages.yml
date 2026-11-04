@@ -10,6 +10,16 @@ on:
     types: [opened, synchronize, reopened, labeled]
 
 jobs:
+  # Seconds-long guard on every push and PR: fails if a content file points at an image
+  # that no longer exists (e.g. deleted in the CMS media library, which commits straight
+  # to main). Deploy needs it, so a broken page never even reaches the approval step.
+  content-images:
+    if: github.event_name == 'push' || github.event.action != 'labeled'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/check-content-images.js
+
   # PR-time check only: proves the site still builds before anything reaches main.
   # CMS PRs (cms/* branches) get a new commit on every editor save, so they only
   # build once the entry is marked Ready (Decap's pending_publish label), and on
@@ -49,6 +59,7 @@ jobs:
 
   deploy:
     if: github.event_name == 'push'
+    needs: content-images
     runs-on: ubuntu-latest
     # Holds the job until a reviewer approves it, so nothing reaches
     # civicdatalab.in unattended. Configured in Settings > Environments.
