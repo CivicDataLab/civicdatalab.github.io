@@ -19,7 +19,7 @@ solution: >-
 
 
   The programme will focus on four key learning areas: AI-assisted documentation and proposal writing, data analysis and visualisation, communication and outreach, and workflow management and collaboration. Through hands-on training, live demonstrations, mentoring clinics and peer learning, participants will explore accessible, open-source and free-to-use tools relevant to their day-to-day work.
-image: undp.jpg
+image: ai-digital-tools-for-csos.jpg
 url: https://civicdatalab.in/cohorts/cdl_undp/
 sector: Digital Public Goods
 type: project
