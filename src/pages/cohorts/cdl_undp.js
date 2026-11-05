@@ -371,7 +371,7 @@ const UndpCohortPage = () => {
           {UNDP_SECTIONS.map((s, i) => (
             <details key={s.title}>
               <summary>
-                Section {i + 1}: {s.title}
+                {s.title === 'Consent' ? s.title : `Section ${i}: ${s.title}`}
               </summary>
               <ol>
                 {s.fields.map((f) => (

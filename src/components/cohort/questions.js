@@ -170,6 +170,26 @@ export const TECH4DEV_SECTIONS = [
 // shown unless the first option is chosen.
 export const UNDP_SECTIONS = [
   {
+    title: 'Consent',
+    fields: [
+      {
+        name: 'consent',
+        label: 'Do you consent to the use of your responses for this assessment?',
+        mustAgree: 'We can only use your responses with your consent. Please choose “Yes” to submit.',
+        options: [
+          'Yes, I consent to CivicDataLab and UNDP India accessing, reviewing and using the information submitted in this form to assess training needs, plan the programme and contact us about participation.',
+          'No, I do not consent.'
+        ]
+      },
+      {
+        name: 'case_study',
+        label: 'Would your organisation consider sharing a use case, blog or learning story from the programme?',
+        hint: 'Case studies may appear in programme reports, websites and communication materials. Consent is voluntary and does not affect selection. Personal details, photographs and confidential information are not covered by this consent.',
+        options: ['Yes, we would be interested', 'Maybe, after discussing the details', 'No, we would prefer not to']
+      }
+    ]
+  },
+  {
     title: 'About your organisation',
     fields: [
       { name: 'full_name', label: 'Your full name', autoComplete: 'name' },
@@ -202,6 +222,17 @@ export const UNDP_SECTIONS = [
         ]
       },
       {
+        name: 'website_link',
+        label: 'Please share a link to your organisation’s website or other digital materials, if available.',
+        type: 'url',
+        optional: true
+      },
+      {
+        name: 'mission',
+        label: 'In one sentence, what is your organisation’s mission, and which communities does it aim to serve?',
+        paragraph: true
+      },
+      {
         name: 'community_led',
         label: 'Is your organisation led by members of the communities it primarily serves?',
         optional: true,
@@ -232,6 +263,40 @@ export const UNDP_SECTIONS = [
         ]
       },
       {
+        name: 'ai_tools',
+        label: 'Which AI tools or platforms does your organisation currently use?',
+        multi: true,
+        hint: 'Select either of the last two options on its own.',
+        exclusive: ['We do not currently use AI tools', 'Not sure'],
+        options: [
+          'ChatGPT',
+          'Google Gemini',
+          'Microsoft Copilot',
+          'Claude',
+          'Perplexity',
+          'Canva AI / Magic Studio',
+          'Grammarly',
+          'AI-powered translation tools',
+          'AI features within other software or platforms',
+          OTHER,
+          'We do not currently use AI tools',
+          'Not sure'
+        ]
+      },
+      {
+        name: 'ai_frequency',
+        label: 'How frequently does your organisation use AI tools?',
+        options: [
+          'Daily',
+          'A few times a week',
+          'A few times a month',
+          'Rarely',
+          'We have experimented with AI tools but do not use them regularly',
+          'We do not currently use AI tools',
+          'Not sure'
+        ]
+      },
+      {
         name: 'barriers',
         label: 'What are the main barriers to using AI effectively?',
         multi: true,
@@ -254,9 +319,37 @@ export const UNDP_SECTIONS = [
         ]
       },
       {
-        name: 'checking_confidence',
-        label: 'How confident are staff in checking AI output before using it?',
-        options: ['Not at all', 'Slightly', 'Moderately', 'Very', 'Have not tried']
+        name: 'output_quality',
+        label: 'How would you describe the quality of AI-assisted content or outputs produced by your organisation’s staff?',
+        options: [
+          'Very good – generally requires minimal changes before use',
+          'Good – usually useful, with some review and editing',
+          'Mixed – quality varies depending on the task or tool',
+          'Poor – often requires substantial corrections',
+          'We have not used AI-generated or AI-assisted outputs enough to assess their quality',
+          'Not sure'
+        ]
+      },
+      {
+        name: 'quality_concerns',
+        label: 'What are your organisation’s primary concerns about the quality and use of AI-assisted outputs?',
+        multi: true,
+        max: 3,
+        hint: 'Select “No major concerns” or “Unsure” on its own.',
+        exclusive: ['No major concerns', 'Unsure'],
+        options: [
+          'Inaccurate or misleading information',
+          'Bias or lack of representation of local contexts and communities',
+          'Poor quality or unnatural language, including local-language content',
+          'Outputs that lack relevant context or understanding of the issue',
+          'Difficulty verifying information or sources',
+          'Privacy, confidentiality or data protection risks',
+          'Inappropriate or harmful outputs',
+          'Lack of staff capacity to review and improve outputs',
+          'No major concerns',
+          OTHER,
+          'Unsure'
+        ]
       },
       {
         name: 'useful_skills',
@@ -339,30 +432,10 @@ export const UNDP_SECTIONS = [
           'Not yet confirmed',
           'We would prefer virtual participation'
         ]
-      }
-    ]
-  },
-  {
-    title: 'Consent',
-    fields: [
-      {
-        name: 'consent',
-        label: 'Do you consent to the use of your responses for this assessment?',
-        mustAgree: 'We can only use your responses with your consent. Please choose “Yes” to submit.',
-        options: [
-          'Yes, I consent to CivicDataLab and UNDP India accessing, reviewing and using the information submitted in this form to assess training needs, plan the programme and contact us about participation.',
-          'No, I do not consent.'
-        ]
-      },
-      {
-        name: 'case_study',
-        label: 'Would your organisation consider sharing a use case, blog or learning story from the programme?',
-        hint: 'Case studies may appear in programme reports, websites and communication materials. Consent is voluntary and does not affect selection. Personal details, photographs and confidential information are not covered by this consent.',
-        options: ['Yes, we would be interested', 'Maybe, after discussing the details', 'No, we would prefer not to']
       },
       {
         name: 'anything_else',
-        label: 'Is there anything else we should know about your learning or participation needs?',
+        label: 'Finally, is there anything else we should know about your learning or participation needs?',
         optional: true,
         hint: 'Mention any need or barrier not covered above. Please do not include confidential information or personal details of beneficiaries.',
         paragraph: true
