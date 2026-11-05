@@ -112,3 +112,82 @@ function sortColumns(tabName) {
 }
 function sortLongColumns() { sortColumns(TABS.long); }
 function sortShortColumns() { sortColumns(TABS.short); }
+
+// One-off, UNDP Sheet only (Nov 2026 question update): run migrateUndpColumns from the editor once,
+// after the new script version is deployed. It copies the Long tab to a backup tab first, then
+// renames and reorders columns to the new numbering. Columns are matched by question text, not
+// number, so every answer moves with its question; two columns with the same question (old and
+// new numbering) are merged, keeping the non-empty value. Columns for questions no longer asked
+// are kept at the far right as "Retired: ...". Safe to run again.
+var UNDP_LABELS = [
+    "Do you consent to the use of your responses for this assessment?",
+    "Would your organisation consider sharing a use case, blog or learning story from the programme?",
+    "Your full name",
+    "Your role in the organisation",
+    "Email address",
+    "Phone number with country code",
+    "Organisation name",
+    "Registration type",
+    "Which states or districts does your organisation work in?",
+    "What are your organisation’s main areas of work?",
+    "Please share a link to your organisation’s website or other digital materials, if available.",
+    "In one sentence, what is your organisation’s mission, and which communities does it aim to serve?",
+    "Is your organisation led by members of the communities it primarily serves?",
+    "What does your organisation use AI tools for?",
+    "Which AI tools or platforms does your organisation currently use?",
+    "How frequently does your organisation use AI tools?",
+    "What are the main barriers to using AI effectively?",
+    "How would you describe the quality of AI-assisted content or outputs produced by your organisation’s staff?",
+    "What are your organisation’s primary concerns about the quality and use of AI-assisted outputs?",
+    "Which skills would be most useful to your organisation?",
+    "Which learning methods would help you most?",
+    "What device and internet access will the nominated learner have?",
+    "Which language would be most comfortable for learning?",
+    "What support would help the learner participate?",
+    "Can the same person attend throughout the programme and practise between sessions?",
+    "If invited to the two-day Delhi/NCR workshop, could the learner attend with travel paid by their organisation or themselves?",
+    "Finally, is there anything else we should know about your learning or participation needs?"
+  ];
+var UNDP_RENAMED = {
+  'Is there anything else we should know about your learning or participation needs?':
+    'Finally, is there anything else we should know about your learning or participation needs?'
+};
+
+function migrateUndpColumns() {
+  var ss = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(TABS.long);
+  if (!sheet || sheet.getLastRow() < 1) throw new Error('No "' + TABS.long + '" tab with data.');
+  sheet.copyTo(ss).setName(TABS.long + ' backup ' + Utilities.formatDate(new Date(), 'Asia/Kolkata', 'yyyy-MM-dd HH:mm'));
+
+  var values = sheet.getDataRange().getValues();
+  var headers = values[0].map(String);
+  function label(h) {
+    var l = h.replace(/^Q\d+\.\s*/, '');
+    return UNDP_RENAMED[l] || l;
+  }
+  var used = {};
+  var cols = [{ header: 'Timestamp', from: [headers.indexOf('Timestamp')] }];
+  UNDP_LABELS.forEach(function (l, i) {
+    var from = [];
+    headers.forEach(function (h, j) { if (h !== 'Timestamp' && label(h) === l) from.push(j); });
+    from.forEach(function (j) { used[j] = true; });
+    cols.push({ header: 'Q' + (i + 1) + '. ' + l, from: from });
+  });
+  headers.forEach(function (h, j) {
+    if (h === 'Timestamp' || used[j] || h === '') return;
+    cols.push({ header: /^Retired: /.test(h) ? h : 'Retired: ' + h, from: [j] });
+  });
+
+  var out = values.map(function (row, r) {
+    return cols.map(function (c) {
+      if (r === 0) return c.header;
+      for (var k = 0; k < c.from.length; k++) {
+        var v = c.from[k] < 0 ? '' : row[c.from[k]];
+        if (v !== '' && v != null) return v;
+      }
+      return '';
+    });
+  });
+  sheet.clearContents();
+  sheet.getRange(1, 1, out.length, cols.length).setValues(out);
+}
