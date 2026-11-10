@@ -434,6 +434,12 @@ export const UNDP_SECTIONS = [
         ]
       },
       {
+        name: 'motivation',
+        label:
+          "Please explain your organization's motivations for applying to this program and what you hope to gain from this CSO-specific AI training.",
+        paragraph: true
+      },
+      {
         name: 'anything_else',
         label: 'Finally, is there anything else we should know about your learning or participation needs?',
         optional: true,
