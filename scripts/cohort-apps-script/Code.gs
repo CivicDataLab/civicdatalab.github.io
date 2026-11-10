@@ -176,17 +176,22 @@ function migrateUndpColumns() {
   });
   headers.forEach(function (h, j) {
     if (h === 'Timestamp' || used[j] || h === '') return;
-    cols.push({ header: /^Retired: /.test(h) ? h : 'Retired: ' + h, from: [j] });
+    var name = /^Retired: /.test(h) ? h : 'Retired: ' + h;
+    // An old-form submission after a migration recreates a retired column; fold it into the existing one.
+    var same = cols.filter(function (c) { return c.header === name; })[0];
+    if (same) same.from.push(j); else cols.push({ header: name, from: [j] });
   });
 
   var out = values.map(function (row, r) {
     return cols.map(function (c) {
       if (r === 0) return c.header;
-      for (var k = 0; k < c.from.length; k++) {
-        var v = c.from[k] < 0 ? '' : row[c.from[k]];
-        if (v !== '' && v != null) return v;
-      }
-      return '';
+      // Merged columns: keep every distinct non-empty value, so a clash never drops an answer.
+      var vals = [];
+      c.from.forEach(function (j) {
+        var v = j < 0 ? '' : row[j];
+        if (v !== '' && v != null && vals.indexOf(v) === -1) vals.push(v);
+      });
+      return vals.length === 1 ? vals[0] : vals.join(' | ');
     });
   });
   sheet.clearContents();
