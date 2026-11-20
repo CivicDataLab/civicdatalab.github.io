@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import {
   EMAIL_RE,
+  PHONE_RE,
   BLUE,
   CORAL_DARK,
   MUTED,
@@ -21,7 +22,6 @@ import {
   Result
 } from './ui';
 
-const PHONE_RE = /^\+?[\d\s()-]{8,}$/;
 
 const countWords = (text) => text.trim().split(/\s+/).filter(Boolean).length;
 

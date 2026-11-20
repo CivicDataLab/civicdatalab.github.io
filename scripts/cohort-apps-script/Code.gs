@@ -154,25 +154,44 @@ var UNDP_RENAMED = {
     'Finally, is there anything else we should know about your learning or participation needs?'
 };
 
-function migrateUndpColumns() {
+// Tech4Dev Sheet only (Nov 2026): the fit check gained Organisation name/website at the top and a
+// phone number after the email. Its headers are the question texts (no Q numbers), so run
+// migrateShortColumns once to move the new columns into place. Same safety rules as above.
+var SHORT_LABELS = [
+  'Organisation name',
+  'Organisation website',
+  'Where is your AI solution today?',
+  'Which domain does your proposed AI use case address?',
+  'Can you organise testing with beneficiaries or frontline teams during the cohort?',
+  'Can you assign a Tech Lead or Product Owner with approximately 50% availability over six months?',
+  'Your email',
+  'Phone number with country code'
+];
+
+function migrateUndpColumns() { migrateColumns(TABS.long, UNDP_LABELS, true, UNDP_RENAMED); }
+function migrateShortColumns() { migrateColumns(TABS.short, SHORT_LABELS, false, {}); }
+
+// Rebuilds a tab's columns in `labels` order, matching existing columns by question text.
+// numbered: headers are "Q<n>. <label>". Backs the tab up first; never drops a value.
+function migrateColumns(tabName, labels, numbered, renamed) {
   var ss = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName(TABS.long);
-  if (!sheet || sheet.getLastRow() < 1) throw new Error('No "' + TABS.long + '" tab with data.');
-  sheet.copyTo(ss).setName(TABS.long + ' backup ' + Utilities.formatDate(new Date(), 'Asia/Kolkata', 'yyyy-MM-dd HH:mm'));
+  var sheet = ss.getSheetByName(tabName);
+  if (!sheet || sheet.getLastRow() < 1) throw new Error('No "' + tabName + '" tab with data.');
+  sheet.copyTo(ss).setName(tabName + ' backup ' + Utilities.formatDate(new Date(), 'Asia/Kolkata', 'yyyy-MM-dd HH:mm'));
 
   var values = sheet.getDataRange().getValues();
   var headers = values[0].map(String);
   function label(h) {
-    var l = h.replace(/^Q\d+\.\s*/, '');
-    return UNDP_RENAMED[l] || l;
+    var l = numbered ? h.replace(/^Q\d+\.\s*/, '') : h;
+    return renamed[l] || l;
   }
   var used = {};
   var cols = [{ header: 'Timestamp', from: [headers.indexOf('Timestamp')] }];
-  UNDP_LABELS.forEach(function (l, i) {
+  labels.forEach(function (l, i) {
     var from = [];
     headers.forEach(function (h, j) { if (h !== 'Timestamp' && label(h) === l) from.push(j); });
     from.forEach(function (j) { used[j] = true; });
-    cols.push({ header: 'Q' + (i + 1) + '. ' + l, from: from });
+    cols.push({ header: numbered ? 'Q' + (i + 1) + '. ' + l : l, from: from });
   });
   headers.forEach(function (h, j) {
     if (h === 'Timestamp' || used[j] || h === '') return;
