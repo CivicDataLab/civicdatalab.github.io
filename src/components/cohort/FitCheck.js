@@ -65,13 +65,7 @@ const QUESTIONS = [
 // Free-text fields: the first two sit above the questions, the last two below. `column` is the Sheet header.
 const TEXT = {
   org_name: { column: 'Organisation name', autoComplete: 'organization' },
-  org_website: {
-    column: 'Organisation website',
-    label: 'Organisation website (if available)',
-    type: 'url',
-    optional: true,
-    autoComplete: 'url'
-  },
+  org_website: { column: 'Organisation website', type: 'url', autoComplete: 'url' },
   email: { column: 'Your email', type: 'email', autoComplete: 'email' },
   phone: { column: 'Phone number with country code', type: 'tel', autoComplete: 'tel' }
 };
@@ -108,7 +102,7 @@ export default function FitCheck({ scriptUrl }) {
       e.domain_other = 'Please specify the domain.';
     }
     Object.keys(TEXT).forEach((name) => {
-      if (!TEXT[name].optional && !answers[name].trim()) e[name] = REQUIRED;
+      if (!answers[name].trim()) e[name] = REQUIRED;
     });
     if (!e.email && !EMAIL_RE.test(answers.email.trim())) e.email = 'Please enter a valid email address.';
     if (!e.phone && !PHONE_RE.test(answers.phone.trim())) {
@@ -169,12 +163,12 @@ export default function FitCheck({ scriptUrl }) {
     const err = errors[name];
     return (
       <div style={{ marginBottom: 16 }}>
-        <FieldLabel htmlFor={`fit-${name}`}>{t.label || t.column}</FieldLabel>
+        <FieldLabel htmlFor={`fit-${name}`}>{t.column}</FieldLabel>
         <TextInput
           id={`fit-${name}`}
           type={t.type || 'text'}
           name={name}
-          required={!t.optional}
+          required
           autoComplete={t.autoComplete}
           value={answers[name]}
           invalid={!!err}
