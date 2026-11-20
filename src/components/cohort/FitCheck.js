@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
   EMAIL_RE,
+  PHONE_RE,
   Card,
   Heading,
   Muted,
@@ -61,8 +62,23 @@ const QUESTIONS = [
   }
 ];
 
+// Free-text fields: the first two sit above the questions, the last two below. `column` is the Sheet header.
+const TEXT = {
+  org_name: { column: 'Organisation name', autoComplete: 'organization' },
+  org_website: { column: 'Organisation website', type: 'url', autoComplete: 'url' },
+  email: { column: 'Your email', type: 'email', autoComplete: 'email' },
+  phone: { column: 'Phone number with country code', type: 'tel', autoComplete: 'tel' }
+};
+
 export default function FitCheck({ scriptUrl }) {
-  const [answers, setAnswers] = useState({ email: '', domain_other: '', website: '' });
+  const [answers, setAnswers] = useState({
+    org_name: '',
+    org_website: '',
+    email: '',
+    phone: '',
+    domain_other: '',
+    website: ''
+  });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | saving | done
   const [saveError, setSaveError] = useState('');
@@ -85,21 +101,30 @@ export default function FitCheck({ scriptUrl }) {
     if (answers.domain === OTHER && !answers.domain_other.trim()) {
       e.domain_other = 'Please specify the domain.';
     }
-    if (!answers.email.trim()) e.email = REQUIRED;
-    else if (!EMAIL_RE.test(answers.email.trim())) e.email = 'Please enter a valid email address.';
+    Object.keys(TEXT).forEach((name) => {
+      if (!answers[name].trim()) e[name] = REQUIRED;
+    });
+    if (!e.email && !EMAIL_RE.test(answers.email.trim())) e.email = 'Please enter a valid email address.';
+    if (!e.phone && !PHONE_RE.test(answers.phone.trim())) {
+      e.phone = 'Please enter a phone number with country code, e.g. +91 98765 43210.';
+    }
     return e;
   };
 
   const save = async () => {
     setStatus('saving');
     // The Sheet's column headers are the question texts.
+    // `website` is the spam honeypot, not the organisation's website.
     const data = { form: 'short', website: answers.website };
+    data[TEXT.org_name.column] = answers.org_name.trim();
+    data[TEXT.org_website.column] = answers.org_website.trim();
     QUESTIONS.forEach((q) => {
       // "Other" is saved as "Other: <what they typed>" in the same column.
       data[q.legend] =
         q.name === 'domain' && answers.domain === OTHER ? `Other: ${answers.domain_other.trim()}` : answers[q.name];
     });
-    data['Your email'] = answers.email.trim();
+    data[TEXT.email.column] = answers.email.trim();
+    data[TEXT.phone.column] = answers.phone.trim();
     // Apps Script does not keep the order fields arrive in, so say what the column order should be.
     data._order = JSON.stringify(Object.keys(data).filter((k) => k !== 'form' && k !== 'website'));
     let error = '';
@@ -119,10 +144,10 @@ export default function FitCheck({ scriptUrl }) {
     event.preventDefault();
     const e = validate();
     setErrors(e);
-    const order = [...QUESTIONS.map((q) => q.name), 'domain_other', 'email'];
+    const order = ['org_name', 'org_website', ...QUESTIONS.map((q) => q.name), 'domain_other', 'email', 'phone'];
     const first = order.find((name) => e[name]);
     if (first) {
-      const id = first === 'domain_other' || first === 'email' ? `fit-${first}` : `fit-${first}-0`;
+      const id = QUESTIONS.some((q) => q.name === first) ? `fit-${first}-0` : `fit-${first}`;
       const el = document.getElementById(id);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -133,11 +158,37 @@ export default function FitCheck({ scriptUrl }) {
     save();
   };
 
+  const textField = (name) => {
+    const t = TEXT[name];
+    const err = errors[name];
+    return (
+      <div style={{ marginBottom: 16 }}>
+        <FieldLabel htmlFor={`fit-${name}`}>{t.column}</FieldLabel>
+        <TextInput
+          id={`fit-${name}`}
+          type={t.type || 'text'}
+          name={name}
+          required
+          autoComplete={t.autoComplete}
+          value={answers[name]}
+          invalid={!!err}
+          aria-invalid={!!err}
+          aria-describedby={err ? (err === REQUIRED ? 'fit-blanks' : `fit-${name}-error`) : undefined}
+          onChange={(ev) => set(name, ev.target.value)}
+        />
+        {err && err !== REQUIRED && <ErrorText id={`fit-${name}-error`}>{err}</ErrorText>}
+      </div>
+    );
+  };
+
   return (
     <Card>
       <Heading>Are we a fit? Check in a minute</Heading>
       <Muted>We'll save your answers and your email so we can follow up.</Muted>
       <form onSubmit={handleSubmit} noValidate>
+        {textField('org_name')}
+        {textField('org_website')}
+
         {QUESTIONS.map((q) => (
           <Fieldset
             key={q.name}
@@ -182,20 +233,8 @@ export default function FitCheck({ scriptUrl }) {
           </Fieldset>
         ))}
 
-        <FieldLabel htmlFor="fit-email">Your email</FieldLabel>
-        <TextInput
-          id="fit-email"
-          type="email"
-          name="email"
-          required
-          autoComplete="email"
-          value={answers.email}
-          invalid={!!errors.email}
-          aria-invalid={!!errors.email}
-          aria-describedby={errors.email ? (errors.email === REQUIRED ? 'fit-blanks' : 'fit-email-error') : undefined}
-          onChange={(ev) => set('email', ev.target.value)}
-        />
-        {errors.email && errors.email !== REQUIRED && <ErrorText id="fit-email-error">{errors.email}</ErrorText>}
+        {textField('email')}
+        {textField('phone')}
 
         <Honeypot
           type="text"

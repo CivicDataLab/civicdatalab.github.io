@@ -11,6 +11,7 @@ export const LIGHT_BLUE = '#EAF0F7';
 export const ERROR = '#B3261E';
 
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const PHONE_RE = /^\+?[\d\s()-]{8,}$/;
 
 export const focusRing = `
   outline: 3px solid ${BLUE};
