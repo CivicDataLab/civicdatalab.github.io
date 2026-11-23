@@ -3,8 +3,8 @@
 // An empty scriptUrl makes the forms show "Form not connected yet".
 
 export const TECH4DEV = {
-  // Applications close 25 Nov, 11:59 PM IST.
-  deadline: new Date('2026-11-25T23:59:59+05:30'),
+  // Applications close 30 Nov, 11:59 PM IST (extended from 25 Nov).
+  deadline: new Date('2026-11-30T23:59:59+05:30'),
   scriptUrl: 'https://script.google.com/macros/s/AKfycbw3dA1cYIHNbALkQ4oyFARyF1ro7clobXMl6ywXF_SRatJoT96wd1wC8Rq9hJAr7X2X/exec'
 };
 
