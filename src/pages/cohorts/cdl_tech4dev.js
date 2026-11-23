@@ -50,13 +50,16 @@ import hillsArt from '../../images/cohort/hills.webp';
 import chatLeft from '../../images/cohort/chat-left.webp';
 import chatRight from '../../images/cohort/chat-right.webp';
 
+// Same date as the countdown and the form cut-off, so the stat cannot drift from them.
+const closes = TECH4DEV.deadline.toLocaleString('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' });
+
 const stats = [
   ['6–8', 'NGOs in the cohort'],
   ['5 months', 'core programme, then light-touch support'],
   ['3 focus sectors', 'health, agriculture, public services'],
   ['Hybrid', 'two-day in-person kick-off, virtual mentorship and clinics, in-person closing showcase'],
   ['₹1 lakh', 'subsidised investment, inclusive of taxes'],
-  ['25 Nov', 'applications close, 11:59 PM IST']
+  [closes, 'applications close, 11:59 PM IST']
 ];
 
 const helps = [
